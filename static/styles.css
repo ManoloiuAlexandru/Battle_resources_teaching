@@ -1,0 +1,23 @@
+.card_in_hand{
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    height: 100px;
+    width: 90px;
+   }
+    .card_in_hand:hover{
+      background-color: white;
+      color: black;
+      border: 2px solid #555555;
+    }
+    .battlefield{
+    border-radius: 8px;
+    height: 105px;
+    width: 700px;
+    border-style: solid;
+    }
+    .player_icon{
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    height: 70px;
+    width: 70px;
+    }
