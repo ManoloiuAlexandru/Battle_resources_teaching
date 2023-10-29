@@ -6,11 +6,17 @@
     <title>Battle Resource</title>
 </head>
 <body>
+{%if players[0].turn==1:%}
+<p>Currently playing:{{players[0].name}}</p>
+{%else%}
+<p>Currently playing:{{players[1].name}}</p>
+{%endif%}
 <form action="/battlefield_action" method="post">
     <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}
         Mana:{{players[0].mana}}
     </button>
 </form>
+
 <form action="/update_battle_field" method="post">
     {%for creature in players[0].hand%}
     {%if players[0].turn==1%}
@@ -23,6 +29,7 @@
 {%if players[0].problem!="":%}
 <p>{{players[0].problem}}</p>
 {%endif%}
+<div class="players_field">
 <div class="battlefield">
     <form action="/battlefield_action" method="post">
         {%for creature in players[0].battle_field%}
@@ -38,9 +45,15 @@
         {%endfor%}
     </form>
 </div>
+    {%if players[0].turn==True:%}
 <form action="/end_turn" method="post">
-    <button id="end_turn">End turn</button>
+    <button class="end_turn" id="end_turn">End turn</button>
 </form>
+    {%else%}
+    <button disabled>End turn</button>
+    {%endif%}
+</div>
+<div class="players_field">
 <div class="battlefield">
     <form action="/battlefield_action" method="post">
         {%for creature in players[1].battle_field%}
@@ -56,11 +69,20 @@
         {%endfor%}
     </form>
 </div>
+    {%if players[1].turn==True:%}
+<form action="/end_turn" method="post">
+    <button class="end_turn" id="end_turn">End turn</button>
+</form>
+    {%else%}
+    <button disabled>End turn</button>
+    {%endif%}
+</div>
 <form action="/battlefield_action" method="post">
     <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}
         Mana:{{players[1].mana}}
     </button>
 </form>
+
 <form action="/update_battle_field" method="post">
     {%for creature in players[1].hand%}
     {%if players[1].turn==1%}
