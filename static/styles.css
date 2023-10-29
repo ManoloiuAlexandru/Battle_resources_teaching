@@ -14,10 +14,21 @@
     height: 105px;
     width: 700px;
     border-style: solid;
+    padding:10px;
+    margin-bottom:10px;
+    margin-top:10px;
     }
     .player_icon{
     border: 1px solid #d5d9d9;
     border-radius: 8px;
     height: 70px;
     width: 70px;
+    }
+    .players_field{
+    display: flex;
+            flex-direction: row;
+    }
+    .end_turn{
+    width:100px;
+    height:40px;
     }
