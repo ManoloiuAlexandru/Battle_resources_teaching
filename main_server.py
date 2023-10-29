@@ -72,6 +72,7 @@ def battlefield_fight():
         card = damage_dealing(player2, card_picked)
         if card is not None:
             battle(current_card, card, player1, player2)
+            player1.turn = 1
             current_card = None
         elif card_picked.get(player2.name) is not None:
             current_card.exhausted = True
