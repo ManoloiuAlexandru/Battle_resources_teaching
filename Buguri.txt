@@ -1,0 +1,6 @@
+Creaturile pot sa atace din prima.
+Cand e tura ta sa nu poti sa dai click pe cartile adversarului si nici invers.
+Sa faci end of turn sa mearga cum trebuie.
+De pus buttonul de end of turn in alta parte.
+De facut o limita la maxim 7 carti/ player in the battlefield si 10 carti in mana maxim.
+De refacut designul jocului.
