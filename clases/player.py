@@ -27,7 +27,7 @@ class Player:
 
     def put_card_on_field(self, card_picked):
         for card in self.hand:
-            if card_picked.get(card.name + card.id) is not None and card.mana_cost <= self.mana:
+            if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.hand.remove(card)
                 self.battle_field.append(card)
                 self.mana_increase(-card.mana_cost)

@@ -38,14 +38,14 @@ def turn_switch(player1, player2):
 
 def battle_logic(player, card_picked):
     for card in player.battle_field:
-        if card_picked.get(card.name + card.id) is not None:
+        if card_picked.get(card.name_for_html) is not None:
             player.turn = 0
             return card
 
 
 def damage_dealing(player, card_picked):
     for card in player.battle_field:
-        if card_picked.get(card.name + card.id) is not None:
+        if card_picked.get(card.name_for_html) is not None:
             return card
     return None
 
