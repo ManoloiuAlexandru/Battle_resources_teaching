@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href='/static/styles.css'/>
+    <meta charset="UTF-8">
+    <title>Battle Resource</title>
+</head>
+<body>
+<form action="/battlefield_action" method="post">
+    <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}
+        Mana:{{players[0].mana}}
+    </button>
+</form>
+<form action="/update_battle_field" method="post">
+    {%for creature in players[0].hand%}
+    {%if players[0].turn==1%}
+    <button class="card_in_hand" id={{creature.id+"1"}} name={{creature.name+creature.id}}>{{creature}}</button>
+    {%else%}
+    <button class="card_in_hand" disabled>Card Back</button>
+    {%endif%}
+    {%endfor%}
+</form>
+{%if players[0].problem!="":%}
+<p>{{players[0].problem}}</p>
+{%endif%}
+<div class="battlefield">
+    <form action="/battlefield_action" method="post">
+        {%for creature in players[0].battle_field%}
+        {%if creature.exhausted==True:%}
+        <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name+creature.id}} disabled>
+            {{creature}}
+        </button>
+        {%else%}
+        <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name+creature.id}}>
+            {{creature}}
+        </button>
+        {%endif%}
+        {%endfor%}
+    </form>
+</div>
+<div class="battlefield">
+    <form action="/battlefield_action" method="post">
+        {%for creature in players[1].battle_field%}
+        {%if creature.exhausted==True:%}
+        <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name+creature.id}} disabled>
+            {{creature}}
+        </button>
+        {%else%}
+        <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name+creature.id}}>
+            {{creature}}
+        </button>
+        {%endif%}
+        {%endfor%}
+    </form>
+</div>
+<form action="/end_turn" method="post">
+    <button id="end_turn">End turn</button>
+</form>
+<form action="/battlefield_action" method="post">
+    <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}
+        Mana:{{players[1].mana}}
+    </button>
+</form>
+<form action="/update_battle_field" method="post">
+    {%for creature in players[1].hand%}
+    {%if players[1].turn==1%}
+    <button class="card_in_hand" id={{creature.id}} name={{creature.name+creature.id}}>{{creature}}</button>
+    {%else%}
+    <button class="card_in_hand" disabled>Card Back</button>
+    {%endif%}
+    {%endfor%}
+</form>
+{%if players[1].problem!="":%}
+<p>{{players[1].problem}}</p>
+{%endif%}
+</body>
+</html>
