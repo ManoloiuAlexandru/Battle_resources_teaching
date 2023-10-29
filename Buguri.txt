@@ -1,3 +1,5 @@
 De pus buttonul de end of turn in alta parte.
 De facut o limita la maxim 7 carti/ player in the battlefield si 10 carti in mana maxim.
 De refacut designul jocului.
+Creatura poate sa atace in continuare chiar daca a atacat deja.
+Sa poti sa pui cuvinte cu spatiu intre ele.
