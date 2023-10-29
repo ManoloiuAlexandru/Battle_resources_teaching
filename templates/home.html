@@ -14,7 +14,7 @@
 <form action="/update_battle_field" method="post">
     {%for creature in players[0].hand%}
     {%if players[0].turn==1%}
-    <button class="card_in_hand" id={{creature.id+"1"}} name={{creature.name+creature.id}}>{{creature}}</button>
+    <button class="card_in_hand" id={{creature.id+"1"}} name={{creature.name_for_html}}>{{creature}}</button>
     {%else%}
     <button class="card_in_hand" disabled>Card Back</button>
     {%endif%}
@@ -27,26 +27,11 @@
     <form action="/battlefield_action" method="post">
         {%for creature in players[0].battle_field%}
         {%if creature.exhausted==True:%}
-        <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name+creature.id}} disabled>
+        <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name_for_html}} disabled>
             {{creature}}
         </button>
         {%else%}
-        <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name+creature.id}}>
-            {{creature}}
-        </button>
-        {%endif%}
-        {%endfor%}
-    </form>
-</div>
-<div class="battlefield">
-    <form action="/battlefield_action" method="post">
-        {%for creature in players[1].battle_field%}
-        {%if creature.exhausted==True:%}
-        <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name+creature.id}} disabled>
-            {{creature}}
-        </button>
-        {%else%}
-        <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name+creature.id}}>
+        <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name_for_html}}>
             {{creature}}
         </button>
         {%endif%}
@@ -56,6 +41,21 @@
 <form action="/end_turn" method="post">
     <button id="end_turn">End turn</button>
 </form>
+<div class="battlefield">
+    <form action="/battlefield_action" method="post">
+        {%for creature in players[1].battle_field%}
+        {%if creature.exhausted==True:%}
+        <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name_for_html}} disabled>
+            {{creature}}
+        </button>
+        {%else%}
+        <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name_for_html}}>
+            {{creature}}
+        </button>
+        {%endif%}
+        {%endfor%}
+    </form>
+</div>
 <form action="/battlefield_action" method="post">
     <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}
         Mana:{{players[1].mana}}
@@ -64,7 +64,7 @@
 <form action="/update_battle_field" method="post">
     {%for creature in players[1].hand%}
     {%if players[1].turn==1%}
-    <button class="card_in_hand" id={{creature.id}} name={{creature.name+creature.id}}>{{creature}}</button>
+    <button class="card_in_hand" id={{creature.id}} name={{creature.name_for_html}}>{{creature}}</button>
     {%else%}
     <button class="card_in_hand" disabled>Card Back</button>
     {%endif%}
