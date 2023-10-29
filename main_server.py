@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 
+from ITschool_projects.battle_resources.clases.bot import Bot
 from ITschool_projects.battle_resources.clases.creatures import Creature
 from ITschool_projects.battle_resources.clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
     damage_to_player
@@ -24,16 +25,19 @@ def game_start():
             player1.turn = 1
             player1.hand = demo_deck
             player1.mana = 1
-            player2 = Player("Andras")
-            player2.hand = starter_deck
-            player2.mana = -100
+            # player2 = Player("Andras")
+            # player2.hand = starter_deck
+            # player2.mana = -100
     except Exception as e:
         attacked_player = 2
         player1 = Player("Alex")
         player1.hand = demo_deck
         player1.turn = 1
         player1.mana = 10
-        player2 = Player("Andras")
+        # player2 = Player("Andras")
+        # player2.hand = starter_deck
+        # player2.mana = 10
+        player2 = Bot("Bot")
         player2.hand = starter_deck
         player2.mana = 10
 
@@ -52,7 +56,7 @@ def update_battle():
         card_picked = request.form
         if player1.put_card_on_field(card_picked) == 0:
             player1.problem = "Not enough mana"
-    else:
+    elif type(player2) == Player:
         card_picked = request.form
         if player2.put_card_on_field(card_picked) == 0:
             player2.problem = "No enough mana"
@@ -110,6 +114,10 @@ def battlefield_fight():
 def end_turn():
     global attacked_player
     attacked_player = turn_switch(player1, player2)
+    if type(player2) == Bot:
+        player2.play_hand()
+        if player2.check_move(player1) == 0:
+            attacked_player = turn_switch(player1, player2)
     return redirect(url_for('show_battle', players=[player2, player1]))
 
 
