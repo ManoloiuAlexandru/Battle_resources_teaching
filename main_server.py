@@ -34,12 +34,12 @@ def game_start():
         player1.hand = test_deck
         player1.turn = 1
         player1.mana = 10
-        # player2 = Player("Andras")
-        # player2.hand = demo_deck
-        # player2.mana = 10
-        player2 = Bot("Bot")
+        player2 = Player("Andras")
         player2.hand = knight_deck
         player2.mana = 10
+        # player2 = Bot("Bot")
+        # player2.hand = knight_deck
+        # player2.mana = 10
 
 
 @app.route("/")
@@ -86,11 +86,14 @@ def battlefield_fight():
         current_card = battle_logic(player1, card_picked)
     elif attacked_player == 2:
         card = damage_dealing(player2, card_picked)
-        if card is not None and guard_checking(player2, card) == 1:
+        if (card is not None or card_picked.get(player2.name) is not None) and current_card.exhausted is True:
+            player1.turn = 1
+        elif card is not None and guard_checking(player2, card) == 1:
             battle(current_card, card, player1, player2)
             player1.turn = 1
             current_card = None
-        elif card_picked.get(player2.name) is not None and guard_checking(player2, card) == 1:
+        elif card_picked.get(player2.name) is not None and guard_checking(player2,
+                                                                          card) == 1:
             current_card.exhausted = True
             player2, current_card = damage_to_player(player2, current_card)
             player_selected = True
@@ -105,7 +108,9 @@ def battlefield_fight():
         current_card = battle_logic(player2, card_picked)
     elif attacked_player == 1:
         card = damage_dealing(player1, card_picked)
-        if card is not None and guard_checking(player1, card) == 1:
+        if (card is not None or card_picked.get(player1.name) is not None) and current_card.exhausted is True:
+            player2.turn = 1
+        elif card is not None and guard_checking(player1, card) == 1:
             battle(current_card, card, player2, player1)
             player2.turn = 1
         elif card_picked.get(player1.name) is not None and guard_checking(player1, card) == 1:
