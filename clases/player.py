@@ -11,6 +11,7 @@ class Player:
         self.battle_field = []
         self.turn = 0
         self.problem = ""
+        self.incoming_action = 0
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -28,6 +29,12 @@ class Player:
     def put_card_on_field(self, card_picked):
         for card in self.hand:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
+                if card.name == "Two-handed Knight":
+                    self.hand.remove(card)
+                    self.battle_field.append(card)
+                    self.mana_increase(-card.mana_cost)
+                    self.incoming_action = 2
+                    return 2
                 self.hand.remove(card)
                 self.battle_field.append(card)
                 self.mana_increase(-card.mana_cost)
