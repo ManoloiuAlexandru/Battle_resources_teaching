@@ -23,15 +23,21 @@ demo_deck = [Creature(2, "Archer", 1, 2, "", 7),
              Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 20),
              Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 21),
              Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 102),
+             Spell(5, "Kill", "Kill an enemy soldier", 103),
+             Spell(3, "Volley", "Deal 1 damage to all enemies", 103),
+             Creature(4, "Mounted Knight", 4, 4, "Charge", 41)
              ]
 
-test_deck = [Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 101),
+test_deck = [Spell(3, "Volley", "Deal 1 damage to all enemies", 103),
+             Spell(5, "Kill", "Kill an enemy soldier", 104),
+             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 101),
              Creature(6, 'Templar Knight', 5, 5, "", 23),
              Creature(1, 'Page', 1, 1, "", 24),
              Creature(3, 'Squire', 1, 1, "", 25),
              Creature(3, 'Squire', 1, 1, "", 26),
              Creature(6, 'Templar Knight', 5, 5, "", 27),
              Creature(6, 'Templar Knight', 5, 5, "", 28),
+             Creature(4, "Mounted Knight", 4, 4, "Charge", 40)
              ]
 
 knight_deck = [Creature(6, 'Templar Knight', 5, 5, "", 23),
