@@ -1,4 +1,4 @@
-list_of_creature_description = ["Two-handed Knight"]
+list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight"]
 
 
 class Creature:
@@ -7,9 +7,11 @@ class Creature:
         self.mana_cost = mana_cost
         self.name = name
         self.hp = hp
+        self.max_hp = hp
         self.attack = attack
         self.description = description
         self.exhausted = self.charge_check()
+        self.can_be_target = True
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.id
         else:

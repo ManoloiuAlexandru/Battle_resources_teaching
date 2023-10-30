@@ -14,6 +14,7 @@ class Player:
         self.problem = ""
         self.incoming_action = 0
         self.incoming_spell = None
+        self.active_minion = None
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -35,6 +36,7 @@ class Player:
                     self.mana_pay(card)
                     self.battle_field.append(card)
                     self.incoming_action = 2
+                    self.active_minion = card
                     return 2
                 elif card.name in list_of_spells:
                     self.mana_pay(card)

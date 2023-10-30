@@ -1,19 +1,20 @@
 def battle(card1, card2, player1, player2):
     try:
-        if card1.attack >= card2.hp and card1.hp <= card2.attack:
-            player2.battle_field.remove(card2)
-            player1.battle_field.remove(card1)
-        elif card1.attack < card2.hp and card2.attack >= card1.hp:
-            player1.battle_field.remove(card1)
-            card2.hp -= card1.attack
-        elif card1.attack >= card2.hp and card1.hp > card2.attack:
-            player2.battle_field.remove(card2)
-            card1.hp -= card2.attack
-            card1.exhausted = True
-        else:
-            card1.hp -= card2.attack
-            card2.hp -= card1.attack
-            card1.exhausted = True
+        if card1.exhausted is False:
+            if card1.attack >= card2.hp and card1.hp <= card2.attack:
+                player2.battle_field.remove(card2)
+                player1.battle_field.remove(card1)
+            elif card1.attack < card2.hp and card2.attack >= card1.hp:
+                player1.battle_field.remove(card1)
+                card2.hp -= card1.attack
+            elif card1.attack >= card2.hp and card1.hp > card2.attack:
+                player2.battle_field.remove(card2)
+                card1.hp -= card2.attack
+                card1.exhausted = True
+            else:
+                card1.hp -= card2.attack
+                card2.hp -= card1.attack
+                card1.exhausted = True
     except Exception as e:
         print(e)
 
@@ -82,6 +83,14 @@ def guard_checking(player, current_card):
 
 
 def check_target(player1, player2, card_picked):
+    try:
+        if player1.active_minion is not None:
+            for card in player1.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    heal_creature(card, player1)
+                    return 0
+    except Exception as e:
+        print(e)
     for card in player1.battle_field:
         if card_picked.get(card.name_for_html) is not None:
             return 0
@@ -116,11 +125,26 @@ def destroy_creature(card_picked, player):
             break
 
 
+def heal_creature(card, player):
+    for char in player.active_minion.description.split():
+        if char.isnumeric():
+            if card.hp + int(char) > card.max_hp:
+                card.hp = card.max_hp
+            else:
+                card.hp += int(char)
+            break
+    player.incoming_action = 0
+    player.active_minion = None
+
+
 def destroy_creature_from_player(player1, player2, card_picked):
     if check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
     else:
-        destroy_creature(card_picked, player2)
+        if player1.active_minion.name == "Two-handed Knight":
+            destroy_creature(card_picked, player2)
+        elif player1.active_minion.name == 'Hospitaller Knight':
+            heal_creature(card_picked, player1)
         player1.incoming_action = 0
 
 
