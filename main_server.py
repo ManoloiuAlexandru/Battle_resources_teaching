@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for
 
 from ITschool_projects.battle_resources.clases.bot import Bot
-from ITschool_projects.battle_resources.clases.creatures import Creature
 from ITschool_projects.battle_resources.clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
-    damage_to_player, guard_checking, destroy_creature, check_target
+    damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
+    cast_spell_from_player
 from ITschool_projects.battle_resources.clases.player import Player
-from ITschool_projects.battle_resources.decks.decks_to_play import starter_deck, demo_deck, test_deck
+from ITschool_projects.battle_resources.decks.decks_to_play import starter_deck, demo_deck, test_deck, knight_deck
 
 app = Flask(__name__)
 global player1
@@ -31,15 +31,15 @@ def game_start():
     except Exception as e:
         attacked_player = 2
         player1 = Player("Alex")
-        player1.hand = demo_deck
+        player1.hand = test_deck
         player1.turn = 1
         player1.mana = 10
-        # player2 = Player("Andras")
+        player2 = Player("Andras")
+        player2.hand = demo_deck
+        player2.mana = 10
+        # player2 = Bot("Bot")
         # player2.hand = starter_deck
         # player2.mana = 10
-        player2 = Bot("Bot")
-        player2.hand = test_deck
-        player2.mana = 10
 
 
 @app.route("/")
@@ -54,7 +54,7 @@ def update_battle():
     global player2
     if attacked_player == 2:
         card_picked = request.form
-        if player1.put_card_on_field(card_picked) == 2:
+        if player1.put_card_on_field(card_picked) != 0:
             return redirect(url_for('battlefield_fight'))
         elif player1.put_card_on_field(card_picked) == 0:
             player1.problem = "Not enough mana"
@@ -75,17 +75,13 @@ def battlefield_fight():
     global player1
     player_selected = False
     if player1.incoming_action == 2:
-        if check_target(player1, player2, card_picked) == 0:
-            player1.problem = "You need to select a card"
-        else:
-            destroy_creature(card_picked, player2)
-            player1.incoming_action = 0
+        destroy_creature_from_player(player1, player2, card_picked)
+    if player1.incoming_action == 3:
+        cast_spell_from_player(player1, player2, card_picked)
+    if player2.incoming_action == 3:
+        cast_spell_from_player(player2, player1, card_picked)
     if player2.incoming_action == 2:
-        if check_target(player2, player1, card_picked) == 0:
-            player2.problem = "You need to select a card"
-        else:
-            destroy_creature(card_picked, player1)
-            player2.incoming_action = 0
+        destroy_creature_from_player(player2, player1, card_picked)
     if player1.turn == 1:
         current_card = battle_logic(player1, card_picked)
     elif attacked_player == 2:
@@ -140,6 +136,8 @@ def end_turn():
         player2.play_hand()
         if player2.check_move(player1) == 0:
             attacked_player = turn_switch(player1, player2)
+        if player1.check_player() == 0:
+            return render_template("END.html", player=player1)
     return redirect(url_for('show_battle', players=[player2, player1]))
 
 
