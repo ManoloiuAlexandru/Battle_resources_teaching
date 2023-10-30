@@ -1,5 +1,7 @@
 De facut o limita la maxim 7 carti/ player in the battlefield si 10 carti in mana maxim.
 De refacut designul jocului.
 De facut un bot cu care sa joci.
-De verificat atributul de guard daca merge full.
 De introdus charge atribut(nu sunt exhosted cand intra pe teren.
+De adaugat noi speluri
+De adaugat iteme.
+De aduagat lord class.
