@@ -34,12 +34,12 @@ def game_start():
         player1.hand = test_deck
         player1.turn = 1
         player1.mana = 10
-        player2 = Player("Andras")
-        player2.hand = demo_deck
-        player2.mana = 10
-        # player2 = Bot("Bot")
-        # player2.hand = starter_deck
+        # player2 = Player("Andras")
+        # player2.hand = demo_deck
         # player2.mana = 10
+        player2 = Bot("Bot")
+        player2.hand = knight_deck
+        player2.mana = 10
 
 
 @app.route("/")
@@ -60,7 +60,7 @@ def update_battle():
             player1.problem = "Not enough mana"
     elif type(player2) == Player:
         card_picked = request.form
-        if player2.put_card_on_field(card_picked) == 2:
+        if player2.put_card_on_field(card_picked) != 0:
             return redirect(url_for('battlefield_fight'))
         elif player2.put_card_on_field(card_picked) == 0:
             player2.problem = "No enough mana"
