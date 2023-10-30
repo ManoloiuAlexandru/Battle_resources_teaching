@@ -1,3 +1,4 @@
+from ITschool_projects.battle_resources.clases.creatures import Creature
 from ITschool_projects.battle_resources.clases.game_logics import battle, damage_to_player
 from ITschool_projects.battle_resources.clases.player import Player
 
@@ -31,10 +32,23 @@ class Bot(Player):
         damage_to_player(player, card)
 
     def target_priority(self, card, player):
+        if self.check_for_guards(player) == 1:
+            target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
+            for creature in player.battle_field:
+                if creature.description == "Guard" and target_creature.hp >= creature.hp:
+                    target_creature = creature
+            battle(card, target_creature, self, player)
+        else:
+            for creature in player.battle_field:
+                if creature.hp <= card.attack <= creature.attack:
+                    self.attack_creature(card, player)
+                    break
+                else:
+                    self.attack_player(card, player)
+                    break
+
+    def check_for_guards(self, player):
         for creature in player.battle_field:
-            if creature.hp <= card.attack <= creature.attack:
-                self.attack_creature(card, player)
-                break
-            else:
-                self.attack_player(card, player)
-                break
+            if creature.description == "Guard":
+                return 1
+        return 0

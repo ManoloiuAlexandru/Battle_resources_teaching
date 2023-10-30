@@ -13,4 +13,4 @@ class Creature:
             self.name_for_html = self.name + self.id
 
     def __str__(self):
-        return f"MANA:{self.mana_cost} {self.name} HP:{self.hp} ATTACK:{self.attack} "
+        return f"MANA:{self.mana_cost} {self.name} HP:{self.hp} ATTACK:{self.attack} {self.description} "

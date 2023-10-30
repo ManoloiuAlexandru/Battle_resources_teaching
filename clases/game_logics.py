@@ -58,3 +58,19 @@ def damage_to_player(player, current_card):
     current_card.exhausted = True
     current_card = None
     return player, current_card
+
+
+def guard_checking(player, current_card):
+    try:
+        if current_card.description == "Guard":
+            return 1
+        else:
+            for card in player.battle_field:
+                if card.description == "Guard":
+                    return 0
+    except Exception as e:
+        if current_card is None:
+            for card in player.battle_field:
+                if card.description == "Guard":
+                    return 0
+    return 1
