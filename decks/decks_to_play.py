@@ -1,4 +1,5 @@
 from ITschool_projects.battle_resources.clases.creatures import Creature
+from ITschool_projects.battle_resources.clases.spells import Spell
 
 starter_deck = [Creature(1, "Peasant", 1, 1, "", 1),
                 Creature(1, "Peasant", 1, 1, "", 2),
@@ -21,13 +22,17 @@ demo_deck = [Creature(2, "Archer", 1, 2, "", 7),
              Creature(7, 'Teutonic Knight', 6, 5, "", 33),
              Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 20),
              Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 21),
+             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 102),
              ]
 
-test_deck = [Creature(3, "Guard", 4, 1, "Guard", 13),
-             Creature(3, "Guard", 4, 1, "Guard", 14),
-             Creature(3, "Guard", 4, 1, "Guard", 15),
-             Creature(3, "Guard", 4, 1, "Guard", 16),
-             Creature(3, "Guard", 4, 1, "Guard", 17),]
+test_deck = [Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 101),
+             Creature(6, 'Templar Knight', 5, 5, "", 23),
+             Creature(1, 'Page', 1, 1, "", 24),
+             Creature(3, 'Squire', 1, 1, "", 25),
+             Creature(3, 'Squire', 1, 1, "", 26),
+             Creature(6, 'Templar Knight', 5, 5, "", 27),
+             Creature(6, 'Templar Knight', 5, 5, "", 28),
+             ]
 
 knight_deck = [Creature(6, 'Templar Knight', 5, 5, "", 23),
                Creature(1, 'Page', 1, 1, "", 24),
