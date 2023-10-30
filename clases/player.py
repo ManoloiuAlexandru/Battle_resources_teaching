@@ -1,4 +1,5 @@
-from ITschool_projects.battle_resources.clases.creatures import Creature
+from ITschool_projects.battle_resources.clases.creatures import list_of_creature_description
+from ITschool_projects.battle_resources.clases.spells import list_of_spells
 
 
 class Player:
@@ -30,25 +31,26 @@ class Player:
     def put_card_on_field(self, card_picked):
         for card in self.hand:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
-                if card.name == "Two-handed Knight":
-                    self.hand.remove(card)
+                if card.name in list_of_creature_description:
+                    self.mana_pay(card)
                     self.battle_field.append(card)
-                    self.mana_increase(-card.mana_cost)
                     self.incoming_action = 2
                     return 2
-                elif card.name == "Arrow shot":
-                    self.hand.remove(card)
-                    self.mana_increase(-card.mana_cost)
+                elif card.name in list_of_spells:
+                    self.mana_pay(card)
                     self.incoming_action = 3
                     self.incoming_spell = card
                     return 3
-                self.hand.remove(card)
                 self.battle_field.append(card)
-                self.mana_increase(-card.mana_cost)
+                self.mana_pay(card)
                 return 1
         return 0
 
     def check_battlefield(self):
-        for card in self.battle_field:
+        for card in self.battle_field[:]:
             if card.hp <= 0:
                 self.battle_field.remove(card)
+
+    def mana_pay(self, card):
+        self.hand.remove(card)
+        self.mana_increase(-card.mana_cost)

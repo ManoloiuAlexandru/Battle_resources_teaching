@@ -92,9 +92,21 @@ def check_target(player1, player2, card_picked):
 
 
 def cast_spell(player1, player2, card_picked):
+    destroy_minion = 0
+    dmg_to_enemy_minions = 0
+    if player1.incoming_spell.name == "Kill":
+        destroy_minion = 1
+    if player1.incoming_spell.name == "Volley":
+        dmg_to_enemy_minions = 1
     for card in player2.battle_field:
-        if card_picked.get(card.name_for_html) is not None:
+        if dmg_to_enemy_minions == 1:
             card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+        elif card_picked.get(card.name_for_html) is not None and destroy_minion == 0:
+            card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+            break
+        else:
+            card.hp = 0
+            break
 
 
 def destroy_creature(card_picked, player):
@@ -113,7 +125,10 @@ def destroy_creature_from_player(player1, player2, card_picked):
 
 
 def cast_spell_from_player(player1, player2, card_picked):
-    if check_target(player1, player2, card_picked) == 0:
+    if card_picked.get(player2.name) is not None:
+        player2.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+        player1.incoming_action = 0
+    elif check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
     else:
         cast_spell(player1, player2, card_picked)

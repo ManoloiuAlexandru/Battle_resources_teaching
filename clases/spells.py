@@ -1,3 +1,6 @@
+list_of_spells = ["Volley", "Kill", "Arrow shot"]
+
+
 class Spell:
     def __init__(self, mana_cost, name, description, id):
         self.id = str(id)
