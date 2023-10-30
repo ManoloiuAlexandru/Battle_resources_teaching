@@ -91,8 +91,31 @@ def check_target(player1, player2, card_picked):
     return 0
 
 
+def cast_spell(player1, player2, card_picked):
+    for card in player2.battle_field:
+        if card_picked.get(card.name_for_html) is not None:
+            card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+
+
 def destroy_creature(card_picked, player):
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
             player.battle_field.remove(card)
             break
+
+
+def destroy_creature_from_player(player1, player2, card_picked):
+    if check_target(player1, player2, card_picked) == 0:
+        player1.problem = "You need to select a card"
+    else:
+        destroy_creature(card_picked, player2)
+        player1.incoming_action = 0
+
+
+def cast_spell_from_player(player1, player2, card_picked):
+    if check_target(player1, player2, card_picked) == 0:
+        player1.problem = "You need to select a card"
+    else:
+        cast_spell(player1, player2, card_picked)
+        player2.check_battlefield()
+        player1.incoming_action = 0

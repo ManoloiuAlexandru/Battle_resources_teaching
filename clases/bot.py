@@ -39,6 +39,8 @@ class Bot(Player):
                     target_creature = creature
             battle(card, target_creature, self, player)
         else:
+            if len(player.battle_field) == 0:
+                self.attack_player(card, player)
             for creature in player.battle_field:
                 if creature.hp <= card.attack <= creature.attack:
                     self.attack_creature(card, player)
