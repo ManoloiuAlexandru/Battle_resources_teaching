@@ -33,7 +33,7 @@
 <div class="battlefield">
     <form action="/battlefield_action" method="post">
         {%for creature in players[0].battle_field%}
-        {%if creature.exhausted==True:%}
+        {%if creature.can_be_target==False:%}
         <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name_for_html}} disabled>
             {{creature}}
         </button>
@@ -57,7 +57,7 @@
 <div class="battlefield">
     <form action="/battlefield_action" method="post">
         {%for creature in players[1].battle_field%}
-        {%if creature.exhausted==True:%}
+        {%if creature.can_be_target==False:%}
         <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name_for_html}} disabled>
             {{creature}}
         </button>
