@@ -5,7 +5,8 @@ from ITschool_projects.battle_resources.clases.game_logics import battle, turn_s
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
     cast_spell_from_player
 from ITschool_projects.battle_resources.clases.player import Player
-from ITschool_projects.battle_resources.decks.decks_to_play import starter_deck, demo_deck, test_deck, knight_deck
+from ITschool_projects.battle_resources.decks.decks_to_play import starter_deck, demo_deck, test_deck, knight_deck, \
+    deck_for_images, knight_deck_official
 
 app = Flask(__name__)
 global player1
@@ -31,15 +32,15 @@ def game_start():
     except Exception as e:
         attacked_player = 2
         player1 = Player("Alex")
-        player1.hand = test_deck
+        player1.hand = knight_deck_official
         player1.turn = 1
         player1.mana = 10
-        player2 = Player("Andras")
+        # player2 = Player("Andras")
+        # player2.hand = test_deck
+        # player2.mana = 10
+        player2 = Bot("Bot")
         player2.hand = knight_deck
         player2.mana = 10
-        # player2 = Bot("Bot")
-        # player2.hand = knight_deck
-        # player2.mana = 10
 
 
 @app.route("/")
