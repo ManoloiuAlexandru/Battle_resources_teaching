@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <title>Battle Resource</title>
 </head>
-<body>
+<!--<style>-->
+<!--body {-->
+<!--  background-image: url('/static/cards/background.jpg');-->
+<!--  background-repeat: no-repeat;-->
+<!--  background-attachment: fixed;-->
+<!--  background-size: 100% 100%;-->
+<!--}-->
+<!--</style>-->
+<body >
     {%if players[0].turn==1:%}
     <p>Currently playing:{{players[0].name}}</p>
     {%else%}
@@ -17,7 +25,7 @@
         <form action="/update_battle_field" method="post">
             {%for creature in players[0].hand%}
             {%if players[0].turn==1%}
-            <button class="card_in_hand" id={{creature.id+"1"}} name={{creature.name_for_html}}>
+            <button class="card_in_hand" id={{creature.card_id+"1"}} name={{creature.name_for_html}}>
                 M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 <span class="creature_name">{{creature.name}}</span><br>
@@ -58,7 +66,7 @@
         <form action="/battlefield_action" method="post">
             {%for creature in players[0].battle_field%}
             {%if creature.can_be_target==False:%}
-            <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name_for_html}}>
+            <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}} name={{creature.name_for_html}}>
                 M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 <span class="creature_name">{{creature.name}}</span><br>
@@ -68,7 +76,7 @@
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
             </button>
             {%else%}
-            <button class="card_in_hand" id={{creature.id+"on_field"+"2"}} name={{creature.name_for_html}}>
+            <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}} name={{creature.name_for_html}}>
                 M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 <span class="creature_name">{{creature.name}}</span><br>
@@ -94,7 +102,7 @@
         <form action="/battlefield_action" method="post">
             {%for creature in players[1].battle_field%}
             {%if creature.can_be_target==False:%}
-            <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name_for_html}}>
+            <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}} name={{creature.name_for_html}}>
                 M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 <span class="creature_name">{{creature.name}}</span><br>
@@ -103,7 +111,7 @@
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
             </button>
             {%else%}
-            <button class="card_in_hand" id={{creature.id+"on_field"+"1"}} name={{creature.name_for_html}}>
+            <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}} name={{creature.name_for_html}}>
                 M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 <span class="creature_name">{{creature.name}}</span><br>
@@ -129,7 +137,7 @@
         <form action="/update_battle_field" method="post">
             {%for creature in players[1].hand%}
             {%if players[1].turn==1%}
-            <button class="card_in_hand" id={{creature.id}} name={{creature.name_for_html}}>
+            <button class="card_in_hand" id={{creature.card_id}} name={{creature.name_for_html}}>
                 M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 <span class="creature_name">{{creature.name}}</span><br>
