@@ -6,28 +6,14 @@
     <title>Battle Resource</title>
 </head>
 <body>
-<div class="game">
-<div>
     {%if players[0].turn==1:%}
     <p>Currently playing:{{players[0].name}}</p>
     {%else%}
     <p>Currently playing:{{players[1].name}}</p>
     {%endif%}
-    <form action="/battlefield_action" method="post">
-        <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}
-        </button>
-    </form>
-    <div class="player_mana">
-    {%for mana in range(0,players[0].mana):%}
-    <img src="static/cards/mana_crystal.jpg" class="mana_crystal_img"/>
-    {%endfor%}
-</div>
-{%if players[0].problem!="":%}
-<p>{{players[0].problem}}</p>
-{%endif%}
-</div>
-<div >
-    <div >
+<div class="game">
+<div class="hand_deck">
+    <div class="player_hand" >
         <form action="/update_battle_field" method="post">
             {%for creature in players[0].hand%}
             {%if players[0].turn==1%}
@@ -51,7 +37,22 @@
     <div class="player_deck">
         <img class="deck" src="static/cards/Card Back.png"/>
     </div>
+    <div>
+    <form action="/battlefield_action" method="post">
+        <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}
+        </button>
+    </form>
+    <div class="player_mana">
+    {%for mana in range(0,players[0].mana):%}
+    <img src="static/cards/mana_crystal.jpg" class="mana_crystal_img"/>
+    {%endfor%}
 </div>
+{%if players[0].problem!="":%}
+<p>{{players[0].problem}}</p>
+{%endif%}
+</div>
+</div>
+    <div class="map_fields">
 <div class="players_field">
     <div class="battlefield">
         <form action="/battlefield_action" method="post">
@@ -122,6 +123,7 @@
     <button disabled>End turn</button>
     {%endif%}
 </div>
+        </div>
 <div class="hand_deck">
     <div class="player_hand">
         <form action="/update_battle_field" method="post">
@@ -148,8 +150,7 @@
     <div class="player_deck">
         <img class="deck" src="static/cards/Card Back.png"/>
     </div>
-</div>
-<div>
+    <div>
     <form action="/battlefield_action" method="post">
         <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}
         </button>
@@ -162,6 +163,7 @@
     {%if players[1].problem!="":%}
     <p>{{players[1].problem}}</p>
     {%endif%}
+</div>
 </div>
 </div>
 </body>
