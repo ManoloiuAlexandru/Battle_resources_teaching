@@ -1,3 +1,5 @@
+import random
+
 from ITschool_projects.battle_resources.clases.creatures import list_of_creature_description
 from ITschool_projects.battle_resources.clases.spells import list_of_spells
 
@@ -56,3 +58,21 @@ class Player:
     def mana_pay(self, card):
         self.hand.remove(card)
         self.mana_increase(-card.mana_cost)
+
+    def draw_card(self):
+        try:
+            pick_card = random.choice(self.deck)
+            if len(self.hand) < 10:
+                self.hand.append(pick_card)
+            self.deck.remove(pick_card)
+        except Exception as e:
+            print(e)
+            if len(self.deck) == 0:
+                self.hp -= 1
+
+    def start_game(self):
+        try:
+            for i in range(0, 5):
+                self.draw_card()
+        except Exception as e:
+            print(e)

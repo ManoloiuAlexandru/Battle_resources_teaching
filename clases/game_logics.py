@@ -25,6 +25,7 @@ def turn_switch(player1, player2):
         player1.turn = 0
         player2.mana_increase(1)
         reset(player1, player2)
+        player2.draw_card()
         for creature in player1.battle_field:
             creature.exhausted = False
         return 1
@@ -32,6 +33,7 @@ def turn_switch(player1, player2):
         player2.turn = 0
         player1.turn = 1
         player1.mana_increase(1)
+        player1.draw_card()
         reset(player1, player2)
         for creature in player2.battle_field:
             creature.exhausted = False
