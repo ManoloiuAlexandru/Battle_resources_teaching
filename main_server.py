@@ -32,15 +32,20 @@ def game_start():
     except Exception as e:
         attacked_player = 2
         player1 = Player("Alex")
-        player1.hand = knight_deck_official[:10]
+        player1.hand = []
+        player1.deck = knight_deck_official
         player1.turn = 1
         player1.mana = 10
-        # player2 = Player("Andras")
-        # player2.hand = knight_deck[:10]
-        # player2.mana = 10
-        player2 = Bot("Bot")
-        player2.hand = bot_deck[:7]
+        player2 = Player("Andras")
+        player2.hand = []
+        player2.deck = knight_deck
         player2.mana = 10
+        player2.start_game()
+        player1.start_game()
+        # player2 = Bot("Bot")
+        # player2.hand = bot_deck[:7]
+        # player2.deck = bot_deck
+        # player2.mana = 10
 
 
 @app.route("/")
