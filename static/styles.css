@@ -57,6 +57,12 @@
     .game{
     position: relative;
     }
+    .map_fields{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    }
     .card_back{
     height: 160px;
     width:120px;
@@ -68,7 +74,7 @@
     }
     .player_hand{
     position: absolute;
-    left: 30%;
+    left: 25%;
     transform: translateX(-10%);
     }
     .player_deck{
