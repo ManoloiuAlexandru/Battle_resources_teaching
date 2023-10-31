@@ -6,7 +6,9 @@ class Spell:
         self.id = str(id)
         self.mana_cost = mana_cost
         self.name = name
+        self.card_typ = "Spell"
         self.description = description
+        self.img_url = self.name + ".png"
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.id
         else:
