@@ -113,7 +113,7 @@ def cast_spell(player1, player2, card_picked):
         elif card_picked.get(card.name_for_html) is not None and destroy_minion == 0:
             card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
             break
-        else:
+        elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
             break
 
