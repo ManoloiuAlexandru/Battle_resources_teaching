@@ -1,3 +1,4 @@
+from ITschool_projects.battle_resources.clases.Item import Item
 from ITschool_projects.battle_resources.clases.creatures import Creature
 from ITschool_projects.battle_resources.clases.spells import Spell
 
@@ -86,4 +87,35 @@ to_be_added_in_game = [Spell(3, "Bandage", "Heal a friendly soldier for 4", 1000
                        Creature(3, "Priest", 1, 1, "Restore a friendly soldier to full HP", 1003),
                        Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
                        Spell(3, "Long march", "All enemies are exhausted", 1005),
-                       Creature(9, "Heavy Cavalary", 9, 9, "Takes 2 less fmg from attacks", 1006)]
+                       Spell(3, "Personal Guard", "Give a soldier guard", 1006),
+                       Spell(4, "Bodyguards", "Summ 2 Guards from you deck", 1007),
+                       Creature(9, "Heavy Cavalary", 9, 9, "Takes 2 less dmg from attacks", 1006),
+                       Item(2, "Leather armor", "Give a friendly soldier +3 hp", 1007),
+                       Creature(3, "Guard dog", 1, 1, "Guard,Charge", 1008),
+                       Creature(5, "City Guard", 4, 5, "Guard", 1009),
+                       Creature(2, "Bodyguard", 1, 1, "Guard", 1010),
+                       Creature(4, "Bear", 4, 4, "", 1011),
+                       Creature(3, "Woolf", 3, 3, "", 1012),
+                       Creature(3, "Farmer", 1, 1, "Gain 1 mana", 1013),
+                       Creature(4, "Merchant", 2, 4, "For the next 2 turns gain 1 mana each turn", 1014),
+                       ]
+
+guards_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 111),
+               Creature(7, 'Templar Knight', 7, 5, "Guard", 112),
+               Creature(5, "City Guard", 4, 5, "Guard", 113),
+               Creature(5, "City Guard", 4, 5, "Guard", 114),
+               Creature(2, "Bodyguard", 1, 1, "Guard", 115),
+               Creature(2, "Bodyguard", 1, 1, "Guard", 116), ]
+
+cards_that_are_in_the_game = [Creature(1, "Peasant", 1, 1, "", -1),
+                              Creature(7, 'Templar Knight', 7, 5, "Guard", -2),
+                              Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", -3),
+                              Creature(7, 'Teutonic Knight', 6, 5, "", -4),
+                              Spell(3, "Volley", "Deal 1 damage to all enemies", -5),
+                              Spell(1, "Arrow shot", "Deal 1 damage to a enemy", -6),
+                              Spell(5, "Kill", "Kill an enemy soldier", -7),
+                              Creature(4, "Mounted Knight", 4, 4, "Charge", -8),
+                              Creature(2, 'Squire', 2, 2, "", -9),
+                              Creature(1, 'Page', 1, 1, "", -10),
+                              Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", -11),
+                              ]
