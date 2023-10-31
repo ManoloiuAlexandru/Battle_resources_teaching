@@ -17,6 +17,7 @@ bot_deck = [Creature(1, 'Templar Knight', 7, 1, "Guard", 261),
             Creature(1, "Peasant", 2, 2, "", 266),
             Creature(1, "Peasant", 2, 2, "", 267),
             Creature(1, "Peasant", 3, 3, "", 268),
+            Creature(1, "Peasant", 3, 3, "", 269),
             ]
 demo_deck = [Creature(1, 'Hospitaller Knight', 5, 4, "Heal +2 a friendly soldier", 1),
              Creature(1, 'Hospitaller Knight', 5, 4, "Heal +2 a friendly soldier", 2),
@@ -30,15 +31,15 @@ demo_deck = [Creature(1, 'Hospitaller Knight', 5, 4, "Heal +2 a friendly soldier
              ]
 
 test_deck = [Spell(3, "Volley", "Deal 1 damage to all enemies", 1),
-             Spell(3, "Volley", "Deal 1 damage to all enemies",2),
+             Spell(3, "Volley", "Deal 1 damage to all enemies", 2),
              Spell(3, "Volley", "Deal 1 damage to all enemies", 3),
              Spell(3, "Volley", "Deal 1 damage to all enemies", 4),
              Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 5),
              Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 6),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy",7),
+             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 7),
              Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 8),
              Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 9),
-
+             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 10),
              ]
 
 knight_deck = [Creature(6, 'Templar Knight', 5, 5, "", 23),
