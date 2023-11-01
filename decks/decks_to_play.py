@@ -1,6 +1,6 @@
-from ITschool_projects.battle_resources.clases.Item import Item
-from ITschool_projects.battle_resources.clases.creatures import Creature
-from ITschool_projects.battle_resources.clases.spells import Spell
+from clases.Item import Item
+from clases.creatures import Creature
+from clases.spells import Spell
 
 starter_deck = [Creature(1, "Peasant", 1, 1, "", 1),
                 Creature(1, "Peasant", 1, 1, "", 2),
@@ -31,34 +31,52 @@ demo_deck = [Creature(1, 'Hospitaller Knight', 5, 4, "Heal +2 a friendly soldier
              Creature(4, "Mounted Knight", 4, 4, "Charge", 16),
              ]
 
-test_deck = [Spell(3, "Volley", "Deal 1 damage to all enemies", 1),
-             Spell(3, "Volley", "Deal 1 damage to all enemies", 2),
-             Spell(3, "Volley", "Deal 1 damage to all enemies", 3),
-             Spell(3, "Volley", "Deal 1 damage to all enemies", 4),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 5),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 6),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 7),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 8),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 9),
-             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 10),
+test_deck = [Spell(3, "Personal Guard", "Give a soldier guard", 1),
+             Creature(3, 'Squire', 1, 1, "", 2),
+             Creature(3, 'Squire', 1, 1, "", 3),
+             Spell(3, "Personal Guard", "Give a soldier guard", 4),
+             Creature(1, 'Templar Knight', 7, 1, "Guard", 261),
+             Creature(1, 'Templar Knight', 7, 1, "Guard", 262),
+             Spell(3, "Personal Guard", "Give a soldier guard", 7),
+             Creature(3, 'Squire', 1, 1, "", 8),
+             Creature(3, 'Squire', 1, 1, "", 9),
              ]
 
-knight_deck = [Creature(6, 'Templar Knight', 5, 5, "", 23),
-               Creature(1, 'Page', 1, 1, "", 24),
-               Creature(3, 'Squire', 1, 1, "", 25),
-               Creature(3, 'Squire', 1, 1, "", 26),
-               Creature(6, 'Templar Knight', 5, 5, "", 27),
-               Creature(6, 'Templar Knight', 5, 5, "", 28),
-               Creature(8, 'Hospitaller Knight', 8, 3, "", 29),
-               Creature(8, 'Hospitaller Knight', 8, 3, "", 30),
-               Creature(8, 'Hospitaller Knight', 8, 3, "", 31),
-               Creature(7, 'Teutonic Knight', 6, 5, "", 32),
-               Creature(7, 'Teutonic Knight', 6, 5, "", 33),
-               Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 20),
-               Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 21),
-               Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 22),
-               ]
-
+integration_deck = [Creature(1, 'Templar Knight', 5, 5, "Guard", 23),
+                    Creature(1, 'Page', 1, 1, "", 24),
+                    Creature(1, 'Squire', 2, 2, "", 25),
+                    Creature(1, "Mounted Knight", 4, 4, "Charge", 26),
+                    Creature(1, 'Templar Knight', 5, 5, "", 28),
+                    Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 29),
+                    Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 30),
+                    Creature(1, 'Teutonic Knight', 6, 5, "", 32),
+                    Spell(1, "Personal Guard", "Give a soldier guard", 34),
+                    Spell(1, "Personal Guard", "Give a soldier guard", 35),
+                    Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 20),
+                    Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 21),
+                    Spell(1, "Volley", "Deal 1 damage to all enemies", 39),
+                    Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 38),
+                    Spell(1, "Kill", "Kill an enemy soldier", 37),
+                    ]
+integration_deck_opponent = [Creature(1, 'Templar Knight', 5, 5, "Guard", 3323),
+                             Creature(1, 'Page', 1, 1, "", 3324),
+                             Creature(1, 'Squire', 2, 2, "", 3325),
+                             Creature(1, "Mounted Knight", 4, 4, "Charge", 3326),
+                             Creature(1, 'Templar Knight', 5, 5, "", 3328),
+                             Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3329),
+                             Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3330),
+                             Creature(1, 'Teutonic Knight', 6, 5, "", 3332),
+                             Spell(1, "Personal Guard", "Give a soldier guard", 3334),
+                             Spell(1, "Personal Guard", "Give a soldier guard", 3335),
+                             Spell(1, "Personal Guard", "Give a soldier guard", 3341),
+                             Spell(1, "Personal Guard", "Give a soldier guard", 3342),
+                             Spell(1, "Personal Guard", "Give a soldier guard", 3343),
+                             Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3320),
+                             Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3321),
+                             Spell(1, "Volley", "Deal 1 damage to all enemies", 3339),
+                             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 3338),
+                             Spell(1, "Kill", "Kill an enemy soldier", 3337),
+                             ]
 knight_deck_official = [Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 251),
                         Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 252),
                         Creature(7, 'Teutonic Knight', 6, 5, "", 253),
