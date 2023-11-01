@@ -11,7 +11,7 @@ class Spell:
         self.card_id = str(id)
         self.mana_cost = mana_cost
         self.name = name
-        self.card_typ = "Spell"
+        self.card_type = "Spell"
         self.description = description
         self.img_url = self.name + ".png"
         self.target = self.target_options()
