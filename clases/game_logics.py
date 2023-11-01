@@ -1,4 +1,5 @@
-from resource_game.clases.creatures import list_of_creature_that_deal_dmg_to_enemies
+from resource_game.clases.creatures import list_of_creature_that_deal_dmg_to_enemies, list_of_creature_that_heal
+from resource_game.clases.spells import list_of_healing_spells
 
 
 def battle(card1, card2, player1, player2):
@@ -92,7 +93,7 @@ def check_target(player1, player2, card_picked):
         if player1.active_minion is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
-                    heal_creature(card, player1)
+                    heal_creature(card, player1,player1.incoming_spell)
                     return 0
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:
@@ -119,6 +120,8 @@ def check_target(player1, player2, card_picked):
 def cast_spell(player1, player2, card_picked):
     destroy_minion = 0
     dmg_to_enemy_minions = 0
+    if player1.incoming_spell.name in list_of_healing_spells:
+        heal_creature(card_picked, player1, int(player1.incoming_spell.heal_to_target()))
     if player1.incoming_spell.name == "Kill":
         destroy_minion = 1
     if player1.incoming_spell.name == "Volley":
@@ -146,14 +149,16 @@ def destroy_creature(card_picked, player):
             break
 
 
-def heal_creature(card, player):
-    for char in player.active_minion.description.split():
-        if char.isnumeric():
-            if card.hp + int(char) > card.max_hp:
+def heal_creature(card_picked, player, amount):
+    for card in player.battle_field:
+        if card_picked.get(card.name_for_html) is not None:
+            if card.hp + amount > card.max_hp:
                 card.hp = card.max_hp
+                break
             else:
-                card.hp += int(char)
-            break
+                card.hp += amount
+                break
+
     player.incoming_action = 0
     player.active_minion = None
 
@@ -173,8 +178,8 @@ def destroy_creature_from_player(player1, player2, card_picked):
                                  list_of_creature_that_deal_dmg_to_enemies.get(player1.active_minion.name))
             player1.active_minion = None
             player2.check_battlefield()
-        elif player1.active_minion.name == 'Hospitaller Knight':
-            heal_creature(card_picked, player1)
+        elif player1.active_minion.name in list_of_creature_that_heal:
+            heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
             player1.active_minion = None
         player1.incoming_action = 0
 

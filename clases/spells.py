@@ -1,7 +1,9 @@
-list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard"]
+list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages"]
 list_of_general_targets = ["Volley"]
-list_of_self_target = ["Personal Guard"]
+list_of_self_target = ["Personal Guard", "Bandage", "Bandages"]
 list_of_enemy_target = ["Kill"]
+list_of_healing_spells = ["Bandage", "Bandages"]
+list_of_dmg_spells = ["Arrow shot"]
 
 
 class Spell:
@@ -22,10 +24,17 @@ class Spell:
         return f"MANA:{self.mana_cost} NAME:{self.name} {self.description}"
 
     def deal_dmg_to_target(self):
-        if "damage" in self.description:
+        if "damage" in self.description.lower():
             for char in self.description:
                 if char.isnumeric() is True:
                     return char
+
+    def heal_to_target(self):
+        if "heal" in self.description.lower():
+            for char in self.description:
+                if char.isnumeric() is True:
+                    return char
+        return "99"
 
     def target_options(self):
         try:
