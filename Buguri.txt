@@ -1,0 +1,8 @@
+De refacut designul jocului.
+De facut un bot cu care sa joci.
+De adaugat noi speluri.
+De adaugat iteme.
+De aduagat lord class.
+De adaugat optiunea de a juca cu bot sau cu player(testare).
+De facut library unde iti arata ce carti sunt disponibile in joc.
+De facut sa iti alegi cu ce pachet vrei sa joci.
