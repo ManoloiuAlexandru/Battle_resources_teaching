@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-from ITschool_projects.battle_resources.clases.bot import Bot
-from ITschool_projects.battle_resources.clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
+from clases.bot import Bot
+from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
     cast_spell_from_player
-from ITschool_projects.battle_resources.clases.player import Player
-from ITschool_projects.battle_resources.decks.decks_to_play import starter_deck, demo_deck, test_deck, knight_deck, \
-    knight_deck_official, bot_deck
+from clases.player import Player
+from decks.decks_to_play import starter_deck, demo_deck, test_deck, \
+    knight_deck_official, bot_deck, integration_deck, integration_deck_opponent
 
 app = Flask(__name__)
 global player1
@@ -33,12 +33,12 @@ def game_start():
         attacked_player = 2
         player1 = Player("Alex")
         player1.hand = []
-        player1.deck = knight_deck_official
+        player1.deck = integration_deck
         player1.turn = 1
         player1.mana = 10
         player2 = Player("Andras")
         player2.hand = []
-        player2.deck = knight_deck
+        player2.deck = integration_deck_opponent
         player2.mana = 10
         player2.start_game()
         player1.start_game()
@@ -163,4 +163,4 @@ def end_turn():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
