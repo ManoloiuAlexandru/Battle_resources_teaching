@@ -36,17 +36,17 @@ def game_start():
         player1.deck = integration_deck
         player1.turn = 1
         player1.mana = 10
-        player2 = Player("Andras")
+        # player2 = Player("Andras")
+        # player2.hand = []
+        # player2.deck = integration_deck_opponent
+        # player2.mana = 10
+        # player2.start_game()
+        player1.start_game()
+        player2 = Bot("Bot")
         player2.hand = []
-        player2.deck = integration_deck_opponent
+        player2.deck = bot_deck
         player2.mana = 10
         player2.start_game()
-        player1.start_game()
-        # player2 = Bot("Bot")
-        # player2.hand = bot_deck[:7]
-        # player2.deck = bot_deck
-        # player2.mana = 10
-
 
 @app.route("/")
 def game_options():
@@ -154,7 +154,7 @@ def end_turn():
     global attacked_player
     attacked_player = turn_switch(player1, player2)
     if type(player2) == Bot:
-        player2.play_hand()
+        player2.play_hand(player1)
         if player2.check_move(player1) == 0:
             attacked_player = turn_switch(player1, player2)
         if player1.check_player() == 0:
