@@ -1,3 +1,6 @@
+from resource_game.clases.creatures import list_of_creature_that_deal_dmg_to_enemies
+
+
 def battle(card1, card2, player1, player2):
     try:
         if card1.exhausted is False:
@@ -70,16 +73,16 @@ def damage_to_player(player, current_card):
 
 def guard_checking(player, current_card):
     try:
-        if current_card.description == "Guard":
+        if "Guard" in current_card.description.split():
             return 1
         else:
             for card in player.battle_field:
-                if card.description == "Guard":
+                if "Guard" in card.description.split():
                     return 0
     except Exception as e:
         if current_card is None:
             for card in player.battle_field:
-                if card.description == "Guard":
+                if "Guard" in card.description.split():
                     return 0
     return 1
 
@@ -91,14 +94,25 @@ def check_target(player1, player2, card_picked):
                 if card_picked.get(card.name_for_html) is not None:
                     heal_creature(card, player1)
                     return 0
+        for card in player2.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                return 1
     except Exception as e:
         print(e)
-    for card in player1.battle_field:
-        if card_picked.get(card.name_for_html) is not None:
-            return 0
-    for card in player2.battle_field:
-        if card_picked.get(card.name_for_html) is not None:
-            return 1
+    try:
+        if player1.incoming_spell.target == "self":
+            for card in player1.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    return 1
+        elif player1.incoming_spell.target == "enemy":
+            for card in player1.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    return 0
+            for card in player2.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    return 1
+    except Exception as e:
+        print(e)
     return 0
 
 
@@ -109,6 +123,11 @@ def cast_spell(player1, player2, card_picked):
         destroy_minion = 1
     if player1.incoming_spell.name == "Volley":
         dmg_to_enemy_minions = 1
+    if player1.incoming_spell.name == "Personal Guard":
+        for card in player1.battle_field:
+            if card_picked.get(card.name_for_html) is not None and "Guard" not in card.description.split():
+                card.description += " Guard"
+                break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
             card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
@@ -139,14 +158,24 @@ def heal_creature(card, player):
     player.active_minion = None
 
 
+def deal_dmg_to_creature(card_picked, player, dmg):
+    for card in player.battle_field:
+        if card_picked.get(card.name_for_html) is not None:
+            card.hp -= dmg
+
+
 def destroy_creature_from_player(player1, player2, card_picked):
     if check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
     else:
-        if player1.active_minion.name == "Two-handed Knight":
-            destroy_creature(card_picked, player2)
+        if player1.active_minion.name in list_of_creature_that_deal_dmg_to_enemies:
+            deal_dmg_to_creature(card_picked, player2,
+                                 list_of_creature_that_deal_dmg_to_enemies.get(player1.active_minion.name))
+            player1.active_minion = None
+            player2.check_battlefield()
         elif player1.active_minion.name == 'Hospitaller Knight':
             heal_creature(card_picked, player1)
+            player1.active_minion = None
         player1.incoming_action = 0
 
 

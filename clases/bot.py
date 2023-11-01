@@ -1,6 +1,6 @@
-from ITschool_projects.battle_resources.clases.creatures import Creature
-from ITschool_projects.battle_resources.clases.game_logics import battle, damage_to_player
-from ITschool_projects.battle_resources.clases.player import Player
+from clases.creatures import Creature
+from clases.game_logics import battle, damage_to_player
+from clases.player import Player
 
 
 class Bot(Player):

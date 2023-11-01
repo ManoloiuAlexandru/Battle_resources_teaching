@@ -1,7 +1,7 @@
 import random
 
-from ITschool_projects.battle_resources.clases.creatures import list_of_creature_description
-from ITschool_projects.battle_resources.clases.spells import list_of_spells
+from clases.creatures import list_of_creature_description
+from clases.spells import list_of_spells
 
 
 class Player:
