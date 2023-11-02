@@ -4,6 +4,7 @@ list_of_self_target = ["Personal Guard", "Bandage", "Bandages"]
 list_of_enemy_target = ["Kill"]
 list_of_healing_spells = ["Bandage", "Bandages"]
 list_of_dmg_spells = ["Arrow shot"]
+list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages"]
 
 
 class Spell:

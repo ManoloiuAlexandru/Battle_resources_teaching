@@ -1,6 +1,8 @@
 from clases.creatures import list_of_creature_that_deal_dmg_to_enemies, list_of_creature_that_heal
 from clases.spells import list_of_healing_spells
 
+from clases.spells import list_of_resetting_spells
+
 
 def battle(card1, card2, player1, player2):
     try:
@@ -23,8 +25,16 @@ def battle(card1, card2, player1, player2):
         print(e)
 
 
+def cancel_card(card, player):
+    player.mana += card.mana_cost
+    player.hand.append(card)
+    player.incoming_spell = None
+
+
 def turn_switch(player1, player2):
     if player1.turn == 1:
+        if player1.incoming_spell.name in list_of_resetting_spells:
+            cancel_card(player1.incoming_spell, player1)
         player2.turn = 1
         player1.turn = 0
         player2.mana_increase(1)
@@ -34,6 +44,8 @@ def turn_switch(player1, player2):
             creature.exhausted = False
         return 1
     else:
+        if player2.incoming_spell.name in list_of_resetting_spells:
+            cancel_card(player2.incoming_spell, player2)
         player2.turn = 0
         player1.turn = 1
         player1.mana_increase(1)
