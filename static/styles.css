@@ -5,7 +5,7 @@
     width:120px;
     font-size:13px;
    }
-    .battlefield{
+.battlefield{
     border-radius: 8px;
     height: 160px;
     width: 880px;
@@ -14,71 +14,86 @@
     margin-bottom:10px;
     margin-top:10px;
     }
-    .player_icon{
+.player_icon{
     border: 1px solid #d5d9d9;
     border-radius: 8px;
     height: 140px;
     width:120px;
     }
-    .players_field{
+.players_field{
     display: flex;
     flex-direction: row;
     }
-    .end_turn{
+.end_turn{
     width:100px;
     height:40px;
     }
-    .image_card{
+.image_card{
     width:50px;
     height:50px;
     }
-    .mana_cost{
+.mana_cost{
     font-size:13px;
     text-align:left;
     }
-    .description{
+.description{
     font-size:10px;
     font-style: italic;
     }
-    .creature_name{
+.creature_name{
     font-size:13px;
     }
-    .attack_hp{
+.attack_hp{
     font-size:13px;
     word-spacing: 45px;
     }
-    .player_mana{
+.player_mana{
     display: inline-block;
     }
-    .mana_crystal_img{
+.mana_crystal_img{
     height: 10px;
     width:10px;
     }
-    .game{
+.game{
     position: relative;
     }
-    .map_fields{
+.map_fields{
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     }
-    .card_back{
+.card_back{
     height: 160px;
     width:120px;
     }
-    .deck{
+.deck{
     height: 160px;
     width:120px;
     right: 0px;
     }
-    .player_hand{
+.player_hand{
     position: absolute;
     left: 25%;
     transform: translateX(-10%);
     }
-    .player_deck{
+.player_deck{
     position: absolute;
     right: 0;
     padding-right: 20px;
+    }
+.card_in_library{
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    height: 200px;
+    width:200px;
+    font-size:15px;
+   }
+.image_card_in_library{
+    width:90px;
+    height:90px;
+    }
+.description_in_library{
+    font-size:12px;
+    font-style: italic;
     }

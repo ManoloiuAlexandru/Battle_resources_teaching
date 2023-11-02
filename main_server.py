@@ -7,7 +7,7 @@ from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing
     cast_spell_from_player
 from clases.player import Player
 from decks.decks_to_play import starter_deck, demo_deck, test_deck, \
-    knight_deck_official, bot_deck, integration_deck, integration_deck_opponent
+    knight_deck_official, bot_deck, integration_deck, integration_deck_opponent, cards_that_are_in_the_game
 
 app = Flask(__name__)
 global player1
@@ -66,6 +66,11 @@ def rules():
 def show_battle():
     game_start()
     return render_template("home.html", players=[player2, player1])
+
+
+@app.route("/library")
+def show_library():
+    return render_template("library.html", library=cards_that_are_in_the_game)
 
 
 @app.route("/update_battle_field", methods=["POST", "GET"])

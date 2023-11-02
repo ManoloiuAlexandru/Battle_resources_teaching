@@ -109,7 +109,6 @@ knight_deck_official = [Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy so
                         ]
 
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly soldiers get +1/+1", 1002),
-                       Creature(3, "Priest", 1, 1, "Restore a friendly soldier to full HP", 1003),
                        Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
                        Spell(3, "Long march", "All enemies are exhausted", 1005),
                        Spell(4, "Bodyguards", "Summ 2 Guards from you deck", 1007),
@@ -145,4 +144,5 @@ cards_that_are_in_the_game = [Creature(1, "Peasant", 1, 1, "", -1),
                               Spell(3, "Bandage", "Heal a friendly soldier for 4", -12),
                               Spell(4, "Bandages", "Restore a friendly soldier to full HP", -13),
                               Spell(3, "Personal Guard", "Give a soldier guard", -14),
+                              Creature(3, "Priest", 1, 1, "Restore a friendly soldier to full HP", -15),
                               ]
