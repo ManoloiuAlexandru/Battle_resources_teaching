@@ -32,6 +32,7 @@
                 ---------------------<br>
                 <span class="description">{{creature.description}}</span><br>
                 {%if creature.card_type=="Creature"%}
+                ---------------------<br>
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
                 {%endif%}
             </button>
@@ -72,8 +73,10 @@
                 <span class="creature_name">{{creature.name}}</span><br>
                 ---------------------<br>
                 <span class="description">{{creature.description}}</span><br>
+                {%if creature.card_type=="Creature"%}
                 ---------------------<br>
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
+                {%endif%}
             </button>
             {%else%}
             <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}} name={{creature.name_for_html}}>
@@ -82,8 +85,10 @@
                 <span class="creature_name">{{creature.name}}</span><br>
                 ---------------------<br>
                 <span class="description">{{creature.description}}</span><br>
+                {%if creature.card_type=="Creature"%}
                 ---------------------<br>
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
+                {%endif%}
             </button>
             {%endif%}
             {%endfor%}
@@ -108,7 +113,10 @@
                 <span class="creature_name">{{creature.name}}</span><br>
                 ---------------------<br>
                 <span class="description">{{creature.description}}</span><br>
+                {%if creature.card_type=="Creature"%}
+                ---------------------<br>
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
+                {%endif%}
             </button>
             {%else%}
             <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}} name={{creature.name_for_html}}>
@@ -117,7 +125,10 @@
                 <span class="creature_name">{{creature.name}}</span><br>
                 ---------------------<br>
                 <span class="description">{{creature.description}}</span><br>
+                {%if creature.card_type=="Creature"%}
+                ---------------------<br>
                 <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
+                {%endif%}
             </button>
             {%endif%}
             {%endfor%}

@@ -1,6 +1,6 @@
-list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight"]
+list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99}
-list_of_creature_that_heal = {"Hospitaller Knight": 2}
+list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
 
 
 class Creature:
