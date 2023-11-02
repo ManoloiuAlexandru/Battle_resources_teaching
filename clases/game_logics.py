@@ -33,8 +33,11 @@ def cancel_card(card, player):
 
 def turn_switch(player1, player2):
     if player1.turn == 1:
-        if player1.incoming_spell.name in list_of_resetting_spells:
-            cancel_card(player1.incoming_spell, player1)
+        try:
+            if player1.incoming_spell.name is not None and player1.incoming_spell.name in list_of_resetting_spells:
+                cancel_card(player1.incoming_spell, player1)
+        except Exception as e:
+            print(e)
         player2.turn = 1
         player1.turn = 0
         player2.mana_increase(1)
@@ -44,8 +47,11 @@ def turn_switch(player1, player2):
             creature.exhausted = False
         return 1
     else:
-        if player2.incoming_spell.name in list_of_resetting_spells:
-            cancel_card(player2.incoming_spell, player2)
+        try:
+            if player2.incoming_spell.name is not None and player2.incoming_spell.name in list_of_resetting_spells:
+                cancel_card(player2.incoming_spell, player2)
+        except Exception as e:
+            print(e)
         player2.turn = 0
         player1.turn = 1
         player1.mana_increase(1)
