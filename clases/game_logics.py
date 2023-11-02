@@ -93,7 +93,7 @@ def check_target(player1, player2, card_picked):
         if player1.active_minion is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
-                    heal_creature(card, player1,player1.incoming_spell)
+                    heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
                     return 0
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:

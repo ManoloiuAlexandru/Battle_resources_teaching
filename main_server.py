@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+from clases.creatures import Creature
 from clases.bot import Bot
 from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
@@ -36,10 +37,12 @@ def game_start():
         player1.deck = integration_deck
         player1.turn = 1
         player1.mana = 10
+        player1.battle_field.append(Creature(0, "Dummy", 99, 0, "", 99999))
         player2 = Player("Andras")
         player2.hand = []
         player2.deck = integration_deck_opponent
         player2.mana = 10
+        player2.battle_field.append(Creature(0, "Dummy", 99, 0, "", 999999))
         player2.start_game()
         player1.start_game()
         # player2 = Bot("Bot")
