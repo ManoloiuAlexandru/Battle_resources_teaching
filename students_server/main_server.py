@@ -38,7 +38,9 @@ def game_start():
         player1.turn = 1
         player1.mana = 10
         player1.start_game()
-        player1.battle_field.append(Creature(0, "Dummy", 50, 0, "", 99999))
+        player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99999))
+        player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99))
+        player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
         # player2 = Player("Andras")
         # player2.hand = []
         # player2.deck = integration_deck_opponent
@@ -173,6 +175,8 @@ def end_turn():
             attacked_player = turn_switch(player1, player2)
         if player1.check_player() == 0:
             return render_template("END.html", player=player1)
+        elif player2.check_player() == 0:
+            return render_template("END.html", player=player2)
     return redirect(url_for('show_battle', players=[player2, player1]))
 
 

@@ -14,7 +14,7 @@ class Bot(Player):
 
     def play_hand(self, player):
         for card in self.hand[:]:
-            if card.mana_cost <= self.mana:
+            if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 self.check_summed_card(card, player)
                 if card.card_type == "Creature":
                     self.battle_field.append(card)
@@ -81,7 +81,7 @@ class Bot(Player):
         if self.check_for_guards(player) == 1:
             target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
             for creature in player.battle_field:
-                if creature.description == "Guard" and target_creature.hp >= creature.hp:
+                if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature
             battle(card, target_creature, self, player)
         else:
@@ -97,6 +97,6 @@ class Bot(Player):
 
     def check_for_guards(self, player):
         for creature in player.battle_field:
-            if creature.description == "Guard":
+            if "Guard" in creature.description.split():
                 return 1
         return 0
