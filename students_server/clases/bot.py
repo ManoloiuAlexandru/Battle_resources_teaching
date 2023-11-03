@@ -5,6 +5,8 @@ from clases.player import Player
 from clases.creatures import list_of_creature_that_deal_dmg_to_enemies
 from clases.spells import list_of_self_target
 
+from clases.creatures import list_of_creature_that_heal
+
 
 class Bot(Player):
     def __init__(self, name):
@@ -28,11 +30,29 @@ class Bot(Player):
                         target_creature = creature
                 self.dmg_to_player_creature(target_creature, player,
                                             list_of_creature_that_deal_dmg_to_enemies.get(card.name))
+            elif card.name in list_of_creature_that_heal:
+                try:
+                    for creature in self.battle_field:
+                        if creature.hp < creature.max_hp:
+                            if creature.hp + list_of_creature_that_heal.get(card.name) > card.max_hp:
+                                creature.hp = card.max_hp
+                                break
+                            else:
+                                creature.hp += list_of_creature_that_heal.get(card.name)
+                                break
+                except Exception as e:
+                    print(e)
         elif card.card_type == "Spell":
             if card.name in list_of_self_target:
-                if card.name == "Personal Guard":
-                    max_hp_creature = max(self.battle_field, key=lambda x: x.hp and "Guard" not in card.description.split())
-                    max_hp_creature.description += " Guard"
+                try:
+                    if card.name == "Personal Guard":
+                        self.battle_field.sort(key=lambda x: x.max_hp)
+                        for creature in self.battle_field[::-1]:
+                            if "Guard" not in creature.description:
+                                creature.description += " Guard"
+                                break
+                except Exception as e:
+                    print(e)
 
     def dmg_to_player_creature(self, target_card, player, dmg):
         for card in player.battle_field:

@@ -37,19 +37,20 @@ def game_start():
         player1.deck = integration_deck
         player1.turn = 1
         player1.mana = 10
-        player1.battle_field.append(Creature(0, "Dummy", 50, 0, "", 99999))
-        player2 = Player("Andras")
-        player2.hand = []
-        player2.deck = integration_deck_opponent
-        player2.mana = 10
-        player2.battle_field.append(Creature(0, "Dummy", 50, 0, "", 999999))
-        player2.start_game()
         player1.start_game()
-        # player2 = Bot("Bot")
+        player1.battle_field.append(Creature(0, "Dummy", 50, 0, "", 99999))
+        # player2 = Player("Andras")
         # player2.hand = []
-        # player2.deck = bot_deck
+        # player2.deck = integration_deck_opponent
         # player2.mana = 10
+        # player2.battle_field.append(Creature(0, "Dummy", 50, 0, "", 999999))
         # player2.start_game()
+        player1.hp=999999999
+        player2 = Bot("Bot")
+        player2.hand = []
+        player2.deck = bot_deck
+        player2.mana = 10
+        player2.start_game()
 
 
 @app.route("/")

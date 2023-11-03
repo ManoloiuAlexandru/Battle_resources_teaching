@@ -14,8 +14,8 @@ bot_deck = [Creature(1, 'Templar Knight', 5, 5, "Guard", 3323),
             Creature(1, 'Squire', 2, 2, "", 3325),
             Creature(1, "Mounted Knight", 4, 4, "Charge", 3326),
             Creature(1, 'Templar Knight', 5, 5, "", 3328),
-            # Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3329),
-            # Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3330),
+            Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3329),
+            Creature(1, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3330),
             Creature(1, 'Teutonic Knight', 6, 5, "", 3332),
             Spell(1, "Personal Guard", "Give a soldier guard", 3334),
             Spell(1, "Personal Guard", "Give a soldier guard", 3335),
@@ -128,7 +128,6 @@ to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly soldier
                        Creature(3, "Woolf", 3, 3, "", 1012),
                        Creature(3, "Farmer", 1, 1, "Gain 1 mana", 1013),
                        Creature(4, "Merchant", 2, 4, "For the next 2 turns gain 1 mana each turn", 1014),
-                       Item(3, "Shield", "Give a creature 0/+2 and Guard", 1015)
                        ]
 
 guards_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 111),
@@ -153,4 +152,6 @@ cards_that_are_in_the_game = [Creature(1, "Peasant", 1, 1, "", -1),
                               Spell(4, "Bandages", "Restore a friendly soldier to full HP", -13),
                               Spell(3, "Personal Guard", "Give a soldier guard", -14),
                               Creature(3, "Priest", 1, 1, "Restore a friendly soldier to full HP", -15),
+                              Item(3, "Shield", "Give a creature 0/+2 and Guard", -16),
+                              Item(5, "Knight's Equipment", "Give a creature +2/+2", -17),
                               ]
