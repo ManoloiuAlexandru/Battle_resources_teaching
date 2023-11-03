@@ -3,6 +3,8 @@ import random
 from clases.creatures import list_of_creature_description
 from clases.spells import list_of_spells
 
+from ITschool_projects.battle_resources.students_server.clases.Item import list_of_item
+
 
 class Player:
     def __init__(self, name):
@@ -17,7 +19,7 @@ class Player:
         self.incoming_action = 0
         self.incoming_spell = None
         self.active_minion = None
-        self.attacking_minion = None
+        self.active_item = None
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -46,6 +48,11 @@ class Player:
                     self.incoming_action = 3
                     self.incoming_spell = card
                     return 3
+                elif card.name in list_of_item:
+                    self.mana_pay(card)
+                    self.incoming_action = 4
+                    self.active_item = card
+                    return 4
                 self.battle_field.append(card)
                 self.mana_pay(card)
                 return 1

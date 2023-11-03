@@ -3,6 +3,8 @@ from clases.spells import list_of_healing_spells
 
 from clases.spells import list_of_resetting_spells
 
+from clases.Item import list_of_item
+
 
 def battle(card1, card2, player1, player2):
     try:
@@ -29,6 +31,7 @@ def cancel_card(card, player):
     player.mana += card.mana_cost
     player.hand.append(card)
     player.incoming_spell = None
+    player.active_item = None
 
 
 def turn_switch(player1, player2):
@@ -36,6 +39,11 @@ def turn_switch(player1, player2):
         try:
             if player1.incoming_spell.name is not None and player1.incoming_spell.name in list_of_resetting_spells:
                 cancel_card(player1.incoming_spell, player1)
+        except Exception as e:
+            print(e)
+        try:
+            if player1.active_item.name is not None and player1.active_item.name in list_of_item:
+                cancel_card(player1.active_item.name, player1)
         except Exception as e:
             print(e)
         player2.turn = 1
@@ -50,6 +58,11 @@ def turn_switch(player1, player2):
         try:
             if player2.incoming_spell.name is not None and player2.incoming_spell.name in list_of_resetting_spells:
                 cancel_card(player2.incoming_spell, player2)
+        except Exception as e:
+            print(e)
+        try:
+            if player2.active_item.name is not None and player2.active_item.name in list_of_item:
+                cancel_card(player2.active_item.name, player2)
         except Exception as e:
             print(e)
         player2.turn = 0
@@ -132,6 +145,13 @@ def check_target(player1, player2, card_picked):
                     return 1
     except Exception as e:
         print(e)
+    try:
+        if player1.active_item is not None:
+            for card in player1.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    return 1
+    except Exception as e:
+        print(e)
     return 0
 
 
@@ -164,6 +184,22 @@ def destroy_creature(card_picked, player):
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
             player.battle_field.remove(card)
+            break
+
+
+def put_item_on_creature(player1, player2, card_picked):
+    if check_target(player1, player2, card_picked) == 0:
+        player1.problem = "You need to select a card"
+    else:
+        put_item(player1, player2, card_picked)
+
+
+def put_item(player1, player2, card_picked):
+    for card in player1.battle_field:
+        if card_picked.get(card.name_for_html) is not None:
+            card.items.append(player1.active_item)
+            player1.active_item.status_update(card)
+            player1.active_item = None
             break
 
 

@@ -4,7 +4,7 @@ from clases.creatures import Creature
 from clases.bot import Bot
 from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
-    cast_spell_from_player
+    cast_spell_from_player, put_item_on_creature
 from clases.player import Player
 from decks.decks_to_play import starter_deck, demo_deck, test_deck, \
     knight_deck_official, bot_deck, integration_deck, integration_deck_opponent, cards_that_are_in_the_game
@@ -37,12 +37,12 @@ def game_start():
         player1.deck = integration_deck
         player1.turn = 1
         player1.mana = 10
-        player1.battle_field.append(Creature(0, "Dummy", 99, 0, "", 99999))
+        player1.battle_field.append(Creature(0, "Dummy", 50, 0, "", 99999))
         player2 = Player("Andras")
         player2.hand = []
         player2.deck = integration_deck_opponent
         player2.mana = 10
-        player2.battle_field.append(Creature(0, "Dummy", 99, 0, "", 999999))
+        player2.battle_field.append(Creature(0, "Dummy", 50, 0, "", 999999))
         player2.start_game()
         player1.start_game()
         # player2 = Bot("Bot")
@@ -103,6 +103,10 @@ def battlefield_fight():
         destroy_creature_from_player(player1, player2, card_picked)
     if player1.incoming_action == 3:
         cast_spell_from_player(player1, player2, card_picked)
+    if player1.incoming_action == 4:
+        put_item_on_creature(player1, player2, card_picked)
+    if player2.incoming_action == 4:
+        put_item_on_creature(player2, player1, card_picked)
     if player2.incoming_action == 3:
         cast_spell_from_player(player2, player1, card_picked)
     if player2.incoming_action == 2:

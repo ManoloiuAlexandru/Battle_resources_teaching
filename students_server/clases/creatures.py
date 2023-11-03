@@ -16,6 +16,7 @@ class Creature:
         self.exhausted = self.charge_check()
         self.can_be_target = True
         self.img_url = self.name + ".png"
+        self.items = []
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.card_id
         else:
