@@ -168,15 +168,17 @@ def destroy_creature(card_picked, player):
 
 
 def heal_creature(card_picked, player, amount):
-    for card in player.battle_field:
-        if card_picked.get(card.name_for_html) is not None:
-            if card.hp + amount > card.max_hp:
-                card.hp = card.max_hp
-                break
-            else:
-                card.hp += amount
-                break
-
+    try:
+        for card in player.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                if card.hp + amount > card.max_hp:
+                    card.hp = card.max_hp
+                    break
+                else:
+                    card.hp += amount
+                    break
+    except Exception as e:
+        print(e)
     player.incoming_action = 0
     player.active_minion = None
 

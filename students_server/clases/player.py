@@ -17,6 +17,7 @@ class Player:
         self.incoming_action = 0
         self.incoming_spell = None
         self.active_minion = None
+        self.attacking_minion = None
 
     def mana_increase(self, amount):
         self.mana += amount
