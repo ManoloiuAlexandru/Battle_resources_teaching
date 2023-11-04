@@ -21,26 +21,26 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     global player1
     global player2
     global attacked_player
+    player1 = Player(player1_name)
+    player1.hand = []
+    player1.deck = dict_of_decks.get(play1_deck)
+    player1.start_game()
+    if player2_name == "Bot":
+        player2 = Bot("Bot")
+    else:
+        player2 = Player("Andras")
+    player2.hand = []
+    player2.deck = dict_of_decks.get(player2_deck)
+    player2.start_game()
     if difficulty == "easy":
         attacked_player = 2
-        player1 = Player(player1_name)
-        player1.hand = []
-        player1.deck = dict_of_decks.get(play1_deck)
         player1.turn = 1
         player1.mana = 10
-        player1.start_game()
         player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99999))
         player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99))
         player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
-        player1.hp = 999999999
-        if player2_name == "Bot":
-            player2 = Bot("Bot")
-        else:
-            player2 = Player("Andras")
-        player2.hand = []
-        player2.deck = dict_of_decks.get(player2_deck)
+        player1.hp = 9999
         player2.mana = 10
-        player2.start_game()
     return player1, player2
 
 
