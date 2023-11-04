@@ -179,6 +179,7 @@ def end_turn():
         player2.play_hand(player1)
         if player2.check_move(player1) == 0:
             attacked_player = turn_switch(player1, player2)
+        player1.check_battlefield()
         if player1.check_player() == 0:
             return render_template("END.html", player=player1)
         elif player2.check_player() == 0:

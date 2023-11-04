@@ -7,6 +7,8 @@ from clases.spells import list_of_self_target
 
 from clases.creatures import list_of_creature_that_heal
 
+from clases.spells import list_of_enemy_target
+
 
 class Bot(Player):
     def __init__(self, name):
@@ -53,6 +55,8 @@ class Bot(Player):
                                 break
                 except Exception as e:
                     print(e)
+            elif card.name in list_of_enemy_target:
+                self.target_creature_with_spell(card, player)
 
     def dmg_to_player_creature(self, target_card, player, dmg):
         for card in player.battle_field:
@@ -76,6 +80,26 @@ class Bot(Player):
 
     def attack_player(self, card, player):
         damage_to_player(player, card)
+
+    def target_creature_with_spell(self, card, player):
+        if self.check_for_guards(player) == 1:
+            target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
+            for creature in player.battle_field:
+                if "Guard" in creature.description and target_creature.hp >= creature.hp:
+                    target_creature = creature
+            if card.name == "Kill":
+                for creature in player.battle_field:
+                    if creature == target_creature:
+                        creature.hp -= 99
+        else:
+            target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
+            for creature in player.battle_field:
+                if target_creature.attack >= creature.attack:
+                    target_creature = creature
+            if card.name == "Kill":
+                for creature in player.battle_field:
+                    if creature == target_creature:
+                        creature.hp -= 99
 
     def target_priority(self, card, player):
         if self.check_for_guards(player) == 1:
