@@ -1,0 +1,13 @@
+De refacut designul jocului.
+De facut un bot cu care sa joci.
+De adaugat noi speluri.
+De adaugat iteme.
+De aduagat lord class.
+De adaugat optiunea de a juca cu bot sau cu player(testare).
+De facut library unde iti arata ce carti sunt disponibile in joc.
+De facut sa iti alegi cu ce pachet vrei sa joci.
+E un bug in care iti ignora guardul pus pe masa.
+De facut ca atunci cand nu vrei sa ataci sau sa castezi un spell sa poti sa dai click in afara battlefiled si sa ti se anuleze
+ce incerci sa faci.
+De testat si integrat healurile +  de pus popa ca si carte.
+Ca si idee puneti cartiile de test sa aiaba 99 hp ca sa vezi daca e diferenta intre healuri.
