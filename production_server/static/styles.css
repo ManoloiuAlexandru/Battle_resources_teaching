@@ -18,6 +18,18 @@
     margin-bottom:10px;
     margin-top:10px;
     }
+.logs{
+    border-radius: 8px;
+    height: 160px;
+    width: 160px;
+    border-style: solid;
+    padding:10px;
+    margin-bottom:10px;
+    margin-top:10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+    }
 .player_icon{
     border: 1px solid #d5d9d9;
     border-radius: 8px;

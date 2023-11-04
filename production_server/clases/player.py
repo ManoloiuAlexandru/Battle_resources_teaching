@@ -20,6 +20,7 @@ class Player:
         self.incoming_spell = None
         self.active_minion = None
         self.active_item = None
+        self.logs = ""
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -37,6 +38,7 @@ class Player:
     def put_card_on_field(self, card_picked):
         for card in self.hand:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
+                self.logs += "Playing:" + card.name + "\n"
                 if card.name in list_of_creature_description:
                     self.mana_pay(card)
                     self.battle_field.append(card)

@@ -61,8 +61,9 @@
 {%endif%}
 </div>
 </div>
-    <div class="map_fields">
+<div class="map_fields">
 <div class="players_field">
+    <div class="logs">{{players[0].logs}}</div>
     <div class="battlefield">
         <form action="/battlefield_action" method="post">
             {%for creature in players[0].battle_field%}
@@ -103,6 +104,7 @@
     {%endif%}
 </div>
 <div class="players_field">
+    <div class="logs">{{players[1].logs}}</div>
     <div class="battlefield">
         <form action="/battlefield_action" method="post">
             {%for creature in players[1].battle_field%}
@@ -142,7 +144,7 @@
     <button disabled>End turn</button>
     {%endif%}
 </div>
-        </div>
+</div>
 <div class="hand_deck">
     <div class="player_hand">
         <form action="/update_battle_field" method="post">

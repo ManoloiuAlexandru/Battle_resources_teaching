@@ -209,9 +209,11 @@ def heal_creature(card_picked, player, amount):
             if card_picked.get(card.name_for_html) is not None:
                 if card.hp + amount > card.max_hp:
                     card.hp = card.max_hp
+                    player.logs += " on this card:" + card.name
                     break
                 else:
                     card.hp += amount
+                    player.logs += " on this card:" + card.name
                     break
     except Exception as e:
         print(e)
@@ -223,6 +225,7 @@ def deal_dmg_to_creature(card_picked, player, dmg):
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
             card.hp -= dmg
+            player.logs += " on this card:" + card.name
 
 
 def destroy_creature_from_player(player1, player2, card_picked):
