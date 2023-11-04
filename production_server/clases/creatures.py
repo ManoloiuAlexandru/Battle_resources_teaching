@@ -7,6 +7,7 @@ class Creature:
     def __init__(self, mana_cost, name, hp, attack, description, id):
         self.card_id = str(id)
         self.mana_cost = mana_cost
+        self.original_mana_cost = mana_cost
         self.name = name
         self.hp = hp
         self.max_hp = hp
@@ -29,3 +30,13 @@ class Creature:
         if self.description == "Charge":
             return False
         return True
+
+    def check_creature(self):
+        if self.mana_cost < 0:
+            self.mana_cost = 0
+        elif self.mana_cost >= 10:
+            self.mana_cost = 10
+        if self.attack < 0:
+            self.attack = 0
+        if self.hp <= 0:
+            self.hp = 1

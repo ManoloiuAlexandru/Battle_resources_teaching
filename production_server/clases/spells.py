@@ -1,5 +1,5 @@
 list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages"]
-list_of_general_targets = {"Volley":1}
+list_of_general_targets = {"Volley": 1}
 list_of_self_target = ["Personal Guard", "Bandage", "Bandages"]
 list_of_enemy_target = ["Kill"]
 list_of_healing_spells = ["Bandage", "Bandages"]
@@ -11,6 +11,7 @@ class Spell:
     def __init__(self, mana_cost, name, description, id):
         self.card_id = str(id)
         self.mana_cost = mana_cost
+        self.original_mana_cost = mana_cost
         self.name = name
         self.card_type = "Spell"
         self.description = description

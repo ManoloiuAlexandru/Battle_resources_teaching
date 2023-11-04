@@ -6,8 +6,9 @@ class Item:
     def __init__(self, mana_cost, name, description, id):
         self.card_id = str(id)
         self.mana_cost = mana_cost
+        self.original_mana_cost = mana_cost
         self.name = name
-        self.card_typ = "Item"
+        self.card_type = "Item"
         self.description = description
         self.img_url = self.name + ".png"
         if len(self.name.split(" ")) >= 2:

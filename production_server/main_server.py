@@ -24,14 +24,12 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     player1 = Player(player1_name)
     player1.hand = []
     player1.deck = dict_of_decks.get(play1_deck)
-    player1.start_game()
     if player2_name == "Bot":
         player2 = Bot("Bot")
     else:
         player2 = Player("Andras")
     player2.hand = []
     player2.deck = dict_of_decks.get(player2_deck)
-    player2.start_game()
     if difficulty == "easy":
         attacked_player = 2
         player1.turn = 1
@@ -41,6 +39,44 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
         player1.hp = 9999
         player2.mana = 10
+    if difficulty == "normal":
+        attacked_player = 2
+        player1.turn = 1
+        player1.mana = 1
+        player2.mana = 1
+    if difficulty == "hard":
+        attacked_player = 2
+        player1.turn = 1
+        player1.mana = 1
+        player2.mana = 1
+        for card in player2.deck:
+            card.mana_cost -= 1
+            if card.mana_cost < 0:
+                card.mana_cost = 0
+        for card in player1.deck:
+            card.mana_cost += 1
+            if card.mana_cost > 10:
+                card.mana_cost = 10
+    if difficulty == "insane":
+        attacked_player = 2
+        player1.turn = 1
+        player1.mana = 1
+        player2.mana = 5
+        for card in player2.deck:
+            card.mana_cost -= 2
+            if card.mana_cost < 0:
+                card.mana_cost = 0
+            if card.card_type == "Creature":
+                card.attack += 1
+                card.hp += 1
+                card.check_creature()
+        for card in player1.deck:
+            card.mana_cost += 2
+            if card.card_type == "Creature":
+                card.attack -= 2
+                card.check_creature()
+    player1.start_game()
+    player2.start_game()
     return player1, player2
 
 
