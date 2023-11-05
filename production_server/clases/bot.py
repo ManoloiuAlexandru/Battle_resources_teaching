@@ -11,6 +11,8 @@ from clases.spells import list_of_enemy_target
 
 from clases.spells import list_of_general_targets, list_of_healing_spells
 
+from ITschool_projects.battle_resources.production_server.clases.spells import list_of_dmg_spells
+
 
 class Bot(Player):
     def __init__(self, name):
@@ -19,12 +21,12 @@ class Bot(Player):
     def play_hand(self, player):
         for card in self.hand[:]:
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
-                self.logs += "Playing:" + card.name + "\n"
-                self.check_summed_card(card, player)
-                if card.card_type == "Creature":
-                    self.battle_field.append(card)
-                self.hand.remove(card)
-                self.mana_increase(-card.mana_cost)
+                if self.check_summed_card(card, player) == 1:
+                    self.logs += "Playing:" + card.name + "\n"
+                    if card.card_type == "Creature":
+                        self.battle_field.append(card)
+                    self.hand.remove(card)
+                    self.mana_increase(-card.mana_cost)
 
     def check_summed_card(self, card, player):
         if card.card_type == "Creature":
@@ -50,7 +52,7 @@ class Bot(Player):
                 except Exception as e:
                     print(e)
         elif card.card_type == "Spell":
-            if card.name in list_of_self_target:
+            if card.name in list_of_self_target and len(self.battle_field) > 0:
                 try:
                     if card.name == "Personal Guard":
                         self.battle_field.sort(key=lambda x: x.max_hp)
@@ -59,24 +61,28 @@ class Bot(Player):
                                 creature.description += " Guard"
                                 self.logs += " on this card:" + creature.name + "\n"
                                 break
-                    elif card.name == "Bandage":
+                    elif card.name in list_of_healing_spells:
                         self.battle_field.sort(key=lambda x: x.max_hp - x.hp)
                         for creature in self.battle_field:
-                            if creature.hp + 4 > creature.max_hp:
+                            if creature.hp + list_of_healing_spells.get(card.name) > creature.max_hp > creature.hp:
                                 creature.hp = creature.max_hp
                                 self.logs += " on this card:" + creature.name + "\n"
-                                break
-                            else:
-                                creature.hp += 4
+                                return 1
+                            elif creature.hp < creature.max_hp:
+                                creature.hp += list_of_healing_spells.get(card.name)
                                 self.logs += " on this card:" + creature.name + "\n"
-                                break
+                                return 1
+                        return 0
                 except Exception as e:
                     print(e)
-            elif card.name in list_of_enemy_target:
+            elif card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
             elif card.name in list_of_general_targets:
                 for creature in player.battle_field:
                     creature.hp -= list_of_general_targets.get(card.name)
+            else:
+                return 0
+        return 1
 
     def dmg_to_player_creature(self, target_card, player, dmg):
         for card in player.battle_field:
@@ -113,7 +119,11 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 99
                         self.logs += " on this card:" + creature.name + "\n"
-
+            elif card.name == "Arrow shot":
+                for creature in player.battle_field:
+                    if creature == target_creature:
+                        creature.hp -= 1
+                        self.logs += " on this card:" + creature.name + "\n"
         else:
             target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
             for creature in player.battle_field:
@@ -123,6 +133,11 @@ class Bot(Player):
                 for creature in player.battle_field:
                     if creature == target_creature:
                         creature.hp -= 99
+                        self.logs += " on this card:" + creature.name + "\n"
+            elif card.name == "Arrow shot":
+                for creature in player.battle_field:
+                    if creature == target_creature:
+                        creature.hp -= 1
                         self.logs += " on this card:" + creature.name + "\n"
 
     def target_priority(self, card, player):

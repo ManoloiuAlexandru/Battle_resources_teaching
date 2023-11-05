@@ -2,7 +2,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
 list_of_general_targets = {"Volley": 1}
 list_of_self_target = ["Personal Guard", "Bandage", "Bandages"]
 list_of_enemy_target = ["Kill"]
-list_of_healing_spells = ["Bandage", "Bandages"]
+list_of_healing_spells = {"Bandage": 4, "Bandages": 99}
 list_of_dmg_spells = ["Arrow shot"]
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages"]
 

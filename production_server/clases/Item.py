@@ -23,10 +23,10 @@ class Item:
         if self.name in list_of_good_items:
             if "Guard" in self.description.split() and "Guard" not in creature.description.split():
                 creature.description += " Guard"
-            for hp in self.description.split("/")[0].split("+"):
+            for hp in self.description.split("/")[1]:
                 if hp.isnumeric():
                     creature.hp += int(hp)
                     creature.max_hp += int(hp)
-            for attack in self.description.split("/")[1].split("+"):
+            for attack in self.description.split("/")[0]:
                 if attack.isnumeric():
                     creature.attack += int(attack)
