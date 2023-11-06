@@ -11,9 +11,9 @@ from clases.spells import list_of_enemy_target
 
 from clases.spells import list_of_general_targets, list_of_healing_spells
 
-from ITschool_projects.battle_resources.production_server.clases.Item import list_of_good_items
-from ITschool_projects.battle_resources.production_server.clases.game_logics import put_item_on_creature, put_item
-from ITschool_projects.battle_resources.production_server.clases.spells import list_of_dmg_spells
+from clases.Item import list_of_good_items
+from clases.game_logics import put_item_on_creature, put_item
+from clases.spells import list_of_dmg_spells
 
 
 class Bot(Player):

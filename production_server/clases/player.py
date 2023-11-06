@@ -3,7 +3,7 @@ import random
 from clases.creatures import list_of_creature_description
 from clases.spells import list_of_spells
 
-from ITschool_projects.battle_resources.students_server.clases.Item import list_of_item
+from clases.Item import list_of_item
 
 
 class Player:
