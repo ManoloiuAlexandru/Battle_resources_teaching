@@ -110,14 +110,14 @@ class Bot(Player):
 
     def target_creature_with_spell(self, card, player):
         if self.check_for_guards(player) == 1:
-            target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
+            target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
             for creature in player.battle_field:
                 if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature
             if card.name == "Kill":
                 for creature in player.battle_field:
                     if creature == target_creature:
-                        creature.hp -= 99
+                        creature.hp -= 999
                         self.logs += " on this card:" + creature.name + "\n"
             elif card.name == "Arrow shot":
                 for creature in player.battle_field:
@@ -125,7 +125,7 @@ class Bot(Player):
                         creature.hp -= 1
                         self.logs += " on this card:" + creature.name + "\n"
         else:
-            target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
+            target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
             for creature in player.battle_field:
                 if target_creature.attack >= creature.attack:
                     target_creature = creature

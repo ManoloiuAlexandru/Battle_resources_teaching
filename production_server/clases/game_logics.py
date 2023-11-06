@@ -23,6 +23,7 @@ def battle(card1, card2, player1, player2):
                 card1.hp -= card2.attack
                 card2.hp -= card1.attack
                 card1.exhausted = True
+
     except Exception as e:
         print(e)
 
@@ -253,3 +254,4 @@ def cast_spell_from_player(player1, player2, card_picked):
         cast_spell(player1, player2, card_picked)
         player2.check_battlefield()
         player1.incoming_action = 0
+        player1.incoming_spell = None
