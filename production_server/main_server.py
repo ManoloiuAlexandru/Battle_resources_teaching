@@ -72,9 +72,6 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
                 card.check_creature()
         for card in player1.deck:
             card.mana_cost += 2
-            if card.card_type == "Creature":
-                card.attack -= 2
-                card.check_creature()
     player1.start_game()
     player2.start_game()
     return player1, player2

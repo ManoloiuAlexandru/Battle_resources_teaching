@@ -49,7 +49,8 @@ def turn_switch(player1, player2):
             print(e)
         player2.turn = 1
         player1.turn = 0
-        player2.mana_increase(1)
+        player2.empty_mana += 1
+        player2.mana = player2.empty_mana
         reset(player1, player2)
         player2.draw_card()
         for creature in player1.battle_field:
@@ -68,7 +69,8 @@ def turn_switch(player1, player2):
             print(e)
         player2.turn = 0
         player1.turn = 1
-        player1.mana_increase(1)
+        player1.empty_mana += 1
+        player1.mana = player1.empty_mana
         player1.draw_card()
         reset(player1, player2)
         for creature in player2.battle_field:

@@ -11,6 +11,8 @@ from clases.spells import list_of_enemy_target
 
 from clases.spells import list_of_general_targets, list_of_healing_spells
 
+from ITschool_projects.battle_resources.production_server.clases.Item import list_of_good_items
+from ITschool_projects.battle_resources.production_server.clases.game_logics import put_item_on_creature, put_item
 from ITschool_projects.battle_resources.production_server.clases.spells import list_of_dmg_spells
 
 
@@ -82,6 +84,17 @@ class Bot(Player):
                     creature.hp -= list_of_general_targets.get(card.name)
             else:
                 return 0
+        elif card.card_type == "Item":
+            if card.name in list_of_good_items and len(self.battle_field) > 0:
+                try:
+                    target_creature = Creature(1, 'DEMO', 0, 0, "", 0)
+                    for creature in self.battle_field:
+                        if creature.hp > target_creature.hp:
+                            target_creature = creature
+                    target_creature.items.append(card)
+                    card.status_update(target_creature)
+                except Exception as e:
+                    print(e)
         return 1
 
     def dmg_to_player_creature(self, target_card, player, dmg):
@@ -142,7 +155,7 @@ class Bot(Player):
 
     def target_priority(self, card, player):
         if self.check_for_guards(player) == 1:
-            target_creature = Creature(1, 'DEMO', 99, 99, "", 999)
+            target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
             for creature in player.battle_field:
                 if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature

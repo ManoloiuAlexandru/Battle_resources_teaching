@@ -11,6 +11,7 @@ class Player:
         self.name = name
         self.hp = 30
         self.mana = 0
+        self.empty_mana = 0
         self.hand = []
         self.deck = []
         self.battle_field = []
