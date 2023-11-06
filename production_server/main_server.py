@@ -153,7 +153,8 @@ def battlefield_fight():
         current_card = battle_logic(player1, card_picked)
     elif attacked_player == 2:
         card = damage_dealing(player2, card_picked)
-        if (card is not None or card_picked.get(player2.name) is not None) and current_card.exhausted is True:
+        if (card is not None or card_picked.get(player2.name) is not None) and (
+                current_card.exhausted is True and "Charge" not in current_card.description.split()):
             player1.turn = 1
         elif card is not None and guard_checking(player2, card) == 1:
             battle(current_card, card, player1, player2)

@@ -5,6 +5,8 @@ from clases.spells import list_of_resetting_spells
 
 from clases.Item import list_of_item
 
+from ITschool_projects.battle_resources.production_server.clases.spells import list_of_self_target
+
 
 def battle(card1, card2, player1, player2):
     try:
@@ -171,11 +173,18 @@ def cast_spell(player1, player2, card_picked):
         destroy_minion = 1
     if player1.incoming_spell.name == "Volley":
         dmg_to_enemy_minions = 1
-    if player1.incoming_spell.name == "Personal Guard":
+    if player1.incoming_spell.name in list_of_self_target:
         for card in player1.battle_field:
-            if card_picked.get(card.name_for_html) is not None and "Guard" not in card.description.split():
-                card.description += " Guard"
+            if card_picked.get(card.name_for_html) is not None and list_of_self_target.get(
+                    player1.incoming_spell.name) not in card.description.split():
+                card.description += " " + list_of_self_target.get(player1.incoming_spell.name)
                 break
+    # elif player1.incoming_spell.name == "Horse riding lessons":
+    #     for card in player1.battle_field:
+    #         if card_picked.get(card.name_for_html) is not None and "Charge" not in card.description.split():
+    #             card.description += " Charge"
+    #             card.exhausted = False
+    #             break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
             card.hp -= int(player1.incoming_spell.deal_dmg_to_target())

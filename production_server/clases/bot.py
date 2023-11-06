@@ -22,6 +22,10 @@ class Bot(Player):
 
     def play_hand(self, player):
         for card in self.hand[:]:
+            if card.name in list_of_self_target:
+                aux_card = self.hand[-1]
+                self.hand[-1] = self.hand[self.hand.index(card)]
+                self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
                     self.logs += "Playing:" + card.name + "\n"
@@ -61,6 +65,14 @@ class Bot(Player):
                         for creature in self.battle_field[::-1]:
                             if "Guard" not in creature.description:
                                 creature.description += " Guard"
+                                self.logs += " on this card:" + creature.name + "\n"
+                                break
+                    if card.name == "Horse riding lessons":
+                        self.battle_field.sort(key=lambda x: x.attack)
+                        for creature in self.battle_field[::-1]:
+                            if "Charge" not in creature.description:
+                                creature.description += " Charge"
+                                creature.exhausted = False
                                 self.logs += " on this card:" + creature.name + "\n"
                                 break
                     elif card.name in list_of_healing_spells:
