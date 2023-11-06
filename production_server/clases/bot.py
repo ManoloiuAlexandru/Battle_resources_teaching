@@ -95,6 +95,9 @@ class Bot(Player):
                     card.status_update(target_creature)
                 except Exception as e:
                     print(e)
+                    return 0
+            else:
+                return 0
         return 1
 
     def dmg_to_player_creature(self, target_card, player, dmg):

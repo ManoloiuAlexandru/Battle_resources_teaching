@@ -50,6 +50,8 @@ def turn_switch(player1, player2):
         player2.turn = 1
         player1.turn = 0
         player2.empty_mana += 1
+        if player2.empty_mana > 10:
+            player2.empty_mana = 10
         player2.mana = player2.empty_mana
         reset(player1, player2)
         player2.draw_card()
@@ -70,6 +72,8 @@ def turn_switch(player1, player2):
         player2.turn = 0
         player1.turn = 1
         player1.empty_mana += 1
+        if player1.empty_mana > 10:
+            player1.empty_mana = 10
         player1.mana = player1.empty_mana
         player1.draw_card()
         reset(player1, player2)
