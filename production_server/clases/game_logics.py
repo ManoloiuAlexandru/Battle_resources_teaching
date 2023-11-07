@@ -10,21 +10,20 @@ from ITschool_projects.battle_resources.production_server.clases.spells import l
 
 def battle(card1, card2, player1, player2):
     try:
-        if card1.exhausted is False:
-            if card1.attack >= card2.hp and card1.hp <= card2.attack:
-                player2.battle_field.remove(card2)
-                player1.battle_field.remove(card1)
-            elif card1.attack < card2.hp and card2.attack >= card1.hp:
-                player1.battle_field.remove(card1)
-                card2.hp -= card1.attack
-            elif card1.attack >= card2.hp and card1.hp > card2.attack:
-                player2.battle_field.remove(card2)
-                card1.hp -= card2.attack
-                card1.exhausted = True
-            else:
-                card1.hp -= card2.attack
-                card2.hp -= card1.attack
-                card1.exhausted = True
+        if card1.attack >= card2.hp and card1.hp <= card2.attack:
+            player2.battle_field.remove(card2)
+            player1.battle_field.remove(card1)
+        elif card1.attack < card2.hp and card2.attack >= card1.hp:
+            player1.battle_field.remove(card1)
+            card2.hp -= card1.attack
+        elif card1.attack >= card2.hp and card1.hp > card2.attack:
+            player2.battle_field.remove(card2)
+            card1.hp -= card2.attack
+            card1.exhausted = True
+        else:
+            card1.hp -= card2.attack
+            card2.hp -= card1.attack
+            card1.exhausted = True
 
     except Exception as e:
         print(e)
