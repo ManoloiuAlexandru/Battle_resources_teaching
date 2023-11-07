@@ -15,6 +15,8 @@ from clases.Item import list_of_good_items
 from clases.game_logics import put_item_on_creature, put_item
 from clases.spells import list_of_dmg_spells
 
+from clases.creatures import list_of_creature_with_on_going_effect
+
 
 class Bot(Player):
     def __init__(self, name):
@@ -33,6 +35,7 @@ class Bot(Player):
                         self.battle_field.append(card)
                     self.hand.remove(card)
                     self.mana_increase(-card.mana_cost)
+                    Player.battle_fields_effects(self, player)
 
     def check_summed_card(self, card, player):
         if card.card_type == "Creature":
@@ -57,6 +60,8 @@ class Bot(Player):
                                 break
                 except Exception as e:
                     print(e)
+            elif card.name in list_of_creature_with_on_going_effect:
+                self.ongoing_effects.append(card)
         elif card.card_type == "Spell":
             if card.name in list_of_self_target and len(self.battle_field) > 0:
                 try:

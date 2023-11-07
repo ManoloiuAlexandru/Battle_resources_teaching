@@ -5,6 +5,11 @@ from clases.spells import list_of_spells
 
 from clases.Item import list_of_item
 
+from clases.creatures import list_of_creature_with_on_going_effect
+
+from ITschool_projects.battle_resources.production_server.clases.creatures import \
+    list_of_creature_with_negative_on_going_effect
+
 
 class Player:
     def __init__(self, name):
@@ -21,6 +26,7 @@ class Player:
         self.incoming_spell = None
         self.active_minion = None
         self.active_item = None
+        self.ongoing_effects = []
         self.logs = ""
 
     def mana_increase(self, amount):
@@ -56,6 +62,8 @@ class Player:
                     self.incoming_action = 4
                     self.active_item = card
                     return 4
+                elif card.name in list_of_creature_with_on_going_effect:
+                    self.ongoing_effects.append(card)
                 self.battle_field.append(card)
                 self.mana_pay(card)
                 return 1
@@ -87,3 +95,38 @@ class Player:
                 self.draw_card()
         except Exception as e:
             print(e)
+
+    @staticmethod
+    def battle_fields_effects(player, enemy_player):
+        Player.check_for_active_effects(player, enemy_player)
+        if len(player.ongoing_effects) > 0:
+            for effect in player.ongoing_effects:
+                for creature in enemy_player.battle_field:
+                    creature.negative_effects_from_creatures(effect)
+        if len(enemy_player.ongoing_effects):
+            for effect in player.ongoing_effects:
+                for creature in player.battle_field:
+                    creature.negative_effects_from_creatures(effect)
+
+    @staticmethod
+    def check_for_active_effects(player, enemy_player):
+        effect_got_removed = 0
+        for card in player.ongoing_effects:
+            if card not in player.battle_field and card.card_type == "Creature":
+                player.ongoing_effects.remove(card)
+                player.effect_lost(card, enemy_player)
+                effect_got_removed = 1
+        for card in enemy_player.ongoing_effects:
+            if card not in enemy_player.battle_field and card.card_type == "Creature":
+                enemy_player.ongoing_effects.remove(card)
+                enemy_player.effect_lost(card, player)
+                effect_got_removed = 1
+        return effect_got_removed
+
+    def effect_lost(self, card, enemy_player):
+        if card.name in list_of_creature_with_negative_on_going_effect:
+            for creature in enemy_player.battle_field:
+                creature.reverse_effect_creature(card)
+        else:
+            for creature in self.battle_field:
+                creature.reverse_effect_creature(card.name)

@@ -5,7 +5,8 @@ from clases.spells import list_of_resetting_spells
 
 from clases.Item import list_of_item
 
-from ITschool_projects.battle_resources.production_server.clases.spells import list_of_self_target
+from clases.player import Player
+from clases.spells import list_of_self_target
 
 
 def battle(card1, card2, player1, player2):
@@ -24,7 +25,7 @@ def battle(card1, card2, player1, player2):
             card1.hp -= card2.attack
             card2.hp -= card1.attack
             card1.exhausted = True
-
+        Player.battle_fields_effects(player1, player2)
     except Exception as e:
         print(e)
 
@@ -267,5 +268,6 @@ def cast_spell_from_player(player1, player2, card_picked):
     else:
         cast_spell(player1, player2, card_picked)
         player2.check_battlefield()
+        Player.battle_fields_effects(player1, player2)
         player1.incoming_action = 0
         player1.incoming_spell = None

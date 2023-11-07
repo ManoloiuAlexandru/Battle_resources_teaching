@@ -103,6 +103,7 @@ def show_battle():
     player2_deck = request.form.get("deck_player2")
     difficulty = request.form.get("difficulty")
     game_start(player1_name, player2_name, player1_deck, player2_deck, difficulty)
+    Player.battle_fields_effects(player1, player2)
     return render_template("home.html", players=[player2, player1])
 
 
@@ -118,6 +119,7 @@ def update_battle():
     if attacked_player == 2:
         card_picked = request.form
         if player1.put_card_on_field(card_picked) != 0:
+            Player.battle_fields_effects(player1, player2)
             return redirect(url_for('battlefield_fight'))
         elif player1.put_card_on_field(card_picked) == 0:
             player1.problem = "Not enough mana"
@@ -137,6 +139,7 @@ def battlefield_fight():
     global player2
     global player1
     player_selected = False
+    Player.battle_fields_effects(player1, player2)
     if player1.incoming_action == 2:
         destroy_creature_from_player(player1, player2, card_picked)
     if player1.incoming_action == 3:
@@ -207,6 +210,7 @@ def end_turn():
     attacked_player = turn_switch(player1, player2)
     if type(player2) == Bot:
         player2.play_hand(player1)
+        Player.battle_fields_effects(player1, player2)
         if player2.check_move(player1) == 0:
             attacked_player = turn_switch(player1, player2)
         player1.check_battlefield()
