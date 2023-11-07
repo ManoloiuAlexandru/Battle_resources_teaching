@@ -93,6 +93,35 @@
     left: 25%;
     transform: translateX(-10%);
     }
+.space-kids-battle{
+  & > * {
+    margin-right: 12px;
+    margin-bottom:12px;
+    margin-top:12px;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+.player_hand_library{
+    position: absolute;
+    left: 20%;
+    transform: translateX(-10%);
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+}
+.space-kids {
+  & > * {
+    margin-right: 12px;
+    margin-bottom:12px;
+    margin-top:12px;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
 .player_deck{
     position: absolute;
     right: 0;

@@ -7,7 +7,7 @@
 </head>
 <body>
 <a href="{{url_for('game_options')}}">Back</a>
-<div class="player_hand">
+<div class="player_hand_library space-kids">
         {%for card in library%}
         <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
             M:<span class="mana_cost">{{card.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>

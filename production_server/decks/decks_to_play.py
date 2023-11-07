@@ -167,6 +167,7 @@ cards_that_are_in_the_game = [Creature(1, "Peasant", 1, 1, "", -1),
                               Item(3, "Shield", "Give a creature +0/+2 and Guard", -16),
                               Item(5, "Knight's Equipment", "Give a creature +2/+2", -17),
                               Creature(3, "Guard Dog", 1, 1, "Guard Charge", -18),
+                              Spell(3, "Horse riding lessons", "Give a friendly soldier charge", -19),
                               ]
 
 knights_orders = [Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 251),
