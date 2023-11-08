@@ -2,7 +2,7 @@ from clases.Item import Item
 from clases.creatures import Creature
 from clases.spells import Spell
 
-bot_deck = [Creature(1, 'Templar Knight', 5, 5, "Guard", 3323),
+bot_deck = [Creature(7, 'Templar Knight', 5, 5, "Guard", 3323),
             Creature(1, 'Page', 1, 1, "", 13324),
             Creature(1, 'Page', 1, 1, "", 3324),
             Creature(2, 'Squire', 2, 2, "", 3325),
@@ -18,8 +18,8 @@ bot_deck = [Creature(1, 'Templar Knight', 5, 5, "Guard", 3323),
             Item(5, "Knight's Equipment", "Give a creature +2/+2", 4442),
             Spell(3, "Personal Guard", "Give a soldier guard", 3334),
             Spell(3, "Personal Guard", "Give a soldier guard", 3335),
-            Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3320),
-            Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3321),
+            Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3320),
+            Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3321),
             Spell(3, "Volley", "Deal 1 damage to all enemies", 3339),
             Spell(3, "Volley", "Deal 1 damage to all enemies", 13339),
             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 3338),

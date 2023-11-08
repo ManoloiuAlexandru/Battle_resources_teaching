@@ -31,12 +31,12 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     if difficulty == "easy":
         attacked_player = 2
         player1.turn = 1
-        player1.mana = 10
-        player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99999))
-        player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99))
-        player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
+        player1.mana = 1
+        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99999))
+        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99))
+        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
         player1.hp = 9999
-        player2.mana = 10
+        player2.mana = 1
     if difficulty == "normal":
         attacked_player = 2
         player1.turn = 1

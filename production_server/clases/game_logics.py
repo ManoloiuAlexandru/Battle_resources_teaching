@@ -1,12 +1,7 @@
-from clases.creatures import list_of_creature_that_deal_dmg_to_enemies, list_of_creature_that_heal
-from clases.spells import list_of_healing_spells
-
-from clases.spells import list_of_resetting_spells
-
+from clases.creatures import *
+from clases.spells import *
 from clases.Item import list_of_item
-
 from clases.player import Player
-from clases.spells import list_of_self_target
 
 
 def battle(card1, card2, player1, player2):
