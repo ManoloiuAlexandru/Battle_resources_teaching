@@ -2,22 +2,28 @@ from clases.Item import Item
 from clases.creatures import Creature
 from clases.spells import Spell
 
-bot_deck = [Creature(7, 'Templar Knight', 5, 5, "Guard", 3323),
+bot_deck = [Creature(1, 'Templar Knight', 5, 5, "Guard", 3323),
+            Creature(1, 'Page', 1, 1, "", 13324),
             Creature(1, 'Page', 1, 1, "", 3324),
             Creature(2, 'Squire', 2, 2, "", 3325),
+            Creature(2, 'Squire', 2, 2, "", 13325),
             Creature(4, "Mounted Knight", 4, 4, "Charge", 3326),
+            Creature(4, "Mounted Knight", 4, 4, "Charge", 13326),
             Creature(7, 'Templar Knight', 5, 5, "Guard", 3328),
             Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3329),
             Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly soldier for 2", 3330),
             Creature(7, 'Teutonic Knight', 6, 5, "", 3332),
+            Creature(7, 'Teutonic Knight', 6, 5, "", 13332),
             Item(5, "Knight's Equipment", "Give a creature +2/+2", 4443),
             Item(5, "Knight's Equipment", "Give a creature +2/+2", 4442),
             Spell(3, "Personal Guard", "Give a soldier guard", 3334),
             Spell(3, "Personal Guard", "Give a soldier guard", 3335),
-            Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3320),
-            Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3321),
+            Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3320),
+            Creature(1, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 3321),
             Spell(3, "Volley", "Deal 1 damage to all enemies", 3339),
+            Spell(3, "Volley", "Deal 1 damage to all enemies", 13339),
             Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 3338),
+            Spell(1, "Arrow shot", "Deal 1 damage to a enemy", 13338),
             Spell(5, "Kill", "Kill an enemy soldier", 3337),
             Spell(5, "Kill", "Kill an enemy soldier", 3338),
             Spell(4, "Bandages", "Restore a friendly soldier to full HP", 3370),
@@ -25,13 +31,17 @@ bot_deck = [Creature(7, 'Templar Knight', 5, 5, "Guard", 3323),
             Spell(3, "Bandage", "Heal a friendly soldier for 4", 3355),
             Spell(3, "Bandage", "Heal a friendly soldier for 4", 3356),
             Item(3, "Shield", "Give a creature +0/+2 and Guard", 4445),
+            Item(3, "Shield", "Give a creature +0/+2 and Guard", 14445),
             Creature(3, "Priest", 1, 1, "Restore a friendly soldier to full HP", 4567),
             Creature(3, "Priest", 1, 1, "Restore a friendly soldier to full HP", 5678),
             Creature(3, "Guard Dog", 1, 1, "Guard Charge", 989),
             Creature(3, "Guard Dog", 1, 1, "Guard Charge", 900),
             Spell(3, "Horse riding lessons", "Give a friendly soldier charge", 4281),
             Spell(3, "Horse riding lessons", "Give a friendly soldier charge", 44281),
-            Creature(9, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the filed enemy minions get -1/0", 98933)
+            Creature(9, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the filed enemy minions get -1/0",
+                     99283),
+            Creature(8, "Richard the Lionheart", 7, 7,
+                     "While Richard the Lionheart is on the filed your minions get +1/+1", 98933)
             ]
 demo_deck = [Creature(1, 'Templar Knight', 5, 1, "Guard", 23),
              Creature(1, 'Page', 1, 1, "", 24),
@@ -41,7 +51,10 @@ demo_deck = [Creature(1, 'Templar Knight', 5, 1, "Guard", 23),
              Creature(1, 'Hospitaller Knight', 5, 1, "Heal a friendly soldier for 2", 29),
              Creature(1, 'Hospitaller Knight', 5, 1, "Heal a friendly soldier for 2", 30),
              Creature(1, 'Teutonic Knight', 6, 1, "", 32),
-             Creature(1, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the filed enemy minions get -1/0", 33)]
+             Spell(1, "Kill", "Kill an enemy soldier", 37),
+             Spell(1, "Kill", "Kill an enemy soldier", 38),
+             Creature(1, "Richard the Lionheart", 8, 8,
+                      "While Richard the Lionheart is on the filed your minions get +1/+1", 6633)]
 test_deck = [Creature(1, 'Templar Knight', 5, 1, "Guard", 1123),
              Creature(1, 'Page', 1, 1, "", 1124),
              Creature(1, 'Squire', 2, 1, "", 1125),
@@ -169,7 +182,9 @@ cards_that_are_in_the_game = [Creature(1, "Peasant", 1, 1, "", -1),
                               Creature(3, "Guard Dog", 1, 1, "Guard Charge", -18),
                               Spell(3, "Horse riding lessons", "Give a friendly soldier charge", -19),
                               Creature(9, "Frederick Barbarossa", 8, 8,
-                                       "While Barbarossa is on the filed enemy minions get -1/0", -20)
+                                       "While Barbarossa is on the filed enemy minions get -1/0", -20),
+                              Creature(8, "Richard the Lionheart", 7, 7,
+                                       "While Richard the Lionheart is on the filed your minions get +1/+1", -21)
                               ]
 
 knights_orders = [Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier", 251),
@@ -205,7 +220,9 @@ knights_orders = [Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy soldier"
                   Spell(3, "Horse riding lessons", "Give a friendly soldier charge", 281),
                   Spell(3, "Horse riding lessons", "Give a friendly soldier charge", 282),
                   Creature(9, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the filed enemy minions get -1/0",
-                           283)
+                           283),
+                  Creature(8, "Richard the Lionheart", 7, 7,
+                           "While Richard the Lionheart is on the filed your minions get +1/+1", 284)
                   ]
 dict_of_decks = {"demo_deck": demo_deck, "bot_deck": bot_deck, "test_deck": test_deck,
                  "integration_deck": integration_deck, "integration_deck_opponent": integration_deck_opponent,

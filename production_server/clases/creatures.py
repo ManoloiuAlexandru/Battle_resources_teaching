@@ -1,8 +1,9 @@
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
-list_of_creature_with_on_going_effect = ["Frederick Barbarossa"]
+list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Lionheart"]
 list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
+list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]
 
 
 class Creature:
@@ -53,12 +54,23 @@ class Creature:
                 if self.attack < 0:
                     self.attack = 0
 
+    def positive_effects_from_creatures(self, card):
+        if card.name == "Richard the Lionheart":
+            if card.name not in self.active_effects:
+                self.active_effects.append(card.name)
+                self.attack += 1
+                self.hp += 1
+
     def reverse_effect_creature(self, card):
         try:
-            if card.name == "Frederick Barbarossa":
+            if card.name == "Frederick Barbarossa" and card.name in self.active_effects:
                 self.attack += 1
                 self.active_effects.remove(card.name)
                 if self.original_attack == 0:
                     self.attack = 0
+            elif card.name == "Richard the Lionheart" and card.name in self.active_effects:
+                self.attack -= 1
+                self.hp -= 1
+                self.active_effects.remove(card.name)
         except Exception as e:
             print(e)

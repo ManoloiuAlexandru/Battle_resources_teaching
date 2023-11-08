@@ -8,7 +8,7 @@ from clases.Item import list_of_item
 from clases.creatures import list_of_creature_with_on_going_effect
 
 from ITschool_projects.battle_resources.production_server.clases.creatures import \
-    list_of_creature_with_negative_on_going_effect
+    list_of_creature_with_negative_on_going_effect, list_of_creature_with_positive_on_going_effect
 
 
 class Player:
@@ -101,12 +101,20 @@ class Player:
         Player.check_for_active_effects(player, enemy_player)
         if len(player.ongoing_effects) > 0:
             for effect in player.ongoing_effects:
-                for creature in enemy_player.battle_field:
-                    creature.negative_effects_from_creatures(effect)
-        if len(enemy_player.ongoing_effects):
-            for effect in player.ongoing_effects:
-                for creature in player.battle_field:
-                    creature.negative_effects_from_creatures(effect)
+                if effect.name in list_of_creature_with_negative_on_going_effect:
+                    for creature in enemy_player.battle_field:
+                        creature.negative_effects_from_creatures(effect)
+                elif effect.name in list_of_creature_with_positive_on_going_effect:
+                    for creature in player.battle_field:
+                        creature.positive_effects_from_creatures(effect)
+        if len(enemy_player.ongoing_effects)>0:
+            for effect in enemy_player.ongoing_effects:
+                if effect.name in list_of_creature_with_negative_on_going_effect:
+                    for creature in player.battle_field:
+                        creature.negative_effects_from_creatures(effect)
+                elif effect.name in list_of_creature_with_positive_on_going_effect:
+                    for creature in enemy_player.battle_field:
+                        creature.positive_effects_from_creatures(effect)
 
     @staticmethod
     def check_for_active_effects(player, enemy_player):
@@ -126,6 +134,9 @@ class Player:
     def effect_lost(self, card, enemy_player):
         if card.name in list_of_creature_with_negative_on_going_effect:
             for creature in enemy_player.battle_field:
+                creature.reverse_effect_creature(card)
+        elif card.name in list_of_creature_with_positive_on_going_effect:
+            for creature in self.battle_field:
                 creature.reverse_effect_creature(card)
         else:
             for creature in self.battle_field:
