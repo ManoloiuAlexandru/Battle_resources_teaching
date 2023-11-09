@@ -7,7 +7,7 @@ from clases.Item import list_of_item
 
 from clases.creatures import list_of_creature_with_on_going_effect
 
-from ITschool_projects.battle_resources.production_server.clases.creatures import \
+from clases.creatures import \
     list_of_creature_with_negative_on_going_effect, list_of_creature_with_positive_on_going_effect
 
 
@@ -16,7 +16,7 @@ class Player:
         self.name = name
         self.hp = 30
         self.mana = 0
-        self.empty_mana = 0
+        self.empty_mana = 1
         self.hand = []
         self.deck = []
         self.battle_field = []

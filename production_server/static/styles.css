@@ -1,4 +1,7 @@
 .card_in_hand{
+background-image: url('/static/cards/logs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 1px solid #d5d9d9;
     border-radius: 8px;
     height: 160px;
@@ -10,6 +13,9 @@
     transition:0.1s;
 }
 .battlefield{
+    background-image: url('/static/cards/Parchment.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 8px;
     height: 160px;
     width: 880px;
@@ -19,6 +25,9 @@
     margin-top:10px;
     }
 .logs{
+    background-image: url('/static/cards/logs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 8px;
     height: 160px;
     width: 160px;
@@ -128,6 +137,9 @@
     padding-right: 20px;
     }
 .card_in_library{
+    background-image: url('/static/cards/logs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 1px solid #d5d9d9;
     border-radius: 8px;
     height: 200px;
@@ -145,3 +157,30 @@
     font-size:12px;
     font-style: italic;
     }
+.body{
+  background-image: url('/static/cards/background1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.problems{
+background-image: url('/static/cards/logs.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    height: 60px;
+    width: 250px;
+    border-style: solid;
+    padding:10px;
+    margin-bottom:10px;
+    margin-top:10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: center;
+}
+.library{
+  background-image: url('/static/cards/library.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

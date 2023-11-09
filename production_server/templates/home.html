@@ -5,20 +5,14 @@
     <meta charset="UTF-8">
     <title>Battle Resource</title>
 </head>
-<!--<style>-->
-<!--body {-->
-<!--  background-image: url('/static/cards/background.jpg');-->
-<!--  background-repeat: no-repeat;-->
-<!--  background-attachment: fixed;-->
-<!--  background-size: 100% 100%;-->
-<!--}-->
-<!--</style>-->
-<body >
+<body class="body">
+<div class="problems">
     {%if players[0].turn==1:%}
     <p>Currently playing:{{players[0].name}}</p>
     {%else%}
     <p>Currently playing:{{players[1].name}}</p>
     {%endif%}
+</div>
 <div class="game">
 <div class="hand_deck">
     <div class="player_hand" >
@@ -181,9 +175,11 @@
         <img src="static/cards/mana_crystal.jpg" class="mana_crystal_img"/>
         {%endfor%}
     </div>
-    {%if players[1].problem!="":%}
+    <div class="problems">
+        {%if players[1].problem!="":%}
     <p>{{players[1].problem}}</p>
     {%endif%}
+    </div>
 </div>
 </div>
 </div>
