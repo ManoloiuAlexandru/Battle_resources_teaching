@@ -60,6 +60,7 @@
     <div class="logs">{{players[0].logs}}</div>
     <div class="battlefield">
         <form action="/battlefield_action" method="post">
+            <div class="cards_in_hand">
             {%for creature in players[0].battle_field%}
             {%if creature.can_be_target==False:%}
             <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}} name={{creature.name_for_html}}>
@@ -87,6 +88,7 @@
             </button>
             {%endif%}
             {%endfor%}
+            </div>
         </form>
     </div>
     {%if players[0].turn==True:%}
@@ -101,6 +103,7 @@
     <div class="logs">{{players[1].logs}}</div>
     <div class="battlefield">
         <form action="/battlefield_action" method="post">
+            <div class="cards_in_hand">
             {%for creature in players[1].battle_field%}
             {%if creature.can_be_target==False:%}
             <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}} name={{creature.name_for_html}}>
@@ -128,6 +131,7 @@
             </button>
             {%endif%}
             {%endfor%}
+            </div>
         </form>
     </div>
     {%if players[1].turn==True:%}
@@ -142,6 +146,7 @@
 <div class="hand_deck">
     <div class="player_hand">
         <form action="/update_battle_field" method="post">
+            <div class="cards_in_hand">
             {%for creature in players[1].hand%}
             {%if players[1].turn==1%}
             <button class="card_in_hand" id={{creature.card_id}} name={{creature.name_for_html}}>
@@ -160,6 +165,7 @@
             </button>
             {%endif%}
             {%endfor%}
+            </div>
         </form>
     </div>
     <div class="player_deck">

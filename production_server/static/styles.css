@@ -18,7 +18,7 @@ background-image: url('/static/cards/logs.jpg');
     background-size: cover;
     border-radius: 8px;
     height: 160px;
-    width: 880px;
+    width: 900px;
     border-style: solid;
     padding:10px;
     margin-bottom:10px;
@@ -183,4 +183,8 @@ background-image: url('/static/cards/logs.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+.cards_in_hand{
+    display:flex;
+    gap:10px;
 }
