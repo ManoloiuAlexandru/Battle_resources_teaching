@@ -10,13 +10,15 @@
 <div class="player_hand_library space-kids">
         {%for card in library%}
         <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
-            M:<span class="mana_cost">{{card.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            <span style="display:flex">
+            M:<span class="mana_cost">{{card.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
             <img src="static/cards/{{ card.img_url }}" class="image_card_in_library"/><br>
-            <span class="creature_name">{{card.name}}</span><br>
-            ---------------------<br>
+             </span>
+             <span class="creature_name">{{card.name}}</span><br>
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
             <span class="description_in_library">{{card.description}}</span><br>
             {%if card.card_type=="Creature"%}
-            ---------------------<br>
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
             <span class="attack_hp">A:{{card.attack}}  H:{{card.hp}}</span>
             {%endif%}
         </button>
