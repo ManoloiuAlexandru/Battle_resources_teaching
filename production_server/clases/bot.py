@@ -94,6 +94,13 @@ class Bot(Player):
                         return 0
                 except Exception as e:
                     print(e)
+            elif card.name == "Bodyguards":
+                for i in range(0, 2):
+                    for card in self.deck:
+                        if "Guard" in card.description.split() and card.card_type == "Creature":
+                            self.battle_field.append(card)
+                            self.deck.remove(card)
+                            break
             elif card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
             elif card.name in list_of_general_targets:

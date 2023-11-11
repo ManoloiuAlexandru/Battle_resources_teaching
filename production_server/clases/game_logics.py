@@ -176,12 +176,6 @@ def cast_spell(player1, player2, card_picked):
                     player1.incoming_spell.name) not in card.description.split():
                 card.description += " " + list_of_self_target.get(player1.incoming_spell.name)
                 break
-    # elif player1.incoming_spell.name == "Horse riding lessons":
-    #     for card in player1.battle_field:
-    #         if card_picked.get(card.name_for_html) is not None and "Charge" not in card.description.split():
-    #             card.description += " Charge"
-    #             card.exhausted = False
-    #             break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
             card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
@@ -191,6 +185,16 @@ def cast_spell(player1, player2, card_picked):
         elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
             break
+
+
+def general_spells(player, spell_name):
+    if spell_name == "Bodyguards":
+        for i in range(0, 2):
+            for card in player.deck:
+                if "Guard" in card.description.split() and card.card_type=="Creature":
+                    player.battle_field.append(card)
+                    player.deck.remove(card)
+                    break
 
 
 def destroy_creature(card_picked, player):
@@ -257,7 +261,11 @@ def destroy_creature_from_player(player1, player2, card_picked):
 
 
 def cast_spell_from_player(player1, player2, card_picked):
-    if card_picked.get(player2.name) is not None:
+    if player1.incoming_spell.name in list_of_spells_with_no_target:
+        general_spells(player1, player1.incoming_spell.name)
+        player1.incoming_action = 0
+        player1.incoming_spell = None
+    elif card_picked.get(player2.name) is not None:
         player2.hp -= int(player1.incoming_spell.deal_dmg_to_target())
         player1.incoming_action = 0
     elif check_target(player1, player2, card_picked) == 0:
