@@ -46,7 +46,9 @@
     </div>
     <div>
     <form action="/battlefield_action" method="post">
-        <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}
+        <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}<br>
+            Mana: {{players[0].mana}}
+        </button>
         </button>
     </form>
     <div class="player_mana">
@@ -185,7 +187,8 @@
     </div>
     <div>
     <form action="/battlefield_action" method="post">
-        <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}
+        <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}<br>
+            Mana: {{players[1].mana}}
         </button>
     </form>
     <div class="player_mana">
