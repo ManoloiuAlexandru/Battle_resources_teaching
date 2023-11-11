@@ -3,6 +3,8 @@ from clases.spells import *
 from clases.Item import list_of_item
 from clases.player import Player
 
+legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
+
 
 def battle(card1, card2, player1, player2):
     try:
@@ -266,3 +268,23 @@ def cast_spell_from_player(player1, player2, card_picked):
         Player.battle_fields_effects(player1, player2)
         player1.incoming_action = 0
         player1.incoming_spell = None
+
+
+def check_if_card_in_deck(card, deck):
+    nr_app = 0
+    for card_in_deck in deck:
+        if card_in_deck.name in legendary_cards and card_in_deck.name == card.name:
+            return 3
+        elif card_in_deck.name == card.name and card.name not in legendary_cards:
+            nr_app += 1
+    return nr_app
+
+
+def make_html_deck(deck, html_deck):
+    for i in range(0, len(deck)):
+        nr_ap = 0
+        for j in range(0, len(deck)):
+            if deck[i].name == deck[j].name:
+                nr_ap += 1
+        html_deck[deck[i].name] = [deck[i].mana_cost, nr_ap]
+    return html_deck

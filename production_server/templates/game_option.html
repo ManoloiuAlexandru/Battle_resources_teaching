@@ -7,6 +7,7 @@
 <body>
 <a href="{{url_for('rules')}}">Rules</a>
 <a href="{{url_for('show_library')}}">Library</a>
+<a href="{{url_for('make_your_own_deck')}}">Create deck</a>
 <form action="/play" method="post">
     <p>Pick your name:</p>
     <input id="player1" name="player1"/>
@@ -24,6 +25,7 @@
         <option value="integration_deck_opponent">Integration Deck Opponent</option>
         <option value="knights_orders">Knight Orders</option>
         <option value="integration_deck_official">Integration Deck Official</option>
+        <option value="personal_deck">Personal deck</option>
     </select>
     <p>Pick your opponent deck:</p>
     <select id="deck_player2" name="deck_player2">
