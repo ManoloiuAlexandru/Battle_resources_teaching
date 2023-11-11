@@ -1,5 +1,5 @@
-list_of_item = ["Shield", "Knight's Equipment"]
-list_of_good_items = ["Shield", "Knight's Equipment"]
+list_of_item = ["Shield", "Knight's Equipment", "Leather Armor", "Cloth Armor", "Plate Armor", "Dagger"]
+list_of_good_items = ["Shield", "Knight's Equipment", "Leather Armor", "Cloth Armor", "Plate Armor", "Dagger"]
 
 
 class Item:
