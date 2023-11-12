@@ -4,7 +4,7 @@ from clases.player import Player
 
 from clases.spells import *
 
-from clases.Item import list_of_good_items
+from clases.Item import *
 from clases.game_logics import put_item_on_creature, put_item
 
 
@@ -112,6 +112,9 @@ class Bot(Player):
                     for creature in self.battle_field:
                         if creature.hp > target_creature.hp:
                             target_creature = creature
+                    if card.name in list_of_items_that_draw_cards:
+                        for i in range(0, list_of_items_that_draw_cards.get(card.name)):
+                            self.draw_card()
                     target_creature.items.append(card)
                     card.status_update(target_creature)
                 except Exception as e:

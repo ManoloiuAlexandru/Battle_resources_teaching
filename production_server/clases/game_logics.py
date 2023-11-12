@@ -1,6 +1,6 @@
 from clases.creatures import *
 from clases.spells import *
-from clases.Item import list_of_item
+from clases.Item import *
 from clases.player import Player
 
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
@@ -191,13 +191,14 @@ def general_spells(player, spell_name):
     if spell_name == "Bodyguards":
         for i in range(0, 2):
             for card in player.deck:
-                if "Guard" in card.description.split() and card.card_type=="Creature":
+                if "Guard" in card.description.split() and card.card_type == "Creature":
                     player.battle_field.append(card)
                     player.deck.remove(card)
                     break
     elif player.incoming_spell.name in list_of_spells_that_draw_cards:
         for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
             player.draw_card()
+
 
 def destroy_creature(card_picked, player):
     for card in player.battle_field:
@@ -216,6 +217,9 @@ def put_item_on_creature(player1, player2, card_picked):
 def put_item(player1, player2, card_picked):
     for card in player1.battle_field:
         if card_picked.get(card.name_for_html) is not None:
+            if player1.active_item.name in list_of_items_that_draw_cards:
+                for i in range(0, list_of_items_that_draw_cards.get(player1.active_item.name)):
+                    player1.draw_card()
             card.items.append(player1.active_item)
             player1.active_item.status_update(card)
             player1.active_item = None

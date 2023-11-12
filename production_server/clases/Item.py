@@ -1,5 +1,6 @@
 list_of_item = ["Shield", "Knight's Equipment", "Leather Armor", "Cloth Armor", "Plate Armor", "Dagger"]
 list_of_good_items = ["Shield", "Knight's Equipment", "Leather Armor", "Cloth Armor", "Plate Armor", "Dagger"]
+list_of_items_that_draw_cards = {"Leather Armor": 1}
 
 
 class Item:
