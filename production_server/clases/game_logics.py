@@ -195,7 +195,9 @@ def general_spells(player, spell_name):
                     player.battle_field.append(card)
                     player.deck.remove(card)
                     break
-
+    elif player.incoming_spell.name in list_of_spells_that_draw_cards:
+        for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
+            player.draw_card()
 
 def destroy_creature(card_picked, player):
     for card in player.battle_field:

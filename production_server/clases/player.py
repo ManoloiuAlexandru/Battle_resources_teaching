@@ -1,14 +1,9 @@
 import random
 
-from clases.creatures import list_of_creature_description
+from clases.creatures import *
 from clases.spells import list_of_spells
 
 from clases.Item import list_of_item
-
-from clases.creatures import list_of_creature_with_on_going_effect
-
-from clases.creatures import \
-    list_of_creature_with_negative_on_going_effect, list_of_creature_with_positive_on_going_effect
 
 
 class Player:
@@ -53,6 +48,9 @@ class Player:
                     self.incoming_action = 2
                     self.active_minion = card
                     return 2
+                elif card.name in list_of_creature_that_draw_cards:
+                    for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
+                        self.draw_card()
                 elif card.name in list_of_spells:
                     self.mana_pay(card)
                     self.incoming_action = 3

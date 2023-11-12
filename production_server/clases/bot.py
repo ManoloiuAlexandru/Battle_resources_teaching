@@ -1,21 +1,11 @@
-from clases.creatures import Creature
+from clases.creatures import *
 from clases.game_logics import battle, damage_to_player
 from clases.player import Player
 
-from clases.creatures import list_of_creature_that_deal_dmg_to_enemies
-from clases.spells import list_of_self_target
-
-from clases.creatures import list_of_creature_that_heal
-
-from clases.spells import list_of_enemy_target
-
-from clases.spells import list_of_general_targets, list_of_healing_spells
+from clases.spells import *
 
 from clases.Item import list_of_good_items
 from clases.game_logics import put_item_on_creature, put_item
-from clases.spells import list_of_dmg_spells
-
-from clases.creatures import list_of_creature_with_on_going_effect
 
 
 class Bot(Player):
@@ -61,6 +51,9 @@ class Bot(Player):
                                 break
                 except Exception as e:
                     print(e)
+            elif card.name in list_of_creature_that_draw_cards:
+                for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
+                    self.draw_card()
             elif card.name in list_of_creature_with_on_going_effect:
                 self.ongoing_effects.append(card)
         elif card.card_type == "Spell":
@@ -102,6 +95,9 @@ class Bot(Player):
                             self.battle_field.append(card)
                             self.deck.remove(card)
                             break
+            elif card.name == "Feudal Obligations":
+                for nr_cards in range(list_of_spells_that_draw_cards.get(card.name)):
+                    self.draw_card()
             elif card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
             elif card.name in list_of_general_targets:
