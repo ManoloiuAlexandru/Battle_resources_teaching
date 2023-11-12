@@ -28,6 +28,7 @@ class Player:
         self.active_item = None
         self.ongoing_effects = []
         self.logs = ""
+        self.playing_deck_name = ""
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -96,6 +97,10 @@ class Player:
         except Exception as e:
             print(e)
 
+    def make_deck(self, deck):
+        for card in deck:
+            self.deck.append(card)
+
     @staticmethod
     def battle_fields_effects(player, enemy_player):
         Player.check_for_active_effects(player, enemy_player)
@@ -107,7 +112,7 @@ class Player:
                 elif effect.name in list_of_creature_with_positive_on_going_effect:
                     for creature in player.battle_field:
                         creature.positive_effects_from_creatures(effect)
-        if len(enemy_player.ongoing_effects)>0:
+        if len(enemy_player.ongoing_effects) > 0:
             for effect in enemy_player.ongoing_effects:
                 if effect.name in list_of_creature_with_negative_on_going_effect:
                     for creature in player.battle_field:

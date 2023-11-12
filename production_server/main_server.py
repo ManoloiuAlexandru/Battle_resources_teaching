@@ -26,16 +26,19 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     global attacked_player
     player1 = Player(player1_name)
     player1.hand = []
+    player1.playing_deck_name = play1_deck
     if play1_deck == "personal_deck":
-        player1.deck = your_deck
+        player1.make_deck(your_deck)
     else:
-        player1.deck = dict_of_decks.get(play1_deck)
+        player1.make_deck(dict_of_decks.get(play1_deck))
     if player2_name == "Bot":
         player2 = Bot("Bot")
+        player2.difficulty = difficulty
     else:
         player2 = Player("Andras")
     player2.hand = []
-    player2.deck = dict_of_decks.get(player2_deck)
+    player2.make_deck(dict_of_decks.get(player2_deck))
+    player2.playing_deck_name = player2_deck
     if difficulty == "easy":
         attacked_player = 2
         player1.turn = 1
@@ -104,6 +107,15 @@ def game_options():
     global show_deck
     show_deck = {}
     return render_template("game_option.html")
+
+
+@app.route("/reset", methods=["POST", "GET"])
+def reset():
+    global player1
+    global player2
+    game_difficulty(player1.name, player2.name, player1.playing_deck_name, player2.playing_deck_name,
+                    player2.difficulty)
+    return redirect(url_for('show_battle', players=[player2, player1], attacking_card=None))
 
 
 @app.route("/rules")

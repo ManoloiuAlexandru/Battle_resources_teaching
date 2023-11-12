@@ -21,6 +21,7 @@ from clases.creatures import list_of_creature_with_on_going_effect
 class Bot(Player):
     def __init__(self, name):
         super().__init__(name)
+        self.difficulty = ""
 
     def play_hand(self, player):
         for card in self.hand[:]:

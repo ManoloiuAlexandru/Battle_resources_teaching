@@ -74,7 +74,7 @@ test_deck = [Creature(1, 'Templar Knight', 5, 1, "Guard", 1123),
              Spell(1, "Horse riding lessons", "Give a friendly soldier charge", 1134),
              Spell(1, "Horse riding lessons", "Give a friendly soldier charge", 1135),
              Spell(1, "Horse riding lessons", "Give a friendly soldier charge", 1136), ]
-integration_deck = [Creature(1, 'Templar Knight', 5, 1, "Guard", 23),
+integration_deck = list([Creature(1, 'Templar Knight', 5, 1, "Guard", 23),
                     # Creature(1, 'Page', 1, 1, "", 24),
                     # Creature(1, 'Squire', 2, 1, "", 25),
                     # Creature(1, "Mounted Knight", 4, 1, "Charge", 26),
@@ -101,7 +101,7 @@ integration_deck = [Creature(1, 'Templar Knight', 5, 1, "Guard", 23),
                     # Spell(1, "Horse riding lessons", "Give a friendly soldier charge", 21811),
                     Creature(1, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the field enemy minions get -1/0",
                              3983)
-                    ]
+                    ])
 integration_deck_official = [Creature(7, 'Templar Knight', 5, 5, "Guard", 23),
                              Creature(0, 'Page', 1, 1, "", 24),
                              Creature(0, 'Page', 1, 1, "", 124),
