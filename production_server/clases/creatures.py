@@ -51,7 +51,7 @@ class Creature:
         if card.name == "Frederick Barbarossa":
             if card.name not in self.active_effects:
                 self.active_effects.append(card.name)
-                self.attack -= 1
+                self.attack -= 2
                 if self.attack < 0:
                     self.attack = 0
 
@@ -65,10 +65,9 @@ class Creature:
     def reverse_effect_creature(self, card):
         try:
             if card.name == "Frederick Barbarossa" and card.name in self.active_effects:
-                self.attack += 1
-                self.active_effects.remove(card.name)
-                if self.original_attack == 0:
-                    self.attack = 0
+                self.attack = self.original_attack
+                self.hp = self.max_hp
+                self.active_effects.clear()
             elif card.name == "Richard the Lionheart" and card.name in self.active_effects:
                 self.attack -= 1
                 self.hp -= 1
