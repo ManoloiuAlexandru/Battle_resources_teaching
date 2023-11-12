@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href='/static/styles.css'/>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename = 'JS_code.js') }}"></script>
     <meta charset="UTF-8">
     <title>Battle Resource</title>
 </head>
@@ -207,9 +209,12 @@
             </div>
         </div>
     </div>
-    <form action="/reset" method="post">
-        <button>Reset</button>
-    </form>
+    <div style="display:flex; gap:10px;">
+        <form action="/reset" method="post">
+            <button id="reset_button">New Hand</button>
+        </form>
+        <button id="hide_button" onclick="disable_all()">Keep Hand</button>
+    </div>
 </div>
 </body>
 </html>
