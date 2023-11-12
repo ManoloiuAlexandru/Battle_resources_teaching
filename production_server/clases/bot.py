@@ -54,6 +54,12 @@ class Bot(Player):
             elif card.name in list_of_creature_that_draw_cards:
                 for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                     self.draw_card()
+            elif card.name in list_of_creature_that_add_mana:
+                self.mana_increase(list_of_creature_that_add_mana.get(card.name))
+                if self.empty_mana + list_of_creature_that_add_mana.get(card.name) > 10:
+                    self.empty_mana = 10
+                else:
+                    self.empty_mana += list_of_creature_that_add_mana.get(card.name)
             elif card.name in list_of_creature_with_on_going_effect:
                 self.ongoing_effects.append(card)
         elif card.card_type == "Spell":

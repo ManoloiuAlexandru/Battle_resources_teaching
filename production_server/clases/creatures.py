@@ -5,6 +5,7 @@ list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Li
 list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
 list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]
 list_of_creature_that_draw_cards = {"Page": 1}
+list_of_creature_that_add_mana = {"Farmer": 1}
 
 
 class Creature:
