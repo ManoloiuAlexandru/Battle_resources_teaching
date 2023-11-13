@@ -1,6 +1,7 @@
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
+list_of_creature_that_buff = {"Priest": (1, 1)}
 list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Lionheart"]
 list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
 list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]

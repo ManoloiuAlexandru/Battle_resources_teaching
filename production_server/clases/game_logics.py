@@ -130,8 +130,8 @@ def check_target(player1, player2, card_picked):
         if player1.active_minion is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
-                    heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
-                    return 0
+                    # heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
+                    return 1
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:
                 return 1
@@ -241,7 +241,6 @@ def heal_creature(card_picked, player, amount):
     except Exception as e:
         print(e)
     player.incoming_action = 0
-    player.active_minion = None
 
 
 def deal_dmg_to_creature(card_picked, player, dmg):
@@ -262,8 +261,21 @@ def destroy_creature_from_player(player1, player2, card_picked):
             player2.check_battlefield()
         elif player1.active_minion.name in list_of_creature_that_heal:
             heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
+            if player1.active_minion.name in list_of_creature_that_buff:
+                buff_creature(card_picked, player1)
             player1.active_minion = None
         player1.incoming_action = 0
+
+
+def buff_creature(card_picked, player1):
+    try:
+        for card in player1.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
+                card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
+                card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
+    except Exception as e:
+        print(e)
 
 
 def cast_spell_from_player(player1, player2, card_picked):

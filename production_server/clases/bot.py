@@ -7,6 +7,8 @@ from clases.spells import *
 from clases.Item import *
 from clases.game_logics import put_item_on_creature, put_item
 
+from clases.game_logics import buff_creature
+
 
 class Bot(Player):
     def __init__(self, name):
@@ -49,6 +51,15 @@ class Bot(Player):
                                 creature.hp += list_of_creature_that_heal.get(card.name)
                                 self.logs += "Playing:" + creature.name + "\n"
                                 break
+                except Exception as e:
+                    print(e)
+            if card.name in list_of_creature_that_buff:
+                try:
+                    for creature in self.battle_field:
+                        creature.hp += list_of_creature_that_buff.get(card.name)[0]
+                        creature.attack += list_of_creature_that_buff.get(card.name)[1]
+                        creature.description += " " + list_of_creature_that_buff.get(card.name)[2]
+                        break
                 except Exception as e:
                     print(e)
             elif card.name in list_of_creature_that_draw_cards:

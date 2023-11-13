@@ -138,6 +138,7 @@ class Player:
                 enemy_player.ongoing_effects.remove(card)
                 enemy_player.effect_lost(card, player)
                 effect_got_removed = 1
+        Player.clean_board(player, enemy_player)
         return effect_got_removed
 
     def effect_lost(self, card, enemy_player):
@@ -150,3 +151,12 @@ class Player:
         else:
             for creature in self.battle_field:
                 creature.reverse_effect_creature(card.name)
+
+    @staticmethod
+    def clean_board(player, enemy_player):
+        for card in player.battle_field:
+            if card.hp <= 0:
+                player.battle_field.remove(card)
+        for card in enemy_player.battle_field:
+            if card.hp <= 0:
+                enemy_player.battle_field.remove(card)
