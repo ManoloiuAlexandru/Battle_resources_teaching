@@ -82,6 +82,7 @@ class Bot(Player):
                             if "Guard" not in creature.description:
                                 creature.description += " Guard"
                                 self.logs += " on this card:" + creature.name + "\n"
+                                self.draw_card()
                                 break
                     if card.name == "Horse riding lessons":
                         self.battle_field.sort(key=lambda x: x.attack)

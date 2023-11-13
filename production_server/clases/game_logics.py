@@ -164,6 +164,9 @@ def check_target(player1, player2, card_picked):
 def cast_spell(player1, player2, card_picked):
     destroy_minion = 0
     dmg_to_enemy_minions = 0
+    if player1.incoming_spell.name in list_of_spells_that_draw_cards:
+        for nr_cards in range(list_of_spells_that_draw_cards.get(player1.incoming_spell.name)):
+            player1.draw_card()
     if player1.incoming_spell.name in list_of_healing_spells:
         heal_creature(card_picked, player1, int(player1.incoming_spell.heal_to_target()))
     if player1.incoming_spell.name == "Kill":
