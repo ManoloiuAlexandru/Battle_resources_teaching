@@ -277,6 +277,9 @@ def destroy_creature_from_player(player1, player2, card_picked):
             if player1.active_minion.name in list_of_creature_that_buff:
                 buff_creature(card_picked, player1)
             player1.active_minion = None
+        elif player1.active_minion.name in list_of_creature_that_buff:
+            buff_creature(card_picked, player1)
+            player1.active_minion = None
         player1.incoming_action = 0
 
 
