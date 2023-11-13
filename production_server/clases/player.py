@@ -154,9 +154,12 @@ class Player:
 
     @staticmethod
     def clean_board(player, enemy_player):
-        for card in player.battle_field:
-            if card.hp <= 0:
-                player.battle_field.remove(card)
-        for card in enemy_player.battle_field:
-            if card.hp <= 0:
-                enemy_player.battle_field.remove(card)
+        try:
+            for card in player.battle_field[:]:
+                if card.hp <= 0 and card.card_type == "Creature":
+                    player.battle_field.remove(card)
+            for card in enemy_player.battle_field[:]:
+                if card.hp <= 0 and card.card_type == "Creature":
+                    enemy_player.battle_field.remove(card)
+        except Exception as e:
+            print(e)

@@ -117,9 +117,6 @@ class Bot(Player):
                     self.draw_card()
             elif card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
-            elif card.name in list_of_general_targets:
-                for creature in player.battle_field:
-                    creature.hp -= list_of_general_targets.get(card.name)
             else:
                 return 0
         elif card.card_type == "Item":
@@ -181,6 +178,15 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 1
                         self.logs += " on this card:" + creature.name + "\n"
+            else:
+                if "ALL" in card.description:
+                    for creature in player.battle_field:
+                        creature.hp -= list_of_dmg_spells.get(card.name)
+                    for creature in self.battle_field:
+                        creature.hp -= list_of_dmg_spells.get(card.name)
+                else:
+                    for creature in player.battle_field:
+                        creature.hp -= list_of_dmg_spells.get(card.name)
         else:
             target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
             for creature in player.battle_field:
@@ -196,6 +202,15 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 1
                         self.logs += " on this card:" + creature.name + "\n"
+            else:
+                if "ALL" in card.description:
+                    for creature in player.battle_field:
+                        creature.hp -= list_of_dmg_spells.get(card.name)
+                    for creature in self.battle_field:
+                        creature.hp -= list_of_dmg_spells.get(card.name)
+                else:
+                    for creature in player.battle_field:
+                        creature.hp -= list_of_dmg_spells.get(card.name)
 
     def target_priority(self, card, player):
         if self.check_for_guards(player) == 1:

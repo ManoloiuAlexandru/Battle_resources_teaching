@@ -187,7 +187,7 @@ def cast_spell(player1, player2, card_picked):
             break
 
 
-def general_spells(player, spell_name):
+def general_spells(player, enemy_player, spell_name):
     if spell_name == "Bodyguards":
         for i in range(0, 2):
             for card in player.deck:
@@ -198,6 +198,16 @@ def general_spells(player, spell_name):
     elif player.incoming_spell.name in list_of_spells_that_draw_cards:
         for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
             player.draw_card()
+    elif player.incoming_spell.name in list_of_dmg_spells:
+        if "ALL" in player.incoming_spell.description:
+            for creature in player.battle_field:
+                creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+            for creature in enemy_player.battle_field:
+                creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+        elif "enemies" in player.incoming_spell.description:
+            for creature in enemy_player.battle_field:
+                creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+    Player.clean_board(player, enemy_player)
 
 
 def destroy_creature(card_picked, player):
@@ -280,7 +290,7 @@ def buff_creature(card_picked, player1):
 
 def cast_spell_from_player(player1, player2, card_picked):
     if player1.incoming_spell.name in list_of_spells_with_no_target:
-        general_spells(player1, player1.incoming_spell.name)
+        general_spells(player1, player2, player1.incoming_spell.name)
         player1.incoming_action = 0
         player1.incoming_spell = None
     elif card_picked.get(player2.name) is not None:

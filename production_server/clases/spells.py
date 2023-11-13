@@ -1,12 +1,11 @@
 list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
-                  "Bodyguards","Feudal Obligations"]
-list_of_general_targets = {"Volley": 1}
+                  "Bodyguards", "Feudal Obligations", "Black Death"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge"}
-list_of_enemy_target = ["Kill"]
+list_of_enemy_target = []
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99}
-list_of_dmg_spells = ["Arrow shot"]
+list_of_dmg_spells = {"Arrow shot": 2, "Black Death": 100, "Volley": 2, "Kill": 99}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons"]
-list_of_spells_with_no_target = ["Bodyguards","Feudal Obligations"]
+list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley"]
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2}
 
 
@@ -45,7 +44,7 @@ class Spell:
         try:
             if self.name in list_of_self_target:
                 return "self"
-            elif self.name in list_of_enemy_target:
+            elif self.name in list_of_dmg_spells:
                 return "enemy"
         except Exception as e:
             print(e)
