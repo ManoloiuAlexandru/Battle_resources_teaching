@@ -251,9 +251,18 @@ def heal_creature(card_picked, player, amount):
                     card.hp += amount
                     player.logs += " on this card:" + card.name
                     break
+        check_for_creature_with_effect_on(player)
     except Exception as e:
         print(e)
     player.incoming_action = 0
+
+
+def check_for_creature_with_effect_on(player):
+    for creature in player.battle_field:
+        if creature.name == "Church Schooler":
+            creature.hp += 1
+            creature.max_hp += 1
+            creature.attack += 1
 
 
 def deal_dmg_to_creature(card_picked, player, dmg):
@@ -288,6 +297,7 @@ def buff_creature(card_picked, player1):
         for card in player1.battle_field:
             if card_picked.get(card.name_for_html) is not None:
                 card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
+                card.max_hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
                 card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
                 card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
     except Exception as e:

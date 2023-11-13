@@ -5,9 +5,8 @@ from clases.player import Player
 from clases.spells import *
 
 from clases.Item import *
-from clases.game_logics import put_item_on_creature, put_item
 
-from clases.game_logics import buff_creature
+from clases.game_logics import *
 
 
 class Bot(Player):
@@ -51,6 +50,7 @@ class Bot(Player):
                                 creature.hp += list_of_creature_that_heal.get(card.name)
                                 self.logs += "Playing:" + creature.name + "\n"
                                 break
+                    check_for_creature_with_effect_on(self)
                 except Exception as e:
                     print(e)
             if card.name in list_of_creature_that_buff:

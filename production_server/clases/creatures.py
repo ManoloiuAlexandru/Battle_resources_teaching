@@ -1,4 +1,4 @@
-list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest","Lumberjack"]
+list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1)}
@@ -17,6 +17,7 @@ class Creature:
         self.name = name
         self.hp = hp
         self.max_hp = hp
+        self.original_hp = hp
         self.attack = attack
         self.original_attack = attack
         self.active_effects = []
