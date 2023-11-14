@@ -7,6 +7,7 @@
 <body>
 <a href="{{url_for('rules')}}">Rules</a>
 <a href="{{url_for('show_library')}}">Library</a>
+<a href="{{url_for('make_your_own_deck')}}">Create deck</a>
 <form action="/play" method="post">
     <p>Pick your name:</p>
     <input id="player1" name="player1"/>
@@ -15,23 +16,29 @@
         <option value="Bot">BOT</option>
         <option value="Test">Test</option>
     </select>
+    <p>Pick your Empire:</p>
+    <select id="your_empire" name="your_empire">
+        <option value="Byzantine_Empire">Byzantine Empire</option>
+        <option value="Holy_Roman_Empire">Holy Roman Empire</option>
+    </select>
+    <p>Pick your enemy Empire:</p>
+    <select id="enemy_empire" name="enemy_empire">
+        <option value="Byzantine_Empire">Byzantine Empire</option>
+        <option value="Holy_Roman_Empire">Holy Roman Empire</option>
+    </select>
     <p>Pick your deck:</p>
     <select id="deck_player1" name="deck_player1">
-        <option value="integration_deck">Integration Deck</option>
         <option value="demo_deck">Demo Deck</option>
-        <option value="bot_deck">Bot Deck</option>
-        <option value="test_deck">Test Deck</option>
-        <option value="integration_deck_opponent">Integration Deck Opponent</option>
-        <option value="knight_deck_official">Knights deck official</option>
+        <option value="knights_orders">Knight Orders</option>
+        <option value="personal_deck">Personal deck</option>
+        <option value="best_cards_so_far_deck">Best Deck</option>
     </select>
     <p>Pick your opponent deck:</p>
     <select id="deck_player2" name="deck_player2">
-        <option value="integration_deck">Integration Deck</option>
         <option value="demo_deck">Demo Deck</option>
         <option value="bot_deck">Bot Deck</option>
         <option value="test_deck">Test Deck</option>
-        <option value="integration_deck_opponent">Integration Deck Opponent</option>
-        <option value="knight_deck_official">Knights deck official</option>
+        <option value="knights_orders">Knight Orders</option>
     </select>
     <p>Pick difficulty:</p>
     <select id="difficulty" name="difficulty">
