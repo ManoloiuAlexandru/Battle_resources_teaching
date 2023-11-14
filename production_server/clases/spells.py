@@ -1,5 +1,5 @@
 list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
-                  "Bodyguards", "Feudal Obligations", "Black Death", "Knight's training"]
+                  "Bodyguards", "Feudal Obligations", "Black Death", "Knight's training","Peace treaty"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": ""}
 list_of_enemy_target = []
@@ -7,11 +7,12 @@ list_of_healing_spells = {"Bandage": 4, "Bandages": 99}
 list_of_dmg_spells = {"Arrow shot": 2, "Black Death": 100, "Volley": 2, "Kill": 99}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training"]
-list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley"]
+list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley","Peace treaty"]
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1}
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
                        "Knight's training": (3, 3, "")}
+list_of_empire_specific = {"Peace treaty": "Byzantine Empire"}
 
 
 class Spell:
@@ -24,6 +25,7 @@ class Spell:
         self.description = description
         self.img_url = self.name + ".png"
         self.target = self.target_options()
+        self.empire_belonging = ""
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.card_id
         else:

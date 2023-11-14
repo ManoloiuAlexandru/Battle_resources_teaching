@@ -22,11 +22,13 @@ class Creature:
         self.original_attack = attack
         self.active_effects = []
         self.description = description
+        self.original_description = description
         self.card_type = "Creature"
         self.exhausted = self.charge_check()
         self.can_be_target = True
         self.img_url = self.name + ".png"
         self.items = []
+        self.empire_belonging = ""
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.card_id
         else:

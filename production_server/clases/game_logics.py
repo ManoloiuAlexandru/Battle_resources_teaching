@@ -206,6 +206,12 @@ def general_spells(player, enemy_player, spell_name):
                     player.battle_field.append(card)
                     player.deck.remove(card)
                     break
+    elif spell_name == "Peace treaty":
+        for creature in player.battle_field[:]:
+            return_to_hand(creature, player)
+        for creature in enemy_player.battle_field[:]:
+            return_to_hand(creature, enemy_player)
+
     elif player.incoming_spell.name in list_of_spells_that_draw_cards:
         for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
             player.draw_card()
@@ -371,3 +377,12 @@ def check_hero_power(player, enemy_player):
                 player.mana_increase(-2)
             else:
                 player.problem = "You don't have enough space"
+
+
+def return_to_hand(card, player):
+    card.hp = card.original_hp
+    card.attack = card.original_attack
+    card.description = card.original_description
+    if len(player.hand) < 10:
+        player.hand.append(card)
+    player.battle_field.remove(card)
