@@ -76,22 +76,26 @@ class Bot(Player):
         elif card.card_type == "Spell":
             if card.name in list_of_self_target and len(self.battle_field) > 0:
                 try:
+                    self.incoming_spell = card.name
                     if card.name == "Personal Guard":
                         self.battle_field.sort(key=lambda x: x.max_hp)
                         for creature in self.battle_field[::-1]:
                             if "Guard" not in creature.description:
-                                creature.description += " Guard"
+                                self.buff_creature(creature)
                                 self.logs += " on this card:" + creature.name + "\n"
                                 self.draw_card()
                                 break
-                    if card.name == "Horse riding lessons":
+                    elif card.name == "Horse riding lessons":
                         self.battle_field.sort(key=lambda x: x.attack)
                         for creature in self.battle_field[::-1]:
                             if "Charge" not in creature.description:
-                                creature.description += " Charge"
+                                self.buff_creature(creature)
                                 creature.exhausted = False
                                 self.logs += " on this card:" + creature.name + "\n"
                                 break
+                    elif self.incoming_spell in list_of_buff_spells:
+                        for creature in self.battle_field:
+                            self.buff_creature(creature)
                     elif card.name in list_of_healing_spells:
                         self.battle_field.sort(key=lambda x: x.max_hp - x.hp)
                         for creature in self.battle_field:
@@ -236,3 +240,13 @@ class Bot(Player):
             if "Guard" in creature.description.split():
                 return 1
         return 0
+
+    def buff_creature(self, card):
+        if self.incoming_spell is not None:
+            card.hp += list_of_buff_spells.get(self.incoming_spell)[0]
+            card.max_hp += list_of_buff_spells.get(self.incoming_spell)[0]
+            card.attack += list_of_buff_spells.get(self.incoming_spell)[1]
+            card.description += " " + list_of_buff_spells.get(self.incoming_spell)[2]
+            self.incoming_spell = None
+        elif self.active_minion is not None:
+            pass

@@ -177,7 +177,10 @@ def cast_spell(player1, player2, card_picked):
         for card in player1.battle_field:
             if card_picked.get(card.name_for_html) is not None and list_of_self_target.get(
                     player1.incoming_spell.name) not in card.description.split():
-                card.description += " " + list_of_self_target.get(player1.incoming_spell.name)
+                card.hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
+                card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
+                card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
+                card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
                 break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
@@ -294,12 +297,13 @@ def destroy_creature_from_player(player1, player2, card_picked):
 
 def buff_creature(card_picked, player1):
     try:
-        for card in player1.battle_field:
-            if card_picked.get(card.name_for_html) is not None:
-                card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
-                card.max_hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
-                card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
-                card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
+        if player1.active.minnion is not None:
+            for card in player1.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
+                    card.max_hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
+                    card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
+                    card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
     except Exception as e:
         print(e)
 
