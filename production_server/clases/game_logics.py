@@ -364,3 +364,10 @@ def check_hero_power(player, enemy_player):
                 player.mana_increase(-2)
             else:
                 player.problem = "You don't have enough space"
+        elif player.empire == "Holy Roman Empire":
+            if len(player.battle_field) < 7:
+                player.battle_field.append(Creature(1, "Kaiserliche", 1, 1, "", len(player.deck) + 3112))
+                player.used_power = 1
+                player.mana_increase(-2)
+            else:
+                player.problem = "You don't have enough space"

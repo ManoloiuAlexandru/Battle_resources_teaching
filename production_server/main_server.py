@@ -41,7 +41,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         player2.difficulty = difficulty
     else:
         player2 = Player("Andras")
-    player2.empire = " ".join(player1_empire.split("_"))
+    player2.empire = " ".join(player2_empire.split("_"))
     player2.hand = []
     player2.make_deck(dict_of_decks.get(player2_deck))
     player2.playing_deck_name = player2_deck
