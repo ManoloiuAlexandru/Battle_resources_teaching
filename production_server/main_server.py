@@ -8,7 +8,7 @@ from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
     cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
 from clases.player import Player
-from decks.decks_to_play import cards_that_are_in_the_game, dict_of_decks
+from decks.decks_to_play import dict_of_decks, cards_that_are_in_the_game_for_all, cards_for_byzantine_empire
 
 app = Flask(__name__)
 global player1
@@ -135,12 +135,28 @@ def rules():
 def make_your_own_deck():
     global show_deck
     try:
-        return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=cards_that_are_in_the_game)
+        empire = request.args.get("empire")
+        if empire == 'Byzantine_Empire':
+            return render_template("make_your_deck.html", your_deck=show_deck,
+                                   library=cards_for_byzantine_empire)
+        else:
+            return render_template("make_your_deck.html", your_deck=show_deck,
+                                   library=cards_that_are_in_the_game_for_all)
     except Exception as e:
         show_deck = {}
         return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=cards_that_are_in_the_game)
+                               library=cards_that_are_in_the_game_for_all)
+
+
+@app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
+def make_your_own_deck_pick_empire():
+    return render_template("empires_choice.html")
+
+
+@app.route("/send_empire", methods=["POST", "GET"])
+def send_empire():
+    empire = request.form.get("your_empire")
+    return redirect(url_for('make_your_own_deck', empire=empire))
 
 
 @app.route("/deck_cards", methods=["POST", "GET"])
@@ -149,7 +165,7 @@ def make_deck():
     global show_deck
     global index
     cards_name = request.form
-    for card in cards_that_are_in_the_game:
+    for card in cards_that_are_in_the_game_for_all:
         if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
                 your_deck) < 30:
             if card.card_type == "Creature":
