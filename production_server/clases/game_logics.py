@@ -206,7 +206,7 @@ def general_spells(player, enemy_player, spell_name):
                     player.battle_field.append(card)
                     player.deck.remove(card)
                     break
-    elif spell_name == "Peace treaty":
+    elif spell_name == "Peace Treaty":
         for creature in player.battle_field[:]:
             return_to_hand(creature, player)
         for creature in enemy_player.battle_field[:]:

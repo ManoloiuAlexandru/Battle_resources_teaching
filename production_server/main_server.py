@@ -8,7 +8,8 @@ from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
     cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
 from clases.player import Player
-from decks.decks_to_play import dict_of_decks, cards_that_are_in_the_game_for_all, cards_for_byzantine_empire
+from decks.decks_to_play import dict_of_decks, cards_that_are_in_the_game_for_all, cards_for_byzantine_empire, \
+    all_cards_in_game
 
 app = Flask(__name__)
 global player1
@@ -18,6 +19,7 @@ global attacked_player
 global your_deck
 global index
 global show_deck
+global empire
 
 
 def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty, player1_empire, player2_empire):
@@ -135,7 +137,6 @@ def rules():
 def make_your_own_deck():
     global show_deck
     try:
-        empire = request.args.get("empire")
         if empire == 'Byzantine_Empire':
             return render_template("make_your_deck.html", your_deck=show_deck,
                                    library=cards_for_byzantine_empire)
@@ -155,6 +156,7 @@ def make_your_own_deck_pick_empire():
 
 @app.route("/send_empire", methods=["POST", "GET"])
 def send_empire():
+    global empire
     empire = request.form.get("your_empire")
     return redirect(url_for('make_your_own_deck', empire=empire))
 
@@ -164,8 +166,12 @@ def make_deck():
     global your_deck
     global show_deck
     global index
+    if empire == "Byzantine_Empire":
+        deck_to_pick = cards_for_byzantine_empire
+    else:
+        deck_to_pick = cards_that_are_in_the_game_for_all
     cards_name = request.form
-    for card in cards_that_are_in_the_game_for_all:
+    for card in deck_to_pick:
         if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
                 your_deck) < 30:
             if card.card_type == "Creature":
@@ -220,7 +226,7 @@ def remove_card_from_deck():
 
 @app.route("/library")
 def show_library():
-    return render_template("library.html", library=cards_that_are_in_the_game)
+    return render_template("library.html", library=all_cards_in_game)
 
 
 @app.route("/update_battle_field", methods=["POST", "GET"])
