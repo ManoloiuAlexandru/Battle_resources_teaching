@@ -24,6 +24,8 @@ class Player:
         self.ongoing_effects = []
         self.logs = ""
         self.playing_deck_name = ""
+        self.empire = ""
+        self.used_power=0
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -42,16 +44,16 @@ class Player:
         for card in self.hand:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.logs += "Playing:" + card.name + "\n"
-                if card.name in list_of_creature_description:
+                if card.name in list_of_creature_description and len(self.battle_field) < 7:
                     self.mana_pay(card)
                     self.battle_field.append(card)
                     self.incoming_action = 2
                     self.active_minion = card
                     return 2
-                elif card.name in list_of_creature_that_draw_cards:
+                elif card.name in list_of_creature_that_draw_cards and len(self.battle_field) < 7:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                         self.draw_card()
-                elif card.name in list_of_creature_that_add_mana:
+                elif card.name in list_of_creature_that_add_mana and len(self.battle_field) < 7:
                     self.mana_increase(list_of_creature_that_add_mana.get(card.name))
                     if self.empty_mana + list_of_creature_that_add_mana.get(card.name) > 10:
                         self.empty_mana = 10
@@ -67,8 +69,10 @@ class Player:
                     self.incoming_action = 4
                     self.active_item = card
                     return 4
-                elif card.name in list_of_creature_with_on_going_effect:
+                elif card.name in list_of_creature_with_on_going_effect and len(self.battle_field) < 7:
                     self.ongoing_effects.append(card)
+                elif len(self.battle_field) == 7:
+                    return 0
                 self.battle_field.append(card)
                 self.mana_pay(card)
                 return 1

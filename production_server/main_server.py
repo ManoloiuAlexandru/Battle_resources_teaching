@@ -6,7 +6,7 @@ from clases.creatures import Creature
 from clases.bot import Bot
 from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
     damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
-    cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck
+    cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
 from clases.player import Player
 from decks.decks_to_play import cards_that_are_in_the_game, dict_of_decks
 
@@ -20,7 +20,7 @@ global index
 global show_deck
 
 
-def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty):
+def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty, player1_empire, player2_empire):
     global player1
     global player2
     global attacked_player
@@ -29,6 +29,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             player1 = Player(player1_name)
     except Exception as e:
         player1 = Player(player1_name)
+    player1.empire = " ".join(player1_empire.split("_"))
     player1.hand = []
     player1.playing_deck_name = play1_deck
     if play1_deck == "personal_deck":
@@ -40,6 +41,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         player2.difficulty = difficulty
     else:
         player2 = Player("Andras")
+    player2.empire = " ".join(player1_empire.split("_"))
     player2.hand = []
     player2.make_deck(dict_of_decks.get(player2_deck))
     player2.playing_deck_name = player2_deck
@@ -88,14 +90,16 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     return player1, player2
 
 
-def game_start(player1_name, player2_name, play1_deck, player2_deck, difficulty):
+def game_start(player1_name, player2_name, play1_deck, player2_deck, difficulty, player1_empire, player2_empire):
     global player1
     global player2
     try:
         if player1 is None:
-            player1, player2 = game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty)
+            player1, player2 = game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty,
+                                               player1_empire, player2_empire)
     except Exception as e:
-        player1, player2 = game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty)
+        player1, player2 = game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty,
+                                           player1_empire, player2_empire)
 
 
 @app.route("/")
@@ -118,7 +122,7 @@ def reset():
     global player1
     global player2
     game_difficulty(player1.name, player2.name, player1.playing_deck_name, player2.playing_deck_name,
-                    player2.difficulty)
+                    player2.difficulty, player1.empire, player2.empire)
     return redirect(url_for('show_battle', players=[player2, player1], attacking_card=None))
 
 
@@ -129,8 +133,14 @@ def rules():
 
 @app.route("/make_your_own_deck", methods=["POST", "GET"])
 def make_your_own_deck():
-    return render_template("make_your_deck.html", your_deck=show_deck,
-                           library=cards_that_are_in_the_game)
+    global show_deck
+    try:
+        return render_template("make_your_deck.html", your_deck=show_deck,
+                               library=cards_that_are_in_the_game)
+    except Exception as e:
+        show_deck = {}
+        return render_template("make_your_deck.html", your_deck=show_deck,
+                               library=cards_that_are_in_the_game)
 
 
 @app.route("/deck_cards", methods=["POST", "GET"])
@@ -159,12 +169,14 @@ def make_deck():
 def show_battle():
     global player1
     global player2
+    player1_empire = request.form.get("your_empire")
+    player2_empire = request.form.get("enemy_empire")
     player1_name = request.form.get("player1")
     player2_name = request.form.get("player2")
     player1_deck = request.form.get("deck_player1")
     player2_deck = request.form.get("deck_player2")
     difficulty = request.form.get("difficulty")
-    game_start(player1_name, player2_name, player1_deck, player2_deck, difficulty)
+    game_start(player1_name, player2_name, player1_deck, player2_deck, difficulty, player1_empire, player2_empire)
     Player.battle_fields_effects(player1, player2)
     return render_template("home.html", players=[player2, player1])
 
@@ -205,7 +217,10 @@ def update_battle():
             Player.battle_fields_effects(player1, player2)
             return redirect(url_for('battlefield_fight'))
         elif player1.put_card_on_field(card_picked) == 0:
-            player1.problem = "Not enough mana"
+            if len(player1.battle_field) == 7:
+                player1.problem = "You don't have enough space"
+            else:
+                player1.problem = "Not enough mana"
     elif type(player2) == Player:
         card_picked = request.form
         if player2.put_card_on_field(card_picked) != 0:
@@ -222,6 +237,8 @@ def battlefield_fight():
     global player2
     global player1
     player_selected = False
+    if card_picked.get("hero_power") is not None:
+        check_hero_power(player1, player2)
     Player.battle_fields_effects(player1, player2)
     if player1.incoming_action == 2:
         destroy_creature_from_player(player1, player2, card_picked)

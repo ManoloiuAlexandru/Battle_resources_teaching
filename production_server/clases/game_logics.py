@@ -1,7 +1,11 @@
+import random
+
 from clases.creatures import *
 from clases.spells import *
 from clases.Item import *
 from clases.player import Player
+
+from ITschool_projects.battle_resources.production_server.clases.creatures import Creature
 
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
 
@@ -48,6 +52,7 @@ def turn_switch(player1, player2):
             print(e)
         player2.turn = 1
         player1.turn = 0
+        player1.used_power = 0
         player2.empty_mana += 1
         if player2.empty_mana > 10:
             player2.empty_mana = 10
@@ -344,3 +349,18 @@ def make_html_deck(deck, html_deck):
                 nr_ap += 1
         html_deck[deck[i].name] = [deck[i].mana_cost, nr_ap]
     return html_deck
+
+
+def check_hero_power(player, enemy_player):
+    if player.mana < 2:
+        player.problem = "Not enough mana"
+    else:
+        if player.empire == "Byzantine Empire":
+            list_of_auxiliary_soldiers = [Creature(1, "Shield soldier", 2, 0, "Guard", len(player.deck) + 934),
+                                          Creature(1, "Man at arms", 1, 1, "", len(player.deck) + 944)]
+            if len(player.battle_field) < 7:
+                player.battle_field.append(random.choice(list_of_auxiliary_soldiers))
+                player.used_power = 1
+                player.mana_increase(-2)
+            else:
+                player.problem = "You don't have enough space"

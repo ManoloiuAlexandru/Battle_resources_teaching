@@ -1,5 +1,5 @@
 from clases.creatures import *
-from clases.game_logics import battle, damage_to_player
+from clases.game_logics import *
 from clases.player import Player
 
 from clases.spells import *
@@ -28,6 +28,8 @@ class Bot(Player):
                     self.hand.remove(card)
                     self.mana_increase(-card.mana_cost)
                     Player.battle_fields_effects(self, player)
+        if self.mana >= 2:
+            check_hero_power(self, player)
 
     def check_summed_card(self, card, player):
         if card.card_type == "Creature":

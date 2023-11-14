@@ -51,7 +51,13 @@
                 <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}<br>
                     Mana: {{players[0].mana}}/{{players[0].empty_mana}}
                 </button>
-                </button>
+                {%if players[0].used_power==0:%}}
+                <button name="hero_power">{{players[0].empire}}<br>
+                Mana Cost:2</button>
+                {%else%}
+                <button disabled name="hero_power">{{players[0].empire}}<br>
+                Mana Cost:2</button>
+                {%endif%}
             </form>
             <div class="player_mana">
                 {%for mana in range(0,players[0].mana):%}
@@ -196,6 +202,13 @@
                 <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}<br>
                     Mana: {{players[1].mana}}/{{players[1].empty_mana}}
                 </button>
+                {%if players[1].used_power==0:%}}
+                <button name="hero_power">{{players[1].empire}}<br>
+                Mana Cost:2</button>
+                {%else%}
+                <button disabled name="hero_power">{{players[1].empire}}<br>
+                Mana Cost:2</button>
+                {%endif%}
             </form>
             <div class="player_mana">
                 {%for mana in range(0,players[1].mana):%}
