@@ -102,6 +102,7 @@ class Player:
             print(e)
 
     def make_deck(self, deck):
+        self.deck = []
         for card in deck:
             self.deck.append(card)
 

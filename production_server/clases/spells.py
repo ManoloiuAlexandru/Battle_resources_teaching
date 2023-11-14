@@ -9,7 +9,8 @@ list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "
                             "Knight's training"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley"]
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1}
-list_of_buff_spells = {"Horse riding lessons": (0, 2, "Charge"), "Personal Guard": (0, 0, "Guard"),
+list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
+                       "Personal Guard": (0, 0, "Guard"),
                        "Knight's training": (3, 3, "")}
 
 

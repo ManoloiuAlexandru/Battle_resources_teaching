@@ -24,7 +24,11 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     global player1
     global player2
     global attacked_player
-    player1 = Player(player1_name)
+    try:
+        if player1 is None:
+            player1 = Player(player1_name)
+    except Exception as e:
+        player1 = Player(player1_name)
     player1.hand = []
     player1.playing_deck_name = play1_deck
     if play1_deck == "personal_deck":
@@ -39,7 +43,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     player2.hand = []
     player2.make_deck(dict_of_decks.get(player2_deck))
     player2.playing_deck_name = player2_deck
-    if difficulty == "easy":
+    if difficulty == "easy" and player1.mana == 0:
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
@@ -48,12 +52,12 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
         player1.hp = 9999
         player2.mana = 1
-    if difficulty == "normal":
+    if difficulty == "normal" and player1.mana == 0:
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
         player2.mana = 1
-    if difficulty == "hard":
+    if difficulty == "hard" and player1.mana == 0:
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
@@ -66,7 +70,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             card.mana_cost += 1
             if card.mana_cost > 10:
                 card.mana_cost = 10
-    if difficulty == "insane":
+    if difficulty == "insane" and player1.mana == 0:
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1

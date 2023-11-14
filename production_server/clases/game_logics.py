@@ -262,7 +262,7 @@ def heal_creature(card_picked, player, amount):
 
 def check_for_creature_with_effect_on(player):
     for creature in player.battle_field:
-        if creature.name == "Church Schooler":
+        if creature.name == "Church Scholar":
             creature.hp += 1
             creature.max_hp += 1
             creature.attack += 1
@@ -297,7 +297,7 @@ def destroy_creature_from_player(player1, player2, card_picked):
 
 def buff_creature(card_picked, player1):
     try:
-        if player1.active.minnion is not None:
+        if player1.active_minion is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
                     card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
