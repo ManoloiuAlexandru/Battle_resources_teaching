@@ -135,7 +135,9 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Spell(3, "Knight's training", "Give a minions +3/+3", -35)
                                       ]
 cards_for_byzantine_empire = [
-    Spell(6, "Peace Treaty", "Return all creature form the battle field their owners hands.", -36)]
+    Spell(6, "Peace Treaty", "Return all creature form the battle field their owners hands.", -36),
+    Creature(4, "Pronoiar", 3, 3, "Charge", -37),
+    Creature(2, "Akritoi", 3, 2, "Guard", -38)]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8,
              "While Barbarossa is on the field enemy minions get -2/0", -20),
@@ -177,6 +179,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Spell(3, "Feudal Obligations", "Draw 2 cards", -29),
                      Creature(2, "Hunting dog", 1, 2, "Charge", -30),
                      Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", -31),
+                     Creature(4, "Pronoiar", 3, 3, "Charge", -37),
+                     Creature(3, "Akritoi", 3, 2, "Guard", -38),
                      Spell(8, "Black Death", "Destroy ALL minions", -32),
                      Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", -33),
                      Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ",
