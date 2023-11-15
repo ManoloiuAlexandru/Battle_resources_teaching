@@ -9,7 +9,7 @@ from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing
     cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
 from clases.player import Player
 from decks.decks_to_play import dict_of_decks, cards_that_are_in_the_game_for_all, cards_for_byzantine_empire, \
-    all_cards_in_game
+    all_cards_in_game, empire_decks
 
 app = Flask(__name__)
 global player1
@@ -137,12 +137,8 @@ def rules():
 def make_your_own_deck():
     global show_deck
     try:
-        if empire == 'Byzantine_Empire':
             return render_template("make_your_deck.html", your_deck=show_deck,
-                                   library=cards_for_byzantine_empire)
-        else:
-            return render_template("make_your_deck.html", your_deck=show_deck,
-                                   library=cards_that_are_in_the_game_for_all)
+                                   library=empire_decks[empire])
     except Exception as e:
         show_deck = {}
         return render_template("make_your_deck.html", your_deck=show_deck,

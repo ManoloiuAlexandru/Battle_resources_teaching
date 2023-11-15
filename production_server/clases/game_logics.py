@@ -327,6 +327,7 @@ def cast_spell_from_player(player1, player2, card_picked):
     elif card_picked.get(player2.name) is not None:
         player2.hp -= int(player1.incoming_spell.deal_dmg_to_target())
         player1.incoming_action = 0
+        player1.incoming_spell = None
     elif check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
     else:
