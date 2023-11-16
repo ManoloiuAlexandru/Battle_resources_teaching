@@ -333,6 +333,7 @@ def buff_creature(card_picked, player1):
                     card.max_hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
                     card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
                     card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
+                    card.check_creature()
     except Exception as e:
         print(e)
 

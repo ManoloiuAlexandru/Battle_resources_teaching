@@ -1,7 +1,7 @@
-list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack"]
+list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
-list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1)}
+list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored")}
 list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Lionheart"]
 list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
 list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]
@@ -25,7 +25,7 @@ class Creature:
         self.original_description = description
         self.card_type = "Creature"
         self.exhausted = self.charge_check()
-        self.armored = self.armored()
+        self.armored = self.check_armored()
         self.can_be_target = True
         self.img_url = self.name + ".png"
         self.items = []
@@ -52,6 +52,8 @@ class Creature:
             self.attack = 0
         if self.hp <= 0:
             self.hp = 1
+        self.armored = self.check_armored()
+        self.exhausted = self.charge_check()
 
     def negative_effects_from_creatures(self, card):
         if card.name == "Frederick Barbarossa":
@@ -81,7 +83,7 @@ class Creature:
         except Exception as e:
             print(e)
 
-    def armored(self):
+    def check_armored(self):
         if "Armored" in self.description.split():
             return True
         return False

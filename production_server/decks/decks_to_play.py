@@ -138,7 +138,8 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", -33),
                                       Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ",
                                                -34),
-                                      Spell(3, "Knight's training", "Give a minions +3/+3", -35)
+                                      Spell(3, "Knight's training", "Give a minions +3/+3", -35),
+                                      Creature(2, "Armorer", 2, 2, "Give a friendly minion armored", -39),
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -196,6 +197,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Spell(3, "Knight's training", "Give a minions +3/+3", -35),
                      Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
                      Creature(6, "Cataphract", 6, 6, "Guard Armored", -39),
+                     Creature(2, "Armorer", 2, 2, "Give a friendly minion armored", -39),
                      Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40)
                      ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
