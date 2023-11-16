@@ -27,10 +27,16 @@ class Item:
                 creature.description += " Guard"
             elif "Charge" in self.description.split() and "Charge" not in creature.description.split():
                 creature.description += " Charge"
-            for hp in self.description.split("/")[1]:
-                if hp.isnumeric():
-                    creature.hp += int(hp)
-                    creature.max_hp += int(hp)
-            for attack in self.description.split("/")[0]:
-                if attack.isnumeric():
-                    creature.attack += int(attack)
+            elif "Armored" in self.description.split() and "Armored" not in creature.description.split():
+                creature.description += " Armored"
+                creature.armored = True
+            try:
+                for hp in self.description.split("/")[1]:
+                    if hp.isnumeric():
+                        creature.hp += int(hp)
+                        creature.max_hp += int(hp)
+                for attack in self.description.split("/")[0]:
+                    if attack.isnumeric():
+                        creature.attack += int(attack)
+            except Exception as e:
+                print(e)

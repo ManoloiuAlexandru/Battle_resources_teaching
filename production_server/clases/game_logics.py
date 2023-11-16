@@ -24,7 +24,7 @@ def battle(card1, card2, player1, player2):
         elif card2.armored is True:
             card1.hp -= card2.attack
             if card1.attack > 0:
-                card1.armored = False
+                card2.armored = False
         else:
             card1.hp -= card2.attack
             card2.hp -= card1.attack
@@ -195,8 +195,12 @@ def cast_spell(player1, player2, card_picked):
         if dmg_to_enemy_minions == 1:
             card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
         elif card_picked.get(card.name_for_html) is not None and destroy_minion == 0:
-            card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
-            break
+            if card.armored is True:
+                card.armored = False
+                break
+            else:
+                card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+                break
         elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
             break
@@ -227,7 +231,10 @@ def general_spells(player, enemy_player, spell_name):
                 creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
         elif "enemies" in player.incoming_spell.description:
             for creature in enemy_player.battle_field:
-                creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+                if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 98:
+                    creature.armored = False
+                else:
+                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
     Player.clean_board(player, enemy_player)
 
 

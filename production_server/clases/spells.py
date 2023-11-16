@@ -4,7 +4,7 @@ list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "",
                        "Knight's training": ""}
 list_of_enemy_target = []
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99}
-list_of_dmg_spells = {"Arrow shot": 2, "Black Death": 100, "Volley": 2, "Kill": 99}
+list_of_dmg_spells = {"Arrow shot": 2, "Black Death": 100, "Volley": 2, "Kill": 100}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley", "Peace Treaty"]
