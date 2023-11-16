@@ -12,20 +12,24 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
 
 def battle(card1, card2, player1, player2):
     try:
-        if card1.attack >= card2.hp and card1.hp <= card2.attack:
-            player2.battle_field.remove(card2)
-            player1.battle_field.remove(card1)
-        elif card1.attack < card2.hp and card2.attack >= card1.hp:
-            player1.battle_field.remove(card1)
+        if card1.armored is True and card2.armored is True:
+            if card2.attack > 0:
+                card1.armored = False
+            if card1.attack > 0:
+                card2.armored = False
+        elif card1.armored is True:
             card2.hp -= card1.attack
-        elif card1.attack >= card2.hp and card1.hp > card2.attack:
-            player2.battle_field.remove(card2)
+            if card2.attack > 0:
+                card1.armored = False
+        elif card2.armored is True:
             card1.hp -= card2.attack
-            card1.exhausted = True
+            if card1.attack > 0:
+                card1.armored = False
         else:
             card1.hp -= card2.attack
             card2.hp -= card1.attack
             card1.exhausted = True
+        Player.clean_board(player1, player2)
         Player.battle_fields_effects(player1, player2)
     except Exception as e:
         print(e)

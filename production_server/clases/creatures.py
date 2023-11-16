@@ -25,6 +25,7 @@ class Creature:
         self.original_description = description
         self.card_type = "Creature"
         self.exhausted = self.charge_check()
+        self.armored = self.armored()
         self.can_be_target = True
         self.img_url = self.name + ".png"
         self.items = []
@@ -79,3 +80,8 @@ class Creature:
                 self.active_effects.remove(card.name)
         except Exception as e:
             print(e)
+
+    def armored(self):
+        if "Armored" in self.description.split():
+            return True
+        return False

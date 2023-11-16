@@ -53,10 +53,12 @@
                 </button>
                 {%if players[0].used_power==0:%}}
                 <button name="hero_power">{{players[0].empire}}<br>
-                Mana Cost:2</button>
+                    Mana Cost:2
+                </button>
                 {%else%}
                 <button disabled name="hero_power">{{players[0].empire}}<br>
-                Mana Cost:2</button>
+                    Mana Cost:2
+                </button>
                 {%endif%}
             </form>
             <div class="player_mana">
@@ -77,8 +79,19 @@
                     <div class="cards_in_hand">
                         {%for creature in players[0].battle_field%}
                         {%if creature.can_be_target==False:%}
-                        <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                        {%if creature.armored==True%}
+                        <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                                id={{creature.card_id+"on_field"+"2"}}
                                 name={{creature.name_for_html}}>
+                            {%elif "Guard" in creature.description%}
+                            <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                                id={{creature.card_id+"on_field"+"2"}}
+                                name={{creature.name_for_html}}>
+                            {%else%}
+                            <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                                    name={{creature.name_for_html}}>
+                                {%endif%}
+                                <span style="display:flex">
                             M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                             <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                             <span class="creature_name">{{creature.name}}</span><br>
@@ -90,9 +103,19 @@
                             {%endif%}
                         </button>
                         {%else%}
-                        <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                        {%if creature.armored==True%}
+                        <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                                id={{creature.card_id+"on_field"+"2"}}
                                 name={{creature.name_for_html}}>
-                               <span style="display:flex">
+                            {%elif "Guard" in creature.description%}
+                            <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                                id={{creature.card_id+"on_field"+"2"}}
+                                name={{creature.name_for_html}}>
+                            {%else%}
+                            <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                                    name={{creature.name_for_html}}>
+                                {%endif%}
+                                <span style="display:flex">
                 M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 </span>
@@ -124,9 +147,19 @@
                     <div class="cards_in_hand">
                         {%for creature in players[1].battle_field%}
                         {%if creature.can_be_target==False:%}
-                        <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
+                        {%if creature.armored==True%}
+                        <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                                id={{creature.card_id+"on_field"+"1"}}
                                 name={{creature.name_for_html}}>
-                <span style="display:flex">
+                            {%elif "Guard" in creature.description%}
+                            <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                                id={{creature.card_id+"on_field"+"1"}}
+                                name={{creature.name_for_html}}>
+                            {%else%}
+                            <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
+                                    name={{creature.name_for_html}}>
+                                {%endif%}
+                                <span style="display:flex">
                 M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 </span>
@@ -139,22 +172,32 @@
                             {%endif%}
                         </button>
                         {%else%}
-                        <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
+                        {%if creature.armored==True%}
+                        <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                                id={{creature.card_id+"on_field"+"1"}}
                                 name={{creature.name_for_html}}>
-                <span style="display:flex">
+                            {%elif "Guard" in creature.description%}
+                            <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                                id={{creature.card_id+"on_field"+"1"}}
+                                name={{creature.name_for_html}}>
+                            {%else%}
+                            <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
+                                    name={{creature.name_for_html}}>
+                                {%endif%}
+                                <span style="display:flex">
                 M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 </span>
-                            <b><span class="creature_name">{{creature.name}}</span></b><br>
-                            ---------------------<br>
-                            <span class="description">{{creature.description}}</span><br>
-                            {%if creature.card_type=="Creature"%}
-                            ---------------------<br>
-                            <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
+                                <b><span class="creature_name">{{creature.name}}</span></b><br>
+                                ---------------------<br>
+                                <span class="description">{{creature.description}}</span><br>
+                                {%if creature.card_type=="Creature"%}
+                                ---------------------<br>
+                                <span class="attack_hp">A:{{creature.attack}}  H:{{creature.hp}}</span>
+                                {%endif%}
+                            </button>
                             {%endif%}
-                        </button>
-                        {%endif%}
-                        {%endfor%}
+                            {%endfor%}
                     </div>
                 </form>
             </div>
@@ -204,10 +247,12 @@
                 </button>
                 {%if players[1].used_power==0:%}}
                 <button name="hero_power">{{players[1].empire}}<br>
-                Mana Cost:2</button>
+                    Mana Cost:2
+                </button>
                 {%else%}
                 <button disabled name="hero_power">{{players[1].empire}}<br>
-                Mana Cost:2</button>
+                    Mana Cost:2
+                </button>
                 {%endif%}
             </form>
             <div class="player_mana">
