@@ -6,9 +6,6 @@ from clases.spells import *
 
 from clases.Item import *
 
-from clases.game_logics import *
-
-
 class Bot(Player):
     def __init__(self, name):
         super().__init__(name)

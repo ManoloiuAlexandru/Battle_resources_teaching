@@ -1,10 +1,12 @@
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99}
+list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored")}
 list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Lionheart"]
 list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
 list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]
+list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1}
 list_of_creature_that_add_mana = {"Farmer": 1}
 

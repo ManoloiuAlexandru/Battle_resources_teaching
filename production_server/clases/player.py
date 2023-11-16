@@ -5,6 +5,8 @@ from clases.spells import list_of_spells
 
 from clases.Item import list_of_item
 
+from clases.game_logics import *
+
 
 class Player:
     def __init__(self, name):
@@ -25,7 +27,7 @@ class Player:
         self.logs = ""
         self.playing_deck_name = ""
         self.empire = ""
-        self.used_power=0
+        self.used_power = 0
 
     def mana_increase(self, amount):
         self.mana += amount

@@ -66,26 +66,22 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             ]
 demo_deck = [
     Creature(1, "demo", 1, 1, "Guard", 0),
-    Creature(1, "demo", 1, 1, "Guard", 1),
-    Creature(1, "demo", 1, 1, "", 2),
-    Creature(1, "demo", 1, 1, "", 3),
-    Creature(1, "demo", 1, 1, "Guard", 4),
-    Creature(1, "demo", 1, 1, "", 5),
-    Creature(1, "demo", 1, 1, "Guard", 6),
-    Creature(1, "demo", 1, 1, "Guard", 7),
-    Creature(1, "demo", 1, 1, "", 8),
-    Creature(1, "demo", 1, 1, "Guard", 9),
-    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 10),
-    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 11),
-    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 12),
-    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 13),
-    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 14),
-    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 15),
-    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
-    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
-    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
-    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
-    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 1),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 2),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 3),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 4),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 5),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 6),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 7),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 8),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 9),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 11),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 12),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 13),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 14),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 15),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 16),
+    Creature(1, "Scribe", 3, 3, "At the end of turn draw a card", 17)
 
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly soldiers get +1/+1", 1002),
@@ -150,6 +146,7 @@ cards_for_byzantine_empire = [
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8,
              "While Barbarossa is on the field enemy minions get -2/0", -20),
+    Creature(3, "Scribe", 3, 0, "At the end of your turn draw a card", -41),
 ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(7, 'Templar Knight', 7, 5, "Guard", -2),
@@ -198,7 +195,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
                      Creature(6, "Cataphract", 6, 6, "Guard Armored", -39),
                      Creature(2, "Armorer", 2, 2, "Give a friendly minion armored", -39),
-                     Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40)
+                     Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40),
+                     Creature(3, "Scribe", 3, 0, "At the end of your turn draw a card", -41),
                      ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)

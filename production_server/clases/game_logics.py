@@ -3,7 +3,7 @@ import random
 from clases.creatures import *
 from clases.spells import *
 from clases.Item import *
-from clases.player import Player
+from clases.player import *
 
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
 
@@ -42,6 +42,7 @@ def cancel_card(card, player):
 
 def turn_switch(player1, player2):
     if player1.turn == 1:
+        end_of_turn_action(player1)
         try:
             if player1.incoming_spell.name is not None and player1.incoming_spell.name in list_of_resetting_spells:
                 cancel_card(player1.incoming_spell, player1)
@@ -283,18 +284,21 @@ def heal_creature(card_picked, player, amount):
                     card.hp += amount
                     player.logs += " on this card:" + card.name
                     break
-        check_for_creature_with_effect_on(player)
+        check_for_creature_with_effect_on(player, "heal")
     except Exception as e:
         print(e)
     player.incoming_action = 0
 
 
-def check_for_creature_with_effect_on(player):
+def check_for_creature_with_effect_on(player, action):
     for creature in player.battle_field:
-        if creature.name == "Church Scholar":
-            creature.hp += 1
-            creature.max_hp += 1
-            creature.attack += 1
+        if creature.name in list_of_creature_that_are_effected_by_action and \
+                list_of_creature_that_are_effected_by_action.get(creature.name)[3] == action:
+            creature.hp += list_of_creature_that_are_effected_by_action.get(creature.name)[0]
+            creature.max_hp += list_of_creature_that_are_effected_by_action.get(creature.name)[0]
+            creature.attack += list_of_creature_that_are_effected_by_action.get(creature.name)[1]
+            creature.description += list_of_creature_that_are_effected_by_action.get(creature.name)[2]
+            creature.check_creature()
 
 
 def deal_dmg_to_creature(card_picked, player, dmg):
@@ -406,3 +410,11 @@ def return_to_hand(card, player):
     if len(player.hand) < 10:
         player.hand.append(card)
     player.battle_field.remove(card)
+
+
+def end_of_turn_action(player):
+    for card in player.battle_field:
+        if card.name in list_of_creature_that_do_something_at_the_end_of_your_turn:
+            if list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[0] == "draw":
+                for nr_cards in range(list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]):
+                    player.draw_card()
