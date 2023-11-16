@@ -57,7 +57,7 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             # Item(2, "Leather Armor", "Give a creature +0/+3", 7474789),
             Item(2, "Leather Armor", "Give a creature +0/+3", 6474789),
             # Item(2, "Cloth Armor", "Give a creature +0/+1 and Charge", 957106),
-            # Item(2, "Plate Armor", "Give a creature +0/+4", 1650267),
+            # Item(2, "Plate Armor", "Give a creature Armored", 1650267),
             # Item(1, "Dagger", "Give a creature +2/+0", 1876590),
             Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ", 54578),
             # Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ", 61290),
@@ -65,10 +65,28 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Demo", 1, 10, "Armored", 0),
-    Spell(0, "Volley", "Deal 2 damage to all enemies", 1),
-    Creature(0, "Demo", 1, 10, "Armored", 2),
-    Creature(0, "Demo", 1, 10, "Armored", 3),
+    Creature(1, "demo", 1, 1, "Guard", 0),
+    Creature(1, "demo", 1, 1, "Guard", 1),
+    Creature(1, "demo", 1, 1, "", 2),
+    Creature(1, "demo", 1, 1, "", 3),
+    Creature(1, "demo", 1, 1, "Guard", 4),
+    Creature(1, "demo", 1, 1, "", 5),
+    Creature(1, "demo", 1, 1, "Guard", 6),
+    Creature(1, "demo", 1, 1, "Guard", 7),
+    Creature(1, "demo", 1, 1, "", 8),
+    Creature(1, "demo", 1, 1, "Guard", 9),
+    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 10),
+    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 11),
+    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 12),
+    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 13),
+    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 14),
+    Spell(1, "Wealthy Empire", "Summon 2 random cards from your deck", 15),
+    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
+    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
+    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
+    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
+    Spell(1, "Bodyguards", "Summon  2 Guards from your deck", 15),
+
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly soldiers get +1/+1", 1002),
                        Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
@@ -123,10 +141,11 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Spell(3, "Knight's training", "Give a minions +3/+3", -35)
                                       ]
 cards_for_byzantine_empire = [
-    Spell(6, "Peace Treaty", "Return all creature form the battle field their owners hands.", -36),
+    Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
     Creature(4, "Pronoiar", 3, 3, "Charge", -37),
     Creature(2, "Akritoi", 3, 2, "Guard", -38),
-    Creature(6, "Cataphract", 6, 6, "Guard Armored", -39)]
+    Creature(6, "Cataphract", 6, 6, "Guard Armored", -39),
+    Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40)]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8,
              "While Barbarossa is on the field enemy minions get -2/0", -20),
@@ -163,7 +182,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(4, "City Guard", 6, 4, "Guard", -24),
                      Item(2, "Leather Armor", "Give a creature +0/+3 and draw a card", -25),
                      Item(2, "Cloth Armor", "Give a creature +0/+1 and Charge", -26),
-                     Item(2, "Plate Armor", "Give a creature +0/+4", -27),
+                     Item(2, "Plate Armor", "Give a creature Armored", -27),
                      Item(1, "Dagger", "Give a creature +2/+0", -28),
                      Spell(3, "Feudal Obligations", "Draw 2 cards", -29),
                      Creature(2, "Hunting dog", 1, 2, "Charge", -30),
@@ -175,8 +194,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ",
                               -34),
                      Spell(3, "Knight's training", "Give a minions +3/+3", -35),
-                     Spell(6, "Peace Treaty", "Return all creature form the battle field their owners hands.", -36),
-                     Creature(6, "Cataphract", 6, 6, "Guard Armored", -39)
+                     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
+                     Creature(6, "Cataphract", 6, 6, "Guard Armored", -39),
+                     Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40)
                      ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)

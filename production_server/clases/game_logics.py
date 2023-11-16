@@ -5,8 +5,6 @@ from clases.spells import *
 from clases.Item import *
 from clases.player import Player
 
-from ITschool_projects.battle_resources.production_server.clases.creatures import Creature
-
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
 
 
@@ -207,10 +205,19 @@ def cast_spell(player1, player2, card_picked):
 
 
 def general_spells(player, enemy_player, spell_name):
-    if spell_name == "Bodyguards":
-        for i in range(0, 2):
+    if spell_name in list_of_spells_that_summon:
+        for i in range(0, list_of_spells_that_summon.get(spell_name)[1]):
             for card in player.deck:
-                if "Guard" in card.description.split() and card.card_type == "Creature":
+                if list_of_spells_that_summon.get(spell_name)[0] == "":
+                    card_picked = random.choice(player.deck)
+                    if any(obj.card_type == "Creature" for obj in player.deck):
+                        while card_picked.card_type != "Creature":
+                            card_picked = random.choice(player.deck)
+                        player.battle_field.append(card_picked)
+                        player.deck.remove(card_picked)
+                    break
+                elif (list_of_spells_that_summon.get(spell_name)[0] in card.description.split()
+                      and card.card_type == "Creature"):
                     player.battle_field.append(card)
                     player.deck.remove(card)
                     break
