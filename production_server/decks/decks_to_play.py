@@ -65,8 +65,8 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Andras", 1, 1, "Charge", 0),
-    Creature(0, "Andras", 1, 1, "Charge", 0)
+    Creature(0, "Andras", 99, 1, "Charge", 0),
+    Creature(0, "Andras", 99, 1, "Charge", 1)
 
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly minions get +1/+1", 1002),

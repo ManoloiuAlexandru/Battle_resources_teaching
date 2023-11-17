@@ -195,6 +195,7 @@ def cast_spell(player1, player2, card_picked):
                 card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
                 card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
                 card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
+                card.check_creature()
                 break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
