@@ -3,8 +3,9 @@ from clases.game_logics import *
 from clases.player import Player
 
 from clases.spells import *
-
+from decks.lists_of_cards import *
 from clases.Item import *
+
 
 class Bot(Player):
     def __init__(self, name):
@@ -116,10 +117,14 @@ class Bot(Player):
                             self.battle_field.append(card)
                             self.deck.remove(card)
                             break
-            elif card.name == "Feudal Obligations":
+            if card.name in list_of_spells_that_draw_cards:
                 for nr_cards in range(list_of_spells_that_draw_cards.get(card.name)):
                     self.draw_card()
-            elif card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
+                    if card.name in list_of_spells_that_reduce_mana:
+                        if list_of_spells_that_reduce_mana.get(card.name)[0] in self.hand[-1].description:
+                            self.hand[-1].mana_cost_reduction(
+                                list_of_spells_that_reduce_mana.get(card.name)[1])
+            if card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
             else:
                 return 0
@@ -177,10 +182,10 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 999
                         self.logs += " on this card:" + creature.name + "\n"
-            elif card.name == "Arrow shot":
+            elif card.name in list_of_dmg_spells:
                 for creature in player.battle_field:
                     if creature == target_creature:
-                        creature.hp -= 1
+                        creature.hp -= list_of_dmg_spells.get(card.name)
                         self.logs += " on this card:" + creature.name + "\n"
             else:
                 if "ALL" in card.description:
@@ -201,10 +206,10 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 99
                         self.logs += " on this card:" + creature.name + "\n"
-            elif card.name == "Arrow shot":
+            elif card.name in list_of_dmg_spells:
                 for creature in player.battle_field:
                     if creature == target_creature:
-                        creature.hp -= 1
+                        creature.hp -= list_of_dmg_spells.get(card.name)
                         self.logs += " on this card:" + creature.name + "\n"
             else:
                 if "ALL" in card.description:

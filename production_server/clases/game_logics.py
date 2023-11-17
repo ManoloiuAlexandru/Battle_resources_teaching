@@ -235,6 +235,10 @@ def general_spells(player, enemy_player, spell_name):
     elif player.incoming_spell.name in list_of_spells_that_draw_cards:
         for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
             player.draw_card()
+            if player.incoming_spell.name in list_of_spells_that_reduce_mana:
+                if list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[0] in player.hand[-1].description:
+                    player.hand[-1].mana_cost_reduction(
+                        list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[1])
     elif player.incoming_spell.name in list_of_dmg_spells:
         if "ALL" in player.incoming_spell.description:
             for creature in player.battle_field:

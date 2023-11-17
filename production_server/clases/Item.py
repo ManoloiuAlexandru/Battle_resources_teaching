@@ -40,3 +40,9 @@ class Item:
                         creature.attack += int(attack)
             except Exception as e:
                 print(e)
+
+    def mana_cost_reduction(self, amount):
+        if self.mana_cost - amount < 0:
+            self.mana_cost = 0
+        else:
+            self.mana_cost -= amount

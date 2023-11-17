@@ -76,3 +76,9 @@ class Creature:
         if "Armored" in self.description.split():
             return True
         return False
+
+    def mana_cost_reduction(self, amount):
+        if self.mana_cost - amount < 0:
+            self.mana_cost = 0
+        else:
+            self.mana_cost -= amount
