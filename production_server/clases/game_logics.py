@@ -4,6 +4,7 @@ from clases.creatures import *
 from clases.spells import *
 from clases.Item import *
 from clases.player import *
+from decks.lists_of_cards import *
 
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
 
@@ -204,6 +205,8 @@ def cast_spell(player1, player2, card_picked):
         elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
             break
+    player1.check_player()
+    player2.check_player()
 
 
 def general_spells(player, enemy_player, spell_name):
@@ -409,6 +412,8 @@ def check_hero_power(player, enemy_player):
                 player.mana_increase(-2)
             else:
                 player.problem = "You don't have enough space"
+    player.check_player()
+    enemy_player.check_player()
 
 
 def return_to_hand(card, player):

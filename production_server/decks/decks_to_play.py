@@ -65,16 +65,16 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 0),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 1),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 2),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 3),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 4),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 5),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 6),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 7),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 8),
-    Creature(0, "Veteran", 2, 2, "At the end each turn get +1/+1", 9),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 1),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 2),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 3),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 4),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 5),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 6),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 7),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 8),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 9),
+    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 10),
 
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly soldiers get +1/+1", 1002),
@@ -116,7 +116,8 @@ cards_for_byzantine_empire = [
     Creature(2, "Akritoi", 3, 2, "Guard", -38),
     Creature(6, "Cataphract", 6, 6, "Guard Armored", -39),
     Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40),
-    Item(1, "Shield", "Give a creature +0/+2 and Guard", -16), ]
+    Item(1, "Shield", "Give a creature +0/+2 and Guard", -16),
+    Spell(3, "Ancient Empire", "Draw 2 cards", -43)]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8,
              "While Barbarossa is on the field enemy minions get -2/0", -20),
@@ -133,6 +134,7 @@ cards_for_holy_roman_empire = [
     Item(2, "Plate Armor", "Give a creature Armored", -27),
     Item(1, "Dagger", "Give a creature +2/+0", -28),
     Spell(8, "Bodyguards", "Summon  2 Guards from your deck", -22),
+    Creature(3, "Faithful Guard", 2, 2, "Guard Armored", -42)
 ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -141,6 +143,7 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Item(2, "Cloth Armor", "Give a creature +0/+1 and Charge", -26),
                            Spell(3, "Horse riding lessons", "Give a friendly creature charge and +2 attack",
                                  -19),
+                           Creature(3, "Hunter", 2, 2, "Summon a 1/1 Dog", -44),
                            ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(7, 'Templar Knight', 7, 5, "Guard", -2),
@@ -191,6 +194,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(2, "Armorer", 2, 2, "Give a friendly minion armored", -39),
                      Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40),
                      Creature(3, "Scribe", 3, 0, "At the end of your turn draw a card", -41),
+                     Creature(3, "Faithful Guard", 2, 2, "Guard Armored", -42),
+                     Spell(3, "Ancient Empire", "Draw 2 cards", -43),
+                     Creature(3, "Hunter", 2, 2, "Summon a 1/1 Dog", -44),
                      ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)

@@ -1,10 +1,8 @@
 import random
 
 from clases.creatures import *
-from clases.spells import list_of_spells
-
+from decks.lists_of_cards import *
 from clases.Item import list_of_item
-
 from clases.game_logics import *
 
 
@@ -73,6 +71,12 @@ class Player:
                     return 4
                 elif card.name in list_of_creature_with_on_going_effect and len(self.battle_field) < 7:
                     self.ongoing_effects.append(card)
+                elif card.name in list_of_creature_that_summon and len(self.battle_field) < 7:
+                    self.battle_field.append(card)
+                    self.mana_pay(card)
+                    if len(self.battle_field) < 7:
+                        self.battle_field.append(list_of_creature_that_summon.get(card.name))
+                    return 1
                 elif len(self.battle_field) == 7:
                     return 0
                 self.battle_field.append(card)
