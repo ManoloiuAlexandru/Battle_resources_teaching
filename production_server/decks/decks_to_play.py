@@ -215,8 +215,8 @@ mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Creature(2, "Hunting dog", 1, 2, "Charge", 1905),
                   Item(2, "Leather Armor", "Give a creature +0/+3 and draw a card", 1906),
                   Item(2, "Leather Armor", "Give a creature +0/+3 and draw a card", 1907),
-                  Item(2, "Cloth Armor", "Give a creature +0/+1 and Charge", 1908),
-                  Item(2, "Cloth Armor", "Give a creature +0/+1 and Charge", 1909),
+                  Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", 1908),
+                  Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", 1909),
                   Spell(3, "Horse riding lessons", "Give a friendly creature charge and +2 attack",
                         1910),
                   Spell(3, "Horse riding lessons", "Give a friendly creature charge and +2 attack",
@@ -226,7 +226,20 @@ mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Creature(5, "Mounted Knight", 4, 4, "Charge", 1914),
                   Creature(5, "Mounted Knight", 4, 4, "Charge", 1915),
                   Creature(2, "Guard Dog", 2, 2, "Guard", 1916),
-                  Creature(2, "Guard Dog", 2, 2, "Guard", 1917), ]
+                  Creature(2, "Guard Dog", 2, 2, "Guard", 1917),
+                  Spell(5, "Kill", "Kill an enemy minion", 1918),
+                  Spell(5, "Kill", "Kill an enemy minion", 1919),
+                  Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", 1920),
+                  Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", 1921),
+                  Creature(3, "Hunter", 2, 2, "Summon a 1/1 Dog", 1922),
+                  Creature(3, "Hunter", 2, 2, "Summon a 1/1 Dog", 1923),
+                  Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", 1924),
+                  Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", 1925),
+                  Creature(2, 'Squire', 2, 3, "", 1926),
+                  Creature(2, 'Squire', 2, 3, "", 1927),
+                  Creature(2, 'Page', 1, 1, "Draw a card", 1928),
+                  Creature(2, 'Page', 1, 1, "Draw a card", 1929),
+                  ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
@@ -329,7 +342,8 @@ defenders = [Creature(4, "Pronoiar", 3, 3, "Charge", 100),
              ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
-                 "cards_for_mongol_empire": cards_for_mongol_empire, "defenders": defenders}
+                 "cards_for_mongol_empire": cards_for_mongol_empire, "defenders": defenders,
+                 "mongols_hordes": mongols_hordes}
 empire_decks = {'Byzantine_Empire': cards_for_byzantine_empire,
                 'Holy_Roman_Empire': cards_for_holy_roman_empire,
                 'Mongol_Empire': cards_for_mongol_empire

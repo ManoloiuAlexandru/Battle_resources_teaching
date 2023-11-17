@@ -1,3 +1,5 @@
+import random
+
 from clases.creatures import *
 from clases.game_logics import *
 from clases.player import Player
@@ -20,6 +22,8 @@ class Bot(Player):
                 self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
+                    if card.name in list_of_creature_that_summon:
+                        self.battle_field.append(list_of_creature_that_summon.get(card.name))
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
                         self.battle_field.append(card)
@@ -110,13 +114,23 @@ class Bot(Player):
                         return 0
                 except Exception as e:
                     print(e)
-            elif card.name == "Bodyguards":
-                for i in range(0, 2):
-                    for card in self.deck:
-                        if "Guard" in card.description.split() and card.card_type == "Creature":
-                            self.battle_field.append(card)
-                            self.deck.remove(card)
+            elif card.name in list_of_spells_that_summon:
+                for i in range(0, list_of_spells_that_summon.get(card.name)[1]):
+                    for card_from_deck in self.deck:
+                        if list_of_spells_that_summon.get(card.name)[0] == "":
+                            card_picked = random.choice(self.deck)
+                            if any(obj.card_type == "Creature" for obj in self.deck):
+                                while card_picked.card_type != "Creature":
+                                    card_picked = random.choice(self.deck)
+                                self.battle_field.append(card_picked)
+                                self.deck.remove(card_picked)
+                                break
+                        elif (list_of_spells_that_summon.get(card.name)[0] in card_from_deck.description.split()
+                              and card_from_deck.card_type == "Creature"):
+                            self.battle_field.append(card_from_deck)
+                            self.deck.remove(card_from_deck)
                             break
+                return 1
             if card.name in list_of_spells_that_draw_cards:
                 for nr_cards in range(list_of_spells_that_draw_cards.get(card.name)):
                     self.draw_card()
@@ -124,8 +138,10 @@ class Bot(Player):
                         if list_of_spells_that_reduce_mana.get(card.name)[0] in self.hand[-1].description:
                             self.hand[-1].mana_cost_reduction(
                                 list_of_spells_that_reduce_mana.get(card.name)[1])
+                return 1
             if card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
+                return 1
             else:
                 return 0
         elif card.card_type == "Item":
