@@ -65,16 +65,8 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 1),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 2),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 3),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 4),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 5),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 6),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 7),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 8),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 9),
-    Creature(0, "Hunter", 2, 2, "Summon a 1/1 Dog", 10),
+    Creature(0, "Andras", 1, 1, "Charge", 0),
+    Creature(0, "Andras", 1, 1, "Charge", 0)
 
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly minions get +1/+1", 1002),
@@ -109,6 +101,8 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ",
                                                -34),
                                       Creature(2, "Armorer", 2, 2, "Give a friendly minion armored", -39),
+                                      Creature(1, "Wolf", 1, 1, "Charge", -49),
+                                      Creature(1, "Archer", 1, 1, "Deal 1 damage", -50)
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -137,7 +131,7 @@ cards_for_holy_roman_empire = [
     Spell(8, "Bodyguards", "Summon  2 Guards from your deck", -22),
     Creature(3, "Faithful Guard", 2, 2, "Guard Armored", -42),
     Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47),
-    Spell(4, "Arbalest Shot", "Deal 3 damage to a card and draw a card", -48)
+    Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)
 ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -205,7 +199,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(3, "Rider", 2, 4, "Charge", -45),
                      Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", -46),
                      Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47),
-                     Spell(4, "Arbalest shot", "Deal 3 damage to a card and draw a card", -48)
+                     Spell(4, "Arbalest shot", "Deal 3 damage and draw a card", -48),
+                     Creature(1, "Wolf", 1, 1, "Charge", -49),
+                     Creature(1, "Archer", 1, 1, "Deal 1 damage", -50)
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),
@@ -282,7 +278,7 @@ power_of_the_people = [Creature(0, "Peasant", 1, 1, "", 911),
                        Creature(3, "Faithful Guard", 2, 2, "Guard Armored", 914),
                        Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored", 915),
                        Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored", 916),
-                       Spell(4, "Arbalest Shot", "Deal 3 damage to a card and draw a card", 917),
+                       Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", 917),
                        Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", 918),
                        Creature(2, 'Squire', 2, 3, "", 919),
                        Creature(2, 'Squire', 2, 3, "", 920),
@@ -291,7 +287,7 @@ power_of_the_people = [Creature(0, "Peasant", 1, 1, "", 911),
                        Creature(3, "Priest", 1, 1,
                                 "Restore a friendly minion to full HP and give it +1/+1",
                                 923),
-                       Spell(4, "Arbalest Shot", "Deal 3 damage to a card and draw a card", 924),
+                       Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", 924),
                        Item(2, "Knight's Equipment", "Give a creature +2/+2", 925),
                        Creature(2, "Guard Dog", 2, 2, "Guard", 926),
                        Spell(8, "Black Death", "Destroy ALL minions", 927),

@@ -145,6 +145,10 @@ def check_target(player1, player2, card_picked):
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:
                 return 1
+        if card_picked.get(
+                player2.name) is not None and player1.active_minion.name in list_of_creature_that_deal_dmg_to_players:
+            player2.hp -= list_of_creature_that_deal_dmg_to_players.get(player1.active_minion.name)
+            return 1
     except Exception as e:
         print(e)
     try:
