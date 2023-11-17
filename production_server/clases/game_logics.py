@@ -42,7 +42,7 @@ def cancel_card(card, player):
 
 def turn_switch(player1, player2):
     if player1.turn == 1:
-        end_of_turn_action(player1)
+        end_of_turn_action(player1, player2)
         try:
             if player1.incoming_spell.name is not None and player1.incoming_spell.name in list_of_resetting_spells:
                 cancel_card(player1.incoming_spell, player1)
@@ -66,6 +66,7 @@ def turn_switch(player1, player2):
             creature.exhausted = False
         return 1
     else:
+        end_of_turn_action(player2, player1)
         try:
             if player2.incoming_spell.name is not None and player2.incoming_spell.name in list_of_resetting_spells:
                 cancel_card(player2.incoming_spell, player2)
@@ -401,6 +402,13 @@ def check_hero_power(player, enemy_player):
                 player.mana_increase(-2)
             else:
                 player.problem = "You don't have enough space"
+        elif player.empire == "Mongol Empire":
+            if len(player.battle_field) < 7:
+                enemy_player.hp -= 2
+                player.used_power = 1
+                player.mana_increase(-2)
+            else:
+                player.problem = "You don't have enough space"
 
 
 def return_to_hand(card, player):
@@ -412,9 +420,13 @@ def return_to_hand(card, player):
     player.battle_field.remove(card)
 
 
-def end_of_turn_action(player):
+def end_of_turn_action(player, enemy_player):
     for card in player.battle_field:
         if card.name in list_of_creature_that_do_something_at_the_end_of_your_turn:
             if list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[0] == "draw":
                 for nr_cards in range(list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]):
                     player.draw_card()
+            elif list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[0] == "buff":
+                card.hp += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]
+                card.max_hp += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]
+                card.attack += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[2]
