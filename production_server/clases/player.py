@@ -96,6 +96,8 @@ class Player:
                     return 1
                 elif card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
                     self.hand_check(card)
+                elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
+                    self.buff_all_cards(card)
                 elif len(self.battle_field) == 7:
                     return 0
                 self.battle_field.append(card)
@@ -195,11 +197,11 @@ class Player:
             print(e)
 
     def buff_card_from_hand(self, card, buffing_card):
-        card.hp += list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[2]
-        card.max_hp += list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[2]
-        card.attack += list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[3]
-        if list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[4] not in card.description:
-            card.description += " " + list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[4]
+        card.hp += list_of_creature_that_buff.get(buffing_card.name)[0]
+        card.max_hp += list_of_creature_that_buff.get(buffing_card.name)[0]
+        card.attack += list_of_creature_that_buff.get(buffing_card.name)[1]
+        if list_of_creature_that_buff.get(buffing_card.name)[2] not in card.description:
+            card.description += " " + list_of_creature_that_buff.get(buffing_card.name)[2]
         card.check_creature()
 
     def hand_check(self, card):
@@ -212,3 +214,17 @@ class Player:
             for creature in self.hand:
                 if creature != card and creature.card_type == "Creature":
                     self.buff_card_from_hand(creature, card)
+
+    def buff_all_cards(self, card):
+        for creature in self.hand:
+            if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
+                    card.name) in creature.description.split():
+                self.buff_card_from_hand(creature, card)
+        for creature in self.battle_field:
+            if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
+                    card.name) in creature.description.split():
+                self.buff_card_from_hand(creature, card)
+        for creature in self.deck:
+            if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
+                    card.name) in creature.description.split():
+                self.buff_card_from_hand(creature, card)

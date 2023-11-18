@@ -10,7 +10,9 @@ list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
-                              "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1)}
+                              "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
+                              "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, "Charge"),
+                              "Last Defender": (0, 2, "Guard")}
 list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Lionheart"]
 list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
 list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]
@@ -19,9 +21,11 @@ list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1}
 list_of_creature_that_draw_specific_cards = {"Wild Horse": ("Creature", "Charge"), "Watchman": ("Creature", "Guard")}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {"Hunter": Creature(1, "Dog", 1, 1, "", len("hunter") + 11)}
-list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff", 0, 2, "Guard"),
+list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
-                                              "Negotiator": ("affects hand", "buff", 1, 1, "Charge")}
+                                              "Negotiator": ("affects hand", "buff", 1, 1, "Charge"),
+                                              }
+list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 """
 Spells
 """

@@ -65,17 +65,16 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Watchman", 2, 1, "Draw a guard card", 11),
-    Creature(0, "Wild Horse", 2, 1, "Draw a charge card", 12),
-    # Creature(0, "Andras", 99, 1, "Charge Guard Armored", 0),
-    # Creature(0, "Andras", 99, 1, "Charge Guard Armored", 1),
+    Creature(0, "Watchtower", 2, 1, "All your guards get +1/+2", 11),
+    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 0),
+    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 1),
     Creature(0, "Andras", 99, 1, "Armored", 2),
-    # Creature(0, "Andras", 99, 1, "Charge Guard Armored", 3),
+    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 3),
     Creature(0, "Andras", 99, 1, "", 4),
     Creature(0, "Andras", 99, 1, "Guard Armored", 5),
-    # Creature(0, "Andras", 99, 1, "Charge", 6),
-    # Creature(0, "Andras", 99, 1, "Charge Armored", 7),
-    # Creature(0, "Andras", 99, 1, "Charge Guard Armored", 8),
+    Creature(0, "Andras", 99, 1, "Charge", 6),
+    Creature(0, "Andras", 99, 1, "Charge Armored", 7),
+    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 8),
     Creature(0, "Andras", 99, 1, "Armored", 10),
 
 ]
@@ -116,7 +115,7 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", -54),
                                       Creature(4, "Last Defender", 6, 2,
                                                "If your hand is empty gain +2 attack and guard", -55),
-                                      Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", -56)
+                                      Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", -56),
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -126,7 +125,8 @@ cards_for_byzantine_empire = [
     Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40),
     Item(1, "Shield", "Give a creature +0/+2 and Guard", -16),
     Spell(3, "Ancient Empire", "Draw 2 cards", -43),
-    Creature(1, "Watchman", 2, 1, "Draw a guard card", 11),
+    Creature(1, "Watchman", 2, 1, "Draw a guard card", -60),
+    Creature(2, "Watchtower", 2, 0, "All your guards get +1/+2", -61),
 ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the field enemy minions get -2/0", -20),
@@ -230,6 +230,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Spell(3, "Horse raiding shot", "Deal 2 damage and draw a card", -58),
                      Creature(1, "Wild Horse", 2, 1, "Draw a charge card", -59),
                      Creature(1, "Watchman", 2, 1, "Draw a guard card", -60),
+                     Creature(2, "Watchtower", 2, 0, "All your guards get +1/+2", -61),
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),
