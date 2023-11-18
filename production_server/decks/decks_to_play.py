@@ -65,17 +65,16 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Andras", 99, 1, "Charge", 0),
-    Creature(0, "Andras", 99, 1, "Charge", 1)
-
+    # Creature(0, "Andras", 99, 1, "Charge", 0),
+    # Creature(0, "Andras", 99, 1, "Charge", 1)
+    Creature(4, "Last Defender", 6, 2,
+             "If your hand is empty gain +2 attack and guard", 0),
+    Creature(3, "Drummer of the army", 2, 2, "Give your hand +1/+1", 1)
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly minions get +1/+1", 1002),
                        Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
                        Spell(3, "Long march", "All enemies are exhausted", 1005),
-                       Creature(9, "Heavy Cavalary", 9, 9, "Takes 2 less dmg from attacks", 1006),
                        Creature(2, "Bodyguard", 1, 1, "Guard", 1010),
-                       Creature(4, "Bear", 4, 4, "", 1011),
-                       Creature(3, "Woolf", 3, 3, "", 1012),
                        Item(4, "Banner", "While on a minion all minions get +1/+1", 1014),
                        Creature(4, "Merchant", 2, 4, "For the next 2 turns gain 1 mana each turn", 1014),
                        ]
@@ -106,7 +105,10 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(1, "Armored Page", 1, 1, "Armored", -51),
                                       Creature(1, "Scared Noble", 2, 1, "Give a friendly minion guard", -52),
                                       Creature(3, "Tournament Horserider", 1, 2, "Charge Armored", -53),
-                                      Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", -54)
+                                      Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", -54),
+                                      Creature(4, "Last Defender", 6, 2,
+                                               "If your hand is empty gain +2 attack and guard", -55),
+                                      Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", -56)
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -118,11 +120,9 @@ cards_for_byzantine_empire = [
     Spell(3, "Ancient Empire", "Draw 2 cards", -43),
 ]
 cards_for_holy_roman_empire = [
-    Creature(8, "Frederick Barbarossa", 8, 8,
-             "While Barbarossa is on the field enemy minions get -2/0", -20),
+    Creature(8, "Frederick Barbarossa", 8, 8,"While Barbarossa is on the field enemy minions get -2/0", -20),
     Creature(3, "Scribe", 3, 0, "At the end of your turn draw a card", -41),
-    Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored",
-             -11),
+    Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored",-11),
     Spell(1, "Bandage", "Heal a friendly minion for 4", -12),
     Spell(2, "Bandages", "Restore a friendly minion to full HP", -13),
     Spell(1, "Personal Guard", "Give a minion guard and draw a card", -14),
@@ -136,7 +136,7 @@ cards_for_holy_roman_empire = [
     Creature(3, "Faithful Guard", 2, 2, "Guard Armored", -42),
     Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47),
     Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48),
-    Spell(2, "Chivalry and Honor", "Give a minion +2/+1 and draw a card", -51)
+    Spell(2, "Chivalry and Honor", "Give a minion +2/+1 and draw a card", -51),
 ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -147,7 +147,8 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                                  -19),
                            Creature(3, "Hunter", 3, 2, "Summon a 1/1 Dog", -44),
                            Creature(3, "Rider", 2, 4, "Charge", -45),
-                           Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", -46)
+                           Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", -46),
+                           Creature(3, "Negotiator", 1, 1, "Give your hand +1/+1 and Charge", -57)
                            ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(7, 'Templar Knight', 7, 5, "Guard", -2),
@@ -211,7 +212,10 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(1, "Armored Page", 1, 1, "Armored", -51),
                      Creature(1, "Scared Noble", 2, 1, "Give a friendly minion guard", -52),
                      Creature(3, "Tournament Horserider", 1, 2, "Charge Armored", -53),
-                     Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", -54)
+                     Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", -54),
+                     Creature(4, "Last Defender", 6, 2, "If your hand is empty gain +2 attack and guard", -55),
+                     Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", -56),
+                     Creature(3, "Negotiator", 1, 1, "Give your hand +1/+1 and Charge", -57)
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),

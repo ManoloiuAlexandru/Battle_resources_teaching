@@ -194,7 +194,8 @@ def cast_spell(player1, player2, card_picked):
                 card.hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
                 card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
                 card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
-                card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
+                if list_of_buff_spells.get(player1.incoming_spell.name)[2] not in card.description:
+                    card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
                 card.check_creature()
                 break
     for card in player2.battle_field:
@@ -349,7 +350,8 @@ def buff_creature(card_picked, player1):
                     card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
                     card.max_hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
                     card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
-                    card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
+                    if list_of_creature_that_buff.get(player1.active_minion.name)[2] not in card.description:
+                        card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
                     card.check_creature()
     except Exception as e:
         print(e)

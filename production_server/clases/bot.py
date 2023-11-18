@@ -266,7 +266,8 @@ class Bot(Player):
             card.hp += list_of_buff_spells.get(self.incoming_spell)[0]
             card.max_hp += list_of_buff_spells.get(self.incoming_spell)[0]
             card.attack += list_of_buff_spells.get(self.incoming_spell)[1]
-            card.description += " " + list_of_buff_spells.get(self.incoming_spell)[2]
+            if list_of_buff_spells.get(self.incoming_spell)[2] not in card.description:
+                card.description += " " + list_of_buff_spells.get(self.incoming_spell)[2]
             self.incoming_spell = None
         elif self.active_minion is not None:
             pass

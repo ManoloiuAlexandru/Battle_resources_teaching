@@ -77,6 +77,8 @@ class Player:
                     if len(self.battle_field) < 7:
                         self.battle_field.append(list_of_creature_that_summon.get(card.name))
                     return 1
+                elif card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
+                    self.hand_check(card)
                 elif len(self.battle_field) == 7:
                     return 0
                 self.battle_field.append(card)
@@ -174,3 +176,22 @@ class Player:
                     enemy_player.battle_field.remove(card)
         except Exception as e:
             print(e)
+
+    def buff_card_from_hand(self, card, buffing_card):
+        card.hp += list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[2]
+        card.max_hp += list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[2]
+        card.attack += list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[3]
+        if list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[4] not in card.description:
+            card.description += " " + list_of_creature_that_are_affected_by_hand.get(buffing_card.name)[4]
+        card.check_creature()
+
+    def hand_check(self, card):
+        if "empty hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) == 1 and \
+                list_of_creature_that_are_affected_by_hand.get(card.name)[1] == "buff":
+            self.buff_card_from_hand(card, card)
+
+        elif "affects hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) > 1 and \
+                list_of_creature_that_are_affected_by_hand.get(card.name)[1] == "buff":
+            for creature in self.hand:
+                if creature != card and creature.card_type == "Creature":
+                    self.buff_card_from_hand(creature, card)

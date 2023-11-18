@@ -4,7 +4,7 @@ from clases.creatures import Creature
 Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
-                                "Personal instructor","Scared Noble"]
+                                "Personal instructor", "Scared Noble"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1)}
@@ -18,7 +18,9 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "he
 list_of_creature_that_draw_cards = {"Page": 1}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {"Hunter": Creature(1, "Dog", 1, 1, "", len("hunter") + 11)}
-
+list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff", 0, 2, "Guard"),
+                                              "Drummer": ("affects hand", "buff", 1, 1, ""),
+                                              "Negotiator": ("affects hand", "buff", 1, 1, "Charge")}
 """
 Spells
 """
