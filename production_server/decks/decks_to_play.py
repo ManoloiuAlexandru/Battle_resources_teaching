@@ -65,18 +65,10 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Watchtower", 2, 1, "All your guards get +1/+2", 11),
-    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 0),
-    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 1),
-    Creature(0, "Andras", 99, 1, "Armored", 2),
-    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 3),
-    Creature(0, "Andras", 99, 1, "", 4),
-    Creature(0, "Andras", 99, 1, "Guard Armored", 5),
-    Creature(0, "Andras", 99, 1, "Charge", 6),
-    Creature(0, "Andras", 99, 1, "Charge Armored", 7),
-    Creature(0, "Andras", 99, 1, "Charge Guard Armored", 8),
-    Creature(0, "Andras", 99, 1, "Armored", 10),
-
+    Spell(0, "Rain of Arrows", "Destroy ALL minions that are not armored", 0),
+    Spell(0, "Black Death", "Destroy ALL minions", 0),
+    Creature(0, "Andras", 99, 99, "", 1),
+    Creature(0, "Andras", 99, 99, "Armored", 2)
 ]
 to_be_added_in_game = [Spell(5, "In the name of the king", "All friendly minions get +1/+1", 1002),
                        Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
@@ -127,6 +119,7 @@ cards_for_byzantine_empire = [
     Spell(3, "Ancient Empire", "Draw 2 cards", -43),
     Creature(2, "Watchman", 2, 1, "Draw a guard card", -60),
     Creature(2, "Watchtower", 2, 1, "All your guards get +1/+2", -61),
+    Spell(7, "Landslide", "Deal 7 damage to ALL minions", -63)
 ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the field enemy minions get -2/0", -20),
@@ -146,6 +139,8 @@ cards_for_holy_roman_empire = [
     Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47),
     Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48),
     Spell(2, "Chivalry and Honor", "Give a minion +2/+1 and draw a card", -51),
+    Creature(1, "Faithful Protector", 1, 1, "Guard Armored", -62),
+    Spell(7, "Rain of Arrows", "Destroy ALL minions that are not armored", -64),
 ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -231,6 +226,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(2, "Wild Horse", 2, 1, "Draw a charge card", -59),
                      Creature(2, "Watchman", 2, 1, "Draw a guard card", -60),
                      Creature(2, "Watchtower", 2, 1, "All your guards get +1/+2", -61),
+                     Creature(1, "Faithful Protector", 1, 1, "Guard Armored", -62),
+                     Spell(7, "Landslide", "Deal 7 damage to ALL minions", -63),
+                     Spell(7, "Rain of Arrows", "Destroy ALL minions that are not armored", -64),
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),

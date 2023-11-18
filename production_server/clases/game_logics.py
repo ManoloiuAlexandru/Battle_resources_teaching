@@ -245,6 +245,15 @@ def general_spells(player, enemy_player, spell_name):
                 if list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[0] in player.hand[-1].description:
                     player.hand[-1].mana_cost_reduction(
                         list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[1])
+    elif player.incoming_spell.name in list_of_spells_with_specific_targets:
+        creature_to_avoid = list_of_spells_with_specific_targets.get(player.incoming_spell.name)[0].split()[1]
+        if list_of_spells_with_specific_targets.get(player.incoming_spell.name)[1] == "ALL":
+            for creature in player.battle_field:
+                if creature_to_avoid not in creature.description.split():
+                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+            for creature in enemy_player.battle_field:
+                if creature_to_avoid not in creature.description.split():
+                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
     elif player.incoming_spell.name in list_of_dmg_spells:
         if "ALL" in player.incoming_spell.description:
             for creature in player.battle_field:
