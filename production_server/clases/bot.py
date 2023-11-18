@@ -68,7 +68,23 @@ class Bot(Player):
                     print(e)
             elif card.name in list_of_creature_that_draw_cards:
                 for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
-                    self.draw_card()
+                    if card.name in list_of_creature_that_draw_specific_cards:
+                        random_card = random.choice(self.deck)
+                        if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
+                               obj.description.split() for obj in self.deck):
+                            while (list_of_creature_that_draw_specific_cards.get(card.name)[0] != random_card.card_type
+                                   or list_of_creature_that_draw_specific_cards.get(card.name)[
+                                       1] not in random_card.description.split()):
+                                random_card = random.choice(self.deck)
+                        if list_of_creature_that_draw_specific_cards.get(card.name)[
+                            0] == random_card.card_type and \
+                                list_of_creature_that_draw_specific_cards.get(card.name)[
+                                    1] in random_card.description.split():
+                            self.hand.append(random_card)
+                            self.deck.remove(random_card)
+                        break
+                    else:
+                        self.draw_card()
             elif card.name in list_of_creature_that_add_mana:
                 self.mana_increase(list_of_creature_that_add_mana.get(card.name))
                 if self.empty_mana + list_of_creature_that_add_mana.get(card.name) > 10:
@@ -139,7 +155,7 @@ class Bot(Player):
                             self.hand[-1].mana_cost_reduction(
                                 list_of_spells_that_reduce_mana.get(card.name)[1])
                 return 1
-            if card.name in list_of_enemy_target or card.name in list_of_dmg_spells:
+            if card.name in list_of_dmg_spells:
                 self.target_creature_with_spell(card, player)
                 return 1
             else:

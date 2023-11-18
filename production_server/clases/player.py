@@ -54,19 +54,19 @@ class Player:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                         if card.name in list_of_creature_that_draw_specific_cards:
                             random_card = random.choice(self.deck)
-                            if any(obj.card_type == list_of_creature_that_draw_specific_cards.get(card.name)[0] for obj
-                                   in self.deck):
+                            if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
+                               obj.description.split() for obj in self.deck):
                                 while list_of_creature_that_draw_specific_cards.get(card.name)[
-                                    0] != random_card.card_type and \
+                                    0] != random_card.card_type or \
                                         list_of_creature_that_draw_specific_cards.get(card.name)[
                                             1] not in random_card.description.split():
                                     random_card = random.choice(self.deck)
-                                if list_of_creature_that_draw_specific_cards.get(card.name)[
-                                    0] == random_card.card_type and \
-                                        list_of_creature_that_draw_specific_cards.get(card.name)[
-                                            1] in random_card.description.split():
-                                    self.hand.append(random_card)
-                                    self.deck.remove(random_card)
+                            if list_of_creature_that_draw_specific_cards.get(card.name)[
+                                0] == random_card.card_type and \
+                                    list_of_creature_that_draw_specific_cards.get(card.name)[
+                                        1] in random_card.description.split():
+                                self.hand.append(random_card)
+                                self.deck.remove(random_card)
                             break
                         else:
                             self.draw_card()
