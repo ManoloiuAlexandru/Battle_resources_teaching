@@ -57,12 +57,17 @@ class Bot(Player):
                     check_for_creature_with_effect_on(self)
                 except Exception as e:
                     print(e)
-            if card.name in list_of_creature_that_buff:
+            elif card.name in list_of_creature_that_are_affected_by_hand:
+                self.hand_check(card)
+            elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
+                self.buff_all_cards(card)
+            elif card.name in list_of_creature_that_buff:
                 try:
                     for creature in self.battle_field:
                         creature.hp += list_of_creature_that_buff.get(card.name)[0]
                         creature.attack += list_of_creature_that_buff.get(card.name)[1]
-                        creature.description += " " + list_of_creature_that_buff.get(card.name)[2]
+                        if list_of_creature_that_buff.get(card.name)[2] not in card.description:
+                            creature.description += " " + list_of_creature_that_buff.get(card.name)[2]
                         break
                 except Exception as e:
                     print(e)
