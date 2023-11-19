@@ -1,4 +1,11 @@
+import random
+
 from clases.creatures import Creature
+
+
+def generate_random_int():
+    return random.randint(1, 100000)
+
 
 """
 Creatures
@@ -13,9 +20,9 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
                               "Last Defender": (0, 2, "Guard")}
-list_of_creature_with_on_going_effect = ["Frederick Barbarossa", "Richard the Lionheart"]
-list_of_creature_with_negative_on_going_effect = ["Frederick Barbarossa"]
-list_of_creature_with_positive_on_going_effect = ["Richard the Lionheart"]
+list_of_creature_with_on_going_effect = ["War elephant", "Army Champion"]
+list_of_creature_with_negative_on_going_effect = {"War elephant": (0, 2)}
+list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1)}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1}
 list_of_creature_that_draw_specific_cards = {"Wild Horse": ("Creature", "Charge"), "Watchman": ("Creature", "Guard")}
@@ -43,7 +50,8 @@ list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
-                                 "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan", "Boarder Guards"]
+                                 "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
+                                 "Boarder Guards"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
@@ -60,5 +68,4 @@ list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self"
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw")}
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1}
 list_of_spells_that_summon_specific_cards = {
-    "Boarder Guards": [Creature(2, "Akritoi", 3, 2, "Guard", len("Akritoi") + 11),
-                       Creature(2, "Akritoi", 3, 2, "Guard", len("Akritoi") + 12)]}
+    "Boarder Guards": (2, [Creature(2, "Akritoi", 3, 2, "Guard", generate_random_int()) for i in range(0, 9)])}

@@ -55,21 +55,24 @@ class Player:
                 elif card.name in list_of_creature_that_draw_cards and len(self.battle_field) < 7:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                         if card.name in list_of_creature_that_draw_specific_cards:
-                            random_card = random.choice(self.deck)
-                            if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
-                               obj.description.split() for obj in self.deck):
-                                while list_of_creature_that_draw_specific_cards.get(card.name)[
-                                    0] != random_card.card_type or \
+                            try:
+                                random_card = random.choice(self.deck)
+                                if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
+                                       obj.description.split() for obj in self.deck):
+                                    while list_of_creature_that_draw_specific_cards.get(card.name)[
+                                        0] != random_card.card_type or \
+                                            list_of_creature_that_draw_specific_cards.get(card.name)[
+                                                1] not in random_card.description.split():
+                                        random_card = random.choice(self.deck)
+                                if list_of_creature_that_draw_specific_cards.get(card.name)[
+                                    0] == random_card.card_type and \
                                         list_of_creature_that_draw_specific_cards.get(card.name)[
-                                            1] not in random_card.description.split():
-                                    random_card = random.choice(self.deck)
-                            if list_of_creature_that_draw_specific_cards.get(card.name)[
-                                0] == random_card.card_type and \
-                                    list_of_creature_that_draw_specific_cards.get(card.name)[
-                                        1] in random_card.description.split():
-                                self.hand.append(random_card)
-                                self.deck.remove(random_card)
-                            break
+                                            1] in random_card.description.split():
+                                    self.hand.append(random_card)
+                                    self.deck.remove(random_card)
+                                break
+                            except Exception as e:
+                                print(e)
                         else:
                             self.draw_card()
                 elif card.name in list_of_creature_that_add_mana and len(self.battle_field) < 7:
@@ -144,18 +147,26 @@ class Player:
             for effect in player.ongoing_effects:
                 if effect.name in list_of_creature_with_negative_on_going_effect:
                     for creature in enemy_player.battle_field:
-                        creature.negative_effects_from_creatures(effect)
+                        creature.negative_effects_from_creatures(effect,
+                                                                 list_of_creature_with_negative_on_going_effect.get(
+                                                                     effect.name), player)
                 elif effect.name in list_of_creature_with_positive_on_going_effect:
                     for creature in player.battle_field:
-                        creature.positive_effects_from_creatures(effect)
+                        creature.positive_effects_from_creatures(effect,
+                                                                 list_of_creature_with_positive_on_going_effect.get(
+                                                                     effect.name), player)
         if len(enemy_player.ongoing_effects) > 0:
             for effect in enemy_player.ongoing_effects:
                 if effect.name in list_of_creature_with_negative_on_going_effect:
                     for creature in player.battle_field:
-                        creature.negative_effects_from_creatures(effect)
+                        creature.negative_effects_from_creatures(effect,
+                                                                 list_of_creature_with_negative_on_going_effect.get(
+                                                                     effect.name), player)
                 elif effect.name in list_of_creature_with_positive_on_going_effect:
                     for creature in enemy_player.battle_field:
-                        creature.positive_effects_from_creatures(effect)
+                        creature.positive_effects_from_creatures(effect,
+                                                                 list_of_creature_with_positive_on_going_effect.get(
+                                                                     effect.name), player)
 
     @staticmethod
     def check_for_active_effects(player, enemy_player):
@@ -176,10 +187,13 @@ class Player:
     def effect_lost(self, card, enemy_player):
         if card.name in list_of_creature_with_negative_on_going_effect:
             for creature in enemy_player.battle_field:
-                creature.reverse_effect_creature(card)
+                creature.reverse_effect_creature(card, list_of_creature_with_negative_on_going_effect.get(card.name), 1,
+                                                 self)
         elif card.name in list_of_creature_with_positive_on_going_effect:
             for creature in self.battle_field:
-                creature.reverse_effect_creature(card)
+                creature.reverse_effect_creature(card, list_of_creature_with_positive_on_going_effect.get(card.name),
+                                                 -1,
+                                                 self)
         else:
             for creature in self.battle_field:
                 creature.reverse_effect_creature(card.name)

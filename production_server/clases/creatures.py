@@ -8,6 +8,8 @@ class Creature:
         self.max_hp = hp
         self.original_hp = hp
         self.attack = attack
+        self.attack_before_on_effects = 0
+        self.hp_before_on_effects = 0
         self.original_attack = attack
         self.active_effects = []
         self.description = description
@@ -45,30 +47,53 @@ class Creature:
         self.armored = self.check_armored()
         self.exhausted = self.charge_check()
 
-    def negative_effects_from_creatures(self, card):
-        if card.name == "Frederick Barbarossa":
-            if card.name not in self.active_effects:
-                self.active_effects.append(card.name)
-                self.attack -= 2
+    def negative_effects_from_creatures(self, card, effects, player):
+        nr_buff = 0
+        for creature in player.ongoing_effects:
+            if creature.name == card.name:
+                nr_buff += 1
+        while len(self.active_effects) < nr_buff:
+            self.active_effects.append(card.name)
+            if self.attack >= effects[1]:
+                self.attack -= effects[1]
+            else:
+                self.attack_before_on_effects -= effects[1]
+                self.attack = 0
+            if self.hp >= effects[0]:
+                self.hp -= effects[0]
+            else:
+                self.hp_before_on_effects -= effects[1]
+                self.hp = 0
+
+    def positive_effects_from_creatures(self, card, effects, player):
+        nr_buff = 0
+        for creature in player.ongoing_effects:
+            if creature.name == card.name:
+                nr_buff += 1
+        while len(self.active_effects) < nr_buff:
+            self.attack_before_on_effects = self.attack
+            self.hp_before_on_effects = self.hp
+            self.active_effects.append(card.name)
+            self.attack += effects[1]
+            self.hp += effects[0]
+
+    def reverse_effect_creature(self, card, effects, effect, player):
+        try:
+            nr_buff = 0
+            for creature in player.ongoing_effects:
+                if creature.name == card.name:
+                    nr_buff += 1
+            while len(self.active_effects) > nr_buff:
+                self.attack = self.attack_before_on_effects + effect * effects[1]
+                self.attack_before_on_effects += effect * effects[1]
                 if self.attack < 0:
                     self.attack = 0
-
-    def positive_effects_from_creatures(self, card):
-        if card.name == "Richard the Lionheart":
-            if card.name not in self.active_effects:
-                self.active_effects.append(card.name)
-                self.attack += 1
-                self.hp += 1
-
-    def reverse_effect_creature(self, card):
-        try:
-            if card.name == "Frederick Barbarossa" and card.name in self.active_effects:
-                self.attack = self.original_attack
-                self.hp = self.max_hp
-                self.active_effects.clear()
-            elif card.name == "Richard the Lionheart" and card.name in self.active_effects:
-                self.attack -= 1
-                self.hp -= 1
+                elif self.attack_before_on_effects == 0:
+                    self.attack = self.original_attack
+                self.hp = self.hp_before_on_effects + effect * effects[1]
+                self.hp_before_on_effects += effect * effects[1]
+                if self.hp < 0:
+                    self.hp = 0
                 self.active_effects.remove(card.name)
         except Exception as e:
             print(e)

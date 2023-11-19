@@ -74,20 +74,24 @@ class Bot(Player):
             elif card.name in list_of_creature_that_draw_cards:
                 for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                     if card.name in list_of_creature_that_draw_specific_cards:
-                        random_card = random.choice(self.deck)
-                        if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
-                               obj.description.split() for obj in self.deck):
-                            while (list_of_creature_that_draw_specific_cards.get(card.name)[0] != random_card.card_type
-                                   or list_of_creature_that_draw_specific_cards.get(card.name)[
-                                       1] not in random_card.description.split()):
-                                random_card = random.choice(self.deck)
-                        if list_of_creature_that_draw_specific_cards.get(card.name)[
-                            0] == random_card.card_type and \
-                                list_of_creature_that_draw_specific_cards.get(card.name)[
-                                    1] in random_card.description.split():
-                            self.hand.append(random_card)
-                            self.deck.remove(random_card)
-                        break
+                        try:
+                            random_card = random.choice(self.deck)
+                            if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
+                                   obj.description.split() for obj in self.deck):
+                                while (list_of_creature_that_draw_specific_cards.get(card.name)[
+                                           0] != random_card.card_type
+                                       or list_of_creature_that_draw_specific_cards.get(card.name)[
+                                           1] not in random_card.description.split()):
+                                    random_card = random.choice(self.deck)
+                            if list_of_creature_that_draw_specific_cards.get(card.name)[
+                                0] == random_card.card_type and \
+                                    list_of_creature_that_draw_specific_cards.get(card.name)[
+                                        1] in random_card.description.split():
+                                self.hand.append(random_card)
+                                self.deck.remove(random_card)
+                            break
+                        except Exception as e:
+                            print(e)
                     else:
                         self.draw_card()
             elif card.name in list_of_creature_that_add_mana:
