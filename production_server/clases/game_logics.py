@@ -225,6 +225,10 @@ def buff_creature_with_spell(card, player1):
 
 def general_spells(player, enemy_player, spell_name):
     if spell_name in list_of_spells_that_summon:
+        if spell_name in list_of_spells_that_summon_specific_cards:
+            for creature in list_of_spells_that_summon_specific_cards.get(spell_name):
+                if len(player.battle_field) < 7:
+                    player.battle_field.append(creature)
         for i in range(0, list_of_spells_that_summon.get(spell_name)[1]):
             for card in player.deck:
                 if list_of_spells_that_summon.get(spell_name)[0] == "":

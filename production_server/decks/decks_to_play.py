@@ -65,7 +65,7 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Spell(3, "For the Khan", "All your minions +1/+0 and Charge", 0),
+    Spell(4, "Boarder Guards", "Summon 2 Akiritoi", -68),
     Creature(0, "Andras", 9, 1, "", 1),
     Creature(0, "Andras", 99, 1, "", 2),
     Creature(0, "Andras", 99, 1, "", 3),
@@ -128,7 +128,8 @@ cards_for_byzantine_empire = [
     Creature(2, "Watchtower", 2, 1, "All your guards get +1/+2", -61),
     Spell(7, "Landslide", "Deal 7 damage to ALL minions", -63),
     Spell(2, "Roman Formation Circular", "Give your minions on the filed Guard", -65),
-    Spell(3, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", -66)
+    Spell(3, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", -66),
+    Spell(4, "Boarder Guards", "Summon 2 Akiritoi", -68),
 ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 8, 8, "While Barbarossa is on the field enemy minions get -2/0", -20),
@@ -164,7 +165,7 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Creature(3, "Negotiator", 1, 1, "Give your hand +1/+1 and draw a card", -57),
                            Spell(3, "Horse raiding shot", "Deal 2 damage and draw a card", -58),
                            Creature(2, "Wild Horse", 2, 1, "Draw a charge card", -59),
-                           Spell(3, "For the Khan", "All your minions +1/+0 and Charge", -67),
+                           Spell(3, "For the Khan", "Give all your minions +1/+0 and Charge", -67),
                            ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(7, 'Templar Knight', 7, 5, "Guard", -2),
@@ -241,7 +242,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", -64),
                      Spell(2, "Roman Formation Circular", "Give your minions on the filed Guard", -65),
                      Spell(3, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", -66),
-                     Spell(3, "For the Khan", "All your minions +1/+0 and Charge", -67),
+                     Spell(3, "For the Khan", "Give all your minions +1/+0 and Charge", -67),
+                     Spell(4, "Boarder Guards", "Summon 2 Akiritoi", -68),
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),
