@@ -39,9 +39,9 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     if play1_deck == "personal_deck":
         try:
             if len(your_deck) == 0:
-                your_deck = get_old_deck()
+                your_deck = get_old_deck()[0]
         except Exception as e:
-            player1.make_deck(get_old_deck())
+            player1.make_deck(get_old_deck()[0])
         player1.make_deck(your_deck)
     else:
         player1.make_deck(dict_of_decks.get(play1_deck))
@@ -154,6 +154,17 @@ def make_your_own_deck_pick_empire():
     return render_template("empires_choice.html")
 
 
+@app.route("/update_deck", methods=["POST", "GET"])
+def update_deck():
+    global your_deck
+    global empire
+    global show_deck
+    your_deck = get_old_deck()[0]
+    empire = get_old_deck()[1]
+    show_deck = make_html_deck(your_deck, show_deck)
+    return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+
+
 @app.route("/send_empire", methods=["POST", "GET"])
 def send_empire():
     global empire
@@ -209,7 +220,7 @@ def show_battle():
 
 @app.route("/send_deck", methods=["POST", "GET"])
 def personal_deck():
-    save_your_deck(your_deck)
+    save_your_deck(your_deck, empire)
     return redirect(url_for('game_options'))
 
 

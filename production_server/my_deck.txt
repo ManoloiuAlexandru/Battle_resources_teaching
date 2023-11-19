@@ -1,132 +1,287 @@
+empire:Mongol_Empire
 card_id:0
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
+mana_cost:4
+original_mana_cost:4
+name:Negotiator
 hp:1
 max_hp:1
 original_hp:1
 attack:1
 original_attack:1
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
+description:Give your hand +1/+1 and charge
+original_description:Give your hand +1/+1 and charge
 card_type:Creature
 exhausted:True
-armored:True
+armored:False
 can_be_target:True
-img_url:Faithful Protector.png
+img_url:Negotiator.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Faithful_Protector0
+name_for_html:Negotiator0
 --------------------------------
 card_id:1
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
+mana_cost:4
+original_mana_cost:4
+name:Negotiator
 hp:1
 max_hp:1
 original_hp:1
 attack:1
 original_attack:1
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
+description:Give your hand +1/+1 and charge
+original_description:Give your hand +1/+1 and charge
 card_type:Creature
 exhausted:True
-armored:True
+armored:False
 can_be_target:True
-img_url:Faithful Protector.png
+img_url:Negotiator.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Faithful_Protector1
+name_for_html:Negotiator1
 --------------------------------
 card_id:2
-mana_cost:7
-original_mana_cost:7
-name:Rain of Arrows
+mana_cost:3
+original_mana_cost:3
+name:Horse raiding shot
 card_type:Spell
-description:Destroy ALL minions that are not armored
-img_url:Rain of Arrows.png
+description:Deal 2 damage and draw a card
+img_url:Horse raiding shot.png
 target:enemy
 empire_belonging:
-name_for_html:Rain_of_Arrows2
+name_for_html:Horse_raiding_shot2
 --------------------------------
 card_id:3
-mana_cost:7
-original_mana_cost:7
-name:Rain of Arrows
+mana_cost:3
+original_mana_cost:3
+name:Horse raiding shot
 card_type:Spell
-description:Destroy ALL minions that are not armored
-img_url:Rain of Arrows.png
+description:Deal 2 damage and draw a card
+img_url:Horse raiding shot.png
 target:enemy
 empire_belonging:
-name_for_html:Rain_of_Arrows3
+name_for_html:Horse_raiding_shot3
 --------------------------------
 card_id:4
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
+mana_cost:2
+original_mana_cost:2
+name:Wild Horse
+hp:2
+max_hp:2
+original_hp:2
 attack:1
 original_attack:1
 active_effects:[]
-description:
-original_description:
+description:Draw a charge card
+original_description:Draw a charge card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Wild Horse.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant4
+name_for_html:Wild_Horse4
 --------------------------------
 card_id:5
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
+mana_cost:2
+original_mana_cost:2
+name:Wild Horse
+hp:2
+max_hp:2
+original_hp:2
 attack:1
 original_attack:1
 active_effects:[]
-description:
-original_description:
+description:Draw a charge card
+original_description:Draw a charge card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Wild Horse.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant5
+name_for_html:Wild_Horse5
 --------------------------------
 card_id:6
-mana_cost:3
-original_mana_cost:3
-name:Feudal Obligations
+mana_cost:2
+original_mana_cost:2
+name:Call of the Khan
 card_type:Spell
-description:Draw 2 cards
-img_url:Feudal Obligations.png
+description:Draw a card if it has Charge reduce the cost to 0
+img_url:Call of the Khan.png
 target:None
 empire_belonging:
-name_for_html:Feudal_Obligations6
+name_for_html:Call_of_the_Khan6
 --------------------------------
 card_id:7
-mana_cost:3
-original_mana_cost:3
-name:Feudal Obligations
+mana_cost:2
+original_mana_cost:2
+name:Call of the Khan
 card_type:Spell
-description:Draw 2 cards
-img_url:Feudal Obligations.png
+description:Draw a card if it has Charge reduce the cost to 0
+img_url:Call of the Khan.png
 target:None
 empire_belonging:
-name_for_html:Feudal_Obligations7
+name_for_html:Call_of_the_Khan7
+--------------------------------
+card_id:8
+mana_cost:3
+original_mana_cost:3
+name:Rider
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+original_attack:3
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Rider.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Rider8
+--------------------------------
+card_id:9
+mana_cost:3
+original_mana_cost:3
+name:Rider
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+original_attack:3
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Rider.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Rider9
+--------------------------------
+card_id:10
+mana_cost:5
+original_mana_cost:5
+name:Mounted Knight
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+original_attack:4
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Mounted Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mounted_Knight10
+--------------------------------
+card_id:11
+mana_cost:5
+original_mana_cost:5
+name:Mounted Knight
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+original_attack:4
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Mounted Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mounted_Knight11
+--------------------------------
+card_id:12
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+original_attack:2
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Hunting dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Hunting_dog12
+--------------------------------
+card_id:13
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+original_attack:2
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Hunting dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Hunting_dog13
+--------------------------------
+card_id:14
+mana_cost:3
+original_mana_cost:3
+name:Volley
+card_type:Spell
+description:Deal 2 damage to all enemies
+img_url:Volley.png
+target:enemy
+empire_belonging:
+name_for_html:Volley14
+--------------------------------
+card_id:15
+mana_cost:3
+original_mana_cost:3
+name:Volley
+card_type:Spell
+description:Deal 2 damage to all enemies
+img_url:Volley.png
+target:enemy
+empire_belonging:
+name_for_html:Volley15
 --------------------------------
