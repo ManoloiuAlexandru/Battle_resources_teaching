@@ -189,14 +189,8 @@ def cast_spell(player1, player2, card_picked):
         dmg_to_enemy_minions = 1
     if player1.incoming_spell.name in list_of_self_target:
         for card in player1.battle_field:
-            if card_picked.get(card.name_for_html) is not None and list_of_self_target.get(
-                    player1.incoming_spell.name) not in card.description.split():
-                card.hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
-                card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
-                card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
-                if list_of_buff_spells.get(player1.incoming_spell.name)[2] not in card.description:
-                    card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
-                card.check_creature()
+            if card_picked.get(card.name_for_html) is not None:
+                buff_creature_with_spell(card, player1)
                 break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
@@ -213,6 +207,20 @@ def cast_spell(player1, player2, card_picked):
             break
     player1.check_player()
     player2.check_player()
+
+
+def buff_creature_with_spell(card, player1):
+    if player1.incoming_spell.name in list_of_spells_that_buff_specific_targets:
+        if list_of_spells_that_buff_specific_targets.get(player1.incoming_spell.name)[0] in card.description.split():
+            if "draw" == list_of_spells_that_buff_specific_targets.get(player1.incoming_spell.name)[1]:
+                for nr_cards in range(list_of_spells_that_draw_cards_conditional.get(player1.incoming_spell.name)):
+                    player1.draw_card()
+    card.hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
+    card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
+    card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
+    if list_of_buff_spells.get(player1.incoming_spell.name)[2] not in card.description:
+        card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
+    card.check_creature()
 
 
 def general_spells(player, enemy_player, spell_name):
@@ -237,7 +245,8 @@ def general_spells(player, enemy_player, spell_name):
             return_to_hand(creature, player)
         for creature in enemy_player.battle_field[:]:
             return_to_hand(creature, enemy_player)
-
+    elif player.incoming_spell.name in list_of_spells_that_affect_the_battlefield:
+        affect_battle_field(player.incoming_spell, player, enemy_player)
     elif player.incoming_spell.name in list_of_spells_that_draw_cards:
         for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
             player.draw_card()
@@ -456,3 +465,9 @@ def end_of_turn_action(player, enemy_player):
                 card.hp += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]
                 card.max_hp += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]
                 card.attack += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[2]
+
+
+def affect_battle_field(card, player, enemy_player):
+    if list_of_spells_that_affect_the_battlefield.get(card.name) == "self":
+        for creature in player.battle_field:
+            buff_creature_with_spell(creature, player)

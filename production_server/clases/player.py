@@ -44,6 +44,8 @@ class Player:
         for card in self.hand:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.logs += "Playing:" + card.name + "\n"
+                if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
+                    self.hand_check(card)
                 if card.name in list_of_creature_description and len(self.battle_field) < 7:
                     self.mana_pay(card)
                     self.battle_field.append(card)
@@ -94,8 +96,6 @@ class Player:
                     if len(self.battle_field) < 7:
                         self.battle_field.append(list_of_creature_that_summon.get(card.name))
                     return 1
-                elif card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
-                    self.hand_check(card)
                 elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
                     self.buff_all_cards(card)
                 elif len(self.battle_field) == 7:
