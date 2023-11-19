@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+from clases.server_logics import *
 from clases.Item import Item
 from clases.spells import Spell
 from clases.creatures import Creature
@@ -26,6 +27,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     global player1
     global player2
     global attacked_player
+    global your_deck
     try:
         if player1 is None:
             player1 = Player(player1_name)
@@ -35,6 +37,11 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     player1.hand = []
     player1.playing_deck_name = play1_deck
     if play1_deck == "personal_deck":
+        try:
+            if len(your_deck) == 0:
+                your_deck = get_old_deck()
+        except Exception as e:
+            player1.make_deck(get_old_deck())
         player1.make_deck(your_deck)
     else:
         player1.make_deck(dict_of_decks.get(play1_deck))
@@ -51,9 +58,6 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
-        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99999))
-        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99))
-        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
         player1.hp = 9999
         player2.mana = 1
     if difficulty == "normal" and player1.mana == 0:
@@ -205,6 +209,7 @@ def show_battle():
 
 @app.route("/send_deck", methods=["POST", "GET"])
 def personal_deck():
+    save_your_deck(your_deck)
     return redirect(url_for('game_options'))
 
 
