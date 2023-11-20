@@ -129,6 +129,13 @@ class Bot(Player):
                 except Exception as e:
                     print(e)
             elif card.name in list_of_spells_that_summon:
+                if card.name in list_of_spells_that_summon_specific_cards:
+                    for creature in range(list_of_spells_that_summon_specific_cards.get(card.name)[0]):
+                        if len(self.battle_field) < 7:
+                            self.battle_field.append(
+                                list_of_spells_that_summon_specific_cards.get(card.name)[1][creature])
+                            list_of_spells_that_summon_specific_cards.get(card.name)[1].remove(
+                                list_of_spells_that_summon_specific_cards.get(card.name)[1][creature])
                 for i in range(0, list_of_spells_that_summon.get(card.name)[1]):
                     for card_from_deck in self.deck:
                         if list_of_spells_that_summon.get(card.name)[0] == "":

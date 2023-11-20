@@ -10,7 +10,8 @@ from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing
     cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
 from clases.player import Player
 from decks.decks_to_play import dict_of_decks, cards_that_are_in_the_game_for_all, cards_for_byzantine_empire, \
-    all_cards_in_game, empire_decks, cards_for_holy_roman_empire, cards_for_mongol_empire
+    all_cards_in_game, empire_decks, cards_for_holy_roman_empire, cards_for_mongol_empire, cards_byzantine_show, \
+    cards_holy_show, cards_for_mongol
 
 app = Flask(__name__)
 global player1
@@ -79,7 +80,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             if card.mana_cost > 10:
                 card.mana_cost = 10
     if difficulty == "insane" and player1.mana == 0:
-        player1.hp=1000000
+        player1.hp = 1000000
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
@@ -152,7 +153,7 @@ def make_your_own_deck():
 
 @app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
 def make_your_own_deck_pick_empire():
-    return render_template("empires_choice.html")
+    return render_template("empires_choice.html", library=[cards_byzantine_show, cards_holy_show, cards_for_mongol])
 
 
 @app.route("/update_deck", methods=["POST", "GET"])
