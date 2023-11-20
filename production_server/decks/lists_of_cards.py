@@ -11,7 +11,7 @@ def generate_random_int():
 Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
-                                "Personal instructor", "Scared Noble", "Bishop"]
+                                "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1)}
@@ -20,7 +20,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
                               "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored"),
-                              "Bishop": (5, 5, "Guard")}
+                              "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, "")}
 list_of_creature_that_buff_specific_cards = {"Frederick Barbarossa": ("Armored", 1, 1, "Armored")}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -50,7 +50,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Bodyguards", "Feudal Obligations", "Black Death", "Knight's training", "Peace Treaty",
                   "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor", "Arbalest Shot",
                   "Chivalry and Honor", "Horse raiding shot", "Landslide", "Rain of Arrows", "Roman Formation Circular",
-                  "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx"]
+                  "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
+                  "Old Tactics"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge"}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99}
@@ -61,11 +62,12 @@ list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
-                                 "Boarder Guards", "In the name of the king", "Roman Formation Phalanx"]
+                                 "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
+                                 "Old Tactics"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
-                                  "Chivalry and Honor": 1, "Horse raiding shot": 1,
+                                  "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
@@ -73,7 +75,8 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Knight's training": (3, 3, ""), "Chivalry and Honor": (1, 2, ""), "Guard Duty": (2, 2, ""),
                        "For the Khan": (0, 1, "Charge"), "In the name of the king": (1, 1, ""),
                        "Roman Formation Phalanx": (1, 1, "")}
-list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1)}
+list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
+                                   "Old Tactics": ("", 3)}
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
 list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self", "For the Khan": "self",
                                               "In the name of the king": "self", "Roman Formation Phalanx": "self"}

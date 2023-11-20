@@ -136,6 +136,9 @@ cards_for_byzantine_empire = [
     Spell(3, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", -66),
     Spell(4, "Boarder Guards", "Summon 2 Akritoi", -68),
     Spell(2, "Roman Formation Phalanx", "Give your minions +1/+1", -71),
+    Creature(7, "Basil II", 6, 5, "Armored Charge Guard", -76),
+    Creature(6, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3", -77),
+    Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79)
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -152,6 +155,9 @@ cards_byzantine_show = [
     Spell(3, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", -66),
     Spell(4, "Boarder Guards", "Summon 2 Akritoi", -68),
     Spell(2, "Roman Formation Phalanx", "Give your minions +1/+1", -71),
+    Creature(7, "Basil II", 6, 5, "Armored Charge Guard", -76),
+    Creature(6, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3", -77),
+    Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79)
 ]
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", -72),
@@ -210,7 +216,8 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Creature(3, "Negotiator", 1, 1, "Give your hand +1/+1 and draw a card", -57),
                     Spell(3, "Horse raiding shot", "Deal 2 damage and draw a card", -58),
                     Creature(2, "Wild Horse", 2, 1, "Draw a charge card", -59),
-                    Spell(3, "For the Khan", "Give all your minions +1/+0 and Charge", -67), ]
+                    Spell(3, "For the Khan", "Give all your minions +1/+0 and Charge", -67),
+                    Creature(9, "Jochi", 8, 8, "Charge", -78)]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
                            Creature(2, "Hunting dog", 1, 2, "Charge", -30),
@@ -309,7 +316,11 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                               "Friendly minions get armored and +1/+1 Armored Guard", -72),
                      Creature(2, "Scribe of the Church", 1, 1, "Draw a spell", -73),
                      Creature(12, "Trebuchet", 8, 8, "Cost 1 less for each other card in your hand", -74),
-                     Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", -75)
+                     Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", -75),
+                     Creature(7, "Basil II", 6, 5, "Armored Charge Guard", -76),
+                     Creature(6, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3", -77),
+                     Creature(9, "Jochi", 8, 8, "Charge", -78),
+                     Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79)
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),
@@ -340,7 +351,7 @@ mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", 1924),
                   Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", 1925),
                   Creature(2, 'Squire', 2, 3, "", 1926),
-                  Creature(2, 'Squire', 2, 3, "", 1927),
+                  Creature(9, "Jochi", 8, 8, "Charge", 1927),
                   Creature(2, 'Page', 1, 1, "Draw a card", 1928),
                   Creature(2, 'Page', 1, 1, "Draw a card", 1929),
                   ]
