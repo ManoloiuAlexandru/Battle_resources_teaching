@@ -26,8 +26,9 @@ list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1)}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
-                                    "Richard the Lionheart": 2}
+                                    "Richard the Lionheart": 2, "Scribe of the Church": 1}
 list_of_creature_that_draw_specific_cards = {"Wild Horse": (["Creature"], ["Charge"]),
+                                             "Scribe of the Church": (["Spell"], [""]),
                                              "Watchman": (["Creature"], ["Guard"]),
                                              "Richard the Lionheart": (
                                                  ["Creature", "Spell"], ["", ""])}
