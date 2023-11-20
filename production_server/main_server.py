@@ -79,6 +79,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             if card.mana_cost > 10:
                 card.mana_cost = 10
     if difficulty == "insane" and player1.mana == 0:
+        player1.hp=1000000
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1

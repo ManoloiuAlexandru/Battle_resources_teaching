@@ -75,21 +75,10 @@ class Bot(Player):
                 for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                     if card.name in list_of_creature_that_draw_specific_cards:
                         try:
-                            random_card = random.choice(self.deck)
-                            if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
-                                   obj.description.split() for obj in self.deck):
-                                while (list_of_creature_that_draw_specific_cards.get(card.name)[
-                                           0] != random_card.card_type
-                                       or list_of_creature_that_draw_specific_cards.get(card.name)[
-                                           1] not in random_card.description.split()):
-                                    random_card = random.choice(self.deck)
-                            if list_of_creature_that_draw_specific_cards.get(card.name)[
-                                0] == random_card.card_type and \
-                                    list_of_creature_that_draw_specific_cards.get(card.name)[
-                                        1] in random_card.description.split():
+                            random_card = self.get_random_card(card)
+                            if random_card is not None:
                                 self.hand.append(random_card)
                                 self.deck.remove(random_card)
-                            break
                         except Exception as e:
                             print(e)
                     else:
@@ -103,9 +92,9 @@ class Bot(Player):
             elif card.name in list_of_creature_with_on_going_effect:
                 self.ongoing_effects.append(card)
         elif card.card_type == "Spell":
+            self.incoming_spell = card
             if card.name in list_of_self_target and len(self.battle_field) > 0:
                 try:
-                    self.incoming_spell = card.name
                     if card.name == "Personal Guard":
                         self.battle_field.sort(key=lambda x: x.max_hp)
                         for creature in self.battle_field[::-1]:
@@ -156,6 +145,10 @@ class Bot(Player):
                             self.deck.remove(card_from_deck)
                             break
                 return 1
+            if card.name in list_of_spells_that_affect_the_battlefield:
+                affect_battle_field(card, self, player)
+                self.incoming_spell=None
+                return 1
             if card.name in list_of_spells_that_draw_cards:
                 for nr_cards in range(list_of_spells_that_draw_cards.get(card.name)):
                     self.draw_card()
@@ -165,8 +158,14 @@ class Bot(Player):
                                 list_of_spells_that_reduce_mana.get(card.name)[1])
                 return 1
             if card.name in list_of_dmg_spells:
-                self.target_creature_with_spell(card, player)
-                return 1
+                if len(self.battle_field)<len(player.battle_field) and "ALL" in card.description:
+                    self.target_creature_with_spell(card, player)
+                    return 1
+                elif "ALL" not in card.description:
+                    self.target_creature_with_spell(card, player)
+                    return 1
+                else:
+                    return 0
             else:
                 return 0
         elif card.card_type == "Item":
