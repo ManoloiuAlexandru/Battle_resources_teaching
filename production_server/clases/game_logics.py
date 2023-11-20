@@ -11,6 +11,7 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
 
 def battle(card1, card2, player1, player2):
     try:
+        player1.logs += card1.name + " is in battle with " + card2.name + "\n"
         if card1.armored is True and card2.armored is True:
             if card2.attack > 0:
                 card1.armored = False
@@ -27,7 +28,7 @@ def battle(card1, card2, player1, player2):
         else:
             card1.hp -= card2.attack
             card2.hp -= card1.attack
-            card1.exhausted = True
+        card1.exhausted = True
         Player.clean_board(player1, player2)
         Player.battle_fields_effects(player1, player2)
     except Exception as e:
@@ -477,4 +478,3 @@ def affect_battle_field(card, player, enemy_player):
     if list_of_spells_that_affect_the_battlefield.get(card.name) == "self":
         for creature in player.battle_field:
             buff_creature_with_spell(creature, player)
-

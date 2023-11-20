@@ -2,6 +2,8 @@ from clases.spells import Spell
 
 from clases.creatures import Creature
 
+from clases.Item import Item
+
 
 def save_your_deck(deck, empire):
     with open("my_deck.txt", "w") as file:
@@ -49,9 +51,11 @@ def get_old_deck():
                 attack = int(file_line.split(":")[1])
             file_line = file.readline()
             file_line = file_line.strip()
-        if card_type == "Spell" or card_type == "Item":
+        if card_type == "Spell":
             old_deck.append(Spell(mana_cost, name, description, card_id))
         elif card_type == "Creature":
             old_deck.append(Creature(mana_cost, name, hp, attack, description, card_id))
+        elif card_type == "Item":
+            old_deck.append(Item(mana_cost, name, description, card_id))
         file_line = file.readline()
     return old_deck, empire

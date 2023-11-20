@@ -27,8 +27,9 @@ class Item:
                 creature.description += " Guard"
             elif "Charge" in self.description.split() and "Charge" not in creature.description.split():
                 creature.description += " Charge"
-            elif "Armored" in self.description.split() and "Armored" not in creature.description.split():
-                creature.description += " Armored"
+            elif "Armored" in self.description.split():
+                if "Armored" not in creature.description.split():
+                    creature.description += " Armored"
                 creature.armored = True
             try:
                 for hp in self.description.split("/")[1]:

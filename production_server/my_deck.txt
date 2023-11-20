@@ -1,99 +1,119 @@
 empire:Holy_Roman_Empire
 card_id:0
-mana_cost:5
-original_mana_cost:5
-name:Bishop
-hp:2
-max_hp:2
-original_hp:2
-attack:2
+mana_cost:6
+original_mana_cost:6
+name:Hospitaller Knight
+hp:5
+max_hp:5
+original_hp:5
+attack:4
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
-description:Give a friendly minion +4/+4 and guard
-original_description:Give a friendly minion +4/+4 and guard
+description:Heal a friendly minion for 2 Armored
+original_description:Heal a friendly minion for 2 Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Bishop.png
+img_url:Hospitaller Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Bishop0
+name_for_html:Hospitaller_Knight0
 --------------------------------
 card_id:1
-mana_cost:5
-original_mana_cost:5
-name:Bishop
-hp:2
-max_hp:2
-original_hp:2
-attack:2
+mana_cost:6
+original_mana_cost:6
+name:Hospitaller Knight
+hp:5
+max_hp:5
+original_hp:5
+attack:4
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
-description:Give a friendly minion +4/+4 and guard
-original_description:Give a friendly minion +4/+4 and guard
+description:Heal a friendly minion for 2 Armored
+original_description:Heal a friendly minion for 2 Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Bishop.png
+img_url:Hospitaller Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Bishop1
+name_for_html:Hospitaller_Knight1
 --------------------------------
 card_id:2
-mana_cost:12
-original_mana_cost:12
-name:Trebuchet
-hp:8
-max_hp:8
-original_hp:8
-attack:8
+mana_cost:8
+original_mana_cost:8
+name:Frederick Barbarossa
+hp:6
+max_hp:6
+original_hp:6
+attack:6
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:8
+original_attack:6
 active_effects:[]
-description:Cost 1 less for other each card in your hand
-original_description:Cost 1 less for other each card in your hand
+description:Friendly minions get armored and +1/+1 Armored Guard
+original_description:Friendly minions get armored and +1/+1 Armored Guard
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Trebuchet.png
+img_url:Frederick Barbarossa.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Trebuchet2
+name_for_html:Frederick_Barbarossa2
 --------------------------------
 card_id:3
-mana_cost:12
-original_mana_cost:12
-name:Trebuchet
-hp:8
-max_hp:8
-original_hp:8
-attack:8
+mana_cost:2
+original_mana_cost:2
+name:Plate Armor
+card_type:Item
+description:Give a creature Armored
+img_url:Plate Armor.png
+empire_belonging:
+name_for_html:Plate_Armor3
+--------------------------------
+card_id:4
+mana_cost:2
+original_mana_cost:2
+name:Plate Armor
+card_type:Item
+description:Give a creature Armored
+img_url:Plate Armor.png
+empire_belonging:
+name_for_html:Plate_Armor4
+--------------------------------
+card_id:5
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:8
+original_attack:1
 active_effects:[]
-description:Cost 1 less for other each card in your hand
-original_description:Cost 1 less for other each card in your hand
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Trebuchet.png
+img_url:Faithful Protector.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Trebuchet3
+name_for_html:Faithful_Protector5
 --------------------------------
 card_id:6
 mana_cost:1
@@ -120,9 +140,9 @@ empire_belonging:
 name_for_html:Faithful_Protector6
 --------------------------------
 card_id:7
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
+mana_cost:0
+original_mana_cost:0
+name:Peasant
 hp:1
 max_hp:1
 original_hp:1
@@ -131,68 +151,94 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
+description:
+original_description:
 card_type:Creature
 exhausted:True
-armored:True
+armored:False
 can_be_target:True
-img_url:Faithful Protector.png
+img_url:Peasant.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Faithful_Protector7
+name_for_html:Peasant7
 --------------------------------
 card_id:8
-mana_cost:3
-original_mana_cost:3
-name:Feudal Obligations
-card_type:Spell
-description:Draw 2 cards
-img_url:Feudal Obligations.png
-target:None
+mana_cost:0
+original_mana_cost:0
+name:Peasant
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:
+original_description:
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Peasant.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Feudal_Obligations8
+name_for_html:Peasant8
 --------------------------------
 card_id:9
-mana_cost:3
-original_mana_cost:3
-name:Feudal Obligations
-card_type:Spell
-description:Draw 2 cards
-img_url:Feudal Obligations.png
-target:None
+mana_cost:12
+original_mana_cost:12
+name:Trebuchet
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Cost 1 less for other each card in your hand
+original_description:Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Trebuchet.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Feudal_Obligations9
+name_for_html:Trebuchet9
 --------------------------------
 card_id:10
-mana_cost:2
-original_mana_cost:2
-name:Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:12
+original_mana_cost:12
+name:Trebuchet
+hp:8
+max_hp:8
+original_hp:8
+attack:8
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:8
 active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:Cost 1 less for other each card in your hand
+original_description:Cost 1 less for other each card in your hand
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Page.png
+img_url:Trebuchet.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page10
+name_for_html:Trebuchet10
 --------------------------------
 card_id:11
-mana_cost:2
-original_mana_cost:2
-name:Page
+mana_cost:1
+original_mana_cost:1
+name:Wolf
 hp:1
 max_hp:1
 original_hp:1
@@ -201,70 +247,70 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:Charge
+original_description:Charge
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Page.png
+img_url:Wolf.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page11
+name_for_html:Wolf11
 --------------------------------
 card_id:12
-mana_cost:3
-original_mana_cost:3
-name:Miner
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:2
+original_mana_cost:2
+name:Squire
+hp:2
+max_hp:2
+original_hp:2
+attack:3
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
+description:
+original_description:
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Miner.png
+img_url:Squire.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Miner12
+name_for_html:Squire12
 --------------------------------
 card_id:13
-mana_cost:3
-original_mana_cost:3
-name:Miner
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:2
+original_mana_cost:2
+name:Squire
+hp:2
+max_hp:2
+original_hp:2
+attack:3
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
+description:
+original_description:
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Miner.png
+img_url:Squire.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Miner13
+name_for_html:Squire13
 --------------------------------
 card_id:14
 mana_cost:2
 original_mana_cost:2
-name:Scribe of the Church
+name:Page
 hp:1
 max_hp:1
 original_hp:1
@@ -273,22 +319,22 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Draw a spell
-original_description:Draw a spell
+description:Draw a card
+original_description:Draw a card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Scribe of the Church.png
+img_url:Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Scribe_of_the_Church14
+name_for_html:Page14
 --------------------------------
 card_id:15
 mana_cost:2
 original_mana_cost:2
-name:Scribe of the Church
+name:Page
 hp:1
 max_hp:1
 original_hp:1
@@ -297,41 +343,41 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Draw a spell
-original_description:Draw a spell
+description:Draw a card
+original_description:Draw a card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Scribe of the Church.png
+img_url:Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Scribe_of_the_Church15
+name_for_html:Page15
 --------------------------------
 card_id:16
-mana_cost:8
-original_mana_cost:8
-name:Richard the Lionheart
-hp:6
-max_hp:6
-original_hp:6
-attack:6
+mana_cost:3
+original_mana_cost:3
+name:Scribe
+hp:3
+max_hp:3
+original_hp:3
+attack:0
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:0
 active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
+description:At the end of your turn draw a card
+original_description:At the end of your turn draw a card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Richard the Lionheart.png
+img_url:Scribe.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Richard_the_Lionheart16
+name_for_html:Scribe16
 --------------------------------
 card_id:17
 mana_cost:3
@@ -358,28 +404,15 @@ empire_belonging:
 name_for_html:Scribe17
 --------------------------------
 card_id:18
-mana_cost:3
-original_mana_cost:3
-name:Scribe
-hp:3
-max_hp:3
-original_hp:3
-attack:0
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:0
-active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scribe.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Chivalry and Honor
+card_type:Spell
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:self
 empire_belonging:
-name_for_html:Scribe18
+name_for_html:Chivalry_and_Honor18
 --------------------------------
 card_id:19
 mana_cost:2
@@ -393,15 +426,15 @@ empire_belonging:
 name_for_html:Chivalry_and_Honor19
 --------------------------------
 card_id:20
-mana_cost:2
-original_mana_cost:2
-name:Chivalry and Honor
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
 card_type:Spell
-description:Give a minion +2/+1 and draw a card
-img_url:Chivalry and Honor.png
-target:self
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
 empire_belonging:
-name_for_html:Chivalry_and_Honor20
+name_for_html:Arbalest_Shot20
 --------------------------------
 card_id:21
 mana_cost:4
@@ -415,15 +448,28 @@ empire_belonging:
 name_for_html:Arbalest_Shot21
 --------------------------------
 card_id:22
-mana_cost:4
-original_mana_cost:4
-name:Arbalest Shot
-card_type:Spell
-description:Deal 3 damage and draw a card
-img_url:Arbalest Shot.png
-target:enemy
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Arbalest_Shot22
+name_for_html:Faithful_Guard22
 --------------------------------
 card_id:23
 mana_cost:3
@@ -450,9 +496,9 @@ empire_belonging:
 name_for_html:Faithful_Guard23
 --------------------------------
 card_id:24
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
+mana_cost:2
+original_mana_cost:2
+name:Guard Dog
 hp:2
 max_hp:2
 original_hp:2
@@ -461,118 +507,109 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Guard Dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Guard_Dog24
+--------------------------------
+card_id:25
+mana_cost:2
+original_mana_cost:2
+name:Guard Dog
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Guard Dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Guard_Dog25
+--------------------------------
+card_id:26
+mana_cost:2
+original_mana_cost:2
+name:In the name of the king
+card_type:Spell
+description:Give your minions +1/+1
+img_url:In the name of the king.png
+target:None
+empire_belonging:
+name_for_html:In_the_name_of_the_king26
+--------------------------------
+card_id:27
+mana_cost:2
+original_mana_cost:2
+name:In the name of the king
+card_type:Spell
+description:Give your minions +1/+1
+img_url:In the name of the king.png
+target:None
+empire_belonging:
+name_for_html:In_the_name_of_the_king27
+--------------------------------
+card_id:28
+mana_cost:1
+original_mana_cost:1
+name:Armored Page
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Armored
+original_description:Armored
 card_type:Creature
 exhausted:True
 armored:True
 can_be_target:True
-img_url:Faithful Guard.png
+img_url:Armored Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Faithful_Guard24
---------------------------------
-card_id:25
-mana_cost:5
-original_mana_cost:5
-name:Call of the Emperor
-card_type:Spell
-description:Draw 3 cards and reduce there mana cost by 1
-img_url:Call of the Emperor.png
-target:None
-empire_belonging:
-name_for_html:Call_of_the_Emperor25
---------------------------------
-card_id:26
-mana_cost:5
-original_mana_cost:5
-name:Call of the Emperor
-card_type:Spell
-description:Draw 3 cards and reduce there mana cost by 1
-img_url:Call of the Emperor.png
-target:None
-empire_belonging:
-name_for_html:Call_of_the_Emperor26
+name_for_html:Armored_Page28
 --------------------------------
 card_id:29
-mana_cost:9
-original_mana_cost:9
-name:Two-handed Knight
-hp:5
-max_hp:5
-original_hp:5
-attack:5
+mana_cost:1
+original_mana_cost:1
+name:Armored Page
+hp:1
+max_hp:1
+original_hp:1
+attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:1
 active_effects:[]
-description:Kill an enemy minion
-original_description:Kill an enemy minion
+description:Armored
+original_description:Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Two-handed Knight.png
+img_url:Armored Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Two-handed_Knight29
---------------------------------
-card_id:30
-mana_cost:9
-original_mana_cost:9
-name:Two-handed Knight
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Kill an enemy minion
-original_description:Kill an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Two-handed Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Two-handed_Knight30
---------------------------------
-card_id:31
-mana_cost:2
-original_mana_cost:2
-name:In the name of the king
-card_type:Spell
-description:Give your minions +1/+1
-img_url:In the name of the king.png
-target:None
-empire_belonging:
-name_for_html:In_the_name_of_the_king31
---------------------------------
-card_id:32
-mana_cost:2
-original_mana_cost:2
-name:In the name of the king
-card_type:Spell
-description:Give your minions +1/+1
-img_url:In the name of the king.png
-target:None
-empire_belonging:
-name_for_html:In_the_name_of_the_king32
---------------------------------
-card_id:33
-mana_cost:7
-original_mana_cost:7
-name:Rain of Arrows
-card_type:Spell
-description:Destroy ALL minions that are not Armored
-img_url:Rain of Arrows.png
-target:enemy
-empire_belonging:
-name_for_html:Rain_of_Arrows33
+name_for_html:Armored_Page29
 --------------------------------
