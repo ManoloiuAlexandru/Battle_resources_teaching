@@ -60,7 +60,6 @@ class Player:
                                 if random_card is not None:
                                     self.hand.append(random_card)
                                     self.deck.remove(random_card)
-                                    break
                             except Exception as e:
                                 print(e)
                         else:
@@ -138,20 +137,32 @@ class Player:
         try:
             random_card = random.choice(self.deck)
             nr_try = 0
-            if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
-                   obj.description.split() for obj in self.deck):
-                while (list_of_creature_that_draw_specific_cards.get(card.name)[0] != random_card.card_type or
-                       list_of_creature_that_draw_specific_cards.get(card.name)[
-                           1] not in random_card.description.split()) and nr_try < 30:
+            type_of_card = list_of_creature_that_draw_specific_cards.get(card.name)[0][0]
+            list_of_creature_that_draw_specific_cards.get(card.name)[0].pop(0)
+            type_of_description = list_of_creature_that_draw_specific_cards.get(card.name)[1][0]
+            list_of_creature_that_draw_specific_cards.get(card.name)[1].pop(0)
+            if type_of_description == "":
+                while type_of_card != random_card.card_type and nr_try < 30:
                     random_card = random.choice(self.deck)
                     nr_try += 1
                 if nr_try == 30:
                     for charge in self.deck:
-                        if list_of_creature_that_draw_specific_cards.get(card.name)[1] in charge.description.split():
+                        if type_of_description in charge.description.split():
                             random_card = charge
-                if list_of_creature_that_draw_specific_cards.get(card.name)[0] == random_card.card_type and \
-                        list_of_creature_that_draw_specific_cards.get(card.name)[1] in random_card.description.split():
+                if type_of_card == random_card.card_type:
                     return random_card
+            else:
+                if any(type_of_description in obj.description.split() for obj in self.deck):
+                    while (
+                            type_of_card != random_card.card_type or type_of_description not in random_card.description.split()) and nr_try < 30:
+                        random_card = random.choice(self.deck)
+                        nr_try += 1
+                    if nr_try == 30:
+                        for charge in self.deck:
+                            if type_of_description in charge.description.split():
+                                random_card = charge
+                    if type_of_card == random_card.card_type and type_of_description in random_card.description.split():
+                        return random_card
         except Exception as e:
             print(e)
 

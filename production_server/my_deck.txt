@@ -2,58 +2,342 @@ empire:Byzantine_Empire
 card_id:0
 mana_cost:2
 original_mana_cost:2
-name:Roman Formation Phalanx
-card_type:Spell
-description:Give your minions +1/+1
-img_url:Roman Formation Phalanx.png
-target:None
+name:Watchman
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a guard card
+original_description:Draw a guard card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchman.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Roman_Formation_Phalanx0
+name_for_html:Watchman0
 --------------------------------
 card_id:1
 mana_cost:2
 original_mana_cost:2
+name:Watchman
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a guard card
+original_description:Draw a guard card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchman.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchman1
+--------------------------------
+card_id:2
+mana_cost:2
+original_mana_cost:2
+name:Watchtower
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchtower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchtower2
+--------------------------------
+card_id:3
+mana_cost:2
+original_mana_cost:2
+name:Watchtower
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchtower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchtower3
+--------------------------------
+card_id:4
+mana_cost:2
+original_mana_cost:2
+name:Akritoi
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Akritoi.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Akritoi4
+--------------------------------
+card_id:5
+mana_cost:2
+original_mana_cost:2
+name:Akritoi
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Akritoi.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Akritoi5
+--------------------------------
+card_id:6
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Cataphract.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Cataphract6
+--------------------------------
+card_id:7
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Cataphract.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Cataphract7
+--------------------------------
+card_id:8
+mana_cost:3
+original_mana_cost:3
+name:Ancient Empire
+card_type:Spell
+description:Draw 2 cards
+img_url:Ancient Empire.png
+target:None
+empire_belonging:
+name_for_html:Ancient_Empire8
+--------------------------------
+card_id:9
+mana_cost:3
+original_mana_cost:3
+name:Ancient Empire
+card_type:Spell
+description:Draw 2 cards
+img_url:Ancient Empire.png
+target:None
+empire_belonging:
+name_for_html:Ancient_Empire9
+--------------------------------
+card_id:10
+mana_cost:7
+original_mana_cost:7
+name:Landslide
+card_type:Spell
+description:Deal 7 damage to ALL minions
+img_url:Landslide.png
+target:enemy
+empire_belonging:
+name_for_html:Landslide10
+--------------------------------
+card_id:11
+mana_cost:7
+original_mana_cost:7
+name:Landslide
+card_type:Spell
+description:Deal 7 damage to ALL minions
+img_url:Landslide.png
+target:enemy
+empire_belonging:
+name_for_html:Landslide11
+--------------------------------
+card_id:12
+mana_cost:5
+original_mana_cost:5
+name:Wealthy Empire
+card_type:Spell
+description:Summon 2 random cards from your deck
+img_url:Wealthy Empire.png
+target:None
+empire_belonging:
+name_for_html:Wealthy_Empire12
+--------------------------------
+card_id:13
+mana_cost:5
+original_mana_cost:5
+name:Wealthy Empire
+card_type:Spell
+description:Summon 2 random cards from your deck
+img_url:Wealthy Empire.png
+target:None
+empire_belonging:
+name_for_html:Wealthy_Empire13
+--------------------------------
+card_id:14
+mana_cost:7
+original_mana_cost:7
+name:Templar Knight
+hp:7
+max_hp:7
+original_hp:7
+attack:5
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Templar Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Templar_Knight14
+--------------------------------
+card_id:15
+mana_cost:7
+original_mana_cost:7
+name:Templar Knight
+hp:7
+max_hp:7
+original_hp:7
+attack:5
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Templar Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Templar_Knight15
+--------------------------------
+card_id:16
+mana_cost:2
+original_mana_cost:2
 name:Roman Formation Phalanx
 card_type:Spell
 description:Give your minions +1/+1
 img_url:Roman Formation Phalanx.png
 target:None
 empire_belonging:
-name_for_html:Roman_Formation_Phalanx1
+name_for_html:Roman_Formation_Phalanx16
 --------------------------------
-card_id:2
-mana_cost:4
-original_mana_cost:4
-name:Boarder Guards
+card_id:17
+mana_cost:2
+original_mana_cost:2
+name:Roman Formation Phalanx
 card_type:Spell
-description:Summon 2 Akritoi
-img_url:Boarder Guards.png
+description:Give your minions +1/+1
+img_url:Roman Formation Phalanx.png
 target:None
 empire_belonging:
-name_for_html:Boarder_Guards2
+name_for_html:Roman_Formation_Phalanx17
 --------------------------------
-card_id:3
-mana_cost:4
-original_mana_cost:4
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi
-img_url:Boarder Guards.png
-target:None
-empire_belonging:
-name_for_html:Boarder_Guards3
---------------------------------
-card_id:4
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+card_id:18
+mana_cost:2
+original_mana_cost:2
+name:Squire
+hp:2
+max_hp:2
+original_hp:2
+attack:3
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
 description:
 original_description:
@@ -61,23 +345,23 @@ card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Squire.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant4
+name_for_html:Squire18
 --------------------------------
-card_id:5
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+card_id:19
+mana_cost:2
+original_mana_cost:2
+name:Squire
+hp:2
+max_hp:2
+original_hp:2
+attack:3
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
 description:
 original_description:
@@ -85,16 +369,206 @@ card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Squire.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant5
+name_for_html:Squire19
 --------------------------------
-card_id:6
-mana_cost:2
-original_mana_cost:2
-name:Page
+card_id:21
+mana_cost:8
+original_mana_cost:8
+name:Richard the Lionheart
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+description:Draw a Spell and a Creature Guard
+original_description:Draw a Spell and a Creature Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Richard the Lionheart.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Richard_the_Lionheart21
+--------------------------------
+card_id:22
+mana_cost:3
+original_mana_cost:3
+name:Tournament Horserider
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Charge Armored
+original_description:Charge Armored
+card_type:Creature
+exhausted:False
+armored:True
+can_be_target:True
+img_url:Tournament Horserider.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Tournament_Horserider22
+--------------------------------
+card_id:23
+mana_cost:3
+original_mana_cost:3
+name:Tournament Horserider
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Charge Armored
+original_description:Charge Armored
+card_type:Creature
+exhausted:False
+armored:True
+can_be_target:True
+img_url:Tournament Horserider.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Tournament_Horserider23
+--------------------------------
+card_id:24
+mana_cost:6
+original_mana_cost:6
+name:War elephant
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:While this is on the field your creatures have +1 attack
+original_description:While this is on the field your creatures have +1 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:War elephant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:War_elephant24
+--------------------------------
+card_id:25
+mana_cost:6
+original_mana_cost:6
+name:War elephant
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:While this is on the field your creatures have +1 attack
+original_description:While this is on the field your creatures have +1 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:War elephant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:War_elephant25
+--------------------------------
+card_id:26
+mana_cost:3
+original_mana_cost:3
+name:Guard Duty
+card_type:Spell
+description:Give a friendly minion +2/+2 if it is a Guard draw a card
+img_url:Guard Duty.png
+target:self
+empire_belonging:
+name_for_html:Guard_Duty26
+--------------------------------
+card_id:27
+mana_cost:3
+original_mana_cost:3
+name:Guard Duty
+card_type:Spell
+description:Give a friendly minion +2/+2 if it is a Guard draw a card
+img_url:Guard Duty.png
+target:self
+empire_belonging:
+name_for_html:Guard_Duty27
+--------------------------------
+card_id:28
+mana_cost:4
+original_mana_cost:4
+name:City Guard
+hp:5
+max_hp:5
+original_hp:5
+attack:3
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:City Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:City_Guard28
+--------------------------------
+card_id:29
+mana_cost:4
+original_mana_cost:4
+name:City Guard
+hp:5
+max_hp:5
+original_hp:5
+attack:3
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:City Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:City_Guard29
+--------------------------------
+card_id:30
+mana_cost:1
+original_mana_cost:1
+name:Armored Page
 hp:1
 max_hp:1
 original_hp:1
@@ -103,135 +577,15 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:Armored
+original_description:Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Page.png
+img_url:Armored Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page6
---------------------------------
-card_id:7
-mana_cost:2
-original_mana_cost:2
-name:Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a card
-original_description:Draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Page.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Page7
---------------------------------
-card_id:8
-mana_cost:2
-original_mana_cost:2
-name:Guard Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Guard Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Guard_Dog8
---------------------------------
-card_id:9
-mana_cost:2
-original_mana_cost:2
-name:Guard Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Guard Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Guard_Dog9
---------------------------------
-card_id:10
-mana_cost:2
-original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Akritoi.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Akritoi10
---------------------------------
-card_id:11
-mana_cost:2
-original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Akritoi.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Akritoi11
+name_for_html:Armored_Page30
 --------------------------------

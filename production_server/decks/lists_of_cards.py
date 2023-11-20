@@ -24,8 +24,12 @@ list_of_creature_with_on_going_effect = ["War elephant", "Army Champion"]
 list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1)}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
-list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1}
-list_of_creature_that_draw_specific_cards = {"Wild Horse": ("Creature", "Charge"), "Watchman": ("Creature", "Guard")}
+list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
+                                    "Richard the Lionheart": 2}
+list_of_creature_that_draw_specific_cards = {"Wild Horse": (["Creature"], ["Charge"]),
+                                             "Watchman": (["Creature"], ["Guard"]),
+                                             "Richard the Lionheart": (
+                                             ["Creature", "Spell"], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", generate_random_int()) for i in range(0, 4)])}
