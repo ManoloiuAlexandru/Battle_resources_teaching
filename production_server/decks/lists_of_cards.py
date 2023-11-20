@@ -41,6 +41,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               }
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
+list_of_creature_that_are_affected_in_hand = {"Trebuchet":("reduce","",1)}
 """
 Spells
 """

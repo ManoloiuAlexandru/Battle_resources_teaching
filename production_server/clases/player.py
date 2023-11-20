@@ -114,6 +114,7 @@ class Player:
 
     def draw_card(self):
         try:
+            self.card_in_hand_effect()
             pick_card = random.choice(self.deck)
             if len(self.hand) < 10:
                 self.hand.append(pick_card)
@@ -275,3 +276,16 @@ class Player:
         for creature in self.battle_field:
             if creature.card_type == "Creature":
                 self.buff_card_from_hand(creature, card)
+
+    def card_in_hand_effect(self):
+        for creature in self.hand:
+            if creature.name in list_of_creature_that_are_affected_in_hand:
+                if list_of_creature_that_are_affected_in_hand.get(creature.name)[0] == "reduce":
+                    if list_of_creature_that_are_affected_in_hand.get(creature.name)[1] != "":
+                        pass
+                    else:
+                        self.hand[self.hand.index(creature)].mana_cost = self.hand[
+                            self.hand.index(creature)].original_mana_cost
+                        self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
+                                                                     list_of_creature_that_are_affected_in_hand.get(
+                                                                         creature.name)[2] - 1

@@ -215,6 +215,8 @@ def show_battle():
     player2_deck = request.form.get("deck_player2")
     difficulty = request.form.get("difficulty")
     game_start(player1_name, player2_name, player1_deck, player2_deck, difficulty, player1_empire, player2_empire)
+    player1.card_in_hand_effect()
+    player2.card_in_hand_effect()
     Player.battle_fields_effects(player1, player2)
     return render_template("home.html", players=[player2, player1])
 
