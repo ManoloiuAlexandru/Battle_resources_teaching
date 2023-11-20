@@ -19,7 +19,8 @@ list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
-                              "Last Defender": (0, 2, "Guard")}
+                              "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored")}
+list_of_creature_that_buff_specific_cards = {"Frederick Barbarossa": ("Armored", 1, 1, "Armored")}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion"]
 list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1)}
@@ -29,7 +30,7 @@ list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "
 list_of_creature_that_draw_specific_cards = {"Wild Horse": (["Creature"], ["Charge"]),
                                              "Watchman": (["Creature"], ["Guard"]),
                                              "Richard the Lionheart": (
-                                             ["Creature", "Spell"], ["", ""])}
+                                                 ["Creature", "Spell"], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", generate_random_int()) for i in range(0, 4)])}
@@ -38,6 +39,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               }
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
+list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 """
 Spells
 """

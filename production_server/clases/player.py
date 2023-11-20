@@ -94,6 +94,8 @@ class Player:
                     return 1
                 elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
                     self.buff_all_cards(card)
+                elif card.name in list_of_creature_that_affect_battle_field and len(self.battle_field) < 7:
+                    self.buff_all_in_battle(card)
                 elif len(self.battle_field) == 7:
                     return 0
                 self.battle_field.append(card)
@@ -267,4 +269,9 @@ class Player:
         for creature in self.deck:
             if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
                     card.name) in creature.description.split():
+                self.buff_card_from_hand(creature, card)
+
+    def buff_all_in_battle(self, card):
+        for creature in self.battle_field:
+            if creature.card_type == "Creature":
                 self.buff_card_from_hand(creature, card)
