@@ -119,6 +119,7 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(2, "Scribe of the Church", 1, 1, "Draw a spell", -73),
                                       Creature(12, "Trebuchet", 8, 8, "Cost 1 less for other each card in your hand",
                                                -74),
+                                      Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", -75)
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -257,6 +258,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                               "Friendly minions get armored and +1/+1 Armored Guard", -72),
                      Creature(2, "Scribe of the Church", 1, 1, "Draw a spell", -73),
                      Creature(12, "Trebuchet", 8, 8, "Cost 1 less for each other card in your hand", -74),
+                     Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", -75)
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),

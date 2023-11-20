@@ -11,7 +11,7 @@ def generate_random_int():
 Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
-                                "Personal instructor", "Scared Noble"]
+                                "Personal instructor", "Scared Noble", "Bishop"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1)}
@@ -19,7 +19,8 @@ list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
-                              "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored")}
+                              "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored"),
+                              "Bishop": (5, 5, "Guard")}
 list_of_creature_that_buff_specific_cards = {"Frederick Barbarossa": ("Armored", 1, 1, "Armored")}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -41,7 +42,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               }
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
-list_of_creature_that_are_affected_in_hand = {"Trebuchet":("reduce","",1)}
+list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1)}
 """
 Spells
 """
