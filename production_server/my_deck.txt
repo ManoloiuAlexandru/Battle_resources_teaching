@@ -1,56 +1,56 @@
-empire:Byzantine_Empire
+empire:Mongol_Empire
 card_id:0
-mana_cost:1
-original_mana_cost:1
-name:Army Champion
-hp:4
-max_hp:4
-original_hp:4
-attack:4
+mana_cost:3
+original_mana_cost:3
+name:Hunter
+hp:3
+max_hp:3
+original_hp:3
+attack:2
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:2
 active_effects:[]
-description:While this is on the field friendly minions get +1/+1
-original_description:While this is on the field friendly minions get +1/+1
+description:Summon a 1/1 Dog
+original_description:Summon a 1/1 Dog
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Army Champion.png
+img_url:Hunter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Army_Champion0
+name_for_html:Hunter0
 --------------------------------
 card_id:1
-mana_cost:1
-original_mana_cost:1
-name:Army Champion
-hp:4
-max_hp:4
-original_hp:4
-attack:4
+mana_cost:3
+original_mana_cost:3
+name:Hunter
+hp:3
+max_hp:3
+original_hp:3
+attack:2
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:2
 active_effects:[]
-description:While this is on the field friendly minions get +1/+1
-original_description:While this is on the field friendly minions get +1/+1
+description:Summon a 1/1 Dog
+original_description:Summon a 1/1 Dog
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Army Champion.png
+img_url:Hunter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Army_Champion1
+name_for_html:Hunter1
 --------------------------------
 card_id:2
 mana_cost:2
 original_mana_cost:2
-name:Watchman
+name:Wild Horse
 hp:2
 max_hp:2
 original_hp:2
@@ -59,22 +59,22 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
+description:Draw a charge card
+original_description:Draw a charge card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Watchman.png
+img_url:Wild Horse.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchman2
+name_for_html:Wild_Horse2
 --------------------------------
 card_id:3
 mana_cost:2
 original_mana_cost:2
-name:Watchman
+name:Wild Horse
 hp:2
 max_hp:2
 original_hp:2
@@ -83,395 +83,207 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
+description:Draw a charge card
+original_description:Draw a charge card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Watchman.png
+img_url:Wild Horse.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchman3
+name_for_html:Wild_Horse3
 --------------------------------
 card_id:4
-mana_cost:4
-original_mana_cost:4
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi
-img_url:Boarder Guards.png
-target:None
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Hunting dog.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Boarder_Guards4
+name_for_html:Hunting_dog4
 --------------------------------
 card_id:5
-mana_cost:4
-original_mana_cost:4
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi
-img_url:Boarder Guards.png
-target:None
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Hunting dog.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Boarder_Guards5
+name_for_html:Hunting_dog5
 --------------------------------
 card_id:6
-mana_cost:2
-original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
+mana_cost:5
+original_mana_cost:5
+name:Mounted Knight
+hp:4
+max_hp:4
+original_hp:4
+attack:4
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Charge
+original_description:Charge
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Akritoi.png
+img_url:Mounted Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Akritoi6
+name_for_html:Mounted_Knight6
 --------------------------------
 card_id:7
-mana_cost:2
-original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
+mana_cost:5
+original_mana_cost:5
+name:Mounted Knight
+hp:4
+max_hp:4
+original_hp:4
+attack:4
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Charge
+original_description:Charge
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Akritoi.png
+img_url:Mounted Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Akritoi7
+name_for_html:Mounted_Knight7
 --------------------------------
 card_id:8
-mana_cost:2
-original_mana_cost:2
-name:Watchtower
-hp:2
-max_hp:2
-original_hp:2
+mana_cost:1
+original_mana_cost:1
+name:Wolf
+hp:1
+max_hp:1
+original_hp:1
 attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
+description:Charge
+original_description:Charge
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Watchtower.png
+img_url:Wolf.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchtower8
+name_for_html:Wolf8
 --------------------------------
 card_id:9
-mana_cost:2
-original_mana_cost:2
-name:Watchtower
-hp:2
-max_hp:2
-original_hp:2
+mana_cost:1
+original_mana_cost:1
+name:Wolf
+hp:1
+max_hp:1
+original_hp:1
 attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
+description:Charge
+original_description:Charge
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Watchtower.png
+img_url:Wolf.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchtower9
+name_for_html:Wolf9
 --------------------------------
 card_id:10
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
+mana_cost:6
+original_mana_cost:6
+name:War elephant
+hp:5
+max_hp:5
+original_hp:5
+attack:4
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:4
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
+description:While War elephant is on the field your creatures have +1 attack
+original_description:While War elephant is on the field your creatures have +1 attack
 card_type:Creature
 exhausted:True
-armored:True
+armored:False
 can_be_target:True
-img_url:Cataphract.png
+img_url:War elephant.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Cataphract10
+name_for_html:War_elephant10
 --------------------------------
 card_id:11
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
+mana_cost:6
+original_mana_cost:6
+name:War elephant
+hp:5
+max_hp:5
+original_hp:5
+attack:4
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:4
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract11
---------------------------------
-card_id:12
-mana_cost:2
-original_mana_cost:2
-name:Roman Formation Circular
-card_type:Spell
-description:Give your minions on the filed Guard
-img_url:Roman Formation Circular.png
-target:None
-empire_belonging:
-name_for_html:Roman_Formation_Circular12
---------------------------------
-card_id:13
-mana_cost:2
-original_mana_cost:2
-name:Roman Formation Circular
-card_type:Spell
-description:Give your minions on the filed Guard
-img_url:Roman Formation Circular.png
-target:None
-empire_belonging:
-name_for_html:Roman_Formation_Circular13
---------------------------------
-card_id:14
-mana_cost:2
-original_mana_cost:2
-name:Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:While War elephant is on the field your creatures have +1 attack
+original_description:While War elephant is on the field your creatures have +1 attack
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Page.png
+img_url:War elephant.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page14
---------------------------------
-card_id:15
-mana_cost:2
-original_mana_cost:2
-name:Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a card
-original_description:Draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Page.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Page15
---------------------------------
-card_id:16
-mana_cost:2
-original_mana_cost:2
-name:Squire
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Squire.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Squire16
---------------------------------
-card_id:17
-mana_cost:2
-original_mana_cost:2
-name:Squire
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Squire.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Squire17
---------------------------------
-card_id:18
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Peasant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Peasant18
---------------------------------
-card_id:19
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Peasant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Peasant19
---------------------------------
-card_id:20
-mana_cost:2
-original_mana_cost:2
-name:Guard Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Guard Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Guard_Dog20
---------------------------------
-card_id:21
-mana_cost:2
-original_mana_cost:2
-name:Guard Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Guard Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Guard_Dog21
+name_for_html:War_elephant11
 --------------------------------

@@ -56,21 +56,11 @@ class Player:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                         if card.name in list_of_creature_that_draw_specific_cards:
                             try:
-                                random_card = random.choice(self.deck)
-                                if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
-                                       obj.description.split() for obj in self.deck):
-                                    while list_of_creature_that_draw_specific_cards.get(card.name)[
-                                        0] != random_card.card_type or \
-                                            list_of_creature_that_draw_specific_cards.get(card.name)[
-                                                1] not in random_card.description.split():
-                                        random_card = random.choice(self.deck)
-                                if list_of_creature_that_draw_specific_cards.get(card.name)[
-                                    0] == random_card.card_type and \
-                                        list_of_creature_that_draw_specific_cards.get(card.name)[
-                                            1] in random_card.description.split():
+                                random_card = self.get_random_card(card)
+                                if random_card is not None:
                                     self.hand.append(random_card)
                                     self.deck.remove(random_card)
-                                break
+                                    break
                             except Exception as e:
                                 print(e)
                         else:
@@ -97,7 +87,11 @@ class Player:
                     self.battle_field.append(card)
                     self.mana_pay(card)
                     if len(self.battle_field) < 7:
-                        self.battle_field.append(list_of_creature_that_summon.get(card.name))
+                        for i in range(list_of_creature_that_summon.get(card.name)[0]):
+                            if len(self.battle_field) < 7:
+                                self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
+                                list_of_creature_that_summon.get(card.name)[1].remove(
+                                    list_of_creature_that_summon.get(card.name)[1][i])
                     return 1
                 elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
                     self.buff_all_cards(card)
@@ -139,6 +133,27 @@ class Player:
         self.deck = []
         for card in deck:
             self.deck.append(card)
+
+    def get_random_card(self, card):
+        try:
+            random_card = random.choice(self.deck)
+            nr_try = 0
+            if any(list_of_creature_that_draw_specific_cards.get(card.name)[1] in
+                   obj.description.split() for obj in self.deck):
+                while (list_of_creature_that_draw_specific_cards.get(card.name)[0] != random_card.card_type or
+                       list_of_creature_that_draw_specific_cards.get(card.name)[
+                           1] not in random_card.description.split()) and nr_try < 30:
+                    random_card = random.choice(self.deck)
+                    nr_try += 1
+                if nr_try == 30:
+                    for charge in self.deck:
+                        if list_of_creature_that_draw_specific_cards.get(card.name)[1] in charge.description.split():
+                            random_card = charge
+                if list_of_creature_that_draw_specific_cards.get(card.name)[0] == random_card.card_type and \
+                        list_of_creature_that_draw_specific_cards.get(card.name)[1] in random_card.description.split():
+                    return random_card
+        except Exception as e:
+            print(e)
 
     @staticmethod
     def battle_fields_effects(player, enemy_player):
