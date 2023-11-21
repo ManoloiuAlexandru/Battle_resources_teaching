@@ -65,10 +65,9 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(0, "Byzantine Recruiter", 5, 5, "Summon all Empire mercenary", 0),
-    Creature(0, "Hunter", 1, 1, "", 1),
-    Creature(0, "Byzantine Recruiter", 5, 5, "Summon all Empire mercenary", 2),
-    Creature(0, "Hunter", 1, 1, "", 3),
+    Creature(0, "Andras", 99, 0, "Guard", 12),
+    Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", 0),
+    Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", 1)
 ]
 to_be_added_in_game = [Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
                        Spell(3, "Long march", "All enemies are exhausted", 1005),
@@ -137,6 +136,8 @@ cards_for_byzantine_empire = [
     Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79),
     Creature(1, "Lost Shield", 1, 0, "Desperate Draw a guard", -82),
     Spell(2, "Pilum Throw", "Deal 3 damage", -83),
+    Spell(3, "Fast Conscription", "Summon 4 1/1 Peasant", -84),
+    Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", -85),
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -158,6 +159,8 @@ cards_byzantine_show = [
     Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79),
     Creature(1, "Lost Shield", 1, 0, "Desperate Draw a guard", -82),
     Spell(2, "Pilum Throw", "Deal 3 damage", -83),
+    Spell(3, "Fast Conscription", "Summon 4 1/1 Peasant", -84),
+    Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", -85),
 ]
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", -72),
@@ -460,6 +463,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(2, "Lost Sheep", 1, 1, "Desperate Summon 2 1/1 Wild Wolf", -81),
                      Creature(1, "Lost Shield", 1, 0, "Desperate Draw a guard", -82),
                      Spell(2, "Pilum Throw", "Deal 3 damage", -83),
+                     Spell(3, "Fast Conscription", "Summon 4 1/1 Peasant", -84),
+                     Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", -85),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
