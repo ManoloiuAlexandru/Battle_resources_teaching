@@ -45,7 +45,8 @@ class Creature:
         if self.hp <= 0:
             self.hp = 1
         self.armored = self.check_armored()
-        self.exhausted = self.charge_check()
+        if self.number_of_attacks >= 1:
+            self.exhausted = self.charge_check()
 
     def negative_effects_from_creatures(self, card, effects, player):
         nr_buff = 0

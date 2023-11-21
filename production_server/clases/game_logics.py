@@ -6,7 +6,7 @@ from clases.Item import *
 from clases.player import *
 from decks.lists_of_cards import *
 
-legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa","Basil II", "Jochi"]
+legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi"]
 
 
 def battle(card1, card2, player1, player2):
@@ -29,6 +29,7 @@ def battle(card1, card2, player1, player2):
             card1.hp -= card2.attack
             card2.hp -= card1.attack
         card1.exhausted = True
+        card1.number_of_attacks -= 1
         Player.clean_board(player1, player2)
         Player.battle_fields_effects(player1, player2)
     except Exception as e:
@@ -66,6 +67,7 @@ def turn_switch(player1, player2):
         player2.draw_card()
         for creature in player1.battle_field:
             creature.exhausted = False
+            creature.number_of_attacks += 1
         return 1
     else:
         end_of_turn_action(player2, player1)
@@ -89,6 +91,7 @@ def turn_switch(player1, player2):
         reset(player1, player2)
         for creature in player2.battle_field:
             creature.exhausted = False
+            creature.number_of_attacks += 1
         return 2
 
 
@@ -478,6 +481,3 @@ def affect_battle_field(card, player, enemy_player):
     if list_of_spells_that_affect_the_battlefield.get(card.name) == "self":
         for creature in player.battle_field:
             buff_creature_with_spell(creature, player)
-
-
-

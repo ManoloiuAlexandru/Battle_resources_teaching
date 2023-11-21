@@ -1,133 +1,15 @@
-empire:Byzantine_Empire
+empire:Holy_Roman_Empire
 card_id:0
-mana_cost:2
-original_mana_cost:2
-name:Watchman
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
 hp:2
 max_hp:2
 original_hp:2
-attack:1
+attack:2
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchman.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchman0
---------------------------------
-card_id:1
-mana_cost:2
-original_mana_cost:2
-name:Watchman
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchman.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchman1
---------------------------------
-card_id:2
-mana_cost:7
-original_mana_cost:7
-name:Basil II
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Armored Charge Guard
-original_description:Armored Charge Guard
-card_type:Creature
-exhausted:False
-armored:True
-can_be_target:True
-img_url:Basil II.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Basil_II2
---------------------------------
-card_id:3
-mana_cost:8
-original_mana_cost:8
-name:Richard the Lionheart
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Richard the Lionheart.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Richard_the_Lionheart3
---------------------------------
-card_id:4
-mana_cost:2
-original_mana_cost:2
-name:Old Tactics
-card_type:Spell
-description:Draw a card and reduce it is cost by 3
-img_url:Old Tactics.png
-target:None
-empire_belonging:
-name_for_html:Old_Tactics4
---------------------------------
-card_id:5
-mana_cost:2
-original_mana_cost:2
-name:Old Tactics
-card_type:Spell
-description:Draw a card and reduce it is cost by 3
-img_url:Old Tactics.png
-target:None
-empire_belonging:
-name_for_html:Old_Tactics5
---------------------------------
-card_id:7
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
+original_attack:2
 active_effects:[]
 description:Guard Armored
 original_description:Guard Armored
@@ -135,64 +17,228 @@ card_type:Creature
 exhausted:True
 armored:True
 can_be_target:True
-img_url:Cataphract.png
+img_url:Faithful Guard.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Cataphract7
+name_for_html:Faithful_Guard0
+--------------------------------
+card_id:1
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard1
+--------------------------------
+card_id:2
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
+card_type:Spell
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
+empire_belonging:
+name_for_html:Arbalest_Shot2
+--------------------------------
+card_id:3
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
+card_type:Spell
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
+empire_belonging:
+name_for_html:Arbalest_Shot3
+--------------------------------
+card_id:4
+mana_cost:2
+original_mana_cost:2
+name:Chivalry and Honor
+card_type:Spell
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:self
+empire_belonging:
+name_for_html:Chivalry_and_Honor4
+--------------------------------
+card_id:5
+mana_cost:2
+original_mana_cost:2
+name:Chivalry and Honor
+card_type:Spell
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:self
+empire_belonging:
+name_for_html:Chivalry_and_Honor5
+--------------------------------
+card_id:6
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector6
+--------------------------------
+card_id:7
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector7
 --------------------------------
 card_id:8
-mana_cost:1
-original_mana_cost:1
-name:Lost Shield
+mana_cost:0
+original_mana_cost:0
+name:Peasant
 hp:1
 max_hp:1
 original_hp:1
-attack:0
+attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:0
+original_attack:1
 active_effects:[]
-description:Desperate Draw a guard
-original_description:Desperate Draw a guard
+description:
+original_description:
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Shield.png
+img_url:Peasant.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Shield8
+name_for_html:Peasant8
 --------------------------------
 card_id:9
-mana_cost:1
-original_mana_cost:1
-name:Lost Shield
+mana_cost:0
+original_mana_cost:0
+name:Peasant
 hp:1
 max_hp:1
 original_hp:1
-attack:0
+attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:0
+original_attack:1
 active_effects:[]
-description:Desperate Draw a guard
-original_description:Desperate Draw a guard
+description:
+original_description:
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Shield.png
+img_url:Peasant.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Shield9
+name_for_html:Peasant9
 --------------------------------
 card_id:10
 mana_cost:2
 original_mana_cost:2
-name:Lost Scribe
+name:Lumberjack
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Give a friendly minion +1 attack
+original_description:Give a friendly minion +1 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Lumberjack.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Lumberjack10
+--------------------------------
+card_id:11
+mana_cost:2
+original_mana_cost:2
+name:Lumberjack
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Give a friendly minion +1 attack
+original_description:Give a friendly minion +1 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Lumberjack.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Lumberjack11
+--------------------------------
+card_id:12
+mana_cost:2
+original_mana_cost:2
+name:Lost Sheep
 hp:1
 max_hp:1
 original_hp:1
@@ -201,19 +247,43 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Desperate Draw a card
-original_description:Desperate Draw a card
+description:Desperate Summon 2 1/1 Wild Wolf
+original_description:Desperate Summon 2 1/1 Wild Wolf
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Scribe.png
+img_url:Lost Sheep.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Scribe10
+name_for_html:Lost_Sheep12
 --------------------------------
-card_id:11
+card_id:13
+mana_cost:2
+original_mana_cost:2
+name:Lost Sheep
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Desperate Summon 2 1/1 Wild Wolf
+original_description:Desperate Summon 2 1/1 Wild Wolf
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Lost Sheep.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Lost_Sheep13
+--------------------------------
+card_id:14
 mana_cost:2
 original_mana_cost:2
 name:Lost Scribe
@@ -235,5 +305,269 @@ img_url:Lost Scribe.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Scribe11
+name_for_html:Lost_Scribe14
+--------------------------------
+card_id:15
+mana_cost:2
+original_mana_cost:2
+name:Lost Scribe
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Desperate Draw a card
+original_description:Desperate Draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Lost Scribe.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Lost_Scribe15
+--------------------------------
+card_id:16
+mana_cost:5
+original_mana_cost:5
+name:Bishop
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Give a friendly minion +4/+4 and guard
+original_description:Give a friendly minion +4/+4 and guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Bishop.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Bishop16
+--------------------------------
+card_id:17
+mana_cost:5
+original_mana_cost:5
+name:Bishop
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Give a friendly minion +4/+4 and guard
+original_description:Give a friendly minion +4/+4 and guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Bishop.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Bishop17
+--------------------------------
+card_id:18
+mana_cost:1
+original_mana_cost:1
+name:Wolf
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Wolf.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Wolf18
+--------------------------------
+card_id:19
+mana_cost:1
+original_mana_cost:1
+name:Archer
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Deal 1 damage
+original_description:Deal 1 damage
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Archer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Archer19
+--------------------------------
+card_id:20
+mana_cost:2
+original_mana_cost:2
+name:Squire
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:
+original_description:
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Squire.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Squire20
+--------------------------------
+card_id:21
+mana_cost:12
+original_mana_cost:12
+name:Trebuchet
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Cost 1 less for other each card in your hand
+original_description:Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Trebuchet.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Trebuchet21
+--------------------------------
+card_id:22
+mana_cost:12
+original_mana_cost:12
+name:Trebuchet
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Cost 1 less for other each card in your hand
+original_description:Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Trebuchet.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Trebuchet22
+--------------------------------
+card_id:23
+mana_cost:2
+original_mana_cost:2
+name:Squire
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:
+original_description:
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Squire.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Squire23
+--------------------------------
+card_id:24
+mana_cost:2
+original_mana_cost:2
+name:Page
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a card
+original_description:Draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Page.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Page24
+--------------------------------
+card_id:25
+mana_cost:2
+original_mana_cost:2
+name:Page
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a card
+original_description:Draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Page.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Page25
 --------------------------------
