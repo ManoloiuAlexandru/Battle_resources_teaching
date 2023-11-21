@@ -23,7 +23,11 @@ class Bot(Player):
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
                     if card.name in list_of_creature_that_summon:
-                        self.battle_field.append(list_of_creature_that_summon.get(card.name))
+                        for i in range(list_of_creature_that_summon.get(card.name)[0]):
+                            if len(self.battle_field) < 7:
+                                self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
+                                list_of_creature_that_summon.get(card.name)[1].remove(
+                                    list_of_creature_that_summon.get(card.name)[1][i])
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
                         self.battle_field.append(card)
