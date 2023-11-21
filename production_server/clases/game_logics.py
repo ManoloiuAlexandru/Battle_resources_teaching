@@ -43,63 +43,43 @@ def cancel_card(card, player):
     player.active_item = None
 
 
+def reset_player(player, enemy_player):
+    player.turn = 0
+    player.used_power = 0
+    try:
+        if player.incoming_spell.name is not None and player.incoming_spell.name in list_of_resetting_spells:
+            cancel_card(player.incoming_spell, player)
+    except Exception as e:
+        print(e)
+    try:
+        if player.active_item.name is not None and player.active_item.name in list_of_item:
+            cancel_card(player.active_item.name, player)
+    except Exception as e:
+        print(e)
+    for creature in player.battle_field:
+        creature.exhausted = False
+        creature.number_of_attacks += 1
+    enemy_player.turn = 1
+    enemy_player.empty_mana += 1
+    if enemy_player.empty_mana > 10:
+        enemy_player.empty_mana = 10
+    enemy_player.mana = enemy_player.empty_mana
+    enemy_player.draw_card()
+    player.problem = ""
+    enemy_player.problem = ""
+    player.incoming_action = 0
+    enemy_player.incoming_action = 0
+
+
 def turn_switch(player1, player2):
     if player1.turn == 1:
         end_of_turn_action(player1, player2)
-        try:
-            if player1.incoming_spell.name is not None and player1.incoming_spell.name in list_of_resetting_spells:
-                cancel_card(player1.incoming_spell, player1)
-        except Exception as e:
-            print(e)
-        try:
-            if player1.active_item.name is not None and player1.active_item.name in list_of_item:
-                cancel_card(player1.active_item.name, player1)
-        except Exception as e:
-            print(e)
-        player2.turn = 1
-        player1.turn = 0
-        player1.used_power = 0
-        player2.empty_mana += 1
-        if player2.empty_mana > 10:
-            player2.empty_mana = 10
-        player2.mana = player2.empty_mana
-        reset(player1, player2)
-        player2.draw_card()
-        for creature in player1.battle_field:
-            creature.exhausted = False
-            creature.number_of_attacks += 1
+        reset_player(player1, player2)
         return 1
     else:
         end_of_turn_action(player2, player1)
-        try:
-            if player2.incoming_spell.name is not None and player2.incoming_spell.name in list_of_resetting_spells:
-                cancel_card(player2.incoming_spell, player2)
-        except Exception as e:
-            print(e)
-        try:
-            if player2.active_item.name is not None and player2.active_item.name in list_of_item:
-                cancel_card(player2.active_item.name, player2)
-        except Exception as e:
-            print(e)
-        player2.turn = 0
-        player1.turn = 1
-        player1.empty_mana += 1
-        if player1.empty_mana > 10:
-            player1.empty_mana = 10
-        player1.mana = player1.empty_mana
-        player1.draw_card()
-        reset(player1, player2)
-        for creature in player2.battle_field:
-            creature.exhausted = False
-            creature.number_of_attacks += 1
+        reset_player(player2, player1)
         return 2
-
-
-def reset(player1, player2):
-    player1.problem = ""
-    player2.problem = ""
-    player1.incoming_action = 0
-    player2.incoming_action = 0
 
 
 def battle_logic(player, card_picked):
