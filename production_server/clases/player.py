@@ -56,7 +56,7 @@ class Player:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                         if card.name in list_of_creature_that_draw_specific_cards:
                             try:
-                                random_card = self.get_random_card(card)
+                                random_card = self.get_random_card(card, nr_cards)
                                 if random_card is not None:
                                     self.hand.append(random_card)
                                     self.deck.remove(random_card)
@@ -136,14 +136,11 @@ class Player:
         for card in deck:
             self.deck.append(card)
 
-    def get_random_card(self, card):
+    def get_random_card(self, card, index_of_card):
         try:
             random_card = random.choice(self.deck)
             nr_try = 0
-            type_of_card = list_of_creature_that_draw_specific_cards.get(card.name)[0][0]
-            list_of_creature_that_draw_specific_cards.get(card.name)[0].pop(0)
-            type_of_description = list_of_creature_that_draw_specific_cards.get(card.name)[1][0]
-            list_of_creature_that_draw_specific_cards.get(card.name)[1].pop(0)
+            type_of_card, type_of_description = Player.card_to_draw_type(card, index_of_card)
             if type_of_description == "":
                 while type_of_card != random_card.card_type and nr_try < 30:
                     random_card = random.choice(self.deck)
@@ -233,11 +230,37 @@ class Player:
             for card in player.battle_field[:]:
                 if card.hp <= 0 and card.card_type == "Creature":
                     player.battle_field.remove(card)
+                    if card.name in list_of_creature_that_do_somthing_when_die:
+                        Player.action_when_die(player, card)
             for card in enemy_player.battle_field[:]:
                 if card.hp <= 0 and card.card_type == "Creature":
                     enemy_player.battle_field.remove(card)
+                    if card.name in list_of_creature_that_do_somthing_when_die:
+                        Player.action_when_die(enemy_player, card)
         except Exception as e:
             print(e)
+
+    @staticmethod
+    def action_when_die(player, card):
+        if list_of_creature_that_do_somthing_when_die.get(card.name) == "summ":
+            if len(player.battle_field) < 7:
+                for i in range(list_of_creature_that_summ_after_they_die.get(card.name)[0]):
+                    if len(player.battle_field) < 7:
+                        player.battle_field.append(list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
+                        list_of_creature_that_summ_after_they_die.get(card.name)[1].remove(
+                            list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
+        elif list_of_creature_that_do_somthing_when_die.get(card.name) == "draw":
+            for nr_cards in range(list_of_creature_that_draw_cards_when_die.get(card.name)):
+                if card.name in list_of_creature_that_draw_specific_cards_when_die:
+                    try:
+                        random_card = player.get_random_card(card, nr_cards)
+                        if random_card is not None:
+                            player.hand.append(random_card)
+                            player.deck.remove(random_card)
+                    except Exception as e:
+                        print(e)
+                else:
+                    player.draw_card()
 
     def buff_card_from_hand(self, card, buffing_card):
         card.hp += list_of_creature_that_buff.get(buffing_card.name)[0]
@@ -287,5 +310,15 @@ class Player:
                         self.hand[self.hand.index(creature)].mana_cost = self.hand[
                             self.hand.index(creature)].original_mana_cost
                         self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
-                                                                     list_of_creature_that_are_affected_in_hand.get(
-                                                                         creature.name)[2] - 1
+                                                                          list_of_creature_that_are_affected_in_hand.get(
+                                                                              creature.name)[2] - 1
+
+    @staticmethod
+    def card_to_draw_type(card, i):
+        if "Desperate" in card.description.split():
+            type_of_card = list_of_creature_that_draw_specific_cards_when_die.get(card.name)[0][i]
+            type_of_description = list_of_creature_that_draw_specific_cards_when_die.get(card.name)[1][i]
+        else:
+            type_of_card = list_of_creature_that_draw_specific_cards.get(card.name)[0][i]
+            type_of_description = list_of_creature_that_draw_specific_cards.get(card.name)[1][i]
+        return type_of_card, type_of_description

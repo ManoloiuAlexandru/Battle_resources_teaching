@@ -65,16 +65,9 @@ bot_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 3323),
             Spell(3, "Knight's training", "Give a minions +3/+3", 878892),
             ]
 demo_deck = [
-    Creature(12, "Trebuchet", 10, 10, "Cost 1 less for each card in your hand", 0),
-    Creature(0, "Andras", 9, 1, "", 2),
-    Creature(0, "Andras", 9, 1, "", 3),
-    Creature(0, "Andras", 9, 1, "", 4),
-    Creature(0, "Andras", 9, 1, "", 5),
-    Creature(0, "Andras", 9, 1, "", 6),
-    Creature(0, "Andras", 9, 1, "", 7),
-    Creature(0, "Andras", 9, 1, "", 8),
-    Creature(0, "Andras", 9, 1, "", 9),
-    Spell(3, "Long march", "All enemies are exhausted", 1005),
+    Creature(0, "", 1, 1, "Desperate Draw a card", 0),
+    Creature(0, "Lost Ship", 1, 1, "Desperate Draw a card", 2),
+    Creature(0, "Lost Shield", 1, 0, "Desperate Draw a Guard", 3)
 ]
 to_be_added_in_game = [Spell(0, "Blood price", "Take 5 dmg and gaine 3 mana", 1004),
                        Spell(3, "Long march", "All enemies are exhausted", 1005),
@@ -119,7 +112,9 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(2, "Scribe of the Church", 1, 1, "Draw a spell", -73),
                                       Creature(12, "Trebuchet", 8, 8, "Cost 1 less for other each card in your hand",
                                                -74),
-                                      Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", -75)
+                                      Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", -75),
+                                      Creature(2, "Lost Scribe", 1, 1, "Desperate Draw a card", -80),
+                                      Creature(2, "Lost Sheep", 1, 1, "Desperate Summon 2 1/1 Wild Wolf", -81),
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -138,7 +133,8 @@ cards_for_byzantine_empire = [
     Spell(2, "Roman Formation Phalanx", "Give your minions +1/+1", -71),
     Creature(7, "Basil II", 6, 5, "Armored Charge Guard", -76),
     Creature(6, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3", -77),
-    Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79)
+    Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79),
+    Creature(1, "Lost Shield", 1, 0, "Desperate Draw a guard", -82)
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -157,7 +153,8 @@ cards_byzantine_show = [
     Spell(2, "Roman Formation Phalanx", "Give your minions +1/+1", -71),
     Creature(7, "Basil II", 6, 5, "Armored Charge Guard", -76),
     Creature(6, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3", -77),
-    Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79)
+    Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79),
+    Creature(1, "Lost Shield", 1, 0, "Desperate Draw a guard", 3)
 ]
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", -72),
@@ -320,7 +317,10 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                      Creature(7, "Basil II", 6, 5, "Armored Charge Guard", -76),
                      Creature(6, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3", -77),
                      Creature(9, "Jochi", 8, 8, "Charge", -78),
-                     Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79)
+                     Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79),
+                     Creature(2, "Lost Scribe", 1, 1, "Desperate Draw a card", -80),
+                     Creature(2, "Lost Sheep", 1, 1, "Desperate Summon 2 1/1 Wild Wolf", -81),
+                     Creature(1, "Lost Shield", 1, 0, "Desperate Draw a guard", -82)
                      ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Volley", "Deal 2 damage to all enemies", 1901),
@@ -357,6 +357,7 @@ mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
+cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 best_cards_so_far_deck = [Creature(7, 'Templar Knight', 7, 5, "Guard", 991),
                           Creature(7, 'Templar Knight', 7, 5, "Guard", 992),
@@ -443,7 +444,7 @@ defenders = [Creature(4, "Pronoiar", 3, 3, "Charge", 100),
              Spell(4, "Boarder Guards", "Summon 2 Akritoi", 117),
              Spell(4, "Boarder Guards", "Summon 2 Akritoi", 118),
              Creature(4, "City Guard", 5, 3, "Guard", 119),
-             Creature(4, "City Guard", 5, 3, "Guard", 120),
+             Creature(7, "Basil II", 6, 5, "Armored Charge Guard", 120),
              Spell(5, "Kill", "Kill an enemy minion", 121),
              Spell(3, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", 122),
              Creature(12, "Trebuchet", 8, 8, "Cost 1 less for other each card in your hand",

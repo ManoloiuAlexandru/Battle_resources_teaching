@@ -4,7 +4,7 @@ from clases.creatures import Creature
 
 
 def generate_random_int():
-    return random.randint(1, 100000)
+    return random.randint(1, 1000000)
 
 
 """
@@ -40,9 +40,14 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               }
+list_of_creature_that_summ_after_they_die = {
+    "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", generate_random_int()) for i in range(0, 5)])}
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1)}
+list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "draw"}
+list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1}
+list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"])}
 """
 Spells
 """
@@ -83,4 +88,4 @@ list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self"
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw")}
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1}
 list_of_spells_that_summon_specific_cards = {
-    "Boarder Guards": (2, [Creature(2, "Akritoi", 3, 2, "Guard", generate_random_int()) for i in range(0, 9)])}
+    "Boarder Guards": (2, [Creature(2, "Akritoi", 3, 2, "Guard", generate_random_int()) for i in range(0, 10)])}

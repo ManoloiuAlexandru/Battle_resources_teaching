@@ -6,7 +6,7 @@ from clases.Item import *
 from clases.player import *
 from decks.lists_of_cards import *
 
-legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa"]
+legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa","Basil II", "Jochi"]
 
 
 def battle(card1, card2, player1, player2):
@@ -478,3 +478,6 @@ def affect_battle_field(card, player, enemy_player):
     if list_of_spells_that_affect_the_battlefield.get(card.name) == "self":
         for creature in player.battle_field:
             buff_creature_with_spell(creature, player)
+
+
+

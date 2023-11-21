@@ -2,402 +2,238 @@ empire:Byzantine_Empire
 card_id:0
 mana_cost:2
 original_mana_cost:2
-name:Old Techniques
-card_type:Spell
-description:Draw a card and reduce it is cost by 3
-img_url:Old Techniques.png
-target:None
+name:Watchman
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a guard card
+original_description:Draw a guard card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchman.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Old_Techniques0
+name_for_html:Watchman0
 --------------------------------
 card_id:1
 mana_cost:2
 original_mana_cost:2
-name:Old Techniques
-card_type:Spell
-description:Draw a card and reduce it is cost by 3
-img_url:Old Techniques.png
-target:None
+name:Watchman
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a guard card
+original_description:Draw a guard card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchman.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:Old_Techniques1
+name_for_html:Watchman1
 --------------------------------
 card_id:2
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:7
+original_mana_cost:7
+name:Basil II
+hp:6
+max_hp:6
+original_hp:6
+attack:5
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:5
 active_effects:[]
-description:
-original_description:
+description:Armored Charge Guard
+original_description:Armored Charge Guard
 card_type:Creature
-exhausted:True
-armored:False
+exhausted:False
+armored:True
 can_be_target:True
-img_url:Peasant.png
+img_url:Basil II.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant2
+name_for_html:Basil_II2
 --------------------------------
 card_id:3
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:8
+original_mana_cost:8
+name:Richard the Lionheart
+hp:6
+max_hp:6
+original_hp:6
+attack:6
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:6
 active_effects:[]
-description:
-original_description:
+description:Draw a Spell and a Creature Guard
+original_description:Draw a Spell and a Creature Guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Richard the Lionheart.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant3
+name_for_html:Richard_the_Lionheart3
 --------------------------------
 card_id:4
 mana_cost:2
 original_mana_cost:2
-name:Squire
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Squire.png
-items:[]
-number_of_attacks:1
+name:Old Tactics
+card_type:Spell
+description:Draw a card and reduce it is cost by 3
+img_url:Old Tactics.png
+target:None
 empire_belonging:
-name_for_html:Squire4
+name_for_html:Old_Tactics4
 --------------------------------
 card_id:5
 mana_cost:2
 original_mana_cost:2
-name:Squire
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Squire.png
-items:[]
-number_of_attacks:1
+name:Old Tactics
+card_type:Spell
+description:Draw a card and reduce it is cost by 3
+img_url:Old Tactics.png
+target:None
 empire_belonging:
-name_for_html:Squire5
---------------------------------
-card_id:6
-mana_cost:2
-original_mana_cost:2
-name:Watchman
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchman.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchman6
+name_for_html:Old_Tactics5
 --------------------------------
 card_id:7
-mana_cost:2
-original_mana_cost:2
-name:Watchman
-hp:2
-max_hp:2
-original_hp:2
-attack:1
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
+hp:6
+max_hp:6
+original_hp:6
+attack:6
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:6
 active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Watchman.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchman7
+name_for_html:Cataphract7
 --------------------------------
 card_id:8
-mana_cost:2
-original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
+mana_cost:1
+original_mana_cost:1
+name:Lost Shield
+hp:1
+max_hp:1
+original_hp:1
+attack:0
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:0
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Desperate Draw a guard
+original_description:Desperate Draw a guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Akritoi.png
+img_url:Lost Shield.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Akritoi8
+name_for_html:Lost_Shield8
 --------------------------------
 card_id:9
-mana_cost:2
-original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
+mana_cost:1
+original_mana_cost:1
+name:Lost Shield
+hp:1
+max_hp:1
+original_hp:1
+attack:0
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:0
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Desperate Draw a guard
+original_description:Desperate Draw a guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Akritoi.png
+img_url:Lost Shield.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Akritoi9
+name_for_html:Lost_Shield9
 --------------------------------
 card_id:10
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
+mana_cost:2
+original_mana_cost:2
+name:Lost Scribe
+hp:1
+max_hp:1
+original_hp:1
+attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:1
 active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
+description:Desperate Draw a card
+original_description:Desperate Draw a card
 card_type:Creature
 exhausted:True
-armored:True
+armored:False
 can_be_target:True
-img_url:Cataphract.png
+img_url:Lost Scribe.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Cataphract10
+name_for_html:Lost_Scribe10
 --------------------------------
 card_id:11
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract11
---------------------------------
-card_id:12
-mana_cost:4
-original_mana_cost:4
-name:Pronoiar
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Pronoiar.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Pronoiar12
---------------------------------
-card_id:13
-mana_cost:4
-original_mana_cost:4
-name:Pronoiar
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Pronoiar.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Pronoiar13
---------------------------------
-card_id:14
 mana_cost:2
 original_mana_cost:2
-name:Watchtower
-hp:2
-max_hp:2
-original_hp:2
+name:Lost Scribe
+hp:1
+max_hp:1
+original_hp:1
 attack:1
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
+description:Desperate Draw a card
+original_description:Desperate Draw a card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Watchtower.png
+img_url:Lost Scribe.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchtower14
---------------------------------
-card_id:15
-mana_cost:2
-original_mana_cost:2
-name:Watchtower
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchtower.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchtower15
---------------------------------
-card_id:16
-mana_cost:7
-original_mana_cost:7
-name:Landslide
-card_type:Spell
-description:Deal 7 damage to ALL minions
-img_url:Landslide.png
-target:enemy
-empire_belonging:
-name_for_html:Landslide16
---------------------------------
-card_id:17
-mana_cost:7
-original_mana_cost:7
-name:Landslide
-card_type:Spell
-description:Deal 7 damage to ALL minions
-img_url:Landslide.png
-target:enemy
-empire_belonging:
-name_for_html:Landslide17
---------------------------------
-card_id:18
-mana_cost:3
-original_mana_cost:3
-name:Ancient Empire
-card_type:Spell
-description:Draw 2 cards
-img_url:Ancient Empire.png
-target:None
-empire_belonging:
-name_for_html:Ancient_Empire18
---------------------------------
-card_id:19
-mana_cost:3
-original_mana_cost:3
-name:Ancient Empire
-card_type:Spell
-description:Draw 2 cards
-img_url:Ancient Empire.png
-target:None
-empire_belonging:
-name_for_html:Ancient_Empire19
+name_for_html:Lost_Scribe11
 --------------------------------
