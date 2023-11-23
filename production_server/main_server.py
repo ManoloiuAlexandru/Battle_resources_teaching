@@ -92,7 +92,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             if card.card_type == "Creature":
                 card.attack += 1
                 card.hp += 1
-                card.check_creature()
+                card.check_creature("")
     player1.start_game()
     player2.start_game()
     return player1, player2

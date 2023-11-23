@@ -271,7 +271,7 @@ class Player:
         card.attack += list_of_creature_that_buff.get(buffing_card.name)[1]
         if list_of_creature_that_buff.get(buffing_card.name)[2] not in card.description:
             card.description += " " + list_of_creature_that_buff.get(buffing_card.name)[2]
-        card.check_creature()
+        card.check_creature(list_of_creature_that_buff.get(buffing_card.name)[2])
 
     def hand_check(self, card):
         if "empty hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) == 1 and \

@@ -204,7 +204,7 @@ def buff_creature_with_spell(card, player1):
     card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
     if list_of_buff_spells.get(player1.incoming_spell.name)[2] not in card.description:
         card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
-    card.check_creature()
+    card.check_creature(list_of_buff_spells.get(player1.incoming_spell.name)[2])
 
 
 def general_spells(player, enemy_player, spell_name):
@@ -320,7 +320,7 @@ def check_for_creature_with_effect_on(player, action):
             creature.max_hp += list_of_creature_that_are_effected_by_action.get(creature.name)[0]
             creature.attack += list_of_creature_that_are_effected_by_action.get(creature.name)[1]
             creature.description += list_of_creature_that_are_effected_by_action.get(creature.name)[2]
-            creature.check_creature()
+            creature.check_creature(list_of_creature_that_are_effected_by_action.get(creature.name)[2])
 
 
 def deal_dmg_to_creature(card_picked, player, dmg):
@@ -360,7 +360,7 @@ def buff_creature(card_picked, player1):
                     card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
                     if list_of_creature_that_buff.get(player1.active_minion.name)[2] not in card.description:
                         card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
-                    card.check_creature()
+                    card.check_creature(list_of_creature_that_buff.get(player1.active_minion.name)[2])
     except Exception as e:
         print(e)
 
