@@ -261,6 +261,9 @@ class Player:
                         print(e)
                 else:
                     player.draw_card()
+        elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buff":
+            random_minion = random.choice(player.battle_field)
+            player.buff_card_from_hand(random_minion, card)
 
     def buff_card_from_hand(self, card, buffing_card):
         card.hp += list_of_creature_that_buff.get(buffing_card.name)[0]
