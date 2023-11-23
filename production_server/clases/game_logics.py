@@ -6,32 +6,33 @@ from clases.Item import *
 from clases.player import *
 from decks.lists_of_cards import *
 
-legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi","Joan of Arc"]
+legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc"]
 
 
 def battle(card1, card2, player1, player2):
     try:
-        player1.logs += card1.name + " is in battle with " + card2.name + "\n"
-        if card1.armored is True and card2.armored is True:
-            if card2.attack > 0:
-                card1.armored = False
-            if card1.attack > 0:
-                card2.armored = False
-        elif card1.armored is True:
-            card2.hp -= card1.attack
-            if card2.attack > 0:
-                card1.armored = False
-        elif card2.armored is True:
-            card1.hp -= card2.attack
-            if card1.attack > 0:
-                card2.armored = False
-        else:
-            card1.hp -= card2.attack
-            card2.hp -= card1.attack
-        card1.exhausted = True
-        card1.number_of_attacks -= 1
-        Player.clean_board(player1, player2)
-        Player.battle_fields_effects(player1, player2)
+        if card1.attack > 0:
+            player1.logs += card1.name + " is in battle with " + card2.name + "\n"
+            if card1.armored is True and card2.armored is True:
+                if card2.attack > 0:
+                    card1.armored = False
+                if card1.attack > 0:
+                    card2.armored = False
+            elif card1.armored is True:
+                card2.hp -= card1.attack
+                if card2.attack > 0:
+                    card1.armored = False
+            elif card2.armored is True:
+                card1.hp -= card2.attack
+                if card1.attack > 0:
+                    card2.armored = False
+            else:
+                card1.hp -= card2.attack
+                card2.hp -= card1.attack
+            card1.exhausted = True
+            card1.number_of_attacks -= 1
+            Player.clean_board(player1, player2)
+            Player.battle_fields_effects(player1, player2)
     except Exception as e:
         print(e)
 
@@ -266,10 +267,10 @@ def general_spells(player, enemy_player, spell_name):
         creature_to_avoid = list_of_spells_with_specific_targets.get(player.incoming_spell.name)[0].split()[1]
         if list_of_spells_with_specific_targets.get(player.incoming_spell.name)[1] == "ALL":
             for creature in player.battle_field:
-                if creature_to_avoid not in creature.description.split():
+                if creature.check_creature_for_dmg(creature_to_avoid):
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
             for creature in enemy_player.battle_field:
-                if creature_to_avoid not in creature.description.split():
+                if creature.check_creature_for_dmg(creature_to_avoid):
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
     elif player.incoming_spell.name in list_of_dmg_spells:
         if "ALL" in player.incoming_spell.description:

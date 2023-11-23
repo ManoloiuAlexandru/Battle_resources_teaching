@@ -4,13 +4,10 @@ from clases.spells import Spell
 
 bot_deck = []
 demo_deck = [
-    Creature(0, "Khevtuul", 1, 1, "Desperate summon 2 2/2 Night Watchers", 0),
-    Spell(0, "Animal Battle Companion", "Summon a random war animal", 1),
-    Spell(0, "Animal Battle Companion", "Summon a random war animal", 2),
-    Spell(0, "War Pack", "Summon all war animals", 3),
-    Spell(0, "War Pack", "Summon all war animals", 4),
-    Spell(0, "War Pack", "Summon all war animals", 5),
-
+    Spell(0, "Black Death", "Destroy ALL minions", 0),
+    Spell(0, "Rain of Arrows", "Destroy ALL minions that are not Armored", 1),
+    Spell(0, "Landslide", "Deal 7 damage to ALL minions", 2),
+    Creature(0, "Andras", 1, 1, "Charge", 3)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", -2),
@@ -287,7 +284,7 @@ power_of_the_people = [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell 
                        Creature(2, "Guard Dog", 2, 2, "Guard", 926),
                        Spell(8, "Black Death", "Destroy ALL minions", 927),
                        Creature(1, "Armored Page", 1, 1, "Armored", 928),
-                       Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard",929),
+                       Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", 929),
                        Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", 930),
                        Creature(3, "Tournament Horserider", 1, 2, "Charge Armored", 933),
                        Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", 932),

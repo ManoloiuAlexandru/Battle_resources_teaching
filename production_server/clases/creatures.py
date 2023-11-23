@@ -113,3 +113,9 @@ class Creature:
             self.mana_cost = 0
         else:
             self.mana_cost -= amount
+
+    def check_creature_for_dmg(self, effect_to_look):
+        if effect_to_look == "Armored":
+            if self.armored is True:
+                return False
+        return True
