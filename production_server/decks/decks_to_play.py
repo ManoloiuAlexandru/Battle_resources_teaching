@@ -4,10 +4,11 @@ from clases.spells import Spell
 
 bot_deck = []
 demo_deck = [
-    Creature(0, "Andras", 99, 0, "", 12),
-    Creature(1, "Selfless Knight", 1, 2, "Desperate Give a friendly minion armored", 0),
-    Creature(5, "Front Line Defender", 5, 3, "Desperate Summ a 1/2 Second Line Defender with Guard Guard", 2),
-    Creature(2, "Armored Knight", 2, 2, "Armored", 3),
+    Creature(0, "Andras", 1, 1, "", 12),
+
+    Creature(0, "Selfless Knight", 1, 2, "Desperate Give a friendly minion armored", 0),
+    Creature(0, "Front Line Defender", 5, 3, "Desperate Summ a 1/2 Second Line Defender with Guard Guard", 2),
+    Creature(0, "Armored Knight", 2, 2, "Armored", 3),
     Creature(0, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", 4),
     Creature(0, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored", 5),
     # Spell(0, "Battle Cry", "Give your hand +1/+1", 5),
@@ -84,6 +85,7 @@ cards_for_byzantine_empire = [
     Spell(2, "Pilum Throw", "Deal 3 damage", -83),
     Spell(3, "Fast Conscription", "Summon 4 1/1 Peasant", -84),
     Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", -85),
+    Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", -91),
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -107,6 +109,7 @@ cards_byzantine_show = [
     Spell(2, "Pilum Throw", "Deal 3 damage", -83),
     Spell(3, "Fast Conscription", "Summon 4 1/1 Peasant", -84),
     Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", -85),
+    Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", -91),
 ]
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", -72),
@@ -425,6 +428,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", -1),
                               "Desperate Summ a 1/2 Second Line Defender with Guard Guard", -89),
                      Creature(4, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
                               -90),
+                     Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", -91),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

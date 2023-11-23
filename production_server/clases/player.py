@@ -34,6 +34,10 @@ class Player:
 
     def check_player(self):
         if self.hp <= 0:
+            self.mana = 0
+            self.battle_field.clear()
+            self.deck.clear()
+            self.hand.clear()
             return 0
         return 1
 
@@ -140,7 +144,11 @@ class Player:
         try:
             random_card = random.choice(self.deck)
             nr_try = 0
-            type_of_card, type_of_description = Player.card_to_draw_type(card, index_of_card)
+            if self.incoming_spell is None:
+                type_of_card, type_of_description = Player.card_to_draw_type(card, index_of_card)
+            else:
+                type_of_card=list_of_spells_that_draw_specific_cards.get(self.incoming_spell.name)[0][index_of_card]
+                type_of_description=list_of_spells_that_draw_specific_cards.get(self.incoming_spell.name)[1][index_of_card]
             if type_of_description == "":
                 while type_of_card != random_card.card_type and nr_try < 30:
                     random_card = random.choice(self.deck)

@@ -199,6 +199,12 @@ def buff_creature_with_spell(card, player1):
             if "draw" == list_of_spells_that_buff_specific_targets.get(player1.incoming_spell.name)[1]:
                 for nr_cards in range(list_of_spells_that_draw_cards_conditional.get(player1.incoming_spell.name)):
                     player1.draw_card()
+        elif list_of_spells_that_buff_specific_targets.get(player1.incoming_spell.name)[0] == "":
+            for i in range(list_of_spells_that_draw_cards_conditional.get(player1.incoming_spell.name)):
+                random_card = player1.get_random_card(card, i)
+                if random_card is not None:
+                    player1.hand.append(random_card)
+                    player1.deck.remove(random_card)
     card.hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
     card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
     card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
@@ -428,6 +434,12 @@ def check_hero_power(player, enemy_player):
         elif player.empire == "Mongol Empire":
             if len(player.battle_field) < 7:
                 enemy_player.hp -= 2
+                player.used_power = 1
+                player.mana_increase(-2)
+        elif player.empire == "Mesopotamia Empire":
+            if len(player.battle_field) < 7:
+                player.hp -= 2
+                player.draw_card()
                 player.used_power = 1
                 player.mana_increase(-2)
             else:

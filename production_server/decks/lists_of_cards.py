@@ -67,14 +67,16 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor", "Arbalest Shot",
                   "Chivalry and Honor", "Horse raiding shot", "Landslide", "Rain of Arrows", "Roman Formation Circular",
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
-                  "Old Tactics", "Pilum Throw", "Fast Conscription"]
+                  "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
-                       "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge"}
+                       "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
+                       "Strength in numbers": ""}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99}
 list_of_dmg_spells = {"Arrow shot": 2, "Black Death": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
-                            "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw"]
+                            "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
+                            "Strength in numbers"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Death", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
@@ -84,21 +86,22 @@ list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard",
                               "Fast Conscription": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
-                                  "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1
+                                  "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
                        "Roman Formation Circular": (0, 0, "Guard"),
                        "Knight's training": (3, 3, ""), "Chivalry and Honor": (1, 2, ""), "Guard Duty": (2, 2, ""),
                        "For the Khan": (0, 1, "Charge"), "In the name of the king": (1, 1, ""),
-                       "Roman Formation Phalanx": (1, 1, "")}
+                       "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, "")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
 list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self", "For the Khan": "self",
                                               "In the name of the king": "self", "Roman Formation Phalanx": "self"}
-list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw")}
-list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1}
+list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "Strength in numbers": ("", "draw")}
+list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
     "Boarder Guards": (2, [Creature(2, "Akritoi", 3, 2, "Guard", generate_random_int()) for i in range(0, 10)]),
     "Fast Conscription": (4, [Creature(1, "Peasant", 1, 1, "", generate_random_int()) for i in range(0, 40)])}
+list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}
