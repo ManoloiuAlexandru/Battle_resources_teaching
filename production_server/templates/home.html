@@ -44,14 +44,14 @@
             </form>
         </div>
         <div class="player_deck">
-            <img class="deck" src="static/cards/Card Back.png"/>
+            <img class="deck" src="static/cards/Deck.png"/>
         </div>
         <div>
             <form action="/battlefield_action" method="post">
                 <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}<br>
                     Mana: {{players[0].mana}}/{{players[0].empty_mana}}
                 </button>
-                {%if players[0].used_power==0:%}}
+                {%if players[0].used_power==0:%}
                 <button name="hero_power">{{players[0].empire}}<br>
                     Mana Cost:2
                 </button>
@@ -240,7 +240,7 @@
             </form>
         </div>
         <div class="player_deck">
-            <img class="deck" src="static/cards/Card Back.png"/>
+            <img class="deck" src="static/cards/Deck.png"/>
             <div class="player_deck_nr_cards">
                 <p class="player_deck_nr_cards">{{players[1].deck|length}}</p>
             </div>
@@ -250,7 +250,7 @@
                 <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}<br>
                     Mana: {{players[1].mana}}/{{players[1].empty_mana}}
                 </button>
-                {%if players[1].used_power==0:%}}
+                {%if players[1].used_power==0:%}
                 <button name="hero_power">{{players[1].empire}}<br>
                     Mana Cost:2
                 </button>
