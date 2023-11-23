@@ -59,7 +59,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
-        player1.hp = 2
+        player1.hp = 9999
         player2.mana = 1
     if difficulty == "normal" and player1.mana == 0:
         attacked_player = 2

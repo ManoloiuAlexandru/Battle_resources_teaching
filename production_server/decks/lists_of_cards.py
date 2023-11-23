@@ -7,6 +7,23 @@ def generate_random_int():
     return random.randint(1, 1000000)
 
 
+def get_list_of_all_war_animals(creature_list):
+    animal1 = creature_list[0]
+    animal2 = creature_list[1]
+    animal3 = creature_list[2]
+    creature_list = creature_list[:3]
+    return [animal1, animal2, animal3]
+
+
+list_of_bears = [Creature(3, "War Bear", 4, 4, "Guard", generate_random_int()) for i in range(0, 10)]
+list_of_dogs = [Creature(3, "War Dog", 2, 4, "Charge", generate_random_int()) for i in range(0, 10)]
+list_of_eagles = [Creature(3, "War Eagle", 4, 2, "Your minions get +1 attack", generate_random_int()) for i in
+                  range(0, 10)]
+list_of_animals = [Creature(3, "War Bear", 4, 4, "Guard", generate_random_int()) for i in range(0, 10)]
+list_of_animals.extend([Creature(3, "War Dog", 2, 4, "Charge", generate_random_int()) for i in range(0, 10)])
+list_of_animals.extend(
+    [Creature(3, "War Eagle", 4, 2, "Your minions get +1 attack", generate_random_int()) for i in range(0, 10)])
+war_pack = [[bear, eagle, dog] for (bear, eagle, dog) in zip(list_of_bears, list_of_eagles, list_of_dogs)]
 """
 Creatures
 """
@@ -23,9 +40,9 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
                               "Selfless Knight": (0, 0, "Armored")}
 list_of_creature_that_buff_specific_cards = {"Frederick Barbarossa": ("Armored", 1, 1, "Armored")}
-list_of_creature_with_on_going_effect = ["War elephant", "Army Champion"]
+list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle"]
 list_of_creature_with_negative_on_going_effect = {}
-list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1)}
+list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1), "War Eagle": (0, 1)}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1}
@@ -43,19 +60,20 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Noble": (1, [Creature(4, "City Guard", 5, 3, "Guard", generate_random_int()) for i in range(0, 5)]),
-    "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", generate_random_int()) for i in range(0, 5)]),
+    "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", generate_random_int()) for i in range(0, 10)]),
     "Front Line Defender": (
         1, [Creature(1, "Second Line Defender", 2, 1, "Guard", generate_random_int()) for i in range(0, 5)]),
     "Joan of Arc": (
         1,
-        [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", generate_random_int()) for i in range(0, 3)])}
+        [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", generate_random_int()) for i in range(0, 3)]),
+    "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", generate_random_int()) for i in range(0, 10)])}
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1)}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "draw",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
-                                              "Joan of Arc": "summ"}
+                                              "Joan of Arc": "summ", "Khevtuul": "summ"}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1, "Armored Horse": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"]),
                                                       "Armored Horse": (["Spell"], [""])}
@@ -67,7 +85,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor", "Arbalest Shot",
                   "Chivalry and Honor", "Horse raiding shot", "Landslide", "Rain of Arrows", "Roman Formation Circular",
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
-                  "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers"]
+                  "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
+                  "War Pack"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": ""}
@@ -81,9 +100,9 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Deat
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
-                                 "Old Tactics", "Fast Conscription"]
+                                 "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
-                              "Fast Conscription": ("", 0)}
+                              "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
@@ -103,5 +122,7 @@ list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "S
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
     "Boarder Guards": (2, [Creature(2, "Akritoi", 3, 2, "Guard", generate_random_int()) for i in range(0, 10)]),
-    "Fast Conscription": (4, [Creature(1, "Peasant", 1, 1, "", generate_random_int()) for i in range(0, 40)])}
+    "Fast Conscription": (4, [Creature(1, "Peasant", 1, 1, "", generate_random_int()) for i in range(0, 40)]),
+    "Animal Battle Companion": (1, [random.choice(list_of_animals) for i in range(0, 10)]),
+    "War Pack": (3, get_list_of_all_war_animals(war_pack))}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}

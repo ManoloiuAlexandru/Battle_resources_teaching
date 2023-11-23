@@ -6,7 +6,7 @@ from clases.Item import *
 from clases.player import *
 from decks.lists_of_cards import *
 
-legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi"]
+legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi","Joan of Arc"]
 
 
 def battle(card1, card2, player1, player2):
@@ -218,9 +218,21 @@ def general_spells(player, enemy_player, spell_name):
         if spell_name in list_of_spells_that_summon_specific_cards:
             for creature in range(list_of_spells_that_summon_specific_cards.get(spell_name)[0]):
                 if len(player.battle_field) < 7:
-                    player.battle_field.append(list_of_spells_that_summon_specific_cards.get(spell_name)[1][creature])
-                    list_of_spells_that_summon_specific_cards.get(spell_name)[1].remove(
-                        list_of_spells_that_summon_specific_cards.get(spell_name)[1][creature])
+                    list_of_animals_to_summon = list_of_spells_that_summon_specific_cards.get(spell_name)[1]
+                    if type(list_of_animals_to_summon[0]) is list:
+                        player.battle_field.append(
+                            list_of_animals_to_summon[0][0])
+                        list_of_animals_to_summon[0].remove(
+                            list_of_animals_to_summon[0][0])
+                        if not list_of_animals_to_summon[0]:
+                            del (list_of_animals_to_summon[0])
+                    else:
+                        player.battle_field.append(
+                            list_of_animals_to_summon[creature])
+                        list_of_animals_to_summon.remove(
+                            list_of_animals_to_summon[creature])
+                    if player.battle_field[-1].name in list_of_creature_with_on_going_effect:
+                        player.ongoing_effects.append(player.battle_field[-1])
         for i in range(0, list_of_spells_that_summon.get(spell_name)[1]):
             for card in player.deck:
                 if list_of_spells_that_summon.get(spell_name)[0] == "":

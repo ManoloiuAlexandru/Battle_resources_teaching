@@ -136,10 +136,21 @@ class Bot(Player):
                 if card.name in list_of_spells_that_summon_specific_cards:
                     for creature in range(list_of_spells_that_summon_specific_cards.get(card.name)[0]):
                         if len(self.battle_field) < 7:
-                            self.battle_field.append(
-                                list_of_spells_that_summon_specific_cards.get(card.name)[1][creature])
-                            list_of_spells_that_summon_specific_cards.get(card.name)[1].remove(
-                                list_of_spells_that_summon_specific_cards.get(card.name)[1][creature])
+                            list_of_animals_to_summon = list_of_spells_that_summon_specific_cards.get(card.name)[1]
+                            if type(list_of_animals_to_summon[0]) is list:
+                                self.battle_field.append(
+                                    list_of_animals_to_summon[0][0])
+                                list_of_animals_to_summon[0].remove(
+                                    list_of_animals_to_summon[0][0])
+                                if not list_of_animals_to_summon[0]:
+                                    del (list_of_animals_to_summon[0])
+                            else:
+                                self.battle_field.append(
+                                    list_of_animals_to_summon[creature])
+                                list_of_animals_to_summon.remove(
+                                    list_of_animals_to_summon[creature])
+                            if self.battle_field[-1].name in list_of_creature_with_on_going_effect:
+                                self.ongoing_effects.append(self.battle_field[-1])
                 for i in range(0, list_of_spells_that_summon.get(card.name)[1]):
                     for card_from_deck in self.deck:
                         if list_of_spells_that_summon.get(card.name)[0] == "":
