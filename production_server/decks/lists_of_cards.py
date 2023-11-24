@@ -15,14 +15,15 @@ def get_list_of_all_war_animals(creature_list):
     return [animal1, animal2, animal3]
 
 
-list_of_bears = [Creature(3, "War Bear", 4, 4, "Guard", generate_random_int()) for i in range(0, 10)]
-list_of_dogs = [Creature(3, "War Dog", 2, 4, "Charge", generate_random_int()) for i in range(0, 10)]
-list_of_eagles = [Creature(3, "War Eagle", 4, 2, "Your minions get +1 attack", generate_random_int()) for i in
+list_of_bears = [Creature(3, "War Bear", 4, 4, "Guard", "animal", generate_random_int()) for i in range(0, 10)]
+list_of_dogs = [Creature(3, "War Dog", 2, 4, "Charge", "animal", generate_random_int()) for i in range(0, 10)]
+list_of_eagles = [Creature(3, "War Eagle", 4, 2, "Your minions get +1 attack", "animal", generate_random_int()) for i in
                   range(0, 10)]
-list_of_animals = [Creature(3, "War Bear", 4, 4, "Guard", generate_random_int()) for i in range(0, 10)]
-list_of_animals.extend([Creature(3, "War Dog", 2, 4, "Charge", generate_random_int()) for i in range(0, 10)])
+list_of_animals = [Creature(3, "War Bear", 4, 4, "Guard", "animal", generate_random_int()) for i in range(0, 10)]
+list_of_animals.extend([Creature(3, "War Dog", 2, 4, "Charge", "animal", generate_random_int()) for i in range(0, 10)])
 list_of_animals.extend(
-    [Creature(3, "War Eagle", 4, 2, "Your minions get +1 attack", generate_random_int()) for i in range(0, 10)])
+    [Creature(3, "War Eagle", 4, 2, "Your minions get +1 attack", "animal", generate_random_int()) for i in
+     range(0, 10)])
 war_pack = [[bear, eagle, dog] for (bear, eagle, dog) in zip(list_of_bears, list_of_eagles, list_of_dogs)]
 """
 Creatures
@@ -53,20 +54,22 @@ list_of_creature_that_draw_specific_cards = {"Wild Horse": (["Creature"], ["Char
                                                  ["Creature", "Spell"], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
-    "Hunter": (1, [Creature(1, "Dog", 1, 1, "", generate_random_int()) for i in range(0, 4)])}
+    "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)])}
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               }
 list_of_creature_that_summ_after_they_die = {
-    "Lost Noble": (1, [Creature(4, "City Guard", 5, 3, "Guard", generate_random_int()) for i in range(0, 5)]),
-    "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", generate_random_int()) for i in range(0, 10)]),
+    "Lost Noble": (
+    1, [Creature(4, "City Guard", 5, 3, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
+    "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", "animal", generate_random_int()) for i in range(0, 10)]),
     "Front Line Defender": (
-        1, [Creature(1, "Second Line Defender", 2, 1, "Guard", generate_random_int()) for i in range(0, 5)]),
+        1, [Creature(1, "Second Line Defender", 2, 1, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Joan of Arc": (
         1,
-        [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", generate_random_int()) for i in range(0, 3)]),
-    "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", generate_random_int()) for i in range(0, 10)])}
+        [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", "knight", generate_random_int()) for i in
+         range(0, 3)]),
+    "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", "soldier", generate_random_int()) for i in range(0, 10)])}
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1)}
@@ -121,8 +124,9 @@ list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self"
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "Strength in numbers": ("", "draw")}
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
-    "Boarder Guards": (2, [Creature(2, "Akritoi", 3, 2, "Guard", generate_random_int()) for i in range(0, 10)]),
-    "Fast Conscription": (4, [Creature(1, "Peasant", 1, 1, "", generate_random_int()) for i in range(0, 40)]),
+    "Boarder Guards": (
+    2, [Creature(2, "Akritoi", 3, 2, "Guard", "soldier", generate_random_int()) for i in range(0, 10)]),
+    "Fast Conscription": (4, [Creature(1, "Peasant", 1, 1, "", "worker", generate_random_int()) for i in range(0, 40)]),
     "Animal Battle Companion": (1, [random.choice(list_of_animals) for i in range(0, 10)]),
     "War Pack": (3, get_list_of_all_war_animals(war_pack))}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}

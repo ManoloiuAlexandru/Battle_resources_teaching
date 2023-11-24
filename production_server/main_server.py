@@ -192,7 +192,8 @@ def make_deck():
         if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
                 your_deck) < 30:
             if card.card_type == "Creature":
-                your_deck.append(Creature(card.mana_cost, card.name, card.hp, card.attack, card.description, index))
+                your_deck.append(
+                    Creature(card.mana_cost, card.name, card.hp, card.attack, card.description, card.category, index))
                 index += 1
             if card.card_type == "Spell":
                 your_deck.append(Spell(card.mana_cost, card.name, card.description, index))

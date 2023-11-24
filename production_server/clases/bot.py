@@ -39,7 +39,7 @@ class Bot(Player):
 
     def check_summed_card(self, card, player):
         if card.card_type == "Creature":
-            target_creature = Creature(1, 'DEMO', 0, 0, "", 999)
+            target_creature = Creature(1, 'DEMO', 0, 0, "","", 999)
             if card.name in list_of_creature_that_deal_dmg_to_enemies:
                 for creature in player.battle_field:
                     if target_creature.hp <= creature.hp <= list_of_creature_that_deal_dmg_to_enemies.get(card.name):
@@ -193,7 +193,7 @@ class Bot(Player):
         elif card.card_type == "Item":
             if card.name in list_of_good_items and len(self.battle_field) > 0:
                 try:
-                    target_creature = Creature(1, 'DEMO', 0, 0, "", 0)
+                    target_creature = Creature(1, 'DEMO', 0, 0, "","", 0)
                     for creature in self.battle_field:
                         if creature.hp > target_creature.hp:
                             target_creature = creature
@@ -235,7 +235,7 @@ class Bot(Player):
 
     def target_creature_with_spell(self, card, player):
         if self.check_for_guards(player) == 1:
-            target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
+            target_creature = Creature(1, 'DEMO', 999, 999, "","", 999)
             for creature in player.battle_field:
                 if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature
@@ -259,7 +259,7 @@ class Bot(Player):
                     for creature in player.battle_field:
                         creature.hp -= list_of_dmg_spells.get(card.name)
         else:
-            target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
+            target_creature = Creature(1, 'DEMO', 999, 999, "","", 999)
             for creature in player.battle_field:
                 if target_creature.attack >= creature.attack:
                     target_creature = creature
@@ -285,7 +285,7 @@ class Bot(Player):
 
     def target_priority(self, card, player):
         if self.check_for_guards(player) == 1:
-            target_creature = Creature(1, 'DEMO', 999, 999, "", 999)
+            target_creature = Creature(1, 'DEMO', 999, 999, "","", 999)
             for creature in player.battle_field:
                 if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature

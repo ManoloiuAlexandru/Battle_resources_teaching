@@ -429,8 +429,8 @@ def check_hero_power(player, enemy_player):
         player.problem = "Not enough mana"
     else:
         if player.empire == "Byzantine Empire":
-            list_of_auxiliary_soldiers = [Creature(1, "Shield soldier", 2, 0, "Guard", len(player.deck) + 934),
-                                          Creature(1, "Man at arms", 1, 1, "", len(player.deck) + 944)]
+            list_of_auxiliary_soldiers = [Creature(1, "Shield soldier", 2, 0, "Guard","soldier", len(player.deck) + 934),
+                                          Creature(1, "Man at arms", 1, 1, "","soldier", len(player.deck) + 944)]
             if len(player.battle_field) < 7:
                 player.battle_field.append(random.choice(list_of_auxiliary_soldiers))
                 player.used_power = 1
@@ -439,7 +439,7 @@ def check_hero_power(player, enemy_player):
                 player.problem = "You don't have enough space"
         elif player.empire == "Holy Roman Empire":
             if len(player.battle_field) < 7:
-                player.battle_field.append(Creature(1, "Kaiserliche", 1, 1, "", len(player.deck) + 3112))
+                player.battle_field.append(Creature(1, "Kaiserliche", 1, 1, "","soldier", len(player.deck) + 3112))
                 player.used_power = 1
                 player.mana_increase(-2)
             else:

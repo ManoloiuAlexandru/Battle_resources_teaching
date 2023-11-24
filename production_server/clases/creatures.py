@@ -1,5 +1,5 @@
 class Creature:
-    def __init__(self, mana_cost, name, hp, attack, description, id):
+    def __init__(self, mana_cost, name, hp, attack, description, category, id):
         self.card_id = str(id)
         self.mana_cost = mana_cost
         self.original_mana_cost = mana_cost
@@ -8,6 +8,7 @@ class Creature:
         self.max_hp = hp
         self.original_hp = hp
         self.attack = attack
+        self.category = category
         self.attack_before_on_effects = 0
         self.hp_before_on_effects = 0
         self.original_attack = attack
@@ -73,33 +74,38 @@ class Creature:
     def positive_effects_from_creatures(self, card, effects, player):
         nr_buff = 0
         for creature in player.ongoing_effects:
-            if creature.name == card.name:
+            if creature.name in effects:
                 nr_buff += 1
         while len(self.active_effects) < nr_buff:
-            self.attack_before_on_effects = self.attack
-            self.hp_before_on_effects = self.hp
-            self.active_effects.append(card.name)
-            self.attack += effects[1]
-            self.hp += effects[0]
+            for buffing_creature in player.ongoing_effects:
+                if buffing_creature.name not in self.active_effects:
+                    self.attack_before_on_effects = self.attack
+                    self.hp_before_on_effects = self.hp
+                    self.active_effects.append(buffing_creature.name)
+                    self.attack += effects.get(buffing_creature.name)[1]
+                    self.hp += effects.get(buffing_creature.name)[0]
 
     def reverse_effect_creature(self, card, effects, effect, player):
         try:
             nr_buff = 0
             for creature in player.ongoing_effects:
-                if creature.name == card.name:
+                if creature.name in effects:
                     nr_buff += 1
             while len(self.active_effects) > nr_buff:
-                self.attack = self.attack_before_on_effects + effect * effects[1]
-                self.attack_before_on_effects += effect * effects[1]
-                if self.attack < 0:
-                    self.attack = 0
-                elif self.attack_before_on_effects == 0:
-                    self.attack = self.original_attack
-                self.hp = self.hp_before_on_effects + effect * effects[1]
-                self.hp_before_on_effects += effect * effects[1]
-                if self.hp < 0:
-                    self.hp = 0
-                self.active_effects.remove(card.name)
+                for buffing_creature in self.active_effects[:]:
+                    on_field = 0
+                    for ongoing_effect in player.ongoing_effects:
+                        if buffing_creature == ongoing_effect.name:
+                            on_field = 1
+                    if on_field == 0:
+                        self.attack += effect * effects.get(buffing_creature)[1]
+                        if self.attack < 0:
+                            self.attack = 0
+                        self.hp += effect * effects.get(buffing_creature)[0]
+                        self.hp_before_on_effects += effect * effects.get(buffing_creature)[0]
+                        if self.hp < 0:
+                            self.hp = 0
+                        self.active_effects.remove(card.name)
         except Exception as e:
             print(e)
 
