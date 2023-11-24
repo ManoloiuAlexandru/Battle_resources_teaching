@@ -84,6 +84,8 @@ class Creature:
                     self.active_effects.append(buffing_creature.name)
                     self.attack += effects.get(buffing_creature.name)[1]
                     self.hp += effects.get(buffing_creature.name)[0]
+                elif buffing_creature.name in self.active_effects:
+                    nr_buff -= 1
 
     def reverse_effect_creature(self, card, effects, effect, player):
         try:

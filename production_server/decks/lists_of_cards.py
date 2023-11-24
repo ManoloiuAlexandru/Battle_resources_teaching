@@ -56,12 +56,15 @@ list_of_creature_that_draw_specific_cards = {
         ["Creature", "Spell"], ["", ""], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
+    "Domestic cat": (1, [Creature(1, "Wild Cat", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)])}
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               }
 list_of_creature_that_summ_after_they_die = {
+    "Goat": (1, [Creature(2, "Hungry Wolf", 2, 3, "", "animal", generate_random_int()) for i in range(0, 5)]),
+    "Mother Wolf": (2, [Creature(1, "Wolf Pup", 1, 1, "", "animal", generate_random_int()) for i in range(0, 5)]),
     "Lost Noble": (
         1, [Creature(4, "City Guard", 5, 3, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", "animal", generate_random_int()) for i in range(0, 10)]),
@@ -78,7 +81,8 @@ list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1)}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "draw",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
-                                              "Joan of Arc": "summ", "Khevtuul": "summ"}
+                                              "Joan of Arc": "summ", "Khevtuul": "summ", "Mother Wolf": "summ",
+                                              "Goat": "summ"}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1, "Armored Horse": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"], [""]),
                                                       "Armored Horse": (["Spell"], [""], [""])}
