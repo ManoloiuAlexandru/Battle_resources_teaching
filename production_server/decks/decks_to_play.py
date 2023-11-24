@@ -4,10 +4,24 @@ from clases.spells import Spell
 
 bot_deck = []
 demo_deck = [
-    Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", 0),
-    Creature(0, "War elephant", 2, 2, "", "animal", 4),
-    Creature(0, "Andras", 2, 2, "", "knight", 2),
-    Creature(0, "Bishop", 1, 1, "", "worker", 7)
+    Creature(0, "Negotiator", 1, 1, "Give your hand +1/+1 and draw an animal", "worker", 0),
+    Creature(1, "Catalin", 1, 1, "", "knight", 1),
+    Creature(0, "Lost Scribe", 1, 1, "Desperate", "knight", 2),
+    Creature(1, "Catalin", 1, 1, "Charge", "knight", 3),
+    Creature(1, "Catalin", 1, 1, "", "knight", 4),
+    Creature(0, "Wild Horse", 1, 1, "", "animal", 5),
+    Creature(0, "Watchman", 1, 1, "", "knight", 6),
+    Creature(1, "Catalin", 1, 1, "", "knight", 7),
+    Creature(1, "Catalin", 1, 1, "Guard", "knight", 8),
+    Creature(0, "Armored Horse", 1, 1, "Desperate", "knight", 9),
+    Creature(0, "Richard the Lionheart", 1, 1, "", "knight", 10),
+    Creature(1, "Catalin", 1, 1, "", "knight", 11),
+    Spell(1, "ceva", "ceva", 12),
+    Spell(1, "ceva", "ceva", 13),
+    Spell(1, "ceva", "ceva", 14),
+    Spell(1, "ceva", "ceva", 15),
+    Spell(1, "ceva", "ceva", 16),
+
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -237,7 +251,6 @@ mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", 911),

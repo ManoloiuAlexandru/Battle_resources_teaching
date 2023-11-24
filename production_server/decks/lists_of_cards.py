@@ -47,11 +47,13 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War 
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1}
-list_of_creature_that_draw_specific_cards = {"Wild Horse": (["Creature"], ["Charge"]),
-                                             "Scribe of the Church": (["Spell"], [""]),
-                                             "Watchman": (["Creature"], ["Guard"]),
-                                             "Richard the Lionheart": (
-                                                 ["Creature", "Spell"], ["", ""])}
+list_of_creature_that_draw_specific_cards = {
+    "Negotiator": (["Creature"], [""], ["animal"]),
+    "Wild Horse": (["Creature"], ["Charge"], [""]),
+    "Scribe of the Church": (["Spell"], [""], [""]),
+    "Watchman": (["Creature"], ["Guard"], [""]),
+    "Richard the Lionheart": (
+        ["Creature", "Spell"], ["", ""], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)])}
@@ -78,8 +80,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
                                               "Joan of Arc": "summ", "Khevtuul": "summ"}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1, "Armored Horse": 1}
-list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"]),
-                                                      "Armored Horse": (["Spell"], [""])}
+list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"], [""]),
+                                                      "Armored Horse": (["Spell"], [""], [""])}
 """
 Spells
 """

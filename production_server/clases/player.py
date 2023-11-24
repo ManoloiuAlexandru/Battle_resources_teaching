@@ -145,11 +145,13 @@ class Player:
             random_card = random.choice(self.deck)
             nr_try = 0
             if self.incoming_spell is None:
-                type_of_card, type_of_description = Player.card_to_draw_type(card, index_of_card)
+                type_of_card, type_of_description, category = Player.card_to_draw_type(card, index_of_card)
             else:
-                type_of_card=list_of_spells_that_draw_specific_cards.get(self.incoming_spell.name)[0][index_of_card]
-                type_of_description=list_of_spells_that_draw_specific_cards.get(self.incoming_spell.name)[1][index_of_card]
-            if type_of_description == "":
+                type_of_card = list_of_spells_that_draw_specific_cards.get(self.incoming_spell.name)[0][index_of_card]
+                type_of_description = list_of_spells_that_draw_specific_cards.get(self.incoming_spell.name)[1][
+                    index_of_card]
+                category = None
+            if type_of_description == "" and category == "":
                 while type_of_card != random_card.card_type and nr_try < 30:
                     random_card = random.choice(self.deck)
                     nr_try += 1
@@ -158,6 +160,16 @@ class Player:
                         if type_of_description in charge.description.split():
                             random_card = charge
                 if type_of_card == random_card.card_type:
+                    return random_card
+            elif category != "" and type_of_description == "":
+                while category != random_card.category and nr_try < 30:
+                    random_card = random.choice(self.deck)
+                    nr_try += 1
+                if nr_try == 30:
+                    for charge in self.deck:
+                        if category == charge.category:
+                            random_card = charge
+                if category == random_card.category:
                     return random_card
             else:
                 if any(type_of_description in obj.description.split() for obj in self.deck):
@@ -325,7 +337,9 @@ class Player:
         if "Desperate" in card.description.split():
             type_of_card = list_of_creature_that_draw_specific_cards_when_die.get(card.name)[0][i]
             type_of_description = list_of_creature_that_draw_specific_cards_when_die.get(card.name)[1][i]
+            category = list_of_creature_that_draw_specific_cards_when_die.get(card.name)[2][i]
         else:
             type_of_card = list_of_creature_that_draw_specific_cards.get(card.name)[0][i]
             type_of_description = list_of_creature_that_draw_specific_cards.get(card.name)[1][i]
-        return type_of_card, type_of_description
+            category = list_of_creature_that_draw_specific_cards.get(card.name)[2][i]
+        return type_of_card, type_of_description, category
