@@ -51,7 +51,7 @@ def get_old_deck():
             elif "attack" in file_line.split(":"):
                 attack = int(file_line.split(":")[1])
             elif "category" in file_line.split(":"):
-                category = file_line.split(":")
+                category = file_line.split(":")[1]
             file_line = file.readline()
             file_line = file_line.strip()
         if card_type == "Spell":

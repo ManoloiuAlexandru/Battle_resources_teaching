@@ -363,6 +363,11 @@ def destroy_creature_from_player(player1, player2, card_picked):
             if player1.active_minion.name in list_of_creature_that_buff:
                 buff_creature(card_picked, player1)
             player1.active_minion = None
+        elif player1.active_minion.name in list_of_creature_that_buff_specific_cards:
+            for card in player1.battle_field:
+                if card_picked.get(card.name_for_html) is not None and list_of_creature_that_buff_specific_cards.get(
+                        player1.active_minion.name) == card.category:
+                    buff_creature(card_picked, player1)
         elif player1.active_minion.name in list_of_creature_that_buff:
             buff_creature(card_picked, player1)
             player1.active_minion = None
@@ -429,8 +434,9 @@ def check_hero_power(player, enemy_player):
         player.problem = "Not enough mana"
     else:
         if player.empire == "Byzantine Empire":
-            list_of_auxiliary_soldiers = [Creature(1, "Shield soldier", 2, 0, "Guard","soldier", len(player.deck) + 934),
-                                          Creature(1, "Man at arms", 1, 1, "","soldier", len(player.deck) + 944)]
+            list_of_auxiliary_soldiers = [
+                Creature(1, "Shield soldier", 2, 0, "Guard", "soldier", len(player.deck) + 934),
+                Creature(1, "Man at arms", 1, 1, "", "soldier", len(player.deck) + 944)]
             if len(player.battle_field) < 7:
                 player.battle_field.append(random.choice(list_of_auxiliary_soldiers))
                 player.used_power = 1
@@ -439,7 +445,7 @@ def check_hero_power(player, enemy_player):
                 player.problem = "You don't have enough space"
         elif player.empire == "Holy Roman Empire":
             if len(player.battle_field) < 7:
-                player.battle_field.append(Creature(1, "Kaiserliche", 1, 1, "","soldier", len(player.deck) + 3112))
+                player.battle_field.append(Creature(1, "Kaiserliche", 1, 1, "", "soldier", len(player.deck) + 3112))
                 player.used_power = 1
                 player.mana_increase(-2)
             else:

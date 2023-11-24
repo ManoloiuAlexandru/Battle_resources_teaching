@@ -4,11 +4,10 @@ from clases.spells import Spell
 
 bot_deck = []
 demo_deck = [
-    Spell(0, "War Pack", "", 0),
-    Spell(0, "War Pack", "", 1),
-    Creature(0, "Andras", 1, 1, "Charge", "all", 3),
-    Creature(0, "Army Champion", 3, 3, "", "all", 2),
-    Creature(0, "War elephant", 2, 2, "", "all", 4)
+    Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", 0),
+    Creature(0, "War elephant", 2, 2, "", "animal", 4),
+    Creature(0, "Andras", 2, 2, "", "knight", 2),
+    Creature(0, "Bishop", 1, 1, "", "worker", 7)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -181,6 +180,7 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(3, "Animal Battle Companion", "Summon a random war animal", -92),
                     Creature(6, "Khevtuul", 5, 7, "Desperate summon 2 2/2 Night Watchers", "soldier", -93),
                     Spell(8, "War Pack", "Summon all war animals", -94),
+                    Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95),
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -200,6 +200,7 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Spell(3, "Animal Battle Companion", "Summon a random war animal", -92),
                            Creature(6, "Khevtuul", 5, 7, "Desperate summon 2 2/2 Night Watchers", "soldier", -93),
                            Spell(8, "War Pack", "Summon all war animals", -94),
+                           Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95),
                            ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Animal Battle Companion", "Summon a random war animal", 1901),
@@ -416,6 +417,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(3, "Animal Battle Companion", "Summon a random war animal", -92),
                      Creature(6, "Khevtuul", 5, 7, "Desperate summon 2 2/2 Night Watchers", "soldier", -93),
                      Spell(8, "War Pack", "Summon all war animals", -94),
+                     Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

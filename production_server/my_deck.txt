@@ -1,99 +1,5 @@
 empire:Mongol_Empire
 card_id:0
-mana_cost:8
-original_mana_cost:8
-name:War Pack
-card_type:Spell
-description:Summon all war animals
-img_url:War Pack.png
-target:None
-empire_belonging:
-name_for_html:War_Pack0
---------------------------------
-card_id:1
-mana_cost:8
-original_mana_cost:8
-name:War Pack
-card_type:Spell
-description:Summon all war animals
-img_url:War Pack.png
-target:None
-empire_belonging:
-name_for_html:War_Pack1
---------------------------------
-card_id:2
-mana_cost:6
-original_mana_cost:6
-name:Khevtuul
-hp:5
-max_hp:5
-original_hp:5
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Desperate summon 2 2/2 Night Watchers
-original_description:Desperate summon 2 2/2 Night Watchers
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Khevtuul.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Khevtuul2
---------------------------------
-card_id:3
-mana_cost:6
-original_mana_cost:6
-name:Khevtuul
-hp:5
-max_hp:5
-original_hp:5
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Desperate summon 2 2/2 Night Watchers
-original_description:Desperate summon 2 2/2 Night Watchers
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Khevtuul.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Khevtuul3
---------------------------------
-card_id:4
-mana_cost:3
-original_mana_cost:3
-name:Animal Battle Companion
-card_type:Spell
-description:Summon a random war animal
-img_url:Animal Battle Companion.png
-target:None
-empire_belonging:
-name_for_html:Animal_Battle_Companion4
---------------------------------
-card_id:5
-mana_cost:3
-original_mana_cost:3
-name:Animal Battle Companion
-card_type:Spell
-description:Summon a random war animal
-img_url:Animal Battle Companion.png
-target:None
-empire_belonging:
-name_for_html:Animal_Battle_Companion5
---------------------------------
-card_id:6
 mana_cost:9
 original_mana_cost:9
 name:Jochi
@@ -116,20 +22,253 @@ img_url:Jochi.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Jochi6
+name_for_html:Jochi0
+--------------------------------
+card_id:1
+mana_cost:3
+original_mana_cost:3
+name:Rider
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Rider.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Rider1
+--------------------------------
+card_id:2
+mana_cost:3
+original_mana_cost:3
+name:Rider
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Rider.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Rider2
+--------------------------------
+card_id:3
+mana_cost:3
+original_mana_cost:3
+name:Animal Battle Companion
+card_type:Spell
+description:Summon a random war animal
+img_url:Animal Battle Companion.png
+target:None
+empire_belonging:
+name_for_html:Animal_Battle_Companion3
+--------------------------------
+card_id:4
+mana_cost:3
+original_mana_cost:3
+name:Animal Battle Companion
+card_type:Spell
+description:Summon a random war animal
+img_url:Animal Battle Companion.png
+target:None
+empire_belonging:
+name_for_html:Animal_Battle_Companion4
+--------------------------------
+card_id:5
+mana_cost:8
+original_mana_cost:8
+name:War Pack
+card_type:Spell
+description:Summon all war animals
+img_url:War Pack.png
+target:None
+empire_belonging:
+name_for_html:War_Pack5
+--------------------------------
+card_id:6
+mana_cost:8
+original_mana_cost:8
+name:War Pack
+card_type:Spell
+description:Summon all war animals
+img_url:War Pack.png
+target:None
+empire_belonging:
+name_for_html:War_Pack6
 --------------------------------
 card_id:7
-mana_cost:3
-original_mana_cost:3
-name:For the Khan
-card_type:Spell
-description:Give all your minions +1/+0 and Charge
-img_url:For the Khan.png
-target:self
+mana_cost:6
+original_mana_cost:6
+name:Khevtuul
+hp:5
+max_hp:5
+original_hp:5
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Desperate summon 2 2/2 Night Watchers
+original_description:Desperate summon 2 2/2 Night Watchers
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Khevtuul.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-name_for_html:For_the_Khan7
+name_for_html:Khevtuul7
 --------------------------------
 card_id:8
+mana_cost:6
+original_mana_cost:6
+name:Khevtuul
+hp:5
+max_hp:5
+original_hp:5
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Desperate summon 2 2/2 Night Watchers
+original_description:Desperate summon 2 2/2 Night Watchers
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Khevtuul.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Khevtuul8
+--------------------------------
+card_id:9
+mana_cost:3
+original_mana_cost:3
+name:Negotiator
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Give your hand +1/+1 and draw a card
+original_description:Give your hand +1/+1 and draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Negotiator.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Negotiator9
+--------------------------------
+card_id:10
+mana_cost:3
+original_mana_cost:3
+name:Negotiator
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Give your hand +1/+1 and draw a card
+original_description:Give your hand +1/+1 and draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Negotiator.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Negotiator10
+--------------------------------
+card_id:11
+mana_cost:2
+original_mana_cost:2
+name:Wild Horse
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a charge card
+original_description:Draw a charge card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Wild Horse.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Wild_Horse11
+--------------------------------
+card_id:12
+mana_cost:2
+original_mana_cost:2
+name:Wild Horse
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a charge card
+original_description:Draw a charge card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Wild Horse.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Wild_Horse12
+--------------------------------
+card_id:13
 mana_cost:3
 original_mana_cost:3
 name:For the Khan
@@ -138,120 +277,20 @@ description:Give all your minions +1/+0 and Charge
 img_url:For the Khan.png
 target:self
 empire_belonging:
-name_for_html:For_the_Khan8
---------------------------------
-card_id:9
-mana_cost:2
-original_mana_cost:2
-name:Wild Horse
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a charge card
-original_description:Draw a charge card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Wild Horse.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Wild_Horse9
---------------------------------
-card_id:10
-mana_cost:2
-original_mana_cost:2
-name:Wild Horse
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a charge card
-original_description:Draw a charge card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Wild Horse.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Wild_Horse10
---------------------------------
-card_id:11
-mana_cost:3
-original_mana_cost:3
-name:Negotiator
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Give your hand +1/+1 and draw a card
-original_description:Give your hand +1/+1 and draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Negotiator.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Negotiator11
---------------------------------
-card_id:12
-mana_cost:3
-original_mana_cost:3
-name:Negotiator
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Give your hand +1/+1 and draw a card
-original_description:Give your hand +1/+1 and draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Negotiator.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Negotiator12
---------------------------------
-card_id:13
-mana_cost:2
-original_mana_cost:2
-name:Call of the Khan
-card_type:Spell
-description:Draw a card if it has Charge reduce the cost to 0
-img_url:Call of the Khan.png
-target:None
-empire_belonging:
-name_for_html:Call_of_the_Khan13
+name_for_html:For_the_Khan13
 --------------------------------
 card_id:14
+mana_cost:3
+original_mana_cost:3
+name:For the Khan
+card_type:Spell
+description:Give all your minions +1/+0 and Charge
+img_url:For the Khan.png
+target:self
+empire_belonging:
+name_for_html:For_the_Khan14
+--------------------------------
+card_id:15
 mana_cost:2
 original_mana_cost:2
 name:Call of the Khan
@@ -260,109 +299,20 @@ description:Draw a card if it has Charge reduce the cost to 0
 img_url:Call of the Khan.png
 target:None
 empire_belonging:
-name_for_html:Call_of_the_Khan14
---------------------------------
-card_id:15
-mana_cost:3
-original_mana_cost:3
-name:Rider
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Rider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Rider15
+name_for_html:Call_of_the_Khan15
 --------------------------------
 card_id:16
-mana_cost:3
-original_mana_cost:3
-name:Rider
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Rider.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Call of the Khan
+card_type:Spell
+description:Draw a card if it has Charge reduce the cost to 0
+img_url:Call of the Khan.png
+target:None
 empire_belonging:
-name_for_html:Rider16
+name_for_html:Call_of_the_Khan16
 --------------------------------
 card_id:17
-mana_cost:2
-original_mana_cost:2
-name:Hunting dog
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Hunting dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Hunting_dog17
---------------------------------
-card_id:18
-mana_cost:2
-original_mana_cost:2
-name:Hunting dog
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Hunting dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Hunting_dog18
---------------------------------
-card_id:19
 mana_cost:8
 original_mana_cost:8
 name:Richard the Lionheart
@@ -385,159 +335,9 @@ img_url:Richard the Lionheart.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Richard_the_Lionheart19
+name_for_html:Richard_the_Lionheart17
 --------------------------------
-card_id:20
-mana_cost:1
-original_mana_cost:1
-name:Wolf
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Wolf.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Wolf20
---------------------------------
-card_id:21
-mana_cost:1
-original_mana_cost:1
-name:Wolf
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Wolf.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Wolf21
---------------------------------
-card_id:22
-mana_cost:2
-original_mana_cost:2
-name:Lost Sheep
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Desperate Summon 2 1/1 Wild Wolf
-original_description:Desperate Summon 2 1/1 Wild Wolf
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lost Sheep.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Lost_Sheep22
---------------------------------
-card_id:23
-mana_cost:2
-original_mana_cost:2
-name:Lost Sheep
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Desperate Summon 2 1/1 Wild Wolf
-original_description:Desperate Summon 2 1/1 Wild Wolf
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lost Sheep.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Lost_Sheep23
---------------------------------
-card_id:24
-mana_cost:6
-original_mana_cost:6
-name:War elephant
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:While this is on the field your creatures have +1 attack
-original_description:While this is on the field your creatures have +1 attack
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:War elephant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:War_elephant24
---------------------------------
-card_id:25
-mana_cost:6
-original_mana_cost:6
-name:War elephant
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:While this is on the field your creatures have +1 attack
-original_description:While this is on the field your creatures have +1 attack
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:War elephant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:War_elephant25
---------------------------------
-card_id:26
+card_id:18
 mana_cost:4
 original_mana_cost:4
 name:Joan of Arc
@@ -560,9 +360,9 @@ img_url:Joan of Arc.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Joan_of_Arc26
+name_for_html:Joan_of_Arc18
 --------------------------------
-card_id:27
+card_id:19
 mana_cost:5
 original_mana_cost:5
 name:Front Line Defender
@@ -585,9 +385,9 @@ img_url:Front Line Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Front_Line_Defender27
+name_for_html:Front_Line_Defender19
 --------------------------------
-card_id:28
+card_id:20
 mana_cost:5
 original_mana_cost:5
 name:Front Line Defender
@@ -610,20 +410,70 @@ img_url:Front Line Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Front_Line_Defender28
+name_for_html:Front_Line_Defender20
 --------------------------------
-card_id:29
-mana_cost:5
-original_mana_cost:5
-name:Mounted Knight
-hp:4
-max_hp:4
-original_hp:4
+card_id:21
+mana_cost:6
+original_mana_cost:6
+name:War elephant
+hp:5
+max_hp:5
+original_hp:5
 attack:4
-category:knight
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:4
+active_effects:[]
+description:While this is on the field your creatures have +1 attack
+original_description:While this is on the field your creatures have +1 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:War elephant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:War_elephant21
+--------------------------------
+card_id:22
+mana_cost:6
+original_mana_cost:6
+name:War elephant
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:While this is on the field your creatures have +1 attack
+original_description:While this is on the field your creatures have +1 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:War elephant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:War_elephant22
+--------------------------------
+card_id:23
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
 active_effects:[]
 description:Charge
 original_description:Charge
@@ -631,9 +481,34 @@ card_type:Creature
 exhausted:False
 armored:False
 can_be_target:True
-img_url:Mounted Knight.png
+img_url:Hunting dog.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mounted_Knight29
+name_for_html:Hunting_dog23
+--------------------------------
+card_id:24
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Hunting dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Hunting_dog24
 --------------------------------

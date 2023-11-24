@@ -29,7 +29,7 @@ war_pack = [[bear, eagle, dog] for (bear, eagle, dog) in zip(list_of_bears, list
 Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
-                                "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos"]
+                                "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1)}
@@ -39,8 +39,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
                               "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored"),
                               "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
-                              "Selfless Knight": (0, 0, "Armored")}
-list_of_creature_that_buff_specific_cards = {"Frederick Barbarossa": ("Armored", 1, 1, "Armored")}
+                              "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard")}
+list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle"]
 list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1), "War Eagle": (0, 1)}
@@ -61,7 +61,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Noble": (
-    1, [Creature(4, "City Guard", 5, 3, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
+        1, [Creature(4, "City Guard", 5, 3, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Lost Sheep": (2, [Creature(1, "Wild Wolf", 1, 1, "", "animal", generate_random_int()) for i in range(0, 10)]),
     "Front Line Defender": (
         1, [Creature(1, "Second Line Defender", 2, 1, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
@@ -125,7 +125,7 @@ list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "S
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
     "Boarder Guards": (
-    2, [Creature(2, "Akritoi", 3, 2, "Guard", "soldier", generate_random_int()) for i in range(0, 10)]),
+        2, [Creature(2, "Akritoi", 3, 2, "Guard", "soldier", generate_random_int()) for i in range(0, 10)]),
     "Fast Conscription": (4, [Creature(1, "Peasant", 1, 1, "", "worker", generate_random_int()) for i in range(0, 40)]),
     "Animal Battle Companion": (1, [random.choice(list_of_animals) for i in range(0, 10)]),
     "War Pack": (3, get_list_of_all_war_animals(war_pack))}
