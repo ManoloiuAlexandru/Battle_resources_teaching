@@ -6,8 +6,8 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Spell(0, "Arrow shot", "2", 0),
-    Creature(0, "Amdras", 99, 1, "Guard", "knight", 3)
+    Spell(0, "Call of God", "Heal your kingdom for 8 and summon a 8/8 armored guard Crusader", 1),
+    Spell(0, "Call of God", "Heal your kingdom for 8 and summon a 8/8 armored guard Crusader", 2),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -136,6 +136,7 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(2, "Armored Knight", 2, 2, "Armored", "knight", -87),
                    Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", -88),
                    Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100),
+                   Spell(9, "Call of God", "Heal your kingdom for 8 and summon a 8/8 armored guard Crusader", -101),
                    ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -163,6 +164,7 @@ cards_for_holy_roman_empire = [
     Creature(2, "Armored Knight", 2, 2, "Armored", "knight", -87),
     Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", -88),
     Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100),
+    Spell(9, "Call of God", "Heal your kingdom for 8 and summon a 8/8 armored guard Crusader", -101),
 ]
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -213,7 +215,7 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Spell(4, "Tag Team", "Dela 3 dmg to a minion summ a 3/3 Hunting dog", -99),
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
-                              "While this is on the field your creatures have +1 attack", "animal",1900),
+                           "While this is on the field your creatures have +1 attack", "animal", 1900),
                   Spell(3, "Animal Battle Companion", "Summon a random war animal", 1901),
                   Creature(2, "Negotiator", 1, 1, "Give your hand +1/+1 and draw a animal", "worker", 1902),
                   Spell(1, "Arrow shot", "Deal 2 damage to a enemy", 1903),
@@ -251,8 +253,7 @@ cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", 911),
                        Creature(4, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
-                                "worker",
-                                912),
+                                "worker", 912),
                        Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 913),
                        Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 914),
                        Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored", "knight", 915),
@@ -278,7 +279,7 @@ power_of_the_people = [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell 
                        Creature(3, "Tournament Horserider", 1, 2, "Charge Armored", "knight", 933),
                        Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", 932),
                        Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", "worker", 933),
-                       Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", "worker", 934),
+                       Spell(9, "Call of God", "Heal your kingdom for 8 and summon a 8/8 armored guard Crusader", 934),
                        Spell(8, "Black Death", "Destroy ALL minions", 935),
                        Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", "soldier", 936),
                        Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", 937),
@@ -432,6 +433,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98),
                      Spell(4, "Tag Team", "Dela 3 dmg to a minion summ a 3/3 Hunting dog", -99),
                      Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100),
+                     Spell(9, "Call of God", "Heal your kingdom for 8 and summon a 8/8 armored guard Crusader", -101),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

@@ -129,6 +129,8 @@ class Bot(Player):
                     elif self.incoming_spell in list_of_buff_spells:
                         for creature in self.battle_field:
                             self.buff_creature(creature)
+                    elif self.incoming_spell in list_of_spells_that_self_heal:
+                        self.heal_player(list_of_healing_spells.get(card.name))
                     elif card.name in list_of_healing_spells:
                         self.battle_field.sort(key=lambda x: x.max_hp - x.hp)
                         for creature in self.battle_field:
@@ -144,6 +146,8 @@ class Bot(Player):
                 except Exception as e:
                     print(e)
             elif card.name in list_of_spells_that_summon:
+                if card.name in list_of_spells_that_self_heal:
+                    self.heal_player(list_of_healing_spells.get(card.name))
                 if card.name in list_of_spells_that_summon_specific_cards:
                     for creature in range(list_of_spells_that_summon_specific_cards.get(card.name)[0]):
                         if len(self.battle_field) < 7:
@@ -255,20 +259,8 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 999
                         self.logs += " on this card:" + creature.name + "\n"
-            elif card.name in list_of_dmg_spells:
-                for creature in player.battle_field:
-                    if creature == target_creature:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
-                        self.logs += " on this card:" + creature.name + "\n"
             else:
-                if "ALL" in card.description:
-                    for creature in player.battle_field:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
-                    for creature in self.battle_field:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
-                else:
-                    for creature in player.battle_field:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
+                general_spells(self, player, card.name)
         else:
             target_creature = Creature(1, 'DEMO', 999, 999, "", "", 999)
             for creature in player.battle_field:
@@ -279,20 +271,8 @@ class Bot(Player):
                     if creature == target_creature:
                         creature.hp -= 99
                         self.logs += " on this card:" + creature.name + "\n"
-            elif card.name in list_of_dmg_spells:
-                for creature in player.battle_field:
-                    if creature == target_creature:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
-                        self.logs += " on this card:" + creature.name + "\n"
             else:
-                if "ALL" in card.description:
-                    for creature in player.battle_field:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
-                    for creature in self.battle_field:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
-                else:
-                    for creature in player.battle_field:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
+                general_spells(self, player, card.name)
 
     def target_priority(self, card, player):
         if self.check_for_guards(player) == 1:

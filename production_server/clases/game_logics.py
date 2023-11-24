@@ -257,6 +257,8 @@ def spell_that_summon(player, enemy_player, spell_name):
 
 
 def general_spells(player, enemy_player, spell_name):
+    if spell_name in list_of_spells_that_self_heal:
+        player.heal_player(list_of_healing_spells.get(spell_name))
     if spell_name in list_of_spells_that_summon:
         spell_that_summon(player, enemy_player, spell_name)
     elif spell_name == "Peace Treaty":
