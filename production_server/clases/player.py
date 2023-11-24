@@ -41,6 +41,12 @@ class Player:
             return 0
         return 1
 
+    def heal_player(self, amount):
+        if self.hp + amount > 30:
+            self.hp = 30
+        else:
+            self.hp += amount
+
     def __str__(self):
         return f"{self.name}"
 

@@ -3,14 +3,12 @@ from clases.creatures import Creature
 from clases.spells import Spell
 
 bot_deck = [
-    Spell(0, "War pack", "", 0),
-    Spell(0, "War pack", "", 1),
-    Spell(0, "Animal Battle Companion", "", 1),
-    Spell(0, "Animal Battle Companion", "", 2),
+
 ]
 demo_deck = [
-    Creature(1, "Domestic cat", 1, 1, "Summon a 1/1 Wild Cat", "animal", 0),
-    Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", 1)
+    Spell(0, "Arrow shot", "2", 0),
+
+    Creature(0, "Amdras", 99, 1, "Guard", "knight", 3)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -138,6 +136,7 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(1, "Selfless Knight", 1, 2, "Desperate Give a friendly minion armored", "knight", -86),
                    Creature(2, "Armored Knight", 2, 2, "Armored", "knight", -87),
                    Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", -88),
+                   Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100),
                    ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -164,6 +163,7 @@ cards_for_holy_roman_empire = [
     Creature(1, "Selfless Knight", 1, 2, "Desperate Give a friendly minion armored", "knight", -86),
     Creature(2, "Armored Knight", 2, 2, "Armored", "knight", -87),
     Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", -88),
+    Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100),
 ]
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -186,7 +186,8 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95),
                     Creature(4, "Mother Wolf", 3, 3, "Desperate summ 2 1/1 Wolf Pup", "animal", -96),
                     Creature(1, "Domestic cat", 1, 1, "Summon a 1/1 Wild Cat", "animal", -97),
-                    Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98)
+                    Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98),
+                    Spell(4, "Tag Team", "Dela 3 dmg to a minion summ a 3/3 Hunting dog", -99),
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -209,7 +210,8 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95),
                            Creature(4, "Mother Wolf", 3, 3, "Desperate summ 2 1/1 Wolf Pup", "animal", -96),
                            Creature(1, "Domestic cat", 1, 1, "Summon a 1/1 Wild Cat", "animal", -97),
-                           Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98)
+                           Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98),
+                           Spell(4, "Tag Team", "Dela 3 dmg to a minion summ a 3/3 Hunting dog", -99),
                            ]
 mongols_hordes = [Spell(3, "Volley", "Deal 2 damage to all enemies", 1900),
                   Spell(3, "Animal Battle Companion", "Summon a random war animal", 1901),
@@ -428,7 +430,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95),
                      Creature(4, "Mother Wolf", 3, 3, "Desperate summ 2 1/1 Wolf Pup", "animal", -96),
                      Creature(1, "Domestic cat", 1, 1, "Summon a 1/1 Wild Cat", "animal", -97),
-                     Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98)
+                     Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98),
+                     Spell(4, "Tag Team", "Dela 3 dmg to a minion summ a 3/3 Hunting dog", -99),
+                     Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

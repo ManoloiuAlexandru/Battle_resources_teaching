@@ -134,6 +134,10 @@ def check_target(player1, player2, card_picked):
                 player2.name) is not None and player1.active_minion.name in list_of_creature_that_deal_dmg_to_players:
             player2.hp -= list_of_creature_that_deal_dmg_to_players.get(player1.active_minion.name)
             return 1
+        if card_picked.get(
+                player1.name) is not None and player1.active_minion.name in list_of_creature_that_can_heal_players:
+            player1.heal_player(list_of_creature_that_can_heal_players.get(player1.active_minion.name))
+            return 1
     except Exception as e:
         print(e)
     try:
@@ -163,6 +167,8 @@ def check_target(player1, player2, card_picked):
 def cast_spell(player1, player2, card_picked):
     destroy_minion = 0
     dmg_to_enemy_minions = 0
+    if player1.incoming_spell.name in list_of_spells_that_summon:
+        spell_that_summon(player1, player2, player1.incoming_spell.name)
     if player1.incoming_spell.name in list_of_spells_that_draw_cards:
         for nr_cards in range(list_of_spells_that_draw_cards.get(player1.incoming_spell.name)):
             player1.draw_card()
@@ -179,13 +185,13 @@ def cast_spell(player1, player2, card_picked):
                 break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
-            card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+            card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
         elif card_picked.get(card.name_for_html) is not None and destroy_minion == 0:
             if card.armored is True:
                 card.armored = False
                 break
             else:
-                card.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+                card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
                 break
         elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
@@ -214,41 +220,45 @@ def buff_creature_with_spell(card, player1):
     card.check_creature(list_of_buff_spells.get(player1.incoming_spell.name)[2])
 
 
+def spell_that_summon(player, enemy_player, spell_name):
+    if spell_name in list_of_spells_that_summon_specific_cards:
+        for creature in range(list_of_spells_that_summon_specific_cards.get(spell_name)[0]):
+            if len(player.battle_field) < 7:
+                list_of_animals_to_summon = list_of_spells_that_summon_specific_cards.get(spell_name)[1]
+                if type(list_of_animals_to_summon[0]) is list:
+                    player.battle_field.append(
+                        list_of_animals_to_summon[0][0])
+                    list_of_animals_to_summon[0].remove(
+                        list_of_animals_to_summon[0][0])
+                    if not list_of_animals_to_summon[0]:
+                        del (list_of_animals_to_summon[0])
+                else:
+                    player.battle_field.append(
+                        list_of_animals_to_summon[creature])
+                    list_of_animals_to_summon.remove(
+                        list_of_animals_to_summon[creature])
+                if player.battle_field[-1].name in list_of_creature_with_on_going_effect:
+                    player.ongoing_effects.append(player.battle_field[-1])
+    for i in range(0, list_of_spells_that_summon.get(spell_name)[1]):
+        for card in player.deck:
+            if list_of_spells_that_summon.get(spell_name)[0] == "":
+                card_picked = random.choice(player.deck)
+                if any(obj.card_type == "Creature" for obj in player.deck):
+                    while card_picked.card_type != "Creature":
+                        card_picked = random.choice(player.deck)
+                    player.battle_field.append(card_picked)
+                    player.deck.remove(card_picked)
+                break
+            elif (list_of_spells_that_summon.get(spell_name)[0] in card.description.split()
+                  and card.card_type == "Creature"):
+                player.battle_field.append(card)
+                player.deck.remove(card)
+                break
+
+
 def general_spells(player, enemy_player, spell_name):
     if spell_name in list_of_spells_that_summon:
-        if spell_name in list_of_spells_that_summon_specific_cards:
-            for creature in range(list_of_spells_that_summon_specific_cards.get(spell_name)[0]):
-                if len(player.battle_field) < 7:
-                    list_of_animals_to_summon = list_of_spells_that_summon_specific_cards.get(spell_name)[1]
-                    if type(list_of_animals_to_summon[0]) is list:
-                        player.battle_field.append(
-                            list_of_animals_to_summon[0][0])
-                        list_of_animals_to_summon[0].remove(
-                            list_of_animals_to_summon[0][0])
-                        if not list_of_animals_to_summon[0]:
-                            del (list_of_animals_to_summon[0])
-                    else:
-                        player.battle_field.append(
-                            list_of_animals_to_summon[creature])
-                        list_of_animals_to_summon.remove(
-                            list_of_animals_to_summon[creature])
-                    if player.battle_field[-1].name in list_of_creature_with_on_going_effect:
-                        player.ongoing_effects.append(player.battle_field[-1])
-        for i in range(0, list_of_spells_that_summon.get(spell_name)[1]):
-            for card in player.deck:
-                if list_of_spells_that_summon.get(spell_name)[0] == "":
-                    card_picked = random.choice(player.deck)
-                    if any(obj.card_type == "Creature" for obj in player.deck):
-                        while card_picked.card_type != "Creature":
-                            card_picked = random.choice(player.deck)
-                        player.battle_field.append(card_picked)
-                        player.deck.remove(card_picked)
-                    break
-                elif (list_of_spells_that_summon.get(spell_name)[0] in card.description.split()
-                      and card.card_type == "Creature"):
-                    player.battle_field.append(card)
-                    player.deck.remove(card)
-                    break
+        spell_that_summon(player, enemy_player, spell_name)
     elif spell_name == "Peace Treaty":
         for creature in player.battle_field[:]:
             return_to_hand(creature, player)
@@ -394,8 +404,9 @@ def cast_spell_from_player(player1, player2, card_picked):
         general_spells(player1, player2, player1.incoming_spell.name)
         player1.incoming_action = 0
         player1.incoming_spell = None
-    elif card_picked.get(player2.name) is not None:
-        player2.hp -= int(player1.incoming_spell.deal_dmg_to_target())
+    elif card_picked.get(
+            player2.name) is not None and player1.incoming_spell.name not in list_of_dmg_spells_but_not_to_player:
+        player2.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
         cast_spell(player1, player2, card_picked)
         player1.incoming_action = 0
         player1.incoming_spell = None
