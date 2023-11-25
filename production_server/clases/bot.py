@@ -129,7 +129,7 @@ class Bot(Player):
                     elif self.incoming_spell in list_of_buff_spells:
                         for creature in self.battle_field:
                             self.buff_creature(creature)
-                    elif self.incoming_spell in list_of_spells_that_self_heal:
+                    elif self.incoming_spell in list_of_spells_that_can_heal_player:
                         self.heal_player(list_of_healing_spells.get(card.name))
                     elif card.name in list_of_healing_spells:
                         self.battle_field.sort(key=lambda x: x.max_hp - x.hp)
@@ -146,7 +146,7 @@ class Bot(Player):
                 except Exception as e:
                     print(e)
             elif card.name in list_of_spells_that_summon:
-                if card.name in list_of_spells_that_self_heal:
+                if card.name in list_of_spells_that_can_heal_player:
                     self.heal_player(list_of_healing_spells.get(card.name))
                 if card.name in list_of_spells_that_summon_specific_cards:
                     for creature in range(list_of_spells_that_summon_specific_cards.get(card.name)[0]):
@@ -182,7 +182,7 @@ class Bot(Player):
                             self.deck.remove(card_from_deck)
                             break
                 return 1
-            if card.name in list_of_spells_that_affect_the_battlefield:
+            if card.name in list_of_spells_that_affect_the_battlefield and len(self.battle_field) > 1:
                 affect_battle_field(card, self, player)
                 self.incoming_spell = None
                 return 1
@@ -194,7 +194,7 @@ class Bot(Player):
                             self.hand[-1].mana_cost_reduction(
                                 list_of_spells_that_reduce_mana.get(card.name)[1])
                 return 1
-            if card.name in list_of_dmg_spells:
+            if card.name in list_of_dmg_spells and len(player.battle_field) > 1:
                 if len(self.battle_field) < len(player.battle_field) and "ALL" in card.description:
                     self.target_creature_with_spell(card, player)
                     return 1

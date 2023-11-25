@@ -100,7 +100,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "War Pack", "Tag Team", "Call of God"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
-                       "Strength in numbers": ""}
+                       "Strength in numbers": "", "Call of God": ""}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Black Death": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3}
@@ -112,8 +112,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Deat
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
-                                 "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
-                                 "Call of God"]
+                                 "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0)}
@@ -126,7 +125,8 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Roman Formation Circular": (0, 0, "Guard"),
                        "Knight's training": (3, 3, ""), "Chivalry and Honor": (1, 2, ""), "Guard Duty": (2, 2, ""),
                        "For the Khan": (0, 1, "Charge"), "In the name of the king": (1, 1, ""),
-                       "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, "")}
+                       "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, ""),
+                       "Call of God": (0, 0, "")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
@@ -144,4 +144,4 @@ list_of_spells_that_summon_specific_cards = {
     "Call of God": (
         1, [Creature(8, "Crusader", 8, 8, "Guard Armored", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}
-list_of_spells_that_self_heal = {"Call of God"}
+list_of_spells_that_can_heal_player = {"Call of God": 8}

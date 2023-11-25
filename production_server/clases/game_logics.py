@@ -142,6 +142,9 @@ def check_target(player1, player2, card_picked):
         print(e)
     try:
         if player1.incoming_spell.target == "self":
+            if card_picked.get(player1.name) is not None:
+                player1.heal_player(list_of_spells_that_can_heal_player.get(player1.incoming_spell.name))
+                return 1
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
                     return 1
@@ -173,7 +176,7 @@ def cast_spell(player1, player2, card_picked):
         for nr_cards in range(list_of_spells_that_draw_cards.get(player1.incoming_spell.name)):
             player1.draw_card()
     if player1.incoming_spell.name in list_of_healing_spells:
-        heal_creature(card_picked, player1, int(player1.incoming_spell.heal_to_target()))
+        heal_creature(card_picked, player1, list_of_healing_spells.get(player1.incoming_spell.name))
     if player1.incoming_spell.name == "Kill":
         destroy_minion = 1
     if player1.incoming_spell.name == "Volley":
@@ -257,8 +260,6 @@ def spell_that_summon(player, enemy_player, spell_name):
 
 
 def general_spells(player, enemy_player, spell_name):
-    if spell_name in list_of_spells_that_self_heal:
-        player.heal_player(list_of_healing_spells.get(spell_name))
     if spell_name in list_of_spells_that_summon:
         spell_that_summon(player, enemy_player, spell_name)
     elif spell_name == "Peace Treaty":
