@@ -95,6 +95,8 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
                 card.check_creature("")
     player1.start_game()
     player2.start_game()
+    player1.enemy_player = player2
+    player2.enemy_player = player1
     return player1, player2
 
 

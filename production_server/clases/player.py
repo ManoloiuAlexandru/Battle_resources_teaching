@@ -26,6 +26,7 @@ class Player:
         self.playing_deck_name = ""
         self.empire = ""
         self.used_power = 0
+        self.enemy_player = None
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -329,14 +330,29 @@ class Player:
         for creature in self.hand:
             if creature.name in list_of_creature_that_are_affected_in_hand:
                 if list_of_creature_that_are_affected_in_hand.get(creature.name)[0] == "reduce":
-                    if list_of_creature_that_are_affected_in_hand.get(creature.name)[1] != "":
-                        pass
-                    else:
-                        self.hand[self.hand.index(creature)].mana_cost = self.hand[
-                            self.hand.index(creature)].original_mana_cost
-                        self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
-                                                                          list_of_creature_that_are_affected_in_hand.get(
-                                                                              creature.name)[2] - 1
+                    self.reduce_mana_cost_of_card_condition(creature,
+                                                            list_of_creature_that_are_affected_in_hand.get(
+                                                                creature.name)[1])
+
+    def reduce_mana_cost_of_card_condition(self, creature, condition):
+        self.hand[self.hand.index(creature)].mana_cost = self.hand[
+            self.hand.index(creature)].original_mana_cost
+        if condition == "allies_on_battle_field":
+            self.hand[self.hand.index(creature)].mana_cost -= len(self.battle_field) * \
+                                                              list_of_creature_that_are_affected_in_hand.get(
+                                                                  creature.name)[2]
+        elif condition == "all_on_battle_field":
+            if ((len(self.battle_field) + len(
+                    self.enemy_player.battle_field)) * list_of_creature_that_are_affected_in_hand.get(creature.name)[
+                2] > creature.mana_cost):
+                creature.mana_cost = 0
+            else:
+                self.hand[self.hand.index(creature)].mana_cost -= (len(self.battle_field) + len(
+                    self.enemy_player.battle_field)) * list_of_creature_that_are_affected_in_hand.get(creature.name)[2]
+        else:
+            self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
+                                                              list_of_creature_that_are_affected_in_hand.get(
+                                                                  creature.name)[2] - 1
 
     @staticmethod
     def card_to_draw_type(card, i):
