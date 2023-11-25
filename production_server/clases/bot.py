@@ -33,6 +33,10 @@ class Bot(Player):
                         self.battle_field.append(card)
                     self.hand.remove(card)
                     self.mana_increase(-card.mana_cost)
+                    if card.name in list_of_creature_that_will_do_damage_to_your_kingdom:
+                        self.hp -= list_of_creature_that_will_do_damage_to_your_kingdom.get(card.name)
+                    elif card.name in list_of_spells_that_do_damage_to_your_kingdom:
+                        self.hp -= list_of_spells_that_do_damage_to_your_kingdom.get(card.name)
                     Player.battle_fields_effects(self, player)
         if self.mana >= 2:
             check_hero_power(self, player)

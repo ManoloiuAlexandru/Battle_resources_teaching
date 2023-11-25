@@ -70,7 +70,7 @@ background-image: url('/static/cards/logs.jpg');
     }
 .attack_hp{
     font-size:13px;
-    word-spacing: 10px;
+    word-spacing: 4px;
     }
 .player_mana{
     display: inline-block;
