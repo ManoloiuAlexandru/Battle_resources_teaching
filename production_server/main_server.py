@@ -5,13 +5,9 @@ from clases.Item import Item
 from clases.spells import Spell
 from clases.creatures import Creature
 from clases.bot import Bot
-from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
-    damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
-    cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
+from clases.game_logics import *
 from clases.player import Player
-from decks.decks_to_play import dict_of_decks, cards_that_are_in_the_game_for_all, cards_for_byzantine_empire, \
-    all_cards_in_game, empire_decks, cards_for_holy_roman_empire, cards_for_mongol_empire, cards_byzantine_show, \
-    cards_holy_show, cards_for_mongol
+from decks.decks_to_play import *
 
 app = Flask(__name__)
 global player1
@@ -155,7 +151,8 @@ def make_your_own_deck():
 
 @app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
 def make_your_own_deck_pick_empire():
-    return render_template("empires_choice.html", library=[cards_byzantine_show, cards_holy_show, cards_for_mongol])
+    return render_template("empires_choice.html",
+                           library=[cards_byzantine_show, cards_holy_show, cards_for_mongol, mesopotamia_show])
 
 
 @app.route("/update_deck", methods=["POST", "GET"])
@@ -187,6 +184,8 @@ def make_deck():
         deck_to_pick = cards_for_holy_roman_empire
     elif empire == "Mongol_Empire":
         deck_to_pick = cards_for_mongol_empire
+    elif empire == "Mesopotamia_Empire":
+        deck_to_pick = mesopotamia_empire
     else:
         deck_to_pick = cards_that_are_in_the_game_for_all
     cards_name = request.form

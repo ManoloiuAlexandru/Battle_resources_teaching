@@ -48,7 +48,8 @@ list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1), "War Eagle": (0, 1)}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
-                                    "Richard the Lionheart": 2, "Scribe of the Church": 1}
+                                    "Richard the Lionheart": 2, "Scribe of the Church": 1,
+                                    "Mesopotamia Scholar": 1}
 list_of_creature_that_draw_specific_cards = {
     "Negotiator": (["Creature"], [""], ["animal"]),
     "Wild Horse": (["Creature"], ["Charge"], [""]),
@@ -81,7 +82,7 @@ list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
-                                              "Battering Ram":("reduce", "allies_on_battle_field", 1)}
+                                              "Battering Ram": ("reduce", "allies_on_battle_field", 1)}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "draw",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
@@ -90,6 +91,7 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1, "Armored Horse": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"], [""]),
                                                       "Armored Horse": (["Spell"], [""], [""])}
+list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2}
 """
 Spells
 """
@@ -99,7 +101,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Chivalry and Honor", "Horse raiding shot", "Landslide", "Rain of Arrows", "Roman Formation Circular",
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
-                  "War Pack", "Tag Team", "Call of God"]
+                  "War Pack", "Tag Team", "Call of God", "Ancient Tactics"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": ""}
@@ -114,13 +116,15 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Black Deat
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
-                                 "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack"]
+                                 "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
+                                 "Ancient Tactics"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
+                                  "Ancient Tactics": 3
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
@@ -147,3 +151,4 @@ list_of_spells_that_summon_specific_cards = {
         1, [Creature(8, "Crusader", 8, 8, "Guard Armored", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}
 list_of_spells_that_can_heal_player = {"Call of God": 8}
+list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}

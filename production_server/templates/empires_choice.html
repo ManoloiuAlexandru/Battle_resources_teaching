@@ -12,6 +12,7 @@
         <option value="Byzantine_Empire">Byzantine Empire</option>
         <option value="Holy_Roman_Empire">Holy Roman Empire</option>
         <option value="Mongol_Empire">Mongol Empire</option>
+        <option value="Mesopotamia_Empire">Mesopotamia Empire</option>
     </select>
     <button>Create deck</button>
 </form>
@@ -113,6 +114,45 @@
         {%endfor%}
     </p>
     <summary>Holy Roman Empire Empire</summary>
+</details>
+<details>
+    <p>The prehistory of the Ancient Near East begins in the Lower Paleolithic period. Therein, writing emerged with a
+        pictographic script, Proto-cuneiform, in the Uruk IV period (c. late 4th millennium BC). <br>
+        The documented record of actual historical events — and the ancient history of lower Mesopotamia — commenced in
+        the early-third millennium BC with cuneiform records of early dynastic kings. This entire history ends with
+        either the arrival of the Achaemenid Empire in the late 6th century BC or with the Muslim conquest and the
+        establishment of the Caliphate in the late 7th century AD, from which point the region came to be known as Iraq.
+        In the long span of this period, Mesopotamia housed some of the world's most ancient highly developed, and
+        socially complex states.<br>
+
+        The region was one of the four riverine civilizations where writing was invented, along with the Nile valley in
+        Ancient Egypt, the Indus Valley civilization in the Indian subcontinent, and the Yellow River in Ancient China.
+        Mesopotamia housed historically important cities such as Uruk, Nippur, Nineveh, Assur and Babylon, as well as
+        major territorial states such as the city of Eridu, the Akkadian kingdoms, the Third Dynasty of Ur, and the
+        various Assyrian empires.<br> Some of the important historical Mesopotamian leaders were Ur-Nammu (king of Ur),
+        Sargon of Akkad (who established the Akkadian Empire), Hammurabi (who established the Old Babylonian state),
+        Ashur-uballit I and Tiglath-Pileser I (who established the Assyrian Empire).<br>
+
+        Scientists analysed DNA from the 8,000-year-old remains of early farmers found at an ancient graveyard in
+        Germany. They compared the genetic signatures to those of modern populations and found similarities with the DNA
+        of people living in today's Turkey and Iraq.<br>
+        {%for card in library[3]%}
+        <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
+            <span style="display:flex">
+            M:<span class="mana_cost">{{card.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            <img src="static/cards/{{ card.img_url }}" class="image_card_in_library"/><br>
+             </span>
+            <span class="creature_name">{{card.name}}</span><br>
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
+            <span class="description_in_library">{{card.description}}</span><br>
+            {%if card.card_type=="Creature"%}
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
+            <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
+            {%endif%}
+        </button>
+        {%endfor%}
+    </p>
+    <summary>Mesopotamia Empire</summary>
 </details>
 </body>
 </html>

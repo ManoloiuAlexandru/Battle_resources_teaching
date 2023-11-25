@@ -54,6 +54,10 @@ class Player:
     def put_card_on_field(self, card_picked):
         for card in self.hand:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
+                if card.name in list_of_creature_that_will_do_damage_to_your_kingdom:
+                    self.hp -= list_of_creature_that_will_do_damage_to_your_kingdom.get(card.name)
+                elif card.name in list_of_spells_that_do_damage_to_your_kingdom:
+                    self.hp -= list_of_spells_that_do_damage_to_your_kingdom.get(card.name)
                 self.logs += "Playing:" + card.name + "\n"
                 if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
                     self.hand_check(card)

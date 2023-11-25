@@ -6,19 +6,19 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Creature(10, "Covered Battering Ram", 8, 8, "Cost 1 less for each minion on the battlefield", "machine",
-             0),
-    Creature(10, "Battering Ram", 8, 8, "Cost 1 less for each friendly minion", "machine", 0),
-    Creature(12, "Trebuchet", 8, 8, "", "machine", 10),
-    Creature(0, "Andras", 99, 1, "", "knight", 1),
-    Creature(0, "Andras", 99, 1, "", "knight", 2),
-    Creature(0, "Andras", 99, 1, "", "knight", 3),
-    Creature(0, "Andras", 99, 1, "", "knight", 4),
-    Creature(0, "Andras", 99, 1, "", "knight", 5),
-    Creature(0, "Andras", 99, 1, "", "knight", 6),
-    Creature(0, "Andras", 99, 1, "", "knight", 7),
-    Creature(0, "Andras", 99, 1, "", "knight", 8),
-    Creature(0, "Andras", 99, 1, "", "knight", 9),
+    Creature(0, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient", 0),
+    Spell(0, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", 13),
+    Creature(0, "Andras", 1, 1, "", "all", 1),
+    Creature(0, "Andras", 1, 1, "", "all", 2),
+    Creature(0, "Andras", 1, 1, "", "all", 3),
+    Creature(0, "Andras", 1, 1, "", "all", 9),
+    Creature(0, "Andras", 1, 1, "", "all", 4),
+    Creature(0, "Andras", 1, 1, "", "all", 5),
+    Creature(0, "Andras", 1, 1, "", "all", 10),
+    Creature(0, "Andras", 1, 1, "", "all", 6),
+    Creature(0, "Andras", 1, 1, "", "all", 7),
+    Creature(0, "Andras", 1, 1, "", "all", 11),
+    Creature(0, "Andras", 1, 1, "", "all", 8),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -264,9 +264,20 @@ mongols_hordes = [Creature(6, "War elephant", 5, 4,
                   Creature(6, "Khevtuul", 5, 7, "Desperate summon 2 2/2 Night Watchers", "soldier", 1928),
                   Creature(2, 'Page', 1, 1, "Draw a card", "knight", 1929),
                   ]
+mesopotamia_empire = [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
+                      Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", -105),
+                      Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient",
+                               -106),
+                      ]
+mesopotamia_show = [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
+                    Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", -105),
+                    Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient",
+                             -106),
+                    ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
+mesopotamia_empire.extend(cards_that_are_in_the_game_for_all)
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", 911),
                        Creature(4, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
@@ -338,6 +349,13 @@ defenders = [Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard
              Creature(2, "Watchman", 2, 1, "Draw a guard card", "worker", 129),
              Spell(2, "Roman Formation Phalanx", "Give your minions +1/+1", 130),
              ]
+ancients = [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", 150),
+            Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", 151),
+            Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient", 152),
+            Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", 153),
+            Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", 154),
+            Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient", 155),
+            ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
                      Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", -3),
@@ -456,6 +474,10 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               -102),
                      Creature(10, "Battering Ram", 8, 8, "Cost 1 less for each friendly minion on the battlefield",
                               "machine", -103),
+                     Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
+                     Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", -105),
+                     Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient",
+                              -106),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
@@ -463,5 +485,6 @@ dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": 
                  "mongols_hordes": mongols_hordes}
 empire_decks = {'Byzantine_Empire': cards_for_byzantine_empire,
                 'Holy_Roman_Empire': cards_for_holy_roman_empire,
-                'Mongol_Empire': cards_for_mongol_empire
+                'Mongol_Empire': cards_for_mongol_empire,
+                "Mesopotamia_Empire": mesopotamia_empire
                 }
