@@ -30,10 +30,11 @@ Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
-                                "Church Builder"]
+                                "Church Builder", "Countryside Hunter"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
-list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1)}
+list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
+                                                              "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8}
 list_of_creature_that_can_heal_players = {"Church Builder": 8}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
@@ -41,8 +42,9 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
                               "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored"),
                               "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
-                              "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard")}
-list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal"}
+                              "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
+                              "Countryside Hunter": (1, 1, "")}
+list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "War elephant": (0, 1, ""),
@@ -51,8 +53,9 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
-                                    "Mesopotamia Scholar": 1}
+                                    "Mesopotamia Scholar": 1, "Landlord": 3}
 list_of_creature_that_draw_specific_cards = {
+    "Landlord": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "worker", "worker"]),
     "Negotiator": (["Creature"], [""], ["animal"]),
     "Wild Horse": (["Creature"], ["Charge"], [""]),
     "Scribe of the Church": (["Spell"], [""], [""]),
@@ -61,6 +64,7 @@ list_of_creature_that_draw_specific_cards = {
         ["Creature", "Spell"], ["", ""], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
+    "Shepherd": (1, [Creature(1, "Guard Dog", 1, 1, "Guard", "animal", generate_random_int()) for i in range(0, 4)]),
     "Domestic cat": (1, [Creature(1, "Wild Cat", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)])}
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),

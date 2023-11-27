@@ -32,6 +32,8 @@ class Creature:
         return f"MANA:{self.mana_cost} {self.name} HP:{self.hp} ATTACK:{self.attack} {self.description} "
 
     def charge_check(self):
+        if "Can't attack" in self.description:
+            return True
         if "Charge" in self.description.split():
             return False
         return True

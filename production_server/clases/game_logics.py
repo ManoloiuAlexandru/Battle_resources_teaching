@@ -56,7 +56,10 @@ def reset_player(player, enemy_player):
     except Exception as e:
         print(e)
     for creature in player.battle_field:
-        creature.exhausted = False
+        if "Can't attack" in creature.description:
+            creature.exhausted = True
+        else:
+            creature.exhausted = False
         creature.number_of_attacks += 1
     enemy_player.turn = 1
     enemy_player.empty_mana += 1
@@ -492,13 +495,22 @@ def return_to_hand(card, player):
 def end_of_turn_action(player, enemy_player):
     for card in player.battle_field:
         if card.name in list_of_creature_that_do_something_at_the_end_of_your_turn:
-            if list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[0] == "draw":
-                for nr_cards in range(list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]):
+            end_of_turn_card = list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)
+            if end_of_turn_card[0] == "draw":
+                for nr_cards in range(end_of_turn_card[1]):
                     player.draw_card()
-            elif list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[0] == "buff":
-                card.hp += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]
-                card.max_hp += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[1]
-                card.attack += list_of_creature_that_do_something_at_the_end_of_your_turn.get(card.name)[2]
+            elif "damage" in end_of_turn_card[0].split():
+                if "all" in end_of_turn_card[0].split():
+                    if "enemies" in end_of_turn_card[0].split():
+                        enemy_player.battle_field.append(enemy_player.name)
+                        random_enemy = random.choice(enemy_player.battle_field)
+                        if isinstance(random_enemy, str):
+                            enemy_player.hp -= end_of_turn_card[1]
+                        elif random_enemy.armored is True:
+                            random_enemy.armored = False
+                        else:
+                            random_enemy.hp -= end_of_turn_card[1]
+                        enemy_player.battle_field.pop(-1)
 
 
 def affect_battle_field(card, player, enemy_player):
