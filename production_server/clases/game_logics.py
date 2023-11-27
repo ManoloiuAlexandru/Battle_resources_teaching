@@ -6,8 +6,6 @@ from clases.Item import *
 from clases.player import *
 from decks.lists_of_cards import *
 
-legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc"]
-
 
 def battle(card1, card2, player1, player2):
     try:
@@ -98,7 +96,8 @@ def damage_dealing(player, card_picked):
 
 
 def damage_to_player(player, current_card):
-    player.hp -= current_card.attack
+    if player.immunity is False:
+        player.hp -= current_card.attack
     current_card.exhausted = True
     current_card = None
     return player, current_card
@@ -465,7 +464,7 @@ def check_hero_power(player, enemy_player):
             else:
                 player.problem = "You don't have enough space"
         elif player.empire == "Mongol Empire":
-            if len(player.battle_field) < 7:
+            if enemy_player.immunity is False:
                 enemy_player.hp -= 2
                 player.used_power = 1
                 player.mana_increase(-2)

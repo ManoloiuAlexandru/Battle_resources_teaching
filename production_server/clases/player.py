@@ -27,6 +27,7 @@ class Player:
         self.empire = ""
         self.used_power = 0
         self.enemy_player = None
+        self.immunity = False
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -59,6 +60,8 @@ class Player:
                 elif card.name in list_of_spells_that_do_damage_to_your_kingdom:
                     self.hp -= list_of_spells_that_do_damage_to_your_kingdom.get(card.name)
                 self.logs += "Playing:" + card.name + "\n"
+                if card.name in list_of_creature_that_can_make_kingdom_immun:
+                    self.immunity = True
                 if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
                     self.hand_check(card)
                 if card.name in list_of_creature_description and len(self.battle_field) < 7:
@@ -136,7 +139,7 @@ class Player:
             self.deck.remove(pick_card)
         except Exception as e:
             print(e)
-            if len(self.deck) == 0:
+            if len(self.deck) == 0 and self.immunity is False:
                 self.hp -= 1
 
     def start_game(self):
@@ -225,6 +228,8 @@ class Player:
     def check_for_active_effects(player, enemy_player):
         effect_got_removed = 0
         for card in player.ongoing_effects:
+            if card not in player.battle_field and card.card_type == "Creature" and card.name in list_of_creature_that_can_make_kingdom_immun:
+                player.immunity = False
             if card not in player.battle_field and card.card_type == "Creature":
                 player.ongoing_effects.remove(card)
                 player.effect_lost(card, enemy_player)

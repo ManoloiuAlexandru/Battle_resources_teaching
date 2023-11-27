@@ -6,19 +6,18 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Creature(0, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient", 0),
-    Spell(0, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", 13),
-    Creature(0, "Andras", 1, 1, "", "all", 1),
-    Creature(0, "Andras", 1, 1, "", "all", 2),
-    Creature(0, "Andras", 1, 1, "", "all", 3),
-    Creature(0, "Andras", 1, 1, "", "all", 9),
+    Creature(9, "King Saragon of Akkad", 7, 9, "Give all ancients +2/+2 your knigdom can't take damage", "ancient", 0),
+    Creature(0, "Andras", 1, 1, "", "ancient", 1),
+    Creature(0, "Army Champion", 1, 1, "", "all", 2),
+    Creature(0, "Andras", 1, 1, "", "ancient", 3),
+    Creature(0, "Army Champion", 1, 1, "", "all", 9),
     Creature(0, "Andras", 1, 1, "", "all", 4),
-    Creature(0, "Andras", 1, 1, "", "all", 5),
-    Creature(0, "Andras", 1, 1, "", "all", 10),
-    Creature(0, "Andras", 1, 1, "", "all", 6),
-    Creature(0, "Andras", 1, 1, "", "all", 7),
-    Creature(0, "Andras", 1, 1, "", "all", 11),
-    Creature(0, "Andras", 1, 1, "", "all", 8),
+    Creature(0, "War elephant", 1, 1, "", "all", 5),
+    Creature(0, "Andras", 1, 1, "", "ancient", 10),
+    Creature(0, "War Eagle", 1, 1, "", "all", 6),
+    Creature(0, "Army Champion", 1, 1, "", "all", 7),
+    Creature(0, "War elephant", 1, 1, "", "all", 11),
+    Creature(0, "War Eagle", 1, 1, "", "all", 8),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -268,11 +267,15 @@ mesopotamia_empire = [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -
                       Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", -105),
                       Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient",
                                -106),
+                      Creature(9, "King Saragon of Akkad", 7, 9,
+                               "Give all ancients +2/+2 your knigdom can't take damage", "ancient", -107),
                       ]
 mesopotamia_show = [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
                     Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", -105),
                     Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient",
                              -106),
+                    Creature(9, "King Saragon of Akkad", 7, 9, "Give all ancients +2/+2 your knigdom can't take damage",
+                             "ancient", -107),
                     ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
@@ -492,6 +495,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(3, "Ancient Tactics", "Draw 3 cards deal 3 damage to your kingdom", -105),
                      Creature(1, "Mesopotamia Scholar", 1, 2, "Draw a card Deal 2 damage to your kingdom", "ancient",
                               -106),
+                     Creature(9, "King Saragon of Akkad", 7, 9,
+                              "Give all ancients +2/+2 your knigdom can't take damage", "ancient", -107),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

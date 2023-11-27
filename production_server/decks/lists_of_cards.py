@@ -43,9 +43,11 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal"}
-list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle"]
+list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
-list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1), "War elephant": (0, 1), "War Eagle": (0, 1)}
+list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "War elephant": (0, 1, ""),
+                                                  "War Eagle": (0, 1, ""),
+                                                  "King Saragon of Akkad": (2, 2, "ancient")}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": (1, 1, "", "heal")}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
@@ -92,6 +94,11 @@ list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1,
 list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"], [""]),
                                                       "Armored Horse": (["Spell"], [""], [""])}
 list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2}
+list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
+
+legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
+                   "King Saragon of Akkad"]
+
 """
 Spells
 """

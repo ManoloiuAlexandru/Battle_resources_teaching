@@ -78,14 +78,23 @@ class Creature:
                 nr_buff += 1
         while len(self.active_effects) < nr_buff:
             for buffing_creature in player.ongoing_effects:
-                if buffing_creature.name not in self.active_effects:
+                if buffing_creature.name not in self.active_effects and effects.get(buffing_creature.name)[2] == "":
                     self.attack_before_on_effects = self.attack
                     self.hp_before_on_effects = self.hp
                     self.active_effects.append(buffing_creature.name)
                     self.attack += effects.get(buffing_creature.name)[1]
                     self.hp += effects.get(buffing_creature.name)[0]
-                elif buffing_creature.name in self.active_effects:
+
+                elif buffing_creature.name not in self.active_effects and self.category == \
+                        effects.get(buffing_creature.name)[2]:
+                    self.attack_before_on_effects = self.attack
+                    self.hp_before_on_effects = self.hp
+                    self.active_effects.append(buffing_creature.name)
+                    self.attack += effects.get(buffing_creature.name)[1]
+                    self.hp += effects.get(buffing_creature.name)[0]
+                else:
                     nr_buff -= 1
+
 
     def reverse_effect_creature(self, card, effects, effect, player):
         try:
