@@ -53,8 +53,12 @@ class Player:
         return f"{self.name}"
 
     def put_card_on_field(self, card_picked):
-        for card in self.hand:
+        for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
+                if card.name in list_of_cards_that_discard:
+                    self.card_discard(list_of_cards_that_discard.get(card.name), card)
+                    if self.incoming_spell is not None:
+                        self.incoming_action = 3
                 if card.name in list_of_creature_that_will_do_damage_to_your_kingdom:
                     self.hp -= list_of_creature_that_will_do_damage_to_your_kingdom.get(card.name)
                 elif card.name in list_of_spells_that_do_damage_to_your_kingdom:
@@ -374,3 +378,20 @@ class Player:
             type_of_description = list_of_creature_that_draw_specific_cards.get(card.name)[1][i]
             category = list_of_creature_that_draw_specific_cards.get(card.name)[2][i]
         return type_of_card, type_of_description, category
+
+    def card_discard(self, nr_of_cards, removing_card):
+        for i in range(nr_of_cards):
+            card_to_remove = random.randrange(len(self.hand))
+            nr_try = 0
+            while self.hand.index(removing_card) == card_to_remove and nr_try < len(self.hand):
+                card_to_remove = random.randrange(len(self.hand))
+                nr_try += 1
+            if self.hand[card_to_remove].name in list_of_spells_that_have_effect_when_discarded:
+                if self.hand[card_to_remove].card_type == "Spell":
+                    self.incoming_spell = self.hand[card_to_remove]
+            elif self.hand[card_to_remove].name in list_of_creature_that_have_effect_when_discarded:
+                self.battle_field.append(self.hand[card_to_remove])
+            if nr_try == len(self.hand) and self.hand.index(removing_card) == card_to_remove:
+                pass
+            else:
+                self.hand.pop(card_to_remove)
