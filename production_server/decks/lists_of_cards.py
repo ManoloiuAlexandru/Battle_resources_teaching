@@ -70,12 +70,18 @@ list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
     "Shepherd": (1, [Creature(1, "Guard Dog", 1, 1, "Guard", "animal", generate_random_int()) for i in range(0, 4)]),
     "Domestic cat": (1, [Creature(1, "Wild Cat", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
-    "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)])}
+    "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
+    "Rich Peasant": (
+        2, [Creature(2, "Armored Peasant", 2, 1, "Armored Guard", "soldier", generate_random_int()) for i in
+            range(0, 10)])}
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               }
 list_of_creature_that_summ_after_they_die = {
+    "Graf": (
+        3, [Creature(2, "Armored Peasant", 2, 1, "Guard Armored", "soldier", generate_random_int()) for i in
+            range(0, 50)]),
     "Turtanu": (
         3, [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", generate_random_int()) for i in range(0, 50)]),
     "Goat": (1, [Creature(2, "Hungry Wolf", 2, 3, "", "animal", generate_random_int()) for i in range(0, 5)]),
@@ -99,13 +105,14 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
                                               "Joan of Arc": "summ", "Khevtuul": "summ", "Mother Wolf": "summ",
-                                              "Goat": "summ", "Turtanu": "summ"}
+                                              "Goat": "summ", "Turtanu": "summ", "Graf": "summ"}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1, "Armored Horse": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"], [""]),
                                                       "Armored Horse": (["Spell"], [""], [""])}
-list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2, "Military Guard": 2, "Lu": 2}
+list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2, "Military Guard": 2, "Lu": 2,
+                                                        "Heretic Knight": 2}
 list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
-list_of_cards_that_discard = {"Assyrian Horserider": 2}
+list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad"]
@@ -121,14 +128,15 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
-                  "Tactical Coordination"]
+                  "Tactical Coordination", "Cataclysm"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": ""}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
-                      "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements")}
+                      "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
+                      "Cataclysm": 99}
 list_of_dmg_spells_but_not_to_player = {"Tag team"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
@@ -138,7 +146,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
-                                 "Ancient Tactics", "Tactical Coordination"]
+                                 "Ancient Tactics", "Tactical Coordination", "Cataclysm"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0)}
