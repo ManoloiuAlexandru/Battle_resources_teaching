@@ -44,7 +44,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
-                              "Church Scholar": (1, 1, "")}
+                              "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -52,7 +52,9 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "
                                                   "War Eagle": (0, 1, ""),
                                                   "King Saragon of Akkad": (2, 2, "ancient")}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
-                                                "New Recruit": ("self_buff", "summ soldier")}
+                                                "New Recruit": ("self_buff", "summ soldier"),
+                                                "Wondering Scribe": ("draw", "cast spell")}
+list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3}

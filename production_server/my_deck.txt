@@ -1,153 +1,153 @@
 empire:Holy_Roman_Empire
 card_id:0
-mana_cost:3
-original_mana_cost:3
-name:Scribe
-hp:3
-max_hp:3
-original_hp:3
-attack:0
+mana_cost:7
+original_mana_cost:7
+name:Wondering Scribe
+hp:4
+max_hp:4
+original_hp:4
+attack:4
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:0
+original_attack:4
 active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
+description:When you cast a spell draw a card
+original_description:When you cast a spell draw a card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Scribe.png
+img_url:Wondering Scribe.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Scribe0
+name_for_html:Wondering_Scribe0
 --------------------------------
 card_id:1
-mana_cost:3
-original_mana_cost:3
-name:Scribe
-hp:3
-max_hp:3
-original_hp:3
-attack:0
+mana_cost:7
+original_mana_cost:7
+name:Wondering Scribe
+hp:4
+max_hp:4
+original_hp:4
+attack:4
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:0
+original_attack:4
 active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
+description:When you cast a spell draw a card
+original_description:When you cast a spell draw a card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Scribe.png
+img_url:Wondering Scribe.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Scribe1
+name_for_html:Wondering_Scribe1
 --------------------------------
 card_id:2
-mana_cost:5
-original_mana_cost:5
-name:Church Builder
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:worker
+mana_cost:1
+original_mana_cost:1
+name:New Recruit
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:1
 active_effects:[]
-description:Restore 8 health
-original_description:Restore 8 health
+description:When you play a soldier give this +1 attack
+original_description:When you play a soldier give this +1 attack
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Church Builder.png
+img_url:New Recruit.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Church_Builder2
+name_for_html:New_Recruit2
 --------------------------------
 card_id:3
-mana_cost:5
-original_mana_cost:5
-name:Church Builder
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:worker
+mana_cost:1
+original_mana_cost:1
+name:New Recruit
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:1
 active_effects:[]
-description:Restore 8 health
-original_description:Restore 8 health
+description:When you play a soldier give this +1 attack
+original_description:When you play a soldier give this +1 attack
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Church Builder.png
+img_url:New Recruit.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Church_Builder3
+name_for_html:New_Recruit3
 --------------------------------
 card_id:4
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:2
+original_mana_cost:2
+name:Peasant Fighter
+hp:2
+max_hp:2
+original_hp:2
+attack:3
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
-description:
-original_description:
+description:If you have another worker get +1/+1
+original_description:If you have another worker get +1/+1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Peasant Fighter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant4
+name_for_html:Peasant_Fighter4
 --------------------------------
 card_id:5
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
+mana_cost:2
+original_mana_cost:2
+name:Peasant Fighter
+hp:2
+max_hp:2
+original_hp:2
+attack:3
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
-description:
-original_description:
+description:If you have another worker get +1/+1
+original_description:If you have another worker get +1/+1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Peasant.png
+img_url:Peasant Fighter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Peasant5
+name_for_html:Peasant_Fighter5
 --------------------------------
 card_id:6
 mana_cost:2
@@ -200,29 +200,29 @@ empire_belonging:
 name_for_html:Shepherd7
 --------------------------------
 card_id:8
-mana_cost:4
-original_mana_cost:4
-name:Joan of Arc
-hp:2
-max_hp:2
-original_hp:2
-attack:2
+mana_cost:5
+original_mana_cost:5
+name:Landlord
+hp:3
+max_hp:3
+original_hp:3
+attack:4
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
-description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
+description:Draw 3 workers
+original_description:Draw 3 workers
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Joan of Arc.png
+img_url:Landlord.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Joan_of_Arc8
+name_for_html:Landlord8
 --------------------------------
 card_id:9
 mana_cost:5
@@ -250,29 +250,29 @@ empire_belonging:
 name_for_html:Landlord9
 --------------------------------
 card_id:10
-mana_cost:5
-original_mana_cost:5
-name:Landlord
+mana_cost:2
+original_mana_cost:2
+name:Countryside Hunter
 hp:3
 max_hp:3
 original_hp:3
-attack:4
+attack:2
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:2
 active_effects:[]
-description:Draw 3 workers
-original_description:Draw 3 workers
+description:Give a friendly worker +1/+1
+original_description:Give a friendly worker +1/+1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Landlord.png
+img_url:Countryside Hunter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Landlord10
+name_for_html:Countryside_Hunter10
 --------------------------------
 card_id:11
 mana_cost:2
@@ -300,79 +300,79 @@ empire_belonging:
 name_for_html:Countryside_Hunter11
 --------------------------------
 card_id:12
-mana_cost:2
-original_mana_cost:2
-name:Countryside Hunter
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
+mana_cost:10
+original_mana_cost:10
+name:Battering Ram
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:8
 active_effects:[]
-description:Give a friendly worker +1/+1
-original_description:Give a friendly worker +1/+1
+description:Cost 1 less for each friendly minion on the battlefield
+original_description:Cost 1 less for each friendly minion on the battlefield
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Countryside Hunter.png
+img_url:Battering Ram.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Countryside_Hunter12
+name_for_html:Battering_Ram12
 --------------------------------
 card_id:13
-mana_cost:2
-original_mana_cost:2
-name:Lost Scribe
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
+mana_cost:10
+original_mana_cost:10
+name:Battering Ram
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:8
 active_effects:[]
-description:Desperate Draw a card
-original_description:Desperate Draw a card
+description:Cost 1 less for each friendly minion on the battlefield
+original_description:Cost 1 less for each friendly minion on the battlefield
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Scribe.png
+img_url:Battering Ram.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Scribe13
+name_for_html:Battering_Ram13
 --------------------------------
 card_id:14
-mana_cost:2
-original_mana_cost:2
-name:Lost Scribe
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
+mana_cost:12
+original_mana_cost:12
+name:Trebuchet
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:8
 active_effects:[]
-description:Desperate Draw a card
-original_description:Desperate Draw a card
+description:Cost 1 less for other each card in your hand
+original_description:Cost 1 less for other each card in your hand
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Scribe.png
+img_url:Trebuchet.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Scribe14
+name_for_html:Trebuchet14
 --------------------------------
 card_id:15
 mana_cost:2
@@ -424,119 +424,103 @@ number_of_attacks:1
 empire_belonging:
 name_for_html:Armorer16
 --------------------------------
-card_id:17
-mana_cost:2
-original_mana_cost:2
-name:Scribe of the Church
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a spell
-original_description:Draw a spell
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scribe of the Church.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scribe_of_the_Church17
---------------------------------
-card_id:18
-mana_cost:2
-original_mana_cost:2
-name:Scribe of the Church
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a spell
-original_description:Draw a spell
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scribe of the Church.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scribe_of_the_Church18
---------------------------------
 card_id:19
-mana_cost:1
-original_mana_cost:1
-name:Scared Noble
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Give a friendly minion guard
-original_description:Give a friendly minion guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scared Noble.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Feudal Obligations
+card_type:Spell
+description:Draw 2 cards
+img_url:Feudal Obligations.png
+target:None
 empire_belonging:
-name_for_html:Scared_Noble19
+category:
+name_for_html:Feudal_Obligations19
 --------------------------------
 card_id:20
-mana_cost:1
-original_mana_cost:1
-name:Scared Noble
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Give a friendly minion guard
-original_description:Give a friendly minion guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scared Noble.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Feudal Obligations
+card_type:Spell
+description:Draw 2 cards
+img_url:Feudal Obligations.png
+target:None
 empire_belonging:
-name_for_html:Scared_Noble20
+category:
+name_for_html:Feudal_Obligations20
 --------------------------------
 card_id:21
-mana_cost:2
-original_mana_cost:2
-name:In the name of the king
+mana_cost:3
+original_mana_cost:3
+name:Knight's training
 card_type:Spell
-description:Give your minions +1/+1
-img_url:In the name of the king.png
-target:None
+description:Give a minions +3/+3
+img_url:Knight's training.png
+target:self
 empire_belonging:
 category:
-name_for_html:In_the_name_of_the_king21
+name_for_html:Knight's_training21
 --------------------------------
 card_id:22
+mana_cost:3
+original_mana_cost:3
+name:Knight's training
+card_type:Spell
+description:Give a minions +3/+3
+img_url:Knight's training.png
+target:self
+empire_belonging:
+category:
+name_for_html:Knight's_training22
+--------------------------------
+card_id:23
+mana_cost:5
+original_mana_cost:5
+name:Call of the Emperor
+card_type:Spell
+description:Draw 3 cards and reduce there mana cost by 1
+img_url:Call of the Emperor.png
+target:None
+empire_belonging:
+category:
+name_for_html:Call_of_the_Emperor23
+--------------------------------
+card_id:24
+mana_cost:5
+original_mana_cost:5
+name:Call of the Emperor
+card_type:Spell
+description:Draw 3 cards and reduce there mana cost by 1
+img_url:Call of the Emperor.png
+target:None
+empire_belonging:
+category:
+name_for_html:Call_of_the_Emperor24
+--------------------------------
+card_id:25
+mana_cost:1
+original_mana_cost:1
+name:Personal Guard
+card_type:Spell
+description:Give a minion guard and draw a card
+img_url:Personal Guard.png
+target:self
+empire_belonging:
+category:
+name_for_html:Personal_Guard25
+--------------------------------
+card_id:26
+mana_cost:1
+original_mana_cost:1
+name:Personal Guard
+card_type:Spell
+description:Give a minion guard and draw a card
+img_url:Personal Guard.png
+target:self
+empire_belonging:
+category:
+name_for_html:Personal_Guard26
+--------------------------------
+card_id:27
 mana_cost:2
 original_mana_cost:2
 name:In the name of the king
@@ -546,154 +530,79 @@ img_url:In the name of the king.png
 target:None
 empire_belonging:
 category:
-name_for_html:In_the_name_of_the_king22
+name_for_html:In_the_name_of_the_king27
 --------------------------------
-card_id:23
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Guard23
---------------------------------
-card_id:24
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Guard24
---------------------------------
-card_id:25
+card_id:28
 mana_cost:2
 original_mana_cost:2
-name:Chivalry and Honor
+name:In the name of the king
 card_type:Spell
-description:Give a minion +2/+1 and draw a card
-img_url:Chivalry and Honor.png
+description:Give your minions +1/+1
+img_url:In the name of the king.png
+target:None
+empire_belonging:
+category:
+name_for_html:In_the_name_of_the_king28
+--------------------------------
+card_id:29
+mana_cost:9
+original_mana_cost:9
+name:Call of God
+card_type:Spell
+description:Heal for 8 and summon a 8/8 armored guard Crusader
+img_url:Call of God.png
 target:self
 empire_belonging:
 category:
-name_for_html:Chivalry_and_Honor25
+name_for_html:Call_of_God29
 --------------------------------
-card_id:26
-mana_cost:2
-original_mana_cost:2
-name:Chivalry and Honor
-card_type:Spell
-description:Give a minion +2/+1 and draw a card
-img_url:Chivalry and Honor.png
-target:self
-empire_belonging:
-category:
-name_for_html:Chivalry_and_Honor26
---------------------------------
-card_id:30
-mana_cost:6
-original_mana_cost:6
-name:Hospitaller Knight
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Heal a friendly minion for 2 Armored
-original_description:Heal a friendly minion for 2 Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Hospitaller Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Hospitaller_Knight30
---------------------------------
-card_id:31
-mana_cost:6
-original_mana_cost:6
-name:Hospitaller Knight
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Heal a friendly minion for 2 Armored
-original_description:Heal a friendly minion for 2 Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Hospitaller Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Hospitaller_Knight31
---------------------------------
-card_id:32
-mana_cost:1
-original_mana_cost:1
-name:Church Scholar
-hp:2
-max_hp:2
-original_hp:2
+card_id:0
+mana_cost:3
+original_mana_cost:3
+name:Farmer
+hp:1
+max_hp:1
+original_hp:1
 attack:1
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Evrey time a creature is healed gain +1/+1 
-original_description:Evrey time a creature is healed gain +1/+1 
+description:Gain 1 mana crystal
+original_description:Gain 1 mana crystal
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Church Scholar.png
+img_url:Farmer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Church_Scholar32
+name_for_html:Farmer0
+--------------------------------
+card_id:1
+mana_cost:12
+original_mana_cost:12
+name:Trebuchet
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine 
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Cost 1 less for other each card in your hand
+original_description:Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Trebuchet.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Trebuchet1
 --------------------------------

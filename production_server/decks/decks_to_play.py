@@ -4,13 +4,9 @@ from clases.spells import Spell
 
 bot_deck = []
 demo_deck = [
-    Creature(0, "Peasant Fighter", 1, 1, "If you have another worker get +1/+1", "worker", 0),
-    Creature(0, "Peasant", 99, 1, "", "knight", 1),
-    Creature(0, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ",
-             "worker", 2),
-    Creature(0, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored", "soldier", 3),
-    Creature(0, "New Recruit", 3, 1, "When you play a soldier give this +1 attack", "soldier", 4)
-
+    Creature(2, "Peasant Fighter", 2, 3, "If you have another worker get +1/+1", "worker", 0),
+    Creature(1, "New Recruit", 2, 1, "When you play a soldier give this +1 attack", "soldier", 4),
+    Creature(7, "Wondering Scribe", 4, 4, "When you cast a spell draw a card", "worker", 5),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(7, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -79,6 +75,12 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(5, "Landlord", 3, 4, "Draw 3 workers", "worker", -117),
                                       Creature(2, "Shepherd", 2, 1, "Summon a 1/1 guard dog with guard", "worker",
                                                -118),
+                                      Creature(2, "Peasant Fighter", 2, 3, "If you have another worker get +1/+1",
+                                               "worker", -119),
+                                      Creature(1, "New Recruit", 2, 1, "When you play a soldier give this +1 attack",
+                                               "soldier", -120),
+                                      Creature(7, "Wondering Scribe", 4, 4, "When you cast a spell draw a card",
+                                               "worker", -121),
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -543,6 +545,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Countryside Hunter", 3, 2, "Give a friendly worker +1/+1", "worker", -116),
                      Creature(5, "Landlord", 3, 4, "Draw 3 workers", "worker", -117),
                      Creature(2, "Shepherd", 2, 1, "Summon a 1/1 guard dog with guard", "worker", -118),
+                     Creature(2, "Peasant Fighter", 2, 3, "If you have another worker get +1/+1", "worker", -119),
+                     Creature(1, "New Recruit", 2, 1, "When you play a soldier give this +1 attack", "soldier", -120),
+                     Creature(7, "Wondering Scribe", 4, 4, "When you cast a spell draw a card", "worker", -121),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

@@ -97,7 +97,6 @@ class Creature:
                 else:
                     nr_buff -= 1
 
-
     def reverse_effect_creature(self, card, effects, effect, player):
         try:
             nr_buff = 0
@@ -138,3 +137,12 @@ class Creature:
             if self.armored is True:
                 return False
         return True
+
+    def check_specific_attr(self, attr):
+        if attr in self.description.split():
+            return True
+        elif attr == self.category:
+            return True
+        elif attr == self.card_type:
+            return True
+        return False

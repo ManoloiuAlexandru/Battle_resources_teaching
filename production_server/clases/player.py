@@ -55,6 +55,7 @@ class Player:
     def put_card_on_field(self, card_picked):
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
+                self.check_for_creature_with_effect_on("summ", card)
                 if card.name in list_of_cards_that_discard:
                     self.card_discard(list_of_cards_that_discard.get(card.name), card)
                     if self.incoming_spell is not None:
@@ -93,6 +94,7 @@ class Player:
                     else:
                         self.empty_mana += list_of_creature_that_add_mana.get(card.name)
                 elif card.name in list_of_spells:
+                    self.check_for_creature_with_effect_on("cast spell", card)
                     self.mana_pay(card)
                     self.incoming_action = 3
                     self.incoming_spell = card
@@ -123,7 +125,6 @@ class Player:
                 if card.name in list_of_creature_that_are_affected_by_battle_field:
                     self.buff_card_from_battle(card)
                 self.battle_field.append(card)
-                self.check_for_creature_with_effect_on("summ")
                 self.mana_pay(card)
                 return 1
         return 0
@@ -173,20 +174,20 @@ class Player:
                     index_of_card]
                 category = None
             if type_of_description == "" and category == "":
-                while type_of_card != random_card.card_type and nr_try < 30:
+                while type_of_card != random_card.card_type and nr_try < len(self.deck) + 1:
                     random_card = random.choice(self.deck)
                     nr_try += 1
-                if nr_try == 30:
+                if nr_try == len(self.deck) + 1:
                     for charge in self.deck:
                         if type_of_description in charge.description.split():
                             random_card = charge
                 if type_of_card == random_card.card_type:
                     return random_card
             elif category != "" and type_of_description == "":
-                while category != random_card.category and nr_try < 30:
+                while category != random_card.category and nr_try < len(self.deck) + 1:
                     random_card = random.choice(self.deck)
                     nr_try += 1
-                if nr_try == 30:
+                if nr_try == len(self.deck) + 1:
                     for charge in self.deck:
                         if category == charge.category:
                             random_card = charge
@@ -195,10 +196,11 @@ class Player:
             else:
                 if any(type_of_description in obj.description.split() for obj in self.deck):
                     while (
-                            type_of_card != random_card.card_type or type_of_description not in random_card.description.split()) and nr_try < 30:
+                            type_of_card != random_card.card_type or type_of_description not in random_card.description.split()) and nr_try < len(
+                        self.deck) + 1:
                         random_card = random.choice(self.deck)
                         nr_try += 1
-                    if nr_try == 30:
+                    if nr_try == len(self.deck) + 1:
                         for charge in self.deck:
                             if type_of_description in charge.description.split():
                                 random_card = charge
@@ -409,12 +411,18 @@ class Player:
                     if condition[1].split()[0] == creature.category:
                         self.buff_card_from_hand(card, card)
 
-    def check_for_creature_with_effect_on(self, action):
+    def check_for_creature_with_effect_on(self, action, playing_creature):
         for creature in self.battle_field:
             try:
-                if list_of_creature_that_are_effected_by_action.get(creature.name)[1] == action:
+                effected_cards = list_of_creature_that_are_effected_by_action.get(creature.name)
+                if effected_cards[1] == action and effected_cards[0] == "self_buff":
                     self.buff_card_from_hand(creature, creature)
-                elif action in list_of_creature_that_are_effected_by_action.get(creature.name)[1]:
-                    pass
+                elif action in effected_cards[1] and action == "summ":
+                    if playing_creature.check_specific_attr(effected_cards[1].split()[1]) is True and \
+                            effected_cards[0] == "self_buff":
+                        self.buff_card_from_hand(creature, creature)
+                elif action == effected_cards[1] and action == "cast spell":
+                    for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
+                        self.draw_card()
             except Exception as e:
                 print(e)

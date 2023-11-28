@@ -340,7 +340,7 @@ def heal_creature(card_picked, player, amount):
                     card.hp += amount
                     player.logs += " on this card:" + card.name
                     break
-        player.check_for_creature_with_effect_on("heal")
+        player.check_for_creature_with_effect_on("heal", None)
     except Exception as e:
         print(e)
     player.incoming_action = 0
@@ -435,6 +435,7 @@ def make_html_deck(deck, html_deck):
 
 
 def check_hero_power(player, enemy_player):
+    summoned_creature = None
     if player.mana < 2:
         player.problem = "Not enough mana"
     else:
@@ -443,14 +444,16 @@ def check_hero_power(player, enemy_player):
                 Creature(1, "Shield soldier", 2, 0, "Guard", "soldier", len(player.deck) + 934),
                 Creature(1, "Man at arms", 1, 1, "", "soldier", len(player.deck) + 944)]
             if len(player.battle_field) < 7:
-                player.battle_field.append(random.choice(list_of_auxiliary_soldiers))
+                summoned_creature = random.choice(list_of_auxiliary_soldiers)
+                player.battle_field.append(summoned_creature)
                 player.used_power = 1
                 player.mana_increase(-2)
             else:
                 player.problem = "You don't have enough space"
         elif player.empire == "Holy Roman Empire":
             if len(player.battle_field) < 7:
-                player.battle_field.append(Creature(1, "Kaiserliche", 1, 1, "", "soldier", len(player.deck) + 3112))
+                summoned_creature = Creature(1, "Kaiserliche", 1, 1, "", "soldier", len(player.deck) + 3112)
+                player.battle_field.append(summoned_creature)
                 player.used_power = 1
                 player.mana_increase(-2)
             else:
@@ -470,6 +473,7 @@ def check_hero_power(player, enemy_player):
                 player.problem = "You don't have enough space"
     player.check_player()
     enemy_player.check_player()
+    player.check_for_creature_with_effect_on("summ", summoned_creature)
 
 
 def return_to_hand(card, player):
