@@ -340,21 +340,10 @@ def heal_creature(card_picked, player, amount):
                     card.hp += amount
                     player.logs += " on this card:" + card.name
                     break
-        check_for_creature_with_effect_on(player, "heal")
+        player.check_for_creature_with_effect_on("heal")
     except Exception as e:
         print(e)
     player.incoming_action = 0
-
-
-def check_for_creature_with_effect_on(player, action):
-    for creature in player.battle_field:
-        if creature.name in list_of_creature_that_are_effected_by_action and \
-                list_of_creature_that_are_effected_by_action.get(creature.name)[3] == action:
-            creature.hp += list_of_creature_that_are_effected_by_action.get(creature.name)[0]
-            creature.max_hp += list_of_creature_that_are_effected_by_action.get(creature.name)[0]
-            creature.attack += list_of_creature_that_are_effected_by_action.get(creature.name)[1]
-            creature.description += list_of_creature_that_are_effected_by_action.get(creature.name)[2]
-            creature.check_creature(list_of_creature_that_are_effected_by_action.get(creature.name)[2])
 
 
 def deal_dmg_to_creature(card_picked, player, dmg):

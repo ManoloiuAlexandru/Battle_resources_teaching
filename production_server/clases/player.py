@@ -120,7 +120,10 @@ class Player:
                     self.buff_all_in_battle(card)
                 elif len(self.battle_field) == 7:
                     return 0
+                if card.name in list_of_creature_that_are_affected_by_battle_field:
+                    self.buff_card_from_battle(card)
                 self.battle_field.append(card)
+                self.check_for_creature_with_effect_on("summ")
                 self.mana_pay(card)
                 return 1
         return 0
@@ -239,6 +242,8 @@ class Player:
                 player.effect_lost(card, enemy_player)
                 effect_got_removed = 1
         for card in enemy_player.ongoing_effects:
+            if card not in enemy_player.battle_field and card.card_type == "Creature" and card.name in list_of_creature_that_can_make_kingdom_immun:
+                enemy_player.immunity = False
             if card not in enemy_player.battle_field and card.card_type == "Creature":
                 enemy_player.ongoing_effects.remove(card)
                 enemy_player.effect_lost(card, player)
@@ -395,3 +400,21 @@ class Player:
                 pass
             else:
                 self.hand.pop(card_to_remove)
+
+    def buff_card_from_battle(self, card):
+        condition = list_of_creature_that_are_affected_by_battle_field.get(card.name)
+        if condition[0] == "buff":
+            if "on field" in condition[1]:
+                for creature in self.battle_field:
+                    if condition[1].split()[0] == creature.category:
+                        self.buff_card_from_hand(card, card)
+
+    def check_for_creature_with_effect_on(self, action):
+        for creature in self.battle_field:
+            try:
+                if list_of_creature_that_are_effected_by_action.get(creature.name)[1] == action:
+                    self.buff_card_from_hand(creature, creature)
+                elif action in list_of_creature_that_are_effected_by_action.get(creature.name)[1]:
+                    pass
+            except Exception as e:
+                print(e)

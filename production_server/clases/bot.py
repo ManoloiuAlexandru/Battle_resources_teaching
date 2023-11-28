@@ -28,15 +28,22 @@ class Bot(Player):
                                 self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
                                 list_of_creature_that_summon.get(card.name)[1].remove(
                                     list_of_creature_that_summon.get(card.name)[1][i])
+                    if card.name in list_of_cards_that_discard:
+                        self.card_discard(list_of_cards_that_discard.get(card.name), card)
+                        if self.incoming_spell is not None:
+                            self.incoming_action = 3
+                    if card.name in list_of_creature_that_will_do_damage_to_your_kingdom:
+                        self.hp -= list_of_creature_that_will_do_damage_to_your_kingdom.get(card.name)
+                    elif card.name in list_of_spells_that_do_damage_to_your_kingdom:
+                        self.hp -= list_of_spells_that_do_damage_to_your_kingdom.get(card.name)
+                    if card.name in list_of_creature_that_can_make_kingdom_immun:
+                        self.immunity = True
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
                         self.battle_field.append(card)
                     self.hand.remove(card)
                     self.mana_increase(-card.mana_cost)
-                    if card.name in list_of_creature_that_will_do_damage_to_your_kingdom:
-                        self.hp -= list_of_creature_that_will_do_damage_to_your_kingdom.get(card.name)
-                    elif card.name in list_of_spells_that_do_damage_to_your_kingdom:
-                        self.hp -= list_of_spells_that_do_damage_to_your_kingdom.get(card.name)
+
                     Player.battle_fields_effects(self, player)
         if self.mana >= 2:
             check_hero_power(self, player)
