@@ -4,7 +4,26 @@ from clases.spells import Spell
 
 bot_deck = []
 demo_deck = [
-    # Spell(0, "Cataclysm", "Destroy ALL minions and discard 2 cards", 0),
+    Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand", "knight", 0),
+    Creature(2, 'Page', 1, 1, "Draw a card", "knight", 1911),
+    Creature(3, "Rider", 2, 3, "Charge", "soldier", 1912),
+    Creature(3, "Rider", 2, 3, "Charge", "soldier", 1913),
+    Creature(5, "Mounted Knight", 4, 4, "Charge", "knight", 1914),
+    Creature(5, "Mounted Knight", 4, 4, "Charge", "knight", 1915),
+    Spell(4, "Tag Team", "Dela 3 damage to a minion summ a 3/3 Hunting dog", 1916),
+    Creature(3, "Negotiator", 1, 1, "Give your hand +1/+1 and draw a animal", "worker", 1917),
+    Spell(5, "Kill", "Kill an enemy minion", 1918),
+    Spell(5, "Kill", "Kill an enemy minion", 1919),
+    Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", 1920),
+    Creature(2, "Wild Horse", 2, 1, "Draw a charge card", "animal", 1921),
+    Creature(4, "Mother Wolf", 3, 3, "Desperate summ 2 1/1 Wolf Pup", "animal", 1922),
+    Spell(8, "War Pack", "Summon all war animals", 1923),
+    Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", 1924),
+    Spell(3, "Animal Battle Companion", "Summon a random war animal", 1925),
+    Creature(4, "Mother Wolf", 3, 3, "Desperate summ 2 1/1 Wolf Pup", "animal", 1926),
+    Creature(9, "Jochi", 8, 8, "Charge", "soldier", 1927),
+    Creature(6, "Khevtuul", 5, 7, "Desperate summon 2 2/2 Night Watchers", "soldier", 1928),
+    Creature(2, 'Page', 1, 1, "Draw a card", "knight", 1929),
 
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
@@ -160,7 +179,9 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(1, "Heretic Knight", 1, 2, "Armored deal 2 damage to your kingdom", "knight", -122),
                    Creature(9, "Graf", 6, 3,
                             "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
-                            -125)
+                            -125),
+                   Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand",
+                            "knight", -126),
                    ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -191,7 +212,8 @@ cards_for_holy_roman_empire = [
     Creature(1, "Heretic Knight", 1, 2, "Armored deal 2 damage to your kingdom", "knight", -122),
     Creature(9, "Graf", 6, 3,
              "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
-             -125)
+             -125),
+    Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand", "knight", -126),
 ]
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -564,7 +586,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               -124),
                      Creature(9, "Graf", 6, 3,
                               "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
-                              -125)
+                              -125),
+                     Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand",
+                              "knight", -126),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

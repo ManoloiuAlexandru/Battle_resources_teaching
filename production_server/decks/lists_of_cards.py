@@ -98,7 +98,7 @@ list_of_creature_that_summ_after_they_die = {
     "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", "soldier", generate_random_int()) for i in range(0, 10)])}
 list_of_creature_that_affect_all = {"Watchtower": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
-list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1),
+list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1)}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "draw",
