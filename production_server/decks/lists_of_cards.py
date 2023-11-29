@@ -79,6 +79,8 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               }
 list_of_creature_that_summ_after_they_die = {
+    "Lost Shield": (
+        4, [Creature(4, "City Guard", 4, 4, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Graf": (
         3, [Creature(2, "Armored Peasant", 2, 1, "Guard Armored", "soldier", generate_random_int()) for i in
             range(0, 50)]),
@@ -101,14 +103,15 @@ list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1)}
-list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "draw",
+list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "summ",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
                                               "Joan of Arc": "summ", "Khevtuul": "summ", "Mother Wolf": "summ",
-                                              "Goat": "summ", "Turtanu": "summ", "Graf": "summ"}
-list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Lost Shield": 1, "Armored Horse": 1}
-list_of_creature_that_draw_specific_cards_when_die = {"Lost Shield": (["Creature"], ["Guard"], [""]),
-                                                      "Armored Horse": (["Spell"], [""], [""])}
+                                              "Goat": "summ", "Turtanu": "summ", "Graf": "summ",
+                                              "Big Game Beast": "draw"}
+list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
+list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"], [""], [""]),
+                                                      "Big Game Beast": (["Creature"], ["animal"], [""])}
 list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2, "Military Guard": 2, "Lu": 2,
                                                         "Heretic Knight": 2}
 list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
