@@ -430,7 +430,8 @@ class Player:
                 if effected_cards[1] == action and effected_cards[0] == "self_buff":
                     self.buff_card_from_hand(creature, creature)
                 elif action in effected_cards[1] and action == "summ":
-                    if playing_creature.check_specific_attr(effected_cards[1].split()[1]) is True and \
+                    if playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
+                                                            self.enemy_player) is True and \
                             effected_cards[0] == "self_buff":
                         self.buff_card_from_hand(creature, creature)
                 elif action == effected_cards[1] and action == "cast spell":

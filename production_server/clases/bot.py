@@ -43,7 +43,7 @@ class Bot(Player):
                         self.battle_field.append(card)
                     self.hand.remove(card)
                     self.mana_increase(-card.mana_cost)
-
+                    self.check_for_creature_with_effect_on("summ", card)
                     Player.battle_fields_effects(self, player)
         if self.mana >= 2:
             check_hero_power(self, player)
@@ -69,7 +69,7 @@ class Bot(Player):
                                 creature.hp += list_of_creature_that_heal.get(card.name)
                                 self.logs += "Playing:" + creature.name + "\n"
                                 break
-                    check_for_creature_with_effect_on(self)
+                    self.check_for_creature_with_effect_on("heal", card)
                 except Exception as e:
                     print(e)
             elif card.name in list_of_creature_that_are_affected_by_hand:
