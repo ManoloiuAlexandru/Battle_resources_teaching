@@ -517,6 +517,7 @@ def end_of_turn_action(player, enemy_player):
                         else:
                             random_enemy.hp -= end_of_turn_card[1]
                         enemy_player.battle_field.pop(-1)
+    Player.clean_board(player,enemy_player)
 
 
 def affect_battle_field(card, player, enemy_player):

@@ -295,28 +295,29 @@ class Player:
 
     @staticmethod
     def action_when_die(player, card):
-        if list_of_creature_that_do_somthing_when_die.get(card.name) == "summ":
-            if len(player.battle_field) < 7:
-                for i in range(list_of_creature_that_summ_after_they_die.get(card.name)[0]):
-                    if len(player.battle_field) < 7:
-                        player.battle_field.append(list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
-                        list_of_creature_that_summ_after_they_die.get(card.name)[1].remove(
-                            list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
-        elif list_of_creature_that_do_somthing_when_die.get(card.name) == "draw":
-            for nr_cards in range(list_of_creature_that_draw_cards_when_die.get(card.name)):
-                if card.name in list_of_creature_that_draw_specific_cards_when_die:
-                    try:
-                        random_card = player.get_random_card(card, nr_cards)
-                        if random_card is not None:
-                            player.hand.append(random_card)
-                            player.deck.remove(random_card)
-                    except Exception as e:
-                        print(e)
-                else:
-                    player.draw_card()
-        elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buff":
-            random_minion = random.choice(player.battle_field)
-            player.buff_card_from_hand(random_minion, card)
+        if card.original_description in card.description.split("  "):
+            if list_of_creature_that_do_somthing_when_die.get(card.name) == "summ":
+                if len(player.battle_field) < 7:
+                    for i in range(list_of_creature_that_summ_after_they_die.get(card.name)[0]):
+                        if len(player.battle_field) < 7:
+                            player.battle_field.append(list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
+                            list_of_creature_that_summ_after_they_die.get(card.name)[1].remove(
+                                list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "draw":
+                for nr_cards in range(list_of_creature_that_draw_cards_when_die.get(card.name)):
+                    if card.name in list_of_creature_that_draw_specific_cards_when_die:
+                        try:
+                            random_card = player.get_random_card(card, nr_cards)
+                            if random_card is not None:
+                                player.hand.append(random_card)
+                                player.deck.remove(random_card)
+                        except Exception as e:
+                            print(e)
+                    else:
+                        player.draw_card()
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buff":
+                random_minion = random.choice(player.battle_field)
+                player.buff_card_from_hand(random_minion, card)
 
     def buff_card_from_hand(self, card, buffing_card):
         buff = list_of_creature_that_buff.get(buffing_card.name)

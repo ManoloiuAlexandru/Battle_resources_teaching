@@ -197,6 +197,16 @@ class Bot(Player):
                 affect_battle_field(card, self, player)
                 self.incoming_spell = None
                 return 1
+            if card.name in list_of_dmg_spells and len(player.battle_field) > 1:
+                if len(self.battle_field) < len(player.battle_field) and "ALL" in card.description:
+                    self.target_creature_with_spell(card, player)
+                    return 1
+                elif "ALL" not in card.description:
+                    self.target_creature_with_spell(card, player)
+                    return 1
+
+                else:
+                    return 0
             if card.name in list_of_spells_that_draw_cards:
                 for nr_cards in range(list_of_spells_that_draw_cards.get(card.name)):
                     self.draw_card()
@@ -205,15 +215,9 @@ class Bot(Player):
                             self.hand[-1].mana_cost_reduction(
                                 list_of_spells_that_reduce_mana.get(card.name)[1])
                 return 1
-            if card.name in list_of_dmg_spells and len(player.battle_field) > 1:
-                if len(self.battle_field) < len(player.battle_field) and "ALL" in card.description:
-                    self.target_creature_with_spell(card, player)
-                    return 1
-                elif "ALL" not in card.description:
-                    self.target_creature_with_spell(card, player)
-                    return 1
-                else:
-                    return 0
+            if card.name in list_of_spells_that_debuff:
+                self.target_creature_with_spell(card, player)
+                return 1
             else:
                 return 0
         elif card.card_type == "Item":
@@ -247,7 +251,7 @@ class Bot(Player):
         while you_can_do == 1:
             you_can_do = 0
             for card in self.battle_field[:]:
-                if card.exhausted is not True:
+                if card.exhausted is not True and card.attack > 0:
                     you_can_do = 1
                     self.target_priority(card, player)
         return you_can_do
@@ -265,7 +269,7 @@ class Bot(Player):
             for creature in player.battle_field:
                 if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature
-            if card.name == "Kill":
+            if card.name in list_of_dmg_spells:
                 for creature in player.battle_field:
                     if creature == target_creature:
                         creature.hp -= 999
@@ -277,11 +281,14 @@ class Bot(Player):
             for creature in player.battle_field:
                 if target_creature.attack >= creature.attack:
                     target_creature = creature
-            if card.name == "Kill":
+            if card.name in list_of_dmg_spells and card.name not in list_of_spells_with_no_target:
                 for creature in player.battle_field:
                     if creature == target_creature:
-                        creature.hp -= 99
+                        creature.hp -= list_of_dmg_spells.get(card.name)
                         self.logs += " on this card:" + creature.name + "\n"
+                        break
+            elif card.name in list_of_spells_that_debuff:
+                target_creature.debuff_creature(list_of_spells_that_debuff.get(card.name), self, player)
             else:
                 general_spells(self, player, card.name)
 
