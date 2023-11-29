@@ -30,7 +30,7 @@ Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
-                                "Church Builder", "Countryside Hunter"]
+                                "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
@@ -115,8 +115,9 @@ list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
 list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
-                   "King Saragon of Akkad"]
+                   "King Saragon of Akkad", "Carcassonne"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
+list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
 """
 Spells
 """
@@ -128,7 +129,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
-                  "Tactical Coordination", "Cataclysm"]
+                  "Tactical Coordination", "Cataclysm", "Warhammer"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": ""}
@@ -185,3 +186,4 @@ list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"],
 list_of_spells_that_can_heal_player = {"Call of God": 8}
 list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
+list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}

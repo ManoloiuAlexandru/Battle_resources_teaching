@@ -237,18 +237,28 @@ class Player:
     def check_for_active_effects(player, enemy_player):
         effect_got_removed = 0
         for card in player.ongoing_effects:
-            if card not in player.battle_field and card.card_type == "Creature" and card.name in list_of_creature_that_can_make_kingdom_immun:
-                player.immunity = False
-            if card not in player.battle_field and card.card_type == "Creature":
+            if card.original_description in card.description.split("  "):
+                if card not in player.battle_field and card.card_type == "Creature" and card.name in list_of_creature_that_can_make_kingdom_immun:
+                    player.immunity = False
+                if card not in player.battle_field and card.card_type == "Creature":
+                    player.ongoing_effects.remove(card)
+                    player.effect_lost(card, enemy_player)
+                    effect_got_removed = 1
+            else:
                 player.ongoing_effects.remove(card)
-                player.effect_lost(card, enemy_player)
+                player.effect_lost(card, player)
                 effect_got_removed = 1
         for card in enemy_player.ongoing_effects:
-            if card not in enemy_player.battle_field and card.card_type == "Creature" and card.name in list_of_creature_that_can_make_kingdom_immun:
-                enemy_player.immunity = False
-            if card not in enemy_player.battle_field and card.card_type == "Creature":
+            if card.original_description in card.description.split("  "):
+                if card not in enemy_player.battle_field and card.card_type == "Creature" and card.name in list_of_creature_that_can_make_kingdom_immun:
+                    enemy_player.immunity = False
+                if card not in enemy_player.battle_field and card.card_type == "Creature":
+                    enemy_player.ongoing_effects.remove(card)
+                    enemy_player.effect_lost(card, player)
+                    effect_got_removed = 1
+            else:
                 enemy_player.ongoing_effects.remove(card)
-                enemy_player.effect_lost(card, player)
+                enemy_player.effect_lost(card, enemy_player)
                 effect_got_removed = 1
         Player.clean_board(player, enemy_player)
         return effect_got_removed
@@ -309,12 +319,13 @@ class Player:
             player.buff_card_from_hand(random_minion, card)
 
     def buff_card_from_hand(self, card, buffing_card):
-        card.hp += list_of_creature_that_buff.get(buffing_card.name)[0]
-        card.max_hp += list_of_creature_that_buff.get(buffing_card.name)[0]
-        card.attack += list_of_creature_that_buff.get(buffing_card.name)[1]
-        if list_of_creature_that_buff.get(buffing_card.name)[2] not in card.description:
-            card.description += " " + list_of_creature_that_buff.get(buffing_card.name)[2]
-        card.check_creature(list_of_creature_that_buff.get(buffing_card.name)[2])
+        buff = list_of_creature_that_buff.get(buffing_card.name)
+        card.hp += buff[0]
+        card.max_hp += buff[0]
+        card.attack += buff[1]
+        if buff[2] not in card.description:
+            card.description += " " + buff[2]
+        card.check_creature(buff[2])
 
     def hand_check(self, card):
         if "empty hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) == 1 and \

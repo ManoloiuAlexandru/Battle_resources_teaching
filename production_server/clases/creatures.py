@@ -76,7 +76,7 @@ class Creature:
     def positive_effects_from_creatures(self, card, effects, player):
         nr_buff = 0
         for creature in player.ongoing_effects:
-            if creature.name in effects:
+            if creature.name in effects and creature.original_description in creature.description.split("  "):
                 nr_buff += 1
         while len(self.active_effects) < nr_buff:
             for buffing_creature in player.ongoing_effects:
@@ -138,7 +138,7 @@ class Creature:
                 return False
         return True
 
-    def check_specific_attr(self, attr):
+    def check_specific_attr(self, attr, player, enemy_player):
         if attr in self.description.split():
             return True
         elif attr == self.category:
@@ -146,3 +146,24 @@ class Creature:
         elif attr == self.card_type:
             return True
         return False
+
+    def debuff_creature(self, debuffing_effect, player, enemy_player):
+        if debuffing_effect[0] == 0:
+            if self.hp > self.original_hp:
+                self.hp = self.original_hp
+        elif debuffing_effect[0] == -1:
+            self.hp = self.hp
+        else:
+            self.hp = debuffing_effect[0]
+        if debuffing_effect[1] == 0:
+            self.attack = self.original_attack
+        elif debuffing_effect[1] == -1:
+            self.attack = self.attack
+        else:
+            self.attack = debuffing_effect[1]
+        if debuffing_effect[2] == "":
+            self.description = ""
+            self.armored = False
+            self.active_effects.clear()
+        else:
+            self.description += " " + debuffing_effect[2]

@@ -1,5 +1,179 @@
 empire:Holy_Roman_Empire
 card_id:0
+mana_cost:2
+original_mana_cost:2
+name:Warhammer
+card_type:Spell
+description:Break an enemy armor making him lose all attributes
+img_url:Warhammer.png
+target:None
+empire_belonging:
+category:
+name_for_html:Warhammer0
+--------------------------------
+card_id:1
+mana_cost:2
+original_mana_cost:2
+name:Warhammer
+card_type:Spell
+description:Break an enemy armor making him lose all attributes
+img_url:Warhammer.png
+target:None
+empire_belonging:
+category:
+name_for_html:Warhammer1
+--------------------------------
+card_id:2
+mana_cost:10
+original_mana_cost:10
+name:Margrave
+hp:6
+max_hp:6
+original_hp:6
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Armored Cost 1 less for other each card in your hand
+original_description:Guard Armored Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Margrave.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Margrave2
+--------------------------------
+card_id:3
+mana_cost:10
+original_mana_cost:10
+name:Margrave
+hp:6
+max_hp:6
+original_hp:6
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Armored Cost 1 less for other each card in your hand
+original_description:Guard Armored Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Margrave.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Margrave3
+--------------------------------
+card_id:4
+mana_cost:9
+original_mana_cost:9
+name:Graf
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+original_description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Graf.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Graf4
+--------------------------------
+card_id:5
+mana_cost:9
+original_mana_cost:9
+name:Graf
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+original_description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Graf.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Graf5
+--------------------------------
+card_id:6
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard6
+--------------------------------
+card_id:7
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard7
+--------------------------------
+card_id:8
 mana_cost:8
 original_mana_cost:8
 name:Frederick Barbarossa
@@ -22,678 +196,204 @@ img_url:Frederick Barbarossa.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Frederick_Barbarossa0
---------------------------------
-card_id:1
-mana_cost:8
-original_mana_cost:8
-name:Bodyguards
-card_type:Spell
-description:Summon  2 Guards from your deck
-img_url:Bodyguards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Bodyguards1
---------------------------------
-card_id:2
-mana_cost:8
-original_mana_cost:8
-name:Bodyguards
-card_type:Spell
-description:Summon  2 Guards from your deck
-img_url:Bodyguards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Bodyguards2
---------------------------------
-card_id:3
-mana_cost:7
-original_mana_cost:7
-name:Rain of Arrows
-card_type:Spell
-description:Destroy ALL minions that are not Armored
-img_url:Rain of Arrows.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Rain_of_Arrows3
---------------------------------
-card_id:4
-mana_cost:7
-original_mana_cost:7
-name:Rain of Arrows
-card_type:Spell
-description:Destroy ALL minions that are not Armored
-img_url:Rain of Arrows.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Rain_of_Arrows4
---------------------------------
-card_id:5
-mana_cost:2
-original_mana_cost:2
-name:Armored Horse
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Armored Desperate Draw a Spell
-original_description:Armored Desperate Draw a Spell
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Horse.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Armored_Horse5
---------------------------------
-card_id:6
-mana_cost:2
-original_mana_cost:2
-name:Armored Horse
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Armored Desperate Draw a Spell
-original_description:Armored Desperate Draw a Spell
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Horse.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Armored_Horse6
---------------------------------
-card_id:7
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Front Line Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Front_Line_Defender7
---------------------------------
-card_id:8
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Front Line Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Front_Line_Defender8
+name_for_html:Frederick_Barbarossa8
 --------------------------------
 card_id:9
 mana_cost:8
 original_mana_cost:8
-name:Richard the Lionheart
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
+name:Carcassonne
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:building
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:8
 active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
+description:Can't attack. Deal 8 damage to a random enemy at the end of your turn
+original_description:Can't attack. Deal 8 damage to a random enemy at the end of your turn
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Richard the Lionheart.png
+img_url:Carcassonne.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Richard_the_Lionheart9
+name_for_html:Carcassonne9
+--------------------------------
+card_id:10
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector10
+--------------------------------
+card_id:11
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector11
+--------------------------------
+card_id:12
+mana_cost:7
+original_mana_cost:7
+name:Rain of Arrows
+card_type:Spell
+description:Destroy ALL minions that are not Armored
+img_url:Rain of Arrows.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Rain_of_Arrows12
+--------------------------------
+card_id:13
+mana_cost:7
+original_mana_cost:7
+name:Rain of Arrows
+card_type:Spell
+description:Destroy ALL minions that are not Armored
+img_url:Rain of Arrows.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Rain_of_Arrows13
 --------------------------------
 card_id:14
 mana_cost:2
 original_mana_cost:2
-name:Page
+name:Armored Horse
 hp:1
 max_hp:1
 original_hp:1
-attack:1
-category:knight
+attack:2
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:Armored Desperate Draw a Spell
+original_description:Armored Desperate Draw a Spell
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Page.png
+img_url:Armored Horse.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page14
+name_for_html:Armored_Horse14
 --------------------------------
 card_id:15
 mana_cost:2
 original_mana_cost:2
-name:Page
+name:Armored Horse
 hp:1
 max_hp:1
 original_hp:1
-attack:1
-category:knight
+attack:2
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:Armored Desperate Draw a Spell
+original_description:Armored Desperate Draw a Spell
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Page.png
+img_url:Armored Horse.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page15
+name_for_html:Armored_Horse15
 --------------------------------
 card_id:16
-mana_cost:3
-original_mana_cost:3
-name:Farmer
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
+mana_cost:5
+original_mana_cost:5
+name:Front Line Defender
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
-description:Gain 1 mana crystal
-original_description:Gain 1 mana crystal
+description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
+original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Farmer.png
+img_url:Front Line Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Farmer16
+name_for_html:Front_Line_Defender16
 --------------------------------
 card_id:17
-mana_cost:3
-original_mana_cost:3
-name:Farmer
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
+mana_cost:5
+original_mana_cost:5
+name:Front Line Defender
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:3
 active_effects:[]
-description:Gain 1 mana crystal
-original_description:Gain 1 mana crystal
+description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
+original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Farmer.png
+img_url:Front Line Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Farmer17
---------------------------------
-card_id:18
-mana_cost:3
-original_mana_cost:3
-name:Tournament Horserider
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Charge Armored
-original_description:Charge Armored
-card_type:Creature
-exhausted:False
-armored:True
-can_be_target:True
-img_url:Tournament Horserider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Tournament_Horserider18
---------------------------------
-card_id:19
-mana_cost:3
-original_mana_cost:3
-name:Tournament Horserider
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Charge Armored
-original_description:Charge Armored
-card_type:Creature
-exhausted:False
-armored:True
-can_be_target:True
-img_url:Tournament Horserider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Tournament_Horserider19
---------------------------------
-card_id:20
-mana_cost:2
-original_mana_cost:2
-name:Scribe of the Church
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a spell
-original_description:Draw a spell
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scribe of the Church.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scribe_of_the_Church20
---------------------------------
-card_id:21
-mana_cost:2
-original_mana_cost:2
-name:Scribe of the Church
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a spell
-original_description:Draw a spell
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scribe of the Church.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scribe_of_the_Church21
---------------------------------
-card_id:22
-mana_cost:12
-original_mana_cost:12
-name:Trebuchet
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:machine
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Cost 1 less for other each card in your hand
-original_description:Cost 1 less for other each card in your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Trebuchet.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Trebuchet22
---------------------------------
-card_id:23
-mana_cost:12
-original_mana_cost:12
-name:Trebuchet
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:machine
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Cost 1 less for other each card in your hand
-original_description:Cost 1 less for other each card in your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Trebuchet.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Trebuchet23
---------------------------------
-card_id:24
-mana_cost:2
-original_mana_cost:2
-name:Lost Scribe
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Draw a card
-original_description:Desperate Draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lost Scribe.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Lost_Scribe24
---------------------------------
-card_id:25
-mana_cost:2
-original_mana_cost:2
-name:Lost Scribe
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Draw a card
-original_description:Desperate Draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lost Scribe.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Lost_Scribe25
---------------------------------
-card_id:26
-mana_cost:6
-original_mana_cost:6
-name:Joan of Arc
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Joan of Arc.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Joan_of_Arc26
---------------------------------
-card_id:29
-mana_cost:1
-original_mana_cost:1
-name:Scared Noble
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Give a friendly minion guard
-original_description:Give a friendly minion guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scared Noble.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scared_Noble29
---------------------------------
-card_id:30
-mana_cost:1
-original_mana_cost:1
-name:Scared Noble
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Give a friendly minion guard
-original_description:Give a friendly minion guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scared Noble.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scared_Noble30
---------------------------------
-card_id:0
-mana_cost:11
-original_mana_cost:11
-name:Covered Battering Ram
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:machine
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Cost 1 less for each minion on the battlefield
-original_description:Cost 1 less for each minion on the battlefield
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Covered Battering Ram.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Covered_Battering_Ram0
---------------------------------
-card_id:1
-mana_cost:11
-original_mana_cost:11
-name:Covered Battering Ram
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:machine
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Cost 1 less for each minion on the battlefield
-original_description:Cost 1 less for each minion on the battlefield
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Covered Battering Ram.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Covered_Battering_Ram1
---------------------------------
-card_id:2
-mana_cost:1
-original_mana_cost:1
-name:Selfless Knight
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Give a friendly minion armored
-original_description:Desperate Give a friendly minion armored
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Selfless Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Selfless_Knight2
---------------------------------
-card_id:3
-mana_cost:1
-original_mana_cost:1
-name:Selfless Knight
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Give a friendly minion armored
-original_description:Desperate Give a friendly minion armored
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Selfless Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Selfless_Knight3
---------------------------------
-card_id:4
-mana_cost:1
-original_mana_cost:1
-name:Armored Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Armored
-original_description:Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Page.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Armored_Page4
+name_for_html:Front_Line_Defender17
 --------------------------------

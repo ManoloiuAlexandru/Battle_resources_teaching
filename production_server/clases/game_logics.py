@@ -191,6 +191,11 @@ def cast_spell(player1, player2, card_picked):
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
             card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
+        elif card_picked.get(
+                card.name_for_html) is not None and player1.incoming_spell.name in list_of_spells_that_debuff:
+            card.debuff_creature(list_of_spells_that_debuff.get(player1.incoming_spell.name), player1, player2)
+            Player.clean_board(player1, player2)
+            Player.battle_fields_effects(player1, player2)
         elif card_picked.get(card.name_for_html) is not None and destroy_minion == 0:
             if card.armored is True:
                 card.armored = False
@@ -375,7 +380,20 @@ def destroy_creature_from_player(player1, player2, card_picked):
         elif player1.active_minion.name in list_of_creature_that_buff:
             buff_creature(card_picked, player1)
             player1.active_minion = None
+        elif player1.active_minion.name in list_of_creature_that_debuff:
+            debuff_creature(player1, player2, card_picked)
         player1.incoming_action = 0
+
+
+def debuff_creature(player1, player2, card_picked):
+    for card in player1.battle_field:
+        if card_picked.get(card.name_for_html) is not None:
+            card.debuff_creature(list_of_creature_that_debuff.get(player1.active_minion.name), player1, player2)
+    for card in player2.battle_field:
+        if card_picked.get(card.name_for_html) is not None:
+            card.debuff_creature(list_of_creature_that_debuff.get(player1.active_minion.name), player1, player2)
+    Player.clean_board(player1, player2)
+    Player.battle_fields_effects(player1, player2)
 
 
 def buff_creature(card_picked, player1):
@@ -383,12 +401,7 @@ def buff_creature(card_picked, player1):
         if player1.active_minion is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
-                    card.hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
-                    card.max_hp += list_of_creature_that_buff.get(player1.active_minion.name)[0]
-                    card.attack += list_of_creature_that_buff.get(player1.active_minion.name)[1]
-                    if list_of_creature_that_buff.get(player1.active_minion.name)[2] not in card.description:
-                        card.description += " " + list_of_creature_that_buff.get(player1.active_minion.name)[2]
-                    card.check_creature(list_of_creature_that_buff.get(player1.active_minion.name)[2])
+                    player1.buff_card_from_hand(card, player1.active_minion)
     except Exception as e:
         print(e)
 
