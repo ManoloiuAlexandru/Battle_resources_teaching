@@ -269,10 +269,15 @@ class Bot(Player):
             for creature in player.battle_field:
                 if "Guard" in creature.description and target_creature.hp >= creature.hp:
                     target_creature = creature
-            if card.name in list_of_dmg_spells:
+            if card.name in list_of_dmg_spells and card.name not in list_of_spells_with_no_target:
                 for creature in player.battle_field:
                     if creature == target_creature:
-                        creature.hp -= 999
+                        if list_of_dmg_spells.get(card.name) > 90 and creature.armored is True:
+                            creature.hp -= list_of_dmg_spells.get(card.name)
+                        elif list_of_dmg_spells.get(card.name) < 90 and creature.armored is True:
+                            creature.armored = False
+                        else:
+                            creature.hp -= list_of_dmg_spells.get(card.name)
                         self.logs += " on this card:" + creature.name + "\n"
             else:
                 general_spells(self, player, card.name)
@@ -284,7 +289,12 @@ class Bot(Player):
             if card.name in list_of_dmg_spells and card.name not in list_of_spells_with_no_target:
                 for creature in player.battle_field:
                     if creature == target_creature:
-                        creature.hp -= list_of_dmg_spells.get(card.name)
+                        if list_of_dmg_spells.get(card.name) > 90 and creature.armored is True:
+                            creature.hp -= list_of_dmg_spells.get(card.name)
+                        elif list_of_dmg_spells.get(card.name) < 90 and creature.armored is True:
+                            creature.armored = False
+                        else:
+                            creature.hp -= list_of_dmg_spells.get(card.name)
                         self.logs += " on this card:" + creature.name + "\n"
                         break
             elif card.name in list_of_spells_that_debuff:

@@ -18,8 +18,7 @@ bot_deck = [
     #          "While this is on the field friendly minions get +1/+1", "knight", 11999995),
     # Spell(0, "Warhammer", "Break an enemy armor making him lose all attributes", 11999996),
     # Spell(0, "Warhammer", "Break an enemy armor making him lose all attributes", 11999997),
-    # Spell(0, "Arbalest Shot", "Deal 3 damage and draw a card", 11999998),
-    Spell(0, "Epidemic", "Destroy ALL minions", 11999999),
+    Spell(0, "Arbalest Shot", "Deal 3 damage and draw a card", 11999998),
 ]
 demo_deck = [
     Creature(0, "Carcassonne", 8, 8,
