@@ -2,7 +2,6 @@ import random
 
 from clases.creatures import *
 from clases.spells import *
-from clases.Item import *
 from clases.player import *
 from decks.lists_of_cards import *
 
@@ -39,20 +38,26 @@ def cancel_card(card, player):
     player.mana += card.mana_cost
     player.hand.append(card)
     player.incoming_spell = None
-    player.active_item = None
+    player.active_defence = None
 
 
 def reset_player(player, enemy_player):
     player.turn = 0
     player.used_power = 0
+    if enemy_player.active_defence is None:
+        enemy_player.traps = 0
+    else:
+        enemy_player.duration_of_traps -= 1
+    if enemy_player.duration_of_traps == 0:
+        enemy_player.active_defence = None
     try:
         if player.incoming_spell.name is not None and player.incoming_spell.name in list_of_resetting_spells:
             cancel_card(player.incoming_spell, player)
     except Exception as e:
         print(e)
     try:
-        if player.active_item.name is not None and player.active_item.name in list_of_item:
-            cancel_card(player.active_item.name, player)
+        if player.active_defence.name is not None and player.active_defence.name in list_of_item:
+            cancel_card(player.active_defence.name, player)
     except Exception as e:
         print(e)
     for creature in player.battle_field:
@@ -100,8 +105,16 @@ def damage_dealing(player, card_picked):
 
 def damage_to_player(player, current_card):
     if player.immunity is False:
-        player.hp -= current_card.attack
+        if player.armor < current_card.attack:
+            player.hp = player.hp + player.armor - current_card.attack
+            player.armor = 0
+        else:
+            player.armor -= current_card.attack
     current_card.exhausted = True
+    if current_card.armored is True:
+        current_card.armored = False
+    else:
+        current_card.hp -= player.traps
     current_card = None
     return player, current_card
 
@@ -160,7 +173,7 @@ def check_target(player1, player2, card_picked):
     except Exception as e:
         print(e)
     try:
-        if player1.active_item is not None:
+        if player1.active_defence is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
                     return 1
@@ -267,6 +280,8 @@ def spell_that_summon(player, enemy_player, spell_name):
 
 
 def general_spells(player, enemy_player, spell_name):
+    if spell_name in list_of_spells_that_add_traps:
+        player.traps += list_of_spells_that_add_traps.get(spell_name)
     if spell_name in list_of_spells_that_summon:
         spell_that_summon(player, enemy_player, spell_name)
     elif spell_name == "Peace Treaty":
@@ -314,23 +329,9 @@ def destroy_creature(card_picked, player):
             break
 
 
-def put_item_on_creature(player1, player2, card_picked):
-    if check_target(player1, player2, card_picked) == 0:
-        player1.problem = "You need to select a card"
-    else:
-        put_item(player1, player2, card_picked)
-
-
-def put_item(player1, player2, card_picked):
-    for card in player1.battle_field:
-        if card_picked.get(card.name_for_html) is not None:
-            if player1.active_item.name in list_of_items_that_draw_cards:
-                for i in range(0, list_of_items_that_draw_cards.get(player1.active_item.name)):
-                    player1.draw_card()
-            card.items.append(player1.active_item)
-            player1.active_item.status_update(card)
-            player1.active_item = None
-            break
+def put_item_on(player1, player2, card_picked):
+    player1.traps = player1.active_defence.number_of_def
+    player1.duration_of_traps = player1.active_defence.duration
 
 
 def heal_creature(card_picked, player, amount):
@@ -473,17 +474,27 @@ def check_hero_power(player, enemy_player):
                 player.problem = "You don't have enough space"
         elif player.empire == "Mongol Empire":
             if enemy_player.immunity is False:
-                enemy_player.hp -= 2
+                if enemy_player.armor < 2:
+                    enemy_player.hp = enemy_player.hp + enemy_player.armor - 2
+                    enemy_player.armor = 0
+                else:
+                    enemy_player.armor -= 2
                 player.used_power = 1
                 player.mana_increase(-2)
         elif player.empire == "Mesopotamia Empire":
-            if len(player.battle_field) < 7:
-                player.hp -= 2
-                player.draw_card()
-                player.used_power = 1
-                player.mana_increase(-2)
-            else:
-                player.problem = "You don't have enough space"
+            if player.immunity is False:
+                if player.armor < 2:
+                    player.hp = player.hp + player.armor - 2
+                    player.armor = 0
+                else:
+                    player.armor -= 2
+            player.draw_card()
+            player.used_power = 1
+            player.mana_increase(-2)
+        elif player.empire == "Roman empire":
+            player.armor += 2
+            player.used_power = 1
+            player.mana_increase(-2)
     player.check_player()
     enemy_player.check_player()
     player.check_for_creature_with_effect_on("summ", summoned_creature)
@@ -517,7 +528,7 @@ def end_of_turn_action(player, enemy_player):
                         else:
                             random_enemy.hp -= end_of_turn_card[1]
                         enemy_player.battle_field.pop(-1)
-    Player.clean_board(player,enemy_player)
+    Player.clean_board(player, enemy_player)
 
 
 def affect_battle_field(card, player, enemy_player):

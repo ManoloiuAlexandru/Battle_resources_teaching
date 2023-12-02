@@ -48,7 +48,12 @@
         </div>
         <div>
             <form action="/battlefield_action" method="post">
-                <button class="player_icon" name="{{players[0].name}}">{{players[0].name}} HP:{{players[0].hp}}<br>
+                <button class="player_icon" name="{{players[0].name}}">{{players[0].name}}<br>
+                    {%if players[0].armor>0:%}
+                    Defenses:{{players[0].armor}}
+                    {%endif%}
+                    Traps:{{players[0].traps}}/{{players[0].duration_of_traps}}:Duration<br>
+                    HP:{{players[0].hp}}<br>
                     Mana: {{players[0].mana}}/{{players[0].empty_mana}}
                 </button>
                 {%if players[0].used_power==0:%}
@@ -230,6 +235,9 @@
                         ---------------------<br>
                         <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
                         {%endif%}
+                        {%if creature.card_type=="Defence"%}
+                        <span class="attack_hp">Traps:{{creature.number_of_def}} Duration:{{creature.duration}}</span>
+                        {%endif%}
                     </button>
                     {%else%}
                     <button disabled class="card_in_hand"><img class="card_back" src="static/cards/Card Back.png"/>
@@ -247,7 +255,12 @@
         </div>
         <div>
             <form action="/battlefield_action" method="post">
-                <button class="player_icon" name="{{players[1].name}}">{{players[1].name}} HP:{{players[1].hp}}<br>
+                <button class="player_icon" name="{{players[1].name}}">{{players[1].name}}
+                    {%if players[1].armor>0:%}
+                    Defenses:{{players[1].armor}}
+                    {%endif%}
+                    Traps:{{players[1].traps}}/{{players[1].duration_of_traps}}:Duration<br>
+                    HP:{{players[1].hp}}<br>
                     Mana: {{players[1].mana}}/{{players[1].empty_mana}}
                 </button>
                 {%if players[1].used_power==0:%}

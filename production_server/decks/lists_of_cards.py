@@ -132,7 +132,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
-                  "Tactical Coordination", "Cataclysm", "Warhammer"]
+                  "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": ""}
@@ -150,7 +150,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
-                                 "Ancient Tactics", "Tactical Coordination", "Cataclysm"]
+                                 "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0)}
@@ -176,7 +176,7 @@ list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numb
 list_of_spells_that_summon_specific_cards = {
     "Mercenaries Reinforcements": (list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
                                    [Creature(1, "Man at arms", 1, 1, "", "ancient", generate_random_int()) for i in
-                                    range(0, 10)]),
+                                    range(0, 40)]),
     "Tag Team": (1, [Creature(3, "Hunting dog", 3, 3, "", "animal", generate_random_int()) for i in range(0, 50)]),
     "Boarder Guards": (
         2, [Creature(2, "Akritoi", 3, 2, "Guard", "soldier", generate_random_int()) for i in range(0, 10)]),
@@ -190,3 +190,8 @@ list_of_spells_that_can_heal_player = {"Call of God": 8}
 list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}
+list_of_spells_that_add_traps = {"Trapped path": 4}
+"""
+Defence
+"""
+list_of_defences = ["Burning Tar"]

@@ -6,7 +6,6 @@ from clases.player import Player
 
 from clases.spells import *
 from decks.lists_of_cards import *
-from clases.Item import *
 
 
 class Bot(Player):
@@ -119,6 +118,8 @@ class Bot(Player):
                 self.ongoing_effects.append(card)
         elif card.card_type == "Spell":
             self.incoming_spell = card
+            if card.name in list_of_spells_that_add_traps:
+                self.traps += list_of_spells_that_add_traps.get(card.name)
             if card.name in list_of_self_target and len(self.battle_field) > 0:
                 try:
                     if card.name == "Personal Guard":
@@ -220,23 +221,10 @@ class Bot(Player):
                 return 1
             else:
                 return 0
-        elif card.card_type == "Item":
-            if card.name in list_of_good_items and len(self.battle_field) > 0:
-                try:
-                    target_creature = Creature(1, 'DEMO', 0, 0, "", "", 0)
-                    for creature in self.battle_field:
-                        if creature.hp > target_creature.hp:
-                            target_creature = creature
-                    if card.name in list_of_items_that_draw_cards:
-                        for i in range(0, list_of_items_that_draw_cards.get(card.name)):
-                            self.draw_card()
-                    target_creature.items.append(card)
-                    card.status_update(target_creature)
-                except Exception as e:
-                    print(e)
-                    return 0
-            else:
-                return 0
+        elif card.card_type == "Defence":
+            self.traps = card.number_of_def
+            self.duration_of_traps = card.duration
+            self.active_defence = card
         return 1
 
     def dmg_to_player_creature(self, target_card, player, dmg):

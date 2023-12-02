@@ -2,7 +2,7 @@ from clases.spells import Spell
 
 from clases.creatures import Creature
 
-from clases.Item import Item
+from clases.Defence import Defence
 
 
 def save_your_deck(deck, empire):
@@ -32,6 +32,8 @@ def get_old_deck():
         hp = ""
         attack = ""
         category = ""
+        number_of_def = ""
+        duration = ""
         file_line = file_line.strip()
         while file_line != "--------------------------------":
             if "empire" in file_line.split(":"):
@@ -52,13 +54,17 @@ def get_old_deck():
                 attack = int(file_line.split(":")[1])
             elif "category" in file_line.split(":"):
                 category = file_line.split(":")[1]
+            elif "number_of_def" in file_line.split(":"):
+                number_of_def = int(file_line.split(":")[1])
+            elif "duration" in file_line.split(":"):
+                duration = int(file_line.split(":")[1])
             file_line = file.readline()
             file_line = file_line.strip()
         if card_type == "Spell":
             old_deck.append(Spell(mana_cost, name, description, card_id))
         elif card_type == "Creature":
-            old_deck.append(Creature(mana_cost, name, hp, attack, description,category, card_id))
-        elif card_type == "Item":
-            old_deck.append(Item(mana_cost, name, description, card_id))
+            old_deck.append(Creature(mana_cost, name, hp, attack, description, category, card_id))
+        elif card_type == "Defence":
+            old_deck.append(Defence(mana_cost, name, number_of_def, duration, description, card_id))
         file_line = file.readline()
     return old_deck, empire

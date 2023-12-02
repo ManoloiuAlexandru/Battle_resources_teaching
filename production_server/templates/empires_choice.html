@@ -46,6 +46,9 @@
             <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
             <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
             {%endif%}
+            {%if card.card_type=="Defence"%}
+            <span class="attack_hp">Traps:{{card.number_of_def}} Duration:{{card.duration}}</span>
+            {%endif%}
         </button>
         {%endfor%}
     </p>
@@ -79,6 +82,9 @@
             <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
             <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
             {%endif%}
+            {%if card.card_type=="Defence"%}
+            <span class="attack_hp">Traps:{{card.number_of_def}} Duration:{{card.duration}}</span>
+            {%endif%}
         </button>
         {%endfor%}
     </p>
@@ -109,6 +115,9 @@
             {%if card.card_type=="Creature"%}
             <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
             <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
+            {%endif%}
+            {%if card.card_type=="Defence"%}
+            <span class="attack_hp">Traps:{{card.number_of_def}} Duration:{{card.duration}}</span>
             {%endif%}
         </button>
         {%endfor%}
@@ -148,6 +157,9 @@
             {%if card.card_type=="Creature"%}
             <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
             <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
+            {%endif%}
+            {%if card.card_type=="Defence"%}
+            <span class="attack_hp">Traps:{{card.number_of_def}} Duration:{{card.duration}}</span>
             {%endif%}
         </button>
         {%endfor%}

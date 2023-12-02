@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 from clases.server_logics import *
-from clases.Item import Item
+from clases.Defence import Defence
 from clases.spells import Spell
 from clases.creatures import Creature
 from clases.bot import Bot
@@ -196,8 +196,9 @@ def make_deck():
             if card.card_type == "Spell":
                 your_deck.append(Spell(card.mana_cost, card.name, card.description, index))
                 index += 1
-            if card.card_type == "Item":
-                your_deck.append(Item(card.mana_cost, card.name, card.description, index))
+            if card.card_type == "Defence":
+                your_deck.append(
+                    Defence(card.mana_cost, card.name, card.number_of_def,card.duration, card.description, index))
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
     return redirect(url_for('make_your_own_deck', show_deck=show_deck))
@@ -286,9 +287,9 @@ def battlefield_fight():
     if player1.incoming_action == 3:
         cast_spell_from_player(player1, player2, card_picked)
     if player1.incoming_action == 4:
-        put_item_on_creature(player1, player2, card_picked)
+        put_item_on(player1, player2, card_picked)
     if player2.incoming_action == 4:
-        put_item_on_creature(player2, player1, card_picked)
+        put_item_on(player2, player1, card_picked)
     if player2.incoming_action == 3:
         cast_spell_from_player(player2, player1, card_picked)
     if player2.incoming_action == 2:

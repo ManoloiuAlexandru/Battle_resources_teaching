@@ -35,7 +35,7 @@ def cancel_card(card, player):
     player.mana += card.mana_cost
     player.hand.append(card)
     player.incoming_spell = None
-    player.active_item = None
+    player.active_defence = None
 
 
 def turn_switch(player1, player2):
@@ -46,8 +46,8 @@ def turn_switch(player1, player2):
         except Exception as e:
             print(e)
         try:
-            if player1.active_item.name is not None and player1.active_item.name in list_of_item:
-                cancel_card(player1.active_item.name, player1)
+            if player1.active_defence.name is not None and player1.active_defence.name in list_of_item:
+                cancel_card(player1.active_defence.name, player1)
         except Exception as e:
             print(e)
         player2.turn = 1
@@ -69,8 +69,8 @@ def turn_switch(player1, player2):
         except Exception as e:
             print(e)
         try:
-            if player2.active_item.name is not None and player2.active_item.name in list_of_item:
-                cancel_card(player2.active_item.name, player2)
+            if player2.active_defence.name is not None and player2.active_defence.name in list_of_item:
+                cancel_card(player2.active_defence.name, player2)
         except Exception as e:
             print(e)
         player2.turn = 0
@@ -157,7 +157,7 @@ def check_target(player1, player2, card_picked):
     except Exception as e:
         print(e)
     try:
-        if player1.active_item is not None:
+        if player1.active_defence is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
                     return 1
@@ -238,12 +238,12 @@ def put_item_on_creature(player1, player2, card_picked):
 def put_item(player1, player2, card_picked):
     for card in player1.battle_field:
         if card_picked.get(card.name_for_html) is not None:
-            if player1.active_item.name in list_of_items_that_draw_cards:
-                for i in range(0, list_of_items_that_draw_cards.get(player1.active_item.name)):
+            if player1.active_defence.name in list_of_items_that_draw_cards:
+                for i in range(0, list_of_items_that_draw_cards.get(player1.active_defence.name)):
                     player1.draw_card()
-            card.items.append(player1.active_item)
-            player1.active_item.status_update(card)
-            player1.active_item = None
+            card.items.append(player1.active_defence)
+            player1.active_defence.status_update(card)
+            player1.active_defence = None
             break
 
 

@@ -2,7 +2,6 @@ import random
 
 from clases.creatures import *
 from decks.lists_of_cards import *
-from clases.Item import list_of_item
 from clases.game_logics import *
 
 
@@ -20,7 +19,7 @@ class Player:
         self.incoming_action = 0
         self.incoming_spell = None
         self.active_minion = None
-        self.active_item = None
+        self.active_defence = None
         self.ongoing_effects = []
         self.logs = ""
         self.playing_deck_name = ""
@@ -28,6 +27,10 @@ class Player:
         self.used_power = 0
         self.enemy_player = None
         self.immunity = False
+        self.armor = 0
+        self.fatigue = 1
+        self.traps = 0
+        self.duration_of_traps = 0
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -99,10 +102,10 @@ class Player:
                     self.incoming_action = 3
                     self.incoming_spell = card
                     return 3
-                elif card.name in list_of_item:
+                elif card.name in list_of_defences:
                     self.mana_pay(card)
                     self.incoming_action = 4
-                    self.active_item = card
+                    self.active_defence = card
                     return 4
                 elif card.name in list_of_creature_with_on_going_effect and len(self.battle_field) < 7:
                     self.ongoing_effects.append(card)
@@ -148,7 +151,11 @@ class Player:
         except Exception as e:
             print(e)
             if len(self.deck) == 0 and self.immunity is False:
-                self.hp -= 1
+                if self.armor == 0:
+                    self.hp -= self.fatigue
+                else:
+                    self.armor -= self.fatigue
+                self.fatigue += 1
 
     def start_game(self):
         try:
