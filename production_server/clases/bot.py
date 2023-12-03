@@ -236,8 +236,8 @@ class Bot(Player):
             else:
                 return 0
         elif card.card_type == "Defence":
-            self.traps = card.number_of_def
-            self.duration_of_traps = card.duration
+            self.traps = card.number_of_troops
+            self.duration_of_traps = card.nr_of_assaults
             self.active_defence = card
         return 1
 

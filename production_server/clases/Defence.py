@@ -1,8 +1,8 @@
 class Defence:
-    def __init__(self, mana_cost, name, number_of_def, duration, description, id):
+    def __init__(self, mana_cost, name, number_of_troops, nr_of_assaults, description, id):
         self.card_id = str(id)
-        self.number_of_def = number_of_def
-        self.duration = duration
+        self.number_of_troops = number_of_troops
+        self.nr_of_assaults = nr_of_assaults
         self.mana_cost = mana_cost
         self.original_mana_cost = mana_cost
         self.name = name

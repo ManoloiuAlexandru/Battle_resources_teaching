@@ -44,12 +44,7 @@ def cancel_card(card, player):
 def reset_player(player, enemy_player):
     player.turn = 0
     player.used_power = 0
-    if enemy_player.active_defence is None:
-        enemy_player.traps = 0
-    else:
-        enemy_player.duration_of_traps -= 1
-    if enemy_player.duration_of_traps == 0:
-        enemy_player.active_defence = None
+    player.number_of_assaults = 1
     try:
         if player.incoming_spell.name is not None and player.incoming_spell.name in list_of_resetting_spells:
             cancel_card(player.incoming_spell, player)
@@ -96,6 +91,8 @@ def turn_switch(player1, player2):
 
 
 def battle_logic(player, card_picked):
+    if card_picked.get(player.enemy_player.name) is not None:
+        player.do_damage(player.enemy_player)
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
             player.turn = 0
@@ -111,16 +108,8 @@ def damage_dealing(player, card_picked):
 
 def damage_to_player(player, current_card):
     if player.immunity is False:
-        if player.armor < current_card.attack:
-            player.hp = player.hp + player.armor - current_card.attack
-            player.armor = 0
-        else:
-            player.armor -= current_card.attack
+        player.hp -= current_card.attack
     current_card.exhausted = True
-    if current_card.armored is True:
-        current_card.armored = False
-    else:
-        current_card.hp -= player.traps
     current_card = None
     return player, current_card
 
@@ -290,7 +279,7 @@ def general_spells(player, enemy_player, spell_name):
         player.active_defence = list_of_spells_that_add_defences.get(spell_name)
         put_item_on(player, enemy_player, None)
     if spell_name in list_of_spells_that_add_traps:
-        player.traps += list_of_spells_that_add_traps.get(spell_name)
+        player.number_of_troops += list_of_spells_that_add_traps.get(spell_name)
     if spell_name in list_of_spells_that_summon:
         spell_that_summon(player, enemy_player, spell_name)
     elif spell_name == "Peace Treaty":
@@ -339,8 +328,8 @@ def destroy_creature(card_picked, player):
 
 
 def put_item_on(player1, player2, card_picked):
-    player1.traps = player1.active_defence.number_of_def
-    player1.duration_of_traps = player1.active_defence.duration
+    player1.number_of_troops = player1.active_defence.number_of_troops
+    player1.nr_of_assaults = player1.active_defence.nr_of_assaults
 
 
 def heal_creature(card_picked, player, amount):

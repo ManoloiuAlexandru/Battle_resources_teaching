@@ -52,7 +52,7 @@
                     {%if players[0].armor>0:%}
                     Defenses:{{players[0].armor}}
                     {%endif%}
-                    Traps:{{players[0].traps}}/{{players[0].duration_of_traps}}:Duration<br>
+                    Troops:{{players[0].number_of_troops}}/{{players[0].nr_of_assaults}}:Assaults<br>
                     HP:{{players[0].hp}}<br>
                     Mana: {{players[0].mana}}/{{players[0].empty_mana}} ({{players[0].last_debt}})
                 </button>
@@ -236,7 +236,7 @@
                         <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
                         {%endif%}
                         {%if creature.card_type=="Defence"%}
-                        <span class="attack_hp">Traps:{{creature.number_of_def}} Duration:{{creature.duration}}</span>
+                        <span class="attack_hp">Troops:{{creature.number_of_troops}} Assaults:{{creature.nr_of_assaults}}</span>
                         {%endif%}
                     </button>
                     {%else%}
@@ -259,7 +259,7 @@
                     {%if players[1].armor>0:%}
                     Defenses:{{players[1].armor}}
                     {%endif%}
-                    Traps:{{players[1].traps}}/{{players[1].duration_of_traps}}:Duration<br>
+                    Troops:{{players[1].number_of_troops}}/{{players[1].nr_of_assaults}}:Assaults<br>
                     HP:{{players[1].hp}}<br>
                     Mana: {{players[1].mana}}/{{players[1].empty_mana}} ({{players[1].last_debt}})
                 </button>

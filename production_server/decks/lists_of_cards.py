@@ -128,11 +128,11 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", 
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
 list_of_creature_that_add_defence = {
-    "Mercenary defender": Defence(3, "Improvised trap", 3, 2, "", generate_random_int()) for i in range(0, 10)}
+    "Mercenary defender": Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)}
 list_of_creature_that_give_armor = {"Architecti": 5}
 list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
-                              "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Spiked Walls": 2}
+                              "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2}
 list_of_card_that_pay_debt = {"Wealthy Nobel"}
 """
 Spells
@@ -208,10 +208,10 @@ list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}
 list_of_spells_that_add_traps = {"Trapped path": 4}
-list_of_spells_that_add_defences = {"Defending  the empire": Defence(1, "Burning Tar", 1, 4, "", generate_random_int())
+list_of_spells_that_add_defences = {"Defending  the empire": Defence(1, "Empire Peasants", 1, 4, "", generate_random_int())
                                     for
                                     i in range(0, 10)}
 """
 Defence
 """
-list_of_defences = ["Burning Tar", "Spiked Walls"]
+list_of_defences = ["Empire Peasants", "Mercenary's Troops"]

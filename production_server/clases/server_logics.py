@@ -54,9 +54,9 @@ def get_old_deck():
                 attack = int(file_line.split(":")[1])
             elif "category" in file_line.split(":"):
                 category = file_line.split(":")[1]
-            elif "number_of_def" in file_line.split(":"):
+            elif "number_of_troops" in file_line.split(":"):
                 number_of_def = int(file_line.split(":")[1])
-            elif "duration" in file_line.split(":"):
+            elif "nr_of_assaults" in file_line.split(":"):
                 duration = int(file_line.split(":")[1])
             file_line = file.readline()
             file_line = file_line.strip()

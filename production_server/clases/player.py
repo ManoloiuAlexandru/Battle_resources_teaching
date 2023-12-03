@@ -29,10 +29,11 @@ class Player:
         self.immunity = False
         self.armor = 0
         self.fatigue = 1
-        self.traps = 0
-        self.duration_of_traps = 0
+        self.number_of_troops = 0
+        self.nr_of_assaults = 0
         self.debt = 0
         self.last_debt = 0
+        self.number_of_assaults = 1
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -464,5 +465,17 @@ class Player:
 
     def put_item_on(self, enemy_player, card):
         self.active_defence = list_of_creature_that_add_defence.get(card.name)
-        self.traps = self.active_defence.number_of_def
-        self.duration_of_traps = self.active_defence.duration
+        self.number_of_troops = self.active_defence.number_of_troops
+        self.nr_of_assaults = self.active_defence.nr_of_assaults
+
+    def do_damage(self, target):
+        if target == self.enemy_player and self.active_defence is not None and self.number_of_assaults >= 1:
+            self.enemy_player.hp -= self.number_of_troops
+            self.nr_of_assaults -= 1
+            self.number_of_assaults -= 1
+            self.active_defence.nr_of_assaults -= 1
+
+        elif self.active_defence.nr_of_assaults == 0:
+            self.number_of_troops = 0
+            self.nr_of_assaults = 0
+            self.number_of_assaults = 0

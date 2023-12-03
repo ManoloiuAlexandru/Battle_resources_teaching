@@ -1,132 +1,181 @@
 empire:Byzantine_Empire
 card_id:0
-mana_cost:2
-original_mana_cost:2
-name:Wealthy Nobel
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Pays all debt
-original_description:Pays all debt
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Wealthy Nobel.png
-items:[]
-number_of_attacks:1
+number_of_troops:2
+nr_of_assaults:8
+mana_cost:5
+original_mana_cost:5
+name:Mercenary's Troops
+card_type:Defence
+description:Debt(2)
+img_url:Mercenary's Troops.png
 empire_belonging:
-name_for_html:Wealthy_Nobel0
+name_for_html:Mercenary's_Troops0
 --------------------------------
 card_id:1
+number_of_troops:2
+nr_of_assaults:8
+mana_cost:5
+original_mana_cost:5
+name:Mercenary's Troops
+card_type:Defence
+description:Debt(2)
+img_url:Mercenary's Troops.png
+empire_belonging:
+name_for_html:Mercenary's_Troops1
+--------------------------------
+card_id:2
 mana_cost:2
 original_mana_cost:2
-name:Wealthy Nobel
+name:Byzantium Engineer
 hp:2
 max_hp:2
 original_hp:2
-attack:3
+attack:2
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:2
 active_effects:[]
-description:Pays all debt
-original_description:Pays all debt
+description:Draw a Defence
+original_description:Draw a Defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Wealthy Nobel.png
+img_url:Byzantium Engineer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Wealthy_Nobel1
---------------------------------
-card_id:2
-mana_cost:4
-original_mana_cost:4
-name:Mercenary Champion
-hp:7
-max_hp:7
-original_hp:7
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Debt(2)
-original_description:Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Champion.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_Champion2
+name_for_html:Byzantium_Engineer2
 --------------------------------
 card_id:3
-mana_cost:4
-original_mana_cost:4
-name:Mercenary Champion
-hp:7
-max_hp:7
-original_hp:7
-attack:7
-category:soldier
+mana_cost:2
+original_mana_cost:2
+name:Byzantium Engineer
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:7
+original_attack:2
 active_effects:[]
-description:Debt(2)
-original_description:Debt(2)
+description:Draw a Defence
+original_description:Draw a Defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary Champion.png
+img_url:Byzantium Engineer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_Champion3
+name_for_html:Byzantium_Engineer3
 --------------------------------
 card_id:4
 mana_cost:2
 original_mana_cost:2
-name:Mercenary soldier
-hp:4
-max_hp:4
-original_hp:4
+name:Wealthy Nobel
+hp:2
+max_hp:2
+original_hp:2
 attack:3
-category:soldier
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:3
 active_effects:[]
-description:Debt(1)
-original_description:Debt(1)
+description:Pays all debt
+original_description:Pays all debt
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary soldier.png
+img_url:Wealthy Nobel.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_soldier4
+name_for_html:Wealthy_Nobel4
 --------------------------------
 card_id:5
 mana_cost:2
 original_mana_cost:2
+name:Wealthy Nobel
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Pays all debt
+original_description:Pays all debt
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Wealthy Nobel.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Wealthy_Nobel5
+--------------------------------
+card_id:6
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Champion
+hp:7
+max_hp:7
+original_hp:7
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Debt(2)
+original_description:Debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Champion.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Champion6
+--------------------------------
+card_id:7
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Champion
+hp:7
+max_hp:7
+original_hp:7
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Debt(2)
+original_description:Debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Champion.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Champion7
+--------------------------------
+card_id:8
+mana_cost:2
+original_mana_cost:2
 name:Mercenary soldier
 hp:4
 max_hp:4
@@ -147,136 +196,160 @@ img_url:Mercenary soldier.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_soldier5
---------------------------------
-card_id:6
-mana_cost:5
-original_mana_cost:5
-name:Mercenary elite Defender
-hp:8
-max_hp:8
-original_hp:8
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Guard Debt(2)
-original_description:Guard Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary elite Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_elite_Defender6
---------------------------------
-card_id:7
-mana_cost:5
-original_mana_cost:5
-name:Mercenary elite Defender
-hp:8
-max_hp:8
-original_hp:8
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Guard Debt(2)
-original_description:Guard Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary elite Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_elite_Defender7
---------------------------------
-card_id:8
-mana_cost:4
-original_mana_cost:4
-name:Mercenary Herbalist
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Restore 6 health Debt(1)
-original_description:Restore 6 health Debt(1)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Herbalist.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_Herbalist8
+name_for_html:Mercenary_soldier8
 --------------------------------
 card_id:9
-mana_cost:4
-original_mana_cost:4
-name:Mercenary Herbalist
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:worker
+mana_cost:2
+original_mana_cost:2
+name:Mercenary soldier
+hp:4
+max_hp:4
+original_hp:4
+attack:3
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:3
 active_effects:[]
-description:Restore 6 health Debt(1)
-original_description:Restore 6 health Debt(1)
+description:Debt(1)
+original_description:Debt(1)
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary Herbalist.png
+img_url:Mercenary soldier.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_Herbalist9
+name_for_html:Mercenary_soldier9
 --------------------------------
 card_id:10
 mana_cost:5
 original_mana_cost:5
-name:Protokentarchos
-hp:4
-max_hp:4
-original_hp:4
-attack:4
+name:Mercenary elite Defender
+hp:8
+max_hp:8
+original_hp:8
+attack:7
 category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:7
 active_effects:[]
-description:Give a friendly minion +3/+3 Debt(1)
-original_description:Give a friendly minion +3/+3 Debt(1)
+description:Guard Debt(2)
+original_description:Guard Debt(2)
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Protokentarchos.png
+img_url:Mercenary elite Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Protokentarchos10
+name_for_html:Mercenary_elite_Defender10
 --------------------------------
 card_id:11
 mana_cost:5
 original_mana_cost:5
+name:Mercenary elite Defender
+hp:8
+max_hp:8
+original_hp:8
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Guard Debt(2)
+original_description:Guard Debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary elite Defender.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_elite_Defender11
+--------------------------------
+card_id:12
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Herbalist
+hp:6
+max_hp:6
+original_hp:6
+attack:4
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Restore 6 health Debt(1)
+original_description:Restore 6 health Debt(1)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Herbalist.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Herbalist12
+--------------------------------
+card_id:13
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Herbalist
+hp:6
+max_hp:6
+original_hp:6
+attack:4
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Restore 6 health Debt(1)
+original_description:Restore 6 health Debt(1)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Herbalist.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Herbalist13
+--------------------------------
+card_id:14
+mana_cost:1
+original_mana_cost:1
+name:Pilum Throw
+card_type:Spell
+description:Deal 3 damage Debt(1)
+img_url:Pilum Throw.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Throw14
+--------------------------------
+card_id:15
+mana_cost:1
+original_mana_cost:1
+name:Pilum Throw
+card_type:Spell
+description:Deal 3 damage Debt(1)
+img_url:Pilum Throw.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Throw15
+--------------------------------
+card_id:16
+mana_cost:5
+original_mana_cost:5
 name:Protokentarchos
 hp:4
 max_hp:4
@@ -297,158 +370,185 @@ img_url:Protokentarchos.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Protokentarchos11
---------------------------------
-card_id:12
-mana_cost:1
-original_mana_cost:1
-name:Roman Formation Phalanx
-card_type:Spell
-description:Give your minions +1/+1 Debt(1)
-img_url:Roman Formation Phalanx.png
-target:None
-empire_belonging:
-category:
-name_for_html:Roman_Formation_Phalanx12
---------------------------------
-card_id:13
-mana_cost:1
-original_mana_cost:1
-name:Roman Formation Phalanx
-card_type:Spell
-description:Give your minions +1/+1 Debt(1)
-img_url:Roman Formation Phalanx.png
-target:None
-empire_belonging:
-category:
-name_for_html:Roman_Formation_Phalanx13
---------------------------------
-card_id:14
-mana_cost:3
-original_mana_cost:3
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi Debt(1)
-img_url:Boarder Guards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Boarder_Guards14
---------------------------------
-card_id:15
-mana_cost:3
-original_mana_cost:3
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi Debt(1)
-img_url:Boarder Guards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Boarder_Guards15
---------------------------------
-card_id:16
-mana_cost:2
-original_mana_cost:2
-name:Ancient Empire
-card_type:Spell
-description:Draw 2 cards Debt(1)
-img_url:Ancient Empire.png
-target:None
-empire_belonging:
-category:
-name_for_html:Ancient_Empire16
+name_for_html:Protokentarchos16
 --------------------------------
 card_id:17
-mana_cost:2
-original_mana_cost:2
-name:Ancient Empire
+mana_cost:5
+original_mana_cost:5
+name:Protokentarchos
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Give a friendly minion +3/+3 Debt(1)
+original_description:Give a friendly minion +3/+3 Debt(1)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Protokentarchos.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Protokentarchos17
+--------------------------------
+card_id:18
+mana_cost:1
+original_mana_cost:1
+name:Roman Formation Phalanx
 card_type:Spell
-description:Draw 2 cards Debt(1)
-img_url:Ancient Empire.png
+description:Give your minions +1/+1 Debt(1)
+img_url:Roman Formation Phalanx.png
 target:None
 empire_belonging:
 category:
-name_for_html:Ancient_Empire17
---------------------------------
-card_id:18
-number_of_def:2
-duration:8
-mana_cost:5
-original_mana_cost:5
-name:Spiked Walls
-card_type:Defence
-description:Debt(2)
-img_url:Spiked Walls.png
-empire_belonging:
-name_for_html:Spiked_Walls18
+name_for_html:Roman_Formation_Phalanx18
 --------------------------------
 card_id:19
-number_of_def:2
-duration:8
-mana_cost:5
-original_mana_cost:5
-name:Spiked Walls
-card_type:Defence
-description:Debt(2)
-img_url:Spiked Walls.png
+mana_cost:1
+original_mana_cost:1
+name:Roman Formation Phalanx
+card_type:Spell
+description:Give your minions +1/+1 Debt(1)
+img_url:Roman Formation Phalanx.png
+target:None
 empire_belonging:
-name_for_html:Spiked_Walls19
+category:
+name_for_html:Roman_Formation_Phalanx19
 --------------------------------
 card_id:20
-mana_cost:2
-original_mana_cost:2
-name:Byzantium Engineer
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Draw a Defence
-original_description:Draw a Defence
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Byzantium Engineer.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Boarder Guards
+card_type:Spell
+description:Summon 2 Akritoi Debt(1)
+img_url:Boarder Guards.png
+target:None
 empire_belonging:
-name_for_html:Byzantium_Engineer20
+category:
+name_for_html:Boarder_Guards20
 --------------------------------
 card_id:21
+mana_cost:3
+original_mana_cost:3
+name:Boarder Guards
+card_type:Spell
+description:Summon 2 Akritoi Debt(1)
+img_url:Boarder Guards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Boarder_Guards21
+--------------------------------
+card_id:22
 mana_cost:2
 original_mana_cost:2
-name:Byzantium Engineer
+name:Watchtower
 hp:2
 max_hp:2
 original_hp:2
-attack:2
-category:worker
+attack:1
+category:building
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:1
 active_effects:[]
-description:Draw a Defence
-original_description:Draw a Defence
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Byzantium Engineer.png
+img_url:Watchtower.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Byzantium_Engineer21
+name_for_html:Watchtower22
 --------------------------------
-card_id:22
-mana_cost:8
-original_mana_cost:8
-name:Richard the Lionheart
+card_id:23
+mana_cost:2
+original_mana_cost:2
+name:Watchtower
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:building
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchtower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchtower23
+--------------------------------
+card_id:24
+mana_cost:2
+original_mana_cost:2
+name:Watchman
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a guard card
+original_description:Draw a guard card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchman.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchman24
+--------------------------------
+card_id:25
+mana_cost:2
+original_mana_cost:2
+name:Watchman
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Draw a guard card
+original_description:Draw a guard card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchman.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchman25
+--------------------------------
+card_id:26
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
 hp:6
 max_hp:6
 original_hp:6
@@ -458,177 +558,90 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:6
 active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Richard the Lionheart.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Richard_the_Lionheart22
---------------------------------
-card_id:23
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Front Line Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Front_Line_Defender23
---------------------------------
-card_id:24
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Front Line Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Front_Line_Defender24
---------------------------------
-card_id:25
-mana_cost:3
-original_mana_cost:3
-name:Miner
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Miner.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Miner25
---------------------------------
-card_id:26
-mana_cost:3
-original_mana_cost:3
-name:Miner
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:At the end of your turn draw a card
-original_description:At the end of your turn draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Miner.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Miner26
+name_for_html:Cataphract26
 --------------------------------
 card_id:27
-mana_cost:4
-original_mana_cost:4
-name:Lost Noble
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:6
 active_effects:[]
-description:Desperate Summon a 3/5 City guard
-original_description:Desperate Summon a 3/5 City guard
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Lost Noble.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Noble27
+name_for_html:Cataphract27
 --------------------------------
 card_id:28
-mana_cost:4
-original_mana_cost:4
-name:Lost Noble
+mana_cost:6
+original_mana_cost:6
+name:Rich Peasant
 hp:1
 max_hp:1
 original_hp:1
-attack:1
+attack:2
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
-description:Desperate Summon a 3/5 City guard
-original_description:Desperate Summon a 3/5 City guard
+description:Summon 2 armored Peasant with guard and armored
+original_description:Summon 2 armored Peasant with guard and armored
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Noble.png
+img_url:Rich Peasant.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Noble28
+name_for_html:Rich_Peasant28
 --------------------------------
 card_id:29
-mana_cost:3
-original_mana_cost:3
-name:Strength in numbers
-card_type:Spell
-description:Give a minion +2/+3 and draw a creature
-img_url:Strength in numbers.png
-target:self
+mana_cost:6
+original_mana_cost:6
+name:Rich Peasant
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Summon 2 armored Peasant with guard and armored
+original_description:Summon 2 armored Peasant with guard and armored
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Rich Peasant.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Strength_in_numbers29
+name_for_html:Rich_Peasant29
 --------------------------------

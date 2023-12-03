@@ -9,10 +9,7 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", 0),
-    Defence(5, "Spiked Walls", 2, 8, "Debt(2)", 4),
-    Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", 5),
-    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", 6)
+    Defence(1, "Empire Peasants", 1, 4, "", 0),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -117,7 +114,7 @@ cards_for_byzantine_empire = [
     Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136),
     Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137),
     Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
-    Defence(5, "Spiked Walls", 2, 8, "Debt(2)", -139),
+    Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
     Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
     Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
 ]
@@ -146,7 +143,7 @@ cards_byzantine_show = [
     Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136),
     Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137),
     Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
-    Defence(5, "Spiked Walls", 2, 8, "Debt(2)", -139),
+    Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
     Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
     Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
 ]
@@ -157,7 +154,7 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Spell(1, "Bandage", "Heal a friendly minion for 4", -12),
                    Spell(2, "Bandages", "Restore a friendly minion to full HP", -13),
                    Spell(1, "Personal Guard", "Give a minion guard and draw a card", -14),
-                   Defence(1, "Burning Tar", 1, 4, "", -16),
+                   Defence(1, "Empire Peasants", 1, 4, "", -16),
                    Spell(3, "Knight's training", "Give a minions +3/+3", -35),
                    Spell(3, "Feudal Obligations", "Draw 2 cards", -29),
                    Spell(8, "Bodyguards", "Summon  2 Guards from your deck", -22),
@@ -192,7 +189,7 @@ cards_for_holy_roman_empire = [
     Spell(1, "Bandage", "Heal a friendly minion for 4", -12),
     Spell(2, "Bandages", "Restore a friendly minion to full HP", -13),
     Spell(1, "Personal Guard", "Give a minion guard and draw a card", -14),
-    Defence(1, "Burning Tar", 1, 4, "", -16),
+    Defence(1, "Empire Peasants", 1, 4, "", -16),
     Spell(3, "Knight's training", "Give a minions +3/+3", -35),
     Spell(3, "Feudal Obligations", "Draw 2 cards", -29),
     Spell(8, "Bodyguards", "Summon  2 Guards from your deck", -22),
@@ -477,7 +474,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Priest", 1, 1,
                               "Restore a friendly minion to full HP and give it +1/+1", "worker",
                               -15),
-                     Defence(1, "Burning Tar", 1, 4, "", -16),
+                     Defence(1, "Empire Peasants", 1, 4, "", -16),
                      Creature(2, "Guard Dog", 2, 2, "Guard", "animal", -18),
                      Spell(3, "Horse riding lessons", "Give a friendly creature charge and +2 attack",
                            -19),
@@ -614,7 +611,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136),
                      Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137),
                      Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
-                     Defence(5, "Spiked Walls", 2, 8, "Debt(2)", -139),
+                     Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
                      Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
                      Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
                      ]
