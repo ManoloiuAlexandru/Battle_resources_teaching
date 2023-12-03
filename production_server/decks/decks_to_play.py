@@ -4,14 +4,15 @@ from clases.spells import Spell
 from clases.Defence import Defence
 
 bot_deck = [
-    Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", 2),
-    Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", 3),
+    Creature(0, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored", "worker", 1),
+    Creature(0, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored", "worker", 2),
 
 ]
 demo_deck = [
-    Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", 0),
-    Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", 1),
-    Creature(5, "Mercenary Defender", 8, 7, "Debt(2)", "soldier", 4)
+    Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", 0),
+    Defence(5, "Spiked Walls", 2, 8, "Debt(2)", 4),
+    Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", 5),
+    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", 6)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -114,7 +115,11 @@ cards_for_byzantine_empire = [
     Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", -91),
     Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", -135),
     Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136),
-    Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137)
+    Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137),
+    Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
+    Defence(5, "Spiked Walls", 2, 8, "Debt(2)", -139),
+    Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
+    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -139,7 +144,11 @@ cards_byzantine_show = [
     Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", -91),
     Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", -135),
     Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136),
-    Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137)
+    Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137),
+    Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
+    Defence(5, "Spiked Walls", 2, 8, "Debt(2)", -139),
+    Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
+    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
 ]
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72),
@@ -603,7 +612,11 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
                      Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", -135),
                      Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136),
-                     Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137)
+                     Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137),
+                     Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
+                     Defence(5, "Spiked Walls", 2, 8, "Debt(2)", -139),
+                     Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
+                     Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

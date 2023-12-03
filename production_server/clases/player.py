@@ -32,6 +32,7 @@ class Player:
         self.traps = 0
         self.duration_of_traps = 0
         self.debt = 0
+        self.last_debt = 0
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -60,8 +61,15 @@ class Player:
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_card_that_pay_debt:
+                    if self.last_debt > self.mana:
+                        self.mana = self.empty_mana
+                    else:
+                        self.mana += self.last_debt
+                    self.last_debt = 0
                 if card.name in list_of_card_that_add_debt:
                     self.debt += list_of_card_that_add_debt.get(card.name)
+                    self.last_debt = list_of_card_that_add_debt.get(card.name)
                 if card.name in list_of_creature_that_give_armor:
                     self.armor += list_of_creature_that_give_armor.get(card.name)
                 if card.name in list_of_cards_that_discard:
@@ -339,7 +347,7 @@ class Player:
         card.max_hp += buff[0]
         card.attack += buff[1]
         if buff[2] not in card.description:
-            card.description += " " + buff[2]
+            card.description += "  " + buff[2]
         card.check_creature(buff[2])
 
     def hand_check(self, card):

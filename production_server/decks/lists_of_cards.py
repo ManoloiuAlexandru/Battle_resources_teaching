@@ -32,13 +32,14 @@ Creatures
 """
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
-                                "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff"]
+                                "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
+                                "Mercenary Herbalist"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
-list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8}
-list_of_creature_that_can_heal_players = {"Church Builder": 8}
+list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6}
+list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
@@ -59,8 +60,10 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
-                                    "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1}
+                                    "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
+                                    "Byzantium Engineer": 1}
 list_of_creature_that_draw_specific_cards = {
+    "Byzantium Engineer": (["Defence"], [""], [""]),
     "Mercenary Recruiter": (["Creature"], [""], ["mercenary"]),
     "Landlord": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "worker", "worker"]),
     "Negotiator": (["Creature"], [""], ["animal"]),
@@ -129,7 +132,8 @@ list_of_creature_that_add_defence = {
 list_of_creature_that_give_armor = {"Architecti": 5}
 list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
-                              "Mercenary elite Defender": 2}
+                              "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Spiked Walls": 2}
+list_of_card_that_pay_debt = {"Wealthy Nobel"}
 """
 Spells
 """
@@ -210,4 +214,4 @@ list_of_spells_that_add_defences = {"Defending  the empire": Defence(1, "Burning
 """
 Defence
 """
-list_of_defences = ["Burning Tar"]
+list_of_defences = ["Burning Tar", "Spiked Walls"]

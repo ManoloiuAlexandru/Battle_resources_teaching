@@ -75,6 +75,7 @@ def reset_player(player, enemy_player):
         enemy_player.mana = 0
     else:
         enemy_player.mana -= enemy_player.debt
+    enemy_player.last_debt = enemy_player.debt
     enemy_player.debt = 0
     enemy_player.draw_card()
     player.problem = ""
@@ -244,7 +245,7 @@ def buff_creature_with_spell(card, player1):
     card.max_hp += list_of_buff_spells.get(player1.incoming_spell.name)[0]
     card.attack += list_of_buff_spells.get(player1.incoming_spell.name)[1]
     if list_of_buff_spells.get(player1.incoming_spell.name)[2] not in card.description:
-        card.description += " " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
+        card.description += "  " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
     card.check_creature(list_of_buff_spells.get(player1.incoming_spell.name)[2])
 
 

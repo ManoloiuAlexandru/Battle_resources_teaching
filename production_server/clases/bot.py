@@ -21,6 +21,12 @@ class Bot(Player):
                 self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
+                    if card.name in list_of_card_that_pay_debt:
+                        if self.last_debt > self.mana:
+                            self.mana = self.empty_mana
+                        else:
+                            self.mana += self.last_debt
+                        self.last_debt = 0
                     if card.name in list_of_card_that_add_debt:
                         self.debt += list_of_card_that_add_debt.get(card.name)
                     if card.name in list_of_creature_that_give_armor:
@@ -328,7 +334,7 @@ class Bot(Player):
             card.max_hp += list_of_buff_spells.get(self.incoming_spell)[0]
             card.attack += list_of_buff_spells.get(self.incoming_spell)[1]
             if list_of_buff_spells.get(self.incoming_spell)[2] not in card.description:
-                card.description += " " + list_of_buff_spells.get(self.incoming_spell)[2]
+                card.description += "  " + list_of_buff_spells.get(self.incoming_spell)[2]
             self.incoming_spell = None
         elif self.active_minion is not None:
             pass
