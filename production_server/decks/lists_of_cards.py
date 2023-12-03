@@ -124,6 +124,9 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", 
                    "King Saragon of Akkad", "Carcassonne"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
+list_of_creature_that_add_defence = {
+    "Mercenary defender": Defence(3, "Improvised trap", 3, 2, "", generate_random_int()) for i in range(0, 10)}
+list_of_creature_that_give_armor = {"Architecti": 5}
 """
 Spells
 """

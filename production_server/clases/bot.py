@@ -21,6 +21,8 @@ class Bot(Player):
                 self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
+                    if card.name in list_of_creature_that_give_armor:
+                        self.armor += list_of_creature_that_give_armor.get(card.name)
                     if card.name in list_of_creature_that_summon:
                         for i in range(list_of_creature_that_summon.get(card.name)[0]):
                             if len(self.battle_field) < 7:
@@ -39,6 +41,8 @@ class Bot(Player):
                         self.immunity = True
                     if card.name in list_of_creature_that_debuff:
                         self.pick_target(card)
+                    if card.name in list_of_creature_that_add_defence:
+                        self.put_item_on(self.enemy_player, card)
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
                         self.battle_field.append(card)

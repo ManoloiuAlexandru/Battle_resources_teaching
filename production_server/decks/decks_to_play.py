@@ -4,19 +4,13 @@ from clases.spells import Spell
 from clases.Defence import Defence
 
 bot_deck = [
-    Creature(4, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", 4),
-    Creature(1, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", 5),
+    Creature(0, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", 2),
+    Creature(0, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", 3),
 
 ]
 demo_deck = [
-    Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", 0),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 6),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 7),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 8),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 9),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 10),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 11),
-    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 12)
+    Creature(0, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", 0),
+    Creature(0, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", 1),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -318,8 +312,14 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Creature(9, "Turtanu", 9, 3, "Guard Desperate Summon 3 City Gate Guards", "ancient", -113),
                     Creature(3, "Prisoner of War", 4, 3, "If you discard this summon it", "ancient", -114),
                     ]
-roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132), ]
-roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132), ]
+roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
+                Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
+                Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
+                ]
+roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
+                     Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
+                     Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
+                     ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
@@ -592,6 +592,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130),
                      Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
                      Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
+                     Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
+                     Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

@@ -59,6 +59,8 @@ class Player:
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_creature_that_give_armor:
+                    self.armor += list_of_creature_that_give_armor.get(card.name)
                 if card.name in list_of_cards_that_discard:
                     self.card_discard(list_of_cards_that_discard.get(card.name), card)
                     if self.incoming_spell is not None:
@@ -78,6 +80,8 @@ class Player:
                     self.incoming_action = 2
                     self.active_minion = card
                     return 2
+                if card.name in list_of_creature_that_add_defence:
+                    self.put_item_on(self.enemy_player, card)
                 elif card.name in list_of_creature_that_draw_cards and len(self.battle_field) < 7:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
                         if card.name in list_of_creature_that_draw_specific_cards:
@@ -446,3 +450,8 @@ class Player:
                         self.draw_card()
             except Exception as e:
                 print(e)
+
+    def put_item_on(self, enemy_player, card):
+        self.active_defence = list_of_creature_that_add_defence.get(card.name)
+        self.traps = self.active_defence.number_of_def
+        self.duration_of_traps = self.active_defence.duration
