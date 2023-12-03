@@ -4,12 +4,12 @@ from clases.spells import Spell
 from clases.Defence import Defence
 
 bot_deck = [
-    Creature(0, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored", "worker", 1),
-    Creature(0, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored", "worker", 2),
+    Defence(1, "Empire Peasants", 1, 4, "", 1),
 
 ]
 demo_deck = [
     Defence(1, "Empire Peasants", 1, 4, "", 0),
+    Creature(0, "Demo", 1, 1, "Guard", "", 2)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),

@@ -93,6 +93,10 @@ def turn_switch(player1, player2):
 def battle_logic(player, card_picked):
     if card_picked.get(player.enemy_player.name) is not None:
         player.do_damage(player.enemy_player)
+    elif player.active_defence is not None:
+        for card in player.enemy_player.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                player.do_damage(card)
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
             player.turn = 0

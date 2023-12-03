@@ -51,6 +51,10 @@ class Bot(Player):
                         self.pick_target(card)
                     if card.name in list_of_creature_that_add_defence:
                         self.put_item_on(self.enemy_player, card)
+                    if card.name in list_of_defences:
+                        self.active_defence = card
+                        self.number_of_troops = self.active_defence.number_of_troops
+                        self.nr_of_assaults = self.active_defence.nr_of_assaults
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
                         self.battle_field.append(card)
@@ -249,6 +253,7 @@ class Bot(Player):
         player.check_battlefield()
 
     def check_move(self, player):
+        self.target_with_on_hp()
         you_can_do = 1
         while you_can_do == 1:
             you_can_do = 0
@@ -345,3 +350,14 @@ class Bot(Player):
             if target_creature.attack >= creature.attack:
                 target_creature = creature
         target_creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self, self.enemy_player)
+
+    def target_with_on_hp(self):
+        if self.active_defence is not None and self.check_for_guards(self.enemy_player) == 0:
+            target_creature = Creature(1, 'DEMO', 999, 0, "", "", 999)
+            for creature in self.enemy_player.battle_field:
+                if target_creature.attack <= creature.attack < self.hp:
+                    target_creature = creature
+            if target_creature.hp == 999:
+                self.do_damage(self.enemy_player)
+            else:
+                self.do_damage(target_creature)

@@ -469,13 +469,42 @@ class Player:
         self.nr_of_assaults = self.active_defence.nr_of_assaults
 
     def do_damage(self, target):
-        if target == self.enemy_player and self.active_defence is not None and self.number_of_assaults >= 1:
-            self.enemy_player.hp -= self.number_of_troops
-            self.nr_of_assaults -= 1
-            self.number_of_assaults -= 1
-            self.active_defence.nr_of_assaults -= 1
+        if self.guard_checking(self.enemy_player, target) == 1:
+            if target == self.enemy_player and self.active_defence is not None and self.number_of_assaults >= 1:
+                self.enemy_player.hp -= self.number_of_troops
+                self.defences_weakened(1)
+                self.number_of_assaults -= 1
 
-        elif self.active_defence.nr_of_assaults == 0:
-            self.number_of_troops = 0
-            self.nr_of_assaults = 0
-            self.number_of_assaults = 0
+            elif self.active_defence.nr_of_assaults == 0:
+                self.number_of_troops = 0
+                self.nr_of_assaults = 0
+
+            if target is not None and self.active_defence is not None and self.number_of_assaults >= 1:
+                if target.armored is True:
+                    target.armored = False
+                else:
+                    target.hp -= self.number_of_troops
+                self.hp -= target.attack
+                self.defences_weakened(1)
+                self.number_of_assaults -= 1
+        else:
+            self.problem = "There are guards on the field"
+
+    def guard_checking(self, player, current_card):
+        try:
+            if "Guard" in current_card.description.split():
+                return 1
+            else:
+                for card in player.battle_field:
+                    if "Guard" in card.description.split():
+                        return 0
+        except Exception as e:
+            if current_card is None or current_card == self.enemy_player:
+                for card in player.battle_field:
+                    if "Guard" in card.description.split():
+                        return 0
+        return 1
+
+    def defences_weakened(self, nr_of_lost):
+        self.nr_of_assaults -= nr_of_lost
+        self.active_defence.nr_of_assaults -= nr_of_lost
