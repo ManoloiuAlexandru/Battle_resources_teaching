@@ -33,13 +33,14 @@ Creatures
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
-                                "Mercenary Herbalist"]
-list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1}
-list_of_creature_that_deal_dmg_to_players = {"Archer": 1}
+                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy"]
+list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4}
+list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
-list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6}
-list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6}
+list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
+                              "Local Healer": 4, "Clergy": 3}
+list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6, "Local Healer": 4, "Clergy": 3}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
@@ -47,7 +48,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
-                              "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, "")}
+                              "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
+                              "Banner holder": (1, 0, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -83,10 +85,11 @@ list_of_creature_that_summon = {
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
+                                              "Banner holder": ("affects hand", "buff", 1, 0, "")
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Shield": (
-        4, [Creature(4, "City Guard", 4, 4, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
+        1, [Creature(4, "City Guard", 4, 4, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Graf": (
         3, [Creature(2, "Armored Peasant", 2, 1, "Guard Armored", "soldier", generate_random_int()) for i in
             range(0, 50)]),
@@ -208,9 +211,10 @@ list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}
 list_of_spells_that_add_traps = {"Trapped path": 4}
-list_of_spells_that_add_defences = {"Defending  the empire": Defence(1, "Empire Peasants", 1, 4, "", generate_random_int())
-                                    for
-                                    i in range(0, 10)}
+list_of_spells_that_add_defences = {
+    "Defending  the empire": Defence(1, "Empire Peasants", 1, 4, "", generate_random_int())
+    for
+    i in range(0, 10)}
 """
 Defence
 """

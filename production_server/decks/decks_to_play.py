@@ -8,8 +8,7 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Defence(1, "Empire Peasants", 1, 4, "", 0),
-    Creature(0, "Demo", 1, 1, "Guard", "", 2)
+    Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "itme", 1),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -88,6 +87,12 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(6, "Rich Peasant", 1, 2,
                                                "Summon 2 armored Peasant with guard and armored", "worker", -124),
                                       Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "itme", -82),
+                                      Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal", -142),
+                                      Creature(4, "Local Healer", 4, 4, "Restore 4 health", "worker", -143),
+                                      Creature(3, "Clergy", 3, 3, "Restore 3 health", "worker", -144),
+                                      Creature(7, "Local Bodyguard", 8, 6, "Guard", "worker", -145),
+                                      Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146),
+                                      Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)
                                       ]
 cards_for_byzantine_empire = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -613,7 +618,13 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
                      Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
                      Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
-                     Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
+                     Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141),
+                     Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal", -142),
+                     Creature(4, "Local Healer", 4, 4, "Restore 4 health", "worker", -143),
+                     Creature(3, "Clergy", 3, 3, "Restore 3 health", "worker", -144),
+                     Creature(7, "Local Bodyguard", 8, 6, "Guard", "worker", -145),
+                     Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146),
+                     Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
