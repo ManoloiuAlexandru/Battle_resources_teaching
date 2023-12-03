@@ -127,6 +127,9 @@ list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": 
 list_of_creature_that_add_defence = {
     "Mercenary defender": Defence(3, "Improvised trap", 3, 2, "", generate_random_int()) for i in range(0, 10)}
 list_of_creature_that_give_armor = {"Architecti": 5}
+list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
+                              "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
+                              "Mercenary elite Defender": 2}
 """
 Spells
 """

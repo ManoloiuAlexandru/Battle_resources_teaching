@@ -71,6 +71,11 @@ def reset_player(player, enemy_player):
     if enemy_player.empty_mana > 10:
         enemy_player.empty_mana = 10
     enemy_player.mana = enemy_player.empty_mana
+    if enemy_player.mana < enemy_player.debt:
+        enemy_player.mana = 0
+    else:
+        enemy_player.mana -= enemy_player.debt
+    enemy_player.debt = 0
     enemy_player.draw_card()
     player.problem = ""
     enemy_player.problem = ""

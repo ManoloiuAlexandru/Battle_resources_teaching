@@ -21,6 +21,8 @@ class Bot(Player):
                 self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
+                    if card.name in list_of_card_that_add_debt:
+                        self.debt += list_of_card_that_add_debt.get(card.name)
                     if card.name in list_of_creature_that_give_armor:
                         self.armor += list_of_creature_that_give_armor.get(card.name)
                     if card.name in list_of_creature_that_summon:

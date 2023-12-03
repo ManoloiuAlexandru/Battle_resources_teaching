@@ -31,6 +31,7 @@ class Player:
         self.fatigue = 1
         self.traps = 0
         self.duration_of_traps = 0
+        self.debt = 0
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -59,6 +60,8 @@ class Player:
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_card_that_add_debt:
+                    self.debt += list_of_card_that_add_debt.get(card.name)
                 if card.name in list_of_creature_that_give_armor:
                     self.armor += list_of_creature_that_give_armor.get(card.name)
                 if card.name in list_of_cards_that_discard:
