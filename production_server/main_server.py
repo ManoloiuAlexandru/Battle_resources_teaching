@@ -149,7 +149,8 @@ def make_your_own_deck():
 @app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
 def make_your_own_deck_pick_empire():
     return render_template("empires_choice.html",
-                           library=[cards_byzantine_show, cards_holy_show, cards_for_mongol, mesopotamia_show])
+                           library=[cards_byzantine_show, cards_holy_show, cards_for_mongol, mesopotamia_show,
+                                    roman_empire_show])
 
 
 @app.route("/update_deck", methods=["POST", "GET"])
@@ -183,6 +184,8 @@ def make_deck():
         deck_to_pick = cards_for_mongol_empire
     elif empire == "Mesopotamia_Empire":
         deck_to_pick = mesopotamia_empire
+    elif empire == "Roman_Empire":
+        deck_to_pick = roman_empire
     else:
         deck_to_pick = cards_that_are_in_the_game_for_all
     cards_name = request.form
@@ -198,7 +201,7 @@ def make_deck():
                 index += 1
             if card.card_type == "Defence":
                 your_deck.append(
-                    Defence(card.mana_cost, card.name, card.number_of_def,card.duration, card.description, index))
+                    Defence(card.mana_cost, card.name, card.number_of_def, card.duration, card.description, index))
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
     return redirect(url_for('make_your_own_deck', show_deck=show_deck))

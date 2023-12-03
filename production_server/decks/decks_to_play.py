@@ -4,23 +4,19 @@ from clases.spells import Spell
 from clases.Defence import Defence
 
 bot_deck = [
-    Defence(1, "Burning Tar", 1, 4, "", 1),
-    Defence(1, "Burning Tar", 1, 4, "", 2),
-    Defence(1, "Burning Tar", 1, 4, "", 3),
-    Defence(1, "Burning Tar", 1, 4, "", 4),
-    Defence(1, "Burning Tar", 1, 4, "", 5),
-    Defence(1, "Burning Tar", 1, 4, "", 6),
-    Defence(1, "Burning Tar", 1, 4, "", 7),
-    Defence(1, "Burning Tar", 1, 4, "", 9),
-    Defence(1, "Burning Tar", 1, 4, "", 8),
-    Defence(1, "Burning Tar", 1, 4, "", 10), Defence(1, "Burning Tar", 1, 4, "", 12),
-    Defence(1, "Burning Tar", 1, 4, "", 11),
-    Defence(1, "Burning Tar", 1, 4, "", 14), Defence(1, "Burning Tar", 1, 4, "", 13),
-    Defence(1, "Burning Tar", 1, 4, "", 15),
+    Creature(4, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", 4),
+    Creature(1, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", 5),
 
 ]
 demo_deck = [
-    Defence(1, "Burning Tar", 1, 4, "", 0),
+    Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", 0),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 6),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 7),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 8),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 9),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 10),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 11),
+    Creature(0, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "", 12)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -175,7 +171,8 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "knight", -126),
                    Spell(2, "Warhammer", "Break an enemy armor making him lose all attributes", -127),
                    Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
-                   Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129)
+                   Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
+                   Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131)
                    ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -208,7 +205,8 @@ cards_for_holy_roman_empire = [
     Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand", "knight", -126),
     Spell(2, "Warhammer", "Break an enemy armor making him lose all attributes", -127),
     Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
-    Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129)
+    Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
+    Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131)
 ]
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -320,10 +318,13 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Creature(9, "Turtanu", 9, 3, "Guard Desperate Summon 3 City Gate Guards", "ancient", -113),
                     Creature(3, "Prisoner of War", 4, 3, "If you discard this summon it", "ancient", -114),
                     ]
+roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132), ]
+roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132), ]
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 mesopotamia_empire.extend(cards_that_are_in_the_game_for_all)
+roman_empire.extend(cards_that_are_in_the_game_for_all)
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", 911),
@@ -364,7 +365,7 @@ power_of_the_people = [Creature(8, "Frederick Barbarossa", 6, 6,
                                 935),
                        Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", "soldier", 936),
                        Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", 937),
-                       Defence(1, "Burning Tar", 1, 4, "", 938),
+                       Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", 938),
                        Creature(2, "Armored Knight", 2, 2, "Armored", "knight", 939),
                        Creature(9, "Graf", 6, 3,
                                 "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
@@ -589,6 +590,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
                      Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
                      Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130),
+                     Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
+                     Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
@@ -597,5 +600,6 @@ dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": 
 empire_decks = {'Byzantine_Empire': cards_for_byzantine_empire,
                 'Holy_Roman_Empire': cards_for_holy_roman_empire,
                 'Mongol_Empire': cards_for_mongol_empire,
-                "Mesopotamia_Empire": mesopotamia_empire
+                "Mesopotamia_Empire": mesopotamia_empire,
+                "Roman_Empire": roman_empire
                 }

@@ -37,6 +37,8 @@ class Bot(Player):
                         self.hp -= list_of_spells_that_do_damage_to_your_kingdom.get(card.name)
                     if card.name in list_of_creature_that_can_make_kingdom_immun:
                         self.immunity = True
+                    if card.name in list_of_creature_that_debuff:
+                        self.pick_target(card)
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
                         self.battle_field.append(card)
@@ -324,3 +326,10 @@ class Bot(Player):
             self.incoming_spell = None
         elif self.active_minion is not None:
             pass
+
+    def pick_target(self, card):
+        target_creature = Creature(1, 'DEMO', 999, 999, "", "", 999)
+        for creature in self.enemy_player.battle_field:
+            if target_creature.attack >= creature.attack:
+                target_creature = creature
+        target_creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self, self.enemy_player)

@@ -2,6 +2,8 @@ import random
 
 from clases.creatures import Creature
 
+from clases.Defence import Defence
+
 
 def generate_random_int():
     return random.randint(1, 1000000)
@@ -57,8 +59,9 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
-                                    "Mesopotamia Scholar": 1, "Landlord": 3}
+                                    "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1}
 list_of_creature_that_draw_specific_cards = {
+    "Mercenary Recruiter": (["Creature"], [""], ["mercenary"]),
     "Landlord": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "worker", "worker"]),
     "Negotiator": (["Creature"], [""], ["animal"]),
     "Wild Horse": (["Creature"], ["Charge"], [""]),
@@ -132,7 +135,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
-                  "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path"]
+                  "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": ""}
@@ -150,10 +153,12 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
-                                 "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path"]
+                                 "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
+                                 "Defending  the empire"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
-                              "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0)}
+                              "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
+                              "Defending  the empire": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
@@ -174,6 +179,8 @@ list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self"
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "Strength in numbers": ("", "draw")}
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
+    "Defending  the empire": (
+        3, [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 50)]),
     "Mercenaries Reinforcements": (list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
                                    [Creature(1, "Man at arms", 1, 1, "", "ancient", generate_random_int()) for i in
                                     range(0, 40)]),
@@ -191,6 +198,9 @@ list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}
 list_of_spells_that_add_traps = {"Trapped path": 4}
+list_of_spells_that_add_defences = {"Defending  the empire": Defence(1, "Burning Tar", 1, 4, "", generate_random_int())
+                                    for
+                                    i in range(0, 10)}
 """
 Defence
 """

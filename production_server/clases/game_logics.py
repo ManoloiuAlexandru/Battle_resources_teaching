@@ -280,6 +280,9 @@ def spell_that_summon(player, enemy_player, spell_name):
 
 
 def general_spells(player, enemy_player, spell_name):
+    if spell_name in list_of_spells_that_add_defences:
+        player.active_defence = list_of_spells_that_add_defences.get(spell_name)
+        put_item_on(player, enemy_player, None)
     if spell_name in list_of_spells_that_add_traps:
         player.traps += list_of_spells_that_add_traps.get(spell_name)
     if spell_name in list_of_spells_that_summon:

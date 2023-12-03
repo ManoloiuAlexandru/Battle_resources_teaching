@@ -13,6 +13,7 @@
         <option value="Holy_Roman_Empire">Holy Roman Empire</option>
         <option value="Mongol_Empire">Mongol Empire</option>
         <option value="Mesopotamia_Empire">Mesopotamia Empire</option>
+        <option value="Roman_Empire">Roman Empire</option>
     </select>
     <button>Create deck</button>
 </form>
@@ -165,6 +166,39 @@
         {%endfor%}
     </p>
     <summary>Mesopotamia Empire</summary>
+</details>
+<details>
+    <p>The Roman Empire[a] was the post-Republican state of ancient Rome and is generally understood to mean the period
+        and territory ruled by the Romans following Octavian's assumption of sole rule under the Principate in 31 BC. It
+        included territory in Europe, North Africa, and Western Asia, and was ruled by emperors. The fall of the Western
+        Roman Empire in 476 conventionally marks the end of classical antiquity and the beginning of the Middle Ages.<br>
+
+        Rome had expanded its rule to most of the Mediterranean and beyond, but became severely destabilized in civil
+        wars and political conflicts which culminated in the victory of Octavian over Mark Antony and Cleopatra at the
+        Battle of Actium in 31 BC and the subsequent conquest of the Ptolemaic Kingdom in Egypt. In 27 BC the Roman
+        Senate granted Octavian overarching power (imperium) and the new title of Augustus, marking his accession as the
+        first Roman emperor of a monarchy with Rome as its sole capital. The vast Roman territories were organized in
+        senatorial and imperial provinces.<br>
+        {%for card in library[4]%}
+        <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
+            <span style="display:flex">
+            M:<span class="mana_cost">{{card.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            <img src="static/cards/{{ card.img_url }}" class="image_card_in_library"/><br>
+             </span>
+            <span class="creature_name">{{card.name}}</span><br>
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
+            <span class="description_in_library">{{card.description}}</span><br>
+            {%if card.card_type=="Creature"%}
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
+            <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
+            {%endif%}
+            {%if card.card_type=="Defence"%}
+            <span class="attack_hp">Traps:{{card.number_of_def}} Duration:{{card.duration}}</span>
+            {%endif%}
+        </button>
+        {%endfor%}
+    </p>
+    <summary>Roman Empire</summary>
 </details>
 </body>
 </html>
