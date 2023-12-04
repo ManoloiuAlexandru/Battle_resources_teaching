@@ -3,6 +3,9 @@ import random
 from clases.creatures import *
 from decks.lists_of_cards import *
 from clases.game_logics import *
+from decks.lists_of_cards import *
+
+from decks.decks_to_play import *
 
 
 class Player:
@@ -62,6 +65,8 @@ class Player:
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_creature_that_add_cards_to_your_hand:
+                    self.add_random_card_to_hand(card)
                 if card.name in list_of_card_that_pay_debt:
                     if self.last_debt > self.mana:
                         self.mana = self.empty_mana
@@ -508,3 +513,21 @@ class Player:
     def defences_weakened(self, nr_of_lost):
         self.nr_of_assaults -= nr_of_lost
         self.active_defence.nr_of_assaults -= nr_of_lost
+
+    def add_random_card_to_hand(self, card):
+        picking_card = list_of_creature_that_add_cards_to_your_hand.get(card.name)
+        for i in range(picking_card[0]):
+            if picking_card[1] != "":
+                creature = random.choice(list_of_creatures_to_pick.get(picking_card[1]))
+                if len(self.hand) < 10:
+                    self.hand.append(creature[0])
+                    self.hand[-1].id = generate_random_int()
+                    self.hand[-1].card_id = str(self.hand[-1].id)
+                    if len(self.hand[-1].name.split(" ")) >= 2:
+                        self.hand[-1].name_for_html = "_".join(self.hand[-1].name.split()) + self.hand[-1].card_id
+                    else:
+                        self.hand[-1].name_for_html = self.hand[-1].name + self.hand[-1].card_id
+            elif len(self.hand) < 10:
+                creature = list_of_creature_that_add_specific_card_to_your_hand.get(card.name)[0]
+                self.hand.append(creature)
+                del list_of_creature_that_add_specific_card_to_your_hand.get(card.name)[0]

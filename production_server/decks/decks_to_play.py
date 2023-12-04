@@ -4,11 +4,11 @@ from clases.spells import Spell
 from clases.Defence import Defence
 
 bot_deck = [
-    Defence(1, "Empire Peasants", 1, 4, "", 1),
+    Creature(0, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", 1)
 
 ]
 demo_deck = [
-    Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "itme", 1),
+    Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", 0)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -86,7 +86,7 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(2, "Armored Peasant", 2, 1, "Armored Guard", "soldier", -123),
                                       Creature(6, "Rich Peasant", 1, 2,
                                                "Summon 2 armored Peasant with guard and armored", "worker", -124),
-                                      Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "itme", -82),
+                                      Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "item", -82),
                                       Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal", -142),
                                       Creature(4, "Local Healer", 4, 4, "Restore 4 health", "worker", -143),
                                       Creature(3, "Clergy", 3, 3, "Restore 3 health", "worker", -144),
@@ -121,7 +121,9 @@ cards_for_byzantine_empire = [
     Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
     Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
     Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
-    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
+    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141),
+    Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150),
+    Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151)
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -150,7 +152,9 @@ cards_byzantine_show = [
     Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138),
     Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
     Creature(2, "Byzantium Engineer", 2, 2, "Draw a Defence", "worker", -140),
-    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141)
+    Creature(2, "Wealthy Nobel", 2, 3, "Pays all debt", "worker", -141),
+    Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150),
+    Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151)
 ]
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72),
@@ -184,7 +188,8 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Spell(2, "Warhammer", "Break an enemy armor making him lose all attributes", -127),
                    Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
                    Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
-                   Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131)
+                   Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
+                   Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149)
                    ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -218,7 +223,8 @@ cards_for_holy_roman_empire = [
     Spell(2, "Warhammer", "Break an enemy armor making him lose all attributes", -127),
     Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
     Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
-    Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131)
+    Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
+    Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149)
 ]
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -333,11 +339,58 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
 roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                 Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
                 Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
+                Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
                      Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
+                     Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)
                      ]
+list_of_mercenary = [
+    [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],
+    [Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133)],
+    [Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)]]
+list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
+                     [Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", -68)],
+                     [Spell(1, "Roman Formation Phalanx", "Give your minions +1/+1 Debt(1)", -71)],
+                     [Creature(5, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3 Debt(1)", "soldier", -77)],
+                     [Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", -135)],
+                     [Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136)],
+                     [Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137)],
+                     [Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138)],
+                     [Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139)],
+                     [Spell(1, "Pilum Throw", "Deal 3 damage Debt(1)", -83)]]
+list_of_soldier = [[Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)],
+                   [Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146)],
+                   [Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137)],
+                   [Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136)],
+                   [Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", -135)],
+                   [Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129)],
+                   [Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128)],
+                   [Creature(9, "Graf", 6, 3,
+                             "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
+                             -125)],
+                   [Creature(2, "Armored Peasant", 2, 1, "Armored Guard", "soldier", -123)],
+                   [Creature(1, "New Recruit", 2, 1, "When you play a soldier give this +1 attack", "soldier", -120)],
+                   [Creature(6, "Khevtuul", 5, 7, "Desperate summon 2 2/2 Night Watchers", "soldier", -93)],
+                   [Creature(6, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
+                             "soldier", -90)],
+                   [Creature(5, "Front Line Defender", 6, 3,
+                             "Desperate Summ a 1/2 Second Line Defender with Guard Guard", "soldier", -89)],
+                   [Creature(9, "Jochi", 8, 8, "Charge", "soldier", -78)],
+                   [Creature(5, "Protokentarchos", 4, 4, "Give a friendly minion +3/+3 Debt(1)", "soldier", -77)],
+                   [Creature(8, "Basil II", 6, 5, "Armored Charge Guard", "soldier", -76)],
+                   [Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)],
+                   [Creature(3, "Drummer", 2, 2, "Give your hand +1/+1", "soldier", -56)],
+                   [Creature(1, "Archer", 1, 1, "Deal 1 damage", "soldier", -50)],
+                   [Creature(3, "Rider", 2, 3, "Charge", "soldier", -45)],
+                   [Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", -42)],
+                   [Creature(3, "Akritoi", 3, 2, "Guard", "soldier", -38)],
+                   [Creature(4, "Pronoiar", 3, 3, "Charge", "soldier", -37)],
+                   [Creature(4, "City Guard", 5, 3, "Guard", "soldier", -24)],
+                   [Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151)]
+                   ]
+list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier}
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
@@ -462,6 +515,41 @@ ancients = [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", 150),
             Creature(5, "Assyrian Horserider", 7, 5, "Charge discard 2 cards from your hand", "ancient", 179),
             Creature(1, "Lu", 2, 3, "Deal 2 damage to your kingdom", "ancient", 180),
             ]
+insane_deck = [Creature(1, "Archer", 1, 1, "Deal 1 damage", "soldier", 9991),
+               Creature(1, "Archer", 1, 1, "Deal 1 damage", "soldier", 9992),
+               Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "item", -82),
+               Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "item", -82),
+               Creature(0, "Peasant", 1, 1, "", "worker", 9995),
+               Creature(0, "Peasant", 1, 1, "", "worker", 9996),
+               Creature(3, "Priest", 1, 1,
+                        "Restore a friendly minion to full HP and give it +1/+1", "worker",
+                        9997),
+               Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", 9998),
+               Creature(2, 'Squire', 2, 3, "", "knight", 9999),
+               Creature(2, 'Page', 1, 1, "Draw a card", "knight", 10000),
+               Creature(2, 'Squire', 2, 3, "", "knight", 10001),
+               Creature(2, 'Page', 1, 1, "Draw a card", "knight", 10002),
+               Defence(1, "Empire Peasants", 1, 4, "", 10003),
+               Creature(2, "Guard Dog", 2, 2, "Guard", "animal", 10004),
+               Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", "worker", 10006),
+               Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", "worker", 10005),
+               Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", "worker", 10006),
+               Creature(4, "Last Defender", 6, 2, "If your hand is empty gain +2 attack and guard", "knight",
+                        10007),
+               Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", "worker", 10008),
+               Creature(4, "Last Defender", 6, 2, "If your hand is empty gain +2 attack and guard", "knight",
+                        10009),
+               Spell(2, "Bandages", "Restore a friendly minion to full HP", 10011),
+               Spell(1, "Personal Guard", "Give a minion guard and draw a card", 10012),
+               Spell(2, "Bandages", "Restore a friendly minion to full HP", 10013),
+               Spell(1, "Personal Guard", "Give a minion guard and draw a card", 10014),
+               Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", "worker", 10015),
+               Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", "worker", 10016),
+               Creature(7, 'Teutonic Knight', 6, 5, "Guard Armored", "knight", 10017),
+               Creature(7, 'Teutonic Knight', 6, 5, "Guard Armored", "knight", 10018),
+               Spell(1, "Arrow shot", "Deal 2 damage to a enemy", 10019),
+               Spell(5, "Kill", "Kill an enemy minion", 10020),
+               ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
                      Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", -3),
@@ -547,7 +635,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(2, "Old Tactics", "Draw a card and reduce it is cost by 3", -79),
                      Creature(2, "Lost Scribe", 1, 2, "Desperate Draw a card", "worker", -80),
                      Creature(2, "Lost Sheep", 1, 1, "Desperate Summon 2 1/1 Wild Wolf", "animal", -81),
-                     Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "itme", -82),
+                     Creature(2, "Lost Shield", 2, 0, "Desperate Sumon a 4/4 City guard", "item", -82),
                      Spell(1, "Pilum Throw", "Deal 3 damage Debt(1)", -83),
                      Spell(3, "Fast Conscription", "Summon 4 1/1 Peasant", -84),
                      Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", "worker", -85),
@@ -624,12 +712,16 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Clergy", 3, 3, "Restore 3 health", "worker", -144),
                      Creature(7, "Local Bodyguard", 8, 6, "Guard", "worker", -145),
                      Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146),
-                     Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)
+                     Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147),
+                     Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148),
+                     Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149),
+                     Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150),
+                     Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151)
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
                  "cards_for_mongol_empire": cards_for_mongol_empire, "defenders": defenders,
-                 "mongols_hordes": mongols_hordes, "ancients": ancients}
+                 "mongols_hordes": mongols_hordes, "ancients": ancients, "insane_deck": insane_deck}
 empire_decks = {'Byzantine_Empire': cards_for_byzantine_empire,
                 'Holy_Roman_Empire': cards_for_holy_roman_empire,
                 'Mongol_Empire': cards_for_mongol_empire,

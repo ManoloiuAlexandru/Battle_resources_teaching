@@ -137,6 +137,12 @@ list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
                               "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2}
 list_of_card_that_pay_debt = {"Wealthy Nobel"}
+list_of_creature_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
+                                                "Mercenary emissary": (1, "debt"),
+                                                "Army Recruiter": (1, "soldier"),
+                                                "Army Cook": (2, "")}
+list_of_creature_that_add_specific_card_to_your_hand = {
+    "Army Cook": [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 40)], }
 """
 Spells
 """

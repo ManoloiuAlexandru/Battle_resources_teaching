@@ -27,6 +27,8 @@ class Bot(Player):
                         else:
                             self.mana += self.last_debt
                         self.last_debt = 0
+                    if card.name in list_of_creature_that_add_cards_to_your_hand:
+                        self.add_random_card_to_hand(card)
                     if card.name in list_of_card_that_add_debt:
                         self.debt += list_of_card_that_add_debt.get(card.name)
                     if card.name in list_of_creature_that_give_armor:
