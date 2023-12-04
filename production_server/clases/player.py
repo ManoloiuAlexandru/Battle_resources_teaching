@@ -346,6 +346,8 @@ class Player:
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buff":
                 random_minion = random.choice(player.battle_field)
                 player.buff_card_from_hand(random_minion, card)
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_to_hand":
+                player.add_random_card_to_hand(card)
 
     def buff_card_from_hand(self, card, buffing_card):
         buff = list_of_creature_that_buff.get(buffing_card.name)
@@ -515,7 +517,10 @@ class Player:
         self.active_defence.nr_of_assaults -= nr_of_lost
 
     def add_random_card_to_hand(self, card):
-        picking_card = list_of_creature_that_add_cards_to_your_hand.get(card.name)
+        if list_of_creature_that_add_cards_to_your_hand.get(card.name) is not None:
+            picking_card = list_of_creature_that_add_cards_to_your_hand.get(card.name)
+        else:
+            picking_card = list_of_creature_that_add_cards_to_your_hand_when_die.get(card.name)
         for i in range(picking_card[0]):
             if picking_card[1] != "":
                 creature = random.choice(list_of_creatures_to_pick.get(picking_card[1]))

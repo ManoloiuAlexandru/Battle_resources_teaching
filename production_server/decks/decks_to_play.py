@@ -4,11 +4,10 @@ from clases.spells import Spell
 from clases.Defence import Defence
 
 bot_deck = [
-    Creature(0, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", 1)
 
 ]
 demo_deck = [
-    Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", 0)
+    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", 0)
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -189,8 +188,47 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
                    Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
                    Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
-                   Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149)
+                   Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149),
+                   Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)
                    ]
+list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
+                                "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
+                      [Creature(3, "Scribe", 3, 0, "At the end of your turn draw a card", "worker", -41)],
+                      [Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored", "knight", -11)],
+                      [Spell(1, "Bandage", "Heal a friendly minion for 4", -12)],
+                      [Spell(2, "Bandages", "Restore a friendly minion to full HP", -13)],
+                      [Spell(1, "Personal Guard", "Give a minion guard and draw a card", -14)],
+                      [Defence(1, "Empire Peasants", 1, 4, "", -16)],
+                      [Spell(3, "Knight's training", "Give a minions +3/+3", -35)],
+                      [Spell(3, "Feudal Obligations", "Draw 2 cards", -29)],
+                      [Spell(8, "Bodyguards", "Summon  2 Guards from your deck", -22)],
+                      [Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", -42)],
+                      [Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47)],
+                      [Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)],
+                      [Spell(2, "Chivalry and Honor", "Give a minion +2/+1 and draw a card", -51)],
+                      [Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)],
+                      [Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", -64)],
+                      [Spell(2, "In the name of the king", "Give your minions +1/+1", -70)],
+                      [Creature(1, "Selfless Knight", 1, 2, "Desperate Give a friendly minion armored", "knight", -86)],
+                      [Creature(2, "Armored Knight", 2, 2, "Armored", "knight", -87)],
+                      [Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", -88)],
+                      [Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100)],
+                      [Spell(9, "Call of God", "Heal for 8 and summon a 8/8 armored guard Crusader", -101)],
+                      [Creature(1, "Heretic Knight", 1, 2, "Armored deal 2 damage to your kingdom", "knight", -122)],
+                      [Creature(9, "Graf", 6, 3,
+                                "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
+                                -125)],
+                      [Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand",
+                                "knight", -126)],
+                      [Spell(2, "Warhammer", "Break an enemy armor making him lose all attributes", -127)],
+                      [Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier",
+                                -128)],
+                      [Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129)],
+                      [Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131)],
+                      [Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149)],
+                      [Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight",
+                                -153)]
+                      ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
              "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72),
@@ -224,7 +262,8 @@ cards_for_holy_roman_empire = [
     Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128),
     Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
     Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
-    Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149)
+    Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149),
+    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)
 ]
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -248,6 +287,7 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98),
                     Spell(4, "Tag Team", "Dela 3 damage to a minion summ a 3/3 Hunting dog", -99),
                     Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130),
+                    Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152),
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -271,6 +311,8 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98),
                            Spell(4, "Tag Team", "Dela 3 damage to a minion summ a 3/3 Hunting dog", -99),
                            Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130),
+                           Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal",
+                                    -152),
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
                            "While this is on the field your creatures have +1 attack", "animal", 1900),
@@ -390,7 +432,23 @@ list_of_soldier = [[Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)
                    [Creature(4, "City Guard", 5, 3, "Guard", "soldier", -24)],
                    [Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151)]
                    ]
-list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier}
+list_of_animals = [[Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal", -142)],
+                   [Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130)],
+                   [Creature(2, "Goat", 1, 1, "Desperate summon a 3/2 Hungry Wolf", "animal", -98)],
+                   [Creature(1, "Domestic cat", 1, 1, "Summon a 1/1 Wild Cat", "animal", -97)],
+                   [Creature(4, "Mother Wolf", 3, 3, "Desperate summ 2 1/1 Wolf Pup", "animal", -96)],
+                   [Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", -88)],
+                   [Creature(2, "Lost Sheep", 1, 1, "Desperate Summon 2 1/1 Wild Wolf", "animal", -81)],
+                   [Creature(2, "Wild Horse", 2, 1, "Draw a charge card", "animal", -59)],
+                   [Creature(1, "Wolf", 1, 1, "Charge", "animal", -49)],
+                   [Creature(2, "Hunting dog", 1, 2, "Charge", "animal", -30)],
+                   [Creature(6, "War elephant", 5, 4,
+                             "While this is on the field your creatures have +1 attack", "animal", -20)],
+                   [Creature(2, "Guard Dog", 2, 2, "Guard", "animal", -18)],
+                   [Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152)],
+                   ]
+list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
+                             "animal": list_of_animals, "holy_roman": list_of_holy_roman}
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
@@ -715,7 +773,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148),
                      Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149),
                      Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150),
-                     Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151)
+                     Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151),
+                     Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152),
+                     Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

@@ -117,7 +117,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
                                               "Joan of Arc": "summ", "Khevtuul": "summ", "Mother Wolf": "summ",
                                               "Goat": "summ", "Turtanu": "summ", "Graf": "summ",
-                                              "Big Game Beast": "draw"}
+                                              "Big Game Beast": "draw", "Lure animal": "add_to_hand"}
+list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"], [""], [""]),
                                                       "Big Game Beast": (["Creature"], ["animal"], [""])}
@@ -140,7 +141,10 @@ list_of_card_that_pay_debt = {"Wealthy Nobel"}
 list_of_creature_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
                                                 "Mercenary emissary": (1, "debt"),
                                                 "Army Recruiter": (1, "soldier"),
-                                                "Army Cook": (2, "")}
+                                                "Army Cook": (2, ""),
+                                                "Empire Crusader": (5, "holy_roman")
+                                                }
+list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal")}
 list_of_creature_that_add_specific_card_to_your_hand = {
     "Army Cook": [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 40)], }
 """
