@@ -7,7 +7,7 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", 0)
+    Spell(2, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", 0),
 ]
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -381,12 +381,18 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
 roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                 Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
                 Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
-                Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)
+                Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148),
+                Spell(2, "Build defences", "Gain 5 Defenses and draw a card", -154),
+                Spell(2, "Palisade Wall", "Deal 3 damage gain 3 defences", -155),
+                Spell(2, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", -156),
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
                      Creature(5, "Architecti", 5, 5, "Add 5 Defenses to your kingdom", "worker", -134),
-                     Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)
+                     Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148),
+                     Spell(2, "Build defences", "Gain 5 Defenses and draw a card", -154),
+                     Spell(2, "Palisade Wall", "Deal 3 damage gain 3 defences", -155),
+                     Spell(2, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", -156),
                      ]
 list_of_mercenary = [
     [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],
@@ -775,7 +781,10 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150),
                      Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151),
                      Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152),
-                     Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)
+                     Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153),
+                     Spell(2, "Build defences", "Gain 5 Defenses and draw a card", -154),
+                     Spell(2, "Palisade Wall", "Deal 3 damage gain 3 defences", -155),
+                     Spell(2, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", -156),
                      ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

@@ -111,8 +111,13 @@ def damage_dealing(player, card_picked):
 
 
 def damage_to_player(player, current_card):
-    if player.immunity is False:
+    if player.immunity is False and player.armor == 0:
         player.hp -= current_card.attack
+    elif player.armor >= current_card.attack:
+        player.armor -= current_card.attack
+    else:
+        player.hp = player.hp + player.armor - current_card.attack
+        player.armor = 0
     current_card.exhausted = True
     current_card = None
     return player, current_card

@@ -76,8 +76,8 @@ class Player:
                 if card.name in list_of_card_that_add_debt:
                     self.debt += list_of_card_that_add_debt.get(card.name)
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
-                if card.name in list_of_creature_that_give_armor:
-                    self.armor += list_of_creature_that_give_armor.get(card.name)
+                if card.name in list_of_cards_that_give_armor:
+                    self.armor += list_of_cards_that_give_armor.get(card.name)
                 if card.name in list_of_cards_that_discard:
                     self.card_discard(list_of_cards_that_discard.get(card.name), card)
                     if self.incoming_spell is not None:

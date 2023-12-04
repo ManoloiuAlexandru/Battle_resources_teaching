@@ -1,10 +1,65 @@
-In the student server add:
-    1. One creature that will do what you want.(Don't break the game)
-    2. One spell that will do what you want.(Don't break the game)
-    3. One item that will do what you want.(Don't break the game)
+Homework 1:
 
-In the rules add the rules of the game, with pictures.
+Play the game using all decks:
+    - Power of the people
+    - Guard of Byzantine
+    - Mongol Hordes
+    - Ancient powers
 
-Create your own deck and make it selectable in the game options.
+You can play against any deck you want.
 
-Add a specific difficulty, for example: insane death(player start at 5 hp and 5 mana bot starts normally)
+Homework 2:
+
+Play the game using a personal deck
+
+Homework 3:
+
+Change your name, make a deck and win the game on Hard
+
+Homework 4:
+
+In the file player from lines:13-39 there are variables what types of variables are there:
+    For example:
+        - self.hp is an int
+        - self.problem is a string
+
+Homework 5:
+
+In file player at line 56 there is an if what is that if doing
+In file Defence there are 2 variables that are always string find them
+
+
+Homework 6:
+In the file game_logics from line 137-181 how many try-except are there ?
+Can you tell when one starts and when it ends ?
+
+
+Homework 7:
+In the file lists_of_cards there are lists,dicts and tuples can you give me an example of each of them ?
+Can you find dicts that have only string:int pairs, or string:tuple pairs or string:string
+
+Homework 8:
+The game_logics file has only functions can you find:
+    - functions that have only 4 arguments
+    - functions that have unused arguments
+    - functions that may return None
+    - functions that may return int
+    - functions that have a try-except body (for example heal_creature is a try-except body)
+    - functions that don't have a return
+
+Homework 9:
+The server_logic file is the logic for the create_deck tab from web. The idea is that while reading the list of cards we save the
+cards in a text base file so we can read it again. Where is the my_deck.text file located ? After creating a deck try to
+look at the my_deck.txt file and check what is new. Try adding a break point in line 38 in server_logics then take it line by line and see
+vales the variables take.
+
+Homework 10:
+main_server has multiple imports some of them are from personal modules others are python libraries which one is a personal module
+and which one is a python library
+
+Homework 11:
+There are docstrings in the files find them.
+Using the ctrl+right click get to the put_item_on function from game_logics
+Using the ctrl+right click get to the clean_board function from player
+
+Homework 12:

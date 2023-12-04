@@ -31,8 +31,8 @@ class Bot(Player):
                         self.add_random_card_to_hand(card)
                     if card.name in list_of_card_that_add_debt:
                         self.debt += list_of_card_that_add_debt.get(card.name)
-                    if card.name in list_of_creature_that_give_armor:
-                        self.armor += list_of_creature_that_give_armor.get(card.name)
+                    if card.name in list_of_cards_that_give_armor:
+                        self.armor += list_of_cards_that_give_armor.get(card.name)
                     if card.name in list_of_creature_that_summon:
                         for i in range(list_of_creature_that_summon.get(card.name)[0]):
                             if len(self.battle_field) < 7:
