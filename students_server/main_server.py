@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-from clases.Item import Item
+from clases.server_logics import *
+from clases.Defence import Defence
 from clases.spells import Spell
 from clases.creatures import Creature
 from clases.bot import Bot
-from clases.game_logics import battle, turn_switch, battle_logic, damage_dealing, \
-    damage_to_player, guard_checking, destroy_creature, check_target, cast_spell, destroy_creature_from_player, \
-    cast_spell_from_player, put_item_on_creature, check_if_card_in_deck, make_html_deck, check_hero_power
+from clases.game_logics import *
 from clases.player import Player
-from decks.decks_to_play import cards_that_are_in_the_game, dict_of_decks
+from decks.decks_to_play import *
 
 app = Flask(__name__)
 global player1
@@ -18,12 +17,14 @@ global attacked_player
 global your_deck
 global index
 global show_deck
+global empire
 
 
 def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty, player1_empire, player2_empire):
     global player1
     global player2
     global attacked_player
+    global your_deck
     try:
         if player1 is None:
             player1 = Player(player1_name)
@@ -33,6 +34,11 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     player1.hand = []
     player1.playing_deck_name = play1_deck
     if play1_deck == "personal_deck":
+        try:
+            if len(your_deck) == 0:
+                your_deck = get_old_deck()[0]
+        except Exception as e:
+            player1.make_deck(get_old_deck()[0])
         player1.make_deck(your_deck)
     else:
         player1.make_deck(dict_of_decks.get(play1_deck))
@@ -49,10 +55,8 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
-        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99999))
-        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 99))
-        # player1.battle_field.append(Creature(0, "Dummy", 98, 0, "", 999))
         player1.hp = 9999
+        player2.hp = 30
         player2.mana = 1
     if difficulty == "normal" and player1.mana == 0:
         attacked_player = 2
@@ -68,11 +72,8 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             card.mana_cost -= 1
             if card.mana_cost < 0:
                 card.mana_cost = 0
-        for card in player1.deck:
-            card.mana_cost += 1
-            if card.mana_cost > 10:
-                card.mana_cost = 10
     if difficulty == "insane" and player1.mana == 0:
+        player1.hp = 30
         attacked_player = 2
         player1.turn = 1
         player1.mana = 1
@@ -84,9 +85,11 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             if card.card_type == "Creature":
                 card.attack += 1
                 card.hp += 1
-                card.check_creature()
+                card.check_creature("")
     player1.start_game()
     player2.start_game()
+    player1.enemy_player = player2
+    player2.enemy_player = player1
     return player1, player2
 
 
@@ -136,11 +139,36 @@ def make_your_own_deck():
     global show_deck
     try:
         return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=cards_that_are_in_the_game)
+                               library=empire_decks[empire])
     except Exception as e:
         show_deck = {}
         return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=cards_that_are_in_the_game)
+                               library=cards_that_are_in_the_game_for_all)
+
+
+@app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
+def make_your_own_deck_pick_empire():
+    return render_template("empires_choice.html",
+                           library=[cards_byzantine_show, cards_holy_show, cards_for_mongol, mesopotamia_show,
+                                    roman_empire_show])
+
+
+@app.route("/update_deck", methods=["POST", "GET"])
+def update_deck():
+    global your_deck
+    global empire
+    global show_deck
+    your_deck = get_old_deck()[0]
+    empire = get_old_deck()[1]
+    show_deck = make_html_deck(your_deck, show_deck)
+    return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+
+
+@app.route("/send_empire", methods=["POST", "GET"])
+def send_empire():
+    global empire
+    empire = request.form.get("your_empire")
+    return redirect(url_for('make_your_own_deck', empire=empire))
 
 
 @app.route("/deck_cards", methods=["POST", "GET"])
@@ -148,18 +176,32 @@ def make_deck():
     global your_deck
     global show_deck
     global index
+    if empire == "Byzantine_Empire":
+        deck_to_pick = cards_for_byzantine_empire
+    elif empire == "Holy_Roman_Empire":
+        deck_to_pick = cards_for_holy_roman_empire
+    elif empire == "Mongol_Empire":
+        deck_to_pick = cards_for_mongol_empire
+    elif empire == "Mesopotamia_Empire":
+        deck_to_pick = mesopotamia_empire
+    elif empire == "Roman_Empire":
+        deck_to_pick = roman_empire
+    else:
+        deck_to_pick = cards_that_are_in_the_game_for_all
     cards_name = request.form
-    for card in cards_that_are_in_the_game:
+    for card in deck_to_pick:
         if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
                 your_deck) < 30:
             if card.card_type == "Creature":
-                your_deck.append(Creature(card.mana_cost, card.name, card.hp, card.attack, card.description, index))
+                your_deck.append(
+                    Creature(card.mana_cost, card.name, card.hp, card.attack, card.description, card.category, index))
                 index += 1
             if card.card_type == "Spell":
                 your_deck.append(Spell(card.mana_cost, card.name, card.description, index))
                 index += 1
-            if card.card_type == "Item":
-                your_deck.append(Item(card.mana_cost, card.name, card.description, index))
+            if card.card_type == "Defence":
+                your_deck.append(
+                    Defence(card.mana_cost, card.name, card.number_of_troops, card.nr_of_assaults, card.description, index))
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
     return redirect(url_for('make_your_own_deck', show_deck=show_deck))
@@ -177,12 +219,15 @@ def show_battle():
     player2_deck = request.form.get("deck_player2")
     difficulty = request.form.get("difficulty")
     game_start(player1_name, player2_name, player1_deck, player2_deck, difficulty, player1_empire, player2_empire)
+    player1.card_in_hand_effect()
+    player2.card_in_hand_effect()
     Player.battle_fields_effects(player1, player2)
     return render_template("home.html", players=[player2, player1])
 
 
 @app.route("/send_deck", methods=["POST", "GET"])
 def personal_deck():
+    save_your_deck(your_deck, empire)
     return redirect(url_for('game_options'))
 
 
@@ -204,7 +249,7 @@ def remove_card_from_deck():
 
 @app.route("/library")
 def show_library():
-    return render_template("library.html", library=cards_that_are_in_the_game)
+    return render_template("library.html", library=all_cards_in_game)
 
 
 @app.route("/update_battle_field", methods=["POST", "GET"])
@@ -245,9 +290,9 @@ def battlefield_fight():
     if player1.incoming_action == 3:
         cast_spell_from_player(player1, player2, card_picked)
     if player1.incoming_action == 4:
-        put_item_on_creature(player1, player2, card_picked)
+        put_item_on(player1, player2, card_picked)
     if player2.incoming_action == 4:
-        put_item_on_creature(player2, player1, card_picked)
+        put_item_on(player2, player1, card_picked)
     if player2.incoming_action == 3:
         cast_spell_from_player(player2, player1, card_picked)
     if player2.incoming_action == 2:
@@ -256,8 +301,7 @@ def battlefield_fight():
         current_card = battle_logic(player1, card_picked)
     elif attacked_player == 2:
         card = damage_dealing(player2, card_picked)
-        if (card is not None or card_picked.get(player2.name) is not None) and (
-                current_card.exhausted is True and "Charge" not in current_card.description.split()):
+        if (card is not None or card_picked.get(player2.name) is not None) and current_card.exhausted is True:
             player1.turn = 1
         elif card is not None and guard_checking(player2, card) == 1:
             battle(current_card, card, player1, player2)

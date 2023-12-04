@@ -70,7 +70,7 @@ background-image: url('/static/cards/logs.jpg');
     }
 .attack_hp{
     font-size:13px;
-    word-spacing: 45px;
+    word-spacing: 4px;
     }
 .player_mana{
     display: inline-block;
@@ -136,6 +136,21 @@ background-image: url('/static/cards/logs.jpg');
     right: 0;
     padding-right: 20px;
     }
+.player_deck_nr_cards{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  width: 20%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #ffffff;
+}
+.player_deck:hover .player_deck_nr_cards{
+  opacity: 1;
+}
 .card_in_library{
     background-image: url('/static/cards/logs.jpg');
     background-repeat: no-repeat;

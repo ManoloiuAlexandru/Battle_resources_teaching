@@ -1,0 +1,10 @@
+In the student server add:
+    1. One creature that will do what you want.(Don't break the game)
+    2. One spell that will do what you want.(Don't break the game)
+    3. One item that will do what you want.(Don't break the game)
+
+In the rules add the rules of the game, with pictures.
+
+Create your own deck and make it selectable in the game options.
+
+Add a specific difficulty, for example: insane death(player start at 5 hp and 5 mana bot starts normally)
