@@ -491,7 +491,13 @@ class Player:
                     target.armored = False
                 else:
                     target.hp -= self.number_of_troops
-                self.hp -= target.attack
+                if self.immunity is False and self.armor == 0:
+                    self.hp -= target.attack
+                elif self.armor >= target.attack:
+                    self.armor -= target.attack
+                else:
+                    self.hp = self.hp + self.armor - target.attack
+                    self.armor = 0
                 self.defences_weakened(1)
                 self.number_of_assaults -= 1
         else:
