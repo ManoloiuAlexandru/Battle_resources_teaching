@@ -375,9 +375,13 @@ class Player:
                             incoming_card[0].split(":")[1]:
                         if incoming_card[1] == "buff":
                             self.buff_card_from_hand(card, card)
+                            break
                         if incoming_card[1].split(":")[0] == "change":
                             if incoming_card[1].split(":")[1] == "dmg":
                                 list_of_creature_that_deal_dmg_to_enemies[card.name] = incoming_card[2]
+                                if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
+                                    list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
+                                break
 
     def buff_all_cards(self, card):
         for creature in self.hand:

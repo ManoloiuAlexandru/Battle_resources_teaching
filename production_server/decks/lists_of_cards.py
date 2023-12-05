@@ -33,10 +33,11 @@ Creatures
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
-                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest"]
+                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
+                                "Knight Archer", "Heavy Armored Knight"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
-                                             "Knight Arbalest": 0}
-list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0}
+                                             "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0}
+list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
@@ -51,7 +52,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
                               "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
                               "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored"),
-                              "Knight's Trainee": (1, 0, "Guard"), "Mercenary Charger": (0, 1, "Charge")}
+                              "Knight's Trainee": (0, 1, "Guard"), "Mercenary Charger": (0, 1, "Charge"),
+                              "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -90,8 +92,12 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Banner holder": ("affects hand", "buff", 1, 0, ""),
                                               "Inspired soldier": ("hand_check:Spell", "buff"),
                                               "Knight Arbalest": ("hand_check:knight", "change:dmg", 5),
+                                              "Knight Archer": ("hand_check:knight", "change:dmg", 2),
+                                              "Heavy Armored Knight": ("hand_check:knight", "change:dmg", 7),
                                               "Knight's Trainee": ("hand_check:knight", "buff"),
-                                              "Mercenary Charger": ("hand_check:mercenary", "buff")
+                                              "Mercenary Charger": ("hand_check:knight", "buff"),
+                                              "Motivated Page": ("hand_check:knight", "buff"),
+                                              "Honor Guard": ("hand_check:knight", "buff")
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Shield": (
