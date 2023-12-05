@@ -50,7 +50,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
                               "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
-                              "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored")}
+                              "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored"),
+                              "Knight's Trainee": (1, 0, "Guard"), "Mercenary Charger": (0, 1, "Charge")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -88,7 +89,9 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               "Banner holder": ("affects hand", "buff", 1, 0, ""),
                                               "Inspired soldier": ("hand_check:Spell", "buff"),
-                                              "Knight Arbalest": ("hand_check:knight", "change:dmg", 5)
+                                              "Knight Arbalest": ("hand_check:knight", "change:dmg", 5),
+                                              "Knight's Trainee": ("hand_check:knight", "buff"),
+                                              "Mercenary Charger": ("hand_check:mercenary", "buff")
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Shield": (
