@@ -20,7 +20,7 @@ bot_deck = [
     Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", 123423435457),
 ]
 demo_deck = [
-    Creature(0, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker", 0),
+    Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", 0),
     Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", 1234578),
 ]
 

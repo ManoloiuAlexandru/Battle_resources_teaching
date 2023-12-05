@@ -34,10 +34,12 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
                                 "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
-                                "Knight Archer", "Heavy Armored Knight"]
+                                "Knight Archer", "Heavy Armored Knight", "Motivated Squire"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
-                                             "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0}
-list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0}
+                                             "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
+                                             "Motivated Squire": 0}
+list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
+                                             "Motivated Squire": 0}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
@@ -95,6 +97,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Knight Arbalest": ("hand_check:knight", "change:dmg", 5),
                                               "Knight Archer": ("hand_check:knight", "change:dmg", 2),
                                               "Heavy Armored Knight": ("hand_check:knight", "change:dmg", 7),
+                                              "Motivated Squire": ("hand_check:knight", "change:dmg", 3),
                                               "Knight's Trainee": ("hand_check:knight", "buff"),
                                               "Mercenary Charger": ("hand_check:knight", "buff"),
                                               "Motivated Page": ("hand_check:knight", "buff"),
