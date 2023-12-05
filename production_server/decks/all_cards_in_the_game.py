@@ -1,6 +1,7 @@
 from clases.Defence import Defence
 from clases.creatures import Creature
 from clases.spells import Spell
+
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
                                       Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", -3),
@@ -257,4 +258,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(2, "Build defences", "Gain 5 Defenses and draw a card", -154),
                      Spell(2, "Palisade Wall", "Deal 3 damage gain 3 defences", -155),
                      Spell(2, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", -156),
+                     Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
+                              "soldier", -157),
+                     Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
                      ]

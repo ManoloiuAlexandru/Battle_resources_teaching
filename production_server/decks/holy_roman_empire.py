@@ -36,7 +36,10 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
                    Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
                    Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149),
-                   Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)
+                   Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153),
+                   Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
+                            "soldier", -157),
+                   Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -74,7 +77,10 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                       [Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131)],
                       [Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149)],
                       [Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight",
-                                -153)]
+                                -153)],
+                      [Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
+                                "soldier", -157)],
+                      [Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -110,5 +116,8 @@ cards_for_holy_roman_empire = [
     Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129),
     Spell(3, "Defending  the empire", "Summon 3 Kaiserliche and put a 1/4 Defence", -131),
     Creature(1, "Army Cook", 1, 2, "Add 2 Kaiserliche to your hand", "worker", -149),
-    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)
+    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153),
+    Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
+             "soldier", -157),
+    Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
 ]

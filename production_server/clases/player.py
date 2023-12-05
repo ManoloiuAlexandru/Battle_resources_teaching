@@ -359,15 +359,20 @@ class Player:
         card.check_creature(buff[2])
 
     def hand_check(self, card):
-        if "empty hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) == 1 and \
-                list_of_creature_that_are_affected_by_hand.get(card.name)[1] == "buff":
+        incoming_card = list_of_creature_that_are_affected_by_hand.get(card.name)
+        if "empty hand" in incoming_card[0] and len(self.hand) == 1 and incoming_card[1] == "buff":
             self.buff_card_from_hand(card, card)
 
-        elif "affects hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) > 1 and \
-                list_of_creature_that_are_affected_by_hand.get(card.name)[1] == "buff":
+        elif "affects hand" in incoming_card[0] and len(self.hand) > 1 and incoming_card[1] == "buff":
             for creature in self.hand:
                 if creature != card and creature.card_type == "Creature":
                     self.buff_card_from_hand(creature, card)
+        elif "hand_check" in incoming_card[0].split(":"):
+            for card_in_hand in self.hand:
+                if card_in_hand != card:
+                    if card_in_hand.card_type == incoming_card[0].split(":")[1] or card_in_hand.category == \
+                            incoming_card[0].split(":")[1]:
+                        self.buff_card_from_hand(card, card)
 
     def buff_all_cards(self, card):
         for creature in self.hand:

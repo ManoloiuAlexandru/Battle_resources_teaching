@@ -1,473 +1,595 @@
-empire:Roman_Empire
+empire:Holy_Roman_Empire
 card_id:0
-mana_cost:2
-original_mana_cost:2
-name:Mercenary Recruiter
-hp:2
-max_hp:2
-original_hp:2
+mana_cost:3
+original_mana_cost:3
+name:Inspired soldier
+hp:5
+max_hp:5
+original_hp:5
 attack:2
-category:mercenary
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Draw a mercenary
-original_description:Draw a mercenary
+description:If you are holding a spell gain armored and guard
+original_description:If you are holding a spell gain armored and guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary Recruiter.png
+img_url:Inspired soldier.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_Recruiter0
+name_for_html:Inspired_soldier0
 --------------------------------
 card_id:1
-mana_cost:2
-original_mana_cost:2
-name:Mercenary Recruiter
-hp:2
-max_hp:2
-original_hp:2
+mana_cost:3
+original_mana_cost:3
+name:Inspired soldier
+hp:5
+max_hp:5
+original_hp:5
 attack:2
-category:mercenary
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Draw a mercenary
-original_description:Draw a mercenary
+description:If you are holding a spell gain armored and guard
+original_description:If you are holding a spell gain armored and guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary Recruiter.png
+img_url:Inspired soldier.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_Recruiter1
+name_for_html:Inspired_soldier1
 --------------------------------
 card_id:2
-mana_cost:4
-original_mana_cost:4
-name:Mercenary defender
-hp:5
-max_hp:5
-original_hp:5
+mana_cost:1
+original_mana_cost:1
+name:Heretic Knight
+hp:1
+max_hp:1
+original_hp:1
 attack:2
-category:mercenary
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard put an 3/2 defence
-original_description:Guard put an 3/2 defence
+description:Armored deal 2 damage to your kingdom
+original_description:Armored deal 2 damage to your kingdom
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Mercenary defender.png
+img_url:Heretic Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_defender2
+name_for_html:Heretic_Knight2
 --------------------------------
 card_id:3
-mana_cost:4
-original_mana_cost:4
-name:Mercenary defender
-hp:5
-max_hp:5
-original_hp:5
+mana_cost:1
+original_mana_cost:1
+name:Heretic Knight
+hp:1
+max_hp:1
+original_hp:1
 attack:2
-category:mercenary
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard put an 3/2 defence
-original_description:Guard put an 3/2 defence
+description:Armored deal 2 damage to your kingdom
+original_description:Armored deal 2 damage to your kingdom
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Mercenary defender.png
+img_url:Heretic Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_defender3
+name_for_html:Heretic_Knight3
 --------------------------------
 card_id:4
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Architecti.png
-items:[]
-number_of_attacks:1
+number_of_troops:1
+nr_of_assaults:4
+mana_cost:1
+original_mana_cost:1
+name:Empire Peasants
+card_type:Defence
+description:
+img_url:Empire Peasants.png
 empire_belonging:
-name_for_html:Architecti4
+name_for_html:Empire_Peasants4
 --------------------------------
 card_id:5
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Architecti.png
-items:[]
-number_of_attacks:1
+number_of_troops:1
+nr_of_assaults:4
+mana_cost:1
+original_mana_cost:1
+name:Empire Peasants
+card_type:Defence
+description:
+img_url:Empire Peasants.png
 empire_belonging:
-name_for_html:Architecti5
+name_for_html:Empire_Peasants5
 --------------------------------
 card_id:6
 mana_cost:1
 original_mana_cost:1
-name:Mercenary employer
-hp:2
-max_hp:2
-original_hp:2
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
 attack:1
-category:mercenary
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Mercenary employer.png
+img_url:Faithful Protector.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_employer6
+name_for_html:Faithful_Protector6
 --------------------------------
 card_id:7
 mana_cost:1
 original_mana_cost:1
-name:Mercenary employer
-hp:2
-max_hp:2
-original_hp:2
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
 attack:1
-category:mercenary
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Mercenary employer.png
+img_url:Faithful Protector.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_employer7
+name_for_html:Faithful_Protector7
 --------------------------------
 card_id:8
-mana_cost:2
-original_mana_cost:2
-name:Build defences
+mana_cost:7
+original_mana_cost:7
+name:Rain of Arrows
 card_type:Spell
-description:Gain 5 Defenses and draw a card
-img_url:Build defences.png
-target:None
+description:Destroy ALL minions that are not Armored
+img_url:Rain of Arrows.png
+target:enemy
 empire_belonging:
 category:
-name_for_html:Build_defences8
+name_for_html:Rain_of_Arrows8
 --------------------------------
 card_id:9
-mana_cost:2
-original_mana_cost:2
-name:Build defences
+mana_cost:7
+original_mana_cost:7
+name:Rain of Arrows
 card_type:Spell
-description:Gain 5 Defenses and draw a card
-img_url:Build defences.png
-target:None
+description:Destroy ALL minions that are not Armored
+img_url:Rain of Arrows.png
+target:enemy
 empire_belonging:
 category:
-name_for_html:Build_defences9
+name_for_html:Rain_of_Arrows9
 --------------------------------
 card_id:10
 mana_cost:2
 original_mana_cost:2
-name:Palisade Wall
-card_type:Spell
-description:Deal 3 damage gain 3 defences
-img_url:Palisade Wall.png
-target:enemy
+name:Armored Horse
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Armored Desperate Draw a Spell
+original_description:Armored Desperate Draw a Spell
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Armored Horse.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Palisade_Wall10
+name_for_html:Armored_Horse10
 --------------------------------
 card_id:11
 mana_cost:2
 original_mana_cost:2
-name:Palisade Wall
-card_type:Spell
-description:Deal 3 damage gain 3 defences
-img_url:Palisade Wall.png
-target:enemy
+name:Armored Horse
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Armored Desperate Draw a Spell
+original_description:Armored Desperate Draw a Spell
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Armored Horse.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Palisade_Wall11
+name_for_html:Armored_Horse11
 --------------------------------
 card_id:12
 mana_cost:2
 original_mana_cost:2
-name:Guard the Fort
-card_type:Spell
-description:Gain 3 defences and summon a 2/3 Fort Guard
-img_url:Guard the Fort.png
-target:None
+name:Armored Knight
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Armored
+original_description:Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Armored Knight.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Guard_the_Fort12
+name_for_html:Armored_Knight12
 --------------------------------
 card_id:13
+mana_cost:9
+original_mana_cost:9
+name:Graf
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+original_description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Graf.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Graf13
+--------------------------------
+card_id:14
+mana_cost:9
+original_mana_cost:9
+name:Graf
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+original_description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Graf.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Graf14
+--------------------------------
+card_id:15
+mana_cost:9
+original_mana_cost:9
+name:Call of God
+card_type:Spell
+description:Heal for 8 and summon a 8/8 armored guard Crusader
+img_url:Call of God.png
+target:self
+empire_belonging:
+category:
+name_for_html:Call_of_God15
+--------------------------------
+card_id:16
+mana_cost:9
+original_mana_cost:9
+name:Call of God
+card_type:Spell
+description:Heal for 8 and summon a 8/8 armored guard Crusader
+img_url:Call of God.png
+target:self
+empire_belonging:
+category:
+name_for_html:Call_of_God16
+--------------------------------
+card_id:17
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
+card_type:Spell
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Arbalest_Shot17
+--------------------------------
+card_id:18
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
+card_type:Spell
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Arbalest_Shot18
+--------------------------------
+card_id:19
 mana_cost:2
 original_mana_cost:2
-name:Guard the Fort
+name:Chivalry and Honor
 card_type:Spell
-description:Gain 3 defences and summon a 2/3 Fort Guard
-img_url:Guard the Fort.png
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:self
+empire_belonging:
+category:
+name_for_html:Chivalry_and_Honor19
+--------------------------------
+card_id:20
+mana_cost:2
+original_mana_cost:2
+name:Chivalry and Honor
+card_type:Spell
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:self
+empire_belonging:
+category:
+name_for_html:Chivalry_and_Honor20
+--------------------------------
+card_id:21
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard21
+--------------------------------
+card_id:22
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard22
+--------------------------------
+card_id:24
+mana_cost:7
+original_mana_cost:7
+name:Empire Crusader
+hp:7
+max_hp:7
+original_hp:7
+attack:7
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Add 5 Holy Roman Empire cards to your hand
+original_description:Add 5 Holy Roman Empire cards to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Empire Crusader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Empire_Crusader24
+--------------------------------
+card_id:25
+mana_cost:7
+original_mana_cost:7
+name:Empire Crusader
+hp:7
+max_hp:7
+original_hp:7
+attack:7
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Add 5 Holy Roman Empire cards to your hand
+original_description:Add 5 Holy Roman Empire cards to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Empire Crusader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Empire_Crusader25
+--------------------------------
+card_id:26
+mana_cost:10
+original_mana_cost:10
+name:Margrave
+hp:6
+max_hp:6
+original_hp:6
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Armored Cost 1 less for other each card in your hand
+original_description:Guard Armored Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Margrave.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Margrave26
+--------------------------------
+card_id:27
+mana_cost:10
+original_mana_cost:10
+name:Margrave
+hp:6
+max_hp:6
+original_hp:6
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Armored Cost 1 less for other each card in your hand
+original_description:Guard Armored Cost 1 less for other each card in your hand
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Margrave.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Margrave27
+--------------------------------
+card_id:28
+mana_cost:2
+original_mana_cost:2
+name:Warhammer
+card_type:Spell
+description:Break an enemy armor making him lose all attributes
+img_url:Warhammer.png
 target:None
 empire_belonging:
 category:
-name_for_html:Guard_the_Fort13
+name_for_html:Warhammer28
 --------------------------------
-card_id:14
+card_id:29
 mana_cost:2
 original_mana_cost:2
-name:Guard Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Guard Dog.png
-items:[]
-number_of_attacks:1
+name:Warhammer
+card_type:Spell
+description:Break an enemy armor making him lose all attributes
+img_url:Warhammer.png
+target:None
 empire_belonging:
-name_for_html:Guard_Dog14
+category:
+name_for_html:Warhammer29
 --------------------------------
-card_id:15
-mana_cost:2
-original_mana_cost:2
-name:Guard Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Guard Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Guard_Dog15
---------------------------------
-card_id:16
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
+card_id:30
+mana_cost:3
+original_mana_cost:3
+name:Voice of the emperor
+hp:4
+max_hp:4
+original_hp:4
 attack:3
 category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:3
 active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
+description:Set a minion attack and health to 3
+original_description:Set a minion attack and health to 3
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Front Line Defender.png
+img_url:Voice of the emperor.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Front_Line_Defender16
---------------------------------
-card_id:17
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Front Line Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Front_Line_Defender17
---------------------------------
-card_id:18
-mana_cost:6
-original_mana_cost:6
-name:Joan of Arc
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Joan of Arc.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Joan_of_Arc18
---------------------------------
-card_id:19
-mana_cost:4
-original_mana_cost:4
-name:City Guard
-hp:5
-max_hp:5
-original_hp:5
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:City Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:City_Guard19
---------------------------------
-card_id:20
-mana_cost:4
-original_mana_cost:4
-name:City Guard
-hp:5
-max_hp:5
-original_hp:5
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:City Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:City_Guard20
---------------------------------
-card_id:21
-mana_cost:8
-original_mana_cost:8
-name:Carcassonne
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:building
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Can't attack. Deal 8 damage to a random enemy at the end of your turn
-original_description:Can't attack. Deal 8 damage to a random enemy at the end of your turn
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Carcassonne.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Carcassonne21
+name_for_html:Voice_of_the_emperor30
 --------------------------------

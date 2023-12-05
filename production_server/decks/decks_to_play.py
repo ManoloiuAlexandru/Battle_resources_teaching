@@ -18,9 +18,8 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Spell(2, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", 0),
-]
 
+]
 
 list_of_mercenary = [
     [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],

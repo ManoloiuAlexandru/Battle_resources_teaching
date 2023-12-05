@@ -63,3 +63,4 @@ Using the ctrl+right click get to the put_item_on function from game_logics
 Using the ctrl+right click get to the clean_board function from player
 
 Homework 12:
+In the code there are methods that are not static but they can be static can you find them ?

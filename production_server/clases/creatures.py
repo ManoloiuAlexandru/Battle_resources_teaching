@@ -47,9 +47,9 @@ class Creature:
             self.attack = 0
         if self.hp <= 0:
             self.hp = 1
-        if buff_attr == "Armored":
+        if "Armored" in buff_attr.split():
             self.armored = self.check_armored()
-        if buff_attr == "Charge" and self.number_of_attacks >= 1:
+        if "Charge" in buff_attr.split() and self.number_of_attacks >= 1:
             self.exhausted = self.charge_check()
         # if buff_attr == "":
         #     self.armored = self.check_armored()

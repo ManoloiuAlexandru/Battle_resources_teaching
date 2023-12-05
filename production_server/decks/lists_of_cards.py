@@ -49,7 +49,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
                               "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
-                              "Banner holder": (1, 0, "")}
+                              "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -85,7 +85,8 @@ list_of_creature_that_summon = {
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
-                                              "Banner holder": ("affects hand", "buff", 1, 0, "")
+                                              "Banner holder": ("affects hand", "buff", 1, 0, ""),
+                                              "Inspired soldier": ("hand_check:Spell", "buff")
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Shield": (
@@ -159,11 +160,11 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
                   "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire",
-                  "Build defences", "Palisade Wall", "Guard the Fort"]
+                  "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
-                       "Strength in numbers": "", "Call of God": ""}
-list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8}
+                       "Strength in numbers": "", "Call of God": "", "Emperor's Hope": ""}
+list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emperor's Hope": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
                       "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
@@ -178,7 +179,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
                                  "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
-                                 "Defending  the empire", "Build defences","Guard the Fort"]
+                                 "Defending  the empire", "Build defences", "Guard the Fort"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -186,7 +187,8 @@ list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard",
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
-                                  "Ancient Tactics": 3, "Tactical Coordination": 3, "Build defences": 1
+                                  "Ancient Tactics": 3, "Tactical Coordination": 3, "Build defences": 1,
+                                  "Emperor's Hope": 3
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
@@ -194,7 +196,7 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Knight's training": (3, 3, ""), "Chivalry and Honor": (1, 2, ""), "Guard Duty": (2, 2, ""),
                        "For the Khan": (0, 1, "Charge"), "In the name of the king": (1, 1, ""),
                        "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, ""),
-                       "Call of God": (0, 0, "")}
+                       "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, "")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
@@ -219,7 +221,7 @@ list_of_spells_that_summon_specific_cards = {
     "Call of God": (
         1, [Creature(8, "Crusader", 8, 8, "Guard Armored", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}
-list_of_spells_that_can_heal_player = {"Call of God": 8}
+list_of_spells_that_can_heal_player = {"Call of God": 8, "Emperor's Hope": 8}
 list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}
