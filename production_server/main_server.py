@@ -1,5 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+from decks.roman_empire import roman_empire_show, roman_empire
+from decks.all_cards_in_the_game import all_cards_in_game, cards_that_are_in_the_game_for_all
+from decks.holy_roman_empire import *
+from decks.mesopotamia_empire import *
+from decks.mongols_empire import *
+from decks.byzantine_empire import *
 from clases.server_logics import *
 from clases.Defence import Defence
 from clases.spells import Spell
@@ -201,7 +207,8 @@ def make_deck():
                 index += 1
             if card.card_type == "Defence":
                 your_deck.append(
-                    Defence(card.mana_cost, card.name, card.number_of_troops, card.nr_of_assaults, card.description, index))
+                    Defence(card.mana_cost, card.name, card.number_of_troops, card.nr_of_assaults, card.description,
+                            index))
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
     return redirect(url_for('make_your_own_deck', show_deck=show_deck))
