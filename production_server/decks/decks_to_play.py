@@ -20,14 +20,52 @@ bot_deck = [
     Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", 123423435457),
 ]
 demo_deck = [
-    Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", 0),
+    Creature(6, "Inspiring knight", 5, 6, "Desperate add a random knight to your hand", "knight", 0),
     Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", 1234578),
 ]
 
+list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
+                   [Creature(7, "Heavy Armored Knight", 4, 7, "If you're holding a knight deal 7 damage to a minion",
+                             "knight",
+                             -165)],
+                   [Creature(3, "Motivated Page", 4, 2, "If you're holding a knight gain +1/+1", "knight",
+                             -163)],
+                   [Creature(4, "Knight's Trainee", 6, 2, "If you're holding a knight and gain +1 attack and guard",
+                             "knight", -161)],
+                   [Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153)],
+                   [Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand",
+                             "knight", -126)],
+                   [Creature(1, "Heretic Knight", 1, 2, "Armored deal 2 damage to your kingdom", "knight", -122)],
+                   [Creature(2, "Armored Knight", 2, 2, "Armored", "knight", -87)],
+                   [Creature(1, "Selfless Knight", 1, 2, "Desperate Give a friendly minion armored", "knight", -86)],
+                   [Creature(8, "Frederick Barbarossa", 6, 6,
+                             "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
+                   [Creature(5, "Army Champion", 4, 4,
+                             "While this is on the field friendly minions get +1/+1", "knight", -69)],
+                   [Creature(4, "Last Defender", 6, 2, "If your hand is empty gain +2 attack and guard", "knight",
+                             -55)],
+                   [Creature(3, "Tournament Horserider", 1, 2, "Charge Armored", "knight", -53)],
+                   [Creature(1, "Armored Page", 1, 1, "Armored", "knight", -51)],
+                   [Creature(7, "Cataphract", 6, 6, "Guard Armored", "knight", -39)],
+                   [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", -21)],
+                   [Creature(6, 'Hospitaller Knight', 5, 4, "Heal a friendly minion for 2 Armored", "knight", -11)],
+                   [Creature(2, 'Page', 1, 1, "Draw a card", "knight", -10)],
+                   [Creature(2, 'Squire', 2, 3, "", "knight", -9)],
+                   [Creature(5, "Mounted Knight", 4, 4, "Charge", "knight", -8)],
+                   [Creature(7, 'Teutonic Knight', 6, 5, "Guard Armored", "knight", -4)],
+                   [Creature(9, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", -3)],
+                   [Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
+                   [Creature(6, "Inspiring knight", 5, 6,
+                             "Desperate add a random knight to your hand", "knight",
+                             -169)]]
 list_of_mercenary = [
     [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],
     [Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133)],
-    [Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)]]
+    [Creature(1, "Mercenary employer", 2, 1, "Add a random mercenary to your hand", "mercenary", -148)],
+    [Creature(2, "Mercenary Charger", 3, 2,
+              "If you're holding a knight and gain +1 attack and charge", "mercenary",
+              -162)],
+    [Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150)]]
 list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
                      [Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", -68)],
                      [Spell(1, "Roman Formation Phalanx", "Give your minions +1/+1 Debt(1)", -71)],
@@ -84,7 +122,7 @@ list_of_animals = [[Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal"
                    [Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152)],
                    ]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
-                             "animal": list_of_animals, "holy_roman": list_of_holy_roman}
+                             "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights}
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
@@ -247,7 +285,8 @@ insane_deck = [Creature(1, "Archer", 1, 1, "Deal 1 damage", "soldier", 9991),
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,
                  "cards_for_mongol_empire": cards_for_mongol_empire, "defenders": defenders,
-                 "mongols_hordes": mongols_hordes, "ancients": ancients, "insane_deck": insane_deck}
+                 "mongols_hordes": mongols_hordes, "ancients": ancients, "insane_deck": insane_deck,
+                 }
 empire_decks = {'Byzantine_Empire': cards_for_byzantine_empire,
                 'Holy_Roman_Empire': cards_for_holy_roman_empire,
                 'Mongol_Empire': cards_for_mongol_empire,
