@@ -40,6 +40,7 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
                             "soldier", -157),
                    Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
+                   Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -80,7 +81,8 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 -153)],
                       [Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
                                 "soldier", -157)],
-                      [Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158)]
+                      [Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158)],
+                      [Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -120,4 +122,5 @@ cards_for_holy_roman_empire = [
     Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
              "soldier", -157),
     Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
+    Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159),
 ]

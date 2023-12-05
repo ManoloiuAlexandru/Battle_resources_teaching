@@ -18,7 +18,9 @@ bot_deck = [
 
 ]
 demo_deck = [
-
+    Spell(0, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", 0),
+    Creature(0, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", 1),
+    Creature(0, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", 2),
 ]
 
 list_of_mercenary = [

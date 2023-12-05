@@ -119,6 +119,7 @@ class Player:
                         self.empty_mana += list_of_creature_that_add_mana.get(card.name)
                 elif card.name in list_of_spells:
                     self.check_for_creature_with_effect_on("cast spell", card)
+                    self.check_spell(card)
                     self.mana_pay(card)
                     self.incoming_action = 3
                     self.incoming_spell = card
@@ -547,3 +548,13 @@ class Player:
                 creature = list_of_creature_that_add_specific_card_to_your_hand.get(card.name)[0]
                 self.hand.append(creature)
                 del list_of_creature_that_add_specific_card_to_your_hand.get(card.name)[0]
+
+    def check_spell(self, card):
+        incoming_card = list_of_spells_that_buff_conditional.get(card.name)
+        if incoming_card is not None:
+            if "hand" in incoming_card[0].split(":"):
+                for creature in self.hand:
+                    if creature.card_type == incoming_card[0].split(":")[1] or creature.category == \
+                            incoming_card[0].split(":")[1]:
+                        list_of_buff_spells[card.name] = incoming_card[1]
+            print("Ceva")

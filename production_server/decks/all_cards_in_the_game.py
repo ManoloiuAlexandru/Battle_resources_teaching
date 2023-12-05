@@ -261,4 +261,5 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Inspired soldier", 5, 2, "If you are holding a spell gain armored and guard",
                               "soldier", -157),
                      Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
+                     Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159),
                      ]
