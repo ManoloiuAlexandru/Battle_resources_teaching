@@ -84,7 +84,9 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(3, "Clergy", 3, 3, "Restore 3 health", "worker", -144),
                                       Creature(7, "Local Bodyguard", 8, 6, "Guard", "worker", -145),
                                       Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146),
-                                      Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)
+                                      Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147),
+                                      Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight",
+                                               "soldier", -160),
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -262,4 +264,5 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               "soldier", -157),
                      Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158),
                      Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159),
+                     Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", -160),
                      ]

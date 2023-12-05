@@ -33,9 +33,10 @@ Creatures
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
-                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy"]
-list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4}
-list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4}
+                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest"]
+list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
+                                             "Knight Arbalest": 0}
+list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
@@ -86,7 +87,8 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
                                               "Banner holder": ("affects hand", "buff", 1, 0, ""),
-                                              "Inspired soldier": ("hand_check:Spell", "buff")
+                                              "Inspired soldier": ("hand_check:Spell", "buff"),
+                                              "Knight Arbalest": ("hand_check:knight", "change:dmg", 5)
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Shield": (

@@ -10,6 +10,7 @@ class Defence:
         self.description = description
         self.img_url = self.name + ".png"
         self.empire_belonging = ""
+        self.category = ""
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.card_id
         else:

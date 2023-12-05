@@ -15,12 +15,17 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-
+    Creature(0, "Peasant", 1, 1, "", "worker", 123456),
+    Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", 1234578),
+    Spell(3, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight",123578),
+    Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", 123423435457),
 ]
 demo_deck = [
-    Spell(0, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", 0),
-    Creature(0, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", 1),
-    Creature(0, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", 2),
+    Creature(0, "Mercenary elite Defender", 8, 0, " Guard Debt(2)", "soldier", 1),
+    Creature(0, "Mercenary elite Defender", 8, 0, " Guard Debt(2)", "soldier", 2),
+    Creature(0, "Mercenary elite Defender", 8, 0, " Guard Debt(2)", "soldier", 3),
+    Creature(0, "Mercenary elite Defender", 8, 0, " Guard Debt(2)", "soldier", 4),
+    Creature(0, "Mercenary elite Defender", 8, 0, " Guard Debt(2)", "soldier", 5),
 ]
 
 list_of_mercenary = [

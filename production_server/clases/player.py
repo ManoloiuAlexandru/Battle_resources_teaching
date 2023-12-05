@@ -373,7 +373,11 @@ class Player:
                 if card_in_hand != card:
                     if card_in_hand.card_type == incoming_card[0].split(":")[1] or card_in_hand.category == \
                             incoming_card[0].split(":")[1]:
-                        self.buff_card_from_hand(card, card)
+                        if incoming_card[1] == "buff":
+                            self.buff_card_from_hand(card, card)
+                        if incoming_card[1].split(":")[0] == "change":
+                            if incoming_card[1].split(":")[1] == "dmg":
+                                list_of_creature_that_deal_dmg_to_enemies[card.name] = incoming_card[2]
 
     def buff_all_cards(self, card):
         for creature in self.hand:
@@ -557,4 +561,3 @@ class Player:
                     if creature.card_type == incoming_card[0].split(":")[1] or creature.category == \
                             incoming_card[0].split(":")[1]:
                         list_of_buff_spells[card.name] = incoming_card[1]
-            print("Ceva")
