@@ -295,4 +295,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               -165),
                      Creature(7, "Honor Guard", 11, 3, "If you're holding a knight gain +1 attack and guard", "soldier",
                               -166),
+                     Creature(2, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker",
+                              -167),
                      ]

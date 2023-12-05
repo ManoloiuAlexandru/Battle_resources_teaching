@@ -53,7 +53,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
                               "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored"),
                               "Knight's Trainee": (0, 1, "Guard"), "Mercenary Charger": (0, 1, "Charge"),
-                              "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard")}
+                              "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard"),
+                              "Church Knight": (0, 0, "Guard Armored")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -97,7 +98,8 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Knight's Trainee": ("hand_check:knight", "buff"),
                                               "Mercenary Charger": ("hand_check:knight", "buff"),
                                               "Motivated Page": ("hand_check:knight", "buff"),
-                                              "Honor Guard": ("hand_check:knight", "buff")
+                                              "Honor Guard": ("hand_check:knight", "buff"),
+                                              "Church Knight": ("hand_check:knight", "buff"),
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Shield": (

@@ -20,17 +20,7 @@ bot_deck = [
     Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", 123423435457),
 ]
 demo_deck = [
-    Creature(3, "Motivated Page", 4, 2, "If you're holding a knight gain +1/+1", "knight",
-             3),
-    Creature(3, "Knight Archer", 3, 3, "If you're holding a knight deal 2 damage", "soldier",
-             1),
-    Creature(7, "Heavy Armored Knight", 4, 7, "If you're holding a knight deal 7 damage to a minion", "knight",
-             14),
-    Creature(7, "Honor Guard", 11, 3, "If you're holding a knight gain +1 attack and guard", "soldier",
-             22),
-    Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", 2),
-    Creature(4, "Knight's Trainee", 6, 2, "If you're holding a knight and gain +1 attack and guard",
-             "knight", 8),
+    Creature(0, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker", 0),
     Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", 1234578),
 ]
 
