@@ -164,10 +164,20 @@ def update_deck():
     global your_deck
     global empire
     global show_deck
-    your_deck = get_old_deck()[0]
-    empire = get_old_deck()[1]
-    show_deck = make_html_deck(your_deck, show_deck)
-    return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+    try:
+        your_deck = get_old_deck()[0]
+        empire = get_old_deck()[1]
+        show_deck = make_html_deck(your_deck, show_deck)
+        return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+    except Exception as e:
+        return render_template("game_option.html")
+
+
+@app.route("/chaotic_history", methods=["POST", "GET"])
+def chaotic_history():
+    global show_deck
+    return render_template("chaotic_history.html", your_deck=show_deck,
+                           library=all_cards_in_game)
 
 
 @app.route("/send_empire", methods=["POST", "GET"])
@@ -182,18 +192,25 @@ def make_deck():
     global your_deck
     global show_deck
     global index
-    if empire == "Byzantine_Empire":
-        deck_to_pick = cards_for_byzantine_empire
-    elif empire == "Holy_Roman_Empire":
-        deck_to_pick = cards_for_holy_roman_empire
-    elif empire == "Mongol_Empire":
-        deck_to_pick = cards_for_mongol_empire
-    elif empire == "Mesopotamia_Empire":
-        deck_to_pick = mesopotamia_empire
-    elif empire == "Roman_Empire":
-        deck_to_pick = roman_empire
-    else:
-        deck_to_pick = cards_that_are_in_the_game_for_all
+    global empire
+    try:
+        if empire=="":
+            deck_to_pick = all_cards_in_game
+        elif empire == "Byzantine_Empire":
+            deck_to_pick = cards_for_byzantine_empire
+        elif empire == "Holy_Roman_Empire":
+            deck_to_pick = cards_for_holy_roman_empire
+        elif empire == "Mongol_Empire":
+            deck_to_pick = cards_for_mongol_empire
+        elif empire == "Mesopotamia_Empire":
+            deck_to_pick = mesopotamia_empire
+        elif empire == "Roman_Empire":
+            deck_to_pick = roman_empire
+        else:
+            deck_to_pick = cards_that_are_in_the_game_for_all
+    except Exception as e:
+        empire = ""
+        deck_to_pick = all_cards_in_game
     cards_name = request.form
     for card in deck_to_pick:
         if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
@@ -211,7 +228,10 @@ def make_deck():
                             index))
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
-    return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+    if empire == "":
+        return redirect(url_for('chaotic_history', show_deck=show_deck))
+    else:
+        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
 
 
 @app.route("/play", methods=["POST", "GET"])
@@ -251,8 +271,10 @@ def remove_card_from_deck():
             else:
                 show_deck.pop(card.name)
     show_deck = make_html_deck(your_deck, show_deck)
-    return redirect(url_for('make_your_own_deck', show_deck=show_deck))
-
+    if empire != "":
+        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+    else:
+        return redirect(url_for('chaotic_history', show_deck=show_deck))
 
 @app.route("/library")
 def show_library():
@@ -373,4 +395,4 @@ def end_turn():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
