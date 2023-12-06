@@ -253,7 +253,7 @@ class Bot(Player):
             if card == target_card:
                 card.hp -= dmg
                 self.logs += " on this card:" + card.name
-        player.check_battlefield()
+        Player.clean_board(player,player.enemy_player)
 
     def check_move(self, player):
         self.target_with_on_hp()

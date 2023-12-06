@@ -15,12 +15,14 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Peasant", 1, 1, "", "worker", 123456),
-    Spell(3, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", 123578),
-    Creature(5, "Knight Arbalest", 4, 5, "Deal 5 damage if you are holding a knight", "soldier", 123423435457),
+    Creature(0, "Demo", 99, 1, "Armored", "all", 23423),
+    Creature(3, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
+             "soldier", 3)
 ]
 demo_deck = [
-    Creature(6, "Inspiring knight", 5, 6, "Desperate add a random knight to your hand", "knight", 0),
+    Creature(0, "Heavy Armored Knight", 3, 3, "Deal 3 damage if you are holding a knight",
+             "knight", 0),
+    Creature(0, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", 1),
     Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", 1234578),
 ]
 

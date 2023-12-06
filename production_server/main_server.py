@@ -364,7 +364,7 @@ def end_turn():
         Player.battle_fields_effects(player1, player2)
         if player2.check_move(player1) == 0:
             attacked_player = turn_switch(player1, player2)
-        player1.check_battlefield()
+        Player.clean_board(player1, player2)
         if player1.check_player() == 0:
             return render_template("END.html", player=player1)
         elif player2.check_player() == 0:
@@ -373,4 +373,4 @@ def end_turn():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

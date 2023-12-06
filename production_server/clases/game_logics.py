@@ -362,7 +362,10 @@ def heal_creature(card_picked, player, amount):
 def deal_dmg_to_creature(card_picked, player, dmg):
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
-            card.hp -= dmg
+            if dmg < 90 and card.armored is True:
+                card.armored = False
+            else:
+                card.hp -= dmg
             player.logs += " on this card:" + card.name
 
 
@@ -374,7 +377,6 @@ def destroy_creature_from_player(player1, player2, card_picked):
             deal_dmg_to_creature(card_picked, player2,
                                  list_of_creature_that_deal_dmg_to_enemies.get(player1.active_minion.name))
             player1.active_minion = None
-            player2.check_battlefield()
         elif player1.active_minion.name in list_of_creature_that_heal:
             heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
             if player1.active_minion.name in list_of_creature_that_buff:
@@ -391,7 +393,7 @@ def destroy_creature_from_player(player1, player2, card_picked):
         elif player1.active_minion.name in list_of_creature_that_debuff:
             debuff_creature(player1, player2, card_picked)
         player1.incoming_action = 0
-
+        Player.clean_board(player1, player2)
 
 def debuff_creature(player1, player2, card_picked):
     for card in player1.battle_field:
@@ -429,10 +431,10 @@ def cast_spell_from_player(player1, player2, card_picked):
         player1.problem = "You need to select a card"
     else:
         cast_spell(player1, player2, card_picked)
-        player2.check_battlefield()
         Player.battle_fields_effects(player1, player2)
         player1.incoming_action = 0
         player1.incoming_spell = None
+    Player.clean_board(player1, player2)
 
 
 def check_if_card_in_deck(card, deck):
