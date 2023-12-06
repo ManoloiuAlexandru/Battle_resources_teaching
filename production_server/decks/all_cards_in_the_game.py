@@ -108,7 +108,9 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(6, "Inspiring knight", 5, 6,
                                                "Desperate add a random knight to your hand", "knight",
                                                -169),
-                                      Creature(8, "Snob Knight", 10, 6, "", "Knight", -170)
+                                      Creature(8, "Snob Knight", 10, 6, "", "Knight", -170),
+                                      Creature(8, "Alpha Wolf", 7, 7, "Desperate summon 7 1/1 Wolf", "animal", -171),
+                                      Creature(3, "Lost Chicken", 3, 0, "Desperate summon a 5/5 Lynx", "animal", -172),
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -306,5 +308,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168),
                      Creature(6, "Inspiring knight", 5, 6, "Desperate add a random knight to your hand", "knight",
                               -169),
-                     Creature(8, "Snob Knight", 10, 6, "", "Knight", -170)
+                     Creature(8, "Snob Knight", 10, 6, "", "Knight", -170),
+                     Creature(8, "Alpha Wolf", 7, 7, "Desperate summon 7 1/1 Wolf", "animal", -171),
+                     Creature(3, "Lost Chicken", 3, 0, "Desperate summon a 5/5 Lynx", "animal", -172),
                      ]

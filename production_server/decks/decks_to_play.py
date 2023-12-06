@@ -17,13 +17,11 @@ from decks.roman_empire import roman_empire
 bot_deck = [
     Creature(0, "Demo", 99, 1, "Armored", "all", 23423),
     Creature(3, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
-             "soldier", 3)
+             "soldier", 8)
 ]
 demo_deck = [
-    Creature(0, "Heavy Armored Knight", 3, 3, "Deal 3 damage if you are holding a knight",
-             "knight", 0),
-    Creature(0, "Two-handed Knight", 5, 5, "Kill an enemy minion", "knight", 1),
-    Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", 1234578),
+    Creature(0, "Lost Chicken", 3, 0, "Desperate summon a 5/5 Lynx", "animal", 0),
+
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -59,7 +57,8 @@ list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you 
                    [Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                    [Creature(6, "Inspiring knight", 5, 6,
                              "Desperate add a random knight to your hand", "knight",
-                             -169)]]
+                             -169)],
+                   [Creature(8, "Snob Knight", 10, 6, "", "Knight", -170)]]
 list_of_mercenary = [
     [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],
     [Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133)],
@@ -122,6 +121,8 @@ list_of_animals = [[Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal"
                              "While this is on the field your creatures have +1 attack", "animal", -20)],
                    [Creature(2, "Guard Dog", 2, 2, "Guard", "animal", -18)],
                    [Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152)],
+                   [Creature(8, "Alpha Wolf", 7, 7, "Desperate summon 7 1/1 Wolf", "animal", -171)],
+                   [Creature(3, "Lost Chicken", 3, 0, "Desperate summon a 5/5 Lynx", "animal", -172)],
                    ]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights}

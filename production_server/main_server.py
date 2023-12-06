@@ -194,7 +194,7 @@ def make_deck():
     global index
     global empire
     try:
-        if empire=="":
+        if empire == "":
             deck_to_pick = all_cards_in_game
         elif empire == "Byzantine_Empire":
             deck_to_pick = cards_for_byzantine_empire
@@ -275,6 +275,7 @@ def remove_card_from_deck():
         return redirect(url_for('make_your_own_deck', show_deck=show_deck))
     else:
         return redirect(url_for('chaotic_history', show_deck=show_deck))
+
 
 @app.route("/library")
 def show_library():

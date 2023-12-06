@@ -105,6 +105,10 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Church Knight": ("hand_check:knight", "buff"),
                                               }
 list_of_creature_that_summ_after_they_die = {
+    "Lost Chicken": (
+        1, [Creature(5, "Lynx", 5, 5, "", "animal", generate_random_int()) for i in range(0, 40)]),
+    "Alpha Wolf": (
+        7, [Creature(1, "Wolf", 1, 1, "", "animal", generate_random_int()) for i in range(0, 40)]),
     "Lost Shield": (
         1, [Creature(4, "City Guard", 4, 4, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Graf": (
@@ -135,7 +139,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Joan of Arc": "summ", "Khevtuul": "summ", "Mother Wolf": "summ",
                                               "Goat": "summ", "Turtanu": "summ", "Graf": "summ",
                                               "Big Game Beast": "draw", "Lure animal": "add_to_hand",
-                                              "Inspiring knight": "add_to_hand"}
+                                              "Inspiring knight": "add_to_hand", "Alpha Wolf": "summ",
+                                              "Lost Chicken": "summ"}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"], [""], [""]),
