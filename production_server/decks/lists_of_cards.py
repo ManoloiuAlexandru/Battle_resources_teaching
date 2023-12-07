@@ -166,7 +166,8 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", 
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
 list_of_creature_that_add_defence = {
-    "Mercenary defender": Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)}
+    "Rusticus Recruiter": [Defence(1, "Peasant Troops", 1, 3, "", generate_random_int()) for i in range(0, 10)],
+    "Mercenary defender": [Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)]}
 list_of_cards_that_give_armor = {"Architecti": 5, "Build defences": 5, "Palisade Wall": 3, "Guard the Fort": 3}
 list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,

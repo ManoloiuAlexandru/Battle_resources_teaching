@@ -17,17 +17,8 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(0, "Mercenary Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage", "worker", 0),
-    Spell(0, "Pilum Volley", "Deal 1 damage to ALL minions", 11),
-    Creature(0, "DEmoe", 99, 0, "", "all", 1),
-    Creature(0, "DEmoe", 99, 0, "", "all", 2),
-    Creature(0, "DEmoe", 99, 0, "", "all", 3),
-    Creature(0, "DEmoe", 99, 0, "", "all", 4),
-    Creature(0, "DEmoe", 99, 0, "", "all", 5),
-    Creature(0, "DEmoe", 99, 0, "", "all", 6),
-    Creature(0, "DEmoe", 99, 0, "", "all", 7),
-    Creature(0, "DEmoe", 99, 0, "", "all", 8),
-    Creature(0, "DEmoe", 99, 0, "", "all", 9),
+    Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", 0),
+    Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "mercenary", 1)
 
 ]
 

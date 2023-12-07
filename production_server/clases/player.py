@@ -520,7 +520,7 @@ class Player:
                 print(e)
 
     def put_item_on(self, enemy_player, card):
-        self.active_defence = list_of_creature_that_add_defence.get(card.name)
+        self.active_defence = list_of_creature_that_add_defence.get(card.name)[0]
         self.number_of_troops = self.active_defence.number_of_troops
         self.nr_of_assaults = self.active_defence.nr_of_assaults
 
@@ -530,10 +530,6 @@ class Player:
                 self.enemy_player.hp -= self.number_of_troops
                 self.defences_weakened(1)
                 self.number_of_assaults -= 1
-
-            elif self.active_defence.nr_of_assaults == 0:
-                self.number_of_troops = 0
-                self.nr_of_assaults = 0
 
             if target is not None and self.active_defence is not None and self.number_of_assaults >= 1:
                 if target.armored is True:
@@ -549,6 +545,9 @@ class Player:
                     self.armor = 0
                 self.defences_weakened(1)
                 self.number_of_assaults -= 1
+            if self.nr_of_assaults == 0:
+                self.number_of_troops = 0
+                self.active_defence = None
         else:
             self.problem = "There are guards on the field"
 
