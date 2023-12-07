@@ -21,7 +21,8 @@ roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "me
                 Creature(2, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
                          "worker", -181),
                 Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", -182),
-                Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183)
+                Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183),
+                Creature(2, "Aedile", 7, 0, "Guard", "soldier", -184),
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
@@ -42,5 +43,6 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                      Creature(2, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
                               "worker", -181),
                      Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", -182),
-                     Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183)
+                     Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183),
+                     Creature(2, "Aedile", 7, 0, "Guard", "soldier", -184),
                      ]

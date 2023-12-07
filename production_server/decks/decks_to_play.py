@@ -17,9 +17,7 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", 0),
-    Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "mercenary", 1)
-
+    Creature(0,"")
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

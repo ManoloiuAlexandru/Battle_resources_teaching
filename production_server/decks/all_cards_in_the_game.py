@@ -332,5 +332,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
                               "worker", -181),
                      Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", -182),
-                     Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183)
+                     Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183),
+                     Creature(2, "Aedile", 7, 0, "Guard", "soldier", -184),
                      ]
