@@ -142,7 +142,10 @@ class Player:
                                     list_of_creature_that_summon.get(card.name)[1][i])
                     return 1
                 elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
-                    self.buff_all_cards(card)
+                    if card.name in list_of_creature_that_affect_all_when_die:
+                        pass
+                    else:
+                        self.buff_all_cards(card)
                 elif card.name in list_of_creature_that_affect_battle_field and len(self.battle_field) < 7:
                     self.buff_all_in_battle(card)
                 elif len(self.battle_field) == 7:
@@ -349,6 +352,19 @@ class Player:
                 player.buff_card_from_hand(random_minion, card)
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_to_hand":
                 player.add_random_card_to_hand(card)
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_armor":
+                player.armor += list_of_creature_that_add_to_armor_when_die.get(card.name)
+            elif "deal_damage" in list_of_creature_that_do_somthing_when_die.get(card.name).split(":"):
+                if "all" in list_of_creature_that_do_somthing_when_die.get(card.name).split(":"):
+                    player.deal_damage_to_all_creatures(card.name)
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buffall":
+                player.buff_all_cards(card)
+
+    def deal_damage_to_all_creatures(self, name):
+        for creature in self.battle_field:
+            creature.hp -= list_of_creature_that_do_damage_to_all.get(name)
+        for creature in self.enemy_player.battle_field:
+            creature.hp -= list_of_creature_that_do_damage_to_all.get(name)
 
     def buff_card_from_hand(self, card, buffing_card):
         buff = list_of_creature_that_buff.get(buffing_card.name)

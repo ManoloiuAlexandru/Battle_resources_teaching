@@ -1,175 +1,673 @@
-empire:
+empire:Roman_Empire
 card_id:0
-mana_cost:8
-original_mana_cost:8
-name:Bodyguards
-card_type:Spell
-description:Summon  2 Guards from your deck
-img_url:Bodyguards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Bodyguards0
---------------------------------
-card_id:1
-mana_cost:8
-original_mana_cost:8
-name:Bodyguards
-card_type:Spell
-description:Summon  2 Guards from your deck
-img_url:Bodyguards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Bodyguards1
---------------------------------
-card_id:2
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract2
---------------------------------
-card_id:3
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract3
---------------------------------
-card_id:4
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Protector.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Protector4
---------------------------------
-card_id:5
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Protector.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Protector5
---------------------------------
-card_id:7
 mana_cost:2
 original_mana_cost:2
-name:Watchtower
+name:Mercenary Recruiter
 hp:2
 max_hp:2
 original_hp:2
-attack:1
-category:building
+attack:2
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Watchtower.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchtower7
+name_for_html:Mercenary_Recruiter0
+--------------------------------
+card_id:1
+mana_cost:2
+original_mana_cost:2
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring mercenary.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Inspiring_mercenary1
+--------------------------------
+card_id:2
+mana_cost:2
+original_mana_cost:2
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring mercenary.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Inspiring_mercenary2
+--------------------------------
+card_id:3
+mana_cost:3
+original_mana_cost:3
+name:Mercenary Lieutenant
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Desperate deal 1 damage to all minions
+original_description:Desperate deal 1 damage to all minions
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Lieutenant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Lieutenant3
+--------------------------------
+card_id:4
+mana_cost:3
+original_mana_cost:3
+name:Mercenary Lieutenant
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Desperate deal 1 damage to all minions
+original_description:Desperate deal 1 damage to all minions
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Lieutenant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Lieutenant4
+--------------------------------
+card_id:5
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Charger
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you're holding a knight and gain +1 attack and charge
+original_description:If you're holding a knight and gain +1 attack and charge
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Charger.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Charger5
+--------------------------------
+card_id:6
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Charger
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you're holding a knight and gain +1 attack and charge
+original_description:If you're holding a knight and gain +1 attack and charge
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Charger.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Charger6
+--------------------------------
+card_id:7
+mana_cost:4
+original_mana_cost:4
+name:Mercenary defender
+hp:5
+max_hp:5
+original_hp:5
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard put an 3/2 defence
+original_description:Guard put an 3/2 defence
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary defender.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_defender7
+--------------------------------
+card_id:8
+mana_cost:4
+original_mana_cost:4
+name:Mercenary defender
+hp:5
+max_hp:5
+original_hp:5
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard put an 3/2 defence
+original_description:Guard put an 3/2 defence
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary defender.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_defender8
 --------------------------------
 card_id:9
 mana_cost:2
 original_mana_cost:2
-name:Watchtower
+name:Mercenary Recruiter
 hp:2
 max_hp:2
 original_hp:2
-attack:1
-category:building
+attack:2
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Watchtower.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchtower9
+name_for_html:Mercenary_Recruiter9
+--------------------------------
+card_id:10
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Architecti10
+--------------------------------
+card_id:11
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Architecti11
+--------------------------------
+card_id:12
+mana_cost:1
+original_mana_cost:1
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary employer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_employer12
+--------------------------------
+card_id:13
+mana_cost:1
+original_mana_cost:1
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary employer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_employer13
+--------------------------------
+card_id:14
+mana_cost:2
+original_mana_cost:2
+name:Build defences
+card_type:Spell
+description:Gain 5 Defenses and draw a card
+img_url:Build defences.png
+target:None
+empire_belonging:
+category:
+name_for_html:Build_defences14
+--------------------------------
+card_id:15
+mana_cost:2
+original_mana_cost:2
+name:Build defences
+card_type:Spell
+description:Gain 5 Defenses and draw a card
+img_url:Build defences.png
+target:None
+empire_belonging:
+category:
+name_for_html:Build_defences15
+--------------------------------
+card_id:16
+mana_cost:2
+original_mana_cost:2
+name:Palisade Wall
+card_type:Spell
+description:Deal 3 damage gain 3 defences
+img_url:Palisade Wall.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Palisade_Wall16
+--------------------------------
+card_id:17
+mana_cost:2
+original_mana_cost:2
+name:Palisade Wall
+card_type:Spell
+description:Deal 3 damage gain 3 defences
+img_url:Palisade Wall.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Palisade_Wall17
+--------------------------------
+card_id:18
+mana_cost:2
+original_mana_cost:2
+name:Guard the Fort
+card_type:Spell
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
+target:None
+empire_belonging:
+category:
+name_for_html:Guard_the_Fort18
+--------------------------------
+card_id:19
+mana_cost:2
+original_mana_cost:2
+name:Guard the Fort
+card_type:Spell
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
+target:None
+empire_belonging:
+category:
+name_for_html:Guard_the_Fort19
+--------------------------------
+card_id:20
+mana_cost:6
+original_mana_cost:6
+name:Inspiring knight
+hp:5
+max_hp:5
+original_hp:5
+attack:6
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+description:Desperate add a random knight to your hand
+original_description:Desperate add a random knight to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Inspiring_knight20
+--------------------------------
+card_id:21
+mana_cost:6
+original_mana_cost:6
+name:Inspiring knight
+hp:5
+max_hp:5
+original_hp:5
+attack:6
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+description:Desperate add a random knight to your hand
+original_description:Desperate add a random knight to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Inspiring_knight21
+--------------------------------
+card_id:22
+mana_cost:8
+original_mana_cost:8
+name:Thief Camp Guard
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:thief
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Guard Desperate Add 8 defence to your kingdom
+original_description:Guard Desperate Add 8 defence to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Thief Camp Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Thief_Camp_Guard22
+--------------------------------
+card_id:23
+mana_cost:8
+original_mana_cost:8
+name:Thief Camp Guard
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:thief
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Guard Desperate Add 8 defence to your kingdom
+original_description:Guard Desperate Add 8 defence to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Thief Camp Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Thief_Camp_Guard23
+--------------------------------
+card_id:24
+mana_cost:2
+original_mana_cost:2
+name:Armored Peasant
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Armored Guard
+original_description:Armored Guard
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Armored Peasant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Armored_Peasant24
+--------------------------------
+card_id:25
+mana_cost:2
+original_mana_cost:2
+name:Armored Peasant
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Armored Guard
+original_description:Armored Guard
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Armored Peasant.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Armored_Peasant25
+--------------------------------
+card_id:26
+mana_cost:3
+original_mana_cost:3
+name:Motivated Squire
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Deal 3 damage if you are holding a knight
+original_description:Deal 3 damage if you are holding a knight
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Motivated Squire.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Motivated_Squire26
+--------------------------------
+card_id:27
+mana_cost:3
+original_mana_cost:3
+name:Motivated Squire
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Deal 3 damage if you are holding a knight
+original_description:Deal 3 damage if you are holding a knight
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Motivated Squire.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Motivated_Squire27
+--------------------------------
+card_id:28
+mana_cost:3
+original_mana_cost:3
+name:Motivated Page
+hp:4
+max_hp:4
+original_hp:4
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you're holding a knight gain +1/+1
+original_description:If you're holding a knight gain +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Motivated Page.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Motivated_Page28
+--------------------------------
+card_id:29
+mana_cost:3
+original_mana_cost:3
+name:Motivated Page
+hp:4
+max_hp:4
+original_hp:4
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you're holding a knight gain +1/+1
+original_description:If you're holding a knight gain +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Motivated Page.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Motivated_Page29
 --------------------------------

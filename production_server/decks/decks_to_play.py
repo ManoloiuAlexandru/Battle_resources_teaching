@@ -20,8 +20,8 @@ bot_deck = [
              "soldier", 8)
 ]
 demo_deck = [
-    Creature(0, "Lost Chicken", 3, 0, "Desperate summon a 5/5 Lynx", "animal", 0),
-
+    Creature(0, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary", 0),
+    Creature(0, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", 1)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -66,7 +66,11 @@ list_of_mercenary = [
     [Creature(2, "Mercenary Charger", 3, 2,
               "If you're holding a knight and gain +1 attack and charge", "mercenary",
               -162)],
-    [Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150)]]
+    [Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150)],
+    [Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
+              -177)],
+    [Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", -178)]
+]
 list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
                      [Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", -68)],
                      [Spell(1, "Roman Formation Phalanx", "Give your minions +1/+1 Debt(1)", -71)],

@@ -34,7 +34,7 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
                                 "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
-                                "Knight Archer", "Heavy Armored Knight", "Motivated Squire"]
+                                "Knight Archer", "Heavy Armored Knight", "Motivated Squire", "Rogue Cleric"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
                                              "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
                                              "Motivated Squire": 0}
@@ -56,7 +56,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored"),
                               "Knight's Trainee": (0, 1, "Guard"), "Mercenary Charger": (0, 1, "Charge"),
                               "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard"),
-                              "Church Knight": (0, 0, "Guard Armored")}
+                              "Church Knight": (0, 0, "Guard Armored"), "Rogue Cleric": (1, 1, ""),
+                              "Inspiring mercenary": (1, 1, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -128,8 +129,10 @@ list_of_creature_that_summ_after_they_die = {
         [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", "knight", generate_random_int()) for i in
          range(0, 3)]),
     "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", "soldier", generate_random_int()) for i in range(0, 10)])}
-list_of_creature_that_affect_all = {"Watchtower": "Guard"}
+list_of_creature_that_affect_all = {"Watchtower": "Guard","Inspiring mercenary": "Guard"}
+list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
+list_of_creature_that_do_damage_to_all = {"Mercenary Lieutenant": 1}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1)}
@@ -140,8 +143,12 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Goat": "summ", "Turtanu": "summ", "Graf": "summ",
                                               "Big Game Beast": "draw", "Lure animal": "add_to_hand",
                                               "Inspiring knight": "add_to_hand", "Alpha Wolf": "summ",
-                                              "Lost Chicken": "summ"}
+                                              "Lost Chicken": "summ", "Lost Builder": "add_armor",
+                                              "Thief Camp Guard": "add_armor", "Mercenary Lieutenant": "deal_damage:all",
+                                              "Inspiring mercenary": "buffall"}
+list_of_creature_that_do_damage_when_die = {"Mercenary Lieutenant"}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
+list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"], [""], [""]),
                                                       "Big Game Beast": (["Creature"], ["animal"], [""])}
