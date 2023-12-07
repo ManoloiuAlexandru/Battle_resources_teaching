@@ -5,19 +5,15 @@
     <meta charset="UTF-8">
     <title>Battle Resource</title>
 </head>
-<body class="game_option_body">
-<button onclick="window.location.href='/rules'">Rules</button>
-<button onclick="window.location.href='/library'">Library</button>
-<button onclick="window.location.href='/make_your_own_deck_pick_empire'">Create deck</button>
-<button onclick="window.location.href='/update_deck'">Update deck</button>
-<button onclick="window.location.href='/modes'">Modes</button>
+<body class="modes_body">
+<button onclick="window.location.href='/'">Back</button>
+<button onclick="window.location.href='/chaotic_history'">Chaotic History</button>
 <form action="/play" method="post">
     <p>Pick your name:</p>
     <input id="player1" value="adventurer" name="player1"/>
     <p>Pick your opponent:</p>
     <select id="player2" name="player2">
         <option value="Bot">BOT</option>
-        <option value="Test">Test</option>
     </select>
     <p>Pick your Empire:</p>
     <select id="your_empire" name="your_empire">
@@ -37,20 +33,10 @@
     </select>
     <p>Pick your deck:</p>
     <select id="deck_player1" name="deck_player1">
-        <option value="demo_deck">Demo Deck</option>
-        <option value="power_of_the_people">Power of the people</option>
         <option value="personal_deck">Personal deck</option>
-        <option value="best_cards_so_far_deck">Best Deck</option>
-        <option value="defenders">Guards of Byzantine</option>
-        <option value="mongols_hordes">Mongols Hordes</option>
-        <option value="ancients">Ancient Powers</option>
-        <option value="insane_deck">Insane Deck</option>
     </select>
     <p>Pick your opponent deck:</p>
     <select id="deck_player2" name="deck_player2">
-        <option value="demo_deck">Demo Deck</option>
-        <option value="bot_deck">Bot Deck</option>
-        <option value="test_deck">Test Deck</option>
         <option value="power_of_the_people">Power of the people</option>
         <option value="defenders">Guards of Byzantine</option>
         <option value="mongols_hordes">Mongols Hordes</option>
@@ -59,13 +45,11 @@
     </select>
     <p>Pick difficulty:</p>
     <select id="difficulty" name="difficulty">
-        <option value="easy">Easy</option>
         <option value="normal">Normal</option>
         <option value="hard">Hard</option>
         <option value="insane">Insane</option>
     </select>
     <button>Start Game</button>
 </form>
-
 </body>
 </html>

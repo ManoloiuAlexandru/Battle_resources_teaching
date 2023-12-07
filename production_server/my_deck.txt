@@ -1,58 +1,32 @@
 empire:
 card_id:0
-mana_cost:3
-original_mana_cost:3
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Akritoi.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Akritoi0
---------------------------------
-card_id:1
-mana_cost:3
-original_mana_cost:3
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Akritoi.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Akritoi1
---------------------------------
-card_id:2
 mana_cost:8
 original_mana_cost:8
-name:Richard the Lionheart
+name:Bodyguards
+card_type:Spell
+description:Summon  2 Guards from your deck
+img_url:Bodyguards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Bodyguards0
+--------------------------------
+card_id:1
+mana_cost:8
+original_mana_cost:8
+name:Bodyguards
+card_type:Spell
+description:Summon  2 Guards from your deck
+img_url:Bodyguards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Bodyguards1
+--------------------------------
+card_id:2
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
 hp:6
 max_hp:6
 original_hp:6
@@ -62,30 +36,30 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:6
 active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Richard the Lionheart.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Richard_the_Lionheart2
+name_for_html:Cataphract2
 --------------------------------
 card_id:3
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:soldier
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:6
 active_effects:[]
 description:Guard Armored
 original_description:Guard Armored
@@ -93,63 +67,13 @@ card_type:Creature
 exhausted:True
 armored:True
 can_be_target:True
-img_url:Faithful Protector.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Faithful_Protector3
+name_for_html:Cataphract3
 --------------------------------
 card_id:4
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract4
---------------------------------
-card_id:5
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract5
---------------------------------
-card_id:6
 mana_cost:1
 original_mana_cost:1
 name:Faithful Protector
@@ -172,7 +96,32 @@ img_url:Faithful Protector.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Faithful_Protector6
+name_for_html:Faithful_Protector4
+--------------------------------
+card_id:5
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector5
 --------------------------------
 card_id:7
 mana_cost:2
@@ -199,7 +148,7 @@ number_of_attacks:1
 empire_belonging:
 name_for_html:Watchtower7
 --------------------------------
-card_id:8
+card_id:9
 mana_cost:2
 original_mana_cost:2
 name:Watchtower
@@ -222,504 +171,5 @@ img_url:Watchtower.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Watchtower8
---------------------------------
-card_id:9
-mana_cost:2
-original_mana_cost:2
-name:Watchman
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchman.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchman9
---------------------------------
-card_id:10
-mana_cost:2
-original_mana_cost:2
-name:Watchman
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a guard card
-original_description:Draw a guard card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchman.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchman10
---------------------------------
-card_id:11
-mana_cost:10
-original_mana_cost:10
-name:Margrave
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Armored Cost 1 less for other each card in your hand
-original_description:Guard Armored Cost 1 less for other each card in your hand
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Margrave.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Margrave11
---------------------------------
-card_id:12
-mana_cost:10
-original_mana_cost:10
-name:Margrave
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Armored Cost 1 less for other each card in your hand
-original_description:Guard Armored Cost 1 less for other each card in your hand
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Margrave.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Margrave12
---------------------------------
-card_id:13
-mana_cost:5
-original_mana_cost:5
-name:Mercenary elite Defender
-hp:8
-max_hp:8
-original_hp:8
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description: Guard Debt(2)
-original_description: Guard Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary elite Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_elite_Defender13
---------------------------------
-card_id:14
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Guard14
---------------------------------
-card_id:15
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Guard15
---------------------------------
-card_id:16
-mana_cost:1
-original_mana_cost:1
-name:City Gate Guard
-hp:3
-max_hp:3
-original_hp:3
-attack:1
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:City Gate Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:City_Gate_Guard16
---------------------------------
-card_id:17
-mana_cost:1
-original_mana_cost:1
-name:City Gate Guard
-hp:3
-max_hp:3
-original_hp:3
-attack:1
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:City Gate Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:City_Gate_Guard17
---------------------------------
-card_id:18
-mana_cost:5
-original_mana_cost:5
-name:Mercenary elite Defender
-hp:8
-max_hp:8
-original_hp:8
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description: Guard Debt(2)
-original_description: Guard Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary elite Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_elite_Defender18
---------------------------------
-card_id:19
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Front Line Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Front_Line_Defender19
---------------------------------
-card_id:20
-mana_cost:3
-original_mana_cost:3
-name:Knight Archer
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:If you're holding a knight deal 2 damage
-original_description:If you're holding a knight deal 2 damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Knight Archer.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Knight_Archer20
---------------------------------
-card_id:21
-mana_cost:3
-original_mana_cost:3
-name:Knight Archer
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:If you're holding a knight deal 2 damage
-original_description:If you're holding a knight deal 2 damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Knight Archer.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Knight_Archer21
---------------------------------
-card_id:22
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Inspiring_knight22
---------------------------------
-card_id:23
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Inspiring_knight23
---------------------------------
-card_id:24
-mana_cost:8
-original_mana_cost:8
-name:Bodyguards
-card_type:Spell
-description:Summon  2 Guards from your deck
-img_url:Bodyguards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Bodyguards24
---------------------------------
-card_id:25
-mana_cost:8
-original_mana_cost:8
-name:Bodyguards
-card_type:Spell
-description:Summon  2 Guards from your deck
-img_url:Bodyguards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Bodyguards25
---------------------------------
-card_id:26
-mana_cost:8
-original_mana_cost:8
-name:Carcassonne
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:building
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Can't attack. Deal 8 damage to a random enemy at the end of your turn
-original_description:Can't attack. Deal 8 damage to a random enemy at the end of your turn
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Carcassonne.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Carcassonne26
---------------------------------
-card_id:27
-mana_cost:8
-original_mana_cost:8
-name:Basil II
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Armored Charge Guard
-original_description:Armored Charge Guard
-card_type:Creature
-exhausted:False
-armored:True
-can_be_target:True
-img_url:Basil II.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Basil_II27
---------------------------------
-card_id:29
-mana_cost:7
-original_mana_cost:7
-name:Teutonic Knight
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Teutonic Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Teutonic_Knight29
---------------------------------
-card_id:30
-mana_cost:7
-original_mana_cost:7
-name:Teutonic Knight
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Teutonic Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Teutonic_Knight30
+name_for_html:Watchtower9
 --------------------------------

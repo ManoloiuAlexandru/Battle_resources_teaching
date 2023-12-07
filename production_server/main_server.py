@@ -24,6 +24,7 @@ global your_deck
 global index
 global show_deck
 global empire
+global mode
 
 
 def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty, player1_empire, player2_empire):
@@ -176,6 +177,8 @@ def update_deck():
 @app.route("/chaotic_history", methods=["POST", "GET"])
 def chaotic_history():
     global show_deck
+    global mode
+    mode = "chaotic_history"
     return render_template("chaotic_history.html", your_deck=show_deck,
                            library=all_cards_in_game)
 
@@ -255,7 +258,27 @@ def show_battle():
 @app.route("/send_deck", methods=["POST", "GET"])
 def personal_deck():
     save_your_deck(your_deck, empire)
+    try:
+        if mode != "":
+            return redirect(url_for('modes'))
+    except Exception as e:
+        print(e)
     return redirect(url_for('game_options'))
+
+
+@app.route("/modes", methods=["POST", "GET"])
+def modes():
+    global index
+    index = 0
+    global your_deck
+    try:
+        if your_deck is None:
+            your_deck = []
+    except Exception as e:
+        your_deck = []
+    global show_deck
+    show_deck = {}
+    return render_template("Modes.html")
 
 
 @app.route("/remove_card", methods=["POST", "GET"])
