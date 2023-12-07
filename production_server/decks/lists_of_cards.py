@@ -66,8 +66,10 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "
                                                   "King Saragon of Akkad": (2, 2, "ancient")}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
                                                 "New Recruit": ("self_buff", "summ soldier"),
-                                                "Wondering Scribe": ("draw", "cast spell")}
+                                                "Wondering Scribe": ("draw", "cast spell"),
+                                                "Roman Architect": ("add_defence", "damage_taken")}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
+list_of_creature_that_add_armor_on_action = {"Roman Architect": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
@@ -192,7 +194,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
                   "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire",
-                  "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope", "Emperor's Will"]
+                  "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope", "Emperor's Will",
+                  "Pilum Volley"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": ""}
@@ -200,7 +203,7 @@ list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emper
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
                       "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
-                      "Cataclysm": 99, "Palisade Wall": 3}
+                      "Cataclysm": 99, "Palisade Wall": 3, "Pilum Volley": 1}
 list_of_dmg_spells_but_not_to_player = {"Tag team"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
@@ -211,7 +214,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
                                  "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
-                                 "Defending  the empire", "Build defences", "Guard the Fort"]
+                                 "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),

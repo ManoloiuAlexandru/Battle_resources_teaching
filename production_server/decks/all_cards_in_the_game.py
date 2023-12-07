@@ -328,5 +328,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
                               -178),
                      Creature(2, "Apollodorus of Damascus", 2, 2, "Give all defences +1 attack", "worker", -179),
-                     Defence(3, "Mercenary's Auxiliar", 3, 2, "", -180)
+                     Defence(3, "Mercenary's Auxiliar", 3, 2, "", -180),
+                     Creature(2, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
+                              "worker", -181),
                      ]

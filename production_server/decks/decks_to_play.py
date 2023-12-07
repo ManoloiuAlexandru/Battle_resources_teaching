@@ -17,14 +17,18 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(0, "Apollodorus of Damascus", 2, 2, "Give all defences +1 attack", "worker", 0),
-    Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", 1),
-    Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
-             2),
-    Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", 3),
-    Creature(2, "Watchtower", 2, 1, "All your guards get +1/+2", "building", 4),
-    Defence(1, "Empire Peasants", 1, 4, "", 5),
-    Defence(3, "Mercenary's Auxiliar", 3, 2, "", 6)
+    Creature(0, "Mercenary Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage", "worker", 0),
+    Spell(0, "Pilum Volley", "Deal 1 damage to ALL minions", 11),
+    Creature(0, "DEmoe", 99, 0, "", "all", 1),
+    Creature(0, "DEmoe", 99, 0, "", "all", 2),
+    Creature(0, "DEmoe", 99, 0, "", "all", 3),
+    Creature(0, "DEmoe", 99, 0, "", "all", 4),
+    Creature(0, "DEmoe", 99, 0, "", "all", 5),
+    Creature(0, "DEmoe", 99, 0, "", "all", 6),
+    Creature(0, "DEmoe", 99, 0, "", "all", 7),
+    Creature(0, "DEmoe", 99, 0, "", "all", 8),
+    Creature(0, "DEmoe", 99, 0, "", "all", 9),
+
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

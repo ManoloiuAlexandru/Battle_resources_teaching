@@ -17,15 +17,19 @@ def battle(card1, card2, player1, player2):
                     card2.armored = False
             elif card1.armored is True:
                 card2.hp -= card1.attack
+                player2.check_for_creature_with_effect_on("damage_taken", None)
                 if card2.attack > 0:
                     card1.armored = False
             elif card2.armored is True:
                 card1.hp -= card2.attack
                 if card1.attack > 0:
                     card2.armored = False
+                player1.check_for_creature_with_effect_on("damage_taken", None)
             else:
                 card1.hp -= card2.attack
+                player1.check_for_creature_with_effect_on("damage_taken", None)
                 card2.hp -= card1.attack
+                player2.check_for_creature_with_effect_on("damage_taken", None)
             card1.exhausted = True
             card1.number_of_attacks -= 1
             Player.clean_board(player1, player2)
@@ -219,6 +223,8 @@ def cast_spell(player1, player2, card_picked):
                 break
             else:
                 card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
+                player1.check_for_creature_with_effect_on("damage_taken", None)
+                player2.check_for_creature_with_effect_on("damage_taken", None)
                 break
         elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
@@ -318,14 +324,18 @@ def general_spells(player, enemy_player, spell_name):
         if "ALL" in player.incoming_spell.description:
             for creature in player.battle_field:
                 creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+                player.check_for_creature_with_effect_on("damage_taken", None)
             for creature in enemy_player.battle_field:
                 creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+                enemy_player.check_for_creature_with_effect_on("damage_taken", None)
         elif "enemies" in player.incoming_spell.description:
             for creature in enemy_player.battle_field:
                 if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 98:
                     creature.armored = False
                 else:
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+                    player.check_for_creature_with_effect_on("damage_taken", None)
+                    enemy_player.check_for_creature_with_effect_on("damage_taken", None)
     Player.clean_board(player, enemy_player)
 
 
@@ -394,6 +404,7 @@ def destroy_creature_from_player(player1, player2, card_picked):
             debuff_creature(player1, player2, card_picked)
         player1.incoming_action = 0
         Player.clean_board(player1, player2)
+
 
 def debuff_creature(player1, player2, card_picked):
     for card in player1.battle_field:

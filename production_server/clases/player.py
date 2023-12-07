@@ -513,6 +513,9 @@ class Player:
                 elif action == effected_cards[1] and action == "cast spell":
                     for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                         self.draw_card()
+                elif action == effected_cards[1] and action == "damage_taken":
+                    if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
+                        self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
             except Exception as e:
                 print(e)
 
