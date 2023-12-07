@@ -325,5 +325,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Rogue Cleric", 1, 2, "Give a minion +1/+1", "thief", -176),
                      Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
                               -177),
-                     Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", -178)
+                     Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
+                              -178),
+                     Creature(2, "Apollodorus of Damascus", 2, 2, "Give all defences +1 attack", "worker", -179),
+                     Defence(3, "Mercenary's Auxiliar", 3, 2, "", -180)
                      ]

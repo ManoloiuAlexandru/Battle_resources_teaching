@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+from clases.modes import modes_alteration
 from decks.roman_empire import roman_empire_show, roman_empire
 from decks.all_cards_in_the_game import all_cards_in_game, cards_that_are_in_the_game_for_all
 from decks.holy_roman_empire import *
@@ -32,6 +33,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     global player2
     global attacked_player
     global your_deck
+    global mode
     try:
         if player1 is None:
             player1 = Player(player1_name)
@@ -56,7 +58,17 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         player2 = Player("Andras")
     player2.empire = " ".join(player2_empire.split("_"))
     player2.hand = []
-    player2.make_deck(dict_of_decks.get(player2_deck))
+    try:
+        if mode == "i_hate_myself":
+            player2.make_deck(modes_alteration(mode, player1, player2))
+        else:
+            player2.make_deck(dict_of_decks.get(player2_deck))
+            modes_alteration(mode, player1, player2)
+    except Exception as e:
+        mode = ""
+        print(e)
+        player2.make_deck(dict_of_decks.get(player2_deck))
+        modes_alteration(mode, player1, player2)
     player2.playing_deck_name = player2_deck
     if difficulty == "easy" and player1.mana == 0:
         attacked_player = 2
@@ -181,6 +193,14 @@ def chaotic_history():
     mode = "chaotic_history"
     return render_template("chaotic_history.html", your_deck=show_deck,
                            library=all_cards_in_game)
+
+
+@app.route("/i_hate_myself", methods=["POST", "GET"])
+def i_hate_myself():
+    global show_deck
+    global mode
+    mode = "i_hate_myself"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
 
 
 @app.route("/send_empire", methods=["POST", "GET"])

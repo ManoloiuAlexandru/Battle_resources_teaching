@@ -57,7 +57,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Knight's Trainee": (0, 1, "Guard"), "Mercenary Charger": (0, 1, "Charge"),
                               "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard"),
                               "Church Knight": (0, 0, "Guard Armored"), "Rogue Cleric": (1, 1, ""),
-                              "Inspiring mercenary": (1, 1, "")}
+                              "Inspiring mercenary": (1, 1, ""), "Apollodorus of Damascus": (0, 1, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -129,7 +129,8 @@ list_of_creature_that_summ_after_they_die = {
         [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", "knight", generate_random_int()) for i in
          range(0, 3)]),
     "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", "soldier", generate_random_int()) for i in range(0, 10)])}
-list_of_creature_that_affect_all = {"Watchtower": "Guard","Inspiring mercenary": "Guard"}
+list_of_creature_that_affect_all = {"Watchtower": ("Creature", "Guard"), "Inspiring mercenary": ("Creature", "Guard"),
+                                    "Apollodorus of Damascus": ("Defence", "")}
 list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_do_damage_to_all = {"Mercenary Lieutenant": 1}
@@ -144,7 +145,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Big Game Beast": "draw", "Lure animal": "add_to_hand",
                                               "Inspiring knight": "add_to_hand", "Alpha Wolf": "summ",
                                               "Lost Chicken": "summ", "Lost Builder": "add_armor",
-                                              "Thief Camp Guard": "add_armor", "Mercenary Lieutenant": "deal_damage:all",
+                                              "Thief Camp Guard": "add_armor",
+                                              "Mercenary Lieutenant": "deal_damage:all",
                                               "Inspiring mercenary": "buffall"}
 list_of_creature_that_do_damage_when_die = {"Mercenary Lieutenant"}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
@@ -264,4 +266,4 @@ list_of_spells_that_add_defences = {
 """
 Defence
 """
-list_of_defences = ["Empire Peasants", "Mercenary's Troops"]
+list_of_defences = ["Empire Peasants", "Mercenary's Troops", "Mercenary's Auxiliar"]

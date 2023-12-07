@@ -15,13 +15,16 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Demo", 99, 1, "Armored", "all", 23423),
-    Creature(3, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
-             "soldier", 8)
 ]
 demo_deck = [
-    Creature(0, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary", 0),
-    Creature(0, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", 1)
+    Creature(0, "Apollodorus of Damascus", 2, 2, "Give all defences +1 attack", "worker", 0),
+    Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", 1),
+    Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
+             2),
+    Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", 3),
+    Creature(2, "Watchtower", 2, 1, "All your guards get +1/+2", "building", 4),
+    Defence(1, "Empire Peasants", 1, 4, "", 5),
+    Defence(3, "Mercenary's Auxiliar", 3, 2, "", 6)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -66,7 +69,6 @@ list_of_mercenary = [
     [Creature(2, "Mercenary Charger", 3, 2,
               "If you're holding a knight and gain +1 attack and charge", "mercenary",
               -162)],
-    [Creature(1, "Mercenary emissary", 1, 2, "Add a random debt to your hand", "worker", -150)],
     [Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
               -177)],
     [Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", -178)]
