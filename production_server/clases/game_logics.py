@@ -469,10 +469,11 @@ def cast_spell_from_player(player1, player2, card_picked):
     Player.clean_board(player1, player2)
 
 
-def check_if_card_in_deck(card, deck):
+def check_if_card_in_deck(card, deck, mode):
     nr_app = 0
     for card_in_deck in deck:
-        if card_in_deck.name in legendary_cards and card_in_deck.name == card.name:
+        if (card_in_deck.name in legendary_cards and card_in_deck.name == card.name) or (
+                mode == "there_can_be_only_one" and card_in_deck.name == card.name):
             return 3
         elif card_in_deck.name == card.name and card.name not in legendary_cards:
             nr_app += 1

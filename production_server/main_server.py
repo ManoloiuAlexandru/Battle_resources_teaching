@@ -203,6 +203,14 @@ def i_hate_myself():
     return redirect(url_for('make_your_own_deck_pick_empire'))
 
 
+@app.route("/there_can_be_only_one", methods=["POST", "GET"])
+def there_can_be_only_one():
+    global show_deck
+    global mode
+    mode = "there_can_be_only_one"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
+
+
 @app.route("/send_empire", methods=["POST", "GET"])
 def send_empire():
     global empire
@@ -216,6 +224,7 @@ def make_deck():
     global show_deck
     global index
     global empire
+    global mode
     try:
         if empire == "":
             deck_to_pick = all_cards_in_game
@@ -234,9 +243,14 @@ def make_deck():
     except Exception as e:
         empire = ""
         deck_to_pick = all_cards_in_game
+    try:
+        if mode:
+            pass
+    except Exception as e:
+        mode = ""
     cards_name = request.form
     for card in deck_to_pick:
-        if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
+        if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck, mode) < 2 and len(
                 your_deck) < 30:
             if card.card_type == "Creature":
                 your_deck.append(
