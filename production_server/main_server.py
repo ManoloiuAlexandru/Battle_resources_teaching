@@ -58,18 +58,18 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         player2 = Player("Andras")
     player2.empire = " ".join(player2_empire.split("_"))
     player2.hand = []
+    player2.playing_deck_name = player2_deck
     try:
-        if mode == "i_hate_myself":
-            player2.make_deck(modes_alteration(mode, player1, player2))
+        if mode:
+            player2.make_deck(modes_alteration(mode, player1, player2, dict_of_decks))
         else:
             player2.make_deck(dict_of_decks.get(player2_deck))
-            modes_alteration(mode, player1, player2)
+            modes_alteration(mode, player1, player2, dict_of_decks)
     except Exception as e:
         mode = ""
         print(e)
         player2.make_deck(dict_of_decks.get(player2_deck))
-        modes_alteration(mode, player1, player2)
-    player2.playing_deck_name = player2_deck
+        modes_alteration(mode, player1, player2, dict_of_decks)
     if difficulty == "easy" and player1.mana == 0:
         attacked_player = 2
         player1.turn = 1
@@ -208,6 +208,14 @@ def there_can_be_only_one():
     global show_deck
     global mode
     mode = "there_can_be_only_one"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
+
+
+@app.route("/that_is_not_what_i_payed_for", methods=["POST", "GET"])
+def that_is_not_what_i_payed_for():
+    global show_deck
+    global mode
+    mode = "that_is_not_what_i_payed_for"
     return redirect(url_for('make_your_own_deck_pick_empire'))
 
 
