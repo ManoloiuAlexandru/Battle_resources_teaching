@@ -17,8 +17,8 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(0, "Aedile", 7, 0, "Guard", "soldier", 0),
-    Creature(0, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker",1),
+
+
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

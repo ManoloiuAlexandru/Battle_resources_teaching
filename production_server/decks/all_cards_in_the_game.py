@@ -117,7 +117,8 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                                "Guard Desperate Add 8 defence to your kingdom", "thief",
                                                -174),
                                       Creature(5, "Rogue Knight", 4, 3, "Guard Armored", "thief", -175),
-                                      Creature(2, "Rogue Cleric", 1, 2, "Give a minion +1/+1", "thief", -176)
+                                      Creature(2, "Rogue Cleric", 1, 2, "Give a minion +1/+1", "thief", -176),
+                                      Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -336,4 +337,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(2, "Aedile", 7, 0, "Guard", "soldier", -184),
                      Creature(2, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker",
                               -185),
+                     Creature(6, "Heavy Arbalest", 5, 6, "Deal 4 damage", "soldier", -186),
+                     Creature(3, "Herbalist Guard", 4, 2, "Guard Restore 3 health", "soldier", -187),
+                     Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)
                      ]

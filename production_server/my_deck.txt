@@ -150,30 +150,6 @@ empire_belonging:
 name_for_html:Rusticus_Recruiter5
 --------------------------------
 card_id:6
-mana_cost:1
-original_mana_cost:1
-name:Pilum Volley
-card_type:Spell
-description:Deal 1 damage to ALL minions
-img_url:Pilum Volley.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Pilum_Volley6
---------------------------------
-card_id:7
-mana_cost:1
-original_mana_cost:1
-name:Pilum Volley
-card_type:Spell
-description:Deal 1 damage to ALL minions
-img_url:Pilum Volley.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Pilum_Volley7
---------------------------------
-card_id:8
 mana_cost:2
 original_mana_cost:2
 name:Roman Architect
@@ -196,7 +172,31 @@ img_url:Roman Architect.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Roman_Architect8
+name_for_html:Roman_Architect6
+--------------------------------
+card_id:7
+mana_cost:1
+original_mana_cost:1
+name:Pilum Volley
+card_type:Spell
+description:Deal 1 damage to ALL minions
+img_url:Pilum Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Volley7
+--------------------------------
+card_id:8
+mana_cost:1
+original_mana_cost:1
+name:Pilum Volley
+card_type:Spell
+description:Deal 1 damage to ALL minions
+img_url:Pilum Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Volley8
 --------------------------------
 card_id:9
 mana_cost:2
@@ -226,27 +226,27 @@ name_for_html:Roman_Architect9
 card_id:10
 mana_cost:2
 original_mana_cost:2
-name:Inspiring mercenary
+name:Apollodorus of Damascus
 hp:2
 max_hp:2
 original_hp:2
 attack:2
-category:mercenary
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard Desperate give all guards +1/+1
-original_description:Guard Desperate give all guards +1/+1
+description:Give all defences +1 attack
+original_description:Give all defences +1 attack
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Inspiring mercenary.png
+img_url:Apollodorus of Damascus.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Inspiring_mercenary10
+name_for_html:Apollodorus_of_Damascus10
 --------------------------------
 card_id:11
 mana_cost:2
@@ -276,50 +276,102 @@ name_for_html:Inspiring_mercenary11
 card_id:12
 mana_cost:2
 original_mana_cost:2
-name:Guard the Fort
-card_type:Spell
-description:Gain 3 defences and summon a 2/3 Fort Guard
-img_url:Guard the Fort.png
-target:None
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring mercenary.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Guard_the_Fort12
+name_for_html:Inspiring_mercenary12
 --------------------------------
 card_id:13
-mana_cost:2
-original_mana_cost:2
-name:Guard the Fort
-card_type:Spell
-description:Gain 3 defences and summon a 2/3 Fort Guard
-img_url:Guard the Fort.png
-target:None
+mana_cost:3
+original_mana_cost:3
+name:Mercenary Lieutenant
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Desperate deal 1 damage to all minions
+original_description:Desperate deal 1 damage to all minions
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Lieutenant.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Guard_the_Fort13
+name_for_html:Mercenary_Lieutenant13
 --------------------------------
 card_id:14
-mana_cost:2
-original_mana_cost:2
-name:Build defences
-card_type:Spell
-description:Gain 5 Defenses and draw a card
-img_url:Build defences.png
-target:None
+mana_cost:3
+original_mana_cost:3
+name:Mercenary Lieutenant
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Desperate deal 1 damage to all minions
+original_description:Desperate deal 1 damage to all minions
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Lieutenant.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Build_defences14
+name_for_html:Mercenary_Lieutenant14
 --------------------------------
 card_id:15
-mana_cost:2
-original_mana_cost:2
-name:Build defences
-card_type:Spell
-description:Gain 5 Defenses and draw a card
-img_url:Build defences.png
-target:None
+mana_cost:1
+original_mana_cost:1
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary employer.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Build_defences15
+name_for_html:Mercenary_employer15
 --------------------------------
 card_id:16
 mana_cost:1
@@ -347,45 +399,108 @@ empire_belonging:
 name_for_html:Mercenary_employer16
 --------------------------------
 card_id:17
-mana_cost:1
-original_mana_cost:1
-name:Mercenary employer
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:mercenary
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:5
 active_effects:[]
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary employer.png
+img_url:Architecti.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mercenary_employer17
+name_for_html:Architecti17
 --------------------------------
 card_id:18
-mana_cost:2
-original_mana_cost:2
-name:Palisade Wall
-card_type:Spell
-description:Deal 3 damage gain 3 defences
-img_url:Palisade Wall.png
-target:enemy
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Palisade_Wall18
+name_for_html:Architecti18
 --------------------------------
 card_id:19
 mana_cost:2
 original_mana_cost:2
+name:Mercenary Charger
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you're holding a knight and gain +1 attack and charge
+original_description:If you're holding a knight and gain +1 attack and charge
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Charger.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Charger19
+--------------------------------
+card_id:20
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Charger
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you're holding a knight and gain +1 attack and charge
+original_description:If you're holding a knight and gain +1 attack and charge
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Charger.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Charger20
+--------------------------------
+card_id:21
+mana_cost:2
+original_mana_cost:2
 name:Palisade Wall
 card_type:Spell
 description:Deal 3 damage gain 3 defences
@@ -393,255 +508,166 @@ img_url:Palisade Wall.png
 target:enemy
 empire_belonging:
 category:
-name_for_html:Palisade_Wall19
---------------------------------
-card_id:20
-mana_cost:2
-original_mana_cost:2
-name:Rogue Cleric
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:thief
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Give a minion +1/+1
-original_description:Give a minion +1/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Rogue Cleric.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Rogue_Cleric20
---------------------------------
-card_id:21
-mana_cost:2
-original_mana_cost:2
-name:Rogue Cleric
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:thief
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Give a minion +1/+1
-original_description:Give a minion +1/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Rogue Cleric.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Rogue_Cleric21
+name_for_html:Palisade_Wall21
 --------------------------------
 card_id:22
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring knight.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Palisade Wall
+card_type:Spell
+description:Deal 3 damage gain 3 defences
+img_url:Palisade Wall.png
+target:enemy
 empire_belonging:
-name_for_html:Inspiring_knight22
+category:
+name_for_html:Palisade_Wall22
 --------------------------------
 card_id:23
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
+mana_cost:4
+original_mana_cost:4
+name:Mercenary defender
 hp:5
 max_hp:5
 original_hp:5
-attack:6
-category:knight
+attack:2
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:2
 active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
+description:Guard put an 3/2 defence
+original_description:Guard put an 3/2 defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Inspiring knight.png
+img_url:Mercenary defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Inspiring_knight23
+name_for_html:Mercenary_defender23
 --------------------------------
 card_id:24
-mana_cost:3
-original_mana_cost:3
-name:Motivated Page
-hp:4
-max_hp:4
-original_hp:4
+mana_cost:4
+original_mana_cost:4
+name:Mercenary defender
+hp:5
+max_hp:5
+original_hp:5
 attack:2
-category:knight
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:If you're holding a knight gain +1/+1
-original_description:If you're holding a knight gain +1/+1
+description:Guard put an 3/2 defence
+original_description:Guard put an 3/2 defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Motivated Page.png
+img_url:Mercenary defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Motivated_Page24
+name_for_html:Mercenary_defender24
 --------------------------------
 card_id:25
-mana_cost:3
-original_mana_cost:3
-name:Motivated Page
-hp:4
-max_hp:4
-original_hp:4
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Recruiter
+hp:2
+max_hp:2
+original_hp:2
 attack:2
-category:knight
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:If you're holding a knight gain +1/+1
-original_description:If you're holding a knight gain +1/+1
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Motivated Page.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Motivated_Page25
+name_for_html:Mercenary_Recruiter25
 --------------------------------
 card_id:26
-mana_cost:3
-original_mana_cost:3
-name:Knight Archer
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:soldier
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Recruiter
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:2
 active_effects:[]
-description:If you're holding a knight deal 2 damage
-original_description:If you're holding a knight deal 2 damage
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Knight Archer.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Knight_Archer26
+name_for_html:Mercenary_Recruiter26
 --------------------------------
 card_id:27
-mana_cost:7
-original_mana_cost:7
-name:Heavy Armored Knight
-hp:4
-max_hp:4
-original_hp:4
-attack:7
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:If you're holding a knight deal 7 damage to a minion
-original_description:If you're holding a knight deal 7 damage to a minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Heavy Armored Knight.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Build defences
+card_type:Spell
+description:Gain 5 Defenses and draw a card
+img_url:Build defences.png
+target:None
 empire_belonging:
-name_for_html:Heavy_Armored_Knight27
+category:
+name_for_html:Build_defences27
 --------------------------------
 card_id:28
-mana_cost:3
-original_mana_cost:3
-name:Motivated Squire
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Deal 3 damage if you are holding a knight
-original_description:Deal 3 damage if you are holding a knight
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Motivated Squire.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Build defences
+card_type:Spell
+description:Gain 5 Defenses and draw a card
+img_url:Build defences.png
+target:None
 empire_belonging:
-name_for_html:Motivated_Squire28
+category:
+name_for_html:Build_defences28
 --------------------------------
 card_id:29
-mana_cost:3
-original_mana_cost:3
-name:Motivated Squire
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:knight
+mana_cost:8
+original_mana_cost:8
+name:Thief Camp Guard
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:thief
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:8
 active_effects:[]
-description:Deal 3 damage if you are holding a knight
-original_description:Deal 3 damage if you are holding a knight
+description:Guard Desperate Add 8 defence to your kingdom
+original_description:Guard Desperate Add 8 defence to your kingdom
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Motivated Squire.png
+img_url:Thief Camp Guard.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Motivated_Squire29
+name_for_html:Thief_Camp_Guard29
 --------------------------------

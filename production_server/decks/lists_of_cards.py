@@ -35,18 +35,19 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
                                 "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
                                 "Knight Archer", "Heavy Armored Knight", "Motivated Squire", "Rogue Cleric",
-                                "Harsh Trainer"]
+                                "Harsh Trainer", "Heavy Arbalest", "Herbalist Guard", "Herbalist Knight"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
                                              "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
-                                             "Motivated Squire": 0, "Harsh Trainer": 1}
-list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1}
+                                             "Motivated Squire": 0, "Harsh Trainer": 1, "Heavy Arbalest": 4}
+list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1, "Heavy Arbalest": 4}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
-                                             "Motivated Squire": 0}
+                                             "Motivated Squire": 0, "Heavy Arbalest": 4}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
-                              "Local Healer": 4, "Clergy": 3}
-list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6, "Local Healer": 4, "Clergy": 3}
+                              "Local Healer": 4, "Clergy": 3, "Herbalist Guard": 3, "Herbalist Knight": 3}
+list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6, "Local Healer": 4, "Clergy": 3,
+                                          "Herbalist Guard": 3, "Herbalist Knight": 3}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
