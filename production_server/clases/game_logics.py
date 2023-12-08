@@ -395,6 +395,13 @@ def heal_creature(card_picked, player, amount):
 def deal_dmg_to_creature(card_picked, player, dmg):
     for card in player.battle_field:
         if card_picked.get(card.name_for_html) is not None:
+            if player.enemy_player.active_minion.name in list_of_creature_that_buff_specific_cards:
+                if card_picked.get(
+                        card.name_for_html) is not None and list_of_creature_that_buff_specific_cards.get(
+                    player.enemy_player.active_minion.name) == card.category:
+                    buff_creature(card_picked, player.enemy_player)
+            elif player.enemy_player.active_minion.name in list_of_creature_that_buff:
+                buff_creature(card_picked, player.enemy_player)
             if dmg < 90 and card.armored is True:
                 card.armored = False
             else:
@@ -433,6 +440,10 @@ def buff_creature(card_picked, player1):
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
                     player1.buff_card_from_hand(card, player1.active_minion)
+
+            for card in player1.enemy_player.battle_field:
+                if card_picked.get(card.name_for_html) is not None:
+                    player1.enemy_player.buff_card_from_hand(card, player1.active_minion)
     except Exception as e:
         print(e)
 

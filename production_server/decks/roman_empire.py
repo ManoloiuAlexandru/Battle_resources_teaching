@@ -39,7 +39,7 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                               -177),
                      Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
                               -178),
-                     Creature(0, "Apollodorus of Damascus", 2, 2, "Give all defences +1 attack", "worker", -179),
+                     Creature(2, "Apollodorus of Damascus", 2, 2, "Give all defences +1 attack", "worker", -179),
                      Defence(3, "Mercenary's Auxiliar", 3, 2, "", -180),
                      Creature(2, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
                               "worker", -181),
