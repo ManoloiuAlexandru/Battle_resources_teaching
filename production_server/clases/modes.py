@@ -9,6 +9,8 @@ def modes_alteration(mode, player, bot, dict_of_decks):
         return i_hate_myself(player)
     if mode == "that_is_not_what_i_payed_for":
         return that_is_not_what_i_pay_for(player, bot, dict_of_decks)
+    if mode == "personal_troops":
+        return personal_troops(player, bot, dict_of_decks)
 
 
 def i_hate_myself(player):
@@ -33,5 +35,17 @@ def that_is_not_what_i_pay_for(player, bot, dict_of_decks):
     deck_for_bot = dict_of_decks.get(bot.playing_deck_name)
     for card in deck_for_bot:
         card.mana_cost = random.randrange(0, 11)
+        card.original_mana_cost = card.mana_cost
+    return deck_for_bot
+
+
+def personal_troops(player, bot, dict_of_decks):
+    for card in player.deck:
+        card.mana_cost = card.attack
+        card.original_mana_cost = card.mana_cost
+
+    deck_for_bot = dict_of_decks.get(bot.playing_deck_name)
+    for card in deck_for_bot:
+        card.mana_cost = card.attack
         card.original_mana_cost = card.mana_cost
     return deck_for_bot

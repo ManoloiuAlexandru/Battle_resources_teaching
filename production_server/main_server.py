@@ -219,6 +219,14 @@ def that_is_not_what_i_payed_for():
     return redirect(url_for('make_your_own_deck_pick_empire'))
 
 
+@app.route("/personal_troops", methods=["POST", "GET"])
+def personal_troops():
+    global show_deck
+    global mode
+    mode = "personal_troops"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
+
+
 @app.route("/send_empire", methods=["POST", "GET"])
 def send_empire():
     global empire
