@@ -17,7 +17,13 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(0,"")
+    Spell(0, "Rain of Arrows", "Destroy ALL minions that are not Armored", 0),
+    Spell(0, "Guard Duty", "Give a friendly minion +2/+2 if it is a Guard draw a card", 1),
+    Spell(0, "Boarder Guards", "Summon 2 Akritoi Debt(1)", 2),
+    Spell(0, "Pilum Throw", "Deal 3 damage Debt(1)", 3),
+    Spell(0, "Pilum Volley", "Deal 1 damage to ALL minions", 4),
+    Spell(0, "Guard the Fort", "Gain 3 defences and summon a 2/3 Fort Guard", 5),
+    Spell(0, "Landslide", "Deal 7 damage to ALL minions", 6),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

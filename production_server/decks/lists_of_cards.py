@@ -34,10 +34,12 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
                                 "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
-                                "Knight Archer", "Heavy Armored Knight", "Motivated Squire", "Rogue Cleric"]
+                                "Knight Archer", "Heavy Armored Knight", "Motivated Squire", "Rogue Cleric",
+                                "Harsh Trainer"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
                                              "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
-                                             "Motivated Squire": 0}
+                                             "Motivated Squire": 0, "Harsh Trainer": 1}
+list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
                                              "Motivated Squire": 0}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
@@ -49,7 +51,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
                               "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored"),
-                              "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
+                              "Bishop": (4, 4, "Guard"), "Protokentarchos": (3, 3, ""),
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
                               "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
@@ -57,7 +59,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Knight's Trainee": (0, 1, "Guard"), "Mercenary Charger": (0, 1, "Charge"),
                               "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard"),
                               "Church Knight": (0, 0, "Guard Armored"), "Rogue Cleric": (1, 1, ""),
-                              "Inspiring mercenary": (1, 1, ""), "Apollodorus of Damascus": (0, 1, "")}
+                              "Inspiring mercenary": (1, 1, ""), "Apollodorus of Damascus": (0, 1, ""),
+                              "Harsh Trainer": (0, 2, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}

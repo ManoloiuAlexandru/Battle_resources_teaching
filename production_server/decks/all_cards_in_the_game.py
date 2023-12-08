@@ -334,4 +334,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", -182),
                      Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", -183),
                      Creature(2, "Aedile", 7, 0, "Guard", "soldier", -184),
+                     Creature(2, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker",
+                              -185),
                      ]

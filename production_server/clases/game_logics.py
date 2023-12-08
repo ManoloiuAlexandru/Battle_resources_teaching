@@ -148,7 +148,24 @@ def check_target(player1, player2, card_picked):
         if player1.active_minion is not None:
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
-                    # heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
+                    if list_of_creature_that_can_target_yourself.get(player1.active_minion.name) is not None:
+                        if card.armored is True:
+                            card.armored = False
+                        else:
+                            card.hp -= list_of_creature_that_can_target_yourself.get(player1.active_minion.name)
+                    if player1.active_minion.name in list_of_creature_that_heal:
+                        heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
+                        if player1.active_minion.name in list_of_creature_that_buff:
+                            buff_creature(card_picked, player1)
+                    if player1.active_minion.name in list_of_creature_that_buff_specific_cards:
+                        if card_picked.get(
+                                card.name_for_html) is not None and list_of_creature_that_buff_specific_cards.get(
+                            player1.active_minion.name) == card.category:
+                            buff_creature(card_picked, player1)
+                    elif player1.active_minion.name in list_of_creature_that_buff:
+                        buff_creature(card_picked, player1)
+                    if player1.active_minion.name in list_of_creature_that_debuff:
+                        debuff_creature(player1, player2, card_picked)
                     return 1
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:
@@ -323,11 +340,17 @@ def general_spells(player, enemy_player, spell_name):
     elif player.incoming_spell.name in list_of_dmg_spells:
         if "ALL" in player.incoming_spell.description:
             for creature in player.battle_field:
-                creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-                player.check_for_creature_with_effect_on("damage_taken", None)
+                if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 90:
+                    creature.armored = False
+                else:
+                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+                    player.check_for_creature_with_effect_on("damage_taken", None)
             for creature in enemy_player.battle_field:
-                creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-                enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+                if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 90:
+                    creature.armored = False
+                else:
+                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+                    enemy_player.check_for_creature_with_effect_on("damage_taken", None)
         elif "enemies" in player.incoming_spell.description:
             for creature in enemy_player.battle_field:
                 if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 98:
@@ -383,25 +406,12 @@ def destroy_creature_from_player(player1, player2, card_picked):
     if check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
     else:
-        if player1.active_minion.name in list_of_creature_that_deal_dmg_to_enemies:
+        if list_of_creature_that_deal_dmg_to_enemies.get(player1.active_minion.name) is not None:
             deal_dmg_to_creature(card_picked, player2,
                                  list_of_creature_that_deal_dmg_to_enemies.get(player1.active_minion.name))
-            player1.active_minion = None
-        elif player1.active_minion.name in list_of_creature_that_heal:
-            heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
-            if player1.active_minion.name in list_of_creature_that_buff:
-                buff_creature(card_picked, player1)
-            player1.active_minion = None
-        elif player1.active_minion.name in list_of_creature_that_buff_specific_cards:
-            for card in player1.battle_field:
-                if card_picked.get(card.name_for_html) is not None and list_of_creature_that_buff_specific_cards.get(
-                        player1.active_minion.name) == card.category:
-                    buff_creature(card_picked, player1)
-        elif player1.active_minion.name in list_of_creature_that_buff:
-            buff_creature(card_picked, player1)
-            player1.active_minion = None
-        elif player1.active_minion.name in list_of_creature_that_debuff:
+        if list_of_creature_that_debuff.get(player1.active_minion.name) is not None:
             debuff_creature(player1, player2, card_picked)
+        player1.active_minion = None
         player1.incoming_action = 0
         Player.clean_board(player1, player2)
 
