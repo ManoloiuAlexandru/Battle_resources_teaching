@@ -178,6 +178,23 @@ background-image: url('/static/cards/logs.jpg');
   background-attachment: fixed;
   background-size: cover;
 }
+.game_option_body{
+  background-image: url('/static/cards/option_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.modes_body{
+  background-image: url('/static/cards/modes_body.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
 .problems{
 background-image: url('/static/cards/logs.jpg');
     background-repeat: no-repeat;

@@ -1,5 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 
+from clases.modes import modes_alteration
+from decks.roman_empire import roman_empire_show, roman_empire
+from decks.all_cards_in_the_game import all_cards_in_game, cards_that_are_in_the_game_for_all
+from decks.holy_roman_empire import *
+from decks.mesopotamia_empire import *
+from decks.mongols_empire import *
+from decks.byzantine_empire import *
 from clases.server_logics import *
 from clases.Defence import Defence
 from clases.spells import Spell
@@ -18,6 +25,7 @@ global your_deck
 global index
 global show_deck
 global empire
+global mode
 
 
 def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty, player1_empire, player2_empire):
@@ -25,6 +33,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
     global player2
     global attacked_player
     global your_deck
+    global mode
     try:
         if player1 is None:
             player1 = Player(player1_name)
@@ -49,8 +58,18 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         player2 = Player("Andras")
     player2.empire = " ".join(player2_empire.split("_"))
     player2.hand = []
-    player2.make_deck(dict_of_decks.get(player2_deck))
     player2.playing_deck_name = player2_deck
+    try:
+        if mode:
+            player2.make_deck(modes_alteration(mode, player1, player2, dict_of_decks))
+        else:
+            player2.make_deck(dict_of_decks.get(player2_deck))
+            modes_alteration(mode, player1, player2, dict_of_decks)
+    except Exception as e:
+        mode = ""
+        print(e)
+        player2.make_deck(dict_of_decks.get(player2_deck))
+        modes_alteration(mode, player1, player2, dict_of_decks)
     if difficulty == "easy" and player1.mana == 0:
         attacked_player = 2
         player1.turn = 1
@@ -158,10 +177,54 @@ def update_deck():
     global your_deck
     global empire
     global show_deck
-    your_deck = get_old_deck()[0]
-    empire = get_old_deck()[1]
-    show_deck = make_html_deck(your_deck, show_deck)
-    return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+    try:
+        your_deck = get_old_deck()[0]
+        empire = get_old_deck()[1]
+        show_deck = make_html_deck(your_deck, show_deck)
+        return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+    except Exception as e:
+        return render_template("game_option.html")
+
+
+@app.route("/chaotic_history", methods=["POST", "GET"])
+def chaotic_history():
+    global show_deck
+    global mode
+    mode = "chaotic_history"
+    return render_template("chaotic_history.html", your_deck=show_deck,
+                           library=all_cards_in_game)
+
+
+@app.route("/i_hate_myself", methods=["POST", "GET"])
+def i_hate_myself():
+    global show_deck
+    global mode
+    mode = "i_hate_myself"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
+
+
+@app.route("/there_can_be_only_one", methods=["POST", "GET"])
+def there_can_be_only_one():
+    global show_deck
+    global mode
+    mode = "there_can_be_only_one"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
+
+
+@app.route("/that_is_not_what_i_payed_for", methods=["POST", "GET"])
+def that_is_not_what_i_payed_for():
+    global show_deck
+    global mode
+    mode = "that_is_not_what_i_payed_for"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
+
+
+@app.route("/personal_troops", methods=["POST", "GET"])
+def personal_troops():
+    global show_deck
+    global mode
+    mode = "personal_troops"
+    return redirect(url_for('make_your_own_deck_pick_empire'))
 
 
 @app.route("/send_empire", methods=["POST", "GET"])
@@ -176,21 +239,34 @@ def make_deck():
     global your_deck
     global show_deck
     global index
-    if empire == "Byzantine_Empire":
-        deck_to_pick = cards_for_byzantine_empire
-    elif empire == "Holy_Roman_Empire":
-        deck_to_pick = cards_for_holy_roman_empire
-    elif empire == "Mongol_Empire":
-        deck_to_pick = cards_for_mongol_empire
-    elif empire == "Mesopotamia_Empire":
-        deck_to_pick = mesopotamia_empire
-    elif empire == "Roman_Empire":
-        deck_to_pick = roman_empire
-    else:
-        deck_to_pick = cards_that_are_in_the_game_for_all
+    global empire
+    global mode
+    try:
+        if empire == "":
+            deck_to_pick = all_cards_in_game
+        elif empire == "Byzantine_Empire":
+            deck_to_pick = cards_for_byzantine_empire
+        elif empire == "Holy_Roman_Empire":
+            deck_to_pick = cards_for_holy_roman_empire
+        elif empire == "Mongol_Empire":
+            deck_to_pick = cards_for_mongol_empire
+        elif empire == "Mesopotamia_Empire":
+            deck_to_pick = mesopotamia_empire
+        elif empire == "Roman_Empire":
+            deck_to_pick = roman_empire
+        else:
+            deck_to_pick = cards_that_are_in_the_game_for_all
+    except Exception as e:
+        empire = ""
+        deck_to_pick = all_cards_in_game
+    try:
+        if mode:
+            pass
+    except Exception as e:
+        mode = ""
     cards_name = request.form
     for card in deck_to_pick:
-        if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck) < 2 and len(
+        if cards_name.get(card.name_for_html) is not None and check_if_card_in_deck(card, your_deck, mode) < 2 and len(
                 your_deck) < 30:
             if card.card_type == "Creature":
                 your_deck.append(
@@ -201,10 +277,14 @@ def make_deck():
                 index += 1
             if card.card_type == "Defence":
                 your_deck.append(
-                    Defence(card.mana_cost, card.name, card.number_of_troops, card.nr_of_assaults, card.description, index))
+                    Defence(card.mana_cost, card.name, card.number_of_troops, card.nr_of_assaults, card.description,
+                            index))
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
-    return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+    if empire == "":
+        return redirect(url_for('chaotic_history', show_deck=show_deck))
+    else:
+        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
 
 
 @app.route("/play", methods=["POST", "GET"])
@@ -228,7 +308,27 @@ def show_battle():
 @app.route("/send_deck", methods=["POST", "GET"])
 def personal_deck():
     save_your_deck(your_deck, empire)
+    try:
+        if mode != "":
+            return redirect(url_for('modes'))
+    except Exception as e:
+        print(e)
     return redirect(url_for('game_options'))
+
+
+@app.route("/modes", methods=["POST", "GET"])
+def modes():
+    global index
+    index = 0
+    global your_deck
+    try:
+        if your_deck is None:
+            your_deck = []
+    except Exception as e:
+        your_deck = []
+    global show_deck
+    show_deck = {}
+    return render_template("Modes.html")
 
 
 @app.route("/remove_card", methods=["POST", "GET"])
@@ -244,7 +344,10 @@ def remove_card_from_deck():
             else:
                 show_deck.pop(card.name)
     show_deck = make_html_deck(your_deck, show_deck)
-    return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+    if empire != "":
+        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+    else:
+        return redirect(url_for('chaotic_history', show_deck=show_deck))
 
 
 @app.route("/library")
@@ -357,7 +460,7 @@ def end_turn():
         Player.battle_fields_effects(player1, player2)
         if player2.check_move(player1) == 0:
             attacked_player = turn_switch(player1, player2)
-        player1.check_battlefield()
+        Player.clean_board(player1, player2)
         if player1.check_player() == 0:
             return render_template("END.html", player=player1)
         elif player2.check_player() == 0:

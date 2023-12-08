@@ -33,23 +33,35 @@ Creatures
 list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Priest", "Lumberjack", "Armorer", "Archer",
                                 "Personal instructor", "Scared Noble", "Bishop", "Protokentarchos", "Animal Tamer",
                                 "Church Builder", "Countryside Hunter", "Voice of the emperor", "Bailiff",
-                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy"]
-list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4}
-list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4}
+                                "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
+                                "Knight Archer", "Heavy Armored Knight", "Motivated Squire", "Rogue Cleric",
+                                "Harsh Trainer", "Heavy Arbalest", "Herbalist Guard", "Herbalist Knight"]
+list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
+                                             "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
+                                             "Motivated Squire": 0, "Harsh Trainer": 1, "Heavy Arbalest": 4}
+list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1, "Heavy Arbalest": 4}
+list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
+                                             "Motivated Squire": 0, "Heavy Arbalest": 4}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
-                              "Local Healer": 4, "Clergy": 3}
-list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6, "Local Healer": 4, "Clergy": 3}
+                              "Local Healer": 4, "Clergy": 3, "Herbalist Guard": 3, "Herbalist Knight": 3}
+list_of_creature_that_can_heal_players = {"Church Builder": 8, "Mercenary Herbalist": 6, "Local Healer": 4, "Clergy": 3,
+                                          "Herbalist Guard": 3, "Herbalist Knight": 3}
 list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer": (0, 0, "Armored"),
                               "Scared Noble": (0, 0, "Guard"), "Personal instructor": (1, 1),
                               "Watchtower": (2, 1, ""), "Drummer": (1, 1, ""), "Negotiator": (1, 1, ""),
                               "Last Defender": (0, 2, "Guard"), "Frederick Barbarossa": (1, 1, "Armored"),
-                              "Bishop": (5, 5, "Guard"), "Protokentarchos": (3, 3, ""),
+                              "Bishop": (4, 4, "Guard"), "Protokentarchos": (3, 3, ""),
                               "Selfless Knight": (0, 0, "Armored"), "Animal Tamer": (2, 2, "Guard"),
                               "Countryside Hunter": (1, 1, ""), "Peasant Fighter": (1, 1, ""),
                               "Church Scholar": (1, 1, ""), "New Recruit": (0, 1, ""),
-                              "Banner holder": (1, 0, "")}
+                              "Banner holder": (1, 0, ""), "Inspired soldier": (0, 0, "Guard Armored"),
+                              "Knight's Trainee": (0, 1, "Guard"), "Mercenary Charger": (0, 1, "Charge"),
+                              "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard"),
+                              "Church Knight": (0, 0, "Guard Armored"), "Rogue Cleric": (1, 1, ""),
+                              "Inspiring mercenary": (1, 1, ""), "Apollodorus of Damascus": (0, 1, ""),
+                              "Harsh Trainer": (0, 2, ""), "Nero": (0, 6, ""), "Nero's Guard": (0, 3, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -58,13 +70,16 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "
                                                   "King Saragon of Akkad": (2, 2, "ancient")}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
                                                 "New Recruit": ("self_buff", "summ soldier"),
-                                                "Wondering Scribe": ("draw", "cast spell")}
+                                                "Wondering Scribe": ("draw", "cast spell"),
+                                                "Roman Architect": ("add_defence", "damage_taken")}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
+list_of_creature_that_add_armor_on_action = {"Roman Architect": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
-                                    "Byzantium Engineer": 1}
+                                    "Byzantium Engineer": 1, "Tiberius": 3}
 list_of_creature_that_draw_specific_cards = {
+    "Tiberius": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "mercenary", "knight"]),
     "Byzantium Engineer": (["Defence"], [""], [""]),
     "Mercenary Recruiter": (["Creature"], [""], ["mercenary"]),
     "Landlord": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "worker", "worker"]),
@@ -85,9 +100,23 @@ list_of_creature_that_summon = {
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
-                                              "Banner holder": ("affects hand", "buff", 1, 0, "")
+                                              "Banner holder": ("affects hand", "buff", 1, 0, ""),
+                                              "Inspired soldier": ("hand_check:Spell", "buff"),
+                                              "Knight Arbalest": ("hand_check:knight", "change:dmg", 5),
+                                              "Knight Archer": ("hand_check:knight", "change:dmg", 2),
+                                              "Heavy Armored Knight": ("hand_check:knight", "change:dmg", 7),
+                                              "Motivated Squire": ("hand_check:knight", "change:dmg", 3),
+                                              "Knight's Trainee": ("hand_check:knight", "buff"),
+                                              "Mercenary Charger": ("hand_check:knight", "buff"),
+                                              "Motivated Page": ("hand_check:knight", "buff"),
+                                              "Honor Guard": ("hand_check:knight", "buff"),
+                                              "Church Knight": ("hand_check:knight", "buff"),
                                               }
 list_of_creature_that_summ_after_they_die = {
+    "Lost Chicken": (
+        1, [Creature(5, "Lynx", 5, 5, "", "animal", generate_random_int()) for i in range(0, 40)]),
+    "Alpha Wolf": (
+        7, [Creature(1, "Wolf", 1, 1, "", "animal", generate_random_int()) for i in range(0, 40)]),
     "Lost Shield": (
         1, [Creature(4, "City Guard", 4, 4, "Guard", "soldier", generate_random_int()) for i in range(0, 5)]),
     "Graf": (
@@ -107,8 +136,11 @@ list_of_creature_that_summ_after_they_die = {
         [Creature(9, "Saint Joan of Arc", 8, 7, "Armored Charge", "knight", generate_random_int()) for i in
          range(0, 3)]),
     "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", "soldier", generate_random_int()) for i in range(0, 10)])}
-list_of_creature_that_affect_all = {"Watchtower": "Guard"}
+list_of_creature_that_affect_all = {"Watchtower": ("Creature", "Guard"), "Inspiring mercenary": ("Creature", "Guard"),
+                                    "Apollodorus of Damascus": ("Defence", "")}
+list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
+list_of_creature_that_do_damage_to_all = {"Mercenary Lieutenant": 1}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1)}
@@ -117,8 +149,15 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
                                               "Joan of Arc": "summ", "Khevtuul": "summ", "Mother Wolf": "summ",
                                               "Goat": "summ", "Turtanu": "summ", "Graf": "summ",
-                                              "Big Game Beast": "draw", "Lure animal": "add_to_hand"}
-list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1}
+                                              "Big Game Beast": "draw", "Lure animal": "add_to_hand",
+                                              "Inspiring knight": "add_to_hand", "Alpha Wolf": "summ",
+                                              "Lost Chicken": "summ", "Lost Builder": "add_armor",
+                                              "Thief Camp Guard": "add_armor",
+                                              "Mercenary Lieutenant": "deal_damage:all",
+                                              "Inspiring mercenary": "buffall"}
+list_of_creature_that_do_damage_when_die = {"Mercenary Lieutenant"}
+list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
+list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"], [""], [""]),
                                                       "Big Game Beast": (["Creature"], ["animal"], [""])}
@@ -128,25 +167,29 @@ list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
 list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
-                   "King Saragon of Akkad", "Carcassonne"]
+                   "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius","Nero"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
 list_of_creature_that_add_defence = {
-    "Mercenary defender": Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)}
-list_of_creature_that_give_armor = {"Architecti": 5}
+    "Rusticus Recruiter": [Defence(1, "Peasant Troops", 1, 3, "", generate_random_int()) for i in range(0, 10)],
+    "Mercenary defender": [Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)]}
+list_of_cards_that_give_armor = {"Architecti": 5, "Build defences": 5, "Palisade Wall": 3, "Guard the Fort": 3},
 list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
                               "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2}
 list_of_card_that_pay_debt = {"Wealthy Nobel"}
-list_of_creature_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
-                                                "Mercenary emissary": (1, "debt"),
-                                                "Army Recruiter": (1, "soldier"),
-                                                "Army Cook": (2, ""),
-                                                "Empire Crusader": (5, "holy_roman")
-                                                }
-list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal")}
+list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
+                                             "Mercenary emissary": (1, "debt"),
+                                             "Army Recruiter": (1, "soldier"),
+                                             "Army Cook": (2, ""),
+                                             "Empire Crusader": (5, "holy_roman"),
+                                             "Recruiting": (2, "knights")
+                                             }
+list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal"),
+                                                         "Inspiring knight": (1, "knights")}
 list_of_creature_that_add_specific_card_to_your_hand = {
     "Army Cook": [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 40)], }
+list_of_creature_that_have_other_stat_while_damaged = {"Nero": "damaged", "Nero's Guard": "damaged"}
 """
 Spells
 """
@@ -158,34 +201,38 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Guard Duty", "For the Khan", "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                   "Old Tactics", "Pilum Throw", "Fast Conscription", "Strength in numbers", "Animal Battle Companion",
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
-                  "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire"]
+                  "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire",
+                  "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope", "Emperor's Will",
+                  "Pilum Volley", "Recruiting"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
-                       "Strength in numbers": "", "Call of God": ""}
-list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8}
+                       "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": ""}
+list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emperor's Hope": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
                       "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
-                      "Cataclysm": 99}
+                      "Cataclysm": 99, "Palisade Wall": 3, "Pilum Volley": 1}
 list_of_dmg_spells_but_not_to_player = {"Tag team"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
-                            "Strength in numbers", "Tag Team"]
+                            "Strength in numbers", "Tag Team", "Emperor's Will"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
                                  "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
-                                 "Defending  the empire"]
+                                 "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley",
+                                 "Recruiting"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
-                              "Defending  the empire": ("", 0)}
+                              "Defending  the empire": ("", 0), "Guard the Fort": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
-                                  "Ancient Tactics": 3, "Tactical Coordination": 3
+                                  "Ancient Tactics": 3, "Tactical Coordination": 3, "Build defences": 1,
+                                  "Emperor's Hope": 3
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
@@ -193,15 +240,18 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Knight's training": (3, 3, ""), "Chivalry and Honor": (1, 2, ""), "Guard Duty": (2, 2, ""),
                        "For the Khan": (0, 1, "Charge"), "In the name of the king": (1, 1, ""),
                        "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, ""),
-                       "Call of God": (0, 0, "")}
+                       "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, ""), "Emperor's Will": (2, 1, "")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
+list_of_spells_that_buff_conditional = {"Emperor's Will": ("hand:knight", (3, 2, "Armored"))}
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
 list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self", "For the Khan": "self",
                                               "In the name of the king": "self", "Roman Formation Phalanx": "self"}
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "Strength in numbers": ("", "draw")}
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
+    "Guard the Fort": (
+        1, [Creature(2, "Fort Guard", 3, 2, "Guard", "soldier", generate_random_int()) for i in range(0, 50)]),
     "Defending  the empire": (
         3, [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 50)]),
     "Mercenaries Reinforcements": (list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
@@ -216,7 +266,7 @@ list_of_spells_that_summon_specific_cards = {
     "Call of God": (
         1, [Creature(8, "Crusader", 8, 8, "Guard Armored", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""])}
-list_of_spells_that_can_heal_player = {"Call of God": 8}
+list_of_spells_that_can_heal_player = {"Call of God": 8, "Emperor's Hope": 8}
 list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, "")}
@@ -228,4 +278,4 @@ list_of_spells_that_add_defences = {
 """
 Defence
 """
-list_of_defences = ["Empire Peasants", "Mercenary's Troops"]
+list_of_defences = ["Empire Peasants", "Mercenary's Troops", "Mercenary's Auxiliar"]

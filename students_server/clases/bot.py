@@ -27,12 +27,12 @@ class Bot(Player):
                         else:
                             self.mana += self.last_debt
                         self.last_debt = 0
-                    if card.name in list_of_creature_that_add_cards_to_your_hand:
+                    if card.name in list_of_cards_that_add_cards_to_your_hand:
                         self.add_random_card_to_hand(card)
                     if card.name in list_of_card_that_add_debt:
                         self.debt += list_of_card_that_add_debt.get(card.name)
-                    if card.name in list_of_creature_that_give_armor:
-                        self.armor += list_of_creature_that_give_armor.get(card.name)
+                    if card.name in list_of_cards_that_give_armor:
+                        self.armor += list_of_cards_that_give_armor.get(card.name)
                     if card.name in list_of_creature_that_summon:
                         for i in range(list_of_creature_that_summon.get(card.name)[0]):
                             if len(self.battle_field) < 7:
@@ -138,6 +138,7 @@ class Bot(Player):
                 self.ongoing_effects.append(card)
         elif card.card_type == "Spell":
             self.incoming_spell = card
+            self.check_spell(card)
             if card.name in list_of_spells_that_add_traps:
                 self.traps += list_of_spells_that_add_traps.get(card.name)
             if card.name in list_of_self_target and len(self.battle_field) > 0:
@@ -158,10 +159,10 @@ class Bot(Player):
                                 creature.exhausted = False
                                 self.logs += " on this card:" + creature.name + "\n"
                                 break
-                    elif self.incoming_spell in list_of_buff_spells:
+                    elif self.incoming_spell.name in list_of_buff_spells:
                         for creature in self.battle_field:
                             self.buff_creature(creature)
-                    elif self.incoming_spell in list_of_spells_that_can_heal_player:
+                    elif self.incoming_spell.name in list_of_spells_that_can_heal_player:
                         self.heal_player(list_of_healing_spells.get(card.name))
                     elif card.name in list_of_healing_spells:
                         self.battle_field.sort(key=lambda x: x.max_hp - x.hp)
@@ -252,7 +253,7 @@ class Bot(Player):
             if card == target_card:
                 card.hp -= dmg
                 self.logs += " on this card:" + card.name
-        player.check_battlefield()
+        Player.clean_board(player,player.enemy_player)
 
     def check_move(self, player):
         self.target_with_on_hp()
@@ -337,11 +338,13 @@ class Bot(Player):
 
     def buff_creature(self, card):
         if self.incoming_spell is not None:
-            card.hp += list_of_buff_spells.get(self.incoming_spell)[0]
-            card.max_hp += list_of_buff_spells.get(self.incoming_spell)[0]
-            card.attack += list_of_buff_spells.get(self.incoming_spell)[1]
-            if list_of_buff_spells.get(self.incoming_spell)[2] not in card.description:
-                card.description += "  " + list_of_buff_spells.get(self.incoming_spell)[2]
+            buffing_spell = list_of_buff_spells.get(self.incoming_spell.name)
+            card.hp += buffing_spell[0]
+            card.max_hp += buffing_spell[0]
+            card.attack += buffing_spell[1]
+            if buffing_spell[2] not in card.description:
+                card.description += "  " + buffing_spell[2]
+            card.check_creature(buffing_spell[2])
             self.incoming_spell = None
         elif self.active_minion is not None:
             pass

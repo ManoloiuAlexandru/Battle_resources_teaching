@@ -65,7 +65,7 @@ class Player:
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
-                if card.name in list_of_creature_that_add_cards_to_your_hand:
+                if card.name in list_of_cards_that_add_cards_to_your_hand:
                     self.add_random_card_to_hand(card)
                 if card.name in list_of_card_that_pay_debt:
                     if self.last_debt > self.mana:
@@ -76,8 +76,8 @@ class Player:
                 if card.name in list_of_card_that_add_debt:
                     self.debt += list_of_card_that_add_debt.get(card.name)
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
-                if card.name in list_of_creature_that_give_armor:
-                    self.armor += list_of_creature_that_give_armor.get(card.name)
+                if card.name in list_of_cards_that_give_armor:
+                    self.armor += list_of_cards_that_give_armor.get(card.name)
                 if card.name in list_of_cards_that_discard:
                     self.card_discard(list_of_cards_that_discard.get(card.name), card)
                     if self.incoming_spell is not None:
@@ -119,6 +119,7 @@ class Player:
                         self.empty_mana += list_of_creature_that_add_mana.get(card.name)
                 elif card.name in list_of_spells:
                     self.check_for_creature_with_effect_on("cast spell", card)
+                    self.check_spell(card)
                     self.mana_pay(card)
                     self.incoming_action = 3
                     self.incoming_spell = card
@@ -141,7 +142,10 @@ class Player:
                                     list_of_creature_that_summon.get(card.name)[1][i])
                     return 1
                 elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
-                    self.buff_all_cards(card)
+                    if card.name in list_of_creature_that_affect_all_when_die:
+                        pass
+                    else:
+                        self.buff_all_cards(card)
                 elif card.name in list_of_creature_that_affect_battle_field and len(self.battle_field) < 7:
                     self.buff_all_in_battle(card)
                 elif len(self.battle_field) == 7:
@@ -348,39 +352,81 @@ class Player:
                 player.buff_card_from_hand(random_minion, card)
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_to_hand":
                 player.add_random_card_to_hand(card)
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_armor":
+                player.armor += list_of_creature_that_add_to_armor_when_die.get(card.name)
+            elif "deal_damage" in list_of_creature_that_do_somthing_when_die.get(card.name).split(":"):
+                if "all" in list_of_creature_that_do_somthing_when_die.get(card.name).split(":"):
+                    player.deal_damage_to_all_creatures(card.name)
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buffall":
+                player.buff_all_cards(card)
+
+    def deal_damage_to_all_creatures(self, name):
+        for creature in self.battle_field:
+            creature.hp -= list_of_creature_that_do_damage_to_all.get(name)
+        for creature in self.enemy_player.battle_field:
+            creature.hp -= list_of_creature_that_do_damage_to_all.get(name)
 
     def buff_card_from_hand(self, card, buffing_card):
         buff = list_of_creature_that_buff.get(buffing_card.name)
-        card.hp += buff[0]
-        card.max_hp += buff[0]
-        card.attack += buff[1]
-        if buff[2] not in card.description:
-            card.description += "  " + buff[2]
-        card.check_creature(buff[2])
+        if card.card_type == "Creature":
+            card.hp += buff[0]
+            card.max_hp += buff[0]
+            card.attack += buff[1]
+            if buff[2] not in card.description:
+                card.description += "  " + buff[2]
+            card.check_creature(buff[2])
+        else:
+            card.nr_of_assaults += buff[0]
+            card.number_of_troops += buff[1]
 
     def hand_check(self, card):
-        if "empty hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) == 1 and \
-                list_of_creature_that_are_affected_by_hand.get(card.name)[1] == "buff":
+        incoming_card = list_of_creature_that_are_affected_by_hand.get(card.name)
+        if "empty hand" in incoming_card[0] and len(self.hand) == 1 and incoming_card[1] == "buff":
             self.buff_card_from_hand(card, card)
 
-        elif "affects hand" in list_of_creature_that_are_affected_by_hand.get(card.name)[0] and len(self.hand) > 1 and \
-                list_of_creature_that_are_affected_by_hand.get(card.name)[1] == "buff":
+        elif "affects hand" in incoming_card[0] and len(self.hand) > 1 and incoming_card[1] == "buff":
             for creature in self.hand:
                 if creature != card and creature.card_type == "Creature":
                     self.buff_card_from_hand(creature, card)
+        elif "hand_check" in incoming_card[0].split(":"):
+            for card_in_hand in self.hand:
+                if card_in_hand != card:
+                    if card_in_hand.card_type == incoming_card[0].split(":")[1] or card_in_hand.category == \
+                            incoming_card[0].split(":")[1]:
+                        if incoming_card[1] == "buff":
+                            self.buff_card_from_hand(card, card)
+                            break
+                        if incoming_card[1].split(":")[0] == "change":
+                            if incoming_card[1].split(":")[1] == "dmg":
+                                list_of_creature_that_deal_dmg_to_enemies[card.name] = incoming_card[2]
+                                if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
+                                    list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
+                                break
 
     def buff_all_cards(self, card):
         for creature in self.hand:
-            if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
-                    card.name) in creature.description.split():
+            if list_of_creature_that_affect_all.get(card.name)[1] == "":
+                if creature.card_type == list_of_creature_that_affect_all.get(card.name)[0]:
+                    self.buff_card_from_hand(creature, card)
+            elif creature.card_type == list_of_creature_that_affect_all.get(
+                    card.name)[0] and list_of_creature_that_affect_all.get(
+                card.name)[1] in creature.description.split():
                 self.buff_card_from_hand(creature, card)
         for creature in self.battle_field:
-            if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
-                    card.name) in creature.description.split():
+            if list_of_creature_that_affect_all.get(card.name)[1] == "":
+                if creature.card_type == list_of_creature_that_affect_all.get(card.name)[0]:
+                    self.buff_card_from_hand(creature, card)
+            elif creature.card_type == list_of_creature_that_affect_all.get(
+                    card.name)[0] and list_of_creature_that_affect_all.get(card.name)[
+                1] in creature.description.split():
                 self.buff_card_from_hand(creature, card)
         for creature in self.deck:
-            if creature.card_type == "Creature" and list_of_creature_that_affect_all.get(
-                    card.name) in creature.description.split():
+            if list_of_creature_that_affect_all.get(card.name)[1] == "":
+                if creature.card_type == list_of_creature_that_affect_all.get(card.name)[0]:
+                    self.buff_card_from_hand(creature, card)
+            elif creature.card_type == list_of_creature_that_affect_all.get(
+                    card.name)[0] and list_of_creature_that_affect_all.get(
+                card.name)[1] in creature.description.split():
                 self.buff_card_from_hand(creature, card)
 
     def buff_all_in_battle(self, card):
@@ -456,6 +502,8 @@ class Player:
     def check_for_creature_with_effect_on(self, action, playing_creature):
         for creature in self.battle_field:
             try:
+                if creature.name in list_of_creature_that_have_other_stat_while_damaged:
+                    self.action_from_condition(creature, "damaged")
                 effected_cards = list_of_creature_that_are_effected_by_action.get(creature.name)
                 if effected_cards[1] == action and effected_cards[0] == "self_buff":
                     self.buff_card_from_hand(creature, creature)
@@ -467,11 +515,14 @@ class Player:
                 elif action == effected_cards[1] and action == "cast spell":
                     for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                         self.draw_card()
+                elif action == effected_cards[1] and action == "damage_taken":
+                    if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
+                        self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
             except Exception as e:
                 print(e)
 
     def put_item_on(self, enemy_player, card):
-        self.active_defence = list_of_creature_that_add_defence.get(card.name)
+        self.active_defence = list_of_creature_that_add_defence.get(card.name)[0]
         self.number_of_troops = self.active_defence.number_of_troops
         self.nr_of_assaults = self.active_defence.nr_of_assaults
 
@@ -482,18 +533,23 @@ class Player:
                 self.defences_weakened(1)
                 self.number_of_assaults -= 1
 
-            elif self.active_defence.nr_of_assaults == 0:
-                self.number_of_troops = 0
-                self.nr_of_assaults = 0
-
             if target is not None and self.active_defence is not None and self.number_of_assaults >= 1:
                 if target.armored is True:
                     target.armored = False
                 else:
                     target.hp -= self.number_of_troops
-                self.hp -= target.attack
+                if self.immunity is False and self.armor == 0:
+                    self.hp -= target.attack
+                elif self.armor >= target.attack:
+                    self.armor -= target.attack
+                else:
+                    self.hp = self.hp + self.armor - target.attack
+                    self.armor = 0
                 self.defences_weakened(1)
                 self.number_of_assaults -= 1
+            if self.nr_of_assaults == 0:
+                self.number_of_troops = 0
+                self.active_defence = None
         else:
             self.problem = "There are guards on the field"
 
@@ -517,8 +573,8 @@ class Player:
         self.active_defence.nr_of_assaults -= nr_of_lost
 
     def add_random_card_to_hand(self, card):
-        if list_of_creature_that_add_cards_to_your_hand.get(card.name) is not None:
-            picking_card = list_of_creature_that_add_cards_to_your_hand.get(card.name)
+        if list_of_cards_that_add_cards_to_your_hand.get(card.name) is not None:
+            picking_card = list_of_cards_that_add_cards_to_your_hand.get(card.name)
         else:
             picking_card = list_of_creature_that_add_cards_to_your_hand_when_die.get(card.name)
         for i in range(picking_card[0]):
@@ -536,3 +592,28 @@ class Player:
                 creature = list_of_creature_that_add_specific_card_to_your_hand.get(card.name)[0]
                 self.hand.append(creature)
                 del list_of_creature_that_add_specific_card_to_your_hand.get(card.name)[0]
+
+    def check_spell(self, card):
+        incoming_card = list_of_spells_that_buff_conditional.get(card.name)
+        if incoming_card is not None:
+            if "hand" in incoming_card[0].split(":"):
+                for creature in self.hand:
+                    if creature.card_type == incoming_card[0].split(":")[1] or creature.category == \
+                            incoming_card[0].split(":")[1]:
+                        list_of_buff_spells[card.name] = incoming_card[1]
+
+    def action_from_condition(self, card, condition):
+        if card.name in list_of_creature_that_have_other_stat_while_damaged and condition == "damaged":
+            if card.hp < card.max_hp and card.attack < card.original_attack + \
+                    list_of_creature_that_buff.get(card.name)[1]:
+                self.buff_card_from_hand(card, card)
+        if card.name in list_of_creature_that_have_other_stat_while_damaged:
+            if card.hp >= card.original_hp and card.attack > card.original_attack + \
+                    list_of_creature_that_buff.get(card.name)[1]:
+                buff = list_of_creature_that_buff.get(card.name)
+                card.hp -= buff[0]
+                card.max_hp -= buff[0]
+                card.attack -= buff[1]
+                if buff[2] not in card.description:
+                    card.description.remove(buff[2])
+                card.check_creature(buff[2])
