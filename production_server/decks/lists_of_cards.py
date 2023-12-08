@@ -61,7 +61,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Motivated Page": (1, 1, ""), "Honor Guard": (0, 1, "Guard"),
                               "Church Knight": (0, 0, "Guard Armored"), "Rogue Cleric": (1, 1, ""),
                               "Inspiring mercenary": (1, 1, ""), "Apollodorus of Damascus": (0, 1, ""),
-                              "Harsh Trainer": (0, 2, "")}
+                              "Harsh Trainer": (0, 2, ""), "Nero": (0, 6, ""), "Nero's Guard": (0, 3, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -188,6 +188,7 @@ list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "ani
                                                          "Inspiring knight": (1, "knights")}
 list_of_creature_that_add_specific_card_to_your_hand = {
     "Army Cook": [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 40)], }
+list_of_creature_that_have_other_stat_while_damaged = {"Nero": "damaged", "Nero's Guard": "damaged"}
 """
 Spells
 """

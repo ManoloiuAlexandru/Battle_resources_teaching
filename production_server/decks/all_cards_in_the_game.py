@@ -341,4 +341,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Herbalist Guard", 4, 2, "Guard Restore 3 health", "soldier", -187),
                      Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188),
                      Creature(5, "Tiberius", 5, 3, "Draw a mercenary,knight and worker", "worker", -189),
+                     Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", -190),
+                     Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", -191),
                      ]

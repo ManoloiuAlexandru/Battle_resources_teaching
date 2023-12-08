@@ -17,7 +17,19 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(0, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", 0)
+    Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", 0),
+    Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", 5),
+    Creature(0, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker",
+             1),
+    Creature(0, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
+             "worker", 2),
+    Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", 3),
+    Creature(0, "Priest", 1, 1,
+             "Restore a friendly minion to full HP and give it +1/+1", "worker",
+             4),
+    Creature(0, "Priest", 1, 1,
+             "Restore a friendly minion to full HP and give it +1/+1", "worker",
+             6),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -331,11 +343,8 @@ roman_legions = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "m
                  Creature(5, "Front Line Defender", 6, 3,
                           "Desperate Summ a 1/2 Second Line Defender with Guard Guard", "soldier",
                           1258),
-                 Creature(6, "Joan of Arc", 2, 2,
-                          "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
-                          "worker",
-                          1259),
-                 Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", 1260)
+                 Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", 1259),
+                 Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", 1260),
                  ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

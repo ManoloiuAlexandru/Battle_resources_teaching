@@ -153,10 +153,9 @@ def check_target(player1, player2, card_picked):
                             card.armored = False
                         else:
                             card.hp -= list_of_creature_that_can_target_yourself.get(player1.active_minion.name)
+                            player1.check_for_creature_with_effect_on("damage_taken", None)
                     if player1.active_minion.name in list_of_creature_that_heal:
                         heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
-                        if player1.active_minion.name in list_of_creature_that_buff:
-                            buff_creature(card_picked, player1)
                     if player1.active_minion.name in list_of_creature_that_buff_specific_cards:
                         if card_picked.get(
                                 card.name_for_html) is not None and list_of_creature_that_buff_specific_cards.get(
@@ -229,6 +228,7 @@ def cast_spell(player1, player2, card_picked):
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
             card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
+            player2.check_for_creature_with_effect_on("damage_taken", None)
         elif card_picked.get(
                 card.name_for_html) is not None and player1.incoming_spell.name in list_of_spells_that_debuff:
             card.debuff_creature(list_of_spells_that_debuff.get(player1.incoming_spell.name), player1, player2)

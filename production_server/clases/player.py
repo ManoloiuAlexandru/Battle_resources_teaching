@@ -502,6 +502,8 @@ class Player:
     def check_for_creature_with_effect_on(self, action, playing_creature):
         for creature in self.battle_field:
             try:
+                if creature.name in list_of_creature_that_have_other_stat_while_damaged:
+                    self.action_from_condition(creature, "damaged")
                 effected_cards = list_of_creature_that_are_effected_by_action.get(creature.name)
                 if effected_cards[1] == action and effected_cards[0] == "self_buff":
                     self.buff_card_from_hand(creature, creature)
@@ -599,3 +601,19 @@ class Player:
                     if creature.card_type == incoming_card[0].split(":")[1] or creature.category == \
                             incoming_card[0].split(":")[1]:
                         list_of_buff_spells[card.name] = incoming_card[1]
+
+    def action_from_condition(self, card, condition):
+        if card.name in list_of_creature_that_have_other_stat_while_damaged and condition == "damaged":
+            if card.hp < card.max_hp and card.attack < card.original_attack + \
+                    list_of_creature_that_buff.get(card.name)[1]:
+                self.buff_card_from_hand(card, card)
+        if card.name in list_of_creature_that_have_other_stat_while_damaged:
+            if card.hp >= card.original_hp and card.attack > card.original_attack + \
+                    list_of_creature_that_buff.get(card.name)[1]:
+                buff = list_of_creature_that_buff.get(card.name)
+                card.hp -= buff[0]
+                card.max_hp -= buff[0]
+                card.attack -= buff[1]
+                if buff[2] not in card.description:
+                    card.description.remove(buff[2])
+                card.check_creature(buff[2])
