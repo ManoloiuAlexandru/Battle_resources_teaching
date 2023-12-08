@@ -178,12 +178,13 @@ list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
                               "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2}
 list_of_card_that_pay_debt = {"Wealthy Nobel"}
-list_of_creature_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
-                                                "Mercenary emissary": (1, "debt"),
-                                                "Army Recruiter": (1, "soldier"),
-                                                "Army Cook": (2, ""),
-                                                "Empire Crusader": (5, "holy_roman")
-                                                }
+list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
+                                             "Mercenary emissary": (1, "debt"),
+                                             "Army Recruiter": (1, "soldier"),
+                                             "Army Cook": (2, ""),
+                                             "Empire Crusader": (5, "holy_roman"),
+                                             "Recruiting": (2, "knights")
+                                             }
 list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal"),
                                                          "Inspiring knight": (1, "knights")}
 list_of_creature_that_add_specific_card_to_your_hand = {
@@ -202,7 +203,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
                   "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire",
                   "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope", "Emperor's Will",
-                  "Pilum Volley"]
+                  "Pilum Volley", "Recruiting"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": ""}
@@ -221,7 +222,8 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Boarder Guards", "In the name of the king", "Roman Formation Phalanx",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
                                  "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
-                                 "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley"]
+                                 "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley",
+                                 "Recruiting"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),

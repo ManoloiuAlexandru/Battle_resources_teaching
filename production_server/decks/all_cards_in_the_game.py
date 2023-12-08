@@ -118,7 +118,7 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                                -174),
                                       Creature(5, "Rogue Knight", 4, 3, "Guard Armored", "thief", -175),
                                       Creature(2, "Rogue Cleric", 1, 2, "Give a minion +1/+1", "thief", -176),
-                                      Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)
+                                      Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188),
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -343,4 +343,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(5, "Tiberius", 5, 3, "Draw a mercenary,knight and worker", "worker", -189),
                      Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", -190),
                      Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", -191),
+                     Spell(2, "Recruiting", "Add 2 random knights", -192),
+                     Creature(3, "Roman Guard", 4, 3, "Guard", "soldier", -193)
                      ]

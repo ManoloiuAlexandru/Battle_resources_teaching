@@ -65,7 +65,7 @@ class Player:
         for card in self.hand[:]:
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
-                if card.name in list_of_creature_that_add_cards_to_your_hand:
+                if card.name in list_of_cards_that_add_cards_to_your_hand:
                     self.add_random_card_to_hand(card)
                 if card.name in list_of_card_that_pay_debt:
                     if self.last_debt > self.mana:
@@ -573,8 +573,8 @@ class Player:
         self.active_defence.nr_of_assaults -= nr_of_lost
 
     def add_random_card_to_hand(self, card):
-        if list_of_creature_that_add_cards_to_your_hand.get(card.name) is not None:
-            picking_card = list_of_creature_that_add_cards_to_your_hand.get(card.name)
+        if list_of_cards_that_add_cards_to_your_hand.get(card.name) is not None:
+            picking_card = list_of_cards_that_add_cards_to_your_hand.get(card.name)
         else:
             picking_card = list_of_creature_that_add_cards_to_your_hand_when_die.get(card.name)
         for i in range(picking_card[0]):
