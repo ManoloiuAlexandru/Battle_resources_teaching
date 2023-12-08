@@ -18,7 +18,6 @@ bot_deck = [
 ]
 demo_deck = [
 
-
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

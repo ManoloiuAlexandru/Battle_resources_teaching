@@ -339,5 +339,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               -185),
                      Creature(6, "Heavy Arbalest", 5, 6, "Deal 4 damage", "soldier", -186),
                      Creature(3, "Herbalist Guard", 4, 2, "Guard Restore 3 health", "soldier", -187),
-                     Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)
+                     Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188),
+                     Creature(5, "Tiberius", 5, 3, "Draw a mercenary,knight and worker", "worker", -189),
                      ]
