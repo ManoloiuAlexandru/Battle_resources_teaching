@@ -40,7 +40,7 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
                                              "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
                                              "Motivated Squire": 0, "Harsh Trainer": 1, "Heavy Arbalest": 4,
-                                             "Full Armored Legionary": 0}
+                                             "Full Armored Legionary": 0, "Limmu": 0}
 list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1, "Heavy Arbalest": 4}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
                                              "Motivated Squire": 0, "Heavy Arbalest": 4}
@@ -114,6 +114,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Motivated Page": ("hand_check:knight", "buff"),
                                               "Honor Guard": ("hand_check:knight", "buff"),
                                               "Church Knight": ("hand_check:knight", "buff"),
+                                              "Limmu": ("hand_check:number", "change:all:dmg")
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Chicken": (
@@ -143,7 +144,7 @@ list_of_creature_that_affect_all = {"Watchtower": ("Creature", "Guard"), "Inspir
                                     "Apollodorus of Damascus": ("Defence", "")}
 list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
-list_of_creature_that_do_damage_to_all = {"Mercenary Lieutenant": 1}
+list_of_creature_that_do_damage_to_all = {}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1),
@@ -157,9 +158,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Inspiring knight": "add_to_hand", "Alpha Wolf": "summ",
                                               "Lost Chicken": "summ", "Lost Builder": "add_armor",
                                               "Thief Camp Guard": "add_armor",
-                                              "Mercenary Lieutenant": "deal_damage:all",
                                               "Inspiring mercenary": "buffall"}
-list_of_creature_that_do_damage_when_die = {"Mercenary Lieutenant"}
+list_of_creature_that_do_damage_when_die = {}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
 list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
 list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
@@ -197,7 +197,10 @@ list_of_creature_that_have_other_stat_while_damaged = {"Nero": "damaged", "Nero'
 list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:all", "buff"),
                                          "Full Armored Legionary": ("armor", "check:all", "change:dmg"),
                                          "Known Territory": ("armor", "check:all", "buff"),
-                                         "City Defender": ("armor", "check:1", "buff")}
+                                         "City Defender": ("armor", "check:1", "buff"),
+                                         }
+list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
+list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3}
 """
 Spells
 """
@@ -211,7 +214,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "War Pack", "Tag Team", "Call of God", "Ancient Tactics", "Mercenaries Reinforcements",
                   "Tactical Coordination", "Cataclysm", "Warhammer", "Trapped path", "Defending  the empire",
                   "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope", "Emperor's Will",
-                  "Pilum Volley", "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Known Territory"]
+                  "Pilum Volley", "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Known Territory",
+                  "Heat of the desert"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": ""}
@@ -220,7 +224,7 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
                       "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
                       "Cataclysm": 99, "Palisade Wall": 3, "Pilum Volley": 1, "Unknown Territory": 0,
-                      "Senatus Populusque Romanus": 2, "Known Territory": 0}
+                      "Senatus Populusque Romanus": 2, "Known Territory": 0, "Heat of the desert": 5}
 list_of_dmg_spells_but_not_to_player = {"Tag team"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
@@ -232,7 +236,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Old Tactics", "Fast Conscription", "Animal Battle Companion", "War Pack",
                                  "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
                                  "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley",
-                                 "Recruiting", "Unknown Territory", "Senatus Populusque Romanus"]
+                                 "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Heat of the desert"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),

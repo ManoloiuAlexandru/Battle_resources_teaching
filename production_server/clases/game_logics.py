@@ -339,18 +339,7 @@ def general_spells(player, enemy_player, spell_name):
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
     elif player.incoming_spell.name in list_of_dmg_spells:
         if "ALL" in player.incoming_spell.description:
-            for creature in player.battle_field:
-                if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
-                    creature.armored = False
-                else:
-                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-                    player.check_for_creature_with_effect_on("damage_taken", None)
-            for creature in enemy_player.battle_field:
-                if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
-                    creature.armored = False
-                else:
-                    creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-                    enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+            damage_to_all_minions(player, enemy_player)
         elif "enemies" in player.incoming_spell.description:
             for creature in enemy_player.battle_field:
                 if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 98:
@@ -359,6 +348,10 @@ def general_spells(player, enemy_player, spell_name):
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
                     player.check_for_creature_with_effect_on("damage_taken", None)
                     enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+        elif "all characters" in player.incoming_spell.description:
+            damage_to_all_minions(player, enemy_player)
+            player.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+            enemy_player.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
     Player.clean_board(player, enemy_player)
 
 
@@ -367,6 +360,21 @@ def destroy_creature(card_picked, player):
         if card_picked.get(card.name_for_html) is not None:
             player.battle_field.remove(card)
             break
+
+
+def damage_to_all_minions(player, enemy_player):
+    for creature in player.battle_field:
+        if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
+            creature.armored = False
+        else:
+            creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+            player.check_for_creature_with_effect_on("damage_taken", None)
+    for creature in enemy_player.battle_field:
+        if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
+            creature.armored = False
+        else:
+            creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+            enemy_player.check_for_creature_with_effect_on("damage_taken", None)
 
 
 def put_item_on(player1, player2, card_picked):

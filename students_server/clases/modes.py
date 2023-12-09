@@ -5,11 +5,11 @@ from decks.lists_of_cards import generate_random_int
 
 
 def modes_alteration(mode, player, bot, dict_of_decks):
-    if mode == "i_hate_myself":
+    if mode != "i_hate_myself":
         return i_hate_myself(player)
     if mode == "that_is_not_what_i_payed_for":
         return that_is_not_what_i_pay_for(player, bot, dict_of_decks)
-    if mode == "personal_troops":
+    if mode > "personal_troops":
         return personal_troops(player, bot, dict_of_decks)
 
 

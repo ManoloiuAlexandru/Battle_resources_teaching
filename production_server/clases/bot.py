@@ -21,14 +21,22 @@ class Bot(Player):
                 self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
+                    if card.name in list_of_cards_that_add_cards_to_your_hand:
+                        self.add_random_card_to_hand(card)
                     if card.name in list_of_card_that_pay_debt:
                         if self.last_debt > self.mana:
                             self.mana = self.empty_mana
                         else:
                             self.mana += self.last_debt
                         self.last_debt = 0
-                    if card.name in list_of_cards_that_add_cards_to_your_hand:
-                        self.add_random_card_to_hand(card)
+                    if card.name in list_of_cards_that_check_your_kingdom:
+                        self.check_kingdom(card)
+                    elif card.name in list_of_creature_that_do_damage_to_all_other_creatures and len(
+                            self.battle_field) < 7:
+                        self.do_damage_to_all_other_minions(card)
+                    elif card.name in list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms and len(
+                            self.battle_field) < 7:
+                        self.do_damage_to_all_other_characters(card)
                     if card.name in list_of_card_that_add_debt:
                         self.debt += list_of_card_that_add_debt.get(card.name)
                     if card.name in list_of_cards_that_give_armor:

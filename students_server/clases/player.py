@@ -119,6 +119,8 @@ class Player:
                         self.empty_mana = 10
                     else:
                         self.empty_mana += list_of_creature_that_add_mana.get(card.name)
+                elif card.name in list_of_creature_that_do_damage_to_all_other_creatures and len(self.battle_field) < 7:
+                    self.do_damage_to_all_other_minions(card)
                 elif card.name in list_of_spells:
                     self.check_for_creature_with_effect_on("cast spell", card)
                     self.check_spell(card)
@@ -390,7 +392,6 @@ class Player:
             for creature in self.hand:
                 if creature != card and creature.card_type == "Creature":
                     self.buff_card_from_hand(creature, card)
-        elif "hand_check" in incoming_card[0].split(":"):
             for card_in_hand in self.hand:
                 if card_in_hand != card:
                     if card_in_hand.card_type == incoming_card[0].split(":")[1] or card_in_hand.category == \
@@ -404,6 +405,7 @@ class Player:
                                 if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
                                     list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
                                 break
+
 
     def buff_all_cards(self, card):
         for creature in self.hand:
@@ -639,3 +641,19 @@ class Player:
                         list_of_dmg_spells[card.name] = self.armor
                 elif int(checking_card[1].split(":")[1]) <= self.armor:
                     self.buff_card_from_hand(card, card)
+
+    def do_damage_to_all_other_minions(self, card):
+        for creature in self.battle_field:
+            if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures.get(
+                    card.name) < 90:
+                creature.armored = False
+            else:
+                creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
+                self.check_for_creature_with_effect_on("damage_taken", None)
+        for creature in self.enemy_player.battle_field:
+            if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures.get(
+                    card.name) < 90:
+                creature.armored = False
+            else:
+                creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
+                self.enemy_player.check_for_creature_with_effect_on("damage_taken", None)

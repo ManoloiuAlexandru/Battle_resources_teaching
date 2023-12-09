@@ -1,16 +1,16 @@
-empire:Mongol_Empire
+empire:Byzantine_Empire
 card_id:0
-mana_cost:2
-original_mana_cost:2
-name:Hunting dog
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
+mana_cost:4
+original_mana_cost:4
+name:Pronoiar
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:3
 active_effects:[]
 description:Charge
 original_description:Charge
@@ -18,386 +18,41 @@ card_type:Creature
 exhausted:False
 armored:False
 can_be_target:True
-img_url:Hunting dog.png
+img_url:Pronoiar.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Hunting_dog0
+name_for_html:Pronoiar0
 --------------------------------
 card_id:1
 mana_cost:2
 original_mana_cost:2
-name:Hunting dog
-hp:1
-max_hp:1
-original_hp:1
+name:Akritoi
+hp:3
+max_hp:3
+original_hp:3
 attack:2
-category:animal
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Charge
-original_description:Charge
+description:Guard
+original_description:Guard
 card_type:Creature
-exhausted:False
+exhausted:True
 armored:False
 can_be_target:True
-img_url:Hunting dog.png
+img_url:Akritoi.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Hunting_dog1
+name_for_html:Akritoi1
 --------------------------------
 card_id:2
-mana_cost:3
-original_mana_cost:3
-name:Rider
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Rider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Rider2
---------------------------------
-card_id:3
-mana_cost:3
-original_mana_cost:3
-name:Rider
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Rider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Rider3
---------------------------------
-card_id:4
-mana_cost:2
-original_mana_cost:2
-name:Wild Horse
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a charge card
-original_description:Draw a charge card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Wild Horse.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Wild_Horse4
---------------------------------
-card_id:5
-mana_cost:2
-original_mana_cost:2
-name:Wild Horse
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a charge card
-original_description:Draw a charge card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Wild Horse.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Wild_Horse5
---------------------------------
-card_id:7
-mana_cost:3
-original_mana_cost:3
-name:Animal Battle Companion
-card_type:Spell
-description:Summon a random war animal
-img_url:Animal Battle Companion.png
-target:None
-empire_belonging:
-category:
-name_for_html:Animal_Battle_Companion7
---------------------------------
-card_id:8
-mana_cost:3
-original_mana_cost:3
-name:Animal Battle Companion
-card_type:Spell
-description:Summon a random war animal
-img_url:Animal Battle Companion.png
-target:None
-empire_belonging:
-category:
-name_for_html:Animal_Battle_Companion8
---------------------------------
-card_id:9
-mana_cost:8
-original_mana_cost:8
-name:War Pack
-card_type:Spell
-description:Summon all war animals
-img_url:War Pack.png
-target:None
-empire_belonging:
-category:
-name_for_html:War_Pack9
---------------------------------
-card_id:10
-mana_cost:8
-original_mana_cost:8
-name:War Pack
-card_type:Spell
-description:Summon all war animals
-img_url:War Pack.png
-target:None
-empire_belonging:
-category:
-name_for_html:War_Pack10
---------------------------------
-card_id:11
-mana_cost:1
-original_mana_cost:1
-name:Arrow shot
-card_type:Spell
-description:Deal 2 damage to a enemy
-img_url:Arrow shot.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Arrow_shot11
---------------------------------
-card_id:12
-mana_cost:1
-original_mana_cost:1
-name:Arrow shot
-card_type:Spell
-description:Deal 2 damage to a enemy
-img_url:Arrow shot.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Arrow_shot12
---------------------------------
-card_id:15
-mana_cost:2
-original_mana_cost:2
-name:Call of the Khan
-card_type:Spell
-description:Draw a card if it has Charge reduce the cost to 0
-img_url:Call of the Khan.png
-target:None
-empire_belonging:
-category:
-name_for_html:Call_of_the_Khan15
---------------------------------
-card_id:16
-mana_cost:2
-original_mana_cost:2
-name:Call of the Khan
-card_type:Spell
-description:Draw a card if it has Charge reduce the cost to 0
-img_url:Call of the Khan.png
-target:None
-empire_belonging:
-category:
-name_for_html:Call_of_the_Khan16
---------------------------------
-card_id:17
-mana_cost:9
-original_mana_cost:9
-name:Jochi
-hp:8
-max_hp:8
-original_hp:8
-attack:8
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:8
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Jochi.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Jochi17
---------------------------------
-card_id:18
-mana_cost:1
-original_mana_cost:1
-name:Domestic cat
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Summon a 1/1 Wild Cat
-original_description:Summon a 1/1 Wild Cat
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Domestic cat.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Domestic_cat18
---------------------------------
-card_id:19
-mana_cost:1
-original_mana_cost:1
-name:Domestic cat
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Summon a 1/1 Wild Cat
-original_description:Summon a 1/1 Wild Cat
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Domestic cat.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Domestic_cat19
---------------------------------
-card_id:20
-mana_cost:4
-original_mana_cost:4
-name:Tag Team
-card_type:Spell
-description:Dela 3 damage to a minion summ a 3/3 Hunting dog
-img_url:Tag Team.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Tag_Team20
---------------------------------
-card_id:21
-mana_cost:4
-original_mana_cost:4
-name:Tag Team
-card_type:Spell
-description:Dela 3 damage to a minion summ a 3/3 Hunting dog
-img_url:Tag Team.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Tag_Team21
---------------------------------
-card_id:22
-mana_cost:3
-original_mana_cost:3
-name:Big Game Beast
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate draw an animal
-original_description:Desperate draw an animal
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Big Game Beast.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Big_Game_Beast22
---------------------------------
-card_id:23
-mana_cost:3
-original_mana_cost:3
-name:Big Game Beast
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate draw an animal
-original_description:Desperate draw an animal
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Big Game Beast.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Big_Game_Beast23
---------------------------------
-card_id:24
-mana_cost:8
-original_mana_cost:8
-name:Richard the Lionheart
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
 hp:6
 max_hp:6
 original_hp:6
@@ -407,215 +62,113 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:6
 active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Richard the Lionheart.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Richard_the_Lionheart24
+name_for_html:Cataphract2
 --------------------------------
-card_id:25
+card_id:3
+mana_cost:5
+original_mana_cost:5
+name:Wealthy Empire
+card_type:Spell
+description:Summon 2 random cards from your deck
+img_url:Wealthy Empire.png
+target:None
+empire_belonging:
+category:
+name_for_html:Wealthy_Empire3
+--------------------------------
+card_id:4
 mana_cost:6
 original_mana_cost:6
-name:Joan of Arc
+name:Peace Treaty
+card_type:Spell
+description:Return all creature form the battlefield to their owners hands.
+img_url:Peace Treaty.png
+target:None
+empire_belonging:
+category:
+name_for_html:Peace_Treaty4
+--------------------------------
+card_id:5
+mana_cost:2
+original_mana_cost:2
+name:Watchman
 hp:2
 max_hp:2
 original_hp:2
-attack:2
+attack:1
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:1
 active_effects:[]
-description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
+description:Draw a guard card
+original_description:Draw a guard card
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Joan of Arc.png
+img_url:Watchman.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Joan_of_Arc25
+name_for_html:Watchman5
 --------------------------------
-card_id:26
-mana_cost:5
-original_mana_cost:5
-name:Mounted Knight
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:knight
+card_id:6
+mana_cost:2
+original_mana_cost:2
+name:Watchtower
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:building
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:4
+original_attack:1
 active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Mounted Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mounted_Knight26
---------------------------------
-card_id:27
-mana_cost:5
-original_mana_cost:5
-name:Mounted Knight
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Mounted Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mounted_Knight27
---------------------------------
-card_id:28
-mana_cost:3
-original_mana_cost:3
-name:Tournament Horserider
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Charge Armored
-original_description:Charge Armored
-card_type:Creature
-exhausted:False
-armored:True
-can_be_target:True
-img_url:Tournament Horserider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Tournament_Horserider28
---------------------------------
-card_id:29
-mana_cost:3
-original_mana_cost:3
-name:Tournament Horserider
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Charge Armored
-original_description:Charge Armored
-card_type:Creature
-exhausted:False
-armored:True
-can_be_target:True
-img_url:Tournament Horserider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Tournament_Horserider29
---------------------------------
-card_id:30
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Inspiring knight.png
+img_url:Watchtower.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Inspiring_knight30
+name_for_html:Watchtower6
 --------------------------------
-card_id:31
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring knight.png
-items:[]
-number_of_attacks:1
+card_id:7
+mana_cost:7
+original_mana_cost:7
+name:Landslide
+card_type:Spell
+description:Deal 7 damage to ALL minions
+img_url:Landslide.png
+target:enemy
 empire_belonging:
-name_for_html:Inspiring_knight31
+category:
+name_for_html:Landslide7
 --------------------------------
-card_id:32
-mana_cost:3
-original_mana_cost:3
-name:Lost Chicken
-hp:3
-max_hp:3
-original_hp:3
-attack:0
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:0
-active_effects:[]
-description:Desperate summon a 5/5 Lynx
-original_description:Desperate summon a 5/5 Lynx
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lost Chicken.png
-items:[]
-number_of_attacks:1
+card_id:8
+mana_cost:2
+original_mana_cost:2
+name:Roman Formation Circular
+card_type:Spell
+description:Give your minions on the filed Guard
+img_url:Roman Formation Circular.png
+target:None
 empire_belonging:
-name_for_html:Lost_Chicken32
+category:
+name_for_html:Roman_Formation_Circular8
 --------------------------------

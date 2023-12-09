@@ -92,3 +92,7 @@ Steps to reproduce the bug:
 use the "Unknown Territory" card. The card says that you need to spend all your defences but you still have all defences
 why ? How to fix this ? The problem is in player file at check_kingdom
 
+4.Fourth Problem:If you select modes from the main page you will see some mode options if you try to pick any of them execept the
+I hate myself option you will always play i hate myself. Why ? How to fix this ? The problem is in modes file.
+
+5.

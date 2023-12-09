@@ -17,12 +17,8 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Spell(3, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions", 0),
-    Creature(4, "Full Armored Legionary", 5, 4, "Guard Deal damage equal to your defences to an enemy minion", "knight",
-             2),
-    Spell(10, "Senatus Populusque Romanus", "Deal 2 damage to ALL minions cost 1 less for each defences you have", 3),
-    Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", 4),
-    Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", 5)
+
+    Creature(0, "DEmo", 99, 1, "", "all", 3)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -67,7 +63,7 @@ list_of_mercenary = [
     [Creature(2, "Mercenary Charger", 3, 2,
               "If you're holding a knight and gain +1 attack and charge", "mercenary",
               -162)],
-    [Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
+    [Creature(3, "Mercenary Lieutenant", 3, 3, "Deal 1 damage to all other minions", "mercenary",
               -177)],
     [Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", -178)]
 ]
@@ -300,7 +296,7 @@ roman_legions = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "m
                  Creature(2, "Mercenary Charger", 3, 2,
                           "If you're holding a knight and gain +1 attack and charge", "mercenary",
                           1237),
-                 Creature(3, "Mercenary Lieutenant", 3, 3, "Desperate deal 1 damage to all minions", "mercenary",
+                 Creature(3, "Mercenary Lieutenant", 3, 3,"Deal 1 damage to all other minions", "mercenary",
                           1238),
                  Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
                           1239),

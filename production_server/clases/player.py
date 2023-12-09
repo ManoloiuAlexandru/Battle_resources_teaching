@@ -119,6 +119,11 @@ class Player:
                         self.empty_mana = 10
                     else:
                         self.empty_mana += list_of_creature_that_add_mana.get(card.name)
+                elif card.name in list_of_creature_that_do_damage_to_all_other_creatures and len(self.battle_field) < 7:
+                    self.do_damage_to_all_other_minions(card)
+                elif card.name in list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms and len(
+                        self.battle_field) < 7:
+                    self.do_damage_to_all_other_characters(card)
                 elif card.name in list_of_spells:
                     self.check_for_creature_with_effect_on("cast spell", card)
                     self.check_spell(card)
@@ -391,6 +396,11 @@ class Player:
                 if creature != card and creature.card_type == "Creature":
                     self.buff_card_from_hand(creature, card)
         elif "hand_check" in incoming_card[0].split(":"):
+            if incoming_card[0].split(":")[1] == "number":
+                if incoming_card[1].split(":")[0] == "change":
+                    if incoming_card[1].split(":")[1] == "all":
+                        if incoming_card[1].split(":")[2] == "dmg":
+                            list_of_creature_that_do_damage_to_all_other_creatures[card.name] = len(self.hand) - 1
             for card_in_hand in self.hand:
                 if card_in_hand != card:
                     if card_in_hand.card_type == incoming_card[0].split(":")[1] or card_in_hand.category == \
@@ -639,3 +649,43 @@ class Player:
                         list_of_dmg_spells[card.name] = self.armor
                 elif int(checking_card[1].split(":")[1]) <= self.armor:
                     self.buff_card_from_hand(card, card)
+
+    def do_damage_to_all_other_minions(self, card):
+        for creature in self.battle_field:
+            if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures.get(
+                    card.name) < 90:
+                creature.armored = False
+            else:
+                creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
+                self.check_for_creature_with_effect_on("damage_taken", None)
+        for creature in self.enemy_player.battle_field:
+            if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures.get(
+                    card.name) < 90:
+                creature.armored = False
+            else:
+                creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
+                self.enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+
+    def do_damage_to_all_other_characters(self, card):
+        if self.immunity is False:
+            self.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
+                card.name)
+        if self.enemy_player.immunity is False:
+            self.enemy_player.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
+                card.name)
+        for creature in self.battle_field:
+            if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
+                    card.name) < 90:
+                creature.armored = False
+            else:
+                creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(card.name)
+                self.check_for_creature_with_effect_on("damage_taken", None)
+        for creature in self.enemy_player.battle_field:
+            if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
+                    card.name) < 90:
+                creature.armored = False
+            else:
+                creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(card.name)
+                self.enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+        Player.check_player(self)
+        Player.check_player(self.enemy_player)
