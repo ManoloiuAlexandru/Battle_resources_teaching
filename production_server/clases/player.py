@@ -67,6 +67,8 @@ class Player:
                 self.check_for_creature_with_effect_on("summ", card)
                 if card.name in list_of_cards_that_add_cards_to_your_hand:
                     self.add_random_card_to_hand(card)
+                if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
+                    self.hand_check(card)
                 if card.name in list_of_card_that_pay_debt:
                     if self.last_debt > self.mana:
                         self.mana = self.empty_mana
@@ -91,8 +93,6 @@ class Player:
                 self.logs += "Playing:" + card.name + "\n"
                 if card.name in list_of_creature_that_can_make_kingdom_immun:
                     self.immunity = True
-                if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
-                    self.hand_check(card)
                 if card.name in list_of_creature_description and len(self.battle_field) < 7:
                     self.mana_pay(card)
                     self.battle_field.append(card)
@@ -418,6 +418,9 @@ class Player:
                                 if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
                                     list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
                                 break
+                            if incoming_card[1].split(":")[1] == "armor":
+                                if incoming_card[1].split(":")[2] == "gain":
+                                    list_of_cards_that_give_armor[card.name] = incoming_card[2]
 
     def buff_all_cards(self, card):
         for creature in self.hand:
@@ -654,8 +657,10 @@ class Player:
                 elif int(checking_card[1].split(":")[1]) <= self.armor:
                     self.buff_card_from_hand(card, card)
         if checking_card[0] == "health":
-            if int(checking_card[1].split(":")[1]) >= self.hp:
+            if int(checking_card[1].split(":")[1]) >= self.hp and card.card_type == "Creature":
                 self.buff_card_from_hand(card, card)
+            elif int(checking_card[1].split(":")[1]) >= self.hp and card.card_type == "Spell":
+                list_of_dmg_spells[card.name] = checking_card[2]
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:

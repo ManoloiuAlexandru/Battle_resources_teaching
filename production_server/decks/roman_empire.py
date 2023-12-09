@@ -37,7 +37,15 @@ roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "me
                 Spell(10, "Senatus Populusque Romanus",
                       "Deal 2 damage to ALL minions cost 1 less for each defences you have", -196),
                 Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", -197),
-                Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", -198)
+                Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", -198),
+                Creature(2, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary",
+                         -207),
+                Creature(5, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight",
+                         -208),
+                Spell(4, "Mercenary Defences",
+                      "Deal 5 damage to a minion if you are holding a knight gain 5 defences", -209),
+                Spell(2, "Commander Desperation", "Deal 1 damage to ALL minions, if you have 13 or less hp deal 3",
+                      -210)
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
@@ -75,5 +83,13 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                      Spell(10, "Senatus Populusque Romanus",
                            "Deal 2 damage to ALL minions cost 1 less for each defences you have", -196),
                      Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", -197),
-                     Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", -198)
+                     Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", -198),
+                     Creature(2, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary",
+                              -207),
+                     Creature(5, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight",
+                              -208),
+                     Spell(4, "Mercenary Defences",
+                           "Deal 5 damage to a minion if you are holding a knight gain 5 defences", -209),
+                     Spell(2, "Commander Desperation", "Deal 1 damage to ALL minions, if you have 13 or less hp deal 3",
+                           -210)
                      ]

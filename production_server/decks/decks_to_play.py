@@ -17,7 +17,11 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Creature(0, "Assyrian Horserider", 7, 5, "Charge discard 2 cards from your hand", "ancient", 175),
+    Spell(0, "Fast Auxiliars", "Draw 2 defences from your deck", 0),
+    Creature(0, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary", 1),
+    Creature(0, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight", 2),
+    Spell(0, "Mercenary Defences", "Deal 5 damage to a minion if you are holding a knight gain 5 defences", 4),
+    Spell(0, "Commander Desperation", "Deal 1 damage to ALL minions, if you have 13 or less hp deal 3", 5)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -61,7 +65,9 @@ list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you 
                    [Creature(4, "Full Armored Legionary", 5, 4,
                              "Guard Deal damage equal to your defences to an enemy minion", "knight",
                              -195)],
-                   [Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)]
+                   [Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)],
+                   [Creature(5, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight",
+                             -208)]
                    ]
 list_of_mercenary = [
     [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],
@@ -72,7 +78,9 @@ list_of_mercenary = [
               -162)],
     [Creature(3, "Mercenary Lieutenant", 3, 3, "Deal 1 damage to all other minions", "mercenary",
               -177)],
-    [Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", -178)]
+    [Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary", -178)],
+    [Creature(2, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary",
+              -207)]
 ]
 list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
                      [Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", -68)],

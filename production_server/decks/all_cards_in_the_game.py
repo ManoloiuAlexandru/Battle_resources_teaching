@@ -368,4 +368,13 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               -203),
                      Spell(3, "A day in the desert", "Deal 3 damage to all characters", -204),
                      Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", -205),
+                     Spell(2, "Fast Auxiliars", "Draw 2 defences from your deck", -206),
+                     Creature(2, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary",
+                              -207),
+                     Creature(5, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight",
+                              -208),
+                     Spell(4, "Mercenary Defences",
+                           "Deal 5 damage to a minion if you are holding a knight gain 5 defences", -209),
+                     Spell(2, "Commander Desperation", "Deal 1 damage to ALL minions, if you have 13 or less hp deal 3",
+                           -210)
                      ]
