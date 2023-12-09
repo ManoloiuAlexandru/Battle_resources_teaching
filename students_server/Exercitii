@@ -67,3 +67,25 @@ In the code there are methods that are not static but they can be static can you
 
 
 Developers Challenge:
+
+1.First Problem: When a minion is trying to do damage or do something to an enemy minion nothing happens. The problem is in function
+destroy_creature_from_player.
+
+Steps to reproduce the bug:
+- set difficulty to easy
+- play with the power of the people deck and hit the button new hand until you get "Bailiff" card
+- hit end turn button until you get to have 3 mana so you can play the card
+- target an enemy card see that the card is not changing the attack to 1
+
+2.Second Problem: When you use a spell that damages all minions (it has ALL in description) if the spell has 0 damage the creatures
+still lose the Armored attribute, why ? How can you fix this ? The problem is in general_spells from game_logics file.
+
+Steps to reproduce the bug:
+- set difficulty to easy
+- play with the roman legions deck and hit the button new hand until you get "Unknown Territory" card
+- hit end turn button until you get to have 2 mana so you can play the card and the opponent has an armored card
+- use the card while you have no defences and see that the armored minion no longer has the grey outline
+
+3.Third Problem:The same steps as on top but this time you need defences on you so play anything that gives defence and then
+use the "Unknown Territory" card. The card says that you need to spend all you defences but your still have all defences
+why ? How to fix this ?

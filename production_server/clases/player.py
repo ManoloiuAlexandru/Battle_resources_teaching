@@ -73,6 +73,8 @@ class Player:
                     else:
                         self.mana += self.last_debt
                     self.last_debt = 0
+                if card.name in list_of_cards_that_check_your_kingdom:
+                    self.check_kingdom(card)
                 if card.name in list_of_card_that_add_debt:
                     self.debt += list_of_card_that_add_debt.get(card.name)
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
@@ -457,6 +459,8 @@ class Player:
             else:
                 self.hand[self.hand.index(creature)].mana_cost -= (len(self.battle_field) + len(
                     self.enemy_player.battle_field)) * list_of_creature_that_are_affected_in_hand.get(creature.name)[2]
+        elif condition == "armor":
+            self.hand[self.hand.index(creature)].mana_cost -= self.armor
         else:
             self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
                                                               list_of_creature_that_are_affected_in_hand.get(
@@ -617,3 +621,21 @@ class Player:
                 if buff[2] not in card.description:
                     card.description.remove(buff[2])
                 card.check_creature(buff[2])
+
+    def check_kingdom(self, card):
+        checking_card = list_of_cards_that_check_your_kingdom.get(card.name)
+        if checking_card[0] == "armor":
+            if checking_card[1].split(":")[0] == "spend":
+                if checking_card[1].split(":")[1] == "all":
+                    if checking_card[2] == "buff":
+                        if card.card_type == "Spell":
+                            list_of_dmg_spells[card.name] = self.armor
+                            self.armor = 0
+            else:
+                if checking_card[1].split(":")[1] == "all":
+                    if checking_card[2] == "change:dmg":
+                        list_of_creature_that_deal_dmg_to_enemies[card.name] = self.armor
+                    elif checking_card[2] == "buff":
+                        list_of_dmg_spells[card.name] = self.armor
+                elif int(checking_card[1].split(":")[1]) <= self.armor:
+                    self.buff_card_from_hand(card, card)

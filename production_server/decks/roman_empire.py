@@ -28,7 +28,16 @@ roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "me
                 Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", -190),
                 Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", -191),
                 Spell(2, "Recruiting", "Add 2 random knights", -192),
-                Creature(3, "Roman Guard", 4, 3, "Guard", "soldier", -193)
+                Creature(3, "Roman Guard", 4, 3, "Guard", "soldier", -193),
+                Spell(3, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions",
+                      -194),
+                Creature(4, "Full Armored Legionary", 5, 4,
+                         "Guard Deal damage equal to your defences to an enemy minion", "knight",
+                         -195),
+                Spell(10, "Senatus Populusque Romanus",
+                      "Deal 2 damage to ALL minions cost 1 less for each defences you have", -196),
+                Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", -197),
+                Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", -198)
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
@@ -57,5 +66,14 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                      Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", -190),
                      Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", -191),
                      Spell(2, "Recruiting", "Add 2 random knights", -192),
-                     Creature(3, "Roman Guard", 4, 3, "Guard", "soldier", -193)
+                     Creature(3, "Roman Guard", 4, 3, "Guard", "soldier", -193),
+                     Spell(3, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions",
+                           -194),
+                     Creature(4, "Full Armored Legionary", 5, 4,
+                              "Guard Deal damage equal to your defences to an enemy minion", "knight",
+                              -195),
+                     Spell(10, "Senatus Populusque Romanus",
+                           "Deal 2 damage to ALL minions cost 1 less for each defences you have", -196),
+                     Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", -197),
+                     Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", -198)
                      ]

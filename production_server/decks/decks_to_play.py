@@ -17,7 +17,12 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-
+    Spell(3, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions", 0),
+    Creature(4, "Full Armored Legionary", 5, 4, "Guard Deal damage equal to your defences to an enemy minion", "knight",
+             2),
+    Spell(10, "Senatus Populusque Romanus", "Deal 2 damage to ALL minions cost 1 less for each defences you have", 3),
+    Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", 4),
+    Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", 5)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
