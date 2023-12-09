@@ -17,7 +17,12 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-
+    Spell(3, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions", 0),
+    Creature(4, "Full Armored Legionary", 5, 4, "Guard Deal damage equal to your defences to an enemy minion", "knight",
+             2),
+    Spell(10, "Senatus Populusque Romanus", "Deal 2 damage to ALL minions cost 1 less for each defences you have", 3),
+    Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", 4),
+    Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", 5)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -304,8 +309,8 @@ roman_legions = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "m
                  Creature(2, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
                           "worker", 1242),
                  Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", 1243),
-                 Creature(1, "Rusticus Recruiter", 1, 1, "Put an 1/3 defence", "worker", 1244),
-                 Creature(2, "Aedile", 7, 0, "Guard", "soldier", 1245),
+                 Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", 1244),
+                 Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", 1245),
                  Creature(2, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker",
                           1246),
                  Creature(5, "Tiberius", 5, 3, "Draw a mercenary,knight and worker", "worker", 1247),
@@ -322,16 +327,15 @@ roman_legions = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "m
                           "worker", 1253),
                  Creature(2, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker",
                           1254),
-                 Creature(2, "Aedile", 7, 0, "Guard", "soldier", 1255),
-                 Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
+                 Spell(3, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions",
+                       1255),
+                 Creature(4, "Full Armored Legionary", 5, 4,
+                          "Guard Deal damage equal to your defences to an enemy minion", "knight",
                           1256),
-                 Creature(5, "Front Line Defender", 6, 3,
-                          "Desperate Summ a 1/2 Second Line Defender with Guard Guard", "soldier",
-                          1257),
-                 Creature(5, "Front Line Defender", 6, 3,
-                          "Desperate Summ a 1/2 Second Line Defender with Guard Guard", "soldier",
-                          1258),
-                 Creature(8, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", 1259),
+                 Spell(10, "Senatus Populusque Romanus",
+                       "Deal 2 damage to ALL minions cost 1 less for each defences you have", 1257),
+                 Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", 1258),
+                 Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", 1259),
                  Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", 1260),
                  ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,

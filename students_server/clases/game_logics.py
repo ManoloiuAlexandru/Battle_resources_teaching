@@ -340,20 +340,20 @@ def general_spells(player, enemy_player, spell_name):
     elif player.incoming_spell.name in list_of_dmg_spells:
         if "ALL" in player.incoming_spell.description:
             for creature in player.battle_field:
-                if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 90:
+                if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
                     creature.armored = False
                 else:
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
                     player.check_for_creature_with_effect_on("damage_taken", None)
             for creature in enemy_player.battle_field:
-                if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 90:
+                if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
                     creature.armored = False
                 else:
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
                     enemy_player.check_for_creature_with_effect_on("damage_taken", None)
         elif "enemies" in player.incoming_spell.description:
             for creature in enemy_player.battle_field:
-                if creature.armored is True and list_of_dmg_spells.get(player.incoming_spell.name) < 98:
+                if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 98:
                     creature.armored = False
                 else:
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
