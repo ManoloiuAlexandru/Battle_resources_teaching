@@ -410,6 +410,10 @@ class Player:
                             break
                         if incoming_card[1].split(":")[0] == "change":
                             if incoming_card[1].split(":")[1] == "dmg":
+                                if list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
+                                        card.name) is not None:
+                                    list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms[card.name] = \
+                                        incoming_card[2]
                                 list_of_creature_that_deal_dmg_to_enemies[card.name] = incoming_card[2]
                                 if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
                                     list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
@@ -649,6 +653,9 @@ class Player:
                         list_of_dmg_spells[card.name] = self.armor
                 elif int(checking_card[1].split(":")[1]) <= self.armor:
                     self.buff_card_from_hand(card, card)
+        if checking_card[0] == "health":
+            if int(checking_card[1].split(":")[1]) >= self.hp:
+                self.buff_card_from_hand(card, card)
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:

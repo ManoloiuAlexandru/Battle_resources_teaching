@@ -17,8 +17,7 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-
-    Creature(0, "DEmo", 99, 1, "", "all", 3)
+    Creature(0, "Assyrian Horserider", 7, 5, "Charge discard 2 cards from your hand", "ancient", 175),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -55,7 +54,15 @@ list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you 
                    [Creature(6, "Inspiring knight", 5, 6,
                              "Desperate add a random knight to your hand", "knight",
                              -169)],
-                   [Creature(8, "Snob Knight", 10, 6, "", "Knight", -170)]]
+                   [Creature(8, "Snob Knight", 10, 6, "", "Knight", -170)],
+                   [Creature(5, "Ancient Full Armored soldier", 5, 5,
+                             "Deal 3 damage to all other characters if you hold a knight",
+                             "knight", -202)],
+                   [Creature(4, "Full Armored Legionary", 5, 4,
+                             "Guard Deal damage equal to your defences to an enemy minion", "knight",
+                             -195)],
+                   [Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)]
+                   ]
 list_of_mercenary = [
     [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132)],
     [Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133)],
@@ -296,7 +303,7 @@ roman_legions = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "m
                  Creature(2, "Mercenary Charger", 3, 2,
                           "If you're holding a knight and gain +1 attack and charge", "mercenary",
                           1237),
-                 Creature(3, "Mercenary Lieutenant", 3, 3,"Deal 1 damage to all other minions", "mercenary",
+                 Creature(3, "Mercenary Lieutenant", 3, 3, "Deal 1 damage to all other minions", "mercenary",
                           1238),
                  Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
                           1239),
