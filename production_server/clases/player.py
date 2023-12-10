@@ -487,9 +487,14 @@ class Player:
         self.hand[self.hand.index(creature)].mana_cost = self.hand[
             self.hand.index(creature)].original_mana_cost
         if condition == "allies_on_battle_field":
-            self.hand[self.hand.index(creature)].mana_cost -= len(self.battle_field) * \
-                                                              list_of_creature_that_are_affected_in_hand.get(
-                                                                  creature.name)[2]
+            if self.hand[self.hand.index(creature)].mana_cost >= len(self.battle_field) * \
+                    list_of_creature_that_are_affected_in_hand.get(
+                        creature.name)[2]:
+                self.hand[self.hand.index(creature)].mana_cost -= len(self.battle_field) * \
+                                                                  list_of_creature_that_are_affected_in_hand.get(
+                                                                      creature.name)[2]
+            else:
+                self.hand[self.hand.index(creature)].mana_cost = 0
         elif condition == "all_on_battle_field":
             if ((len(self.battle_field) + len(
                     self.enemy_player.battle_field)) * list_of_creature_that_are_affected_in_hand.get(creature.name)[
@@ -499,11 +504,19 @@ class Player:
                 self.hand[self.hand.index(creature)].mana_cost -= (len(self.battle_field) + len(
                     self.enemy_player.battle_field)) * list_of_creature_that_are_affected_in_hand.get(creature.name)[2]
         elif condition == "armor":
-            self.hand[self.hand.index(creature)].mana_cost -= self.armor
+            if self.hand[self.hand.index(creature)].mana_cost >= self.armor:
+                self.hand[self.hand.index(creature)].mana_cost -= self.armor
+            else:
+                self.hand[self.hand.index(creature)].mana_cost = 0
         else:
-            self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
-                                                              list_of_creature_that_are_affected_in_hand.get(
-                                                                  creature.name)[2] - 1
+            if self.hand[self.hand.index(creature)].mana_cost >= len(self.hand) * \
+                    list_of_creature_that_are_affected_in_hand.get(
+                        creature.name)[2] - 1:
+                self.hand[self.hand.index(creature)].mana_cost -= len(self.hand) * \
+                                                                  list_of_creature_that_are_affected_in_hand.get(
+                                                                      creature.name)[2] - 1
+            else:
+                self.hand[self.hand.index(creature)].mana_cost = 0
 
     @staticmethod
     def card_to_draw_type(card, i):
