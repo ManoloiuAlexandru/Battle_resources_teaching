@@ -224,12 +224,26 @@ def cast_spell(player1, player2, card_picked):
     if player1.incoming_spell.name in list_of_self_target:
         for card in player1.battle_field:
             if card_picked.get(card.name_for_html) is not None:
-                buff_creature_with_spell(card, player1)
+                if player1.incoming_spell.name in list_of_spells_that_do_something_conditional:
+                    if cast_conditional_spell(card, player1.incoming_spell) == 0:
+                        player1.hand.append(player1.incoming_spell)
+                        player1.mana += player1.incoming_spell.mana_cost
+                    else:
+                        buff_creature_with_spell(card, player1)
+                else:
+                    buff_creature_with_spell(card, player1)
                 break
     if player1.incoming_spell.name in list_of_dmg_spells:
         for card in player1.battle_field:
             if card_picked.get(card.name_for_html) is not None:
-                card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
+                if player1.incoming_spell.name in list_of_spells_that_do_something_conditional:
+                    if cast_conditional_spell(card, player1.incoming_spell) == 0:
+                        player1.hand.append(player1.incoming_spell)
+                        player1.mana += player1.incoming_spell.mana_cost
+                    else:
+                        card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
+                else:
+                    card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
                 break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
@@ -245,9 +259,25 @@ def cast_spell(player1, player2, card_picked):
                 card.armored = False
                 break
             else:
-                card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
+                if player1.incoming_spell.name in list_of_spells_that_do_something_conditional:
+                    if cast_conditional_spell(card, player1.incoming_spell) == 0:
+                        player1.hand.append(player1.incoming_spell)
+                        player1.mana += player1.incoming_spell.mana_cost
+                    else:
+                        card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
+                else:
+                    card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
+                    break
                 if player1.incoming_spell.name in list_of_buff_spells:
-                    buff_creature_with_spell(card, player1)
+                    if player1.incoming_spell.name in list_of_spells_that_do_something_conditional:
+                        if cast_conditional_spell(card, player1.incoming_spell) == 0:
+                            player1.hand.append(player1.incoming_spell)
+                            player1.mana += player1.incoming_spell.mana_cost
+                        else:
+                            buff_creature_with_spell(card, player1)
+                    else:
+                        buff_creature_with_spell(card, player1)
+                    break
                 player1.check_for_creature_with_effect_on("damage_taken", None)
                 player2.check_for_creature_with_effect_on("damage_taken", None)
                 break
@@ -346,6 +376,9 @@ def general_spells(player, enemy_player, spell_name):
                 if creature.check_creature_for_dmg(creature_to_avoid):
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
     elif player.incoming_spell.name in list_of_dmg_spells:
+        if player.incoming_spell.name in list_of_spells_that_target_random_creatures:
+            if list_of_spells_that_target_random_creatures.get(player.incoming_spell.name) == 13:
+                pick_random_creature(player, enemy_player)
         if "ALL" in player.incoming_spell.description:
             damage_to_all_minions(player, enemy_player)
         elif "enemies" in player.incoming_spell.description:
@@ -595,4 +628,21 @@ def affect_battle_field(card, player, enemy_player):
             buff_creature_with_spell(creature, player)
 
 
+def pick_random_creature(player, enemy_player):
+    all_creatures = []
+    all_creatures.extend(player.battle_field)
+    all_creatures.extend(enemy_player.battle_field)
+    last_on_standing = random.choice(all_creatures)
+    for creature in player.battle_field[:]:
+        if last_on_standing != creature:
+            creature.hp -= 99
+    for creature in enemy_player.battle_field[:]:
+        if last_on_standing != creature:
+            creature.hp -= 99
 
+
+def cast_conditional_spell(card, spell):
+    if list_of_spells_that_do_something_conditional.get(spell.name) == "damaged":
+        if card.hp < card.max_hp:
+            return 1
+    return 0

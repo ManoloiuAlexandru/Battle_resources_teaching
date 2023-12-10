@@ -388,4 +388,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(7, "Julius Caesar", 6, 7,
                               "Rush Gain 4 defences desperate Lose 4 defences to resummon this", "mercenary",
                               -219),
+                     Spell(5, "Tavern Fight", "Destroy all creatures except one",  -220),
+                     Spell(1, "Execute", "Destroy a damaged minion",  -221),
+                     Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored",  -222),
                      ]

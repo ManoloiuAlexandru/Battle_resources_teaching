@@ -18,9 +18,7 @@ bot_deck = [
     Creature(0, "Demo", 99, 99, "Guard", "all", 10)
 ]
 demo_deck = [
-    Creature(0, "War Crier", 2, 1, "Draw a rush card from your deck", "worker", 0),
-    Creature(0, "Julius Caesar", 6, 7, "Rush Gain 4 defences desperate Lose 4 defences to resummon this", "mercenary",
-             9),
+    Creature(0, "Demo", 99, 1, "", "all", 4)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

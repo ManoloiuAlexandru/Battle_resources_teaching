@@ -232,11 +232,11 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Pilum Volley", "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Known Territory",
                   "Heat of the desert", "A day in the desert", "Fast Auxiliars", "Mercenary Defences",
                   "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap", "Vast Empire",
-                  "Crusade Calling"]
+                  "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
-                       "Whip hit": "", "Fall Trap": ""}
+                       "Whip hit": "", "Fall Trap": "", "Shield of Honor": ""}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emperor's Hope": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
@@ -244,11 +244,11 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Cataclysm": 99, "Palisade Wall": 3, "Pilum Volley": 1, "Unknown Territory": 0,
                       "Senatus Populusque Romanus": 2, "Known Territory": 0, "Heat of the desert": 5,
                       "A day in the desert": 3, "Mercenary Defences": 5, "Commander Desperation": 1,
-                      "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2}
+                      "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99}
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
-                            "Strength in numbers", "Tag Team", "Emperor's Will"]
+                            "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
@@ -258,7 +258,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley",
                                  "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Heat of the desert",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
-                                 "Crusade Calling"]
+                                 "Crusade Calling", "Tavern Fight"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -276,7 +276,7 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "For the Khan": (0, 1, "Charge"), "In the name of the king": (1, 1, ""),
                        "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, ""),
                        "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, ""), "Emperor's Will": (2, 1, ""),
-                       "Whip hit": (0, 2, "")}
+                       "Whip hit": (0, 2, ""), "Shield of Honor": (0, 3, "Armored")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
 list_of_spells_that_buff_conditional = {"Emperor's Will": ("hand:knight", (3, 2, "Armored"))}
@@ -314,7 +314,8 @@ list_of_spells_that_add_defences = {
     "Defending  the empire": Defence(1, "Empire Peasants", 1, 4, "", generate_random_int())
     for
     i in range(0, 10)}
-
+list_of_spells_that_target_random_creatures = {"Tavern Fight": 13}
+list_of_spells_that_do_something_conditional = {"Execute": "damaged", "Shield of Honor": "damaged"}
 """
 Defence
 """
