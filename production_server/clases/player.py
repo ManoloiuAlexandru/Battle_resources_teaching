@@ -661,6 +661,9 @@ class Player:
                 self.buff_card_from_hand(card, card)
             elif int(checking_card[1].split(":")[1]) >= self.hp and card.card_type == "Spell":
                 list_of_dmg_spells[card.name] = checking_card[2]
+        if checking_card[0] == "defence":
+            if int(checking_card[1].split(":")[1]) <= self.nr_of_assaults and card.card_type == "Creature":
+                self.buff_card_from_hand(card, card)
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:

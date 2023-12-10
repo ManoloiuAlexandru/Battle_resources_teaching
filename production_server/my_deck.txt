@@ -1,647 +1,699 @@
-empire:Mesopotamia_Empire
+empire:Roman_Empire
 card_id:0
 mana_cost:1
 original_mana_cost:1
-name:City Gate Guard
-hp:3
-max_hp:3
-original_hp:3
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
 attack:1
-category:ancient
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:City Gate Guard.png
+img_url:Mercenary employer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:City_Gate_Guard0
+name_for_html:Mercenary_employer0
 --------------------------------
 card_id:1
 mana_cost:1
 original_mana_cost:1
-name:City Gate Guard
-hp:3
-max_hp:3
-original_hp:3
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
 attack:1
-category:ancient
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:City Gate Guard.png
+img_url:Mercenary employer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:City_Gate_Guard1
+name_for_html:Mercenary_employer1
 --------------------------------
 card_id:2
-mana_cost:3
-original_mana_cost:3
-name:Ancient Tactics
-card_type:Spell
-description:Draw 3 cards deal 3 damage to your kingdom
-img_url:Ancient Tactics.png
-target:None
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Ancient_Tactics2
+name_for_html:Architecti2
 --------------------------------
 card_id:3
-mana_cost:3
-original_mana_cost:3
-name:Ancient Tactics
-card_type:Spell
-description:Draw 3 cards deal 3 damage to your kingdom
-img_url:Ancient Tactics.png
-target:None
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Ancient_Tactics3
+name_for_html:Architecti3
 --------------------------------
 card_id:4
-mana_cost:1
-original_mana_cost:1
-name:Mesopotamia Scholar
-hp:1
-max_hp:1
-original_hp:1
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Recruiter
+hp:2
+max_hp:2
+original_hp:2
 attack:2
-category:ancient
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Draw a card Deal 2 damage to your kingdom
-original_description:Draw a card Deal 2 damage to your kingdom
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mesopotamia Scholar.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mesopotamia_Scholar4
+name_for_html:Mercenary_Recruiter4
 --------------------------------
 card_id:5
-mana_cost:1
-original_mana_cost:1
-name:Mesopotamia Scholar
-hp:1
-max_hp:1
-original_hp:1
+mana_cost:2
+original_mana_cost:2
+name:Mercenary Recruiter
+hp:2
+max_hp:2
+original_hp:2
 attack:2
-category:ancient
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Draw a card Deal 2 damage to your kingdom
-original_description:Draw a card Deal 2 damage to your kingdom
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mesopotamia Scholar.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Mesopotamia_Scholar5
+name_for_html:Mercenary_Recruiter5
 --------------------------------
 card_id:6
-mana_cost:2
-original_mana_cost:2
-name:Military Guard
-hp:4
-max_hp:4
-original_hp:4
+mana_cost:4
+original_mana_cost:4
+name:Mercenary defender
+hp:5
+max_hp:5
+original_hp:5
 attack:2
-category:ancient
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard Deal 2 damage to your kingdom
-original_description:Guard Deal 2 damage to your kingdom
+description:Guard put an 3/2 defence
+original_description:Guard put an 3/2 defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Military Guard.png
+img_url:Mercenary defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Military_Guard6
+name_for_html:Mercenary_defender6
 --------------------------------
 card_id:7
-mana_cost:2
-original_mana_cost:2
-name:Military Guard
-hp:4
-max_hp:4
-original_hp:4
+mana_cost:4
+original_mana_cost:4
+name:Mercenary defender
+hp:5
+max_hp:5
+original_hp:5
 attack:2
-category:ancient
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard Deal 2 damage to your kingdom
-original_description:Guard Deal 2 damage to your kingdom
+description:Guard put an 3/2 defence
+original_description:Guard put an 3/2 defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Military Guard.png
+img_url:Mercenary defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Military_Guard7
+name_for_html:Mercenary_defender7
 --------------------------------
 card_id:8
-mana_cost:1
-original_mana_cost:1
-name:Lu
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Deal 2 damage to your kingdom
-original_description:Deal 2 damage to your kingdom
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lu.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Guard the Fort
+card_type:Spell
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
+target:None
 empire_belonging:
-name_for_html:Lu8
+category:
+name_for_html:Guard_the_Fort8
 --------------------------------
 card_id:9
-mana_cost:1
-original_mana_cost:1
-name:Lu
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Deal 2 damage to your kingdom
-original_description:Deal 2 damage to your kingdom
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lu.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Guard the Fort
+card_type:Spell
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
+target:None
 empire_belonging:
-name_for_html:Lu9
+category:
+name_for_html:Guard_the_Fort9
 --------------------------------
 card_id:10
-mana_cost:4
-original_mana_cost:4
-name:Mercenaries Reinforcements
-card_type:Spell
-description:Deal 2-4 damage and summ that many Man at arms
-img_url:Mercenaries Reinforcements.png
-target:enemy
+mana_cost:2
+original_mana_cost:2
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring mercenary.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Mercenaries_Reinforcements10
+name_for_html:Inspiring_mercenary10
 --------------------------------
 card_id:11
-mana_cost:4
-original_mana_cost:4
-name:Mercenaries Reinforcements
-card_type:Spell
-description:Deal 2-4 damage and summ that many Man at arms
-img_url:Mercenaries Reinforcements.png
-target:enemy
+mana_cost:2
+original_mana_cost:2
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring mercenary.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Mercenaries_Reinforcements11
+name_for_html:Inspiring_mercenary11
 --------------------------------
 card_id:12
-mana_cost:5
-original_mana_cost:5
-name:Assyrian Horserider
-hp:7
-max_hp:7
-original_hp:7
-attack:5
-category:ancient
+mana_cost:2
+original_mana_cost:2
+name:Apollodorus of Damascus
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:2
 active_effects:[]
-description:Charge discard 2 cards from your hand
-original_description:Charge discard 2 cards from your hand
+description:Give all defences +1 attack
+original_description:Give all defences +1 attack
 card_type:Creature
-exhausted:False
+exhausted:True
 armored:False
 can_be_target:True
-img_url:Assyrian Horserider.png
+img_url:Apollodorus of Damascus.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Assyrian_Horserider12
+name_for_html:Apollodorus_of_Damascus12
 --------------------------------
 card_id:13
-mana_cost:5
-original_mana_cost:5
-name:Assyrian Horserider
-hp:7
-max_hp:7
-original_hp:7
-attack:5
-category:ancient
+mana_cost:2
+original_mana_cost:2
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:1
 active_effects:[]
-description:Charge discard 2 cards from your hand
-original_description:Charge discard 2 cards from your hand
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Roman Architect.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Roman_Architect13
+--------------------------------
+card_id:14
+mana_cost:2
+original_mana_cost:2
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Roman Architect.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Roman_Architect14
+--------------------------------
+card_id:15
+mana_cost:1
+original_mana_cost:1
+name:Pilum Volley
+card_type:Spell
+description:Deal 1 damage to ALL minions
+img_url:Pilum Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Volley15
+--------------------------------
+card_id:16
+mana_cost:1
+original_mana_cost:1
+name:Pilum Volley
+card_type:Spell
+description:Deal 1 damage to ALL minions
+img_url:Pilum Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Volley16
+--------------------------------
+card_id:17
+mana_cost:2
+original_mana_cost:2
+name:Harsh Trainer
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Deal 1 damage to a minion and give it +2 attack
+original_description:Deal 1 damage to a minion and give it +2 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Harsh Trainer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Harsh_Trainer17
+--------------------------------
+card_id:18
+mana_cost:2
+original_mana_cost:2
+name:Harsh Trainer
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Deal 1 damage to a minion and give it +2 attack
+original_description:Deal 1 damage to a minion and give it +2 attack
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Harsh Trainer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Harsh_Trainer18
+--------------------------------
+card_id:19
+mana_cost:5
+original_mana_cost:5
+name:Tiberius
+hp:5
+max_hp:5
+original_hp:5
+attack:3
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Draw a mercenary,knight and worker
+original_description:Draw a mercenary,knight and worker
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Tiberius.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Tiberius19
+--------------------------------
+card_id:20
+mana_cost:8
+original_mana_cost:8
+name:Nero
+hp:9
+max_hp:9
+original_hp:9
+attack:4
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Charge +6 attack while damaged
+original_description:Charge +6 attack while damaged
 card_type:Creature
 exhausted:False
 armored:False
 can_be_target:True
-img_url:Assyrian Horserider.png
+img_url:Nero.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Assyrian_Horserider13
---------------------------------
-card_id:14
-mana_cost:6
-original_mana_cost:6
-name:Tactical Coordination
-card_type:Spell
-description:When you discard or use this draw 3 cards
-img_url:Tactical Coordination.png
-target:None
-empire_belonging:
-category:
-name_for_html:Tactical_Coordination14
---------------------------------
-card_id:15
-mana_cost:6
-original_mana_cost:6
-name:Tactical Coordination
-card_type:Spell
-description:When you discard or use this draw 3 cards
-img_url:Tactical Coordination.png
-target:None
-empire_belonging:
-category:
-name_for_html:Tactical_Coordination15
---------------------------------
-card_id:16
-mana_cost:9
-original_mana_cost:9
-name:Turtanu
-hp:9
-max_hp:9
-original_hp:9
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Guard Desperate Summon 3 City Gate Guards
-original_description:Guard Desperate Summon 3 City Gate Guards
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Turtanu.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Turtanu16
---------------------------------
-card_id:17
-mana_cost:9
-original_mana_cost:9
-name:Turtanu
-hp:9
-max_hp:9
-original_hp:9
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Guard Desperate Summon 3 City Gate Guards
-original_description:Guard Desperate Summon 3 City Gate Guards
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Turtanu.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Turtanu17
---------------------------------
-card_id:18
-mana_cost:3
-original_mana_cost:3
-name:Prisoner of War
-hp:4
-max_hp:4
-original_hp:4
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:If you discard this summon it
-original_description:If you discard this summon it
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Prisoner of War.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Prisoner_of_War18
---------------------------------
-card_id:19
-mana_cost:3
-original_mana_cost:3
-name:Prisoner of War
-hp:4
-max_hp:4
-original_hp:4
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:If you discard this summon it
-original_description:If you discard this summon it
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Prisoner of War.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Prisoner_of_War19
---------------------------------
-card_id:20
-mana_cost:6
-original_mana_cost:6
-name:Heat of the desert
-card_type:Spell
-description:Deal 5 damage to all characters
-img_url:Heat of the desert.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Heat_of_the_desert20
+name_for_html:Nero20
 --------------------------------
 card_id:21
-mana_cost:6
-original_mana_cost:6
-name:Heat of the desert
-card_type:Spell
-description:Deal 5 damage to all characters
-img_url:Heat of the desert.png
-target:enemy
+mana_cost:4
+original_mana_cost:4
+name:Nero's Guard
+hp:6
+max_hp:6
+original_hp:6
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard +3 attack while damaged
+original_description:Guard +3 attack while damaged
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Nero's Guard.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Heat_of_the_desert21
+name_for_html:Nero's_Guard21
 --------------------------------
 card_id:22
-mana_cost:6
-original_mana_cost:6
-name:Limmu
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:worker
+mana_cost:4
+original_mana_cost:4
+name:Nero's Guard
+hp:6
+max_hp:6
+original_hp:6
+attack:2
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:2
 active_effects:[]
-description:Deal damage equal to the number of card in your hand to all other minions
-original_description:Deal damage equal to the number of card in your hand to all other minions
+description:Guard +3 attack while damaged
+original_description:Guard +3 attack while damaged
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Limmu.png
+img_url:Nero's Guard.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Limmu22
+name_for_html:Nero's_Guard22
 --------------------------------
 card_id:23
-mana_cost:6
-original_mana_cost:6
-name:Limmu
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:worker
+mana_cost:4
+original_mana_cost:4
+name:Full Armored Legionary
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:4
 active_effects:[]
-description:Deal damage equal to the number of card in your hand to all other minions
-original_description:Deal damage equal to the number of card in your hand to all other minions
+description:Guard Deal damage equal to your defences to an enemy minion
+original_description:Guard Deal damage equal to your defences to an enemy minion
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Limmu.png
+img_url:Full Armored Legionary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Limmu23
+name_for_html:Full_Armored_Legionary23
 --------------------------------
 card_id:24
-mana_cost:7
-original_mana_cost:7
-name:Ancient Law Enforcer
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:ancient
+mana_cost:4
+original_mana_cost:4
+name:Full Armored Legionary
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:4
 active_effects:[]
-description:Deal 3 damage to all other characters
-original_description:Deal 3 damage to all other characters
+description:Guard Deal damage equal to your defences to an enemy minion
+original_description:Guard Deal damage equal to your defences to an enemy minion
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Ancient Law Enforcer.png
+img_url:Full Armored Legionary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Ancient_Law_Enforcer24
+name_for_html:Full_Armored_Legionary24
 --------------------------------
 card_id:25
-mana_cost:7
-original_mana_cost:7
-name:Ancient Law Enforcer
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:ancient
+mana_cost:5
+original_mana_cost:5
+name:Heavy Armored Mercenary
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:5
 active_effects:[]
-description:Deal 3 damage to all other characters
-original_description:Deal 3 damage to all other characters
+description:If you are holding a knight get 5 defence
+original_description:If you are holding a knight get 5 defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Ancient Law Enforcer.png
+img_url:Heavy Armored Mercenary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Ancient_Law_Enforcer25
+name_for_html:Heavy_Armored_Mercenary25
 --------------------------------
 card_id:26
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
+mana_cost:5
+original_mana_cost:5
+name:Heavy Armored Mercenary
 hp:5
 max_hp:5
 original_hp:5
-attack:6
+attack:5
 category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:5
 active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
+description:If you are holding a knight get 5 defence
+original_description:If you are holding a knight get 5 defence
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Inspiring knight.png
+img_url:Heavy Armored Mercenary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Inspiring_knight26
+name_for_html:Heavy_Armored_Mercenary26
 --------------------------------
 card_id:27
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
+mana_cost:3
+original_mana_cost:3
+name:City Defender
+hp:4
+max_hp:4
+original_hp:4
+attack:2
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:6
+original_attack:2
 active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
+description:If you kingdom has defences gain +2/+2
+original_description:If you kingdom has defences gain +2/+2
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Inspiring knight.png
+img_url:City Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Inspiring_knight27
+name_for_html:City_Defender27
 --------------------------------
 card_id:28
 mana_cost:3
 original_mana_cost:3
-name:Lost Chicken
-hp:3
-max_hp:3
-original_hp:3
-attack:0
-category:animal
+name:City Defender
+hp:4
+max_hp:4
+original_hp:4
+attack:2
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:0
+original_attack:2
 active_effects:[]
-description:Desperate summon a 5/5 Lynx
-original_description:Desperate summon a 5/5 Lynx
+description:If you kingdom has defences gain +2/+2
+original_description:If you kingdom has defences gain +2/+2
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Chicken.png
+img_url:City Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Chicken28
+name_for_html:City_Defender28
 --------------------------------
 card_id:29
-mana_cost:3
-original_mana_cost:3
-name:Lost Chicken
-hp:3
-max_hp:3
-original_hp:3
-attack:0
-category:animal
+mana_cost:2
+original_mana_cost:2
+name:Frenzied Mercenary
+hp:4
+max_hp:4
+original_hp:4
+attack:2
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:0
+original_attack:2
 active_effects:[]
-description:Desperate summon a 5/5 Lynx
-original_description:Desperate summon a 5/5 Lynx
+description:Has charge and +2 attack while damaged
+original_description:Has charge and +2 attack while damaged
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Chicken.png
+img_url:Frenzied Mercenary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Lost_Chicken29
+name_for_html:Frenzied_Mercenary29
 --------------------------------

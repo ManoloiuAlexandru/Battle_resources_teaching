@@ -225,6 +225,11 @@ def cast_spell(player1, player2, card_picked):
             if card_picked.get(card.name_for_html) is not None:
                 buff_creature_with_spell(card, player1)
                 break
+    if player1.incoming_spell.name in list_of_dmg_spells:
+        for card in player1.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
+                break
     for card in player2.battle_field:
         if dmg_to_enemy_minions == 1:
             card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
@@ -240,6 +245,8 @@ def cast_spell(player1, player2, card_picked):
                 break
             else:
                 card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
+                if player1.incoming_spell.name in list_of_buff_spells:
+                    buff_creature_with_spell(card, player1)
                 player1.check_for_creature_with_effect_on("damage_taken", None)
                 player2.check_for_creature_with_effect_on("damage_taken", None)
                 break

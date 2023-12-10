@@ -376,5 +376,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(4, "Mercenary Defences",
                            "Deal 5 damage to a minion if you are holding a knight gain 5 defences", -209),
                      Spell(2, "Commander Desperation", "Deal 1 damage to ALL minions, if you have 13 or less hp deal 3",
-                           -210)
+                           -210),
+                     Spell(4, "Commander's last charge", "Deal 4 damage if you have less then 12 health deal 6", -211),
+                     Spell(0, "Whip hit", "Deal 1 damage to a minion and give it +2 attack", -212),
+                     Creature(2, "Auxiliar Defender", 3, 2, "If you have a defence gain +1/+1", "mercenary", -213),
+                     Spell(1, "Fall Trap", "Deal 2 damage to a minion gain 2 defence", -214)
                      ]

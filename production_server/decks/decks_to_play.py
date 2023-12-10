@@ -17,11 +17,7 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-    Spell(0, "Fast Auxiliars", "Draw 2 defences from your deck", 0),
-    Creature(0, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary", 1),
-    Creature(0, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight", 2),
-    Spell(0, "Mercenary Defences", "Deal 5 damage to a minion if you are holding a knight gain 5 defences", 4),
-    Spell(0, "Commander Desperation", "Deal 1 damage to ALL minions, if you have 13 or less hp deal 3", 5)
+
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
