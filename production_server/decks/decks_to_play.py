@@ -17,7 +17,9 @@ from decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
-
+    Spell(1, "Vast Empire", "Recruit a mercenary if you have 10 mana keep all 3 cards", 0),
+    Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", 1),
+    Creature(2, "Frightened Girl", 3, 2, "Guard Recruit a guard", "worker", 2)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -135,8 +137,47 @@ list_of_animals = [[Creature(9, "Wild Elephant", 7, 9, "Deal 4 damage", "animal"
                    [Creature(8, "Alpha Wolf", 7, 7, "Desperate summon 7 1/1 Wolf", "animal", -171)],
                    [Creature(3, "Lost Chicken", 3, 0, "Desperate summon a 5/5 Lynx", "animal", -172)],
                    ]
+list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
+                  [Creature(7, 'Teutonic Knight', 6, 5, "Guard Armored", "knight", -4)],
+                  [Creature(2, "Guard Dog", 2, 2, "Guard", "animal", -18)],
+                  [Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", -21)],
+                  [Creature(4, "City Guard", 5, 3, "Guard", "soldier", -24)],
+                  [Creature(3, "Akritoi", 3, 2, "Guard", "soldier", -38)],
+                  [Creature(7, "Cataphract", 6, 6, "Guard Armored", "knight", -39)],
+                  [Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", -42)],
+                  [Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)],
+                  [Creature(8, "Frederick Barbarossa", 6, 6,
+                            "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
+                  [Creature(8, "Basil II", 6, 5, "Armored Charge Guard", "soldier", -76)],
+                  [Creature(5, "Front Line Defender", 6, 3,
+                            "Desperate Summ a 1/2 Second Line Defender with Guard Guard", "soldier", -89)],
+                  [Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104)],
+                  [Creature(2, "Military Guard", 4, 2, "Guard Deal 2 damage to your kingdom", "ancient", -108)],
+                  [Creature(9, "Turtanu", 9, 3, "Guard Desperate Summon 3 City Gate Guards", "ancient", -113)],
+                  [Creature(2, "Armored Peasant", 2, 1, "Armored Guard", "soldier", -123)],
+                  [Creature(9, "Graf", 6, 3,
+                            "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
+                            -125)],
+                  [Creature(10, "Margrave", 6, 4, "Guard Armored Cost 1 less for other each card in your hand",
+                            "knight", -126)],
+                  [Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133)],
+                  [Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137)],
+                  [Creature(7, "Local Bodyguard", 8, 6, "Guard", "worker", -145)],
+                  [Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)],
+                  [Creature(8, "Thief Camp Guard", 8, 8, "Guard Desperate Add 8 defence to your kingdom", "thief",
+                            -174)],
+                  [Creature(2, "Inspiring mercenary", 2, 2, "Guard Desperate give all guards +1/+1", "mercenary",
+                            -178)],
+                  [Creature(2, "Aedile", 7, 0, "Guard", "soldier", -184)],
+                  [Creature(3, "Herbalist Guard", 4, 2, "Guard Restore 3 health", "soldier", -187)],
+                  [Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", -191)],
+                  [Creature(3, "Roman Guard", 4, 3, "Guard", "soldier", -193)],
+                  [Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", -205)],
+
+                  ]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
-                             "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights}
+                             "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
+                             "guards": list_of_guards}
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)

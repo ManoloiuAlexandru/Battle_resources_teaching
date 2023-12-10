@@ -1,3 +1,4 @@
+import copy
 import random
 
 from clases.creatures import *
@@ -37,6 +38,9 @@ class Player:
         self.debt = 0
         self.last_debt = 0
         self.number_of_assaults = 1
+        self.choice_options = []
+        self.hand_copy = []
+        self.has_to_pick = False
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -63,10 +67,15 @@ class Player:
 
     def put_card_on_field(self, card_picked):
         for card in self.hand[:]:
+            if self.has_to_pick is True and card_picked.get(card.name_for_html) is not None:
+                self.add_card_to_hand(card)
+                break
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
                 self.check_for_creature_with_effect_on("summ", card)
-                if card.name in list_of_cards_that_add_cards_to_your_hand:
+                if card.name in list_of_cards_that_add_cards_to_your_hand and len(self.battle_field) < 7:
                     self.add_random_card_to_hand(card)
+                if card.name in list_of_cards_that_discover:
+                    self.discover_a_card(card)
                 if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
                     self.hand_check(card)
                 if card.name in list_of_card_that_pay_debt:
@@ -170,7 +179,12 @@ class Player:
                 self.battle_field.remove(card)
 
     def mana_pay(self, card):
-        self.hand.remove(card)
+        if self.has_to_pick is True:
+            for card_in_hand_copy in self.hand_copy:
+                if card_in_hand_copy.name == card.name:
+                    self.hand_copy.remove(card_in_hand_copy)
+        else:
+            self.hand.remove(card)
         self.mana_increase(-card.mana_cost)
 
     def draw_card(self):
@@ -704,3 +718,32 @@ class Player:
                 self.enemy_player.check_for_creature_with_effect_on("damage_taken", None)
         Player.check_player(self)
         Player.check_player(self.enemy_player)
+
+    def add_card_to_hand(self, creature):
+        if len(self.hand) < 10:
+            self.hand = self.hand_copy
+            self.hand.append(creature)
+            self.hand[-1].id = generate_random_int()
+            self.hand[-1].card_id = str(self.hand[-1].id)
+            if len(self.hand[-1].name.split(" ")) >= 2:
+                self.hand[-1].name_for_html = "_".join(self.hand[-1].name.split()) + self.hand[-1].card_id
+            else:
+                self.hand[-1].name_for_html = self.hand[-1].name + self.hand[-1].card_id
+        self.has_to_pick = False
+        self.hand_copy = []
+        self.choice_options = []
+
+    def discover_a_card(self, card):
+        for i in range(0, 3):
+            self.choice_options.append(
+                random.choice(list_of_creatures_to_pick.get(list_of_cards_that_discover[card.name]))[0])
+
+        if card.name == "Vast Empire" and self.empty_mana == 10:
+            for creature in self.choice_options:
+                if len(self.hand) < 10:
+                    self.hand.append(creature)
+            self.choice_options = []
+        else:
+            self.hand_copy = copy.deepcopy(self.hand)
+            self.hand = self.choice_options
+            self.has_to_pick = True

@@ -212,6 +212,7 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
                                                                        "Ancient Full Armored soldier": 0}
+list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards"}
 """
 Spells
 """
@@ -227,7 +228,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Build defences", "Palisade Wall", "Guard the Fort", "Emperor's Hope", "Emperor's Will",
                   "Pilum Volley", "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Known Territory",
                   "Heat of the desert", "A day in the desert", "Fast Auxiliars", "Mercenary Defences",
-                  "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap"]
+                  "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap", "Vast Empire",
+                  "Crusade Calling"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -252,11 +254,12 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Ancient Tactics", "Tactical Coordination", "Cataclysm", "Trapped path",
                                  "Defending  the empire", "Build defences", "Guard the Fort", "Pilum Volley",
                                  "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Heat of the desert",
-                                 "A day in the desert", "Fast Auxiliars", "Commander Desperation"]
+                                 "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
+                                 "Crusade Calling"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
-                              "Defending  the empire": ("", 0), "Guard the Fort": ("", 0)}
+                              "Defending  the empire": ("", 0), "Guard the Fort": ("", 0), "Crusade Calling": ("", 0)}
 list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, "Ancient Empire": 2,
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
@@ -294,7 +297,9 @@ list_of_spells_that_summon_specific_cards = {
     "Animal Battle Companion": (1, [random.choice(list_of_animals) for i in range(0, 10)]),
     "War Pack": (3, get_list_of_all_war_animals(war_pack)),
     "Call of God": (
-        1, [Creature(8, "Crusader", 8, 8, "Guard Armored", "knight", generate_random_int()) for i in range(0, 10)])}
+        1, [Creature(8, "Crusader", 8, 8, "Guard Armored", "knight", generate_random_int()) for i in range(0, 10)]),
+    "Crusade Calling": (
+        1, [Creature(5, "Crusader", 5, 5, "Guard", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""]),
                                            "Fast Auxiliars": (["Defence", "Defence"], ["", ""])}
 list_of_spells_that_can_heal_player = {"Call of God": 8, "Emperor's Hope": 8}
@@ -306,6 +311,7 @@ list_of_spells_that_add_defences = {
     "Defending  the empire": Defence(1, "Empire Peasants", 1, 4, "", generate_random_int())
     for
     i in range(0, 10)}
+
 """
 Defence
 """

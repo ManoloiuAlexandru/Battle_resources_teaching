@@ -380,5 +380,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(4, "Commander's last charge", "Deal 4 damage if you have less then 12 health deal 6", -211),
                      Spell(0, "Whip hit", "Deal 1 damage to a minion and give it +2 attack", -212),
                      Creature(2, "Auxiliar Defender", 3, 2, "If you have a defence gain +1/+1", "mercenary", -213),
-                     Spell(1, "Fall Trap", "Deal 2 damage to a minion gain 2 defence", -214)
+                     Spell(1, "Fall Trap", "Deal 2 damage to a minion gain 2 defence", -214),
+                     Spell(1, "Vast Empire", "Recruit a mercenary if you have 10 mana keep all 3 cards", -215),
+                     Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216),
+                     Creature(2, "Frightened Girl", 3, 2, "Guard Recruit a guard", "worker", -217)
                      ]

@@ -43,6 +43,7 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159),
                    Creature(2, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker",
                             -167),
+                   Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -86,7 +87,8 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                       [Spell(6, "Emperor's Hope", "Restore 8 health and draw 3 cards", -158)],
                       [Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159)],
                       [Creature(2, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker",
-                                -167)]
+                                -167)],
+                      [Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -129,4 +131,5 @@ cards_for_holy_roman_empire = [
     Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", -159),
     Creature(2, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker",
              -167),
+    Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216),
 ]

@@ -1,3 +1,4 @@
+import copy
 import random
 
 from clases.creatures import *
@@ -592,3 +593,6 @@ def affect_battle_field(card, player, enemy_player):
     if list_of_spells_that_affect_the_battlefield.get(card.name) == "self":
         for creature in player.battle_field:
             buff_creature_with_spell(creature, player)
+
+
+
