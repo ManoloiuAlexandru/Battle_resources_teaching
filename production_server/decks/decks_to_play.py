@@ -15,11 +15,12 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
+    Creature(0, "Demo", 99, 99, "Guard", "all", 10)
 ]
 demo_deck = [
-    Spell(1, "Vast Empire", "Recruit a mercenary if you have 10 mana keep all 3 cards", 0),
-    Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", 1),
-    Creature(2, "Frightened Girl", 3, 2, "Guard Recruit a guard", "worker", 2)
+    Creature(0, "War Crier", 2, 1, "Draw a rush card from your deck", "worker", 0),
+    Creature(0, "Julius Caesar", 6, 7, "Rush Gain 4 defences desperate Lose 4 defences to resummon this", "mercenary",
+             9),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

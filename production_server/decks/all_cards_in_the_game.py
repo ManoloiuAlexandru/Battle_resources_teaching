@@ -383,5 +383,9 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(1, "Fall Trap", "Deal 2 damage to a minion gain 2 defence", -214),
                      Spell(1, "Vast Empire", "Recruit a mercenary if you have 10 mana keep all 3 cards", -215),
                      Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216),
-                     Creature(2, "Frightened Girl", 3, 2, "Guard Recruit a guard", "worker", -217)
+                     Creature(2, "Frightened Girl", 3, 2, "Guard Recruit a guard", "worker", -217),
+                     Creature(1, "War Crier", 2, 1, "Draw a rush card from your deck", "worker", -218),
+                     Creature(7, "Julius Caesar", 6, 7,
+                              "Rush Gain 4 defences desperate Lose 4 defences to resummon this", "mercenary",
+                              -219),
                      ]

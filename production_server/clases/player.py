@@ -380,6 +380,14 @@ class Player:
                     player.deal_damage_to_all_creatures(card.name)
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "buffall":
                 player.buff_all_cards(card)
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "resumm":
+                if card.name == "Julius Caesar":
+                    if player.armor >= 4:
+                        player.battle_field.append(Creature(0, "Julius Caesar", 6, 7,
+                                                            "Rush Gain 4 defences desperate Lose 4 defences to resummon this",
+                                                            "mercenary",
+                                                            7))
+                        player.armor -= 4
 
     def deal_damage_to_all_creatures(self, name):
         for creature in self.battle_field:
