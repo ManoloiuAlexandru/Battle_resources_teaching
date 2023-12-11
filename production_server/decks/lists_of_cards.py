@@ -82,8 +82,9 @@ list_of_creature_that_add_armor_on_action = {"Roman Architect": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
-                                    "Byzantium Engineer": 1, "Tiberius": 3, "War Crier": 1}
+                                    "Byzantium Engineer": 1, "Tiberius": 3, "War Crier": 1, "Godfrey of Bouillon": 3}
 list_of_creature_that_draw_specific_cards = {
+    "Godfrey of Bouillon": (["Creature", "Creature", "Creature"], ["Rush", "Desperate", "Rebuilder"], ["", "", ""]),
     "War Crier": (["Creature"], ["Rush"], [""]),
     "Tiberius": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "mercenary", "knight"]),
     "Byzantium Engineer": (["Defence"], [""], [""]),
@@ -179,7 +180,7 @@ list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient Army Guard"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
-                   "Julius Caesar"]
+                   "Julius Caesar", "Godfrey of Bouillon", "Charles IV"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
 list_of_creature_that_add_defence = {
@@ -191,7 +192,7 @@ list_of_cards_that_give_armor = {"Architecti": 5, "Build defences": 5, "Palisade
 list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
                               "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2,
-                              "Mercenary Builder": 1}
+                              "Mercenary Builder": 1, "Mercenary Leader": 2}
 list_of_card_that_pay_debt = {"Wealthy Nobel"}
 list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
                                              "Mercenary emissary": (1, "debt"),
@@ -219,7 +220,8 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
                                                                        "Ancient Full Armored soldier": 0}
-list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards"}
+list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards",
+                               "Jaffa Merchant": "knights"}
 """
 Spells
 """

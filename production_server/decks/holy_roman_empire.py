@@ -47,6 +47,8 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
                    Creature(8, "Charles V", 5, 7,
                             "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223),
+                   Creature(3, "Charles IV", 3, 3, "Armored Rush Guard", "knight", -229),
+                   Creature(3, "Jaffa Merchant", 3, 3, "Rebuilder recruit a knight", "worker", -227),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -94,7 +96,10 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                       [Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216)],
                       [Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222)],
                       [Creature(8, "Charles V", 5, 7,
-                                "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223)]
+                                "If your deck has not neutral cards gain rush guard armored rebuilder", "knight",
+                                -223)],
+                      [Creature(3, "Charles IV", 3, 3, "Armored Rush Guard", "knight", -229)],
+                      [Creature(3, "Jaffa Merchant", 3, 3, "Rebuilder recruit a knight", "worker", -227)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -141,4 +146,6 @@ cards_for_holy_roman_empire = [
     Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
     Creature(8, "Charles V", 5, 7,
              "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223),
+    Creature(3, "Charles IV", 3, 3, "Armored Rush Guard", "knight", -229),
+    Creature(3, "Jaffa Merchant", 3, 3, "Rebuilder recruit a knight", "worker", -227),
 ]

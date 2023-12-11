@@ -119,6 +119,9 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(5, "Rogue Knight", 4, 3, "Guard Armored", "thief", -175),
                                       Creature(2, "Rogue Cleric", 1, 2, "Give a minion +1/+1", "thief", -176),
                                       Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188),
+                                      Creature(7, "Godfrey of Bouillon", 6, 6,
+                                               "Draw a desperate,a rush and a rebuilder from your deck",
+                                               "knight", -225),
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -393,5 +396,11 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
                      Creature(8, "Charles V", 5, 7,
                               "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223),
-                     Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224)
+                     Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224),
+                     Creature(7, "Godfrey of Bouillon", 6, 6, "Draw a desperate,a rush and a rebuilder from your deck",
+                              "knight", -225),
+                     Creature(6, "Religious Leader", 8, 5, "Rush Rebuilder", "worker", -226),
+                     Creature(3, "Jaffa Merchant", 3, 3, "Rebuilder recruit a knight", "worker", -227),
+                     Creature(8, "Mercenary Leader", 14, 5, "Rebuilder Rush debt(2)", "mercenary", -228),
+                     Creature(3, "Charles IV", 3, 3, "Armored Rush Guard", "knight", -229)
                      ]
