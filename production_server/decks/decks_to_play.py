@@ -15,10 +15,9 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Demo", 99, 99, "Guard", "all", 10)
 ]
 demo_deck = [
-    Creature(0, "Demo", 99, 1, "", "all", 4)
+    Spell(0, "Pilum Volley", "Deal 1 damage to ALL minions", 1),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -382,8 +381,8 @@ roman_legions = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "m
                  Spell(10, "Senatus Populusque Romanus",
                        "Deal 2 damage to ALL minions cost 1 less for each defences you have", 1257),
                  Spell(1, "Known Territory", "Deal 1 damage to a minion for each defence you have", 1258),
-                 Creature(3, "City Defender", 4, 2, "If you kingdom has defences gain +2/+2", "soldier", 1259),
-                 Creature(4, "Nero's Guard", 6, 2, "Guard +3 attack while damaged", "soldier", 1260),
+                 Creature(2, "Frightened Girl", 3, 2, "Guard Recruit a guard", "worker", 1259),
+                 Spell(1, "Execute", "Destroy a damaged minion", 1260),
                  ]
 dict_of_decks = {"best_cards_so_far_deck": best_cards_so_far_deck, "demo_deck": demo_deck, "bot_deck": bot_deck,
                  "power_of_the_people": power_of_the_people, "cards_for_byzantine_empire": cards_for_byzantine_empire,

@@ -65,6 +65,9 @@ Using the ctrl+right click get to the clean_board function from player
 Homework 12:
 In the code there are methods that are not static but they can be static can you find them ?
 
+Homework 13:
+When you play vs the bot and you have less minions on the table then the bot and the bot has a board damaging spell he will not
+cast it why ?
 
 Developers Challenge:
 
@@ -76,7 +79,7 @@ Steps to reproduce the bug:
 - play with the power of the people deck, your opponent can have any deck and click start game
 - hit the button new hand until you get "Bailiff" card
 - hit end turn button until you get to have 3 mana so you can play the card
-- play the card and target an enemy card see that the card is not changing the attack to 1
+- play the card and target an enemy card, see that the card is not changing the attack to 1
 
 2.Second Problem: When you use a spell that damages all minions (it has ALL in description) if the spell does 0 damage the creatures
 they still lose the Armored attribute, why ? How can you fix this ? The problem is in general_spells from game_logics file.
