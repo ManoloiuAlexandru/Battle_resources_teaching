@@ -34,6 +34,7 @@ cards_for_byzantine_empire = [
     Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151),
     Creature(6, "Heavy Arbalest", 5, 6, "Deal 4 damage", "soldier", -186),
     Creature(3, "Herbalist Guard", 4, 2, "Guard Restore 3 health", "soldier", -187),
+    Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224)
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -67,4 +68,5 @@ cards_byzantine_show = [
     Creature(2, "Army Recruiter", 3, 2, "Add a random soldier to your hand", "soldier", -151),
     Creature(6, "Heavy Arbalest", 5, 6, "Deal 4 damage", "soldier", -186),
     Creature(3, "Herbalist Guard", 4, 2, "Guard Restore 3 health", "soldier", -187),
+    Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224)
 ]

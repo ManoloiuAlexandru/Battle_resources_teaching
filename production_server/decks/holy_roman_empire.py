@@ -45,6 +45,8 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             -167),
                    Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216),
                    Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
+                   Creature(8, "Charles V", 5, 7,
+                            "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -90,7 +92,9 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                       [Creature(2, "Church Knight", 2, 2, "If you are holding a knight get armored and guard", "worker",
                                 -167)],
                       [Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216)],
-                      [Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222)]
+                      [Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222)],
+                      [Creature(8, "Charles V", 5, 7,
+                                "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -135,4 +139,6 @@ cards_for_holy_roman_empire = [
              -167),
     Spell(7, "Crusade Calling", "Recruit a knight and summon a 5/5 Crusader with Guard", -216),
     Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
+    Creature(8, "Charles V", 5, 7,
+             "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", -223),
 ]

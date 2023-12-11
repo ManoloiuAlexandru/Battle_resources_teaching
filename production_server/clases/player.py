@@ -8,6 +8,8 @@ from decks.lists_of_cards import *
 
 from decks.decks_to_play import *
 
+from decks.holy_roman_empire import *
+
 
 class Player:
     def __init__(self, name):
@@ -699,6 +701,15 @@ class Player:
         if checking_card[0] == "defence":
             if int(checking_card[1].split(":")[1]) <= self.nr_of_assaults and card.card_type == "Creature":
                 self.buff_card_from_hand(card, card)
+        if checking_card[0] == "deck":
+            if checking_card[1].split(":")[1] == "holy":
+                ok = 1
+                for creature in self.deck:
+                    if not any(creature.name == obj.name for obj in cards_holy_show):
+                        ok = 0
+                if ok == 1:
+                    if checking_card[2] == "buff":
+                        self.buff_card_from_hand(card, card)
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:

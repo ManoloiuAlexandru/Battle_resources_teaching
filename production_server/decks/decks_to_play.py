@@ -15,9 +15,10 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
+    Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
-    Spell(0, "Pilum Volley", "Deal 1 damage to ALL minions", 1),
+    Creature(0, "Charles V", 5, 7, "If your deck has not neutral cards gain rush guard armored rebuilder", "knight", 0)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -87,7 +88,8 @@ list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
                      [Creature(5, "Mercenary elite Defender", 8, 7, "Guard Debt(2)", "soldier", -137)],
                      [Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138)],
                      [Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139)],
-                     [Spell(1, "Pilum Throw", "Deal 3 damage Debt(1)", -83)]]
+                     [Spell(1, "Pilum Throw", "Deal 3 damage Debt(1)", -83)],
+                     [Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224)]]
 list_of_soldier = [[Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)],
                    [Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146)],
                    [Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137)],

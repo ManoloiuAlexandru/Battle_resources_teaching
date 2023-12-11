@@ -65,7 +65,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Inspiring mercenary": (1, 1, ""), "Apollodorus of Damascus": (0, 1, ""),
                               "Harsh Trainer": (0, 2, ""), "Nero": (0, 6, ""), "Nero's Guard": (0, 3, ""),
                               "City Defender": (2, 2, ""), "Ancient Imperial Guard": (3, 3, "Guard"),
-                              "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, "")}
+                              "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, ""),
+                              "Charles V": (0, 0, "Rush Guard Armored Rebuilder")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -177,7 +178,8 @@ list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
 list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient Army Guard"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
-                   "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero"]
+                   "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
+                   "Julius Caesar"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
 list_of_creature_that_add_defence = {
@@ -188,7 +190,8 @@ list_of_cards_that_give_armor = {"Architecti": 5, "Build defences": 5, "Palisade
                                  "Julius Caesar": 4}
 list_of_card_that_add_debt = {"Mercenary Champion": 2, "Mercenary soldier": 1, "Boarder Guards": 1, "Pilum Throw": 1,
                               "Roman Formation Phalanx": 1, "Protokentarchos": 1, "Ancient Empire": 1,
-                              "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2}
+                              "Mercenary elite Defender": 2, "Mercenary Herbalist": 1, "Mercenary's Troops": 2,
+                              "Mercenary Builder": 1}
 list_of_card_that_pay_debt = {"Wealthy Nobel"}
 list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenary"),
                                              "Mercenary emissary": (1, "debt"),
@@ -211,6 +214,7 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
                                          "Auxiliar Defender": ("defence", "check:1", "buff"),
                                          "Commander Desperation": ("health", "check:12", 3),
                                          "Commander's last charge": ("health", "check:12", 6),
+                                         "Charles V": ("deck", "check:holy", "buff")
                                          }
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,

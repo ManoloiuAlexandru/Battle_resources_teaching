@@ -31,6 +31,10 @@ def battle(card1, card2, player1, player2):
                 player1.check_for_creature_with_effect_on("damage_taken", None)
                 card2.hp -= card1.attack
                 player2.check_for_creature_with_effect_on("damage_taken", None)
+            if "Rebuilder" in card1.description.split(" "):
+                player1.heal_player(card1.attack)
+            if "Rebuilder" in card2.description.split(" "):
+                player2.heal_player(card2.attack)
             card1.exhausted = True
             card1.number_of_attacks -= 1
             Player.clean_board(player1, player2)
@@ -123,6 +127,8 @@ def damage_to_player(player, current_card):
     else:
         player.hp = player.hp + player.armor - current_card.attack
         player.armor = 0
+    if "Rebuilder" in current_card.description.split(" "):
+        player.enemy_player.heal_player(current_card.attack)
     current_card.exhausted = True
     current_card = None
     return player, current_card
