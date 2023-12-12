@@ -738,6 +738,11 @@ class Player:
                 if ok == 1:
                     if checking_card[2] == "buff":
                         self.buff_card_from_hand(card, card)
+        if checking_card[0] == "tactic":
+            if int(checking_card[1].split(":")[1]) <= len(self.tactics) and card.card_type == "Creature":
+                if "draw" in checking_card[2].split(":"):
+                    for i in range(int(checking_card[2].split(":")[1])):
+                        self.draw_card()
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:

@@ -18,9 +18,12 @@ bot_deck = [
     Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
+    Creature(0, "Novice Tactician", 3, 2, "If you control a Tactic draw a card", "worker", 3),
     Creature(3, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", 0),
     Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight", "worker", 1),
-    Creature(0, "demo", 1, 1, "", "knight", 2)
+    Creature(0, "demo", 1, 1, "", "knight", 2),
+    Spell(1, "Hidden Armor", "Tactic When one of your minions is attacked give it Armored", 6),
+    Creature(0, "demo", 1, 1, "", "knight", 5),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

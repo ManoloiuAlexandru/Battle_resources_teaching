@@ -223,7 +223,8 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
                                          "Auxiliar Defender": ("defence", "check:1", "buff"),
                                          "Commander Desperation": ("health", "check:12", 3),
                                          "Commander's last charge": ("health", "check:12", 6),
-                                         "Charles V": ("deck", "check:holy", "buff")
+                                         "Charles V": ("deck", "check:holy", "buff"),
+                                         "Novice Tactician": ("tactic", "check:1", "draw:1")
                                          }
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
