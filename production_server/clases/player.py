@@ -43,6 +43,7 @@ class Player:
         self.choice_options = []
         self.hand_copy = []
         self.has_to_pick = False
+        self.tactics = []
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -345,6 +346,7 @@ class Player:
                     enemy_player.battle_field.remove(card)
                     if card.name in list_of_creature_that_do_somthing_when_die:
                         Player.action_when_die(enemy_player, card)
+                    enemy_player.check_for_tactics("friendly_minion_dies", None, None)
         except Exception as e:
             print(e)
 
@@ -779,3 +781,30 @@ class Player:
             self.hand_copy = copy.deepcopy(self.hand)
             self.hand = self.choice_options
             self.has_to_pick = True
+
+    def check_for_tactics(self, action, creature1, creature2):
+        for tactic in self.tactics[:]:
+            if action in list_of_tactics.get(tactic.name).split("=>")[0]:
+                if '>' in list_of_tactics.get(tactic.name).split("=>")[0]:
+                    if creature1.attack >= [int(i) for i in list_of_tactics.get(tactic.name).split("=>")[0] if
+                                            i.isdigit()][0]:
+                        if list_of_tactics.get(tactic.name).split("=>")[1].split(":")[0] == "deal_dmg":
+                            creature1.hp -= int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])
+                if "buff" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                    random_creature = None
+                    if "random" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                        if len(self.battle_field) > 0:
+                            random_creature = random.choice(self.battle_field)
+                    else:
+                        random_creature = creature2
+                    buff = list_of_buff_spells.get(tactic.name)
+                    random_creature.hp += buff[0]
+                    random_creature.max_hp += buff[0]
+                    random_creature.attack += buff[1]
+                    if buff[2] not in random_creature.description:
+                        random_creature.description += "  " + buff[2]
+                    random_creature.check_creature(buff[2])
+                if "debuff" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                    creature1.debuff_creature(list_of_spells_that_debuff.get(tactic.name), self, self.enemy_player)
+            self.logs += "Tactic triggered:" + tactic.name + "\n"
+            self.tactics.remove(tactic)

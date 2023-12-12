@@ -254,8 +254,21 @@
             </div>
         </div>
         <div>
+
             <form action="/battlefield_action" method="post">
+                    {%for tactic in players[1].tactics:%}
+                    <button class="tactic" id={{tactic.card_id}} name={{tactic.name_for_html}}>
+                <span style="display:flex">
+                <img src="static/cards/{{ tactic.img_url }}" class="tactic_image"/><br>
+                </span>
+                        <b><span class="tactic_name">{{tactic.name}}</span></b><br>
+                        <span class="tactic_description">{{tactic.description}}</span><br>
+                    </button>
+                {%endfor%}
                 <button class="player_icon" name="{{players[1].name}}">{{players[1].name}}
+                    {%if players[1].tactics|length>0:%}
+                    Tactics:{{players[1].tactics|length}}*?
+                    {%endif%}
                     {%if players[1].armor>0:%}
                     Defenses:{{players[1].armor}}
                     {%endif%}

@@ -18,7 +18,16 @@ bot_deck = [
     Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
-
+    Spell(1, "Priority Target", "Tactic: When an enemy minions deals more then 3 damage kill it", 0),
+    Spell(1, "Avenge", "Tactic:When a friendly minion dies, give another one +3/+2", 3),
+    Spell(1, "You don't scare me", "Tactic:When a minion attacks sets it's health and attack to 1", 4),
+    Spell(1, "Hidden Armor", "Tactic:When one of your minions is attacked give it Armored", 5),
+    Creature(0, "demo", 1, 0, "Guard", "all", 2),
+    Creature(0, "demo1", 1, 1, "", "all", 6),
+    Creature(0, "demo1", 1, 1, "", "all", 7),
+    Creature(0, "demo1", 1, 1, "", "all", 8),
+    Creature(0, "demo1", 1, 1, "", "all", 9),
+    Creature(0, "demo1", 1, 1, "", "all", 10),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

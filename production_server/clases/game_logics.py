@@ -10,6 +10,7 @@ from decks.lists_of_cards import *
 def battle(card1, card2, player1, player2):
     try:
         if card1.attack > 0:
+            player2.check_for_tactics("attacking", card1, card2)
             player1.logs += card1.name + " is in battle with " + card2.name + "\n"
             if card1.armored is True and card2.armored is True:
                 if card2.attack > 0:
@@ -37,6 +38,7 @@ def battle(card1, card2, player1, player2):
                 player2.heal_player(card2.attack)
             card1.exhausted = True
             card1.number_of_attacks -= 1
+            player2.check_for_tactics("dmg_delt", card1, card2)
             Player.clean_board(player1, player2)
             Player.battle_fields_effects(player1, player2)
     except Exception as e:
@@ -351,6 +353,8 @@ def spell_that_summon(player, enemy_player, spell_name):
 
 
 def general_spells(player, enemy_player, spell_name):
+    if spell_name in list_of_tactics:
+        player.tactics.append(player.incoming_spell)
     if spell_name in list_of_spells_that_add_defences:
         player.active_defence = list_of_spells_that_add_defences.get(spell_name)
         put_item_on(player, enemy_player, None)

@@ -402,5 +402,11 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, "Religious Leader", 8, 5, "Rush Rebuilder", "worker", -226),
                      Creature(3, "Jaffa Merchant", 3, 3, "Rebuilder recruit a knight", "worker", -227),
                      Creature(8, "Mercenary Leader", 14, 5, "Rebuilder Rush debt(2)", "mercenary", -228),
-                     Creature(3, "Charles IV", 3, 3, "Armored Rebuilder Guard", "knight", -229)
+                     Creature(3, "Charles IV", 3, 3, "Armored Rebuilder Guard", "knight", -229),
+                     Spell(1, "Priority Target", "Tactic: When an enemy minions deals more then 3 damage kill it",
+                           -230),
+                     Spell(1, "Avenge", "Tactic:When a friendly minion dies, give another one +3/+2", -231),
+                     Spell(1, "You don't scare me", "Tactic:When a minion attacks sets it's health and attack to 1",
+                           -232),
+                     Spell(1, "Hidden Armor", "Tactic:When one of your minions is attacked give it Armored", -233),
                      ]
