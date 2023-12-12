@@ -1,691 +1,53 @@
 empire:Holy_Roman_Empire
 card_id:0
-mana_cost:8
-original_mana_cost:8
-name:Frederick Barbarossa
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Friendly minions get armored and +1/+1 Armored Guard
-original_description:Friendly minions get armored and +1/+1 Armored Guard
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Frederick Barbarossa.png
-items:[]
-number_of_attacks:1
+mana_cost:10
+original_mana_cost:10
+name:Church Chosen
+card_type:Spell
+description:Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells
+img_url:Church Chosen.png
+target:self
 empire_belonging:
-name_for_html:Frederick_Barbarossa0
+category:
+name_for_html:Church_Chosen0
 --------------------------------
 card_id:1
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Protector.png
-items:[]
-number_of_attacks:1
+mana_cost:10
+original_mana_cost:10
+name:Church Chosen
+card_type:Spell
+description:Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells
+img_url:Church Chosen.png
+target:self
 empire_belonging:
-name_for_html:Faithful_Protector1
+category:
+name_for_html:Church_Chosen1
 --------------------------------
 card_id:2
-mana_cost:1
-original_mana_cost:1
-name:Faithful Protector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Protector.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Protector2
---------------------------------
-card_id:3
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Guard3
---------------------------------
-card_id:4
-mana_cost:3
-original_mana_cost:3
-name:Faithful Guard
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Faithful Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Faithful_Guard4
---------------------------------
-card_id:5
-mana_cost:1
-original_mana_cost:1
-name:Heretic Knight
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Armored deal 2 damage to your kingdom
-original_description:Armored deal 2 damage to your kingdom
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Heretic Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Heretic_Knight5
---------------------------------
-card_id:6
-mana_cost:1
-original_mana_cost:1
-name:Heretic Knight
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Armored deal 2 damage to your kingdom
-original_description:Armored deal 2 damage to your kingdom
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Heretic Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Heretic_Knight6
---------------------------------
-card_id:7
-mana_cost:9
-original_mana_cost:9
-name:Graf
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
-original_description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Graf.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Graf7
---------------------------------
-card_id:8
-mana_cost:9
-original_mana_cost:9
-name:Graf
-hp:6
-max_hp:6
-original_hp:6
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
-original_description:Guard Armored Desperate Summon 3 Armored Peasant with guard and armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Graf.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Graf8
---------------------------------
-card_id:9
-mana_cost:8
-original_mana_cost:8
-name:Charles V
-hp:5
-max_hp:5
-original_hp:5
-attack:7
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:If your deck has not neutral cards gain rush guard armored rebuilder
-original_description:If your deck has not neutral cards gain rush guard armored rebuilder
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Charles V.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Charles_V9
---------------------------------
-card_id:10
-mana_cost:3
-original_mana_cost:3
-name:Bailiff
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Set a minion attack to 1
-original_description:Set a minion attack to 1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Bailiff.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Bailiff10
---------------------------------
-card_id:11
-mana_cost:3
-original_mana_cost:3
-name:Bailiff
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Set a minion attack to 1
-original_description:Set a minion attack to 1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Bailiff.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Bailiff11
---------------------------------
-card_id:12
-mana_cost:1
-original_mana_cost:1
-name:Emperor's Will
-card_type:Spell
-description:Give a minion +1/+2 and Armored if you hold a knight
-img_url:Emperor's Will.png
-target:self
-empire_belonging:
-category:
-name_for_html:Emperor's_Will12
---------------------------------
-card_id:13
-mana_cost:1
-original_mana_cost:1
-name:Emperor's Will
-card_type:Spell
-description:Give a minion +1/+2 and Armored if you hold a knight
-img_url:Emperor's Will.png
-target:self
-empire_belonging:
-category:
-name_for_html:Emperor's_Will13
---------------------------------
-card_id:14
-mana_cost:6
-original_mana_cost:6
-name:Emperor's Hope
-card_type:Spell
-description:Restore 8 health and draw 3 cards
-img_url:Emperor's Hope.png
-target:self
-empire_belonging:
-category:
-name_for_html:Emperor's_Hope14
---------------------------------
-card_id:15
-mana_cost:3
-original_mana_cost:3
-name:Inspired soldier
-hp:5
-max_hp:5
-original_hp:5
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:If you are holding a spell gain armored and guard
-original_description:If you are holding a spell gain armored and guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspired soldier.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Inspired_soldier15
---------------------------------
-card_id:16
-mana_cost:3
-original_mana_cost:3
-name:Inspired soldier
-hp:5
-max_hp:5
-original_hp:5
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:If you are holding a spell gain armored and guard
-original_description:If you are holding a spell gain armored and guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspired soldier.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Inspired_soldier16
---------------------------------
-card_id:18
-mana_cost:10
-original_mana_cost:10
-name:Margrave
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Armored Cost 1 less for other each card in your hand
-original_description:Guard Armored Cost 1 less for other each card in your hand
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Margrave.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Margrave18
---------------------------------
-card_id:19
-mana_cost:10
-original_mana_cost:10
-name:Margrave
-hp:6
-max_hp:6
-original_hp:6
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Armored Cost 1 less for other each card in your hand
-original_description:Guard Armored Cost 1 less for other each card in your hand
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Margrave.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Margrave19
---------------------------------
-card_id:20
-mana_cost:3
-original_mana_cost:3
-name:Jaffa Merchant
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Rebuilder recruit a knight
-original_description:Rebuilder recruit a knight
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Jaffa Merchant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Jaffa_Merchant20
---------------------------------
-card_id:21
-mana_cost:3
-original_mana_cost:3
-name:Jaffa Merchant
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Rebuilder recruit a knight
-original_description:Rebuilder recruit a knight
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Jaffa Merchant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Jaffa_Merchant21
---------------------------------
-card_id:22
-mana_cost:7
-original_mana_cost:7
-name:Empire Crusader
-hp:7
-max_hp:7
-original_hp:7
-attack:7
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Add 5 Holy Roman Empire cards to your hand
-original_description:Add 5 Holy Roman Empire cards to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Empire Crusader.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Empire_Crusader22
---------------------------------
-card_id:23
-mana_cost:7
-original_mana_cost:7
-name:Empire Crusader
-hp:7
-max_hp:7
-original_hp:7
-attack:7
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Add 5 Holy Roman Empire cards to your hand
-original_description:Add 5 Holy Roman Empire cards to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Empire Crusader.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Empire_Crusader23
---------------------------------
-card_id:24
-mana_cost:7
-original_mana_cost:7
-name:Godfrey of Bouillon
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Draw a desperate,a rush and a rebuilder from your deck
-original_description:Draw a desperate,a rush and a rebuilder from your deck
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Godfrey of Bouillon.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Godfrey_of_Bouillon24
---------------------------------
-card_id:25
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Inspiring_knight25
---------------------------------
-card_id:26
-mana_cost:6
-original_mana_cost:6
-name:Inspiring knight
-hp:5
-max_hp:5
-original_hp:5
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Desperate add a random knight to your hand
-original_description:Desperate add a random knight to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Inspiring_knight26
---------------------------------
-card_id:28
-mana_cost:7
-original_mana_cost:7
-name:Heavy Armored Knight
-hp:4
-max_hp:4
-original_hp:4
-attack:7
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:If you're holding a knight deal 7 damage to a minion
-original_description:If you're holding a knight deal 7 damage to a minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Heavy Armored Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Heavy_Armored_Knight28
---------------------------------
-card_id:29
-mana_cost:6
-original_mana_cost:6
-name:Joan of Arc
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Joan of Arc.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Joan_of_Arc29
---------------------------------
-card_id:30
 mana_cost:2
 original_mana_cost:2
-name:Church Knight
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:If you are holding a knight get armored and guard
-original_description:If you are holding a knight get armored and guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Church Knight.png
-items:[]
-number_of_attacks:1
+name:Arbalets Volley
+card_type:Spell
+description:Deal 2 damage to all enemies
+img_url:Arbalets Volley.png
+target:enemy
 empire_belonging:
-name_for_html:Church_Knight30
+category:
+name_for_html:Arbalets_Volley2
 --------------------------------
-card_id:0
+card_id:3
+mana_cost:2
+original_mana_cost:2
+name:Arbalets Volley
+card_type:Spell
+description:Deal 2 damage to all enemies
+img_url:Arbalets Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Arbalets_Volley3
+--------------------------------
+card_id:4
 mana_cost:3
 original_mana_cost:3
 name:Charles IV
@@ -708,5 +70,474 @@ img_url:Charles IV.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Charles_IV0
+name_for_html:Charles_IV4
+--------------------------------
+card_id:5
+mana_cost:8
+original_mana_cost:8
+name:Charlemagne
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Guard Armored Desperate put a 5/3 defence
+original_description:Guard Armored Desperate put a 5/3 defence
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Charlemagne.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Charlemagne5
+--------------------------------
+card_id:7
+mana_cost:7
+original_mana_cost:7
+name:Empire Crusader
+hp:7
+max_hp:7
+original_hp:7
+attack:7
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Add 5 Holy Roman Empire cards to your hand
+original_description:Add 5 Holy Roman Empire cards to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Empire Crusader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Empire_Crusader7
+--------------------------------
+card_id:8
+mana_cost:1
+original_mana_cost:1
+name:Shield of Honor
+card_type:Spell
+description:Give a damaged minion +3 attack and Armored
+img_url:Shield of Honor.png
+target:self
+empire_belonging:
+category:
+name_for_html:Shield_of_Honor8
+--------------------------------
+card_id:9
+mana_cost:1
+original_mana_cost:1
+name:You don't scare me
+card_type:Spell
+description:Tactic:When a minion attacks sets it's health and attack to 1
+img_url:You don't scare me.png
+target:None
+empire_belonging:
+category:
+name_for_html:You_don't_scare_me9
+--------------------------------
+card_id:10
+mana_cost:1
+original_mana_cost:1
+name:Hidden Armor
+card_type:Spell
+description:Tactic:When one of your minions is attacked give it Armored
+img_url:Hidden Armor.png
+target:None
+empire_belonging:
+category:
+name_for_html:Hidden_Armor10
+--------------------------------
+card_id:11
+mana_cost:1
+original_mana_cost:1
+name:You don't scare me
+card_type:Spell
+description:Tactic:When a minion attacks sets it's health and attack to 1
+img_url:You don't scare me.png
+target:None
+empire_belonging:
+category:
+name_for_html:You_don't_scare_me11
+--------------------------------
+card_id:12
+mana_cost:1
+original_mana_cost:1
+name:Hidden Armor
+card_type:Spell
+description:Tactic:When one of your minions is attacked give it Armored
+img_url:Hidden Armor.png
+target:None
+empire_belonging:
+category:
+name_for_html:Hidden_Armor12
+--------------------------------
+card_id:13
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector13
+--------------------------------
+card_id:14
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Protector14
+--------------------------------
+card_id:15
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard15
+--------------------------------
+card_id:16
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Faithful_Guard16
+--------------------------------
+card_id:17
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
+card_type:Spell
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Arbalest_Shot17
+--------------------------------
+card_id:18
+mana_cost:4
+original_mana_cost:4
+name:Arbalest Shot
+card_type:Spell
+description:Deal 3 damage and draw a card
+img_url:Arbalest Shot.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Arbalest_Shot18
+--------------------------------
+card_id:19
+mana_cost:8
+original_mana_cost:8
+name:Bodyguards
+card_type:Spell
+description:Summon  2 Guards from your deck
+img_url:Bodyguards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Bodyguards19
+--------------------------------
+card_id:20
+mana_cost:8
+original_mana_cost:8
+name:Bodyguards
+card_type:Spell
+description:Summon  2 Guards from your deck
+img_url:Bodyguards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Bodyguards20
+--------------------------------
+card_id:21
+mana_cost:1
+original_mana_cost:1
+name:Selfless Knight
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Desperate Give a friendly minion armored
+original_description:Desperate Give a friendly minion armored
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Selfless Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Selfless_Knight21
+--------------------------------
+card_id:22
+mana_cost:1
+original_mana_cost:1
+name:Selfless Knight
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Desperate Give a friendly minion armored
+original_description:Desperate Give a friendly minion armored
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Selfless Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Selfless_Knight22
+--------------------------------
+card_id:23
+mana_cost:1
+original_mana_cost:1
+name:Heretic Knight
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Armored deal 2 damage to your kingdom
+original_description:Armored deal 2 damage to your kingdom
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Heretic Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Heretic_Knight23
+--------------------------------
+card_id:24
+mana_cost:1
+original_mana_cost:1
+name:Heretic Knight
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Armored deal 2 damage to your kingdom
+original_description:Armored deal 2 damage to your kingdom
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Heretic Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Heretic_Knight24
+--------------------------------
+card_id:25
+mana_cost:6
+original_mana_cost:6
+name:Emperor's Hope
+card_type:Spell
+description:Restore 8 health and draw 3 cards
+img_url:Emperor's Hope.png
+target:self
+empire_belonging:
+category:
+name_for_html:Emperor's_Hope25
+--------------------------------
+card_id:26
+mana_cost:6
+original_mana_cost:6
+name:Emperor's Hope
+card_type:Spell
+description:Restore 8 health and draw 3 cards
+img_url:Emperor's Hope.png
+target:self
+empire_belonging:
+category:
+name_for_html:Emperor's_Hope26
+--------------------------------
+card_id:27
+mana_cost:3
+original_mana_cost:3
+name:Bailiff
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Set a minion attack to 1
+original_description:Set a minion attack to 1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Bailiff.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Bailiff27
+--------------------------------
+card_id:28
+mana_cost:3
+original_mana_cost:3
+name:Bailiff
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Set a minion attack to 1
+original_description:Set a minion attack to 1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Bailiff.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Bailiff28
+--------------------------------
+card_id:31
+mana_cost:7
+original_mana_cost:7
+name:Crusade Calling
+card_type:Spell
+description:Recruit a knight and summon a 5/5 Crusader with Guard
+img_url:Crusade Calling.png
+target:None
+empire_belonging:
+category:
+name_for_html:Crusade_Calling31
+--------------------------------
+card_id:32
+mana_cost:12
+original_mana_cost:12
+name:Siege Tower
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+description:Cost 1 less for each spell you casted this game
+original_description:Cost 1 less for each spell you casted this game
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Siege Tower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Siege_Tower32
 --------------------------------
