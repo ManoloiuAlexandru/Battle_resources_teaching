@@ -18,10 +18,9 @@ bot_deck = [
     Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
-    Creature(8, "Charlemagne", 8, 8, "Guard Armored Desperate put a 5/3 defence", "knight", 0),
-    Spell(2, "Arbalets Volley", "Deal 2 damage to all enemies", 4),
-    Creature(12, "Siege Tower", 8, 8, "Cost 1 less for each spell you casted this game", "machine", 2),
-    Spell(10, "Church Chosen", "Give a minion +5/+5 and Armored for each mana spent on spells", 3)
+    Creature(3, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", 0),
+    Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight", "worker", 1),
+    Creature(0, "demo", 1, 1, "", "knight", 2)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

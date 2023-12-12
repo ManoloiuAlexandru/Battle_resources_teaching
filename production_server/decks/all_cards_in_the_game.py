@@ -125,6 +125,8 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(12, "Siege Tower", 8, 8,
                                                "Cost 1 less for each spell you casted this game", "machine",
                                                -236),
+                                      Creature(3, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker",
+                                               -238),
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -417,5 +419,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(12, "Siege Tower", 8, 8, "Cost 1 less for each spell you casted this game", "machine",
                               -236),
                      Spell(10, "Church Chosen",
-                           "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237)
+                           "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237),
+                     Creature(3, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", -238),
                      ]

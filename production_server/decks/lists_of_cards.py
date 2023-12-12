@@ -82,8 +82,10 @@ list_of_creature_that_add_armor_on_action = {"Roman Architect": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
-                                    "Byzantium Engineer": 1, "Tiberius": 3, "War Crier": 1, "Godfrey of Bouillon": 3}
+                                    "Byzantium Engineer": 1, "Tiberius": 3, "War Crier": 1, "Godfrey of Bouillon": 3,
+                                    "Battle Tactician": 1}
 list_of_creature_that_draw_specific_cards = {
+    "Battle Tactician": (["Spell"], ["Tactic"], [""]),
     "Godfrey of Bouillon": (["Creature", "Creature", "Creature"], ["Rush", "Desperate", "Rebuilder"], ["", "", ""]),
     "War Crier": (["Creature"], ["Rush"], [""]),
     "Tiberius": (["Creature", "Creature", "Creature"], ["", "", ""], ["worker", "mercenary", "knight"]),
@@ -228,6 +230,7 @@ list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient 
                                                                        "Ancient Full Armored soldier": 0}
 list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards",
                                "Jaffa Merchant": "knights"}
+list_of_creature_that_plays_a_card_from_your_deck = {"Battle Tactician"}
 """
 Spells
 """

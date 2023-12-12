@@ -75,6 +75,8 @@ class Player:
                 self.add_card_to_hand(card)
                 break
             if card_picked.get(card.name_for_html) is not None and card.mana_cost <= self.mana:
+                if any(card.name == tactic.name for tactic in self.tactics):
+                    break
                 self.check_for_creature_with_effect_on("summ", card)
                 if card.name in list_of_cards_that_add_cards_to_your_hand and len(self.battle_field) < 7:
                     self.add_random_card_to_hand(card)
@@ -116,16 +118,22 @@ class Player:
                     self.put_item_on(self.enemy_player, card)
                 elif card.name in list_of_creature_that_draw_cards and len(self.battle_field) < 7:
                     for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
+                        got_card = 0
                         if card.name in list_of_creature_that_draw_specific_cards:
                             try:
                                 random_card = self.get_random_card(card, nr_cards)
                                 if random_card is not None:
                                     self.hand.append(random_card)
                                     self.deck.remove(random_card)
+                                    got_card = 1
                             except Exception as e:
                                 print(e)
                         else:
                             self.draw_card()
+                            got_card = 1
+                        if card.name in list_of_creature_that_plays_a_card_from_your_deck:
+                            self.play_drawn_card(got_card,
+                                                 list_of_creature_that_draw_specific_cards.get(card.name))
                 elif card.name in list_of_creature_that_add_mana and len(self.battle_field) < 7:
                     self.mana_increase(list_of_creature_that_add_mana.get(card.name))
                     if self.empty_mana + list_of_creature_that_add_mana.get(card.name) > 10:
@@ -827,3 +835,11 @@ class Player:
 
             self.logs += "Tactic triggered:" + tactic.name + "\n"
             self.tactics.remove(tactic)
+
+    def play_drawn_card(self, got_card, what_cards_to_play):
+        if got_card == 1:
+            if what_cards_to_play[1][0] in self.hand[-1].description.split() and what_cards_to_play[0][0] == self.hand[
+                -1].card_type and what_cards_to_play[2][0] == self.hand[-1].category:
+                if what_cards_to_play[1][0] == "Tactic":
+                    self.tactics.append(self.hand[-1])
+                    self.hand.pop(-1)
