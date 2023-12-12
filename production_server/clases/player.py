@@ -808,7 +808,9 @@ class Player:
                                             i.isdigit()][0]:
                         if list_of_tactics.get(tactic.name).split("=>")[1].split(":")[0] == "deal_dmg":
                             creature1.hp -= int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])
-                if "buff" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                elif "debuff" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                    creature1.debuff_creature(list_of_spells_that_debuff.get(tactic.name), self, self.enemy_player)
+                elif "buff" in list_of_tactics.get(tactic.name).split("=>")[1]:
                     random_creature = None
                     if "random" in list_of_tactics.get(tactic.name).split("=>")[1]:
                         if len(self.battle_field) > 0:
@@ -822,7 +824,6 @@ class Player:
                     if buff[2] not in random_creature.description:
                         random_creature.description += "  " + buff[2]
                     random_creature.check_creature(buff[2])
-                if "debuff" in list_of_tactics.get(tactic.name).split("=>")[1]:
-                    creature1.debuff_creature(list_of_spells_that_debuff.get(tactic.name), self, self.enemy_player)
+
             self.logs += "Tactic triggered:" + tactic.name + "\n"
             self.tactics.remove(tactic)
