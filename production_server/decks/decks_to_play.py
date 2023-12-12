@@ -65,7 +65,7 @@ list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you 
                    [Creature(4, "Herbalist Knight", 3, 2, "Armored Restore 3 health", "knight", -188)],
                    [Creature(5, "Heavy Armored Mercenary", 5, 5, "If you are holding a knight get 5 defence", "knight",
                              -208)],
-                   [Creature(3, "Charles IV", 3, 3, "Armored Rush Guard", "knight", -229)],
+                   [Creature(3, "Charles IV", 3, 3, "Armored Rebuilder Guard", "knight", -229)],
                    [Creature(7, "Godfrey of Bouillon", 6, 6, "Draw a desperate,a rush and a rebuilder from your deck",
                              "knight", -225)]
                    ]
