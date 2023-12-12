@@ -155,7 +155,9 @@ list_of_creature_that_do_damage_to_all = {}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1),
-                                              "Senatus Populusque Romanus": ("reduce", "armor", 1)}
+                                              "Senatus Populusque Romanus": ("reduce", "armor", 1),
+                                              "Siege Tower": ("reduce", "spells_casted", 1),
+                                              "Church Chosen": ("reduce", "amount_of_mana_on_spells")}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "summ",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
@@ -166,7 +168,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Lost Chicken": "summ", "Lost Builder": "add_armor",
                                               "Thief Camp Guard": "add_armor",
                                               "Inspiring mercenary": "buffall",
-                                              "Julius Caesar": "resumm"}
+                                              "Julius Caesar": "resumm",
+                                              "Charlemagne": "put_wepon"}
 list_of_creature_that_do_damage_when_die = {}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
 list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
@@ -186,6 +189,9 @@ list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": 
 list_of_creature_that_add_defence = {
     "Rusticus Recruiter": [Defence(1, "Peasant Troops", 1, 3, "", generate_random_int()) for i in range(0, 10)],
     "Mercenary defender": [Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)]}
+list_of_creature_that_add_defence_when_die = {
+    "Charlemagne": [Defence(5, "Peasant Troops", 5, 3, "", generate_random_int()) for i in range(0, 10)]
+}
 list_of_cards_that_give_armor = {"Architecti": 5, "Build defences": 5, "Palisade Wall": 3, "Guard the Fort": 3,
                                  "Heavy Armored Mercenary": 0, "Mercenary Defences": 0, "Fall Trap": 2,
                                  "Julius Caesar": 4}
@@ -239,11 +245,11 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Heat of the desert", "A day in the desert", "Fast Auxiliars", "Mercenary Defences",
                   "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap", "Vast Empire",
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
-                  "You don't scare me", "Hidden Armor"]
+                  "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
-                       "Whip hit": "", "Fall Trap": "", "Shield of Honor": ""}
+                       "Whip hit": "", "Fall Trap": "", "Shield of Honor": "", "Church Chosen": ""}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emperor's Hope": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
@@ -251,7 +257,8 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Cataclysm": 99, "Palisade Wall": 3, "Pilum Volley": 1, "Unknown Territory": 0,
                       "Senatus Populusque Romanus": 2, "Known Territory": 0, "Heat of the desert": 5,
                       "A day in the desert": 3, "Mercenary Defences": 5, "Commander Desperation": 1,
-                      "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99}
+                      "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99,
+                      "Arbalets Volley": 2}
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
@@ -266,7 +273,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Heat of the desert",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
-                                 "Hidden Armor"]
+                                 "Hidden Armor", "Arbalets Volley"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -285,7 +292,7 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Roman Formation Phalanx": (1, 1, ""), "Strength in numbers": (3, 2, ""),
                        "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, ""), "Emperor's Will": (2, 1, ""),
                        "Whip hit": (0, 2, ""), "Shield of Honor": (0, 3, "Armored"), "Avenge": (2, 3, ""),
-                       "Hidden Armor": (0, 0, "Armored")}
+                       "Hidden Armor": (0, 0, "Armored"), "Church Chosen": (5, 5, "Armored")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
 list_of_spells_that_buff_conditional = {"Emperor's Will": ("hand:knight", (3, 2, "Armored"))}

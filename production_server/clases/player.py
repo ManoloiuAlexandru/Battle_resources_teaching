@@ -44,6 +44,7 @@ class Player:
         self.hand_copy = []
         self.has_to_pick = False
         self.tactics = []
+        self.dict_of_actions = {"Spells_casted": []}
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -392,6 +393,10 @@ class Player:
                                                             "mercenary",
                                                             7))
                         player.armor -= 4
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "put_wepon":
+                player.active_defence = list_of_creature_that_add_defence_when_die.get(card.name)[0]
+                player.number_of_troops = player.active_defence.number_of_troops
+                player.nr_of_assaults = player.active_defence.nr_of_assaults
 
     def deal_damage_to_all_creatures(self, name):
         for creature in self.battle_field:
@@ -510,6 +515,19 @@ class Player:
         elif condition == "armor":
             if self.hand[self.hand.index(creature)].mana_cost >= self.armor:
                 self.hand[self.hand.index(creature)].mana_cost -= self.armor
+            else:
+                self.hand[self.hand.index(creature)].mana_cost = 0
+        elif condition == "spells_casted":
+            if self.hand[self.hand.index(creature)].mana_cost >= len(self.dict_of_actions["Spells_casted"]):
+                self.hand[self.hand.index(creature)].mana_cost -= len(self.dict_of_actions["Spells_casted"])
+            else:
+                self.hand[self.hand.index(creature)].mana_cost = 0
+        elif condition == "amount_of_mana_on_spells":
+            amount = 0
+            for spell in self.dict_of_actions["Spells_casted"]:
+                amount += spell.mana_cost
+            if self.hand[self.hand.index(creature)].mana_cost >= amount:
+                self.hand[self.hand.index(creature)].mana_cost -= amount
             else:
                 self.hand[self.hand.index(creature)].mana_cost = 0
         else:

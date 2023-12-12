@@ -18,16 +18,10 @@ bot_deck = [
     Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
-    Spell(1, "Priority Target", "Tactic: When an enemy minions deals more then 3 damage kill it", 0),
-    Spell(1, "Avenge", "Tactic:When a friendly minion dies, give another one +3/+2", 3),
-    Spell(1, "You don't scare me", "Tactic:When a minion attacks sets it's health and attack to 1", 4),
-    Spell(1, "Hidden Armor", "Tactic:When one of your minions is attacked give it Armored", 5),
-    Creature(0, "demo", 1, 0, "Guard", "all", 2),
-    Creature(0, "demo1", 1, 1, "", "all", 6),
-    Creature(0, "demo1", 1, 1, "", "all", 7),
-    Creature(0, "demo1", 1, 1, "", "all", 8),
-    Creature(0, "demo1", 1, 1, "", "all", 9),
-    Creature(0, "demo1", 1, 1, "", "all", 10),
+    Creature(8, "Charlemagne", 8, 8, "Guard Armored Desperate put a 5/3 defence", "knight", 0),
+    Spell(2, "Arbalets Volley", "Deal 2 damage to all enemies", 4),
+    Creature(12, "Siege Tower", 8, 8, "Cost 1 less for each spell you casted this game", "machine", 2),
+    Spell(10, "Church Chosen", "Give a minion +5/+5 and Armored for each mana spent on spells", 3)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
@@ -109,7 +103,7 @@ list_of_soldier = [[Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)
                    [Creature(2, "Mercenary soldier", 4, 3, "Debt(1)", "soldier", -136)],
                    [Creature(4, "Mercenary Champion", 7, 7, "Debt(2)", "soldier", -135)],
                    [Creature(3, "Bailiff", 3, 3, "Set a minion attack to 1", "soldier", -129)],
-                   [Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", -128)],
+                   [Creature(3, "Voice of the emperor", 3, 3, "Set a minion attack and health to 3", "soldier", -128)],
                    [Creature(9, "Graf", 6, 3,
                              "Guard Armored Desperate Summon 3 Armored Peasant with guard and armored", "soldier",
                              -125)],
@@ -204,7 +198,7 @@ power_of_the_people = [Creature(8, "Frederick Barbarossa", 6, 6,
                        Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 913),
                        Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 914),
                        Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", 915),
-                       Creature(3, "Voice of the emperor", 4, 3, "Set a minion attack and health to 3", "soldier", 916),
+                       Creature(3, "Voice of the emperor", 3, 3, "Set a minion attack and health to 3", "soldier", 916),
                        Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", 917),
                        Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", 918),
                        Creature(2, "Armored Horse", 1, 2, "Armored Desperate Draw a Spell", "animal", 919),

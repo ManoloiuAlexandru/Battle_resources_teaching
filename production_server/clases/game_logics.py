@@ -217,7 +217,6 @@ def check_target(player1, player2, card_picked):
 
 def cast_spell(player1, player2, card_picked):
     destroy_minion = 0
-    dmg_to_enemy_minions = 0
     if player1.incoming_spell.name in list_of_spells_that_summon:
         spell_that_summon(player1, player2, player1.incoming_spell.name)
     if player1.incoming_spell.name in list_of_spells_that_draw_cards:
@@ -227,8 +226,6 @@ def cast_spell(player1, player2, card_picked):
         heal_creature(card_picked, player1, list_of_healing_spells.get(player1.incoming_spell.name))
     if player1.incoming_spell.name == "Kill":
         destroy_minion = 1
-    if player1.incoming_spell.name == "Volley":
-        dmg_to_enemy_minions = 1
     if player1.incoming_spell.name in list_of_self_target:
         for card in player1.battle_field:
             if card_picked.get(card.name_for_html) is not None:
@@ -254,10 +251,7 @@ def cast_spell(player1, player2, card_picked):
                     card.hp -= list_of_dmg_spells[player1.incoming_spell.name]
                 break
     for card in player2.battle_field:
-        if dmg_to_enemy_minions == 1:
-            card.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
-            player2.check_for_creature_with_effect_on("damage_taken", None)
-        elif card_picked.get(
+        if card_picked.get(
                 card.name_for_html) is not None and player1.incoming_spell.name in list_of_spells_that_debuff:
             card.debuff_creature(list_of_spells_that_debuff.get(player1.incoming_spell.name), player1, player2)
             Player.clean_board(player1, player2)
@@ -510,12 +504,14 @@ def buff_creature(card_picked, player1):
 def cast_spell_from_player(player1, player2, card_picked):
     if player1.incoming_spell.name in list_of_spells_with_no_target:
         general_spells(player1, player2, player1.incoming_spell.name)
+        player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
         player1.incoming_action = 0
         player1.incoming_spell = None
     elif card_picked.get(
             player2.name) is not None and player1.incoming_spell.name not in list_of_dmg_spells_but_not_to_player:
         player2.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
         cast_spell(player1, player2, card_picked)
+        player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
         player1.incoming_action = 0
         player1.incoming_spell = None
     elif check_target(player1, player2, card_picked) == 0:
@@ -523,6 +519,7 @@ def cast_spell_from_player(player1, player2, card_picked):
     else:
         cast_spell(player1, player2, card_picked)
         Player.battle_fields_effects(player1, player2)
+        player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
         player1.incoming_action = 0
         player1.incoming_spell = None
     Player.clean_board(player1, player2)
