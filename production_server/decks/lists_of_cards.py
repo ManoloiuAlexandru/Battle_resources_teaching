@@ -100,6 +100,7 @@ list_of_creature_that_draw_specific_cards = {
         ["Creature", "Spell"], ["", ""], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
+    "Snow Leopard": [0, [Creature(2, "Leopard", 2, 2, "", "animal", generate_random_int()) for i in range(0, 10)]],
     "Shepherd": (1, [Creature(1, "Guard Dog", 1, 1, "Guard", "animal", generate_random_int()) for i in range(0, 4)]),
     "Domestic cat": (1, [Creature(1, "Wild Cat", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
@@ -124,6 +125,7 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Ancient Full Armored soldier": ("hand_check:knight", "change:dmg", 3),
                                               "Heavy Armored Mercenary": ("hand_check:knight", "change:armor:gain", 5),
                                               "Mercenary Defences": ("hand_check:knight", "change:armor:gain", 5),
+                                              "Knight Recruiter": ("hand_check:knight", "change:discover", "knights")
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Chicken": (
@@ -207,7 +209,8 @@ list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenar
                                              "Army Recruiter": (1, "soldier"),
                                              "Army Cook": (2, ""),
                                              "Empire Crusader": (5, "holy_roman"),
-                                             "Recruiting": (2, "knights")
+                                             "Recruiting": (2, "knights"),
+                                             "Friendly Dog": (1, "animal")
                                              }
 list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal"),
                                                          "Inspiring knight": (1, "knights")}
@@ -224,13 +227,14 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
                                          "Commander Desperation": ("health", "check:12", 3),
                                          "Commander's last charge": ("health", "check:12", 6),
                                          "Charles V": ("deck", "check:holy", "buff"),
-                                         "Novice Tactician": ("tactic", "check:1", "draw:1")
+                                         "Novice Tactician": ("tactic", "check:1", "draw:1"),
+                                         "Snow Leopard": ("tactic", "check:1", "summ:2")
                                          }
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
                                                                        "Ancient Full Armored soldier": 0}
 list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards",
-                               "Jaffa Merchant": "knights"}
+                               "Jaffa Merchant": "knights", "Knight Recruiter": ""}
 list_of_creature_that_plays_a_card_from_your_deck = {"Battle Tactician"}
 """
 Spells

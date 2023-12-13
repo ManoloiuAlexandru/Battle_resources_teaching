@@ -78,12 +78,12 @@ class Player:
                 if any(card.name == tactic.name for tactic in self.tactics):
                     break
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
+                    self.hand_check(card)
                 if card.name in list_of_cards_that_add_cards_to_your_hand and len(self.battle_field) < 7:
                     self.add_random_card_to_hand(card)
                 if card.name in list_of_cards_that_discover:
                     self.discover_a_card(card)
-                if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
-                    self.hand_check(card)
                 if card.name in list_of_card_that_pay_debt:
                     if self.last_debt > self.mana:
                         self.mana = self.empty_mana
@@ -440,12 +440,14 @@ class Player:
                     if incoming_card[1].split(":")[1] == "all":
                         if incoming_card[1].split(":")[2] == "dmg":
                             list_of_creature_that_do_damage_to_all_other_creatures[card.name] = len(self.hand) - 1
+            ok = 0
             for card_in_hand in self.hand:
                 if card_in_hand != card:
                     if card_in_hand.card_type == incoming_card[0].split(":")[1] or card_in_hand.category == \
                             incoming_card[0].split(":")[1]:
                         if incoming_card[1] == "buff":
                             self.buff_card_from_hand(card, card)
+                            ok = 1
                             break
                         if incoming_card[1].split(":")[0] == "change":
                             if incoming_card[1].split(":")[1] == "dmg":
@@ -453,13 +455,37 @@ class Player:
                                         card.name) is not None:
                                     list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms[card.name] = \
                                         incoming_card[2]
+                                    ok = 1
+                                    break
                                 list_of_creature_that_deal_dmg_to_enemies[card.name] = incoming_card[2]
                                 if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
                                     list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
-                                break
+                                    ok = 1
+                                    break
                             if incoming_card[1].split(":")[1] == "armor":
                                 if incoming_card[1].split(":")[2] == "gain":
                                     list_of_cards_that_give_armor[card.name] = incoming_card[2]
+                                    ok = 1
+                                    break
+                            if incoming_card[1].split(":")[1] == "draw":
+                                list_of_creature_that_draw_cards[card.name] = incoming_card[2]
+                                ok = 1
+                                break
+                            if incoming_card[1].split(":")[1] == "discover":
+                                list_of_cards_that_discover[card.name] = incoming_card[2]
+                                ok = 1
+                                break
+            if ok == 0:
+                if card.name in list_of_creature_that_draw_cards:
+                    list_of_creature_that_draw_cards[card.name] = 0
+                if card.name in list_of_cards_that_discover:
+                    list_of_cards_that_discover[card.name] = ""
+                if card.name in list_of_cards_that_give_armor:
+                    list_of_cards_that_give_armor[card.name] = 0
+                if card.name in list_of_creature_that_deal_dmg_to_players:
+                    list_of_creature_that_deal_dmg_to_players[card.name] = 0
+                if card.name in list_of_creature_that_deal_dmg_to_enemies:
+                    list_of_creature_that_deal_dmg_to_enemies[card.name] = 0
 
     def buff_all_cards(self, card):
         for creature in self.hand:
@@ -743,6 +769,10 @@ class Player:
                 if "draw" in checking_card[2].split(":"):
                     for i in range(int(checking_card[2].split(":")[1])):
                         self.draw_card()
+                if "summ" in checking_card[2].split(":"):
+                    list_of_creature_that_summon[card.name][0] = int(checking_card[2].split(":")[1])
+            else:
+                list_of_creature_that_summon[card.name][0] = 0
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:
@@ -799,19 +829,20 @@ class Player:
         self.choice_options = []
 
     def discover_a_card(self, card):
-        for i in range(0, 3):
-            self.choice_options.append(
-                random.choice(list_of_creatures_to_pick.get(list_of_cards_that_discover[card.name]))[0])
+        if list_of_cards_that_discover[card.name] != "":
+            for i in range(0, 3):
+                self.choice_options.append(
+                    random.choice(list_of_creatures_to_pick.get(list_of_cards_that_discover[card.name]))[0])
 
-        if card.name == "Vast Empire" and self.empty_mana == 10:
-            for creature in self.choice_options:
-                if len(self.hand) < 10:
-                    self.hand.append(creature)
-            self.choice_options = []
-        else:
-            self.hand_copy = copy.deepcopy(self.hand)
-            self.hand = self.choice_options
-            self.has_to_pick = True
+            if card.name == "Vast Empire" and self.empty_mana == 10:
+                for creature in self.choice_options:
+                    if len(self.hand) < 10:
+                        self.hand.append(creature)
+                self.choice_options = []
+            else:
+                self.hand_copy = copy.deepcopy(self.hand)
+                self.hand = self.choice_options
+                self.has_to_pick = True
 
     def check_for_tactics(self, action, creature1, creature2):
         for tactic in self.tactics[:]:

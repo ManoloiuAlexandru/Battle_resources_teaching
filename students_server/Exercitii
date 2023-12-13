@@ -101,3 +101,13 @@ I hate myself option you will always play i hate myself. Why ? How to fix this ?
 5.Fifth Problem:Card Charles V (holy roman empire) has a checker that looks if your deck (AT THE TIME YOU ARE PLAYING THE CARD)
 has cards only from the holy_roman_empire but no matter if you make your deck with full roman empire cards or with a full no roman
 empire cards he will not trigger his ability to gain Rush Guard etc. why ? The problem is in player file at check_kingdom method.
+
+6.When using a card that checks your hand for example  "Knight Recruiter" it will check if you have a knight in your hand but if you have a knight
+in your hand and recruit it, the second time you use the  "Knight Recruiter" it will still let you recruit a knight, aldo you
+don't hold a knight in your hand. Why ? How to fix this ?
+Steps to reproduce:
+- make a personal deck and put  "Knight Recruiter"X2 and a knight, any knight will do
+- set the game to easy
+- play the  "Knight Recruiter" while holding a knight
+- recruit the knight you have then play the rest of the knight
+- when you play  "Knight Recruiter" again it will let you recruit aldo your hand has no knight
