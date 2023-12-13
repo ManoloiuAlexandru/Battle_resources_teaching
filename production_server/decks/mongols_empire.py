@@ -24,6 +24,12 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(4, "Tag Team", "Dela 3 damage to a minion summ a 3/3 Hunting dog", -99),
                     Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130),
                     Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal", -152),
+                    Creature(1, "Friendly Dog", 2, 1, "Add a random animal yo your hand", "animal", -241),
+                    Creature(4, "Snow Leopard", 3, 3, "If you control a tactic summon 2 2/2 Leopard", "animal", -242),
+                    Creature(1, "Dog Pup", 1, 2, "Desperate Add a 4/5 Big Dog to your deck", "animal", -243),
+                    Creature(2, "Scavenger Hyena", 2, 2, "When a friendly animal dies gain +2/+1", "animal", -244),
+                    Spell(2, "Wild Bear", "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
+                          -245)
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -49,6 +55,15 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Creature(3, "Big Game Beast", 3, 3, "Desperate draw an animal", "animal", -130),
                            Creature(1, "Lure animal", 1, 1, "Desperate add a random animal to your hand", "animal",
                                     -152),
+                           Creature(1, "Friendly Dog", 2, 1, "Add a random animal yo your hand", "animal", -241),
+                           Creature(4, "Snow Leopard", 3, 3, "If you control a tactic summon 2 2/2 Leopard", "animal",
+                                    -242),
+                           Creature(1, "Dog Pup", 1, 2, "Desperate Add a 4/5 Big Dog to your deck", "animal", -243),
+                           Creature(2, "Scavenger Hyena", 2, 2, "When a friendly animal dies gain +2/+1", "animal",
+                                    -244),
+                           Spell(2, "Wild Bear",
+                                 "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
+                                 -245)
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
                            "While this is on the field your creatures have +1 attack", "animal", 1900),

@@ -131,6 +131,7 @@ def damage_to_player(player, current_card):
         player.armor = 0
     if "Rebuilder" in current_card.description.split(" "):
         player.enemy_player.heal_player(current_card.attack)
+    player.check_for_tactics("attacking",current_card,None)
     current_card.exhausted = True
     current_card = None
     return player, current_card

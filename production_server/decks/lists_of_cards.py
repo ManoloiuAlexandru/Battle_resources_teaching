@@ -257,7 +257,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Heat of the desert", "A day in the desert", "Fast Auxiliars", "Mercenary Defences",
                   "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap", "Vast Empire",
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
-                  "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen"]
+                  "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -285,7 +285,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Heat of the desert",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
-                                 "Hidden Armor", "Arbalets Volley"]
+                                 "Hidden Armor", "Arbalets Volley", "Wild Bear"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -314,6 +314,8 @@ list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self"
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "Strength in numbers": ("", "draw")}
 list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
 list_of_spells_that_summon_specific_cards = {
+    "Wild Bear": [
+        0, [Creature(3, "War Bear", 3, 3, "Guard", "animal", generate_random_int()) for i in range(0, 50)]],
     "Guard the Fort": (
         1, [Creature(2, "Fort Guard", 3, 2, "Guard", "soldier", generate_random_int()) for i in range(0, 50)]),
     "Defending  the empire": (
@@ -347,7 +349,8 @@ list_of_spells_that_do_something_conditional = {"Execute": "damaged", "Shield of
 list_of_tactics = {"Priority Target": "dmg_delt>3=>deal_dmg:99",
                    "Avenge": "friendly_minion_dies=>buff:random",
                    "You don't scare me": "attacking=>debuff",
-                   "Hidden Armor": "attacking=>buff:target"}
+                   "Hidden Armor": "attacking=>buff:target",
+                   "Wild Bear": "attacking:kingdom=>summon:1"}
 """
 Defence
 """

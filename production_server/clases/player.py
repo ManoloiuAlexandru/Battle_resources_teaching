@@ -881,7 +881,11 @@ class Player:
                     if buff[2] not in random_creature.description:
                         random_creature.description += "  " + buff[2]
                     random_creature.check_creature(buff[2])
-
+                elif "summ" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                    if len(self.battle_field) < 7:
+                        for i in range(int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])):
+                            self.battle_field.append(list_of_spells_that_summon_specific_cards.get(tactic.name)[1][0])
+                            list_of_spells_that_summon_specific_cards.get(tactic.name)[1].pop(0)
             self.logs += "Tactic triggered:" + tactic.name + "\n"
             self.tactics.remove(tactic)
 
