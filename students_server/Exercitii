@@ -111,3 +111,6 @@ Steps to reproduce:
 - play the  "Knight Recruiter" while holding a knight
 - recruit the knight you have then play the rest of the knight
 - when you play  "Knight Recruiter" again it will let you recruit aldo your hand has no knight
+
+Ongoing Homework: find a bug, report it with steps on how to reproduce it
+Bonus if you want to tell me what file has the problem.

@@ -168,6 +168,7 @@ class Player:
                                 self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
                                 list_of_creature_that_summon.get(card.name)[1].remove(
                                     list_of_creature_that_summon.get(card.name)[1][i])
+                                self.check_for_creature_with_effect_on("summ", self.battle_field[-1])
                     return 1
                 elif card.name in list_of_creature_that_affect_all and len(self.battle_field) < 7:
                     if card.name in list_of_creature_that_affect_all_when_die:
@@ -350,11 +351,13 @@ class Player:
                     player.battle_field.remove(card)
                     if card.name in list_of_creature_that_do_somthing_when_die:
                         Player.action_when_die(player, card)
+                    player.check_for_creature_with_effect_on("friendly_minion_dies", card)
             for card in enemy_player.battle_field[:]:
                 if card.hp <= 0 and card.card_type == "Creature":
                     enemy_player.battle_field.remove(card)
                     if card.name in list_of_creature_that_do_somthing_when_die:
                         Player.action_when_die(enemy_player, card)
+                    player.check_for_creature_with_effect_on("friendly_minion_dies", card)
                     enemy_player.check_for_tactics("friendly_minion_dies", None, None)
         except Exception as e:
             print(e)
@@ -405,6 +408,10 @@ class Player:
                 player.active_defence = list_of_creature_that_add_defence_when_die.get(card.name)[0]
                 player.number_of_troops = player.active_defence.number_of_troops
                 player.nr_of_assaults = player.active_defence.nr_of_assaults
+            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_to_deck":
+                for i in range(0, list_of_creature_that_add_cards_to_your_deck_when_die[card.name][0]):
+                    player.deck.append(list_of_creature_that_add_cards_to_your_deck_when_die[card.name][1][0])
+                    list_of_creature_that_add_cards_to_your_deck_when_die[card.name][1].pop(0)
 
     def deal_damage_to_all_creatures(self, name):
         for creature in self.battle_field:
@@ -617,7 +624,12 @@ class Player:
                 if creature.name in list_of_creature_that_have_other_stat_while_damaged:
                     self.action_from_condition(creature, "damaged")
                 effected_cards = list_of_creature_that_are_effected_by_action.get(creature.name)
-                if effected_cards[1] == action and effected_cards[0] == "self_buff":
+                if action in effected_cards[1].split(":") and action == "friendly_minion_dies":
+                    if effected_cards[1].split(":")[1] == playing_creature.category:
+                        self.buff_card_from_hand(creature, creature)
+                    elif effected_cards[1].split(":")[1] == "all":
+                        self.buff_card_from_hand(creature, creature)
+                elif effected_cards[1] == action and effected_cards[0] == "self_buff":
                     self.buff_card_from_hand(creature, creature)
                 elif action in effected_cards[1] and action == "summ":
                     if playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
@@ -630,6 +642,7 @@ class Player:
                 elif action == effected_cards[1] and action == "damage_taken":
                     if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
                         self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
+
             except Exception as e:
                 print(e)
 

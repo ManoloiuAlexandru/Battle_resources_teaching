@@ -66,7 +66,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Harsh Trainer": (0, 2, ""), "Nero": (0, 6, ""), "Nero's Guard": (0, 3, ""),
                               "City Defender": (2, 2, ""), "Ancient Imperial Guard": (3, 3, "Guard"),
                               "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, ""),
-                              "Charles V": (0, 0, "Rush Guard Armored Rebuilder")}
+                              "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -76,7 +76,8 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "
 list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
                                                 "New Recruit": ("self_buff", "summ soldier"),
                                                 "Wondering Scribe": ("draw", "cast spell"),
-                                                "Roman Architect": ("add_defence", "damage_taken")}
+                                                "Roman Architect": ("add_defence", "damage_taken"),
+                                                "Scavenger Hyena": ("self_buff", "friendly_minion_dies:animal")}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
 list_of_creature_that_add_armor_on_action = {"Roman Architect": 1}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
@@ -173,7 +174,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Thief Camp Guard": "add_armor",
                                               "Inspiring mercenary": "buffall",
                                               "Julius Caesar": "resumm",
-                                              "Charlemagne": "put_wepon"}
+                                              "Charlemagne": "put_wepon",
+                                              "Dog Pup": "add_to_deck"}
 list_of_creature_that_do_damage_when_die = {}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
 list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
@@ -236,6 +238,8 @@ list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient 
 list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards",
                                "Jaffa Merchant": "knights", "Knight Recruiter": ""}
 list_of_creature_that_plays_a_card_from_your_deck = {"Battle Tactician"}
+list_of_creature_that_add_cards_to_your_deck_when_die = {"Dog Pup": (
+    1, [Creature(1, "Big Dog", 5, 4, "", "animal", generate_random_int()) for i in range(0, 40)]), }
 """
 Spells
 """
