@@ -18,8 +18,12 @@ bot_deck = [
     Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
-
-    Defence(0, "Mercenary's Troops", 2, 8, "Debt(2)", -139),
+    Spell(1, "Get back to work", "Deal 8 damage to a friendly minion in one turn Reward Ephix Maximus", 0),
+    Creature(0, "demo", 99, 1, "Guard", "all", 1),
+    Spell(0, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions",
+          2),
+    Spell(0, "Build defences", "Gain 5 Defenses and draw a card", 3),
+    Spell(0, "Build defences", "Gain 5 Defenses and draw a card", 4),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

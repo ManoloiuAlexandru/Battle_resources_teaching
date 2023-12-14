@@ -33,11 +33,19 @@ class Quest:
             if (player.dict_of_actions["Damage_taken"] == 0 and player.dict_of_actions["Damage_done"] == 0
                     and action == "end_turn"):
                 self.progress += 1
-
-        if self.nr_turns == self.progress:
-            if self.name == "We don't take it personally":
+        elif self.name == "Get back to work":
+            max_damage_taken = 0
+            for creature in player.battle_field:
+                if creature.damage_taken_this_turn_from_empire > max_damage_taken and creature.hp > 0:
+                    max_damage_taken = creature.damage_taken_this_turn_from_empire
+            if max_damage_taken > self.progress:
+                self.progress = max_damage_taken
+        if self.nr_turns <= self.progress:
+            if self.name == "We don't take it personally" or self.name == "Get back to work":
                 for key in self.reward:
                     for i in range(key):
                         if len(player.hand) < 10:
                             player.hand.append(self.reward[key])
             player.quest = None
+        if action == "end_turn":
+            self.progress = 0

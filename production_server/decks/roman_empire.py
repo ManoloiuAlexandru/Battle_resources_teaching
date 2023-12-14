@@ -59,6 +59,9 @@ roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "me
                 Spell(5, "Tavern Fight", "Destroy all creatures except one", -220),
                 Spell(1, "Execute", "Destroy a damaged minion", -221),
                 Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
+                Spell(1, "Get back to work",
+                      "Deal 8 damage to a friendly minion in one turn without killing it Reward Ephix Maximus",
+                      -247),
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
@@ -118,4 +121,7 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                      Spell(5, "Tavern Fight", "Destroy all creatures except one", -220),
                      Spell(1, "Execute", "Destroy a damaged minion", -221),
                      Spell(1, "Shield of Honor", "Give a damaged minion +3 attack and Armored", -222),
+                     Spell(1, "Get back to work",
+                           "Deal 8 damage to a friendly minion in one turn without killing it Reward Ephix Maximus",
+                           -247),
                      ]

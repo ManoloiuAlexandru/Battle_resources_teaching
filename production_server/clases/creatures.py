@@ -23,6 +23,7 @@ class Creature:
         self.items = []
         self.number_of_attacks = 1
         self.empire_belonging = ""
+        self.damage_taken_this_turn_from_empire = 0
         if len(self.name.split(" ")) >= 2:
             self.name_for_html = "_".join(self.name.split()) + self.card_id
         else:

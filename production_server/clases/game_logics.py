@@ -72,6 +72,7 @@ def reset_player(player, enemy_player):
         else:
             creature.exhausted = False
         creature.number_of_attacks += 1
+        creature.damage_taken_this_turn_from_empire = 0
     enemy_player.turn = 1
     enemy_player.empty_mana += 1
     if enemy_player.empty_mana > 10:
@@ -171,6 +172,9 @@ def check_target(player1, player2, card_picked):
                             card.armored = False
                         else:
                             card.hp -= list_of_creature_that_can_target_yourself.get(player1.active_minion.name)
+                            card.damage_taken_this_turn_from_empire += list_of_creature_that_can_target_yourself.get(
+                                player1.active_minion.name)
+                            player1.quest.check_quest_progression(player1, card, "damage")
                             player1.check_for_creature_with_effect_on("damage_taken", None)
                     if player1.active_minion.name in list_of_creature_that_heal:
                         heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
@@ -424,6 +428,9 @@ def damage_to_all_minions(player, enemy_player):
             creature.armored = False
         else:
             creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+            creature.damage_taken_this_turn_from_empire += list_of_dmg_spells.get(player.incoming_spell.name)
+            if player.quest is not None:
+                player.quest.check_quest_progression(player, None, "damage")
             player.check_for_creature_with_effect_on("damage_taken", None)
     for creature in enemy_player.battle_field:
         if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:

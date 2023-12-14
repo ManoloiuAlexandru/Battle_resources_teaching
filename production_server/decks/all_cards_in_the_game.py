@@ -435,4 +435,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                            -245),
                      Spell(1, "We don't take it personally",
                            "Don't take or do damage to the enemy kingdom for 8 turns Reward Lndrau Aaurentis", -246),
+                     Spell(1, "Get back to work",
+                           "Deal 8 damage to a friendly minion in one turn without killing it Reward Ephix Maximus",
+                           -247),
                      ]

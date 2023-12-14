@@ -1,660 +1,543 @@
-empire:Byzantine_Empire
+empire:Roman_Empire
 card_id:0
-mana_cost:1
-original_mana_cost:1
-name:We don't take it personally
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Architecti0
+--------------------------------
+card_id:1
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Architecti1
+--------------------------------
+card_id:2
+mana_cost:2
+original_mana_cost:2
+name:Build defences
 card_type:Spell
-description:Don't take or do damage to the enemy kingdom for 8 turns Reward Lndrau Aaurentis
-img_url:We don't take it personally.png
+description:Gain 5 Defenses and draw a card
+img_url:Build defences.png
 target:None
 empire_belonging:
 category:
-name_for_html:We_don't_take_it_personally0
---------------------------------
-card_id:1
-mana_cost:8
-original_mana_cost:8
-name:Mercenary Leader
-hp:14
-max_hp:14
-original_hp:14
-attack:5
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Rebuilder Rush debt(2)
-original_description:Rebuilder Rush debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Leader.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_Leader1
---------------------------------
-card_id:2
-mana_cost:8
-original_mana_cost:8
-name:Mercenary Leader
-hp:14
-max_hp:14
-original_hp:14
-attack:5
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Rebuilder Rush debt(2)
-original_description:Rebuilder Rush debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Leader.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_Leader2
+name_for_html:Build_defences2
 --------------------------------
 card_id:3
-mana_cost:6
-original_mana_cost:6
-name:Religious Leader
-hp:8
-max_hp:8
-original_hp:8
-attack:5
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Rush Rebuilder
-original_description:Rush Rebuilder
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Religious Leader.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Build defences
+card_type:Spell
+description:Gain 5 Defenses and draw a card
+img_url:Build defences.png
+target:None
 empire_belonging:
-name_for_html:Religious_Leader3
+category:
+name_for_html:Build_defences3
 --------------------------------
 card_id:4
-mana_cost:6
-original_mana_cost:6
-name:Religious Leader
-hp:8
-max_hp:8
-original_hp:8
-attack:5
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Rush Rebuilder
-original_description:Rush Rebuilder
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Religious Leader.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Palisade Wall
+card_type:Spell
+description:Deal 3 damage gain 3 defences
+img_url:Palisade Wall.png
+target:enemy
 empire_belonging:
-name_for_html:Religious_Leader4
+category:
+name_for_html:Palisade_Wall4
 --------------------------------
 card_id:5
 mana_cost:2
 original_mana_cost:2
-name:Byzantium Engineer
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Draw a Defence
-original_description:Draw a Defence
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Byzantium Engineer.png
-items:[]
-number_of_attacks:1
+name:Palisade Wall
+card_type:Spell
+description:Deal 3 damage gain 3 defences
+img_url:Palisade Wall.png
+target:enemy
 empire_belonging:
-name_for_html:Byzantium_Engineer5
+category:
+name_for_html:Palisade_Wall5
 --------------------------------
 card_id:6
 mana_cost:2
 original_mana_cost:2
-name:Byzantium Engineer
-hp:2
-max_hp:2
-original_hp:2
+name:Harsh Trainer
+hp:3
+max_hp:3
+original_hp:3
 attack:2
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Draw a Defence
-original_description:Draw a Defence
+description:Deal 1 damage to a minion and give it +2 attack
+original_description:Deal 1 damage to a minion and give it +2 attack
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Byzantium Engineer.png
+img_url:Harsh Trainer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Byzantium_Engineer6
+damage_taken_this_turn_from_empire:0
+name_for_html:Harsh_Trainer6
 --------------------------------
-card_id:9
-mana_cost:8
-original_mana_cost:8
-name:Basil II
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:soldier
+card_id:7
+mana_cost:2
+original_mana_cost:2
+name:Harsh Trainer
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:2
 active_effects:[]
-description:Armored Charge Guard
-original_description:Armored Charge Guard
+description:Deal 1 damage to a minion and give it +2 attack
+original_description:Deal 1 damage to a minion and give it +2 attack
 card_type:Creature
-exhausted:False
-armored:True
+exhausted:True
+armored:False
 can_be_target:True
-img_url:Basil II.png
+img_url:Harsh Trainer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Basil_II9
+damage_taken_this_turn_from_empire:0
+name_for_html:Harsh_Trainer7
+--------------------------------
+card_id:8
+mana_cost:1
+original_mana_cost:1
+name:Pilum Volley
+card_type:Spell
+description:Deal 1 damage to ALL minions
+img_url:Pilum Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Volley8
+--------------------------------
+card_id:9
+mana_cost:1
+original_mana_cost:1
+name:Pilum Volley
+card_type:Spell
+description:Deal 1 damage to ALL minions
+img_url:Pilum Volley.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Pilum_Volley9
 --------------------------------
 card_id:10
 mana_cost:2
 original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:soldier
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:1
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Akritoi.png
+img_url:Roman Architect.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Akritoi10
+damage_taken_this_turn_from_empire:0
+name_for_html:Roman_Architect10
 --------------------------------
 card_id:11
 mana_cost:2
 original_mana_cost:2
-name:Akritoi
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:soldier
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:1
 active_effects:[]
-description:Guard
-original_description:Guard
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Akritoi.png
+img_url:Roman Architect.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Akritoi11
+damage_taken_this_turn_from_empire:0
+name_for_html:Roman_Architect11
 --------------------------------
 card_id:12
 mana_cost:2
 original_mana_cost:2
-name:Roman Formation Circular
+name:Guard the Fort
 card_type:Spell
-description:Give your minions on the filed Guard
-img_url:Roman Formation Circular.png
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
 target:None
 empire_belonging:
 category:
-name_for_html:Roman_Formation_Circular12
+name_for_html:Guard_the_Fort12
 --------------------------------
 card_id:13
 mana_cost:2
 original_mana_cost:2
-name:Roman Formation Circular
+name:Guard the Fort
 card_type:Spell
-description:Give your minions on the filed Guard
-img_url:Roman Formation Circular.png
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
 target:None
 empire_belonging:
 category:
-name_for_html:Roman_Formation_Circular13
+name_for_html:Guard_the_Fort13
 --------------------------------
 card_id:14
 mana_cost:3
 original_mana_cost:3
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi Debt(1)
-img_url:Boarder Guards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Boarder_Guards14
---------------------------------
-card_id:15
-mana_cost:3
-original_mana_cost:3
-name:Boarder Guards
-card_type:Spell
-description:Summon 2 Akritoi Debt(1)
-img_url:Boarder Guards.png
-target:None
-empire_belonging:
-category:
-name_for_html:Boarder_Guards15
---------------------------------
-card_id:16
-mana_cost:5
-original_mana_cost:5
-name:Mercenary elite Defender
-hp:8
-max_hp:8
-original_hp:8
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Guard Debt(2)
-original_description:Guard Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary elite Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_elite_Defender16
---------------------------------
-card_id:17
-mana_cost:5
-original_mana_cost:5
-name:Mercenary elite Defender
-hp:8
-max_hp:8
-original_hp:8
-attack:7
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:7
-active_effects:[]
-description:Guard Debt(2)
-original_description:Guard Debt(2)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary elite Defender.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Mercenary_elite_Defender17
---------------------------------
-card_id:18
-mana_cost:7
-original_mana_cost:7
-name:Teutonic Knight
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Teutonic Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Teutonic_Knight18
---------------------------------
-card_id:19
-mana_cost:7
-original_mana_cost:7
-name:Teutonic Knight
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Teutonic Knight.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Teutonic_Knight19
---------------------------------
-card_id:20
-mana_cost:8
-original_mana_cost:8
-name:Richard the Lionheart
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Draw a Spell and a Creature Guard
-original_description:Draw a Spell and a Creature Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Richard the Lionheart.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Richard_the_Lionheart20
---------------------------------
-card_id:22
-mana_cost:5
-original_mana_cost:5
-name:Front Line Defender
-hp:6
-max_hp:6
-original_hp:6
+name:Roman Guard
+hp:4
+max_hp:4
+original_hp:4
 attack:3
 category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:3
 active_effects:[]
-description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
-original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
+description:Guard
+original_description:Guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Front Line Defender.png
+img_url:Roman Guard.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Front_Line_Defender22
+damage_taken_this_turn_from_empire:0
+name_for_html:Roman_Guard14
 --------------------------------
-card_id:23
-mana_cost:6
-original_mana_cost:6
-name:Joan of Arc
-hp:2
-max_hp:2
-original_hp:2
+card_id:15
+mana_cost:3
+original_mana_cost:3
+name:Roman Guard
+hp:4
+max_hp:4
+original_hp:4
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Roman Guard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Roman_Guard15
+--------------------------------
+card_id:16
+mana_cost:4
+original_mana_cost:4
+name:Full Armored Legionary
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Deal damage equal to your defences to an enemy minion
+original_description:Guard Deal damage equal to your defences to an enemy minion
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Full Armored Legionary.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Full_Armored_Legionary16
+--------------------------------
+card_id:17
+mana_cost:4
+original_mana_cost:4
+name:Full Armored Legionary
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Deal damage equal to your defences to an enemy minion
+original_description:Guard Deal damage equal to your defences to an enemy minion
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Full Armored Legionary.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Full_Armored_Legionary17
+--------------------------------
+card_id:18
+mana_cost:3
+original_mana_cost:3
+name:Unknown Territory
+card_type:Spell
+description:Spend all your defences to deal that much damage to ALL minions
+img_url:Unknown Territory.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Unknown_Territory18
+--------------------------------
+card_id:19
+mana_cost:3
+original_mana_cost:3
+name:Unknown Territory
+card_type:Spell
+description:Spend all your defences to deal that much damage to ALL minions
+img_url:Unknown Territory.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Unknown_Territory19
+--------------------------------
+card_id:20
+mana_cost:1
+original_mana_cost:1
+name:Get back to work
+card_type:Spell
+description:Deal 8 damage to a friendly minion in one turn without killing it Reward Ephix Maximus
+img_url:Get back to work.png
+target:None
+empire_belonging:
+category:
+name_for_html:Get_back_to_work20
+--------------------------------
+card_id:21
+mana_cost:2
+original_mana_cost:2
+name:Frightened Girl
+hp:3
+max_hp:3
+original_hp:3
 attack:2
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
-original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
+description:Guard Recruit a guard
+original_description:Guard Recruit a guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Joan of Arc.png
+img_url:Frightened Girl.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Joan_of_Arc23
+damage_taken_this_turn_from_empire:0
+name_for_html:Frightened_Girl21
+--------------------------------
+card_id:22
+mana_cost:2
+original_mana_cost:2
+name:Frightened Girl
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Recruit a guard
+original_description:Guard Recruit a guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Frightened Girl.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Frightened_Girl22
+--------------------------------
+card_id:23
+mana_cost:7
+original_mana_cost:7
+name:Julius Caesar
+hp:6
+max_hp:6
+original_hp:6
+attack:7
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Rush Gain 4 defences desperate Lose 4 defences to resummon this
+original_description:Rush Gain 4 defences desperate Lose 4 defences to resummon this
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Julius Caesar.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Julius_Caesar23
 --------------------------------
 card_id:24
 mana_cost:1
 original_mana_cost:1
-name:Armored Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Armored
-original_description:Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Page.png
-items:[]
-number_of_attacks:1
+name:Fall Trap
+card_type:Spell
+description:Deal 2 damage to a minion gain 2 defence
+img_url:Fall Trap.png
+target:self
 empire_belonging:
-name_for_html:Armored_Page24
+category:
+name_for_html:Fall_Trap24
 --------------------------------
 card_id:25
 mana_cost:1
 original_mana_cost:1
-name:Armored Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Armored
-original_description:Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Page.png
-items:[]
-number_of_attacks:1
+name:Fall Trap
+card_type:Spell
+description:Deal 2 damage to a minion gain 2 defence
+img_url:Fall Trap.png
+target:self
 empire_belonging:
-name_for_html:Armored_Page25
+category:
+name_for_html:Fall_Trap25
 --------------------------------
 card_id:26
-mana_cost:2
-original_mana_cost:2
-name:Old Tactics
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Defences
 card_type:Spell
-description:Draw a card and reduce it is cost by 3
-img_url:Old Tactics.png
-target:None
+description:Deal 5 damage to a minion if you are holding a knight gain 5 defences
+img_url:Mercenary Defences.png
+target:enemy
 empire_belonging:
 category:
-name_for_html:Old_Tactics26
+name_for_html:Mercenary_Defences26
 --------------------------------
 card_id:27
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Defences
+card_type:Spell
+description:Deal 5 damage to a minion if you are holding a knight gain 5 defences
+img_url:Mercenary Defences.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Mercenary_Defences27
+--------------------------------
+card_id:28
 mana_cost:2
 original_mana_cost:2
-name:Old Tactics
+name:Recruiting
 card_type:Spell
-description:Draw a card and reduce it is cost by 3
-img_url:Old Tactics.png
+description:Add 2 random knights
+img_url:Recruiting.png
 target:None
 empire_belonging:
 category:
-name_for_html:Old_Tactics27
+name_for_html:Recruiting28
 --------------------------------
 card_id:29
-mana_cost:5
-original_mana_cost:5
-name:Protokentarchos
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Give a friendly minion +3/+3 Debt(1)
-original_description:Give a friendly minion +3/+3 Debt(1)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Protokentarchos.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Protokentarchos29
---------------------------------
-card_id:30
-mana_cost:5
-original_mana_cost:5
-name:Protokentarchos
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Give a friendly minion +3/+3 Debt(1)
-original_description:Give a friendly minion +3/+3 Debt(1)
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Protokentarchos.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Protokentarchos30
---------------------------------
-card_id:31
 mana_cost:2
 original_mana_cost:2
-name:Watchtower
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:building
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchtower.png
-items:[]
-number_of_attacks:1
+name:Recruiting
+card_type:Spell
+description:Add 2 random knights
+img_url:Recruiting.png
+target:None
 empire_belonging:
-name_for_html:Watchtower31
---------------------------------
-card_id:32
-mana_cost:2
-original_mana_cost:2
-name:Watchtower
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:building
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:All your guards get +1/+2
-original_description:All your guards get +1/+2
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Watchtower.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Watchtower32
---------------------------------
-card_id:33
-mana_cost:7
-original_mana_cost:7
-name:Cataphract
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Cataphract.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Cataphract33
+category:
+name_for_html:Recruiting29
 --------------------------------
