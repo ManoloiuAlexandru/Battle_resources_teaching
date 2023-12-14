@@ -432,5 +432,7 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(1, "Dog Pup", 1, 2, "Desperate Add a 4/5 Big Dog to your deck", "animal", -243),
                      Creature(2, "Scavenger Hyena", 2, 2, "When a friendly animal dies gain +2/+1", "animal", -244),
                      Spell(2, "Wild Bear", "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
-                           -245)
+                           -245),
+                     Spell(1, "We don't take it personally",
+                           "Don't take or do damage to the enemy kingdom for 8 turns Reward Lndrau Aaurentis", -246),
                      ]

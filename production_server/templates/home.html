@@ -265,7 +265,19 @@
                         <span class="tactic_description">{{tactic.description}}</span><br>
                     </button>
                 {%endfor%}
+                 {%if players[1].quest:%}
+                <button class="tactic" id={{players[1].quest.card_id}} name={{players[1].quest.name_for_html}}>
+                <span style="display:flex">
+                <img src="static/cards/{{ players[1].quest.img_url }}" class="tactic_image"/><br>
+                </span>
+                        <b><span class="tactic_name">{{players[1].quest.name}}</span></b><br>
+                        <span class="tactic_description">{{players[1].quest.description}}</span><br>
+                    </button>
+                {%endif%}
                 <button class="player_icon" name="{{players[1].name}}">{{players[1].name}}
+                    {%if players[1].quest:%}
+                    Quests:{{players[1].quest.progress}}/{{players[1].quest.nr_turns}}
+                    {%endif%}
                     {%if players[1].tactics|length>0:%}
                     Tactics:{{players[1].tactics|length}}*?
                     {%endif%}

@@ -10,6 +10,8 @@ from decks.decks_to_play import *
 
 from decks.holy_roman_empire import *
 
+from clases.quest import *
+
 
 class Player:
     def __init__(self, name):
@@ -44,7 +46,8 @@ class Player:
         self.hand_copy = []
         self.has_to_pick = False
         self.tactics = []
-        self.dict_of_actions = {"Spells_casted": []}
+        self.dict_of_actions = {"Spells_casted": [], "Damage_taken": 0, "Damage_done": 0}
+        self.quest = None
 
     def mana_increase(self, amount):
         self.mana += amount
@@ -181,6 +184,8 @@ class Player:
                     return 0
                 if card.name in list_of_creature_that_are_affected_by_battle_field:
                     self.buff_card_from_battle(card)
+                if self.quest is not None:
+                    self.quest.check_quest_progression(self, card, "summ")
                 self.battle_field.append(card)
                 self.mana_pay(card)
                 return 1
@@ -218,8 +223,18 @@ class Player:
 
     def start_game(self):
         try:
-            for i in range(0, 5):
-                self.draw_card()
+            quest_in_deck = 0
+            for card in self.deck:
+                if card.name in list_of_quests:
+                    quest_in_deck = 1
+                    self.hand.append(card)
+                    break
+            if quest_in_deck == 1:
+                for i in range(0, 4):
+                    self.draw_card()
+            else:
+                for i in range(0, 5):
+                    self.draw_card()
         except Exception as e:
             print(e)
 
@@ -657,6 +672,7 @@ class Player:
                 self.enemy_player.hp -= self.number_of_troops
                 self.defences_weakened(1)
                 self.number_of_assaults -= 1
+                self.dict_of_actions["Damage_done"] += self.number_of_troops
 
             if target is not None and self.active_defence is not None and self.number_of_assaults >= 1:
                 if target.armored is True:
@@ -896,3 +912,7 @@ class Player:
                 if what_cards_to_play[1][0] == "Tactic":
                     self.tactics.append(self.hand[-1])
                     self.hand.pop(-1)
+
+    def create_quest(self, quest):
+        self.quest = Quest(quest.mana_cost, quest.name, quest.description, quest.card_id)
+        self.quest.build_criteria()

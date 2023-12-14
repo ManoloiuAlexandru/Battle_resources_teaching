@@ -88,9 +88,15 @@ def reset_player(player, enemy_player):
     enemy_player.problem = ""
     player.incoming_action = 0
     enemy_player.incoming_action = 0
+    player.dict_of_actions["Damage_taken"] = 0
+    player.dict_of_actions["Damage_done"] = 0
+    player.enemy_player.dict_of_actions["Damage_taken"] = 0
+    player.enemy_player.dict_of_actions["Damage_done"] = 0
 
 
 def turn_switch(player1, player2):
+    if player1.quest is not None:
+        player1.quest.check_quest_progression(player1, None, "end_turn")
     if player1.turn == 1:
         end_of_turn_action(player1, player2)
         reset_player(player1, player2)
@@ -131,7 +137,9 @@ def damage_to_player(player, current_card):
         player.armor = 0
     if "Rebuilder" in current_card.description.split(" "):
         player.enemy_player.heal_player(current_card.attack)
-    player.check_for_tactics("attacking",current_card,None)
+    player.check_for_tactics("attacking", current_card, None)
+    player.dict_of_actions["Damage_taken"] += current_card.attack
+    player.enemy_player.dict_of_actions["Damage_done"] -= current_card.attack
     current_card.exhausted = True
     current_card = None
     return player, current_card
@@ -348,6 +356,8 @@ def spell_that_summon(player, enemy_player, spell_name):
 
 
 def general_spells(player, enemy_player, spell_name):
+    if spell_name in list_of_quests:
+        player.create_quest(player.incoming_spell)
     if spell_name in list_of_tactics:
         player.tactics.append(player.incoming_spell)
     if spell_name in list_of_spells_that_add_defences:
@@ -622,6 +632,7 @@ def end_of_turn_action(player, enemy_player):
                         random_enemy = random.choice(enemy_player.battle_field)
                         if isinstance(random_enemy, str):
                             enemy_player.hp -= end_of_turn_card[1]
+                            player.dict_of_actions["Damage_done"] += end_of_turn_card[1]
                         elif random_enemy.armored is True:
                             random_enemy.armored = False
                         else:

@@ -37,6 +37,8 @@ cards_for_byzantine_empire = [
     Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224),
     Creature(6, "Religious Leader", 8, 5, "Rush Rebuilder", "worker", -226),
     Creature(8, "Mercenary Leader", 14, 5, "Rebuilder Rush debt(2)", "mercenary", -228),
+    Spell(1, "We don't take it personally",
+          "Don't take or do damage to the enemy kingdom for 8 turns Reward Lndrau Aaurentis", -246),
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -73,4 +75,6 @@ cards_byzantine_show = [
     Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224),
     Creature(6, "Religious Leader", 8, 5, "Rush Rebuilder", "worker", -226),
     Creature(8, "Mercenary Leader", 14, 5, "Rebuilder Rush debt(2)", "mercenary", -228),
+    Spell(1, "We don't take it personally",
+          "Don't take or do damage to the enemy kingdom for 8 turns Reward Lndrau Aaurentis", -246),
 ]

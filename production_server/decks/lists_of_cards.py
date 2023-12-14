@@ -66,7 +66,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Harsh Trainer": (0, 2, ""), "Nero": (0, 6, ""), "Nero's Guard": (0, 3, ""),
                               "City Defender": (2, 2, ""), "Ancient Imperial Guard": (3, 3, "Guard"),
                               "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, ""),
-                              "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, "")}
+                              "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, ""),
+                              "Lndrau Aaurentis": (0, 0, "Guard")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -153,7 +154,7 @@ list_of_creature_that_summ_after_they_die = {
          range(0, 3)]),
     "Khevtuul": (2, [Creature(1, "Night Watcher", 2, 2, "", "soldier", generate_random_int()) for i in range(0, 10)])}
 list_of_creature_that_affect_all = {"Watchtower": ("Creature", "Guard"), "Inspiring mercenary": ("Creature", "Guard"),
-                                    "Apollodorus of Damascus": ("Defence", "")}
+                                    "Apollodorus of Damascus": ("Defence", ""), "Lndrau Aaurentis": ("Creature", "")}
 list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_do_damage_to_all = {}
@@ -257,7 +258,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Heat of the desert", "A day in the desert", "Fast Auxiliars", "Mercenary Defences",
                   "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap", "Vast Empire",
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
-                  "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear"]
+                  "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear",
+                  "We don't take it personally"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -285,7 +287,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Recruiting", "Unknown Territory", "Senatus Populusque Romanus", "Heat of the desert",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
-                                 "Hidden Armor", "Arbalets Volley", "Wild Bear"]
+                                 "Hidden Armor", "Arbalets Volley", "Wild Bear", "We don't take it personally"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -351,6 +353,9 @@ list_of_tactics = {"Priority Target": "dmg_delt>3=>deal_dmg:99",
                    "You don't scare me": "attacking=>debuff",
                    "Hidden Armor": "attacking=>buff:target",
                    "Wild Bear": "attacking:kingdom=>summon:1"}
+list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom:0:8:add_to_hand": {
+    1: Creature(5, "Lndrau Aaurentis", 8, 8, "Armored Guard All your cards get guard", "legend",
+                generate_random_int()) for i in range(0, 10)}}}
 """
 Defence
 """

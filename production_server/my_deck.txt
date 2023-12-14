@@ -1,482 +1,443 @@
-empire:Mongol_Empire
+empire:Byzantine_Empire
 card_id:0
-mana_cost:2
-original_mana_cost:2
-name:Wild Bear
+mana_cost:1
+original_mana_cost:1
+name:We don't take it personally
 card_type:Spell
-description:Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard
-img_url:Wild Bear.png
+description:Don't take or do damage to the enemy kingdom for 8 turns Reward Lndrau Aaurentis
+img_url:We don't take it personally.png
 target:None
 empire_belonging:
 category:
-name_for_html:Wild_Bear0
+name_for_html:We_don't_take_it_personally0
 --------------------------------
 card_id:1
+mana_cost:8
+original_mana_cost:8
+name:Mercenary Leader
+hp:14
+max_hp:14
+original_hp:14
+attack:5
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Rebuilder Rush debt(2)
+original_description:Rebuilder Rush debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Leader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Leader1
+--------------------------------
+card_id:2
+mana_cost:8
+original_mana_cost:8
+name:Mercenary Leader
+hp:14
+max_hp:14
+original_hp:14
+attack:5
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Rebuilder Rush debt(2)
+original_description:Rebuilder Rush debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Leader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_Leader2
+--------------------------------
+card_id:3
+mana_cost:6
+original_mana_cost:6
+name:Religious Leader
+hp:8
+max_hp:8
+original_hp:8
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Rush Rebuilder
+original_description:Rush Rebuilder
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Religious Leader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Religious_Leader3
+--------------------------------
+card_id:4
+mana_cost:6
+original_mana_cost:6
+name:Religious Leader
+hp:8
+max_hp:8
+original_hp:8
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Rush Rebuilder
+original_description:Rush Rebuilder
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Religious Leader.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Religious_Leader4
+--------------------------------
+card_id:5
 mana_cost:2
 original_mana_cost:2
-name:Wild Bear
+name:Byzantium Engineer
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Draw a Defence
+original_description:Draw a Defence
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Byzantium Engineer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Byzantium_Engineer5
+--------------------------------
+card_id:6
+mana_cost:2
+original_mana_cost:2
+name:Byzantium Engineer
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Draw a Defence
+original_description:Draw a Defence
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Byzantium Engineer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Byzantium_Engineer6
+--------------------------------
+card_id:9
+mana_cost:8
+original_mana_cost:8
+name:Basil II
+hp:6
+max_hp:6
+original_hp:6
+attack:5
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Armored Charge Guard
+original_description:Armored Charge Guard
+card_type:Creature
+exhausted:False
+armored:True
+can_be_target:True
+img_url:Basil II.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Basil_II9
+--------------------------------
+card_id:10
+mana_cost:2
+original_mana_cost:2
+name:Akritoi
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Akritoi.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Akritoi10
+--------------------------------
+card_id:11
+mana_cost:2
+original_mana_cost:2
+name:Akritoi
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Akritoi.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Akritoi11
+--------------------------------
+card_id:12
+mana_cost:2
+original_mana_cost:2
+name:Roman Formation Circular
 card_type:Spell
-description:Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard
-img_url:Wild Bear.png
+description:Give your minions on the filed Guard
+img_url:Roman Formation Circular.png
 target:None
 empire_belonging:
 category:
-name_for_html:Wild_Bear1
---------------------------------
-card_id:2
-mana_cost:2
-original_mana_cost:2
-name:Scavenger Hyena
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:When a friendly animal dies gain +2/+1
-original_description:When a friendly animal dies gain +2/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scavenger Hyena.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scavenger_Hyena2
---------------------------------
-card_id:3
-mana_cost:2
-original_mana_cost:2
-name:Scavenger Hyena
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:When a friendly animal dies gain +2/+1
-original_description:When a friendly animal dies gain +2/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Scavenger Hyena.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Scavenger_Hyena3
---------------------------------
-card_id:4
-mana_cost:1
-original_mana_cost:1
-name:Dog Pup
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Add a 4/5 Big Dog to your deck
-original_description:Desperate Add a 4/5 Big Dog to your deck
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Dog Pup.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Dog_Pup4
---------------------------------
-card_id:5
-mana_cost:1
-original_mana_cost:1
-name:Dog Pup
-hp:1
-max_hp:1
-original_hp:1
-attack:2
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Desperate Add a 4/5 Big Dog to your deck
-original_description:Desperate Add a 4/5 Big Dog to your deck
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Dog Pup.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Dog_Pup5
---------------------------------
-card_id:6
-mana_cost:1
-original_mana_cost:1
-name:Friendly Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Add a random animal yo your hand
-original_description:Add a random animal yo your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Friendly Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Friendly_Dog6
---------------------------------
-card_id:7
-mana_cost:1
-original_mana_cost:1
-name:Friendly Dog
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Add a random animal yo your hand
-original_description:Add a random animal yo your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Friendly Dog.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Friendly_Dog7
---------------------------------
-card_id:8
-mana_cost:4
-original_mana_cost:4
-name:Snow Leopard
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:If you control a tactic summon 2 2/2 Leopard
-original_description:If you control a tactic summon 2 2/2 Leopard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Snow Leopard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Snow_Leopard8
---------------------------------
-card_id:9
-mana_cost:4
-original_mana_cost:4
-name:Snow Leopard
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:If you control a tactic summon 2 2/2 Leopard
-original_description:If you control a tactic summon 2 2/2 Leopard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Snow Leopard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Snow_Leopard9
---------------------------------
-card_id:10
-mana_cost:1
-original_mana_cost:1
-name:Lure animal
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Desperate add a random animal to your hand
-original_description:Desperate add a random animal to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lure animal.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Lure_animal10
---------------------------------
-card_id:11
-mana_cost:1
-original_mana_cost:1
-name:Lure animal
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Desperate add a random animal to your hand
-original_description:Desperate add a random animal to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Lure animal.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Lure_animal11
---------------------------------
-card_id:12
-mana_cost:3
-original_mana_cost:3
-name:Big Game Beast
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Desperate draw an animal
-original_description:Desperate draw an animal
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Big Game Beast.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Big_Game_Beast12
+name_for_html:Roman_Formation_Circular12
 --------------------------------
 card_id:13
+mana_cost:2
+original_mana_cost:2
+name:Roman Formation Circular
+card_type:Spell
+description:Give your minions on the filed Guard
+img_url:Roman Formation Circular.png
+target:None
+empire_belonging:
+category:
+name_for_html:Roman_Formation_Circular13
+--------------------------------
+card_id:14
 mana_cost:3
 original_mana_cost:3
-name:Big Game Beast
-hp:3
-max_hp:3
-original_hp:3
+name:Boarder Guards
+card_type:Spell
+description:Summon 2 Akritoi Debt(1)
+img_url:Boarder Guards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Boarder_Guards14
+--------------------------------
+card_id:15
+mana_cost:3
+original_mana_cost:3
+name:Boarder Guards
+card_type:Spell
+description:Summon 2 Akritoi Debt(1)
+img_url:Boarder Guards.png
+target:None
+empire_belonging:
+category:
+name_for_html:Boarder_Guards15
+--------------------------------
+card_id:16
+mana_cost:5
+original_mana_cost:5
+name:Mercenary elite Defender
+hp:8
+max_hp:8
+original_hp:8
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Guard Debt(2)
+original_description:Guard Debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary elite Defender.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_elite_Defender16
+--------------------------------
+card_id:17
+mana_cost:5
+original_mana_cost:5
+name:Mercenary elite Defender
+hp:8
+max_hp:8
+original_hp:8
+attack:7
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:7
+active_effects:[]
+description:Guard Debt(2)
+original_description:Guard Debt(2)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary elite Defender.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Mercenary_elite_Defender17
+--------------------------------
+card_id:18
+mana_cost:7
+original_mana_cost:7
+name:Teutonic Knight
+hp:6
+max_hp:6
+original_hp:6
+attack:5
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Teutonic Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Teutonic_Knight18
+--------------------------------
+card_id:19
+mana_cost:7
+original_mana_cost:7
+name:Teutonic Knight
+hp:6
+max_hp:6
+original_hp:6
+attack:5
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Teutonic Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Teutonic_Knight19
+--------------------------------
+card_id:20
+mana_cost:8
+original_mana_cost:8
+name:Richard the Lionheart
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+description:Draw a Spell and a Creature Guard
+original_description:Draw a Spell and a Creature Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Richard the Lionheart.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Richard_the_Lionheart20
+--------------------------------
+card_id:22
+mana_cost:5
+original_mana_cost:5
+name:Front Line Defender
+hp:6
+max_hp:6
+original_hp:6
 attack:3
-category:animal
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:3
 active_effects:[]
-description:Desperate draw an animal
-original_description:Desperate draw an animal
+description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
+original_description:Desperate Summ a 1/2 Second Line Defender with Guard Guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Big Game Beast.png
+img_url:Front Line Defender.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Big_Game_Beast13
+name_for_html:Front_Line_Defender22
 --------------------------------
-card_id:14
-mana_cost:2
-original_mana_cost:2
-name:Goat
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Desperate summon a 3/2 Hungry Wolf
-original_description:Desperate summon a 3/2 Hungry Wolf
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Goat.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Goat14
---------------------------------
-card_id:15
-mana_cost:2
-original_mana_cost:2
-name:Goat
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Desperate summon a 3/2 Hungry Wolf
-original_description:Desperate summon a 3/2 Hungry Wolf
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Goat.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Goat15
---------------------------------
-card_id:16
-mana_cost:1
-original_mana_cost:1
-name:Domestic cat
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Summon a 1/1 Wild Cat
-original_description:Summon a 1/1 Wild Cat
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Domestic cat.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Domestic_cat16
---------------------------------
-card_id:17
-mana_cost:1
-original_mana_cost:1
-name:Domestic cat
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Summon a 1/1 Wild Cat
-original_description:Summon a 1/1 Wild Cat
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Domestic cat.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Domestic_cat17
---------------------------------
-card_id:18
-mana_cost:2
-original_mana_cost:2
-name:Novice Tactician
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:If you control a Tactic draw a card
-original_description:If you control a Tactic draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Novice Tactician.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Novice_Tactician18
---------------------------------
-card_id:19
-mana_cost:2
-original_mana_cost:2
-name:Novice Tactician
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:If you control a Tactic draw a card
-original_description:If you control a Tactic draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Novice Tactician.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Novice_Tactician19
---------------------------------
-card_id:20
-mana_cost:3
-original_mana_cost:3
-name:Battle Tactician
+card_id:23
+mana_cost:6
+original_mana_cost:6
+name:Joan of Arc
 hp:2
 max_hp:2
 original_hp:2
@@ -486,214 +447,214 @@ attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Cast a tactic from your deck
-original_description:Cast a tactic from your deck
+description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
+original_description:Desperate Summ 7/8 Saint Joan of Arc with charge and armored
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Battle Tactician.png
+img_url:Joan of Arc.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Battle_Tactician20
---------------------------------
-card_id:21
-mana_cost:3
-original_mana_cost:3
-name:Battle Tactician
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Cast a tactic from your deck
-original_description:Cast a tactic from your deck
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Battle Tactician.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Battle_Tactician21
+name_for_html:Joan_of_Arc23
 --------------------------------
 card_id:24
-mana_cost:3
-original_mana_cost:3
-name:Negotiator
+mana_cost:1
+original_mana_cost:1
+name:Armored Page
 hp:1
 max_hp:1
 original_hp:1
 attack:1
-category:worker
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Give your hand +1/+1 and draw a animal
-original_description:Give your hand +1/+1 and draw a animal
+description:Armored
+original_description:Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Negotiator.png
+img_url:Armored Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Negotiator24
+name_for_html:Armored_Page24
 --------------------------------
 card_id:25
-mana_cost:3
-original_mana_cost:3
-name:Negotiator
+mana_cost:1
+original_mana_cost:1
+name:Armored Page
 hp:1
 max_hp:1
 original_hp:1
 attack:1
-category:worker
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Give your hand +1/+1 and draw a animal
-original_description:Give your hand +1/+1 and draw a animal
+description:Armored
+original_description:Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Negotiator.png
+img_url:Armored Page.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Negotiator25
+name_for_html:Armored_Page25
 --------------------------------
 card_id:26
 mana_cost:2
 original_mana_cost:2
-name:Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Draw a card
-original_description:Draw a card
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Page.png
-items:[]
-number_of_attacks:1
+name:Old Tactics
+card_type:Spell
+description:Draw a card and reduce it is cost by 3
+img_url:Old Tactics.png
+target:None
 empire_belonging:
-name_for_html:Page26
+category:
+name_for_html:Old_Tactics26
 --------------------------------
 card_id:27
 mana_cost:2
 original_mana_cost:2
-name:Page
-hp:1
-max_hp:1
-original_hp:1
+name:Old Tactics
+card_type:Spell
+description:Draw a card and reduce it is cost by 3
+img_url:Old Tactics.png
+target:None
+empire_belonging:
+category:
+name_for_html:Old_Tactics27
+--------------------------------
+card_id:29
+mana_cost:5
+original_mana_cost:5
+name:Protokentarchos
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Give a friendly minion +3/+3 Debt(1)
+original_description:Give a friendly minion +3/+3 Debt(1)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Protokentarchos.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Protokentarchos29
+--------------------------------
+card_id:30
+mana_cost:5
+original_mana_cost:5
+name:Protokentarchos
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Give a friendly minion +3/+3 Debt(1)
+original_description:Give a friendly minion +3/+3 Debt(1)
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Protokentarchos.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Protokentarchos30
+--------------------------------
+card_id:31
+mana_cost:2
+original_mana_cost:2
+name:Watchtower
+hp:2
+max_hp:2
+original_hp:2
 attack:1
+category:building
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchtower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchtower31
+--------------------------------
+card_id:32
+mana_cost:2
+original_mana_cost:2
+name:Watchtower
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:building
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:All your guards get +1/+2
+original_description:All your guards get +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Watchtower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+name_for_html:Watchtower32
+--------------------------------
+card_id:33
+mana_cost:7
+original_mana_cost:7
+name:Cataphract
+hp:6
+max_hp:6
+original_hp:6
+attack:6
 category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:6
 active_effects:[]
-description:Draw a card
-original_description:Draw a card
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Page.png
+img_url:Cataphract.png
 items:[]
 number_of_attacks:1
 empire_belonging:
-name_for_html:Page27
---------------------------------
-card_id:28
-mana_cost:2
-original_mana_cost:2
-name:Knight Recruiter
-hp:3
-max_hp:3
-original_hp:3
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:If you hold a knight discover a knight
-original_description:If you hold a knight discover a knight
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Knight Recruiter.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Knight_Recruiter28
---------------------------------
-card_id:29
-mana_cost:2
-original_mana_cost:2
-name:Knight Recruiter
-hp:3
-max_hp:3
-original_hp:3
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:If you hold a knight discover a knight
-original_description:If you hold a knight discover a knight
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Knight Recruiter.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-name_for_html:Knight_Recruiter29
---------------------------------
-card_id:0
-mana_cost:3
-original_mana_cost:3
-name:Animal Battle Companion
-card_type:Spell
-description:Summon a random war animal
-img_url:Animal Battle Companion.png
-target:None
-empire_belonging:
-category:
-name_for_html:Animal_Battle_Companion0
---------------------------------
-card_id:1
-mana_cost:3
-original_mana_cost:3
-name:Animal Battle Companion
-card_type:Spell
-description:Summon a random war animal
-img_url:Animal Battle Companion.png
-target:None
-empire_belonging:
-category:
-name_for_html:Animal_Battle_Companion1
+name_for_html:Cataphract33
 --------------------------------

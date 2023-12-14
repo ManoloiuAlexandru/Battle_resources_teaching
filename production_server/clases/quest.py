@@ -1,0 +1,43 @@
+from decks.lists_of_cards import list_of_quests
+
+
+class Quest:
+    def __init__(self, mana_cost, name, description, id):
+        self.card_id = str(id)
+        self.mana_cost = mana_cost
+        self.original_mana_cost = mana_cost
+        self.name = name
+        self.card_type = "Quest"
+        self.description = description
+        self.img_url = self.name + ".png"
+        self.empire_belonging = ""
+        self.category = ""
+        self.progress = 0
+        self.nr_turns = 0
+        self.reward = None
+        if len(self.name.split(" ")) >= 2:
+            self.name_for_html = "_".join(self.name.split()) + self.card_id
+        else:
+            self.name_for_html = self.name + self.card_id
+
+    def __str__(self):
+        return f"MANA:{self.mana_cost} NAME:{self.name} {self.description}"
+
+    def build_criteria(self):
+        for key in list_of_quests[self.name]:
+            self.nr_turns = int(key.split(":")[4])
+            self.reward = list_of_quests[self.name][key]
+
+    def check_quest_progression(self, player, card, action):
+        if self.name == "We don't take it personally":
+            if (player.dict_of_actions["Damage_taken"] == 0 and player.dict_of_actions["Damage_done"] == 0
+                    and action == "end_turn"):
+                self.progress += 1
+
+        if self.nr_turns == self.progress:
+            if self.name == "We don't take it personally":
+                for key in self.reward:
+                    for i in range(key):
+                        if len(player.hand) < 10:
+                            player.hand.append(self.reward[key])
+            player.quest = None
