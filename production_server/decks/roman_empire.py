@@ -62,6 +62,9 @@ roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "me
                 Spell(1, "Get back to work",
                       "Deal 6 damage to a friendly minion in one turn without killing it Reward Ephix Maximus",
                       -247),
+                Creature(3, "Louis the Pious", 2, 3,
+                         "Set The health of all other minions to 1 Desperate deal 1 damage to all",
+                         "knight", -250)
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
@@ -124,4 +127,7 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                      Spell(1, "Get back to work",
                            "Deal 6 damage to a friendly minion in one turn without killing it Reward Ephix Maximus",
                            -247),
+                     Creature(3, "Louis the Pious", 2, 3,
+                              "Set The health of all other minions to 1 Desperate deal 1 damage to all",
+                              "knight", -250)
                      ]

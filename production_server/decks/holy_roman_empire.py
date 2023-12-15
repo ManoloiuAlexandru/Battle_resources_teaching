@@ -58,7 +58,10 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                    Creature(8, "Charlemagne", 8, 8, "Guard Armored Desperate put a 5/3 defence", "knight", -234),
                    Spell(2, "Arbalets Volley", "Deal 2 damage to all enemies", -235),
                    Spell(10, "Church Chosen",
-                         "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237)
+                         "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237),
+                   Creature(3, "Louis the Pious", 2, 3,
+                            "Set The health of all other minions to 1 Desperate deal 1 damage to all",
+                            "knight", -250)
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -119,7 +122,10 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                       [Creature(8, "Charlemagne", 8, 8, "Guard Armored Desperate put a 5/3 defence", "knight", -234)],
                       [Spell(2, "Arbalets Volley", "Deal 2 damage to all enemies", -235)],
                       [Spell(10, "Church Chosen",
-                             "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237)]
+                             "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237)],
+                      [Creature(3, "Louis the Pious", 2, 3,
+                                "Set The health of all other minions to 1 Desperate deal 1 damage to all",
+                                "knight", -250)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -176,5 +182,8 @@ cards_for_holy_roman_empire = [
     Spell(1, "Hidden Armor", "Tactic When one of your minions is attacked give it Armored", -233),
     Creature(8, "Charlemagne", 8, 8, "Guard Armored Desperate put a 5/3 defence", "knight", -234),
     Spell(2, "Arbalets Volley", "Deal 2 damage to all enemies", -235),
-    Spell(10, "Church Chosen", "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237)
+    Spell(10, "Church Chosen", "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237),
+    Creature(3, "Louis the Pious", 2, 3,
+             "Set The health of all other minions to 1 Desperate deal 1 damage to all",
+             "knight", -250)
 ]

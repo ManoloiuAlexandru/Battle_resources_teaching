@@ -81,6 +81,10 @@ class Player:
                 if any(card.name == tactic.name for tactic in self.tactics):
                     break
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_cards_that_add_cards_to_your_deck and len(self.battle_field) < 7:
+                    self.add_card_to_deck(card)
+                if card.name in list_of_creature_that_debuff_all and len(self.battle_field) < 7:
+                    self.debuff_all(card)
                 if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
                     self.hand_check(card)
                 if card.name in list_of_cards_that_add_cards_to_your_hand and len(self.battle_field) < 7:
@@ -209,6 +213,9 @@ class Player:
         try:
             self.card_in_hand_effect()
             pick_card = random.choice(self.deck)
+            while self.check_picked_card(pick_card) is None and len(self.deck) > 0:
+                self.deck.remove(pick_card)
+                pick_card = random.choice(self.deck)
             if len(self.hand) < 10:
                 self.hand.append(pick_card)
             self.deck.remove(pick_card)
@@ -415,7 +422,7 @@ class Player:
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "resumm":
                 if card.name == "Julius Caesar":
                     if player.armor >= 4:
-                        player.battle_field.append(Creature(0, "Julius Caesar", 6, 7,
+                        player.battle_field.append(Creature(7, "Julius Caesar", 6, 7,
                                                             "Rush Gain 4 defences desperate Lose 4 defences to resummon this",
                                                             "mercenary",
                                                             7))
@@ -794,6 +801,25 @@ class Player:
                 if ok == 1:
                     if checking_card[2] == "buff":
                         self.buff_card_from_hand(card, card)
+            if checking_card[1].split(":")[1] == "Resources":
+                nr_resources = 0
+                for creature in self.deck[:]:
+                    if creature.name == "Resources":
+                        nr_resources += 1
+                        self.deck.remove(creature)
+                        if checking_card[2] == "buff":
+                            self.buff_card_from_hand(card, card)
+                            nr_resources -= 1
+                        elif isinstance(checking_card[2], int) is True:
+                            nr_resources -= 1
+                            list_of_creature_that_deal_dmg_to_enemies[card.name] = checking_card[2]
+                if len(self.battle_field) < 7:
+                    for i in range(nr_resources):
+                        if len(self.battle_field) < 7:
+                            self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
+                            list_of_creature_that_summon.get(card.name)[1].remove(
+                                list_of_creature_that_summon.get(card.name)[1][i])
+                            self.check_for_creature_with_effect_on("summ", self.battle_field[-1])
         if checking_card[0] == "tactic":
             if int(checking_card[1].split(":")[1]) <= len(self.tactics) and card.card_type == "Creature":
                 if "draw" in checking_card[2].split(":"):
@@ -921,3 +947,23 @@ class Player:
     def create_quest(self, quest):
         self.quest = Quest(quest.mana_cost, quest.name, quest.description, quest.card_id)
         self.quest.build_criteria()
+
+    def debuff_all(self, card):
+        for creature in self.battle_field:
+            if creature != card:
+                creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self, self.enemy_player)
+        for creature in self.enemy_player.battle_field:
+            creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self.enemy_player, self)
+
+    def add_card_to_deck(self, card):
+        for i in range(list_of_cards_that_add_cards_to_your_deck.get(card.name)[0]):
+            self.deck.append(list_of_cards_that_add_cards_to_your_deck.get(card.name)[1][0])
+            list_of_cards_that_add_cards_to_your_deck.get(card.name)[1].pop(0)
+
+    def check_picked_card(self, card):
+        if card.name in list_of_spells_that_auto_cast:
+            if "heal_player" in list_of_spells_that_auto_cast.get(card.name):
+                self.heal_player(list_of_spells_that_can_heal_player.get(card.name))
+                self.logs += "You have drawn:" + card.name + "\n"
+                return None
+        return card

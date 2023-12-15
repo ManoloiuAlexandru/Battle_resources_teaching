@@ -4,6 +4,8 @@ from clases.creatures import Creature
 
 from clases.Defence import Defence
 
+from ITschool_projects.battle_resources.production_server.clases.spells import Spell
+
 
 def generate_random_int():
     return random.randint(1, 1000000)
@@ -36,14 +38,14 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
                                 "Mercenary Herbalist", "Wild Elephant", "Local Healer", "Clergy", "Knight Arbalest",
                                 "Knight Archer", "Heavy Armored Knight", "Motivated Squire", "Rogue Cleric",
                                 "Harsh Trainer", "Heavy Arbalest", "Herbalist Guard", "Herbalist Knight",
-                                "Full Armored Legionary"]
+                                "Full Armored Legionary", "Payed Scribe"]
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
                                              "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
                                              "Motivated Squire": 0, "Harsh Trainer": 1, "Heavy Arbalest": 4,
-                                             "Full Armored Legionary": 0, "Limmu": 0}
+                                             "Full Armored Legionary": 0, "Limmu": 0, "Payed Scribe": 0}
 list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1, "Heavy Arbalest": 4}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
-                                             "Motivated Squire": 0, "Heavy Arbalest": 4}
+                                             "Motivated Squire": 0, "Heavy Arbalest": 4, "Payed Scribe": 0}
 list_of_creature_that_do_something_at_the_end_of_your_turn = {"Scribe": ("draw", 1), "Miner": ("draw", 1),
                                                               "Carcassonne": ("damage 1 all enemies", 8)}
 list_of_creature_that_heal = {"Hospitaller Knight": 2, "Priest": 99, "Church Builder": 8, "Mercenary Herbalist": 6,
@@ -67,7 +69,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "City Defender": (2, 2, ""), "Ancient Imperial Guard": (3, 3, "Guard"),
                               "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, ""),
                               "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, ""),
-                              "Lndrau Aaurentis": (0, 0, "Guard"), "Ephix Maximus": (0, 2, "Charge")}
+                              "Lndrau Aaurentis": (0, 0, "Guard"), "Ephix Maximus": (0, 2, "Charge"),
+                              "Payed Guard": (3, 3, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -102,6 +105,7 @@ list_of_creature_that_draw_specific_cards = {
         ["Creature", "Spell"], ["", ""], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
+    "Hammurabi": [0, [Creature(3, "Man at Arms", 3, 3, "Rush", "ancient", generate_random_int()) for i in range(0, 40)]],
     "Snow Leopard": [0, [Creature(2, "Leopard", 2, 2, "", "animal", generate_random_int()) for i in range(0, 10)]],
     "Shepherd": (1, [Creature(1, "Guard Dog", 1, 1, "Guard", "animal", generate_random_int()) for i in range(0, 4)]),
     "Domestic cat": (1, [Creature(1, "Wild Cat", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
@@ -158,7 +162,7 @@ list_of_creature_that_affect_all = {"Watchtower": ("Creature", "Guard"), "Inspir
                                     "Ephix Maximus": ("Creature", "")}
 list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
-list_of_creature_that_do_damage_to_all = {}
+list_of_creature_that_do_damage_to_all = {"Louis the Pious": 1}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1),
@@ -177,7 +181,8 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Inspiring mercenary": "buffall",
                                               "Julius Caesar": "resumm",
                                               "Charlemagne": "put_wepon",
-                                              "Dog Pup": "add_to_deck"}
+                                              "Dog Pup": "add_to_deck",
+                                              "Louis the Pious": "deal_damage:all"}
 list_of_creature_that_do_damage_when_die = {}
 list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
 list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
@@ -193,7 +198,9 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", 
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
                    "Julius Caesar", "Godfrey of Bouillon", "Charles IV"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
-list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " ")}
+list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " "),
+                                "Louis the Pious": (1, -1, " ")}
+list_of_creature_that_debuff_all = {"Louis the Pious"}
 list_of_creature_that_add_defence = {
     "Rusticus Recruiter": [Defence(1, "Peasant Troops", 1, 3, "", generate_random_int()) for i in range(0, 10)],
     "Mercenary defender": [Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)]}
@@ -232,7 +239,10 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
                                          "Commander's last charge": ("health", "check:12", 6),
                                          "Charles V": ("deck", "check:holy", "buff"),
                                          "Novice Tactician": ("tactic", "check:1", "draw:1"),
-                                         "Snow Leopard": ("tactic", "check:1", "summ:2")
+                                         "Snow Leopard": ("tactic", "check:1", "summ:2"),
+                                         "Payed Guard": ("deck", "check:Resources", "buff"),
+                                         "Payed Scribe": ("deck", "check:Resources", 3),
+                                         "Hammurabi": ("deck", "check:Resources", "summ")
                                          }
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
@@ -242,6 +252,18 @@ list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "k
 list_of_creature_that_plays_a_card_from_your_deck = {"Battle Tactician"}
 list_of_creature_that_add_cards_to_your_deck_when_die = {"Dog Pup": (
     1, [Creature(1, "Big Dog", 5, 4, "", "animal", generate_random_int()) for i in range(0, 40)]), }
+list_of_cards_that_add_cards_to_your_deck = {"Ancient Farmer":
+                                                 (2, [Spell(0, "Resources",
+                                                            "Restore 2 health to your kingdom when drawn",
+                                                            generate_random_int()) for i in range(0, 40)]),
+                                             "Ancient Arrow Volley": (2, [Spell(0, "Resources",
+                                                                                "Restore 2 health to your kingdom when drawn",
+                                                                                generate_random_int()) for i in
+                                                                          range(0, 40)]),
+                                             "Ancient Arrow Shot": (2, [Spell(0, "Resources",
+                                                                              "Restore 2 health to your kingdom when drawn",
+                                                                              generate_random_int()) for i in
+                                                                        range(0, 40)])}
 """
 Spells
 """
@@ -260,7 +282,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Commander Desperation", "Commander's last charge", "Whip hit", "Fall Trap", "Vast Empire",
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
                   "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear",
-                  "We don't take it personally", "Get back to work"]
+                  "We don't take it personally", "Get back to work", "Resources", "Ancient Arrow Volley",
+                  "Ancient Arrow Shot"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -273,11 +296,12 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Senatus Populusque Romanus": 2, "Known Territory": 0, "Heat of the desert": 5,
                       "A day in the desert": 3, "Mercenary Defences": 5, "Commander Desperation": 1,
                       "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99,
-                      "Arbalets Volley": 2}
-list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit"}
+                      "Arbalets Volley": 2, "Ancient Arrow Volley": 2, "Ancient Arrow Shot": 3}
+list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
-                            "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor"]
+                            "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor",
+                            "Ancient Arrow Shot"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
@@ -289,7 +313,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
                                  "Hidden Armor", "Arbalets Volley", "Wild Bear", "We don't take it personally",
-                                 "Get back to work"]
+                                 "Get back to work", "Ancient Arrow Volley"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -339,7 +363,7 @@ list_of_spells_that_summon_specific_cards = {
         1, [Creature(5, "Crusader", 5, 5, "Guard", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""]),
                                            "Fast Auxiliars": (["Defence", "Defence"], ["", ""])}
-list_of_spells_that_can_heal_player = {"Call of God": 8, "Emperor's Hope": 8}
+list_of_spells_that_can_heal_player = {"Call of God": 8, "Emperor's Hope": 8, "Resources": 2}
 list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
 list_of_spells_that_debuff = {"Warhammer": (0, 0, ""), "You don't scare me": (1, 1, " ")}
@@ -360,7 +384,9 @@ list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom
                 generate_random_int()) for i in range(0, 10)}},
     "Get back to work": {"damage:taken_and_done:kingdom:0:6:add_to_hand": {
         1: Creature(5, "Ephix Maximus", 6, 6, "Charge Give all your cards Charge and +2 attack", "legend",
-                    generate_random_int()) for i in range(0, 10)}}}
+                    generate_random_int()) for i in range(0, 10)}},
+}
+list_of_spells_that_auto_cast = {"Resources": "heal_player"}
 """
 Defence
 """

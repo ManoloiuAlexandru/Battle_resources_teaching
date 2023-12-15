@@ -1,91 +1,133 @@
 empire:Roman_Empire
 card_id:0
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:worker
+mana_cost:3
+original_mana_cost:3
+name:Louis the Pious
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:3
 active_effects:[]
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
+description:Set The health of all other minions to 1 Desperate deal 1 damage to all
+original_description:Set The health of all other minions to 1 Desperate deal 1 damage to all
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Architecti.png
+img_url:Louis the Pious.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Architecti0
+name_for_html:Louis_the_Pious0
 --------------------------------
 card_id:1
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
+mana_cost:8
+original_mana_cost:8
+name:Nero
+hp:9
+max_hp:9
+original_hp:9
+attack:4
 category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:4
 active_effects:[]
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
+description:Charge +6 attack while damaged
+original_description:Charge +6 attack while damaged
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Architecti.png
+img_url:Nero.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Architecti1
+name_for_html:Nero1
 --------------------------------
 card_id:2
-mana_cost:1
-original_mana_cost:1
-name:Pilum Volley
-card_type:Spell
-description:Deal 1 damage to ALL minions
-img_url:Pilum Volley.png
-target:enemy
+mana_cost:2
+original_mana_cost:2
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Roman Architect.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Pilum_Volley2
+damage_taken_this_turn_from_empire:0
+name_for_html:Roman_Architect2
 --------------------------------
 card_id:3
-mana_cost:1
-original_mana_cost:1
-name:Pilum Volley
-card_type:Spell
-description:Deal 1 damage to ALL minions
-img_url:Pilum Volley.png
-target:enemy
+mana_cost:2
+original_mana_cost:2
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Roman Architect.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Pilum_Volley3
+damage_taken_this_turn_from_empire:0
+name_for_html:Roman_Architect3
 --------------------------------
 card_id:4
-mana_cost:1
-original_mana_cost:1
-name:Get back to work
-card_type:Spell
-description:Deal 6 damage to a friendly minion in one turn without killing it Reward Ephix Maximus
-img_url:Get back to work.png
-target:None
+mana_cost:3
+original_mana_cost:3
+name:Mercenary Lieutenant
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:Deal 1 damage to all other minions
+original_description:Deal 1 damage to all other minions
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Lieutenant.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Get_back_to_work4
+damage_taken_this_turn_from_empire:0
+name_for_html:Mercenary_Lieutenant4
 --------------------------------
 card_id:5
 mana_cost:3
@@ -114,336 +156,324 @@ damage_taken_this_turn_from_empire:0
 name_for_html:Mercenary_Lieutenant5
 --------------------------------
 card_id:6
-mana_cost:3
-original_mana_cost:3
-name:Mercenary Lieutenant
-hp:3
-max_hp:3
-original_hp:3
-attack:3
+mana_cost:2
+original_mana_cost:2
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
 category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:2
 active_effects:[]
-description:Deal 1 damage to all other minions
-original_description:Deal 1 damage to all other minions
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary Lieutenant.png
+img_url:Inspiring mercenary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_Lieutenant6
+name_for_html:Inspiring_mercenary6
 --------------------------------
 card_id:7
 mana_cost:2
 original_mana_cost:2
-name:Build defences
-card_type:Spell
-description:Gain 5 Defenses and draw a card
-img_url:Build defences.png
-target:None
+name:Inspiring mercenary
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Guard Desperate give all guards +1/+1
+original_description:Guard Desperate give all guards +1/+1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Inspiring mercenary.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Build_defences7
---------------------------------
-card_id:8
-mana_cost:2
-original_mana_cost:2
-name:Build defences
-card_type:Spell
-description:Gain 5 Defenses and draw a card
-img_url:Build defences.png
-target:None
-empire_belonging:
-category:
-name_for_html:Build_defences8
+damage_taken_this_turn_from_empire:0
+name_for_html:Inspiring_mercenary7
 --------------------------------
 card_id:9
 mana_cost:2
 original_mana_cost:2
-name:Palisade Wall
-card_type:Spell
-description:Deal 3 damage gain 3 defences
-img_url:Palisade Wall.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Palisade_Wall9
---------------------------------
-card_id:10
-mana_cost:5
-original_mana_cost:5
-name:Tiberius
-hp:5
-max_hp:5
-original_hp:5
-attack:3
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Draw a mercenary,knight and worker
-original_description:Draw a mercenary,knight and worker
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Tiberius.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Tiberius10
---------------------------------
-card_id:11
-mana_cost:4
-original_mana_cost:4
-name:Full Armored Legionary
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Deal damage equal to your defences to an enemy minion
-original_description:Guard Deal damage equal to your defences to an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Full Armored Legionary.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Full_Armored_Legionary11
---------------------------------
-card_id:12
-mana_cost:4
-original_mana_cost:4
-name:Full Armored Legionary
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Deal damage equal to your defences to an enemy minion
-original_description:Guard Deal damage equal to your defences to an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Full Armored Legionary.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Full_Armored_Legionary12
---------------------------------
-card_id:13
-mana_cost:7
-original_mana_cost:7
-name:Julius Caesar
-hp:6
-max_hp:6
-original_hp:6
-attack:7
+name:Mercenary Recruiter
+hp:2
+max_hp:2
+original_hp:2
+attack:2
 category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:7
+original_attack:2
 active_effects:[]
-description:Rush Gain 4 defences desperate Lose 4 defences to resummon this
-original_description:Rush Gain 4 defences desperate Lose 4 defences to resummon this
+description:Draw a mercenary
+original_description:Draw a mercenary
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Julius Caesar.png
+img_url:Mercenary Recruiter.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Julius_Caesar13
+name_for_html:Mercenary_Recruiter9
 --------------------------------
-card_id:14
+card_id:10
 mana_cost:2
 original_mana_cost:2
-name:Roman Architect
-hp:4
-max_hp:4
-original_hp:4
+name:Mercenary Recruiter
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Draw a mercenary
+original_description:Draw a mercenary
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary Recruiter.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Mercenary_Recruiter10
+--------------------------------
+card_id:11
+mana_cost:1
+original_mana_cost:1
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
 attack:1
-category:worker
+category:mercenary
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:1
 active_effects:[]
-description:Gain 1 defence when a friendly mininon takes damage
-original_description:Gain 1 defence when a friendly mininon takes damage
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Roman Architect.png
+img_url:Mercenary employer.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Roman_Architect14
+name_for_html:Mercenary_employer11
+--------------------------------
+card_id:12
+mana_cost:1
+original_mana_cost:1
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary employer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Mercenary_employer12
+--------------------------------
+card_id:13
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Architecti13
+--------------------------------
+card_id:14
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Architecti14
 --------------------------------
 card_id:15
 mana_cost:2
 original_mana_cost:2
-name:Roman Architect
-hp:4
-max_hp:4
-original_hp:4
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Gain 1 defence when a friendly mininon takes damage
-original_description:Gain 1 defence when a friendly mininon takes damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Roman Architect.png
-items:[]
-number_of_attacks:1
+name:Guard the Fort
+card_type:Spell
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Roman_Architect15
+category:
+name_for_html:Guard_the_Fort15
 --------------------------------
 card_id:16
 mana_cost:2
 original_mana_cost:2
-name:Harsh Trainer
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Deal 1 damage to a minion and give it +2 attack
-original_description:Deal 1 damage to a minion and give it +2 attack
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Harsh Trainer.png
-items:[]
-number_of_attacks:1
+name:Guard the Fort
+card_type:Spell
+description:Gain 3 defences and summon a 2/3 Fort Guard
+img_url:Guard the Fort.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Harsh_Trainer16
+category:
+name_for_html:Guard_the_Fort16
 --------------------------------
 card_id:17
 mana_cost:2
 original_mana_cost:2
-name:Harsh Trainer
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Deal 1 damage to a minion and give it +2 attack
-original_description:Deal 1 damage to a minion and give it +2 attack
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Harsh Trainer.png
-items:[]
-number_of_attacks:1
+name:Recruiting
+card_type:Spell
+description:Add 2 random knights
+img_url:Recruiting.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Harsh_Trainer17
+category:
+name_for_html:Recruiting17
 --------------------------------
 card_id:18
-mana_cost:1
-original_mana_cost:1
-name:Vast Empire
+mana_cost:2
+original_mana_cost:2
+name:Recruiting
 card_type:Spell
-description:Recruit a mercenary if you have 10 mana keep all 3 cards
-img_url:Vast Empire.png
+description:Add 2 random knights
+img_url:Recruiting.png
 target:None
 empire_belonging:
 category:
-name_for_html:Vast_Empire18
+name_for_html:Recruiting18
 --------------------------------
 card_id:19
-mana_cost:1
-original_mana_cost:1
-name:Vast Empire
+mana_cost:3
+original_mana_cost:3
+name:Unknown Territory
 card_type:Spell
-description:Recruit a mercenary if you have 10 mana keep all 3 cards
-img_url:Vast Empire.png
-target:None
-empire_belonging:
-category:
-name_for_html:Vast_Empire19
---------------------------------
-card_id:20
-mana_cost:5
-original_mana_cost:5
-name:Tavern Fight
-card_type:Spell
-description:Destroy all creatures except one
-img_url:Tavern Fight.png
+description:Spend all your defences to deal that much damage to ALL minions
+img_url:Unknown Territory.png
 target:enemy
 empire_belonging:
 category:
-name_for_html:Tavern_Fight20
+name_for_html:Unknown_Territory19
 --------------------------------
-card_id:21
-mana_cost:2
-original_mana_cost:2
-name:Frightened Girl
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
+card_id:20
+mana_cost:4
+original_mana_cost:4
+name:Full Armored Legionary
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
-description:Guard Recruit a guard
-original_description:Guard Recruit a guard
+description:Guard Deal damage equal to your defences to an enemy minion
+original_description:Guard Deal damage equal to your defences to an enemy minion
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Frightened Girl.png
+img_url:Full Armored Legionary.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Frightened_Girl21
+name_for_html:Full_Armored_Legionary20
+--------------------------------
+card_id:21
+mana_cost:4
+original_mana_cost:4
+name:Full Armored Legionary
+hp:5
+max_hp:5
+original_hp:5
+attack:4
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+description:Guard Deal damage equal to your defences to an enemy minion
+original_description:Guard Deal damage equal to your defences to an enemy minion
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Full Armored Legionary.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Full_Armored_Legionary21
 --------------------------------
 card_id:22
 mana_cost:2
@@ -474,112 +504,110 @@ name_for_html:Frightened_Girl22
 card_id:23
 mana_cost:2
 original_mana_cost:2
-name:Inspiring mercenary
-hp:2
-max_hp:2
-original_hp:2
+name:Frightened Girl
+hp:3
+max_hp:3
+original_hp:3
 attack:2
-category:mercenary
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard Desperate give all guards +1/+1
-original_description:Guard Desperate give all guards +1/+1
+description:Guard Recruit a guard
+original_description:Guard Recruit a guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Inspiring mercenary.png
+img_url:Frightened Girl.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Inspiring_mercenary23
+name_for_html:Frightened_Girl23
 --------------------------------
 card_id:24
-mana_cost:2
-original_mana_cost:2
-name:Inspiring mercenary
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Desperate give all guards +1/+1
-original_description:Guard Desperate give all guards +1/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring mercenary.png
-items:[]
-number_of_attacks:1
+mana_cost:5
+original_mana_cost:5
+name:Tavern Fight
+card_type:Spell
+description:Destroy all creatures except one
+img_url:Tavern Fight.png
+target:enemy
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Inspiring_mercenary24
+category:
+name_for_html:Tavern_Fight24
 --------------------------------
 card_id:25
-mana_cost:2
-original_mana_cost:2
-name:Recruiting
+mana_cost:5
+original_mana_cost:5
+name:Tavern Fight
 card_type:Spell
-description:Add 2 random knights
-img_url:Recruiting.png
+description:Destroy all creatures except one
+img_url:Tavern Fight.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Tavern_Fight25
+--------------------------------
+card_id:26
+mana_cost:1
+original_mana_cost:1
+name:Execute
+card_type:Spell
+description:Destroy a damaged minion
+img_url:Execute.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Execute26
+--------------------------------
+card_id:27
+mana_cost:1
+original_mana_cost:1
+name:Execute
+card_type:Spell
+description:Destroy a damaged minion
+img_url:Execute.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Execute27
+--------------------------------
+card_id:28
+mana_cost:1
+original_mana_cost:1
+name:Vast Empire
+card_type:Spell
+description:Recruit a mercenary if you have 10 mana keep all 3 cards
+img_url:Vast Empire.png
 target:None
 empire_belonging:
 category:
-name_for_html:Recruiting25
---------------------------------
-card_id:26
-mana_cost:10
-original_mana_cost:10
-name:Senatus Populusque Romanus
-card_type:Spell
-description:Deal 2 damage to ALL minions cost 1 less for each defences you have
-img_url:Senatus Populusque Romanus.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Senatus_Populusque_Romanus26
---------------------------------
-card_id:27
-mana_cost:10
-original_mana_cost:10
-name:Senatus Populusque Romanus
-card_type:Spell
-description:Deal 2 damage to ALL minions cost 1 less for each defences you have
-img_url:Senatus Populusque Romanus.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Senatus_Populusque_Romanus27
---------------------------------
-card_id:28
-mana_cost:0
-original_mana_cost:0
-name:Whip hit
-card_type:Spell
-description:Deal 1 damage to a minion and give it +2 attack
-img_url:Whip hit.png
-target:self
-empire_belonging:
-category:
-name_for_html:Whip_hit28
+name_for_html:Vast_Empire28
 --------------------------------
 card_id:29
-mana_cost:0
-original_mana_cost:0
-name:Whip hit
+mana_cost:1
+original_mana_cost:1
+name:Vast Empire
 card_type:Spell
-description:Deal 1 damage to a minion and give it +2 attack
-img_url:Whip hit.png
-target:self
+description:Recruit a mercenary if you have 10 mana keep all 3 cards
+img_url:Vast Empire.png
+target:None
 empire_belonging:
 category:
-name_for_html:Whip_hit29
+name_for_html:Vast_Empire29
+--------------------------------
+card_id:30
+mana_cost:4
+original_mana_cost:4
+name:Mercenary Defences
+card_type:Spell
+description:Deal 5 damage to a minion if you are holding a knight gain 5 defences
+img_url:Mercenary Defences.png
+target:enemy
+empire_belonging:
+category:
+name_for_html:Mercenary_Defences30
 --------------------------------

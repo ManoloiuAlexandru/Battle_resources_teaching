@@ -18,12 +18,14 @@ bot_deck = [
     Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
 ]
 demo_deck = [
-    Spell(1, "Get back to work", "Deal 8 damage to a friendly minion in one turn Reward Ephix Maximus", 0),
-    Creature(0, "demo", 99, 1, "Guard", "all", 1),
-    Spell(0, "Unknown Territory", "Spend all your defences to deal that much damage to ALL minions",
-          2),
-    Spell(0, "Build defences", "Gain 5 Defenses and draw a card", 3),
-    Spell(0, "Build defences", "Gain 5 Defenses and draw a card", 4),
+    Creature(3, "Louis the Pious", 2, 3, "Set The health of all other minions to 1 Desperate deal 1 damage to all",
+             "knight", 0),
+    Creature(0, "Ancient Farmer", 3, 1, "Add 2 Resources to your deck", "ancient", 1),
+    Spell(0, "Ancient Arrow Volley", "Deal 2 damage to ALL minions add 2 Resources to your deck", 2),
+    Spell(0, "Ancient Arrow Shot", "Deal 3 damage to a minion add 2 Resources to your deck", 3),
+    Creature(0, "Payed Guard", 5, 4, "Guard Consume a Resources from your deck to get a +3/+3", "ancient", 4),
+    Creature(0, "Payed Scribe", 4, 3, "Consume a Resources from your deck to deal 3 damage","worker", 5),
+    Creature(0, "Hammurabi", 5, 5, "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", 2)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
