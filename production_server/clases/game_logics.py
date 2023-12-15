@@ -11,36 +11,37 @@ def battle(card1, card2, player1, player2):
     try:
         if card1.attack > 0:
             player2.check_for_tactics("attacking", card1, card2)
-            player1.logs += card1.name + " is in battle with " + card2.name + "\n"
-            if card1.armored is True and card2.armored is True:
-                if card2.attack > 0:
-                    card1.armored = False
-                if card1.attack > 0:
-                    card2.armored = False
-            elif card1.armored is True:
-                card2.hp -= card1.attack
-                player2.check_for_creature_with_effect_on("damage_taken", None)
-                if card2.attack > 0:
-                    card1.armored = False
-            elif card2.armored is True:
-                card1.hp -= card2.attack
-                if card1.attack > 0:
-                    card2.armored = False
-                player1.check_for_creature_with_effect_on("damage_taken", None)
-            else:
-                card1.hp -= card2.attack
-                player1.check_for_creature_with_effect_on("damage_taken", None)
-                card2.hp -= card1.attack
-                player2.check_for_creature_with_effect_on("damage_taken", None)
-            if "Rebuilder" in card1.description.split(" "):
-                player1.heal_player(card1.attack)
-            if "Rebuilder" in card2.description.split(" "):
-                player2.heal_player(card2.attack)
-            card1.exhausted = True
-            card1.number_of_attacks -= 1
-            player2.check_for_tactics("dmg_delt", card1, card2)
-            Player.clean_board(player1, player2)
-            Player.battle_fields_effects(player1, player2)
+            if card1 in player1.battle_field:
+                player1.logs += card1.name + " is in battle with " + card2.name + "\n"
+                if card1.armored is True and card2.armored is True:
+                    if card2.attack > 0:
+                        card1.armored = False
+                    if card1.attack > 0:
+                        card2.armored = False
+                elif card1.armored is True:
+                    card2.hp -= card1.attack
+                    player2.check_for_creature_with_effect_on("damage_taken", None)
+                    if card2.attack > 0:
+                        card1.armored = False
+                elif card2.armored is True:
+                    card1.hp -= card2.attack
+                    if card1.attack > 0:
+                        card2.armored = False
+                    player1.check_for_creature_with_effect_on("damage_taken", None)
+                else:
+                    card1.hp -= card2.attack
+                    player1.check_for_creature_with_effect_on("damage_taken", None)
+                    card2.hp -= card1.attack
+                    player2.check_for_creature_with_effect_on("damage_taken", None)
+                if "Rebuilder" in card1.description.split(" "):
+                    player1.heal_player(card1.attack)
+                if "Rebuilder" in card2.description.split(" "):
+                    player2.heal_player(card2.attack)
+                card1.exhausted = True
+                card1.number_of_attacks -= 1
+                player2.check_for_tactics("dmg_delt", card1, card2)
+                Player.clean_board(player1, player2)
+                Player.battle_fields_effects(player1, player2)
     except Exception as e:
         print(e)
 
@@ -129,20 +130,21 @@ def damage_dealing(player, card_picked):
 
 
 def damage_to_player(player, current_card):
-    if player.immunity is False and player.armor == 0:
-        player.hp -= current_card.attack
-    elif player.armor >= current_card.attack:
-        player.armor -= current_card.attack
-    else:
-        player.hp = player.hp + player.armor - current_card.attack
-        player.armor = 0
-    if "Rebuilder" in current_card.description.split(" "):
-        player.enemy_player.heal_player(current_card.attack)
     player.check_for_tactics("attacking", current_card, None)
-    player.dict_of_actions["Damage_taken"] += current_card.attack
-    player.enemy_player.dict_of_actions["Damage_done"] -= current_card.attack
-    current_card.exhausted = True
-    current_card = None
+    if current_card in player.enemy_player.battle_field:
+        if player.immunity is False and player.armor == 0:
+            player.hp -= current_card.attack
+        elif player.armor >= current_card.attack:
+            player.armor -= current_card.attack
+        else:
+            player.hp = player.hp + player.armor - current_card.attack
+            player.armor = 0
+        if "Rebuilder" in current_card.description.split(" "):
+            player.enemy_player.heal_player(current_card.attack)
+        player.dict_of_actions["Damage_taken"] += current_card.attack
+        player.enemy_player.dict_of_actions["Damage_done"] -= current_card.attack
+        current_card.exhausted = True
+        current_card = None
     return player, current_card
 
 

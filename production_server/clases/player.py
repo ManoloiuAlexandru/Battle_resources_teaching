@@ -83,6 +83,8 @@ class Player:
                 self.check_for_creature_with_effect_on("summ", card)
                 if card.name in list_of_cards_that_add_cards_to_your_deck and len(self.battle_field) < 7:
                     self.add_card_to_deck(card)
+                if card.name in list_of_creature_that_debuff_enemies and len(self.battle_field) < 7:
+                    self.debuff_all_enemies(card)
                 if card.name in list_of_creature_that_debuff_all and len(self.battle_field) < 7:
                     self.debuff_all(card)
                 if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
@@ -933,8 +935,26 @@ class Player:
                         for i in range(int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])):
                             self.battle_field.append(list_of_spells_that_summon_specific_cards.get(tactic.name)[1][0])
                             list_of_spells_that_summon_specific_cards.get(tactic.name)[1].pop(0)
+                elif "send_to_hand" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                    self.send_to_hand(creature1, self.enemy_player, "+2:mana")
+                elif "deal_dmg" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                    if "enemies" == list_of_tactics.get(tactic.name).split("=>")[1].split(":")[2]:
+                        for creature in self.enemy_player.battle_field:
+                            if creature.armored is True:
+                                creature.armored = False
+                            else:
+                                creature.hp -= int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])
             self.logs += "Tactic triggered:" + tactic.name + "\n"
             self.tactics.remove(tactic)
+
+    def send_to_hand(self, creature, player, negative_effect):
+        if len(player.hand) < 10:
+            creature.reset()
+            if negative_effect is not None:
+                if "mana" in negative_effect.split(":"):
+                    creature.mana_cost += int(negative_effect.split(":")[0][1])
+            player.battle_field.remove(creature)
+            player.hand.append(creature)
 
     def play_drawn_card(self, got_card, what_cards_to_play):
         if got_card == 1:
@@ -952,6 +972,10 @@ class Player:
         for creature in self.battle_field:
             if creature != card:
                 creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self, self.enemy_player)
+        for creature in self.enemy_player.battle_field:
+            creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self.enemy_player, self)
+
+    def debuff_all_enemies(self, card):
         for creature in self.enemy_player.battle_field:
             creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self.enemy_player, self)
 

@@ -454,5 +454,8 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(3, "Payed Scribe", 4, 3, "Consume a Resources from your deck to deal 3 damage", "worker",
                               -255),
                      Creature(7, "Hammurabi", 5, 5,
-                              "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256)
+                              "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256),
+                     Creature(6, "Kublai", 6, 7, "Set all enemies minions health to 1", "knight", -257),
+                     Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258),
+                     Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", -259)
                      ]

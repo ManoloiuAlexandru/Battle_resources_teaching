@@ -168,3 +168,9 @@ class Creature:
             self.active_effects.clear()
         else:
             self.description += " " + debuffing_effect[2]
+
+    def reset(self):
+        self.mana_cost = self.original_mana_cost
+        self.hp = self.original_hp
+        self.attack = self.original_attack
+        self.description = self.original_description

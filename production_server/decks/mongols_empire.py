@@ -29,7 +29,10 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Creature(1, "Dog Pup", 1, 2, "Desperate Add a 4/5 Big Dog to your deck", "animal", -243),
                     Creature(2, "Scavenger Hyena", 2, 2, "When a friendly animal dies gain +2/+1", "animal", -244),
                     Spell(2, "Wild Bear", "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
-                          -245)
+                          -245),
+                    Creature(6, "Kublai", 6, 7, "Set all enemies minions health to 1", "knight", -257),
+                    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258),
+                    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", -259)
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -63,7 +66,12 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                                     -244),
                            Spell(2, "Wild Bear",
                                  "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
-                                 -245)
+                                 -245),
+                           Creature(6, "Kublai", 6, 7, "Set all enemies minions health to 1", "knight", -257),
+                           Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands",
+                                 -258),
+                           Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions",
+                                 -259)
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
                            "While this is on the field your creatures have +1 attack", "animal", 1900),

@@ -15,17 +15,12 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", 1)
+    Creature(0, "demo", 1, 1, "Charge", "mercenary", 1)
 ]
 demo_deck = [
-    Creature(3, "Louis the Pious", 2, 3, "Set The health of all other minions to 1 Desperate deal 1 damage to all",
-             "knight", 0),
-    Creature(0, "Ancient Farmer", 3, 1, "Add 2 Resources to your deck", "ancient", 1),
-    Spell(0, "Ancient Arrow Volley", "Deal 2 damage to ALL minions add 2 Resources to your deck", 2),
-    Spell(0, "Ancient Arrow Shot", "Deal 3 damage to a minion add 2 Resources to your deck", 3),
-    Creature(0, "Payed Guard", 5, 4, "Guard Consume a Resources from your deck to get a +3/+3", "ancient", 4),
-    Creature(0, "Payed Scribe", 4, 3, "Consume a Resources from your deck to deal 3 damage","worker", 5),
-    Creature(0, "Hammurabi", 5, 5, "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", 2)
+    Creature(6, "Kublai", 6, 7, "Set all enemies minions health to 1", "knight", 0),
+    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", 1),
+    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", 2)
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

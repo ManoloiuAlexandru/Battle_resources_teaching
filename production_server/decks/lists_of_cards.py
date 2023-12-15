@@ -105,7 +105,8 @@ list_of_creature_that_draw_specific_cards = {
         ["Creature", "Spell"], ["", ""], ["", ""])}
 list_of_creature_that_add_mana = {"Farmer": 1}
 list_of_creature_that_summon = {
-    "Hammurabi": [0, [Creature(3, "Man at Arms", 3, 3, "Rush", "ancient", generate_random_int()) for i in range(0, 40)]],
+    "Hammurabi": [0,
+                  [Creature(3, "Man at Arms", 3, 3, "Rush", "ancient", generate_random_int()) for i in range(0, 40)]],
     "Snow Leopard": [0, [Creature(2, "Leopard", 2, 2, "", "animal", generate_random_int()) for i in range(0, 10)]],
     "Shepherd": (1, [Creature(1, "Guard Dog", 1, 1, "Guard", "animal", generate_random_int()) for i in range(0, 4)]),
     "Domestic cat": (1, [Creature(1, "Wild Cat", 1, 1, "", "animal", generate_random_int()) for i in range(0, 4)]),
@@ -196,11 +197,13 @@ list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient Army Guard"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
-                   "Julius Caesar", "Godfrey of Bouillon", "Charles IV"]
+                   "Julius Caesar", "Godfrey of Bouillon", "Charles IV", "Hammurabi", "Louis the Pious",
+                   "Get back to work", "We don't take it personally","Kublai"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " "),
-                                "Louis the Pious": (1, -1, " ")}
+                                "Louis the Pious": (1, -1, " "), "Kublai": (1, -1, " ")}
 list_of_creature_that_debuff_all = {"Louis the Pious"}
+list_of_creature_that_debuff_enemies = {"Kublai"}
 list_of_creature_that_add_defence = {
     "Rusticus Recruiter": [Defence(1, "Peasant Troops", 1, 3, "", generate_random_int()) for i in range(0, 10)],
     "Mercenary defender": [Defence(3, "Mercenary's Troops", 3, 2, "", generate_random_int()) for i in range(0, 10)]}
@@ -283,7 +286,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
                   "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear",
                   "We don't take it personally", "Get back to work", "Resources", "Ancient Arrow Volley",
-                  "Ancient Arrow Shot"]
+                  "Ancient Arrow Shot", "Snare Trap", "Fire Trap"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -313,7 +316,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
                                  "Hidden Armor", "Arbalets Volley", "Wild Bear", "We don't take it personally",
-                                 "Get back to work", "Ancient Arrow Volley"]
+                                 "Get back to work", "Ancient Arrow Volley", "Snare Trap", "Fire Trap"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -378,7 +381,9 @@ list_of_tactics = {"Priority Target": "dmg_delt>3=>deal_dmg:99",
                    "Avenge": "friendly_minion_dies=>buff:random",
                    "You don't scare me": "attacking=>debuff",
                    "Hidden Armor": "attacking=>buff:target",
-                   "Wild Bear": "attacking:kingdom=>summon:1"}
+                   "Wild Bear": "attacking:kingdom=>summon:1",
+                   "Snare Trap": "attacking=>send_to_hand",
+                   "Fire Trap": "attacking:minion=>deal_dmg:2:enemies"}
 list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom:0:8:add_to_hand": {
     1: Creature(5, "Lndrau Aaurentis", 8, 8, "Armored Guard All your cards get guard", "legend",
                 generate_random_int()) for i in range(0, 10)}},
@@ -386,6 +391,8 @@ list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom
         1: Creature(5, "Ephix Maximus", 6, 6, "Charge Give all your cards Charge and +2 attack", "legend",
                     generate_random_int()) for i in range(0, 10)}},
 }
+list_of_spells_that_add_mana_cost = {"Snare Trap": 2}
+list_of_cards_that_send_back_to_hand = {"Snare Trap": 1}
 list_of_spells_that_auto_cast = {"Resources": "heal_player"}
 """
 Defence
