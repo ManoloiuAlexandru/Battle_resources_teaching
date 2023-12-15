@@ -40,6 +40,8 @@ class Quest:
                     max_damage_taken = creature.damage_taken_this_turn_from_empire
             if max_damage_taken > self.progress:
                 self.progress = max_damage_taken
+            if action == "end_turn":
+                self.progress = 0
         if self.nr_turns <= self.progress:
             if self.name == "We don't take it personally" or self.name == "Get back to work":
                 for key in self.reward:
@@ -47,5 +49,3 @@ class Quest:
                         if len(player.hand) < 10:
                             player.hand.append(self.reward[key])
             player.quest = None
-        if action == "end_turn":
-            self.progress = 0

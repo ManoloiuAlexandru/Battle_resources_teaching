@@ -228,6 +228,7 @@ class Player:
                 if card.name in list_of_quests:
                     quest_in_deck = 1
                     self.hand.append(card)
+                    self.deck.remove(card)
                     break
             if quest_in_deck == 1:
                 for i in range(0, 4):
@@ -810,6 +811,8 @@ class Player:
                 creature.armored = False
             else:
                 creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
+                if self.quest is not None:
+                    self.quest.check_quest_progression(self, None, "damage")
                 self.check_for_creature_with_effect_on("damage_taken", None)
         for creature in self.enemy_player.battle_field:
             if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures.get(
@@ -832,6 +835,8 @@ class Player:
                 creature.armored = False
             else:
                 creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(card.name)
+                if self.quest is not None:
+                    self.quest.check_quest_progression(self, None, "damage")
                 self.check_for_creature_with_effect_on("damage_taken", None)
         for creature in self.enemy_player.battle_field:
             if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
