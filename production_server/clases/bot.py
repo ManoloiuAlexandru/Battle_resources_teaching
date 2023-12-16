@@ -130,7 +130,7 @@ class Bot(Player):
                             break
                 except Exception as e:
                     print(e)
-            elif card.name in list_of_creature_that_buff:
+            elif card.name in list_of_creature_that_buff and card.name in list_of_creature_description:
                 try:
                     for creature in self.battle_field:
                         creature.hp += list_of_creature_that_buff.get(card.name)[0]

@@ -109,11 +109,19 @@ Steps to reproduce:
 - make a personal deck and put  "Knight Recruiter"X2 and a knight, any knight will do
 - set the game to easy
 - play the  "Knight Recruiter" while holding a knight
-- recruit the knight you have then play the rest of the knight
+- recruit the knight you have then play the rest of the knights
 - when you play  "Knight Recruiter" again it will let you recruit aldo your hand has no knight
+
+7.When the bot has a card that buff he will pick a card from his board aldo he can't buff the card:
+Steps to reproduce:
+- make a personal deck and put any card that can buff other cards and then put "Nero"(you need to be roman empire)(put 10 cards)
+- pick mode I hate myself and start game
+- Play the game until the bot puts Nero on the board see that the first creature gets +6 attack why ?
+The problem is in bot file at line 133
 
 Ongoing Homework: find a bug, report it with steps on how to reproduce it
 Bonus if you want to tell me what file has the problem.
+Extra bonus: fix the bug and show me what you did.
 
 Tips for testing:
 The "I hate myself" option from the modes tab is very usefull when you want to check if the bot is playing the cards correct
