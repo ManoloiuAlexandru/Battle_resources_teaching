@@ -1,613 +1,463 @@
-empire:Roman_Empire
+empire:Mongol_Empire
 card_id:0
-mana_cost:3
-original_mana_cost:3
-name:Louis the Pious
+mana_cost:1
+original_mana_cost:1
+name:Friendly Dog
 hp:2
 max_hp:2
 original_hp:2
+attack:1
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Add a random animal yo your hand
+original_description:Add a random animal yo your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Friendly Dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Friendly_Dog0
+--------------------------------
+card_id:1
+mana_cost:1
+original_mana_cost:1
+name:Friendly Dog
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+description:Add a random animal yo your hand
+original_description:Add a random animal yo your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Friendly Dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Friendly_Dog1
+--------------------------------
+card_id:2
+mana_cost:4
+original_mana_cost:4
+name:Snow Leopard
+hp:3
+max_hp:3
+original_hp:3
 attack:3
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:If you control a tactic summon 2 2/2 Leopard
+original_description:If you control a tactic summon 2 2/2 Leopard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Snow Leopard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Snow_Leopard2
+--------------------------------
+card_id:3
+mana_cost:4
+original_mana_cost:4
+name:Snow Leopard
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+description:If you control a tactic summon 2 2/2 Leopard
+original_description:If you control a tactic summon 2 2/2 Leopard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Snow Leopard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Snow_Leopard3
+--------------------------------
+card_id:4
+mana_cost:2
+original_mana_cost:2
+name:Wild Bear
+card_type:Spell
+description:Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard
+img_url:Wild Bear.png
+target:None
+empire_belonging:
+category:
+name_for_html:Wild_Bear4
+--------------------------------
+card_id:5
+mana_cost:2
+original_mana_cost:2
+name:Wild Bear
+card_type:Spell
+description:Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard
+img_url:Wild Bear.png
+target:None
+empire_belonging:
+category:
+name_for_html:Wild_Bear5
+--------------------------------
+card_id:6
+mana_cost:6
+original_mana_cost:6
+name:Kublai
+hp:6
+max_hp:6
+original_hp:6
+attack:7
 category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:7
 active_effects:[]
-description:Set The health of all other minions to 1 Desperate deal 1 damage to all
-original_description:Set The health of all other minions to 1 Desperate deal 1 damage to all
+description:Set all enemies minions health to 1
+original_description:Set all enemies minions health to 1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Louis the Pious.png
+img_url:Kublai.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Louis_the_Pious0
---------------------------------
-card_id:1
-mana_cost:8
-original_mana_cost:8
-name:Nero
-hp:9
-max_hp:9
-original_hp:9
-attack:4
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Charge +6 attack while damaged
-original_description:Charge +6 attack while damaged
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Nero.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Nero1
---------------------------------
-card_id:2
-mana_cost:2
-original_mana_cost:2
-name:Roman Architect
-hp:4
-max_hp:4
-original_hp:4
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Gain 1 defence when a friendly mininon takes damage
-original_description:Gain 1 defence when a friendly mininon takes damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Roman Architect.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Roman_Architect2
---------------------------------
-card_id:3
-mana_cost:2
-original_mana_cost:2
-name:Roman Architect
-hp:4
-max_hp:4
-original_hp:4
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Gain 1 defence when a friendly mininon takes damage
-original_description:Gain 1 defence when a friendly mininon takes damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Roman Architect.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Roman_Architect3
---------------------------------
-card_id:4
-mana_cost:3
-original_mana_cost:3
-name:Mercenary Lieutenant
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Deal 1 damage to all other minions
-original_description:Deal 1 damage to all other minions
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Lieutenant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_Lieutenant4
---------------------------------
-card_id:5
-mana_cost:3
-original_mana_cost:3
-name:Mercenary Lieutenant
-hp:3
-max_hp:3
-original_hp:3
-attack:3
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-description:Deal 1 damage to all other minions
-original_description:Deal 1 damage to all other minions
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Lieutenant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_Lieutenant5
---------------------------------
-card_id:6
-mana_cost:2
-original_mana_cost:2
-name:Inspiring mercenary
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Desperate give all guards +1/+1
-original_description:Guard Desperate give all guards +1/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring mercenary.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Inspiring_mercenary6
+name_for_html:Kublai6
 --------------------------------
 card_id:7
 mana_cost:2
 original_mana_cost:2
-name:Inspiring mercenary
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Desperate give all guards +1/+1
-original_description:Guard Desperate give all guards +1/+1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Inspiring mercenary.png
-items:[]
-number_of_attacks:1
+name:Snare Trap
+card_type:Spell
+description:Tactic When an enemy minion attacks send it to there owner hands
+img_url:Snare Trap.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Inspiring_mercenary7
+category:
+name_for_html:Snare_Trap7
+--------------------------------
+card_id:8
+mana_cost:2
+original_mana_cost:2
+name:Snare Trap
+card_type:Spell
+description:Tactic When an enemy minion attacks send it to there owner hands
+img_url:Snare Trap.png
+target:None
+empire_belonging:
+category:
+name_for_html:Snare_Trap8
 --------------------------------
 card_id:9
 mana_cost:2
 original_mana_cost:2
-name:Mercenary Recruiter
-hp:2
-max_hp:2
-original_hp:2
-attack:2
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Draw a mercenary
-original_description:Draw a mercenary
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary Recruiter.png
-items:[]
-number_of_attacks:1
+name:Fire Trap
+card_type:Spell
+description:Tactic When a minion is attacked deal 2 damage to all enemy minions
+img_url:Fire Trap.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_Recruiter9
+category:
+name_for_html:Fire_Trap9
 --------------------------------
 card_id:10
 mana_cost:2
 original_mana_cost:2
-name:Mercenary Recruiter
+name:Fire Trap
+card_type:Spell
+description:Tactic When a minion is attacked deal 2 damage to all enemy minions
+img_url:Fire Trap.png
+target:None
+empire_belonging:
+category:
+name_for_html:Fire_Trap10
+--------------------------------
+card_id:11
+mana_cost:2
+original_mana_cost:2
+name:Scavenger Hyena
 hp:2
 max_hp:2
 original_hp:2
 attack:2
-category:mercenary
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Draw a mercenary
-original_description:Draw a mercenary
+description:When a friendly animal dies gain +2/+1
+original_description:When a friendly animal dies gain +2/+1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary Recruiter.png
+img_url:Scavenger Hyena.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_Recruiter10
---------------------------------
-card_id:11
-mana_cost:1
-original_mana_cost:1
-name:Mercenary employer
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:mercenary
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Mercenary employer.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_employer11
+name_for_html:Scavenger_Hyena11
 --------------------------------
 card_id:12
-mana_cost:1
-original_mana_cost:1
-name:Mercenary employer
+mana_cost:2
+original_mana_cost:2
+name:Scavenger Hyena
 hp:2
 max_hp:2
 original_hp:2
-attack:1
-category:mercenary
+attack:2
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
+description:When a friendly animal dies gain +2/+1
+original_description:When a friendly animal dies gain +2/+1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary employer.png
+img_url:Scavenger Hyena.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_employer12
+name_for_html:Scavenger_Hyena12
 --------------------------------
 card_id:13
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:worker
+mana_cost:1
+original_mana_cost:1
+name:Dog Pup
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:2
 active_effects:[]
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
+description:Desperate Add a 4/5 Big Dog to your deck
+original_description:Desperate Add a 4/5 Big Dog to your deck
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Architecti.png
+img_url:Dog Pup.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Architecti13
+name_for_html:Dog_Pup13
 --------------------------------
 card_id:14
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:worker
+mana_cost:1
+original_mana_cost:1
+name:Dog Pup
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:2
 active_effects:[]
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
+description:Desperate Add a 4/5 Big Dog to your deck
+original_description:Desperate Add a 4/5 Big Dog to your deck
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Architecti.png
+img_url:Dog Pup.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Architecti14
+name_for_html:Dog_Pup14
 --------------------------------
 card_id:15
 mana_cost:2
 original_mana_cost:2
-name:Guard the Fort
-card_type:Spell
-description:Gain 3 defences and summon a 2/3 Fort Guard
-img_url:Guard the Fort.png
-target:None
+name:Novice Tactician
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you control a Tactic draw a card
+original_description:If you control a Tactic draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Novice Tactician.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Guard_the_Fort15
+damage_taken_this_turn_from_empire:0
+name_for_html:Novice_Tactician15
 --------------------------------
 card_id:16
 mana_cost:2
 original_mana_cost:2
-name:Guard the Fort
-card_type:Spell
-description:Gain 3 defences and summon a 2/3 Fort Guard
-img_url:Guard the Fort.png
-target:None
+name:Novice Tactician
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:If you control a Tactic draw a card
+original_description:If you control a Tactic draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Novice Tactician.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Guard_the_Fort16
+damage_taken_this_turn_from_empire:0
+name_for_html:Novice_Tactician16
 --------------------------------
 card_id:17
-mana_cost:2
-original_mana_cost:2
-name:Recruiting
-card_type:Spell
-description:Add 2 random knights
-img_url:Recruiting.png
-target:None
-empire_belonging:
-category:
-name_for_html:Recruiting17
---------------------------------
-card_id:18
-mana_cost:2
-original_mana_cost:2
-name:Recruiting
-card_type:Spell
-description:Add 2 random knights
-img_url:Recruiting.png
-target:None
-empire_belonging:
-category:
-name_for_html:Recruiting18
---------------------------------
-card_id:19
 mana_cost:3
 original_mana_cost:3
-name:Unknown Territory
-card_type:Spell
-description:Spend all your defences to deal that much damage to ALL minions
-img_url:Unknown Territory.png
-target:enemy
+name:Battle Tactician
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Cast a tactic from your deck
+original_description:Cast a tactic from your deck
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Battle Tactician.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Unknown_Territory19
+damage_taken_this_turn_from_empire:0
+name_for_html:Battle_Tactician17
+--------------------------------
+card_id:18
+mana_cost:3
+original_mana_cost:3
+name:Battle Tactician
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Cast a tactic from your deck
+original_description:Cast a tactic from your deck
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Battle Tactician.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Battle_Tactician18
+--------------------------------
+card_id:19
+mana_cost:2
+original_mana_cost:2
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
+attack:2
+category:animal
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+description:Charge
+original_description:Charge
+card_type:Creature
+exhausted:False
+armored:False
+can_be_target:True
+img_url:Hunting dog.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Hunting_dog19
 --------------------------------
 card_id:20
-mana_cost:4
-original_mana_cost:4
-name:Full Armored Legionary
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Deal damage equal to your defences to an enemy minion
-original_description:Guard Deal damage equal to your defences to an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Full Armored Legionary.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Full_Armored_Legionary20
---------------------------------
-card_id:21
-mana_cost:4
-original_mana_cost:4
-name:Full Armored Legionary
-hp:5
-max_hp:5
-original_hp:5
-attack:4
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-description:Guard Deal damage equal to your defences to an enemy minion
-original_description:Guard Deal damage equal to your defences to an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Full Armored Legionary.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Full_Armored_Legionary21
---------------------------------
-card_id:22
 mana_cost:2
 original_mana_cost:2
-name:Frightened Girl
-hp:3
-max_hp:3
-original_hp:3
+name:Hunting dog
+hp:1
+max_hp:1
+original_hp:1
 attack:2
-category:worker
+category:animal
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
-description:Guard Recruit a guard
-original_description:Guard Recruit a guard
+description:Charge
+original_description:Charge
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Frightened Girl.png
+img_url:Hunting dog.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Frightened_Girl22
---------------------------------
-card_id:23
-mana_cost:2
-original_mana_cost:2
-name:Frightened Girl
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-description:Guard Recruit a guard
-original_description:Guard Recruit a guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Frightened Girl.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Frightened_Girl23
---------------------------------
-card_id:24
-mana_cost:5
-original_mana_cost:5
-name:Tavern Fight
-card_type:Spell
-description:Destroy all creatures except one
-img_url:Tavern Fight.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Tavern_Fight24
---------------------------------
-card_id:25
-mana_cost:5
-original_mana_cost:5
-name:Tavern Fight
-card_type:Spell
-description:Destroy all creatures except one
-img_url:Tavern Fight.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Tavern_Fight25
---------------------------------
-card_id:26
-mana_cost:1
-original_mana_cost:1
-name:Execute
-card_type:Spell
-description:Destroy a damaged minion
-img_url:Execute.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Execute26
---------------------------------
-card_id:27
-mana_cost:1
-original_mana_cost:1
-name:Execute
-card_type:Spell
-description:Destroy a damaged minion
-img_url:Execute.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Execute27
---------------------------------
-card_id:28
-mana_cost:1
-original_mana_cost:1
-name:Vast Empire
-card_type:Spell
-description:Recruit a mercenary if you have 10 mana keep all 3 cards
-img_url:Vast Empire.png
-target:None
-empire_belonging:
-category:
-name_for_html:Vast_Empire28
---------------------------------
-card_id:29
-mana_cost:1
-original_mana_cost:1
-name:Vast Empire
-card_type:Spell
-description:Recruit a mercenary if you have 10 mana keep all 3 cards
-img_url:Vast Empire.png
-target:None
-empire_belonging:
-category:
-name_for_html:Vast_Empire29
---------------------------------
-card_id:30
-mana_cost:4
-original_mana_cost:4
-name:Mercenary Defences
-card_type:Spell
-description:Deal 5 damage to a minion if you are holding a knight gain 5 defences
-img_url:Mercenary Defences.png
-target:enemy
-empire_belonging:
-category:
-name_for_html:Mercenary_Defences30
+name_for_html:Hunting_dog20
 --------------------------------

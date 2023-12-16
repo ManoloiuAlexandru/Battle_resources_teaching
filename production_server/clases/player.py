@@ -829,7 +829,7 @@ class Player:
                         self.draw_card()
                 if "summ" in checking_card[2].split(":"):
                     list_of_creature_that_summon[card.name][0] = int(checking_card[2].split(":")[1])
-            else:
+            elif list_of_creature_that_summon.get(card.name) is not None:
                 list_of_creature_that_summon[card.name][0] = 0
 
     def do_damage_to_all_other_minions(self, card):

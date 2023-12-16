@@ -15,12 +15,24 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "demo", 1, 1, "Charge", "mercenary", 1)
+    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", 0),
+    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", 1),
+    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", 2),
+    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", 3),
+    Creature(0, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", 4),
+    Creature(0, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", 13),
+    Creature(2, "Novice Tactician", 3, 2, "If you control a Tactic draw a card", "worker", 5),
+    Creature(1, "Friendly Dog", 2, 1, "Add a random animal yo your hand", "animal", 8),
+    Creature(4, "Snow Leopard", 3, 3, "If you control a tactic summon 2 2/2 Leopard", "animal", 9),
+    Creature(1, "Dog Pup", 1, 2, "Desperate Add a 4/5 Big Dog to your deck", "animal", 10),
+    Creature(2, "Scavenger Hyena", 2, 2, "When a friendly animal dies gain +2/+1", "animal", 11),
+    Spell(2, "Wild Bear", "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
+          12),
+    Creature(0, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", -190),
+    Creature(0, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker", -185),
 ]
 demo_deck = [
-    Creature(6, "Kublai", 6, 7, "Set all enemies minions health to 1", "knight", 0),
-    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", 1),
-    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", 2)
+    Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight", "worker", 77),
 ]
 
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],

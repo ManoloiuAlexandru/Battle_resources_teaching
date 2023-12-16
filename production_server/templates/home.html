@@ -47,8 +47,32 @@
             <img class="deck" src="static/cards/Deck.png"/>
         </div>
         <div>
+             {%for tactic in players[0].tactics:%}
+                    <button class="tactic" id={{tactic.card_id}} name={{tactic.name_for_html}}>
+                <span style="display:flex">
+                <img src="static/cards/{{ tactic.img_url }}" class="tactic_image"/><br>
+                </span>
+                        <b><span class="tactic_name">{{tactic.name}}</span></b><br>
+                        <span class="tactic_description">{{tactic.description}}</span><br>
+                    </button>
+                {%endfor%}
+                 {%if players[0].quest:%}
+                <button class="tactic" id={{players[0].quest.card_id}} name={{players[0].quest.name_for_html}}>
+                <span style="display:flex">
+                <img src="static/cards/{{ players[0].quest.img_url }}" class="tactic_image"/><br>
+                </span>
+                        <b><span class="tactic_name">{{players[0].quest.name}}</span></b><br>
+                        <span class="tactic_description">{{players[0].quest.description}}</span><br>
+                    </button>
+                {%endif%}
             <form action="/battlefield_action" method="post">
                 <button class="player_icon" name="{{players[0].name}}">{{players[0].name}}<br>
+                    {%if players[0].quest:%}
+                    Quests:{{players[0].quest.progress}}/{{players[0].quest.nr_turns}}
+                    {%endif%}
+                    {%if players[0].tactics|length>0:%}
+                    Tactics:{{players[0].tactics|length}}*?
+                    {%endif%}
                     {%if players[0].armor>0:%}
                     Defenses:{{players[0].armor}}
                     {%endif%}

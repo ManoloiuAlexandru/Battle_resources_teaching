@@ -99,6 +99,8 @@ def reset_player(player, enemy_player):
 def turn_switch(player1, player2):
     if player1.quest is not None:
         player1.quest.check_quest_progression(player1, None, "end_turn")
+    if player2.quest is not None:
+        player2.quest.check_quest_progression(player2, None, "end_turn")
     if player1.turn == 1:
         end_of_turn_action(player1, player2)
         reset_player(player1, player2)
@@ -176,7 +178,8 @@ def check_target(player1, player2, card_picked):
                             card.hp -= list_of_creature_that_can_target_yourself.get(player1.active_minion.name)
                             card.damage_taken_this_turn_from_empire += list_of_creature_that_can_target_yourself.get(
                                 player1.active_minion.name)
-                            player1.quest.check_quest_progression(player1, card, "damage")
+                            if player1.quest is not None:
+                                player1.quest.check_quest_progression(player1, card, "damage")
                             player1.check_for_creature_with_effect_on("damage_taken", None)
                     if player1.active_minion.name in list_of_creature_that_heal:
                         heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))

@@ -114,3 +114,8 @@ Steps to reproduce:
 
 Ongoing Homework: find a bug, report it with steps on how to reproduce it
 Bonus if you want to tell me what file has the problem.
+
+Tips for testing:
+The "I hate myself" option from the modes tab is very usefull when you want to check if the bot is playing the cards correct
+If the server runs in an error just stop the server close the web and restart the server and the reopen the website
+(127.0.0.1:5000)

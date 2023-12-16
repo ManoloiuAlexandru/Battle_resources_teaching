@@ -22,6 +22,21 @@ class Bot(Player):
                 self.hand[self.hand.index(card)] = aux_card
             if card.mana_cost <= self.mana and len(self.battle_field) < 7:
                 if self.check_summed_card(card, player) == 1:
+                    if any(card.name == tactic.name for tactic in self.tactics):
+                        break
+                    self.check_for_creature_with_effect_on("summ", card)
+                    if card.name in list_of_cards_that_add_cards_to_your_deck and len(self.battle_field) < 7:
+                        self.add_card_to_deck(card)
+                    if card.name in list_of_creature_that_debuff_enemies and len(self.battle_field) < 7:
+                        self.debuff_all_enemies(card)
+                    if card.name in list_of_creature_that_debuff_all and len(self.battle_field) < 7:
+                        self.debuff_all(card)
+                    if card.name in list_of_creature_that_are_affected_by_hand and len(self.battle_field) < 7:
+                        self.hand_check(card)
+                    if card.name in list_of_cards_that_add_cards_to_your_hand and len(self.battle_field) < 7:
+                        self.add_random_card_to_hand(card)
+                    if card.name in list_of_cards_that_check_your_kingdom:
+                        self.check_kingdom(card)
                     if card.name in list_of_cards_that_discover:
                         self.discover_a_card(card)
                     if card.name in list_of_cards_that_add_cards_to_your_hand:
@@ -32,8 +47,6 @@ class Bot(Player):
                         else:
                             self.mana += self.last_debt
                         self.last_debt = 0
-                    if card.name in list_of_cards_that_check_your_kingdom:
-                        self.check_kingdom(card)
                     elif card.name in list_of_creature_that_do_damage_to_all_other_creatures and len(
                             self.battle_field) < 7:
                         self.do_damage_to_all_other_minions(card)
@@ -129,16 +142,22 @@ class Bot(Player):
                     print(e)
             elif card.name in list_of_creature_that_draw_cards:
                 for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
+                    got_card = 0
                     if card.name in list_of_creature_that_draw_specific_cards:
                         try:
-                            random_card = self.get_random_card(card)
+                            random_card = self.get_random_card(card, nr_cards)
                             if random_card is not None:
                                 self.hand.append(random_card)
                                 self.deck.remove(random_card)
+                                got_card = 1
                         except Exception as e:
                             print(e)
                     else:
                         self.draw_card()
+                        got_card = 1
+                    if card.name in list_of_creature_that_plays_a_card_from_your_deck:
+                        self.play_drawn_card(got_card,
+                                             list_of_creature_that_draw_specific_cards.get(card.name))
             elif card.name in list_of_creature_that_add_mana:
                 self.mana_increase(list_of_creature_that_add_mana.get(card.name))
                 if self.empty_mana + list_of_creature_that_add_mana.get(card.name) > 10:
@@ -255,6 +274,9 @@ class Bot(Player):
             if card.name in list_of_spells_that_debuff:
                 self.target_creature_with_spell(card, player)
                 return 1
+            if card.name in list_of_quests:
+                self.create_quest(self.incoming_spell)
+                return 1
             else:
                 return 0
         elif card.card_type == "Defence":
@@ -305,8 +327,12 @@ class Bot(Player):
                             if list_of_spells_that_do_something_conditional.get(card.name):
                                 if cast_conditional_spell(creature, self.incoming_spell) == 1:
                                     creature.hp -= list_of_dmg_spells.get(card.name)
+                                    creature.damage_taken_this_turn_from_empire += list_of_dmg_spells.get(
+                                        card.name)
                             else:
                                 creature.hp -= list_of_dmg_spells.get(card.name)
+                                creature.damage_taken_this_turn_from_empire += list_of_dmg_spells.get(
+                                    card.name)
                         self.logs += " on this card:" + creature.name + "\n"
             else:
                 general_spells(self, player, card.name)
@@ -391,14 +417,15 @@ class Bot(Player):
                 self.do_damage(target_creature)
 
     def discover_a_card(self, card):
-        for i in range(0, 3):
-            self.choice_options.append(
-                random.choice(list_of_creatures_to_pick.get(list_of_cards_that_discover[card.name]))[0])
+        if list_of_cards_that_discover[card.name] != "":
+            for i in range(0, 3):
+                self.choice_options.append(
+                    random.choice(list_of_creatures_to_pick.get(list_of_cards_that_discover[card.name]))[0])
 
-        if card.name == "Vast Empire" and self.empty_mana == 10:
-            for creature in self.choice_options:
-                if len(self.hand) < 10:
-                    self.hand.append(creature)
-        else:
-            self.hand.append(random.choice(self.choice_options))
-        self.choice_options = []
+            if card.name == "Vast Empire" and self.empty_mana == 10:
+                for creature in self.choice_options:
+                    if len(self.hand) < 10:
+                        self.hand.append(creature)
+            else:
+                self.hand.append(random.choice(self.choice_options))
+            self.choice_options = []
