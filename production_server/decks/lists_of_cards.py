@@ -42,7 +42,8 @@ list_of_creature_description = ["Two-handed Knight", "Hospitaller Knight", "Prie
 list_of_creature_that_deal_dmg_to_enemies = {"Two-handed Knight": 99, "Archer": 1, "Wild Elephant": 4,
                                              "Knight Arbalest": 0, "Knight Archer": 0, "Heavy Armored Knight": 0,
                                              "Motivated Squire": 0, "Harsh Trainer": 1, "Heavy Arbalest": 4,
-                                             "Full Armored Legionary": 0, "Limmu": 0, "Payed Scribe": 0}
+                                             "Full Armored Legionary": 0, "Limmu": 0, "Payed Scribe": 0,
+                                             "Mercenary knight": 0}
 list_of_creature_that_can_target_yourself = {"Archer": 1, "Harsh Trainer": 1, "Heavy Arbalest": 4}
 list_of_creature_that_deal_dmg_to_players = {"Archer": 1, "Wild Elephant": 4, "Knight Arbalest": 0, "Knight Archer": 0,
                                              "Motivated Squire": 0, "Heavy Arbalest": 4, "Payed Scribe": 0}
@@ -132,7 +133,8 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Ancient Full Armored soldier": ("hand_check:knight", "change:dmg", 3),
                                               "Heavy Armored Mercenary": ("hand_check:knight", "change:armor:gain", 5),
                                               "Mercenary Defences": ("hand_check:knight", "change:armor:gain", 5),
-                                              "Knight Recruiter": ("hand_check:knight", "change:discover", "knights")
+                                              "Knight Recruiter": ("hand_check:knight", "change:discover", "knights"),
+                                              "Mercenary knight": ("hand_check:knight", "change:dmg", 99),
                                               }
 list_of_creature_that_summ_after_they_die = {
     "Lost Chicken": (
@@ -198,7 +200,7 @@ list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient 
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
                    "Julius Caesar", "Godfrey of Bouillon", "Charles IV", "Hammurabi", "Louis the Pious",
-                   "Get back to work", "We don't take it personally","Kublai"]
+                   "Get back to work", "We don't take it personally", "Kublai"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " "),
                                 "Louis the Pious": (1, -1, " "), "Kublai": (1, -1, " ")}
@@ -251,7 +253,7 @@ list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
                                                                        "Ancient Full Armored soldier": 0}
 list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards",
-                               "Jaffa Merchant": "knights", "Knight Recruiter": ""}
+                               "Jaffa Merchant": "knights", "Knight Recruiter": "", "Chinese Tactician": "tactics"}
 list_of_creature_that_plays_a_card_from_your_deck = {"Battle Tactician"}
 list_of_creature_that_add_cards_to_your_deck_when_die = {"Dog Pup": (
     1, [Creature(1, "Big Dog", 5, 4, "", "animal", generate_random_int()) for i in range(0, 40)]), }
@@ -267,6 +269,7 @@ list_of_cards_that_add_cards_to_your_deck = {"Ancient Farmer":
                                                                               "Restore 2 health to your kingdom when drawn",
                                                                               generate_random_int()) for i in
                                                                         range(0, 40)])}
+list_of_creature_that_damage_a_random_creature = {"Mercenary knight": 1}
 """
 Spells
 """
@@ -286,7 +289,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
                   "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear",
                   "We don't take it personally", "Get back to work", "Resources", "Ancient Arrow Volley",
-                  "Ancient Arrow Shot", "Snare Trap", "Fire Trap"]
+                  "Ancient Arrow Shot", "Snare Trap", "Fire Trap", "Deadly Shot", "Quick Shot", "Hit and Run"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -299,7 +302,8 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Senatus Populusque Romanus": 2, "Known Territory": 0, "Heat of the desert": 5,
                       "A day in the desert": 3, "Mercenary Defences": 5, "Commander Desperation": 1,
                       "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99,
-                      "Arbalets Volley": 2, "Ancient Arrow Volley": 2, "Ancient Arrow Shot": 3}
+                      "Arbalets Volley": 2, "Ancient Arrow Volley": 2, "Ancient Arrow Shot": 3, "Deadly Shot": 99,
+                      "Quick Shot": 3, "Hit and Run": 1}
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
@@ -316,7 +320,8 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "A day in the desert", "Fast Auxiliars", "Commander Desperation", "Vast Empire",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
                                  "Hidden Armor", "Arbalets Volley", "Wild Bear", "We don't take it personally",
-                                 "Get back to work", "Ancient Arrow Volley", "Snare Trap", "Fire Trap"]
+                                 "Get back to work", "Ancient Arrow Volley", "Snare Trap", "Fire Trap", "Deadly Shot",
+                                 "Hit and Run"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -338,7 +343,8 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Hidden Armor": (0, 0, "Armored"), "Church Chosen": (5, 5, "Armored")}
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3)}
-list_of_spells_that_buff_conditional = {"Emperor's Will": ("hand:knight", (3, 2, "Armored"))}
+list_of_spells_that_buff_conditional = {"Emperor's Will": ("hand:knight", (2, 1, "Armored")),
+                                        "Quick Shot": ("hand:empty", "draw", 1)}
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
 list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self", "For the Khan": "self",
                                               "In the name of the king": "self", "Roman Formation Phalanx": "self"}
@@ -375,7 +381,8 @@ list_of_spells_that_add_defences = {
     "Defending  the empire": Defence(1, "Empire Peasants", 1, 4, "", generate_random_int())
     for
     i in range(0, 10)}
-list_of_spells_that_target_random_creatures = {"Tavern Fight": 13}
+list_of_spells_that_target_random_creatures = {"Tavern Fight": 13, "Deadly Shot": 1, "Hit and Run": 3}
+list_of_spells_that_target_random_enemy_creature = {"Deadly Shot": 1, "Hit and Run": 3}
 list_of_spells_that_do_something_conditional = {"Execute": "damaged", "Shield of Honor": "damaged"}
 list_of_tactics = {"Priority Target": "dmg_delt>3=>deal_dmg:99",
                    "Avenge": "friendly_minion_dies=>buff:random",

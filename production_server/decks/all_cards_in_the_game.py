@@ -457,5 +457,11 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                               "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256),
                      Creature(6, "Kublai", 6, 7, "Set all enemies minions health to 1", "knight", -257),
                      Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258),
-                     Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", -259)
+                     Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", -259),
+                     Creature(5, "Mercenary knight", 5, 6, "If you hold a knight kill a random enemy minion", "knight",
+                              -260),
+                     Creature(1, "Chinese Tactician", 1, 1, "Implement a tactic", "worker", -261),
+                     Spell(3, "Deadly Shot", "Kill a random enemy minion", -262),
+                     Spell(2, "Quick Shot", "Deal 3 damage to a minion if you hand is empty draw a card", -263),
+                     Spell(1, "Hit and Run", "Deal 1 damage to three random enemies", -264),
                      ]

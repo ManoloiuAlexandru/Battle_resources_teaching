@@ -93,6 +93,8 @@ class Player:
                     self.add_random_card_to_hand(card)
                 if card.name in list_of_cards_that_discover:
                     self.discover_a_card(card)
+                if card.name in list_of_creature_that_damage_a_random_creature:
+                    self.pick_random_enemy(card)
                 if card.name in list_of_card_that_pay_debt:
                     if self.last_debt > self.mana:
                         self.mana = self.empty_mana
@@ -207,6 +209,7 @@ class Player:
             for card_in_hand_copy in self.hand_copy:
                 if card_in_hand_copy.name == card.name:
                     self.hand_copy.remove(card_in_hand_copy)
+                    break
         else:
             self.hand.remove(card)
         self.mana_increase(-card.mana_cost)
@@ -490,6 +493,7 @@ class Player:
                                     ok = 1
                                     break
                                 list_of_creature_that_deal_dmg_to_enemies[card.name] = incoming_card[2]
+                                ok = 1
                                 if list_of_creature_that_deal_dmg_to_players.get(card.name) is not None:
                                     list_of_creature_that_deal_dmg_to_players[card.name] = incoming_card[2]
                                     ok = 1
@@ -748,10 +752,16 @@ class Player:
         incoming_card = list_of_spells_that_buff_conditional.get(card.name)
         if incoming_card is not None:
             if "hand" in incoming_card[0].split(":"):
-                for creature in self.hand:
-                    if creature.card_type == incoming_card[0].split(":")[1] or creature.category == \
-                            incoming_card[0].split(":")[1]:
-                        list_of_buff_spells[card.name] = incoming_card[1]
+                if "knight" in incoming_card[0].split(":"):
+                    for creature in self.hand:
+                        if creature.card_type == incoming_card[0].split(":")[1] or creature.category == \
+                                incoming_card[0].split(":")[1]:
+                            list_of_buff_spells[card.name] = incoming_card[1]
+                elif "empty" in incoming_card[0].split(":"):
+                    if len(self.hand) == 1:
+                        if "draw" == incoming_card[1]:
+                            for i in range(0, incoming_card[2]):
+                                self.draw_card()
 
     def action_from_condition(self, card, condition):
         if card.name in list_of_creature_that_have_other_stat_while_damaged and condition == "damaged":
@@ -991,3 +1001,9 @@ class Player:
                 self.logs += "You have drawn:" + card.name + "\n"
                 return None
         return card
+
+    def pick_random_enemy(self, card):
+        for i in range(list_of_creature_that_damage_a_random_creature[card.name]):
+            if len(self.enemy_player.battle_field) > 0:
+                card_picked = random.choice(self.enemy_player.battle_field)
+                card_picked.hp -= list_of_creature_that_deal_dmg_to_enemies[card.name]

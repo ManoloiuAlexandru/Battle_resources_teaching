@@ -15,26 +15,26 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", 0),
-    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", 1),
-    Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", 2),
-    Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", 3),
-    Creature(0, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", 4),
-    Creature(0, "Battle Tactician", 2, 2, "Cast a tactic from your deck", "worker", 13),
-    Creature(2, "Novice Tactician", 3, 2, "If you control a Tactic draw a card", "worker", 5),
-    Creature(1, "Friendly Dog", 2, 1, "Add a random animal yo your hand", "animal", 8),
-    Creature(4, "Snow Leopard", 3, 3, "If you control a tactic summon 2 2/2 Leopard", "animal", 9),
-    Creature(1, "Dog Pup", 1, 2, "Desperate Add a 4/5 Big Dog to your deck", "animal", 10),
-    Creature(2, "Scavenger Hyena", 2, 2, "When a friendly animal dies gain +2/+1", "animal", 11),
-    Spell(2, "Wild Bear", "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
-          12),
-    Creature(0, "Nero", 9, 4, "Charge +6 attack while damaged", "worker", -190),
-    Creature(0, "Harsh Trainer", 3, 2, "Deal 1 damage to a minion and give it +2 attack", "worker", -185),
+
 ]
 demo_deck = [
-    Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight", "worker", 77),
+    Creature(1, "Chinese Tactician", 1, 1, "Implement a tactic", "worker", 0),
+    Spell(3, "Deadly Shot", "Kill a random enemy minion", 1),
+    Spell(2, "Quick Shot", "Deal 3 damage to a minion if you hand is empty draw a card", 2),
+    Spell(1, "Hit and Run", "Deal 1 damage to three random enemies", 0),
 ]
 
+list_of_tactics_to_pick = [
+    [Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258)],
+    [Spell(2, "Fire Trap", "Tactic When a minion is attacked deal 2 damage to all enemy minions", -259)],
+    [Spell(1, "Priority Target", "Tactic  When an enemy minions deals more then 3 damage kill it",
+           -230)],
+    [Spell(1, "Avenge", "Tactic When a friendly minion dies, give another one +3/+2", -231)],
+    [Spell(1, "You don't scare me", "Tactic When a minion attacks sets it's health and attack to 1",
+           -232)],
+    [Spell(1, "Hidden Armor", "Tactic When one of your minions is attacked give it Armored", -233)],
+    [Spell(2, "Wild Bear", "Tactic After your kingdom is attacked, summon a 3/3 War Bear with Guard",
+           -245)]]
 list_of_knights = [[Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168)],
                    [Creature(7, "Heavy Armored Knight", 4, 7, "If you're holding a knight deal 7 damage to a minion",
                              "knight",
@@ -195,7 +195,7 @@ list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                   ]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
-                             "guards": list_of_guards}
+                             "guards": list_of_guards, "tactics": list_of_tactics_to_pick}
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)

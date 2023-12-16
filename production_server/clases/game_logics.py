@@ -403,6 +403,13 @@ def general_spells(player, enemy_player, spell_name):
         if player.incoming_spell.name in list_of_spells_that_target_random_creatures:
             if list_of_spells_that_target_random_creatures.get(player.incoming_spell.name) == 13:
                 pick_random_creature(player, enemy_player)
+            elif list_of_spells_that_target_random_enemy_creature.get(player.incoming_spell.name) == 1:
+                pick_random_enemy_creature(enemy_player, player.incoming_spell, "dmg")
+            elif 1 < list_of_spells_that_target_random_enemy_creature.get(player.incoming_spell.name) < 13:
+                pick_random_enemy_creatures(enemy_player, player.incoming_spell, "dmg",
+                                            list_of_spells_that_target_random_enemy_creature.get(
+                                                player.incoming_spell.name))
+                player.incoming_spell.description = ""
         if "ALL" in player.incoming_spell.description:
             damage_to_all_minions(player, enemy_player)
         elif "enemies" in player.incoming_spell.description:
@@ -677,3 +684,22 @@ def cast_conditional_spell(card, spell):
         if card.hp < card.max_hp:
             return 1
     return 0
+
+
+def pick_random_enemy_creature(player, card, effect):
+    try:
+        card_picked = random.choice(player.battle_field)
+        if effect == "dmg":
+            card_picked.hp -= list_of_dmg_spells[card.name]
+    except Exception as e:
+        print(e)
+
+
+def pick_random_enemy_creatures(player, card, effect, nr_targets):
+    for i in range(nr_targets):
+        try:
+            card_picked = random.choice(player.battle_field)
+            if effect == "dmg":
+                card_picked.hp -= list_of_dmg_spells[card.name]
+        except Exception as e:
+            print(e)

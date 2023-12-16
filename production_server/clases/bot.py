@@ -41,6 +41,8 @@ class Bot(Player):
                         self.discover_a_card(card)
                     if card.name in list_of_cards_that_add_cards_to_your_hand:
                         self.add_random_card_to_hand(card)
+                    if card.name in list_of_creature_that_damage_a_random_creature:
+                        self.pick_random_enemy(card)
                     if card.name in list_of_card_that_pay_debt:
                         if self.last_debt > self.mana:
                             self.mana = self.empty_mana
