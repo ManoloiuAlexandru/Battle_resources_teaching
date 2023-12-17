@@ -81,6 +81,8 @@ class Player:
                 if any(card.name == tactic.name for tactic in self.tactics):
                     break
                 self.check_for_creature_with_effect_on("summ", card)
+                if card.name in list_of_creature_that_affect_all_enemy_minions:
+                    self.affect_enemy_all(card)
                 if card.name in list_of_cards_that_add_cards_to_your_deck and len(self.battle_field) < 7:
                     self.add_card_to_deck(card)
                 if card.name in list_of_creature_that_debuff_enemies and len(self.battle_field) < 7:
@@ -103,6 +105,8 @@ class Player:
                     self.last_debt = 0
                 if card.name in list_of_cards_that_check_your_kingdom:
                     self.check_kingdom(card)
+                if card.name in list_of_creature_that_reduce_mana_cost:
+                    self.reduce_mana_cost_of_card(card)
                 if card.name in list_of_card_that_add_debt:
                     self.debt += list_of_card_that_add_debt.get(card.name)
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
@@ -466,9 +470,17 @@ class Player:
             self.buff_card_from_hand(card, card)
 
         elif "affects hand" in incoming_card[0] and len(self.hand) > 1 and incoming_card[1] == "buff":
-            for creature in self.hand:
-                if creature != card and creature.card_type == "Creature":
-                    self.buff_card_from_hand(creature, card)
+            if card.name in list_of_creature_that_affect_in_hand_specific:
+                for creature in self.hand:
+                    if creature != card and creature.card_type == \
+                            list_of_creature_that_affect_in_hand_specific[card.name][0]:
+                        if list_of_creature_that_affect_in_hand_specific[card.name][1] in creature.description and \
+                                list_of_creature_that_affect_in_hand_specific[card.name][2] == creature.category:
+                            self.buff_card_from_hand(creature, card)
+            else:
+                for creature in self.hand:
+                    if creature != card and creature.card_type == "Creature":
+                        self.buff_card_from_hand(creature, card)
         elif "hand_check" in incoming_card[0].split(":"):
             if incoming_card[0].split(":")[1] == "number":
                 if incoming_card[1].split(":")[0] == "change":
@@ -1007,3 +1019,25 @@ class Player:
             if len(self.enemy_player.battle_field) > 0:
                 card_picked = random.choice(self.enemy_player.battle_field)
                 card_picked.hp -= list_of_creature_that_deal_dmg_to_enemies[card.name]
+
+    def affect_enemy_all(self, card):
+        for creature in self.enemy_player.battle_field:
+            creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self.enemy_player, self)
+        for creature in self.enemy_player.deck:
+            if creature.card_type == "Creature":
+                creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self.enemy_player, self)
+        for creature in self.enemy_player.hand:
+            if creature.card_type == "Creature":
+                creature.debuff_creature(list_of_creature_that_debuff.get(card.name), self.enemy_player, self)
+
+    def reduce_mana_cost_of_card(self, card):
+        if "deck" in list_of_creature_that_reduce_mana_cost[card.name][0].split(","):
+            for creature in self.deck:
+                if creature.card_type == list_of_creature_that_reduce_mana_cost[card.name][1]:
+                    if creature.category == list_of_creature_that_reduce_mana_cost[card.name][2]:
+                        creature.mana_cost_reduction(list_of_creature_that_reduce_mana_cost[card.name][3])
+        if "hand" in list_of_creature_that_reduce_mana_cost[card.name][0].split(","):
+            for creature in self.hand:
+                if creature.card_type == list_of_creature_that_reduce_mana_cost[card.name][1]:
+                    if creature.category == list_of_creature_that_reduce_mana_cost[card.name][2]:
+                        creature.mana_cost_reduction(list_of_creature_that_reduce_mana_cost[card.name][3])

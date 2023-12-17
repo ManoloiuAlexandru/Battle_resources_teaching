@@ -39,7 +39,10 @@ mesopotamia_empire = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                       Creature(3, "Payed Scribe", 4, 3, "Consume a Resources from your deck to deal 3 damage", "worker",
                                -255),
                       Creature(7, "Hammurabi", 5, 5,
-                               "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256)
+                               "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256),
+                      Spell(1, "Imperial Drama",
+                            "Destory 4 of your minion in 1 turn without killing any enemy minions Reward: Lenxaadra, Queen of Drama",
+                            -265),
                       ]
 mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
@@ -78,5 +81,8 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Creature(3, "Payed Scribe", 4, 3, "Consume a Resources from your deck to deal 3 damage", "worker",
                              -255),
                     Creature(7, "Hammurabi", 5, 5,
-                             "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256)
+                             "For each Resources in your deck summon a 3/3 Man at Arms with Rush", "ancient", -256),
+                    Spell(1, "Imperial Drama",
+                          "Destory 4 of your minion in 1 turn without killing any enemy minions Reward: Lenxaadra, Queen of Drama",
+                          -265),
                     ]

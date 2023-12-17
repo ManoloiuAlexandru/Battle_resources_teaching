@@ -42,8 +42,19 @@ class Quest:
                 self.progress = max_damage_taken
             if action == "end_turn":
                 self.progress = 0
+        elif self.name == "Imperial Drama":
+            nr_dead_minions = 0
+            for creature in player.battle_field:
+                if creature.hp <= 0:
+                    nr_dead_minions += 1
+            for creature in player.enemy_player.battle_field:
+                if creature.hp <= 0:
+                    nr_dead_minions = 0
+            self.progress = nr_dead_minions
+            if action == "end_turn":
+                self.progress = 0
         if self.nr_turns <= self.progress:
-            if self.name == "We don't take it personally" or self.name == "Get back to work":
+            if self.name == "We don't take it personally" or self.name == "Get back to work" or self.name == "Imperial Drama":
                 for key in self.reward:
                     for i in range(key):
                         if len(player.hand) < 10:

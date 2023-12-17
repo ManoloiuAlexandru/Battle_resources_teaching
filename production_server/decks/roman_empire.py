@@ -64,7 +64,9 @@ roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "me
                       -247),
                 Creature(3, "Louis the Pious", 2, 3,
                          "Set The health of all other minions to 1 Desperate deal 1 damage to all",
-                         "knight", -250)
+                         "knight", -250),
+                Spell(10, "Boarder Skirmishes", "Deal 5 damage to ALL minions cost 1 less for each defence you have",
+                      -269),
                 ]
 roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                      Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),
@@ -129,5 +131,7 @@ roman_empire_show = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary"
                            -247),
                      Creature(3, "Louis the Pious", 2, 3,
                               "Set The health of all other minions to 1 Desperate deal 1 damage to all",
-                              "knight", -250)
+                              "knight", -250),
+                     Spell(10, "Boarder Skirmishes",
+                           "Deal 5 damage to ALL minions cost 1 less for each defence you have", -269),
                      ]

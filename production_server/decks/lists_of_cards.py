@@ -71,7 +71,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, ""),
                               "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, ""),
                               "Lndrau Aaurentis": (0, 0, "Guard"), "Ephix Maximus": (0, 2, "Charge"),
-                              "Payed Guard": (3, 3, "")}
+                              "Payed Guard": (3, 3, ""), "Veteran Knight": (1, 1, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -118,6 +118,7 @@ list_of_creature_that_summon = {
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
+                                              "Veteran Knight": ("affects hand", "buff", 1, 1, ""),
                                               "Banner holder": ("affects hand", "buff", 1, 0, ""),
                                               "Inspired soldier": ("hand_check:Spell", "buff"),
                                               "Knight Arbalest": ("hand_check:knight", "change:dmg", 5),
@@ -136,6 +137,10 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Knight Recruiter": ("hand_check:knight", "change:discover", "knights"),
                                               "Mercenary knight": ("hand_check:knight", "change:dmg", 99),
                                               }
+list_of_creature_that_reduce_mana_cost = {"Sir William Marshal": ("deck", "Creature", "knight", 2),
+                                          "Mercenary Contractor": ("deck,hand", "Creature", "mercenary", 1),
+                                          "Veteran Knight": ("hand", "Creature", "knight", 1),
+                                          "Soldier Motivator": ("hand", "Creature", "soldier", 1)}
 list_of_creature_that_summ_after_they_die = {
     "Lost Chicken": (
         1, [Creature(5, "Lynx", 5, 5, "", "animal", generate_random_int()) for i in range(0, 40)]),
@@ -163,15 +168,20 @@ list_of_creature_that_summ_after_they_die = {
 list_of_creature_that_affect_all = {"Watchtower": ("Creature", "Guard"), "Inspiring mercenary": ("Creature", "Guard"),
                                     "Apollodorus of Damascus": ("Defence", ""), "Lndrau Aaurentis": ("Creature", ""),
                                     "Ephix Maximus": ("Creature", "")}
+list_of_creature_that_affect_in_hand_specific = {"Veteran Knight": ("Creature", "", "knight")}
 list_of_creature_that_affect_all_when_die = {"Inspiring mercenary": "Guard"}
 list_of_creature_that_affect_battle_field = {"Frederick Barbarossa": "Armored"}
 list_of_creature_that_do_damage_to_all = {"Louis the Pious": 1}
 list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "Margrave": ("reduce", "", 1),
                                               "Covered Battering Ram": ("reduce", "all_on_battle_field", 1),
+                                              "Eager Fighter": ("reduce", "all_on_battle_field", 1),
                                               "Battering Ram": ("reduce", "allies_on_battle_field", 1),
                                               "Senatus Populusque Romanus": ("reduce", "armor", 1),
                                               "Siege Tower": ("reduce", "spells_casted", 1),
-                                              "Church Chosen": ("reduce", "amount_of_mana_on_spells")}
+                                              "Church Chosen": ("reduce", "amount_of_mana_on_spells"),
+                                              "Boarder Skirmishes": ("reduce", "armor", 1),
+                                              "Catapult": ("reduce", "amount_of_mana_on_spells"),
+                                              "Eager Mercenary": ("reduce", "", 1)}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "summ",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
@@ -200,10 +210,11 @@ list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient 
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
                    "Julius Caesar", "Godfrey of Bouillon", "Charles IV", "Hammurabi", "Louis the Pious",
-                   "Get back to work", "We don't take it personally", "Kublai"]
+                   "Get back to work", "We don't take it personally", "Kublai", "Imperial Drama"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " "),
-                                "Louis the Pious": (1, -1, " "), "Kublai": (1, -1, " ")}
+                                "Louis the Pious": (1, -1, " "), "Kublai": (1, -1, " "),
+                                "Lenxaadra, Queen of Drama": (0, 0, "")}
 list_of_creature_that_debuff_all = {"Louis the Pious"}
 list_of_creature_that_debuff_enemies = {"Kublai"}
 list_of_creature_that_add_defence = {
@@ -270,6 +281,7 @@ list_of_cards_that_add_cards_to_your_deck = {"Ancient Farmer":
                                                                               generate_random_int()) for i in
                                                                         range(0, 40)])}
 list_of_creature_that_damage_a_random_creature = {"Mercenary knight": 1}
+list_of_creature_that_affect_all_enemy_minions = {"Lenxaadra, Queen of Drama": "debuff"}
 """
 Spells
 """
@@ -289,7 +301,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Crusade Calling", "Tavern Fight", "Execute", "Shield of Honor", "Priority Target", "Avenge",
                   "You don't scare me", "Hidden Armor", "Arbalets Volley", "Church Chosen", "Wild Bear",
                   "We don't take it personally", "Get back to work", "Resources", "Ancient Arrow Volley",
-                  "Ancient Arrow Shot", "Snare Trap", "Fire Trap", "Deadly Shot", "Quick Shot", "Hit and Run"]
+                  "Ancient Arrow Shot", "Snare Trap", "Fire Trap", "Deadly Shot", "Quick Shot", "Hit and Run",
+                  "Imperial Drama", "Boarder Skirmishes"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -303,7 +316,7 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "A day in the desert": 3, "Mercenary Defences": 5, "Commander Desperation": 1,
                       "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99,
                       "Arbalets Volley": 2, "Ancient Arrow Volley": 2, "Ancient Arrow Shot": 3, "Deadly Shot": 99,
-                      "Quick Shot": 3, "Hit and Run": 1}
+                      "Quick Shot": 3, "Hit and Run": 1, "Boarder Skirmishes": 5}
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
@@ -321,7 +334,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Crusade Calling", "Tavern Fight", "Priority Target", "Avenge", "You don't scare me",
                                  "Hidden Armor", "Arbalets Volley", "Wild Bear", "We don't take it personally",
                                  "Get back to work", "Ancient Arrow Volley", "Snare Trap", "Fire Trap", "Deadly Shot",
-                                 "Hit and Run"]
+                                 "Hit and Run", "Imperial Drama", "Boarder Skirmishes"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -397,6 +410,10 @@ list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom
     "Get back to work": {"damage:taken_and_done:kingdom:0:6:add_to_hand": {
         1: Creature(5, "Ephix Maximus", 6, 6, "Charge Give all your cards Charge and +2 attack", "legend",
                     generate_random_int()) for i in range(0, 10)}},
+    "Imperial Drama": {"damage:taken_and_done:kingdom:0:4:add_to_hand": {
+        1: Creature(5, "Lenxaadra, Queen of Drama", 5, 5, "Silence all enemy minions from deck,hand and battlefield",
+                    "legend",
+                    generate_random_int()) for i in range(0, 10)}}
 }
 list_of_spells_that_add_mana_cost = {"Snare Trap": 2}
 list_of_cards_that_send_back_to_hand = {"Snare Trap": 1}

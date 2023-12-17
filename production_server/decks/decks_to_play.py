@@ -18,10 +18,10 @@ bot_deck = [
 
 ]
 demo_deck = [
-    Creature(1, "Chinese Tactician", 1, 1, "Implement a tactic", "worker", 0),
-    Spell(3, "Deadly Shot", "Kill a random enemy minion", 1),
-    Spell(2, "Quick Shot", "Deal 3 damage to a minion if you hand is empty draw a card", 2),
-    Spell(1, "Hit and Run", "Deal 1 damage to three random enemies", 0),
+
+
+
+
 ]
 
 list_of_tactics_to_pick = [
