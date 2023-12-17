@@ -47,24 +47,24 @@
             <img class="deck" src="static/cards/Deck.png"/>
         </div>
         <div>
-             {%for tactic in players[0].tactics:%}
-                    <button class="tactic" id={{tactic.card_id}} name={{tactic.name_for_html}}>
+            {%for tactic in players[0].tactics:%}
+            <button class="tactic" id={{tactic.card_id}} name={{tactic.name_for_html}}>
                 <span style="display:flex">
                 <img src="static/cards/{{ tactic.img_url }}" class="tactic_image"/><br>
                 </span>
-                        <b><span class="tactic_name">{{tactic.name}}</span></b><br>
-                        <span class="tactic_description">{{tactic.description}}</span><br>
-                    </button>
-                {%endfor%}
-                 {%if players[0].quest:%}
-                <button class="tactic" id={{players[0].quest.card_id}} name={{players[0].quest.name_for_html}}>
+                <b><span class="tactic_name">{{tactic.name}}</span></b><br>
+                <span class="tactic_description">{{tactic.description}}</span><br>
+            </button>
+            {%endfor%}
+            {%if players[0].quest:%}
+            <button class="tactic" id={{players[0].quest.card_id}} name={{players[0].quest.name_for_html}}>
                 <span style="display:flex">
                 <img src="static/cards/{{ players[0].quest.img_url }}" class="tactic_image"/><br>
                 </span>
-                        <b><span class="tactic_name">{{players[0].quest.name}}</span></b><br>
-                        <span class="tactic_description">{{players[0].quest.description}}</span><br>
-                    </button>
-                {%endif%}
+                <b><span class="tactic_name">{{players[0].quest.name}}</span></b><br>
+                <span class="tactic_description">{{players[0].quest.description}}</span><br>
+            </button>
+            {%endif%}
             <form action="/battlefield_action" method="post">
                 <button class="player_icon" name="{{players[0].name}}">{{players[0].name}}<br>
                     {%if players[0].quest:%}
@@ -108,19 +108,23 @@
                     <div class="cards_in_hand">
                         {%for creature in players[0].battle_field%}
                         {%if creature.can_be_target==False:%}
-                        {%if creature.armored==True%}
-                        <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                        {%if creature.knocked_down_time>0%}
+                        <button class="card_in_hand" style="background-image: url('/static/cards/down.png');"
                                 id={{creature.card_id+"on_field"+"2"}}
                                 name={{creature.name_for_html}}>
-                            {%elif "Guard" in creature.description%}
-                            <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                            {%elif creature.armored==True%}
+                            <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
                                     id={{creature.card_id+"on_field"+"2"}}
                                     name={{creature.name_for_html}}>
-                                {%else%}
-                                <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                                {%elif "Guard" in creature.description%}
+                                <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                                        id={{creature.card_id+"on_field"+"2"}}
                                         name={{creature.name_for_html}}>
-                                    {%endif%}
-                                    <span style="display:flex">
+                                    {%else%}
+                                    <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                                            name={{creature.name_for_html}}>
+                                        {%endif%}
+                                        <span style="display:flex">
                             M:<span class="mana_cost">{{creature.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
                             <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                             <span class="creature_name">{{creature.name}}</span><br>
@@ -130,35 +134,41 @@
                             ---------------------<br>
                             <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
                             {%endif%}
-                                </button>
-                                {%else%}
-                                {%if creature.armored==True%}
-                                <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
-                                        id={{creature.card_id+"on_field"+"2"}}
-                                        name={{creature.name_for_html}}>
-                                    {%elif "Guard" in creature.description%}
+                                    </button>
+                                    {%else%}
+                                    {%if creature.knocked_down_time>0%}
                                     <button class="card_in_hand"
-                                            style="background-image: url('/static/cards/Guard.png');"
+                                            style="background-image: url('/static/cards/down.png');"
                                             id={{creature.card_id+"on_field"+"2"}}
                                             name={{creature.name_for_html}}>
-                                        {%else%}
-                                        <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                                        {%elif creature.armored==True%}
+                                        <button class="card_in_hand"
+                                                style="background-image: url('/static/cards/armored.png');"
+                                                id={{creature.card_id+"on_field"+"2"}}
                                                 name={{creature.name_for_html}}>
-                                            {%endif%}
-                                            <span style="display:flex">
+                                            {%elif "Guard" in creature.description%}
+                                            <button class="card_in_hand"
+                                                    style="background-image: url('/static/cards/Guard.png');"
+                                                    id={{creature.card_id+"on_field"+"2"}}
+                                                    name={{creature.name_for_html}}>
+                                                {%else%}
+                                                <button class="card_in_hand" id={{creature.card_id+"on_field"+"2"}}
+                                                        name={{creature.name_for_html}}>
+                                                    {%endif%}
+                                                    <span style="display:flex">
                 M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 </span>
-                                            <b><span class="creature_name">{{creature.name}}</span></b><br>
-                                            ---------------------<br>
-                                            <span class="description">{{creature.description}}</span><br>
-                                            {%if creature.card_type=="Creature"%}
-                                            ---------------------<br>
-                                            <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
-                                            {%endif%}
-                                        </button>
-                                        {%endif%}
-                                        {%endfor%}
+                                                    <b><span class="creature_name">{{creature.name}}</span></b><br>
+                                                    ---------------------<br>
+                                                    <span class="description">{{creature.description}}</span><br>
+                                                    {%if creature.card_type=="Creature"%}
+                                                    ---------------------<br>
+                                                    <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
+                                                    {%endif%}
+                                                </button>
+                                                {%endif%}
+                                                {%endfor%}
                     </div>
                 </form>
             </div>
@@ -177,58 +187,68 @@
                     <div class="cards_in_hand">
                         {%for creature in players[1].battle_field%}
                         {%if creature.can_be_target==False:%}
-                        {%if creature.armored==True%}
-                        <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                        {%if creature.knocked_down_time>0%}
+                        <button class="card_in_hand" style="background-image: url('/static/cards/down.png');"
                                 id={{creature.card_id+"on_field"+"1"}}
                                 name={{creature.name_for_html}}>
-                            {%elif "Guard" in creature.description%}
-                            <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
+                            {%elif creature.armored==True%}
+                            <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
                                     id={{creature.card_id+"on_field"+"1"}}
                                     name={{creature.name_for_html}}>
-                                {%else%}
-                                <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
-                                        name={{creature.name_for_html}}>
-                                    {%endif%}
-                                    <span style="display:flex">
-                M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
-                <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
-                </span>
-                                    <b><span class="creature_name">{{creature.name}}</span></b><br>
-                                    ---------------------<br>
-                                    <span class="description">{{creature.description}}</span><br>
-                                    {%if creature.card_type=="Creature"%}
-                                    ---------------------<br>
-                                    <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
-                                    {%endif%}
-                                </button>
-                                {%else%}
-                                {%if creature.armored==True%}
-                                <button class="card_in_hand" style="background-image: url('/static/cards/armored.png');"
+                                {%elif "Guard" in creature.description%}
+                                <button class="card_in_hand" style="background-image: url('/static/cards/Guard.png');"
                                         id={{creature.card_id+"on_field"+"1"}}
                                         name={{creature.name_for_html}}>
-                                    {%elif "Guard" in creature.description%}
-                                    <button class="card_in_hand"
-                                            style="background-image: url('/static/cards/Guard.png');"
-                                            id={{creature.card_id+"on_field"+"1"}}
+                                    {%else%}
+                                    <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
                                             name={{creature.name_for_html}}>
-                                        {%else%}
-                                        <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
-                                                name={{creature.name_for_html}}>
-                                            {%endif%}
-                                            <span style="display:flex">
+                                        {%endif%}
+                                        <span style="display:flex">
                 M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
                 <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
                 </span>
-                                            <b><span class="creature_name">{{creature.name}}</span></b><br>
-                                            ---------------------<br>
-                                            <span class="description">{{creature.description}}</span><br>
-                                            {%if creature.card_type=="Creature"%}
-                                            ---------------------<br>
-                                            <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
-                                            {%endif%}
-                                        </button>
+                                        <b><span class="creature_name">{{creature.name}}</span></b><br>
+                                        ---------------------<br>
+                                        <span class="description">{{creature.description}}</span><br>
+                                        {%if creature.card_type=="Creature"%}
+                                        ---------------------<br>
+                                        <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
                                         {%endif%}
-                                        {%endfor%}
+                                    </button>
+                                    {%else%}
+                                    {%if creature.knocked_down_time>0%}
+                                    <button class="card_in_hand"
+                                            style="background-image: url('/static/cards/down.png');"
+                                            id={{creature.card_id+"on_field"+"1"}}
+                                            name={{creature.name_for_html}}>
+                                        {%elif creature.armored==True%}
+                                        <button class="card_in_hand"
+                                                style="background-image: url('/static/cards/armored.png');"
+                                                id={{creature.card_id+"on_field"+"1"}}
+                                                name={{creature.name_for_html}}>
+                                            {%elif "Guard" in creature.description%}
+                                            <button class="card_in_hand"
+                                                    style="background-image: url('/static/cards/Guard.png');"
+                                                    id={{creature.card_id+"on_field"+"1"}}
+                                                    name={{creature.name_for_html}}>
+                                                {%else%}
+                                                <button class="card_in_hand" id={{creature.card_id+"on_field"+"1"}}
+                                                        name={{creature.name_for_html}}>
+                                                    {%endif%}
+                                                    <span style="display:flex">
+                M:<span class="mana_cost_main">{{creature.mana_cost}}&nbsp;&nbsp;</span><br>
+                <img src="static/cards/{{ creature.img_url }}" class="image_card"/><br>
+                </span>
+                                                    <b><span class="creature_name">{{creature.name}}</span></b><br>
+                                                    ---------------------<br>
+                                                    <span class="description">{{creature.description}}</span><br>
+                                                    {%if creature.card_type=="Creature"%}
+                                                    ---------------------<br>
+                                                    <span class="attack_hp">A:{{creature.attack}} {{creature.category}} H:{{creature.hp}}</span>
+                                                    {%endif%}
+                                                </button>
+                                                {%endif%}
+                                                {%endfor%}
                     </div>
                 </form>
             </div>
@@ -280,23 +300,23 @@
         <div>
 
             <form action="/battlefield_action" method="post">
-                    {%for tactic in players[1].tactics:%}
-                    <button class="tactic" id={{tactic.card_id}} name={{tactic.name_for_html}}>
+                {%for tactic in players[1].tactics:%}
+                <button class="tactic" id={{tactic.card_id}} name={{tactic.name_for_html}}>
                 <span style="display:flex">
                 <img src="static/cards/{{ tactic.img_url }}" class="tactic_image"/><br>
                 </span>
-                        <b><span class="tactic_name">{{tactic.name}}</span></b><br>
-                        <span class="tactic_description">{{tactic.description}}</span><br>
-                    </button>
+                    <b><span class="tactic_name">{{tactic.name}}</span></b><br>
+                    <span class="tactic_description">{{tactic.description}}</span><br>
+                </button>
                 {%endfor%}
-                 {%if players[1].quest:%}
+                {%if players[1].quest:%}
                 <button class="tactic" id={{players[1].quest.card_id}} name={{players[1].quest.name_for_html}}>
                 <span style="display:flex">
                 <img src="static/cards/{{ players[1].quest.img_url }}" class="tactic_image"/><br>
                 </span>
-                        <b><span class="tactic_name">{{players[1].quest.name}}</span></b><br>
-                        <span class="tactic_description">{{players[1].quest.description}}</span><br>
-                    </button>
+                    <b><span class="tactic_name">{{players[1].quest.name}}</span></b><br>
+                    <span class="tactic_description">{{players[1].quest.description}}</span><br>
+                </button>
                 {%endif%}
                 <button class="player_icon" name="{{players[1].name}}">{{players[1].name}}
                     {%if players[1].quest:%}

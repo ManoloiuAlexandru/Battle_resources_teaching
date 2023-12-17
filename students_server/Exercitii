@@ -5,7 +5,7 @@ Play the game using all decks:
     - Guard of Byzantine
     - Mongol Hordes
     - Ancient powers
-
+    - Roman legions
 You can play against any deck you want.
 
 Homework 2:
@@ -118,6 +118,17 @@ Steps to reproduce:
 - pick mode I hate myself and start game
 - Play the game until the bot puts Nero on the board see that the first creature gets +6 attack why ?
 The problem is in bot file at line 133
+
+8.When you use "Knock down" spell on a minion with Armored the minion will lose the Armored attribute after the effect is
+over. Why? How can you fix this ?
+The problem is in game_logics.
+Steps to reproduce:
+- Make a deck and put  "Knock down" spell or any card that has the  "Knock down" effect
+- make bot pick power of the people deck
+- pick easy mode then start game and hit new hand until you get  "Knock down" in your hand
+- when the bot puts an armored down hit it with the  "Knock down" spell then hit end turn until the card has other boarder
+- see that the boarder is not silver anymore.
+Find the line and come up with a suggestion to fix.
 
 Ongoing Homework: find a bug, report it with steps on how to reproduce it
 Bonus if you want to tell me what file has the problem.

@@ -72,6 +72,11 @@ def reset_player(player, enemy_player):
             creature.exhausted = True
         else:
             creature.exhausted = False
+        if creature.knocked_down_time > 0:
+            creature.knocked_down_time -= 1
+            creature.exhausted = True
+        if creature.knocked_down_time == 0:
+            creature.exhausted = False
         creature.number_of_attacks += 1
         creature.damage_taken_this_turn_from_empire = 0
     enemy_player.turn = 1
@@ -172,7 +177,8 @@ def check_target(player1, player2, card_picked):
             for card in player1.battle_field:
                 if card_picked.get(card.name_for_html) is not None:
                     if list_of_creature_that_can_target_yourself.get(player1.active_minion.name) is not None:
-                        if card.armored is True:
+                        if card.armored is True and list_of_creature_that_can_target_yourself.get(
+                                player1.active_minion.name) > 0:
                             card.armored = False
                         else:
                             card.hp -= list_of_creature_that_can_target_yourself.get(player1.active_minion.name)
@@ -235,6 +241,8 @@ def check_target(player1, player2, card_picked):
 
 def cast_spell(player1, player2, card_picked):
     destroy_minion = 0
+    if player1.incoming_spell.name in list_of_spells_that_freeze:
+        freeze_target(player1, player2, card_picked)
     if player1.incoming_spell.name in list_of_spells_that_summon:
         spell_that_summon(player1, player2, player1.incoming_spell.name)
     if player1.incoming_spell.name in list_of_spells_that_draw_cards:
@@ -275,7 +283,7 @@ def cast_spell(player1, player2, card_picked):
             Player.clean_board(player1, player2)
             Player.battle_fields_effects(player1, player2)
         elif card_picked.get(card.name_for_html) is not None and destroy_minion == 0:
-            if card.armored is True:
+            if card.armored is True and list_of_dmg_spells[player1.incoming_spell.name] > 0:
                 card.armored = False
                 break
             else:
@@ -703,3 +711,14 @@ def pick_random_enemy_creatures(player, card, effect, nr_targets):
                 card_picked.hp -= list_of_dmg_spells[card.name]
         except Exception as e:
             print(e)
+
+
+def freeze_target(player, enemy_player, card):
+    for creature in player.battle_field:
+        if card.get(creature.name_for_html) is not None:
+            creature.knocked_down_time = 1
+            creature.exhausted = creature.charge_check()
+    for creature in enemy_player.battle_field:
+        if card.get(creature.name_for_html) is not None:
+            creature.knocked_down_time = 1
+            creature.exhausted = creature.charge_check()

@@ -499,5 +499,11 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(9, "Eager Fighter", 4, 3, "Rush Cost 1 less for each minion on the field", "soldier",
                               -272),
                      Creature(10, "Eager Mercenary", 4, 5, "Rush Cost 1 less for each card in your hand", "mercenary",
-                              -273)
+                              -273),
+                     Spell(1, "Knock down", "Knocks down a target, draw a card", -274),
+                     Creature(2, "Ball-headed Mace Soldier", 2, 3, "Add a Knock down to your hand", "soldier", -275),
+                     Spell(3, "Mercenary Arrow Volley", "Deal 3 damage to all enemies minions Debt(1)", -276),
+                     Spell(5, "Fast Mercenary Recruiting", "Summon 2 5/4 Man at Arms with Rush Debt(1)", -277),
+                     Creature(5, "General Belisarius", 5, 5, "Guard Desperate add Imperial Guard to your deck",
+                              "soldier", -278)
                      ]

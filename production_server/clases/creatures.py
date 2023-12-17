@@ -13,6 +13,7 @@ class Creature:
         self.hp_before_on_effects = 0
         self.original_attack = attack
         self.active_effects = []
+        self.knocked_down_time = 0
         self.description = description
         self.original_description = description
         self.card_type = "Creature"
@@ -33,6 +34,8 @@ class Creature:
         return f"MANA:{self.mana_cost} {self.name} HP:{self.hp} ATTACK:{self.attack} {self.description} "
 
     def charge_check(self):
+        if self.knocked_down_time > 0:
+            return True
         if "Can't attack" in self.description:
             return True
         if "Charge" in self.description.split():

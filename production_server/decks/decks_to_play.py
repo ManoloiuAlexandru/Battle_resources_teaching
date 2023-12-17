@@ -15,13 +15,14 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-
+    Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)
 ]
 demo_deck = [
-
-
-
-
+    Spell(1, "Knock down", "Knocks down a target, draw a card", 0),
+    Creature(2, "Ball-headed Mace Soldier", 2, 3, "Add a Knock down to your hand", "soldier", 1),
+    Spell(3, "Mercenary Arrow Volley", "Deal 3 damage to all enemies minions Debt(1)", 2),
+    Spell(5, "Fast Mercenary Recruiting", "Summon 2 5/4 Man at Arms with Rush Debt(1)", 3),
+    Creature(5, "General Belisarius",5,5, "Guard Desperate add Imperial Guard to your deck", "soldier", 4)
 ]
 
 list_of_tactics_to_pick = [
