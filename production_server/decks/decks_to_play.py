@@ -18,11 +18,15 @@ bot_deck = [
     Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)
 ]
 demo_deck = [
-    Spell(1, "Knock down", "Knocks down a target, draw a card", 0),
-    Creature(2, "Ball-headed Mace Soldier", 2, 3, "Add a Knock down to your hand", "soldier", 1),
-    Spell(3, "Mercenary Arrow Volley", "Deal 3 damage to all enemies minions Debt(1)", 2),
-    Spell(5, "Fast Mercenary Recruiting", "Summon 2 5/4 Man at Arms with Rush Debt(1)", 3),
-    Creature(5, "General Belisarius",5,5, "Guard Desperate add Imperial Guard to your deck", "soldier", 4)
+    Creature(2, "Worker Recruiter", 3, 2, "When you play a worker add a random worker to your hand", "worker", 0),
+    Creature(1, "Work Friend", 2, 1, "Summon a 1/1 Peasant", "worker", 1),
+    Creature(6, "Soldier Commander", 5, 5, "Guard Cost 1 less for each soldier you summoned this game", "soldier", 2),
+    Creature(10, "Torsion Catapult", 8, 8, "Cost 1 less for each soldier you summoned this game", "machine", 6),
+    Creature(3, "Heraclius", 3, 3, "Pays all your debt and draws that many cards", "worker", 7),
+    Spell(2, "Sling shot", "Deal 3-6 damage Debt(1)", 8),
+    Creature(11, "Mercenary Battering Ram", 8, 8, "Cost 1 less for each mana crystal you spent on Debt this game",
+             "mechanical", 10),
+    Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", 0)
 ]
 
 list_of_tactics_to_pick = [
@@ -97,6 +101,33 @@ list_of_mercenary = [
     [Creature(2, "Frenzied Mercenary", 4, 2, "Has charge and +2 attack while damaged", "mercenary",
               -207)]
 ]
+list_of_workers = [[Creature(4, "Mercenary Herbalist", 6, 4, "Restore 6 health Debt(1)", "worker", -138)],
+                   [Creature(0, "Peasant", 1, 1, "", "worker", -1)],
+                   [Creature(3, "Priest", 1, 1,
+                             "Restore a friendly minion to full HP and give it +1/+1", "worker",
+                             -15)],
+                   [Creature(3, "Miner", 1, 1, "At the end of your turn draw a card", "worker", -23)],
+                   [Creature(3, "Farmer", 1, 1, "Gain 1 mana crystal", "worker", -31)],
+                   [Creature(2, "Lumberjack", 2, 2, "Give a friendly minion +1 attack", "worker", -33)],
+                   [Creature(1, "Church Scholar", 2, 1, "Evrey time a creature is healed gain +1/+1 ", "worker", -34)],
+                   [Creature(2, "Armorer", 2, 2, "Give a friendly minion armored", "worker", -39)],
+                   [Creature(3, "Scribe", 3, 0, "At the end of your turn draw a card", "worker", -41)],
+                   [Creature(3, "Hunter", 3, 2, "Summon a 1/1 Dog", "worker", -44)],
+                   [Creature(1, "Scared Noble", 2, 1, "Give a friendly minion guard", "worker", -52)],
+                   [Creature(3, "Personal instructor", 3, 2, "Give a friendly minion +1/+1", "worker", -54)],
+                   [Creature(3, "Negotiator", 1, 1, "Give your hand +1/+1 and draw a animal", "worker", -57)],
+                   [Creature(2, "Watchman", 2, 1, "Draw a guard card", "worker", -60)],
+                   [Creature(2, "Scribe of the Church", 1, 1, "Draw a spell", "worker", -73)],
+                   [Creature(5, "Bishop", 2, 2, "Give a friendly minion +4/+4 and guard", "worker", -75)],
+                   [Creature(2, "Lost Scribe", 1, 2, "Desperate Draw a card", "worker", -80)],
+                   [Creature(4, "Lost Noble", 1, 1, "Desperate Summon a 3/5 City guard", "worker", -85)],
+                   [Creature(4, "Animal Tamer", 3, 4, "Give a friendly animal +2/+2 and guard", "worker", -95)],
+                   [Creature(5, "Church Builder", 6, 4, "Restore 8 health", "worker", -100)],
+                   [Creature(2, "Countryside Hunter", 3, 2, "Give a friendly worker +1/+1", "worker", -116)],
+                   [Creature(5, "Landlord", 3, 4, "Draw 3 workers", "worker", -117)],
+                   [Creature(2, "Shepherd", 2, 1, "Summon a 1/1 guard dog with guard", "worker", -118)],
+                   [Creature(2, "Peasant Fighter", 2, 3, "If you have another worker get +1/+1", "worker", -119)]
+                   ]
 list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
                      [Spell(3, "Boarder Guards", "Summon 2 Akritoi Debt(1)", -68)],
                      [Spell(1, "Roman Formation Phalanx", "Give your minions +1/+1 Debt(1)", -71)],
@@ -108,7 +139,12 @@ list_of_debt_card = [[Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
                      [Defence(5, "Mercenary's Troops", 2, 8, "Debt(2)", -139)],
                      [Spell(1, "Pilum Throw", "Deal 3 damage Debt(1)", -83)],
                      [Creature(4, "Mercenary Builder", 4, 6, "Rush Rebuilder debt(1)", "mercenary", -224)],
-                     [Creature(8, "Mercenary Leader", 14, 5, "Rebuilder Rush debt(2)", "mercenary", -228)]]
+                     [Creature(8, "Mercenary Leader", 14, 5, "Rebuilder Rush debt(2)", "mercenary", -228)],
+                     [Spell(5, "Fast Mercenary Recruiting", "Summon 2 5/4 Man at Arms with Rush Debt(1)", -277)],
+                     [Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286)],
+                     [Spell(2, "Sling shot", "Deal 3-6 damage Debt(1)", -284)],
+                     [Spell(3, "Mercenary Arrow Volley", "Deal 3 damage to all enemies minions Debt(1)", -276)]
+                     ]
 list_of_soldier = [[Creature(9, "Sleepy Guard", 12, 4, "Guard", "soldier", -147)],
                    [Creature(1, "Banner holder", 2, 1, "Give your hand +1 health", "soldier", -146)],
                    [Creature(5, "Mercenary elite Defender", 8, 7, " Guard Debt(2)", "soldier", -137)],
@@ -196,7 +232,7 @@ list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                   ]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
-                             "guards": list_of_guards, "tactics": list_of_tactics_to_pick}
+                             "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers}
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)

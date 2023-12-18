@@ -344,6 +344,7 @@ def spell_that_summon(player, enemy_player, spell_name):
                 if type(list_of_animals_to_summon[0]) is list:
                     player.battle_field.append(
                         list_of_animals_to_summon[0][0])
+                    player.summoned_minions(list_of_animals_to_summon[0][0])
                     list_of_animals_to_summon[0].remove(
                         list_of_animals_to_summon[0][0])
                     if not list_of_animals_to_summon[0]:
@@ -351,6 +352,7 @@ def spell_that_summon(player, enemy_player, spell_name):
                 else:
                     player.battle_field.append(
                         list_of_animals_to_summon[creature])
+                    player.summoned_minions(list_of_animals_to_summon[creature])
                     list_of_animals_to_summon.remove(
                         list_of_animals_to_summon[creature])
                 if player.battle_field[-1].name in list_of_creature_with_on_going_effect:
@@ -363,11 +365,13 @@ def spell_that_summon(player, enemy_player, spell_name):
                     while card_picked.card_type != "Creature":
                         card_picked = random.choice(player.deck)
                     player.battle_field.append(card_picked)
+                    player.summoned_minions(card_picked)
                     player.deck.remove(card_picked)
                 break
             elif (list_of_spells_that_summon.get(spell_name)[0] in card.description.split()
                   and card.card_type == "Creature"):
                 player.battle_field.append(card)
+                player.summoned_minions(card)
                 player.deck.remove(card)
                 break
 
@@ -596,6 +600,7 @@ def check_hero_power(player, enemy_player):
             if len(player.battle_field) < 7:
                 summoned_creature = random.choice(list_of_auxiliary_soldiers)
                 player.battle_field.append(summoned_creature)
+                player.summoned_minions(summoned_creature)
                 player.used_power = 1
                 player.mana_increase(-2)
             else:
@@ -604,6 +609,7 @@ def check_hero_power(player, enemy_player):
             if len(player.battle_field) < 7:
                 summoned_creature = Creature(1, "Kaiserliche", 1, 1, "", "soldier", len(player.deck) + 3112)
                 player.battle_field.append(summoned_creature)
+                player.summoned_minions(summoned_creature)
                 player.used_power = 1
                 player.mana_increase(-2)
             else:

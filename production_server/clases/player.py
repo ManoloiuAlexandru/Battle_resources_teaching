@@ -46,7 +46,8 @@ class Player:
         self.hand_copy = []
         self.has_to_pick = False
         self.tactics = []
-        self.dict_of_actions = {"Spells_casted": [], "Damage_taken": 0, "Damage_done": 0}
+        self.dict_of_actions = {"Spells_casted": [], "Damage_taken": 0, "Damage_done": 0,
+                                "Minions": {}, "Debt_in_game": 0}
         self.quest = None
 
     def mana_increase(self, amount):
@@ -108,6 +109,7 @@ class Player:
                 if card.name in list_of_creature_that_reduce_mana_cost:
                     self.reduce_mana_cost_of_card(card)
                 if card.name in list_of_card_that_add_debt:
+                    self.dict_of_actions["Debt_in_game"] += list_of_card_that_add_debt.get(card.name)
                     self.debt += list_of_card_that_add_debt.get(card.name)
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
                 if card.name in list_of_cards_that_give_armor:
@@ -126,6 +128,7 @@ class Player:
                 if card.name in list_of_creature_description and len(self.battle_field) < 7:
                     self.mana_pay(card)
                     self.battle_field.append(card)
+                    self.summoned_minions(card)
                     self.incoming_action = 2
                     self.active_minion = card
                     return 2
@@ -176,11 +179,13 @@ class Player:
                     self.ongoing_effects.append(card)
                 elif card.name in list_of_creature_that_summon and len(self.battle_field) < 7:
                     self.battle_field.append(card)
+                    self.summoned_minions(card)
                     self.mana_pay(card)
                     if len(self.battle_field) < 7:
                         for i in range(list_of_creature_that_summon.get(card.name)[0]):
                             if len(self.battle_field) < 7:
                                 self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
+                                self.summoned_minions(list_of_creature_that_summon.get(card.name)[1][i])
                                 list_of_creature_that_summon.get(card.name)[1].remove(
                                     list_of_creature_that_summon.get(card.name)[1][i])
                                 self.check_for_creature_with_effect_on("summ", self.battle_field[-1])
@@ -199,6 +204,7 @@ class Player:
                 if self.quest is not None:
                     self.quest.check_quest_progression(self, card, "summ")
                 self.battle_field.append(card)
+                self.summoned_minions(card)
                 self.mana_pay(card)
                 return 1
         return 0
@@ -612,6 +618,21 @@ class Player:
                 self.hand[self.hand.index(creature)].mana_cost -= amount
             else:
                 self.hand[self.hand.index(creature)].mana_cost = 0
+        elif "total_summoned" in condition:
+            try:
+                if self.hand[self.hand.index(creature)].mana_cost >= len(
+                        self.dict_of_actions['Minions'][condition.split(":")[1]]):
+                    self.hand[self.hand.index(creature)].mana_cost -= len(
+                        self.dict_of_actions['Minions'][condition.split(":")[1]])
+                else:
+                    self.hand[self.hand.index(creature)].mana_cost = 0
+            except Exception as e:
+                print(e)
+        elif condition == "amount_of_debt_in_game":
+            if self.hand[self.hand.index(creature)].mana_cost >= self.dict_of_actions["Debt_in_game"]:
+                self.hand[self.hand.index(creature)].mana_cost -= self.dict_of_actions["Debt_in_game"]
+            else:
+                self.hand[self.hand.index(creature)].mana_cost = 0
         else:
             if self.hand[self.hand.index(creature)].mana_cost >= len(self.hand) * \
                     list_of_creature_that_are_affected_in_hand.get(
@@ -677,6 +698,10 @@ class Player:
                                                             self.enemy_player) is True and \
                             effected_cards[0] == "self_buff":
                         self.buff_card_from_hand(creature, creature)
+                    elif playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
+                                                              self.enemy_player) is True and list_of_cards_that_add_cards_to_your_hand_by_action.get(
+                        creature.name):
+                        self.add_random_card_to_hand(creature)
                 elif action == effected_cards[1] and action == "cast spell":
                     for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                         self.draw_card()
@@ -742,14 +767,16 @@ class Player:
     def add_random_card_to_hand(self, card):
         if list_of_cards_that_add_cards_to_your_hand.get(card.name) is not None:
             picking_card = list_of_cards_that_add_cards_to_your_hand.get(card.name)
-        else:
+        elif list_of_creature_that_add_cards_to_your_hand_when_die.get(card.name) is not None:
             picking_card = list_of_creature_that_add_cards_to_your_hand_when_die.get(card.name)
+        else:
+            picking_card = list_of_cards_that_add_cards_to_your_hand_by_action.get(card.name)
         for i in range(picking_card[0]):
             if picking_card[1] != "":
-                creature = random.choice(list_of_creatures_to_pick.get(picking_card[1]))
+                creature = copy.deepcopy(random.choice(list_of_creatures_to_pick.get(picking_card[1])))
+                creature[0].id = generate_random_int()
                 if len(self.hand) < 10:
                     self.hand.append(creature[0])
-                    self.hand[-1].id = generate_random_int()
                     self.hand[-1].card_id = str(self.hand[-1].id)
                     if len(self.hand[-1].name.split(" ")) >= 2:
                         self.hand[-1].name_for_html = "_".join(self.hand[-1].name.split()) + self.hand[-1].card_id
@@ -841,6 +868,7 @@ class Player:
                     for i in range(nr_resources):
                         if len(self.battle_field) < 7:
                             self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
+                            self.summoned_minions(list_of_creature_that_summon.get(card.name)[1][i])
                             list_of_creature_that_summon.get(card.name)[1].remove(
                                 list_of_creature_that_summon.get(card.name)[1][i])
                             self.check_for_creature_with_effect_on("summ", self.battle_field[-1])
@@ -853,6 +881,10 @@ class Player:
                     list_of_creature_that_summon[card.name][0] = int(checking_card[2].split(":")[1])
             elif list_of_creature_that_summon.get(card.name) is not None:
                 list_of_creature_that_summon[card.name][0] = 0
+        if checking_card[0] == "debt":
+            if self.debt > 0:
+                if "draw" in checking_card[2].split(":"):
+                    list_of_creature_that_draw_cards[card.name] = self.debt
 
     def do_damage_to_all_other_minions(self, card):
         for creature in self.battle_field:
@@ -1041,3 +1073,9 @@ class Player:
                 if creature.card_type == list_of_creature_that_reduce_mana_cost[card.name][1]:
                     if creature.category == list_of_creature_that_reduce_mana_cost[card.name][2]:
                         creature.mana_cost_reduction(list_of_creature_that_reduce_mana_cost[card.name][3])
+
+    def summoned_minions(self, card):
+        if card.category in self.dict_of_actions['Minions']:
+            self.dict_of_actions['Minions'][card.category].append(card)
+        else:
+            self.dict_of_actions['Minions'][card.category] = [card]

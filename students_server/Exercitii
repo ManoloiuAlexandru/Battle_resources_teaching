@@ -130,11 +130,17 @@ Steps to reproduce:
 - see that the boarder is not silver anymore.
 Find the line and come up with a suggestion to fix.
 
+9.Debugging:
+When you play "Worker Recruiter" and play another worker you will get a random worker that will trigger the effect on the
+"Worker Recruiter" card and it will give you a random worker to your hand. The problem is that aldo is random if you
+have 2 workers with the same name if 1 dies the other will to why ? can you think why this is happening ?
+The problem is in file player at line 755.
+
 Ongoing Homework: find a bug, report it with steps on how to reproduce it
 Bonus if you want to tell me what file has the problem.
 Extra bonus: fix the bug and show me what you did.
 
 Tips for testing:
-The "I hate myself" option from the modes tab is very usefull when you want to check if the bot is playing the cards correct
+The "I hate myself" option from the modes tab is very usefully when you want to check if the bot is playing the cards correct
 If the server runs in an error just stop the server close the web and restart the server and the reopen the website
 (127.0.0.1:5000)
