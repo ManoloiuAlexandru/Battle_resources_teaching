@@ -518,5 +518,10 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(11, "Mercenary Battering Ram", 8, 8,
                               "Cost 1 less for each mana crystal you spent on Debt this game",
                               "mechanical", -285),
-                     Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286)
+                     Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286),
+                     Spell(4, "Quick Arrow", "Deal 4 damage to a minion if any died this turn this cost 1", -287),
+                     Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5",
+                           -288),
+                     Spell(2, "Second Charge", "Summon all your animals that died this turn", -289),
+                     Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290)
                      ]

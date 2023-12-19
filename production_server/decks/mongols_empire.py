@@ -39,6 +39,11 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(3, "Deadly Shot", "Kill a random enemy minion", -262),
                     Spell(2, "Quick Shot", "Deal 3 damage to a minion if you hand is empty draw a card", -263),
                     Spell(1, "Hit and Run", "Deal 1 damage to three random enemies", -264),
+                    Spell(4, "Quick Arrow", "Deal 4 damage to a minion if any died this turn this cost 1", -287),
+                    Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5",
+                          -288),
+                    Spell(2, "Second Charge", "Summon all your animals that died this turn", -289),
+                    Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290)
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -85,6 +90,11 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Spell(3, "Deadly Shot", "Kill a random enemy minion", -262),
                            Spell(2, "Quick Shot", "Deal 3 damage to a minion if you hand is empty draw a card", -263),
                            Spell(1, "Hit and Run", "Deal 1 damage to three random enemies", -264),
+                           Spell(4, "Quick Arrow", "Deal 4 damage to a minion if any died this turn this cost 1", -287),
+                           Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5",
+                                 -288),
+                           Spell(2, "Second Charge", "Summon all your animals that died this turn", -289),
+                           Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290)
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
                            "While this is on the field your creatures have +1 attack", "animal", 1900),

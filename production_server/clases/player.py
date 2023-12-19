@@ -47,7 +47,10 @@ class Player:
         self.has_to_pick = False
         self.tactics = []
         self.dict_of_actions = {"Spells_casted": [], "Damage_taken": 0, "Damage_done": 0,
-                                "Minions": {}, "Debt_in_game": 0}
+                                "Minions": {}, "Debt_in_game": 0,
+                                "Minions_that_died": {"my_minions": [], "enemy_minions": [],
+                                                      "my_minions_that_died_this_turn": [],
+                                                      "enemy_minions_that_died_this_turn": []}}
         self.quest = None
 
     def mana_increase(self, amount):
@@ -387,15 +390,19 @@ class Player:
             for card in player.battle_field[:]:
                 if card.hp <= 0 and card.card_type == "Creature":
                     player.battle_field.remove(card)
+                    player.dict_of_actions["Minions_that_died"]["my_minions"].append(card)
+                    player.dict_of_actions["Minions_that_died"]["my_minions_that_died_this_turn"].append(card)
                     if card.name in list_of_creature_that_do_somthing_when_die:
                         Player.action_when_die(player, card)
                     player.check_for_creature_with_effect_on("friendly_minion_dies", card)
             for card in enemy_player.battle_field[:]:
                 if card.hp <= 0 and card.card_type == "Creature":
                     enemy_player.battle_field.remove(card)
+                    enemy_player.dict_of_actions["Minions_that_died"]["enemy_minions"].append(card)
+                    enemy_player.dict_of_actions["Minions_that_died"]["enemy_minions_that_died_this_turn"].append(card)
                     if card.name in list_of_creature_that_do_somthing_when_die:
                         Player.action_when_die(enemy_player, card)
-                    player.check_for_creature_with_effect_on("friendly_minion_dies", card)
+                    enemy_player.check_for_creature_with_effect_on("friendly_minion_dies", card)
                     enemy_player.check_for_tactics("friendly_minion_dies", None, None)
         except Exception as e:
             print(e)
@@ -633,6 +640,15 @@ class Player:
                 self.hand[self.hand.index(creature)].mana_cost -= self.dict_of_actions["Debt_in_game"]
             else:
                 self.hand[self.hand.index(creature)].mana_cost = 0
+        elif "any_dead_minion" in condition.split(":"):
+            if len(self.dict_of_actions["Minions_that_died"]["my_minions"]) > 0 or len(
+                    self.enemy_player.dict_of_actions["Minions_that_died"]["enemy_minions"]) > 0:
+                if condition.split(":")[1] == "this_turn":
+                    if len(self.enemy_player.dict_of_actions["Minions_that_died"][
+                               "enemy_minions_that_died_this_turn"]) > 0 or len(
+                        self.dict_of_actions["Minions_that_died"]["my_minions_that_died_this_turn"]) > 0:
+                        if "cost_set" == list_of_creature_that_are_affected_in_hand[creature.name][2]:
+                            creature.mana_cost = list_of_creature_that_are_affected_in_hand[creature.name][3]
         else:
             if self.hand[self.hand.index(creature)].mana_cost >= len(self.hand) * \
                     list_of_creature_that_are_affected_in_hand.get(
@@ -790,6 +806,7 @@ class Player:
     def check_spell(self, card):
         incoming_card = list_of_spells_that_buff_conditional.get(card.name)
         if incoming_card is not None:
+            ok = 0
             if "hand" in incoming_card[0].split(":"):
                 if "knight" in incoming_card[0].split(":"):
                     for creature in self.hand:
@@ -801,6 +818,16 @@ class Player:
                         if "draw" == incoming_card[1]:
                             for i in range(0, incoming_card[2]):
                                 self.draw_card()
+            if "battle" in incoming_card[0].split(":"):
+                for creature in self.battle_field:
+                    if creature.category == incoming_card[0].split(":")[1]:
+                        if "change" in incoming_card[1].split(":"):
+                            if "damage" == incoming_card[1].split(":")[1]:
+                                list_of_dmg_spells[card.name] = incoming_card[2]
+                                ok = 1
+                                break
+                if ok == 0:
+                    list_of_dmg_spells[card.name] = int(incoming_card[1].split(":")[2])
 
     def action_from_condition(self, card, condition):
         if card.name in list_of_creature_that_have_other_stat_while_damaged and condition == "damaged":

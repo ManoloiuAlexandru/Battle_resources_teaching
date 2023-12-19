@@ -67,6 +67,9 @@ def reset_player(player, enemy_player):
             cancel_card(player.active_defence.name, player)
     except Exception as e:
         print(e)
+    for card in player.hand:
+        if card.name in list_of_cards_that_reset_at_the_end_of_turn_in_hand:
+            card.mana_cost = card.original_mana_cost
     for creature in player.battle_field:
         if "Can't attack" in creature.description:
             creature.exhausted = True
@@ -95,10 +98,12 @@ def reset_player(player, enemy_player):
     enemy_player.problem = ""
     player.incoming_action = 0
     enemy_player.incoming_action = 0
+    player.dict_of_actions["Minions_that_died"]["my_minions_that_died_this_turn"].clear()
     player.dict_of_actions["Damage_taken"] = 0
     player.dict_of_actions["Damage_done"] = 0
     player.enemy_player.dict_of_actions["Damage_taken"] = 0
     player.enemy_player.dict_of_actions["Damage_done"] = 0
+    player.enemy_player.dict_of_actions["Minions_that_died"]["enemy_minions_that_died_this_turn"].clear()
 
 
 def turn_switch(player1, player2):
@@ -374,6 +379,31 @@ def spell_that_summon(player, enemy_player, spell_name):
                 player.summoned_minions(card)
                 player.deck.remove(card)
                 break
+    if spell_name in list_of_spells_that_resummon:
+        list_of_creature_to_resumm = []
+        if "died" in list_of_spells_that_resummon[spell_name][0].split(":")[0]:
+            for i in range(0, list_of_spells_that_resummon[spell_name][2]):
+                try:
+                    creature_to_resumm = random.choice(player.dict_of_actions["Minions_that_died"]["my_minions"])
+                    if creature_to_resumm.category == list_of_spells_that_resummon[spell_name][1]:
+                        list_of_creature_to_resumm.append(creature_to_resumm)
+                        player.dict_of_actions["Minions_that_died"]["my_minions"].remove(list_of_creature_to_resumm[-1])
+                except Exception as e:
+                    print(e)
+        resummon_creatures(player, list_of_creature_to_resumm)
+
+
+def resummon_creatures(player, list_of_creature_to_resumm):
+    for card in list_of_creature_to_resumm:
+        card.hp = card.original_hp
+        card.attack = card.original_attack
+        card.description = card.original_description
+        if "Charge" in card.description.split() or "Rush" in card.description.split():
+            card.number_of_attacks = 1
+            card.exhausted=card.check_creature("")
+        if len(player.battle_field) < 7:
+            player.battle_field.append(card)
+            player.check_for_creature_with_effect_on("summ", card)
 
 
 def general_spells(player, enemy_player, spell_name):

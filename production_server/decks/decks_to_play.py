@@ -18,15 +18,10 @@ bot_deck = [
     Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)
 ]
 demo_deck = [
-    Creature(2, "Worker Recruiter", 3, 2, "When you play a worker add a random worker to your hand", "worker", 0),
-    Creature(1, "Work Friend", 2, 1, "Summon a 1/1 Peasant", "worker", 1),
-    Creature(6, "Soldier Commander", 5, 5, "Guard Cost 1 less for each soldier you summoned this game", "soldier", 2),
-    Creature(10, "Torsion Catapult", 8, 8, "Cost 1 less for each soldier you summoned this game", "machine", 6),
-    Creature(3, "Heraclius", 3, 3, "Pays all your debt and draws that many cards", "worker", 7),
-    Spell(2, "Sling shot", "Deal 3-6 damage Debt(1)", 8),
-    Creature(11, "Mercenary Battering Ram", 8, 8, "Cost 1 less for each mana crystal you spent on Debt this game",
-             "mechanical", 10),
-    Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", 0)
+    Spell(4, "Quick Arrow", "Deal 4 damage to a minion if any died this turn this cost 1", 0),
+    Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5", 1),
+    Spell(2, "Second Charge", "Summon all your animals that died this turn", 0),
+    Creature(3, "Trained Dog", 4, 1, "Rush Draw a Rush from your deck", "animal", 0)
 ]
 
 list_of_tactics_to_pick = [
