@@ -4,7 +4,7 @@ from clases.creatures import Creature
 
 from clases.Defence import Defence
 
-from ITschool_projects.battle_resources.production_server.clases.spells import Spell
+from clases.spells import Spell
 
 
 def generate_random_int():
@@ -79,13 +79,16 @@ list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "
                                                   "War Eagle": (0, 1, ""),
                                                   "King Saragon of Akkad": (2, 2, "ancient")}
 list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
+                                                "Enthusiastic Archer": ("damage:random:enemies:all:1", "summ all"),
                                                 "New Recruit": ("self_buff", "summ soldier"),
                                                 "Wondering Scribe": ("draw", "cast spell"),
                                                 "Roman Architect": ("add_defence", "damage_taken"),
                                                 "Scavenger Hyena": ("self_buff", "friendly_minion_dies:animal"),
-                                                "Worker Recruiter": ("add_to_hand:workers", "summ worker")}
+                                                "Worker Recruiter": ("add_to_hand:workers", "summ worker"),
+                                                "Soldier Architect": ("add_defence:self", "damage_taken")}
+list_of_creature_that_are_effected_by_action_once = {"Soldier Architect":0}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
-list_of_creature_that_add_armor_on_action = {"Roman Architect": 1}
+list_of_creature_that_add_armor_on_action = {"Roman Architect": 1, "Soldier Architect": 2}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,

@@ -718,15 +718,41 @@ class Player:
                                                               self.enemy_player) is True and list_of_cards_that_add_cards_to_your_hand_by_action.get(
                         creature.name):
                         self.add_random_card_to_hand(creature)
+                    if "all" in effected_cards[0].split(":"):
+                        if "damage" in effected_cards[0].split(":"):
+                            if "all" in effected_cards[0].split(":"):
+                                if "enemies" in effected_cards[0].split(":"):
+                                    list_of_targets = []
+                                    list_of_targets.extend(self.enemy_player.battle_field)
+                                    list_of_targets.append(self.enemy_player.name)
+                                    random_enemy = random.choice(list_of_targets)
+                                    if isinstance(random_enemy, str):
+                                        self.enemy_player.hp -= int(effected_cards[0].split(":")[4])
+                                        self.dict_of_actions["Damage_done"] += int(effected_cards[0].split(":")[3])
+                                    elif random_enemy.armored is True:
+                                        random_enemy.armored = False
+                                    else:
+                                        random_enemy.hp -= int(effected_cards[0].split(":")[4])
+                                    list_of_targets.clear()
                 elif action == effected_cards[1] and action == "cast spell":
                     for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                         self.draw_card()
                 elif action == effected_cards[1] and action == "damage_taken":
                     if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
-                        self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
+                        if "self" in effected_cards[0].split(":"):
+                            if creature.name in list_of_creature_that_are_effected_by_action_once:
+                                self.do_action_once_per_trigger(creature, "add_armor")
+                            break
+                        else:
+                            self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
 
             except Exception as e:
                 print(e)
+
+    def do_action_once_per_trigger(self, card, action_to_do):
+        if action_to_do == "add_armor" and list_of_creature_that_are_effected_by_action_once[card.name] == 0:
+            self.armor += list_of_creature_that_add_armor_on_action.get(card.name)
+            list_of_creature_that_are_effected_by_action_once[card.name] += 1
 
     def put_item_on(self, enemy_player, card):
         self.active_defence = list_of_creature_that_add_defence.get(card.name)[0]

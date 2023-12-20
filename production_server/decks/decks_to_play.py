@@ -18,10 +18,11 @@ bot_deck = [
     Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)
 ]
 demo_deck = [
-    Spell(4, "Quick Arrow", "Deal 4 damage to a minion if any died this turn this cost 1", 0),
-    Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5", 1),
-    Spell(2, "Second Charge", "Summon all your animals that died this turn", 0),
-    Creature(3, "Trained Dog", 4, 1, "Rush Draw a Rush from your deck", "animal", 0)
+    Creature(0, "Enthusiastic Archer", 3, 2, "Deal 1 damage to a random enemy when you summon a minion", "soldier", 0),
+    Creature(0, "Soldier Architect", 3, 1, "When this minion takes damage gain 2 defences", "soldier", 3),
+    Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", 1),
+    Creature(0, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
+             "worker", 2),
 ]
 
 list_of_tactics_to_pick = [

@@ -362,6 +362,7 @@ def spell_that_summon(player, enemy_player, spell_name):
                         list_of_animals_to_summon[creature])
                 if player.battle_field[-1].name in list_of_creature_with_on_going_effect:
                     player.ongoing_effects.append(player.battle_field[-1])
+            player.check_for_creature_with_effect_on("summ", player.battle_field[-1])
     for i in range(0, list_of_spells_that_summon.get(spell_name)[1]):
         for card in player.deck:
             if list_of_spells_that_summon.get(spell_name)[0] == "":
@@ -372,12 +373,14 @@ def spell_that_summon(player, enemy_player, spell_name):
                     player.battle_field.append(card_picked)
                     player.summoned_minions(card_picked)
                     player.deck.remove(card_picked)
+                    player.check_for_creature_with_effect_on("summ", player.battle_field[-1])
                 break
             elif (list_of_spells_that_summon.get(spell_name)[0] in card.description.split()
                   and card.card_type == "Creature"):
                 player.battle_field.append(card)
                 player.summoned_minions(card)
                 player.deck.remove(card)
+                player.check_for_creature_with_effect_on("summ", player.battle_field[-1])
                 break
     if spell_name in list_of_spells_that_resummon:
         list_of_creature_to_resumm = []
@@ -400,7 +403,7 @@ def resummon_creatures(player, list_of_creature_to_resumm):
         card.description = card.original_description
         if "Charge" in card.description.split() or "Rush" in card.description.split():
             card.number_of_attacks = 1
-            card.exhausted=card.check_creature("")
+            card.exhausted = card.check_creature("")
         if len(player.battle_field) < 7:
             player.battle_field.append(card)
             player.check_for_creature_with_effect_on("summ", card)
@@ -460,12 +463,12 @@ def general_spells(player, enemy_player, spell_name):
                     creature.armored = False
                 else:
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-                    player.check_for_creature_with_effect_on("damage_taken", None)
                     enemy_player.check_for_creature_with_effect_on("damage_taken", None)
         elif "all characters" in player.incoming_spell.description:
             damage_to_all_minions(player, enemy_player)
             player.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
             enemy_player.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
+
     Player.clean_board(player, enemy_player)
 
 
@@ -691,8 +694,10 @@ def end_of_turn_action(player, enemy_player):
             elif "damage" in end_of_turn_card[0].split():
                 if "all" in end_of_turn_card[0].split():
                     if "enemies" in end_of_turn_card[0].split():
-                        enemy_player.battle_field.append(enemy_player.name)
-                        random_enemy = random.choice(enemy_player.battle_field)
+                        list_of_targets = []
+                        list_of_targets.extend(enemy_player.battle_field)
+                        list_of_targets.append(enemy_player.name)
+                        random_enemy = random.choice(list_of_targets)
                         if isinstance(random_enemy, str):
                             enemy_player.hp -= end_of_turn_card[1]
                             player.dict_of_actions["Damage_done"] += end_of_turn_card[1]
@@ -700,7 +705,7 @@ def end_of_turn_action(player, enemy_player):
                             random_enemy.armored = False
                         else:
                             random_enemy.hp -= end_of_turn_card[1]
-                        enemy_player.battle_field.pop(-1)
+                        list_of_targets.clear()
     Player.clean_board(player, enemy_player)
 
 

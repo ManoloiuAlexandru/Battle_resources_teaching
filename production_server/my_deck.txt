@@ -168,7 +168,7 @@ name:Knock down
 card_type:Spell
 description:Knocks down a target, draw a card
 img_url:Knock down.png
-target:enemy
+target:None
 empire_belonging:
 category:
 name_for_html:Knock_down6
@@ -180,7 +180,7 @@ name:Knock down
 card_type:Spell
 description:Knocks down a target, draw a card
 img_url:Knock down.png
-target:enemy
+target:None
 empire_belonging:
 category:
 name_for_html:Knock_down7
