@@ -739,13 +739,16 @@ class Player:
                         self.draw_card()
                 elif action == effected_cards[1] and action == "damage_taken":
                     if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
-                        if "self" in effected_cards[0].split(":"):
+                        if playing_creature == creature:
                             if creature.name in list_of_creature_that_are_effected_by_action_once:
                                 self.do_action_once_per_trigger(creature, "add_armor")
-                            break
-                        else:
+                            else:
+                                self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
+                        elif playing_creature is not None:
                             self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
-
+                elif action == effected_cards[1] and action == "kill_minion":
+                    if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
+                        self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
             except Exception as e:
                 print(e)
 
@@ -948,14 +951,14 @@ class Player:
                 creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
                 if self.quest is not None:
                     self.quest.check_quest_progression(self, None, "damage")
-                self.check_for_creature_with_effect_on("damage_taken", None)
+                self.check_for_creature_with_effect_on("damage_taken", creature)
         for creature in self.enemy_player.battle_field:
             if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures.get(
                     card.name) < 90:
                 creature.armored = False
             else:
                 creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures.get(card.name)
-                self.enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+                self.enemy_player.check_for_creature_with_effect_on("damage_taken", creature)
 
     def do_damage_to_all_other_characters(self, card):
         if self.immunity is False:
@@ -972,14 +975,14 @@ class Player:
                 creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(card.name)
                 if self.quest is not None:
                     self.quest.check_quest_progression(self, None, "damage")
-                self.check_for_creature_with_effect_on("damage_taken", None)
+                self.check_for_creature_with_effect_on("damage_taken", creature)
         for creature in self.enemy_player.battle_field:
             if creature.armored is True and 0 < list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(
                     card.name) < 90:
                 creature.armored = False
             else:
                 creature.hp -= list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms.get(card.name)
-                self.enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+                self.enemy_player.check_for_creature_with_effect_on("damage_taken", creature)
         Player.check_player(self)
         Player.check_player(self.enemy_player)
 

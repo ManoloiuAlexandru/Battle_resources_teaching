@@ -58,7 +58,8 @@ cards_for_byzantine_empire = [
     Creature(11, "Mercenary Battering Ram", 8, 8,
              "Cost 1 less for each mana crystal you spent on Debt this game",
              "mechanical", -285),
-    Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286)
+    Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286),
+    Spell(2, "War Cry", "Give a friendly minion +3/+3 deal 1 damage to ALL other minions Debt(1)", -294),
 ]
 cards_byzantine_show = [
     Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.", -36),
@@ -116,5 +117,6 @@ cards_byzantine_show = [
     Creature(11, "Mercenary Battering Ram", 8, 8,
              "Cost 1 less for each mana crystal you spent on Debt this game",
              "mechanical", -285),
-    Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286)
+    Spell(0, "Mercenary arrow shot", "Deal 2 damage to a minion Debt(1)", -286),
+    Spell(2, "War Cry", "Give a friendly minion +3/+3 deal 1 damage to ALL other minions Debt(1)", -294),
 ]

@@ -1,92 +1,62 @@
-empire:Byzantine_Empire
+empire:Roman_Empire
 card_id:0
-mana_cost:2
-original_mana_cost:2
-name:Worker Recruiter
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
+mana_cost:4
+original_mana_cost:4
+name:Caligula
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:4
 active_effects:[]
 knocked_down_time:0
-description:When you play a worker add a random worker to your hand
-original_description:When you play a worker add a random worker to your hand
+description:Rush Desperate add Claudius to your deck
+original_description:Rush Desperate add Claudius to your deck
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Worker Recruiter.png
+img_url:Caligula.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Worker_Recruiter0
+name_for_html:Caligula0
 --------------------------------
 card_id:1
-mana_cost:2
-original_mana_cost:2
-name:Worker Recruiter
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-knocked_down_time:0
-description:When you play a worker add a random worker to your hand
-original_description:When you play a worker add a random worker to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Worker Recruiter.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Swamped
+card_type:Spell
+description:Destroy a damaged minion and knock down all minions
+img_url:Swamped.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Worker_Recruiter1
+category:
+name_for_html:Swamped1
 --------------------------------
 card_id:2
-mana_cost:1
-original_mana_cost:1
-name:Work Friend
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Summon a 1/1 Peasant
-original_description:Summon a 1/1 Peasant
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Work Friend.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Swamped
+card_type:Spell
+description:Destroy a damaged minion and knock down all minions
+img_url:Swamped.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Work_Friend2
+category:
+name_for_html:Swamped2
 --------------------------------
 card_id:3
-mana_cost:1
-original_mana_cost:1
-name:Work Friend
-hp:2
-max_hp:2
-original_hp:2
+mana_cost:2
+original_mana_cost:2
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
 attack:1
 category:worker
 attack_before_on_effects:0
@@ -94,94 +64,178 @@ hp_before_on_effects:0
 original_attack:1
 active_effects:[]
 knocked_down_time:0
-description:Summon a 1/1 Peasant
-original_description:Summon a 1/1 Peasant
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Work Friend.png
+img_url:Roman Architect.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Work_Friend3
+name_for_html:Roman_Architect3
 --------------------------------
 card_id:4
 mana_cost:2
 original_mana_cost:2
-name:Ball-headed Mace Soldier
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
+name:Roman Architect
+hp:4
+max_hp:4
+original_hp:4
+attack:1
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:1
 active_effects:[]
 knocked_down_time:0
-description:Add a Knock down to your hand
-original_description:Add a Knock down to your hand
+description:Gain 1 defence when a friendly mininon takes damage
+original_description:Gain 1 defence when a friendly mininon takes damage
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Ball-headed Mace Soldier.png
+img_url:Roman Architect.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Ball-headed_Mace_Soldier4
+name_for_html:Roman_Architect4
 --------------------------------
 card_id:5
-mana_cost:2
-original_mana_cost:2
-name:Ball-headed Mace Soldier
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
+mana_cost:8
+original_mana_cost:8
+name:Nero
+hp:9
+max_hp:9
+original_hp:9
+attack:4
+category:worker
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:3
+original_attack:4
 active_effects:[]
 knocked_down_time:0
-description:Add a Knock down to your hand
-original_description:Add a Knock down to your hand
+description:Charge +6 attack while damaged
+original_description:Charge +6 attack while damaged
 card_type:Creature
-exhausted:True
+exhausted:False
 armored:False
 can_be_target:True
-img_url:Ball-headed Mace Soldier.png
+img_url:Nero.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Ball-headed_Mace_Soldier5
+name_for_html:Nero5
 --------------------------------
 card_id:6
-mana_cost:1
-original_mana_cost:1
-name:Knock down
-card_type:Spell
-description:Knocks down a target, draw a card
-img_url:Knock down.png
-target:None
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+knocked_down_time:0
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Knock_down6
+damage_taken_this_turn_from_empire:0
+name_for_html:Architecti6
 --------------------------------
 card_id:7
+mana_cost:5
+original_mana_cost:5
+name:Architecti
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+knocked_down_time:0
+description:Add 5 Defenses to your kingdom
+original_description:Add 5 Defenses to your kingdom
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Architecti.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Architecti7
+--------------------------------
+card_id:8
 mana_cost:1
 original_mana_cost:1
-name:Knock down
-card_type:Spell
-description:Knocks down a target, draw a card
-img_url:Knock down.png
-target:None
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+knocked_down_time:0
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary employer.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Knock_down7
+damage_taken_this_turn_from_empire:0
+name_for_html:Mercenary_employer8
+--------------------------------
+card_id:9
+mana_cost:1
+original_mana_cost:1
+name:Mercenary employer
+hp:2
+max_hp:2
+original_hp:2
+attack:1
+category:mercenary
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+knocked_down_time:0
+description:Add a random mercenary to your hand
+original_description:Add a random mercenary to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Mercenary employer.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Mercenary_employer9
 --------------------------------

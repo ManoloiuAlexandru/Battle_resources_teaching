@@ -15,14 +15,16 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", -62)
+    Creature(1, "Demo", 1, 1, "", "soldier", 4),
+    Creature(1, "Demo", 1, 1, "", "soldier", 5),
+    Creature(1, "Demo", 1, 1, "", "soldier", 6)
 ]
 demo_deck = [
-    Creature(0, "Enthusiastic Archer", 3, 2, "Deal 1 damage to a random enemy when you summon a minion", "soldier", 0),
-    Creature(0, "Soldier Architect", 3, 1, "When this minion takes damage gain 2 defences", "soldier", 3),
-    Spell(1, "Pilum Volley", "Deal 1 damage to ALL minions", 1),
-    Creature(0, "Roman Architect", 4, 1, "Gain 1 defence when a friendly mininon takes damage",
-             "worker", 2),
+    Creature(2, "Enthusiastic Archer", 3, 2, "Deal 1 damage to a random enemy when you summon a minion", "soldier", 0),
+    Creature(4, "Caligula", 4, 4, "Rush Desperate add Claudius to your deck", "soldier", 4),
+    Spell(3, "Swamped", "Destroy a damaged minion and knock down all minions", 1),
+    Spell(2, "War Cry", "Give a friendly minion +3/+3 deal 1 damage to ALL other minions", 2),
+    Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", 3),
 ]
 
 list_of_tactics_to_pick = [

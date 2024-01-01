@@ -144,7 +144,10 @@ cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker",
                                       Creature(2, "Soldier Motivator", 2, 1,
                                                "Reduce the cost of your soldiers in your hand by 1", "soldier", -271),
                                       Creature(10, "Eager Mercenary", 4, 5,
-                                               "Rush Cost 1 less for each card in your hand", "mercenary", -273)
+                                               "Rush Cost 1 less for each card in your hand", "mercenary", -273),
+                                      Creature(2, "Enthusiastic Archer", 3, 2,
+                                               "Deal 1 damage to a random enemy when you summon a minion", "soldier",
+                                               -291),
                                       ]
 all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -523,5 +526,10 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5",
                            -288),
                      Spell(2, "Second Charge", "Summon all your animals that died this turn", -289),
-                     Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290)
+                     Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290),
+                     Creature(2, "Enthusiastic Archer", 3, 2,
+                              "Deal 1 damage to a random enemy when you summon a minion", "soldier", -291),
+                     Creature(4, "Caligula", 4, 4, "Rush Desperate add Claudius to your deck", "soldier", -292),
+                     Spell(3, "Swamped", "Destroy a damaged minion and knock down all minions", -293),
+                     Spell(2, "War Cry", "Give a friendly minion +3/+3 deal 1 damage to ALL other minions", -294),
                      ]

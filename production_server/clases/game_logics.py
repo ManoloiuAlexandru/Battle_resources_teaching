@@ -20,19 +20,24 @@ def battle(card1, card2, player1, player2):
                         card2.armored = False
                 elif card1.armored is True:
                     card2.hp -= card1.attack
-                    player2.check_for_creature_with_effect_on("damage_taken", None)
+                    player2.check_for_creature_with_effect_on("damage_taken", card2)
+                    if card2.hp <= 0:
+                        player1.check_for_creature_with_effect_on("kill_minion", None)
                     if card2.attack > 0:
                         card1.armored = False
                 elif card2.armored is True:
                     card1.hp -= card2.attack
                     if card1.attack > 0:
                         card2.armored = False
-                    player1.check_for_creature_with_effect_on("damage_taken", None)
+                    player1.check_for_creature_with_effect_on("damage_taken", card1)
                 else:
                     card1.hp -= card2.attack
-                    player1.check_for_creature_with_effect_on("damage_taken", None)
+                    if card2.attack > 0:
+                        player1.check_for_creature_with_effect_on("damage_taken", card1)
                     card2.hp -= card1.attack
-                    player2.check_for_creature_with_effect_on("damage_taken", None)
+                    if card2.hp <= 0:
+                        player1.check_for_creature_with_effect_on("kill_minion", None)
+                    player2.check_for_creature_with_effect_on("damage_taken", card2)
                 if "Rebuilder" in card1.description.split(" "):
                     player1.heal_player(card1.attack)
                 if "Rebuilder" in card2.description.split(" "):
@@ -42,6 +47,8 @@ def battle(card1, card2, player1, player2):
                 player2.check_for_tactics("dmg_delt", card1, card2)
                 Player.clean_board(player1, player2)
                 Player.battle_fields_effects(player1, player2)
+            for creature in list_of_creature_that_are_effected_by_action_once:
+                list_of_creature_that_are_effected_by_action_once[creature] = 0
     except Exception as e:
         print(e)
 
@@ -191,7 +198,7 @@ def check_target(player1, player2, card_picked):
                                 player1.active_minion.name)
                             if player1.quest is not None:
                                 player1.quest.check_quest_progression(player1, card, "damage")
-                            player1.check_for_creature_with_effect_on("damage_taken", None)
+                            player1.check_for_creature_with_effect_on("damage_taken", card)
                     if player1.active_minion.name in list_of_creature_that_heal:
                         heal_creature(card_picked, player1, list_of_creature_that_heal.get(player1.active_minion.name))
                     if player1.active_minion.name in list_of_creature_that_buff_specific_cards:
@@ -204,6 +211,9 @@ def check_target(player1, player2, card_picked):
                     if player1.active_minion.name in list_of_creature_that_debuff:
                         debuff_creature(player1, player2, card_picked)
                     return 1
+        for card in player1.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                return 1
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:
                 return 1
@@ -311,12 +321,14 @@ def cast_spell(player1, player2, card_picked):
                     else:
                         buff_creature_with_spell(card, player1)
                     break
-                player1.check_for_creature_with_effect_on("damage_taken", None)
-                player2.check_for_creature_with_effect_on("damage_taken", None)
+                player1.check_for_creature_with_effect_on("damage_taken", card)
+                player2.check_for_creature_with_effect_on("damage_taken", card)
                 break
         elif card_picked.get(card.name_for_html) is not None:
             card.hp = 0
             break
+    if player1.incoming_spell.name in list_of_spells_that_affect_one_target_and_then_the_rest:
+        general_spells(player1, player2, player1.incoming_spell.name)
     player1.check_player()
     player2.check_player()
 
@@ -421,6 +433,11 @@ def general_spells(player, enemy_player, spell_name):
         player.number_of_troops += list_of_spells_that_add_traps.get(spell_name)
     if spell_name in list_of_spells_that_summon:
         spell_that_summon(player, enemy_player, spell_name)
+    if spell_name in list_of_spells_that_freeze:
+        for creature in player.battle_field:
+            freeze_target(player, enemy_player, {creature.name_for_html: ""})
+        for creature in enemy_player.battle_field:
+            freeze_target(enemy_player, player, {creature.name_for_html: ""})
     elif spell_name == "Peace Treaty":
         for creature in player.battle_field[:]:
             return_to_hand(creature, player)
@@ -463,7 +480,7 @@ def general_spells(player, enemy_player, spell_name):
                     creature.armored = False
                 else:
                     creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-                    enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+                    enemy_player.check_for_creature_with_effect_on("damage_taken", creature)
         elif "all characters" in player.incoming_spell.description:
             damage_to_all_minions(player, enemy_player)
             player.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
@@ -488,13 +505,17 @@ def damage_to_all_minions(player, enemy_player):
             creature.damage_taken_this_turn_from_empire += list_of_dmg_spells.get(player.incoming_spell.name)
             if player.quest is not None:
                 player.quest.check_quest_progression(player, None, "damage")
-            player.check_for_creature_with_effect_on("damage_taken", None)
+            player.check_for_creature_with_effect_on("damage_taken", creature)
+    for creature in list_of_creature_that_are_effected_by_action_once:
+        list_of_creature_that_are_effected_by_action_once[creature] = 0
     for creature in enemy_player.battle_field:
         if creature.armored is True and 0 < list_of_dmg_spells.get(player.incoming_spell.name) < 90:
             creature.armored = False
         else:
             creature.hp -= list_of_dmg_spells.get(player.incoming_spell.name)
-            enemy_player.check_for_creature_with_effect_on("damage_taken", None)
+            enemy_player.check_for_creature_with_effect_on("damage_taken", creature)
+    for creature in list_of_creature_that_are_effected_by_action_once:
+        list_of_creature_that_are_effected_by_action_once[creature] = 0
 
 
 def put_item_on(player1, player2, card_picked):
