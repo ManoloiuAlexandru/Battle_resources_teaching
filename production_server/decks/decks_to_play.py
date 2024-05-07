@@ -15,16 +15,30 @@ from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(1, "Demo", 1, 1, "", "soldier", 4),
-    Creature(1, "Demo", 1, 1, "", "soldier", 5),
-    Creature(1, "Demo", 1, 1, "", "soldier", 6)
+    Creature(0, "Wandering Bard", 4, 2, "Draw a card. If it's a spell, reduce its cost by 1", "worker", 5),
+    Creature(3, "Motivated Page", 4, 2, "If you're holding a knight gain +1/+1", "knight",
+             -163)
 ]
 demo_deck = [
-    Creature(2, "Enthusiastic Archer", 3, 2, "Deal 1 damage to a random enemy when you summon a minion", "soldier", 0),
-    Creature(4, "Caligula", 4, 4, "Rush Desperate add Claudius to your deck", "soldier", 4),
-    Spell(3, "Swamped", "Destroy a damaged minion and knock down all minions", 1),
-    Spell(2, "War Cry", "Give a friendly minion +3/+3 deal 1 damage to ALL other minions", 2),
-    Spell(1, "Emperor's Will", "Give a minion +1/+2 and Armored if you hold a knight", 3),
+    Creature(3, "Wandering Bard", 3, 2, "Draw a card. If it's a spell, reduce its cost by 1", "worker", 5),
+    Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", 113),
+    Creature(6, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
+             "worker", 912),
+    Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 913),
+    Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 914),
+    Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", 915),
+    Creature(0, "Sir William Marshal", 4, 5, "Reduce the Cost by 2 of all knights in your deck",
+             "knight", -267),
+    Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168),
+    Creature(7, "Heavy Armored Knight", 4, 7, "If you're holding a knight deal 7 damage to a minion",
+             "knight",
+             -165),
+    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153),
+    Creature(1, "Armored Page", 1, 1, "Armored", "knight", -51),
+    Creature(0, "Veteran Knight", 4, 4,
+             "Reduce the cost of your knights in your hand and give them +1/+1",
+             "knight",
+             -268),
 ]
 
 list_of_tactics_to_pick = [

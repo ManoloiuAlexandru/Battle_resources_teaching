@@ -94,7 +94,8 @@ list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
                                     "Byzantium Engineer": 1, "Tiberius": 3, "War Crier": 1, "Godfrey of Bouillon": 3,
-                                    "Battle Tactician": 1, "Heraclius": 0, "Trained Dog": 1}
+                                    "Battle Tactician": 1, "Heraclius": 0, "Trained Dog": 1,
+                                    "Wandering Bard": 1}
 list_of_creature_that_draw_specific_cards = {
     "Trained Dog": (["Creature"], ["Rush"], [""]),
     "Battle Tactician": (["Spell"], ["Tactic"], [""]),
@@ -147,7 +148,8 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
 list_of_creature_that_reduce_mana_cost = {"Sir William Marshal": ("deck", "Creature", "knight", 2),
                                           "Mercenary Contractor": ("deck,hand", "Creature", "mercenary", 1),
                                           "Veteran Knight": ("hand", "Creature", "knight", 1),
-                                          "Soldier Motivator": ("hand", "Creature", "soldier", 1)}
+                                          "Soldier Motivator": ("hand", "Creature", "soldier", 1),
+                                          "Wandering Bard": ("last card draw", "Spell", "", 1)}
 list_of_creature_that_summ_after_they_die = {
     "Lost Chicken": (
         1, [Creature(5, "Lynx", 5, 5, "", "animal", generate_random_int()) for i in range(0, 40)]),

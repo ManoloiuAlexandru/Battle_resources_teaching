@@ -109,8 +109,6 @@ class Player:
                     self.last_debt = 0
                 if card.name in list_of_cards_that_check_your_kingdom:
                     self.check_kingdom(card)
-                if card.name in list_of_creature_that_reduce_mana_cost:
-                    self.reduce_mana_cost_of_card(card)
                 if card.name in list_of_card_that_add_debt:
                     self.dict_of_actions["Debt_in_game"] += list_of_card_that_add_debt.get(card.name)
                     self.debt += list_of_card_that_add_debt.get(card.name)
@@ -202,6 +200,8 @@ class Player:
                     self.buff_all_in_battle(card)
                 elif len(self.battle_field) == 7:
                     return 0
+                if card.name in list_of_creature_that_reduce_mana_cost:
+                    self.reduce_mana_cost_of_card(card)
                 if card.name in list_of_creature_that_are_affected_by_battle_field:
                     self.buff_card_from_battle(card)
                 if self.quest is not None:
@@ -1129,6 +1129,12 @@ class Player:
                 if creature.card_type == list_of_creature_that_reduce_mana_cost[card.name][1]:
                     if creature.category == list_of_creature_that_reduce_mana_cost[card.name][2]:
                         creature.mana_cost_reduction(list_of_creature_that_reduce_mana_cost[card.name][3])
+        if "last card draw" in list_of_creature_that_reduce_mana_cost[card.name][0].split(","):
+            if self.hand[-1].card_type == list_of_creature_that_reduce_mana_cost[card.name][1]:
+                if list_of_creature_that_reduce_mana_cost[card.name][2] == "":
+                    self.hand[-1].mana_cost_reduction(list_of_creature_that_reduce_mana_cost[card.name][3])
+                elif self.hand[-1].category == list_of_creature_that_reduce_mana_cost[card.name][2]:
+                    self.hand[-1].mana_cost_reduction(list_of_creature_that_reduce_mana_cost[card.name][3])
 
     def summoned_minions(self, card):
         if card.category in self.dict_of_actions['Minions']:
