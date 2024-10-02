@@ -1,6 +1,5 @@
-Wandering Bard
-Type: Creature
-Cost: 3
-Stats: 2/4
-Effect: Draw a card. If it's a spell, reduce its cost by 1.
-
+Spell(0, "Flaming arrow", "Deal 6 damage", 1),
+Creature(0, "Veteran Tactician", 4, 4, "Deal 6 damage if you control a tactic", "soldier", 2),
+Spell(0, "Greek Scrolls", "Discover a spell", 3),
+Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight","worker", 4),
+Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", -21),

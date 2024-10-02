@@ -387,6 +387,8 @@ def battlefield_fight():
     player_selected = False
     if card_picked.get("hero_power") is not None:
         check_hero_power(player1, player2)
+    if player1.power is not None:
+        destroy_creature_from_player(player1, player2, card_picked)
     Player.battle_fields_effects(player1, player2)
     if player1.incoming_action == 2:
         destroy_creature_from_player(player1, player2, card_picked)
@@ -474,4 +476,4 @@ def end_turn():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

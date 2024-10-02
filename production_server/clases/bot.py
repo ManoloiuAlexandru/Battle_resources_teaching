@@ -1,12 +1,12 @@
 import random
 import time
 
-from clases.creatures import *
-from clases.game_logics import *
-from clases.player import Player
+from production_server.clases.creatures import *
+from production_server.clases.game_logics import *
+from production_server.clases.player import Player
 
-from clases.spells import *
-from decks.lists_of_cards import *
+from production_server.clases.spells import *
+from production_server.decks.lists_of_cards import *
 
 
 class Bot(Player):

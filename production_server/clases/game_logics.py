@@ -1,10 +1,5 @@
-import copy
-import random
-
-from clases.creatures import *
-from clases.spells import *
-from clases.player import *
-from decks.lists_of_cards import *
+from production_server.clases.player import *
+from production_server.decks.lists_of_cards import *
 
 
 def battle(card1, card2, player1, player2):
@@ -70,7 +65,7 @@ def reset_player(player, enemy_player):
     except Exception as e:
         print(e)
     try:
-        if player.active_defence.name is not None and player.active_defence.name in list_of_item:
+        if player.active_defence.name is not None:
             cancel_card(player.active_defence.name, player)
     except Exception as e:
         print(e)
@@ -559,7 +554,9 @@ def deal_dmg_to_creature(card_picked, player, dmg):
 
 
 def destroy_creature_from_player(player1, player2, card_picked):
-    if check_target(player1, player2, card_picked) == 0:
+    if player1.power is not None:
+        use_hero_power_on_target(player1, player2, card_picked)
+    elif check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
     else:
         if list_of_creature_that_deal_dmg_to_enemies.get(player1.active_minion.name) is not None:
@@ -570,6 +567,39 @@ def destroy_creature_from_player(player1, player2, card_picked):
         player1.active_minion = None
         player1.incoming_action = 0
         Player.clean_board(player1, player2)
+
+
+def use_hero_power_on_target(player1, player2, card_picked):
+    if player1.power is not None:
+        for card in player1.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                if player1.power == "Greek":
+                    if card.armored is not True:
+                        card.hp -= 1
+                    else:
+                        card.armored = False
+                    player1.power = None
+        for card in player2.battle_field:
+            if card_picked.get(card.name_for_html) is not None:
+                if player1.power == "Greek":
+                    if card.armored is not True:
+                        card.hp -= 1
+                    else:
+                        card.armored = False
+                    player1.power = None
+        if card_picked.get(player2.name) is not None:
+            if player2.armor == 0:
+                player2.hp -= 1
+            else:
+                player2.armor -= 1
+            player1.power = None
+
+        if card_picked.get(player1.name) is not None:
+            if player1.armor == 0:
+                player1.hp -= 1
+            else:
+                player1.armor -= 1
+            player1.power = None
 
 
 def debuff_creature(player1, player2, card_picked):
@@ -689,6 +719,10 @@ def check_hero_power(player, enemy_player):
             player.mana_increase(-2)
         elif player.empire == "Roman empire":
             player.armor += 2
+            player.used_power = 1
+            player.mana_increase(-2)
+        elif player.empire == "Greek empire":
+            player.power = "Greek"
             player.used_power = 1
             player.mana_increase(-2)
     player.check_player()

@@ -1,16 +1,12 @@
 import copy
-import random
+from production_server.clases.game_logics import *
+from production_server.decks.lists_of_cards import *
 
-from clases.creatures import *
-from decks.lists_of_cards import *
-from clases.game_logics import *
-from decks.lists_of_cards import *
+from production_server.decks.decks_to_play import *
 
-from decks.decks_to_play import *
+from production_server.decks.holy_roman_empire import *
 
-from decks.holy_roman_empire import *
-
-from clases.quest import *
+from production_server.clases.quest import *
 
 
 class Player:
@@ -37,6 +33,7 @@ class Player:
         self.immunity = False
         self.armor = 0
         self.fatigue = 1
+        self.power = None
         self.number_of_troops = 0
         self.nr_of_assaults = 0
         self.debt = 0
@@ -935,6 +932,9 @@ class Player:
                         self.draw_card()
                 if "summ" in checking_card[2].split(":"):
                     list_of_creature_that_summon[card.name][0] = int(checking_card[2].split(":")[1])
+                if "change" in checking_card[2].split(":"):
+                    if "dmg" in checking_card[2].split(":"):
+                        list_of_creature_that_deal_dmg_to_enemies[card.name] = int(checking_card[2].split(":")[2])
             elif list_of_creature_that_summon.get(card.name) is not None:
                 list_of_creature_that_summon[card.name][0] = 0
         if checking_card[0] == "debt":

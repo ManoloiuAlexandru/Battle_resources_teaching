@@ -1,44 +1,29 @@
-from clases.creatures import Creature
-from clases.spells import Spell
+from production_server.clases.creatures import Creature
+from production_server.clases.spells import Spell
 
-from clases.Defence import Defence
+from production_server.clases.Defence import Defence
 
-from decks.byzantine_empire import cards_for_byzantine_empire
+from production_server.decks.byzantine_empire import cards_for_byzantine_empire
 
-from decks.holy_roman_empire import list_of_holy_roman, cards_for_holy_roman_empire
+from production_server.decks.holy_roman_empire import list_of_holy_roman, cards_for_holy_roman_empire
 
-from decks.mesopotamia_empire import mesopotamia_empire
-from decks.mongols_empire import cards_for_mongol_empire, mongols_hordes
+from production_server.decks.mesopotamia_empire import mesopotamia_empire
+from production_server.decks.mongols_empire import cards_for_mongol_empire, mongols_hordes
 
-from decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
+from production_server.decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 
-from decks.roman_empire import roman_empire
+from production_server.decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Wandering Bard", 4, 2, "Draw a card. If it's a spell, reduce its cost by 1", "worker", 5),
-    Creature(3, "Motivated Page", 4, 2, "If you're holding a knight gain +1/+1", "knight",
-             -163)
+    Creature(0, "Andras the blue eyed", 99, 0, "Guard", "all", 0)
 ]
 demo_deck = [
-    Creature(3, "Wandering Bard", 3, 2, "Draw a card. If it's a spell, reduce its cost by 1", "worker", 5),
-    Spell(3, "Strength in numbers", "Give a minion +2/+3 and draw a creature", 113),
-    Creature(6, "Joan of Arc", 2, 2, "Desperate Summ 7/8 Saint Joan of Arc with charge and armored",
-             "worker", 912),
-    Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 913),
-    Creature(3, "Faithful Guard", 2, 2, "Guard Armored", "soldier", 914),
-    Creature(1, "Faithful Protector", 1, 1, "Guard Armored", "soldier", 915),
-    Creature(0, "Sir William Marshal", 4, 5, "Reduce the Cost by 2 of all knights in your deck",
-             "knight", -267),
-    Creature(3, "Motivated Squire", 3, 3, "Deal 3 damage if you are holding a knight", "knight", -168),
-    Creature(7, "Heavy Armored Knight", 4, 7, "If you're holding a knight deal 7 damage to a minion",
-             "knight",
-             -165),
-    Creature(7, "Empire Crusader", 7, 7, "Add 5 Holy Roman Empire cards to your hand", "knight", -153),
-    Creature(1, "Armored Page", 1, 1, "Armored", "knight", -51),
-    Creature(0, "Veteran Knight", 4, 4,
-             "Reduce the cost of your knights in your hand and give them +1/+1",
-             "knight",
-             -268),
+    Spell(0, "Flaming arrow", "Deal 6 damage", 1),
+    Creature(0, "Veteran Tactician", 4, 4, "Deal 6 damage if you control a tactic", "soldier", 2),
+    Spell(0, "Greek Scrolls", "Discover a spell", 3),
+    Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight",
+             "worker", 4),
+    Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", -21),
 ]
 
 list_of_tactics_to_pick = [
@@ -242,9 +227,12 @@ list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                   [Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", -205)],
 
                   ]
+list_of_spells_to_pick = [[Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)]]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
-                             "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers}
+                             "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers,
+                             "spells": list_of_spells_to_pick
+                             }
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
