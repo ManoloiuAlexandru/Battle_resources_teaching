@@ -1,6 +1,6 @@
-from clases.Defence import Defence
-from clases.creatures import Creature
-from clases.spells import Spell
+from production_server.clases.Defence import Defence
+from production_server.clases.creatures import Creature
+from production_server.clases.spells import Spell
 
 cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72),

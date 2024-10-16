@@ -1,7 +1,7 @@
-from clases.creatures import Creature
-from clases.spells import Spell
+from production_server.clases.creatures import Creature
+from production_server.clases.spells import Spell
 
-from clases.Defence import Defence
+from production_server.clases.Defence import Defence
 
 roman_empire = [Creature(2, "Mercenary Recruiter", 2, 2, "Draw a mercenary", "mercenary", -132),
                 Creature(4, "Mercenary defender", 5, 2, "Guard put an 3/2 defence", "mercenary", -133),

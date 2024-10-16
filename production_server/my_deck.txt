@@ -1,241 +1,325 @@
-empire:Roman_Empire
+empire:Greek_Empire
 card_id:0
-mana_cost:4
-original_mana_cost:4
-name:Caligula
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-knocked_down_time:0
-description:Rush Desperate add Claudius to your deck
-original_description:Rush Desperate add Claudius to your deck
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Caligula.png
-items:[]
-number_of_attacks:1
+mana_cost:6
+original_mana_cost:6
+name:Ballestris Volly
+card_type:Spell
+description:Deals 2 damage to all enemy minions and knocks them down
+img_url:Ballestris Volly.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Caligula0
+category:
+name_for_html:Ballestris_Volly0
 --------------------------------
 card_id:1
-mana_cost:3
-original_mana_cost:3
-name:Swamped
+mana_cost:6
+original_mana_cost:6
+name:Ballestris Volly
 card_type:Spell
-description:Destroy a damaged minion and knock down all minions
-img_url:Swamped.png
+description:Deals 2 damage to all enemy minions and knocks them down
+img_url:Ballestris Volly.png
 target:None
 empire_belonging:
 category:
-name_for_html:Swamped1
+name_for_html:Ballestris_Volly1
 --------------------------------
 card_id:2
-mana_cost:3
-original_mana_cost:3
-name:Swamped
+mana_cost:2
+original_mana_cost:2
+name:Greek Scrolls
 card_type:Spell
-description:Destroy a damaged minion and knock down all minions
-img_url:Swamped.png
+description:Discover a spell and reduce it is mana cost by 2
+img_url:Greek Scrolls.png
 target:None
 empire_belonging:
 category:
-name_for_html:Swamped2
+name_for_html:Greek_Scrolls2
 --------------------------------
 card_id:3
 mana_cost:2
 original_mana_cost:2
-name:Roman Architect
-hp:4
-max_hp:4
-original_hp:4
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Gain 1 defence when a friendly mininon takes damage
-original_description:Gain 1 defence when a friendly mininon takes damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Roman Architect.png
-items:[]
-number_of_attacks:1
+name:Greek Scrolls
+card_type:Spell
+description:Discover a spell and reduce it is mana cost by 2
+img_url:Greek Scrolls.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Roman_Architect3
+category:
+name_for_html:Greek_Scrolls3
 --------------------------------
 card_id:4
-mana_cost:2
-original_mana_cost:2
-name:Roman Architect
-hp:4
-max_hp:4
-original_hp:4
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Gain 1 defence when a friendly mininon takes damage
-original_description:Gain 1 defence when a friendly mininon takes damage
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Roman Architect.png
-items:[]
-number_of_attacks:1
+mana_cost:4
+original_mana_cost:4
+name:Flaming arrow
+card_type:Spell
+description:Deal 6 damage
+img_url:Flaming arrow.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Roman_Architect4
+category:
+name_for_html:Flaming_arrow4
 --------------------------------
 card_id:5
-mana_cost:8
-original_mana_cost:8
-name:Nero
-hp:9
-max_hp:9
-original_hp:9
-attack:4
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-knocked_down_time:0
-description:Charge +6 attack while damaged
-original_description:Charge +6 attack while damaged
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Nero.png
-items:[]
-number_of_attacks:1
+mana_cost:4
+original_mana_cost:4
+name:Flaming arrow
+card_type:Spell
+description:Deal 6 damage
+img_url:Flaming arrow.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Nero5
+category:
+name_for_html:Flaming_arrow5
 --------------------------------
 card_id:6
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Architecti.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Cultural Empire
+card_type:Spell
+description:Draw 2 cards
+img_url:Cultural Empire.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Architecti6
+category:
+name_for_html:Cultural_Empire6
 --------------------------------
 card_id:7
-mana_cost:5
-original_mana_cost:5
-name:Architecti
-hp:5
-max_hp:5
-original_hp:5
+mana_cost:2
+original_mana_cost:2
+name:Net Throw
+card_type:Spell
+description:Deal 3 damage to creature and knocks it down
+img_url:Net Throw.png
+target:None
+empire_belonging:
+category:
+name_for_html:Net_Throw7
+--------------------------------
+card_id:8
+mana_cost:2
+original_mana_cost:2
+name:Net Throw
+card_type:Spell
+description:Deal 3 damage to creature and knocks it down
+img_url:Net Throw.png
+target:None
+empire_belonging:
+category:
+name_for_html:Net_Throw8
+--------------------------------
+card_id:9
+mana_cost:2
+original_mana_cost:2
+name:Sparatan Auxiliars
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Add 2 1/2 Auxiliars to your hand
+original_description:Add 2 1/2 Auxiliars to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Sparatan Auxiliars.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Sparatan_Auxiliars9
+--------------------------------
+card_id:10
+mana_cost:2
+original_mana_cost:2
+name:Sparatan Auxiliars
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Add 2 1/2 Auxiliars to your hand
+original_description:Add 2 1/2 Auxiliars to your hand
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Sparatan Auxiliars.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Sparatan_Auxiliars10
+--------------------------------
+card_id:11
+mana_cost:7
+original_mana_cost:7
+name:Teutonic Knight
+hp:6
+max_hp:6
+original_hp:6
 attack:5
-category:worker
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:5
 active_effects:[]
 knocked_down_time:0
-description:Add 5 Defenses to your kingdom
-original_description:Add 5 Defenses to your kingdom
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Architecti.png
+img_url:Teutonic Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Architecti7
+name_for_html:Teutonic_Knight11
 --------------------------------
-card_id:8
-mana_cost:1
-original_mana_cost:1
-name:Mercenary employer
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:mercenary
+card_id:12
+mana_cost:7
+original_mana_cost:7
+name:Teutonic Knight
+hp:6
+max_hp:6
+original_hp:6
+attack:5
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:5
 active_effects:[]
 knocked_down_time:0
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Mercenary employer.png
+img_url:Teutonic Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_employer8
+name_for_html:Teutonic_Knight12
 --------------------------------
-card_id:9
-mana_cost:1
-original_mana_cost:1
-name:Mercenary employer
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:mercenary
+card_id:13
+mana_cost:9
+original_mana_cost:9
+name:Two-handed Knight
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:knight
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:5
 active_effects:[]
 knocked_down_time:0
-description:Add a random mercenary to your hand
-original_description:Add a random mercenary to your hand
+description:Kill an enemy minion
+original_description:Kill an enemy minion
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Mercenary employer.png
+img_url:Two-handed Knight.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Mercenary_employer9
+name_for_html:Two-handed_Knight13
+--------------------------------
+card_id:14
+mana_cost:9
+original_mana_cost:9
+name:Two-handed Knight
+hp:5
+max_hp:5
+original_hp:5
+attack:5
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+knocked_down_time:0
+description:Kill an enemy minion
+original_description:Kill an enemy minion
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Two-handed Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Two-handed_Knight14
+--------------------------------
+card_id:15
+mana_cost:6
+original_mana_cost:6
+name:Templar Knight
+hp:7
+max_hp:7
+original_hp:7
+attack:5
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+knocked_down_time:0
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Templar Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Templar_Knight15
+--------------------------------
+card_id:16
+mana_cost:6
+original_mana_cost:6
+name:Templar Knight
+hp:7
+max_hp:7
+original_hp:7
+attack:5
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:5
+active_effects:[]
+knocked_down_time:0
+description:Guard
+original_description:Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Templar Knight.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Templar_Knight16
 --------------------------------

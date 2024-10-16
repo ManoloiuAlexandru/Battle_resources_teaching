@@ -1005,7 +1005,8 @@ class Player:
             for i in range(0, 3):
                 self.choice_options.append(
                     random.choice(list_of_creatures_to_pick.get(list_of_cards_that_discover[card.name]))[0])
-
+                if card.name in list_of_spells_that_reduce_mana:
+                    self.choice_options[-1].mana_cost_reduction(list_of_spells_that_reduce_mana[card.name][1])
             if card.name == "Vast Empire" and self.empty_mana == 10:
                 for creature in self.choice_options:
                     if len(self.hand) < 10:

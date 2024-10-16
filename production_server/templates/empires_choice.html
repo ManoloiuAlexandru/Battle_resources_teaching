@@ -15,6 +15,7 @@
         <option value="Mongol_Empire">Mongol Empire</option>
         <option value="Mesopotamia_Empire">Mesopotamia Empire</option>
         <option value="Roman_Empire">Roman Empire</option>
+        <option value="Greek_Empire">Greek Empire</option>
     </select>
     <button>Create deck</button>
 </form>
@@ -172,7 +173,8 @@
     <p>The Roman Empire[a] was the post-Republican state of ancient Rome and is generally understood to mean the period
         and territory ruled by the Romans following Octavian's assumption of sole rule under the Principate in 31 BC. It
         included territory in Europe, North Africa, and Western Asia, and was ruled by emperors. The fall of the Western
-        Roman Empire in 476 conventionally marks the end of classical antiquity and the beginning of the Middle Ages.<br>
+        Roman Empire in 476 conventionally marks the end of classical antiquity and the beginning of the Middle
+        Ages.<br>
 
         Rome had expanded its rule to most of the Mediterranean and beyond, but became severely destabilized in civil
         wars and political conflicts which culminated in the victory of Octavian over Mark Antony and Cleopatra at the
@@ -200,6 +202,47 @@
         {%endfor%}
     </p>
     <summary>Roman Empire</summary>
+</details>
+<details>
+    <p>Ancient Greece (Ancient Greek: Ἑλλάς, romanized: Hellás) was a northeastern Mediterranean civilization, existing
+        from the Greek Dark Ages of the 12th–9th centuries BC to the end of classical antiquity (c. 600 AD), that
+        comprised a loose collection of culturally and linguistically related city-states and other territories. Prior
+        to the Roman period, most of these regions were officially unified once under the Kingdom of Macedon from 338 to
+        323 BC.[a] In Western history, the era of classical antiquity was immediately followed by the Early Middle Ages
+        and the Byzantine period.[1]
+
+        Three centuries after the decline of Mycenaean Greece during the Bronze Age Collapse, Greek urban poleis began
+        to form in the 8th century BC, ushering in the Archaic period and the colonization of the Mediterranean Basin.
+        This was followed by the age of Classical Greece, from the Greco-Persian Wars to the death of Alexander the
+        Great in 323 BC, and which included the Golden Age of Athens and the Peloponnesian War. The unification of
+        Greece by Macedon under Philip II and subsequent conquest of the Achaemenid Empire by Alexander the Great spread
+        Hellenistic civilization across the Middle East. The Hellenistic Period is considered to have ended in 30 BC,
+        when the last Hellenistic kingdom, Ptolemaic Egypt, was annexed by the Roman Republic.
+
+        Classical Greek culture, especially philosophy, had a powerful influence on ancient Rome, which carried a
+        version of it throughout the Mediterranean and much of Europe. For this reason, Classical Greece is generally
+        considered the cradle of Western civilization, the seminal culture from which the modern West derives many of
+        its founding archetypes and ideas in politics, philosophy, science, and art.<br>
+        {%for card in library[5]%}
+        <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
+            <span style="display:flex">
+            M:<span class="mana_cost">{{card.mana_cost}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+            <img src="static/cards/{{ card.img_url }}" class="image_card_in_library"/><br>
+             </span>
+            <span class="creature_name">{{card.name}}</span><br>
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
+            <span class="description_in_library">{{card.description}}</span><br>
+            {%if card.card_type=="Creature"%}
+            <span style="font-size:7px">----------------------------------------------------------------------------</span><br>
+            <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
+            {%endif%}
+            {%if card.card_type=="Defence"%}
+            <span class="attack_hp">Troops:{{card.number_of_troops}} Assaults:{{card.nr_of_assaults}}</span>
+            {%endif%}
+        </button>
+        {%endfor%}
+    </p>
+    <summary>Greek Empire</summary>
 </details>
 </body>
 </html>

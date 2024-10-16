@@ -1,29 +1,19 @@
+from production_server.clases.Defence import Defence
 from production_server.clases.creatures import Creature
 from production_server.clases.spells import Spell
-
-from production_server.clases.Defence import Defence
-
+from production_server.decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
 from production_server.decks.byzantine_empire import cards_for_byzantine_empire
-
+from production_server.decks.greek_empire import cards_for_greek_empire
 from production_server.decks.holy_roman_empire import list_of_holy_roman, cards_for_holy_roman_empire
-
 from production_server.decks.mesopotamia_empire import mesopotamia_empire
 from production_server.decks.mongols_empire import cards_for_mongol_empire, mongols_hordes
-
-from production_server.decks.all_cards_in_the_game import cards_that_are_in_the_game_for_all
-
 from production_server.decks.roman_empire import roman_empire
 
 bot_deck = [
     Creature(0, "Andras the blue eyed", 99, 0, "Guard", "all", 0)
 ]
 demo_deck = [
-    Spell(0, "Flaming arrow", "Deal 6 damage", 1),
-    Creature(0, "Veteran Tactician", 4, 4, "Deal 6 damage if you control a tactic", "soldier", 2),
-    Spell(0, "Greek Scrolls", "Discover a spell", 3),
-    Creature(0, "Knight Recruiter", 3, 1, "If you hold a knight discover a knight",
-             "worker", 4),
-    Creature(8, "Richard the Lionheart", 6, 6, "Draw a Spell and a Creature Guard", "knight", -21),
+
 ]
 
 list_of_tactics_to_pick = [
@@ -227,7 +217,30 @@ list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                   [Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", -205)],
 
                   ]
-list_of_spells_to_pick = [[Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)]]
+list_of_spells_to_pick = [[Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)],
+                          [Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", -46)],
+                          [Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47)],
+                          [Spell(2, "Ancient Empire", "Draw 2 cards Debt(1)", -43)],
+                          [Spell(5, "Kill", "Kill an enemy minion", -7)],
+                          [Spell(3, "Volley", "Deal 2 damage to all enemies", -5)],
+                          [Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6)],
+                          [Spell(1, "Bandage", "Heal a friendly minion for 4", -12)],
+                          [Spell(2, "Bandages", "Restore a friendly minion to full HP", -13)],
+                          [Spell(1, "Personal Guard", "Give a minion guard and draw a card", -14)],
+                          [Spell(3, "Horse riding lessons", "Give a friendly creature charge and +2 attack",
+                                 -19)],
+                          [Spell(8, "Bodyguards", "Summon  2 Guards from your deck", -22)],
+                          [Spell(3, "Feudal Obligations", "Draw 2 cards", -29)],
+                          [Spell(8, "Epidemic", "Destroy ALL minions", -32)],
+                          [Spell(3, "Knight's training", "Give a minions +3/+3", -35)],
+                          [Spell(6, "Peace Treaty", "Return all creature form the battlefield to their owners hands.",
+                                 -36)],
+                          [Spell(5, "Wealthy Empire", "Summon 2 random cards from your deck", -40)],
+                          [Spell(2, "Chivalry and Honor", "Give a minion +2/+1 and draw a card", -51)],
+                          [Spell(3, "Horse raiding shot", "Deal 2 damage and draw a card", -58)],
+                          [Spell(7, "Landslide", "Deal 7 damage to ALL minions", -63)],
+                          [Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", -64)]
+                          ]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
                              "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers,
@@ -238,6 +251,7 @@ cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
 mesopotamia_empire.extend(cards_that_are_in_the_game_for_all)
 roman_empire.extend(cards_that_are_in_the_game_for_all)
+cards_for_greek_empire.extend(cards_that_are_in_the_game_for_all)
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", 911),
@@ -451,5 +465,6 @@ empire_decks = {'Byzantine_Empire': cards_for_byzantine_empire,
                 'Holy_Roman_Empire': cards_for_holy_roman_empire,
                 'Mongol_Empire': cards_for_mongol_empire,
                 "Mesopotamia_Empire": mesopotamia_empire,
-                "Roman_Empire": roman_empire
+                "Roman_Empire": roman_empire,
+                "Greek_Empire": cards_for_greek_empire
                 }

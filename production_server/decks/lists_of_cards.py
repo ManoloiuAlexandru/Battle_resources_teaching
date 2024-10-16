@@ -256,12 +256,15 @@ list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenar
                                              "Recruiting": (2, "knights"),
                                              "Friendly Dog": (1, "animal"),
                                              "Ball-headed Mace Soldier": (1, ""),
+                                             "Sparatan Auxiliars": (2, "")
                                              }
 list_of_cards_that_add_cards_to_your_hand_by_action = {"Worker Recruiter": (1, "workers")}
 list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal"),
                                                          "Inspiring knight": (1, "knights")}
 list_of_creature_that_add_specific_card_to_your_hand = {
     "Army Cook": [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 40)],
+    "Sparatan Auxiliars": [Creature(1, "Auxiliars", 2, 1, "", "soldier", generate_random_int()) for i in
+                           range(0, 40)],
     "Ball-headed Mace Soldier": [Spell(1, "Knock down", "Knocks down a target, draw a card", generate_random_int()) for
                                  i in range(0, 40)]}
 list_of_creature_that_have_other_stat_while_damaged = {"Nero": "damaged", "Nero's Guard": "damaged",
@@ -335,7 +338,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Ancient Arrow Shot", "Snare Trap", "Fire Trap", "Deadly Shot", "Quick Shot", "Hit and Run",
                   "Imperial Drama", "Boarder Skirmishes", "Knock down", "Mercenary Arrow Volley",
                   "Fast Mercenary Recruiting", "Sling shot", "Mercenary arrow shot", "Quick Arrow", "Well Trained Pet",
-                  "Second Charge", "Swamped", "War Cry", "Flaming arrow", "Greek Scrolls"]
+                  "Second Charge", "Swamped", "War Cry", "Flaming arrow", "Greek Scrolls", "Spartan Volley",
+                  "Cultural Empire", "Net Throw", "Ballestris Volly"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -352,14 +356,14 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Quick Shot": 3, "Hit and Run": 1, "Boarder Skirmishes": 5, "Knock down": 0,
                       "Mercenary Arrow Volley": 3, "Sling shot": list_of_spells_that_have_a_range.get("Sling shot"),
                       "Mercenary arrow shot": 2, "Quick Arrow": 4, "Well Trained Pet": 3, "Swamped": 99, "War Cry": 1,
-                      "Flaming arrow": 6}
+                      "Flaming arrow": 6, "Spartan Volley": 5, "Net Throw": 3, "Ballestris Volly": 2}
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot",
                                         "Mercenary arrow shot", "Quick Arrow"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
                             "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor",
                             "Ancient Arrow Shot", "Mercenary arrow shot", "Quick Arrow", "Swamped", "War Cry",
-                            "Flaming arrow"]
+                            "Flaming arrow", "Net Throw"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
@@ -373,7 +377,8 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Hidden Armor", "Arbalets Volley", "Wild Bear", "We don't take it personally",
                                  "Get back to work", "Ancient Arrow Volley", "Snare Trap", "Fire Trap", "Deadly Shot",
                                  "Hit and Run", "Imperial Drama", "Boarder Skirmishes", "Mercenary Arrow Volley",
-                                 "Fast Mercenary Recruiting", "Second Charge", "Greek Scrolls"]
+                                 "Fast Mercenary Recruiting", "Second Charge", "Greek Scrolls", "Spartan Volley",
+                                 "Cultural Empire","Ballestris Volly"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -383,7 +388,7 @@ list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, 
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
                                   "Ancient Tactics": 3, "Tactical Coordination": 3, "Build defences": 1,
-                                  "Emperor's Hope": 3, "Fast Auxiliars": 2, "Knock down": 1
+                                  "Emperor's Hope": 3, "Fast Auxiliars": 2, "Knock down": 1, "Cultural Empire": 2
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
@@ -394,13 +399,13 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, ""), "Emperor's Will": (2, 1, ""),
                        "Whip hit": (0, 2, ""), "Shield of Honor": (0, 3, "Armored"), "Avenge": (2, 3, ""),
                        "Hidden Armor": (0, 0, "Armored"), "Church Chosen": (5, 5, "Armored"), "Knock down": (0, 0, ""),
-                       "War Cry": (3, 3, "")
+                       "War Cry": (3, 3, ""), "Net Throw": (0, 0, "")
                        }
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
-                                   "Old Tactics": ("", 3)}
+                                   "Old Tactics": ("", 3), "Greek Scrolls": ("", 2)}
 list_of_spells_that_buff_conditional = {"Emperor's Will": ("hand:knight", (2, 1, "Armored")),
                                         "Quick Shot": ("hand:empty", "draw", 1),
-                                        "Well Trained Pet": ("battle:animal", "change:damage:3", 5)
+                                        "Well Trained Pet": ("battle:animal", "change:damage:3", 5),
                                         }
 list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")}
 list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self", "For the Khan": "self",
@@ -466,7 +471,7 @@ list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom
 list_of_spells_that_add_mana_cost = {"Snare Trap": 2}
 list_of_cards_that_send_back_to_hand = {"Snare Trap": 1}
 list_of_spells_that_auto_cast = {"Resources": "heal_player"}
-list_of_spells_that_freeze = {"Knock down", "Swamped"}
+list_of_spells_that_freeze = {"Knock down", "Swamped", "Net Throw", "Ballestris Volly"}
 list_of_spells_that_resummon = {"Second Charge": ("died:this_turn", "animal", 7)}
 """
 Defence

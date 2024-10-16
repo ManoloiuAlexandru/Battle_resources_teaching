@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 from clases.modes import modes_alteration
-from decks.roman_empire import roman_empire_show, roman_empire
+from decks.roman_empire import *
 from decks.all_cards_in_the_game import all_cards_in_game, cards_that_are_in_the_game_for_all
 from decks.holy_roman_empire import *
 from decks.mesopotamia_empire import *
 from decks.mongols_empire import *
 from decks.byzantine_empire import *
+from decks.greek_empire import *
 from clases.server_logics import *
 from clases.Defence import Defence
 from clases.spells import Spell
@@ -169,7 +170,7 @@ def make_your_own_deck():
 def make_your_own_deck_pick_empire():
     return render_template("empires_choice.html",
                            library=[cards_byzantine_show, cards_holy_show, cards_for_mongol, mesopotamia_show,
-                                    roman_empire_show])
+                                    roman_empire_show, cards_greek_show])
 
 
 @app.route("/update_deck", methods=["POST", "GET"])
@@ -254,6 +255,8 @@ def make_deck():
             deck_to_pick = mesopotamia_empire
         elif empire == "Roman_Empire":
             deck_to_pick = roman_empire
+        elif empire == "Greek_Empire":
+            deck_to_pick = cards_for_greek_empire
         else:
             deck_to_pick = cards_that_are_in_the_game_for_all
     except Exception as e:

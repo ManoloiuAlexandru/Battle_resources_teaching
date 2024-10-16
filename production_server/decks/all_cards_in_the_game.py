@@ -1,6 +1,6 @@
-from clases.Defence import Defence
-from clases.creatures import Creature
-from clases.spells import Spell
+from production_server.clases.Defence import Defence
+from production_server.clases.creatures import Creature
+from production_server.clases.spells import Spell
 
 cards_that_are_in_the_game_for_all = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                                       Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2),
@@ -537,4 +537,12 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(2, "War Cry", "Give a friendly minion +3/+3 deal 1 damage to ALL other minions", -294),
                      Creature(3, "Wandering Bard", 4, 2, "Draw a card. If it's a spell, reduce its cost by 1", "worker",
                               -295),
+                     Spell(2, "Greek Scrolls", "Discover a spell and reduce it is mana cost by 2", -296),
+                     Spell(4, "Flaming arrow", "Deal 6 damage", -297),
+                     Creature(5, "Veteran Tactician", 4, 4, "Deal 6 damage if you control a tactic", "soldier", -298),
+                     Spell(3, "Cultural Empire", "Draw 2 cards", -299),
+                     Spell(2, "Net Throw", "Deal 3 damage to creature and knocks it down", -300),
+                     Spell(7, "Spartan Volley", "Deal 5 damage to all enemies", -301),
+                     Creature(2, "Sparatan Auxiliars", 2, 3, "Add 2 1/2 Auxiliars to your hand", "soldier", -302),
+                     Spell(6, "Ballestris Volly", "Deals 2 damage to all enemy minions and knocks them down", -303),
                      ]
