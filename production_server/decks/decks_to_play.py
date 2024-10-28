@@ -10,10 +10,13 @@ from production_server.decks.mongols_empire import cards_for_mongol_empire, mong
 from production_server.decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Andras the blue eyed", 99, 0, "Guard", "all", 0)
+    Creature(0, "Sling Shooter", 6, 3, "Knock down any character damaged by this", "soldier", 12),
 ]
 demo_deck = [
-
+    Creature(6, "Greek Peasant Recruiter", 5, 5, "Summon a random 3 cost minion", "soldier", 1),
+    Creature(7, "Pyrrho of Elis", 7, 5, "When you cast a spell add a Flaming arrow to your hand", "worker", 2),
+    Creature(5, "Alexander I", 8, 2, "If you are holding a knight discover a powerful Greek attack", "knight", 3),
+    Spell(2, "Auxiliar Volley", "Deal 1 damage to all enemies", 8)
 ]
 
 list_of_tactics_to_pick = [
@@ -241,10 +244,17 @@ list_of_spells_to_pick = [[Spell(4, "Arbalest Shot", "Deal 3 damage and draw a c
                           [Spell(7, "Landslide", "Deal 7 damage to ALL minions", -63)],
                           [Spell(7, "Rain of Arrows", "Destroy ALL minions that are not Armored", -64)]
                           ]
+list_of_advance_greek_spells = [[Spell(4, "Arbalest Flame Shot", "Deal 8 damage", -9999)],
+                                [Spell(0, "Gladiator Net Throw", "Deal 3 damage to a character and knock it down",
+                                       -99998)],
+                                [Spell(3, "King Recruiting", "Draw 4 cards", -9997)],
+                                [Spell(7, "Catapult Volley", "Deal 8 damage to all enemies", -9996)],
+                                [Spell(1, "The Kings Charge", "Knocks down all enemies", -9995)],
+                                [Spell(1, "Kings Guard Volley", "Deal 2 damage to all enemies", -9994)]]
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
                              "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers,
-                             "spells": list_of_spells_to_pick
+                             "spells": list_of_spells_to_pick, "advance greek spells": list_of_advance_greek_spells
                              }
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)

@@ -4,7 +4,7 @@ mana_cost:6
 original_mana_cost:6
 name:Ballestris Volly
 card_type:Spell
-description:Deals 2 damage to all enemy minions and knocks them down
+description:Deals 2 damage to all enemies and knocks them down
 img_url:Ballestris Volly.png
 target:None
 empire_belonging:
@@ -16,7 +16,7 @@ mana_cost:6
 original_mana_cost:6
 name:Ballestris Volly
 card_type:Spell
-description:Deals 2 damage to all enemy minions and knocks them down
+description:Deals 2 damage to all enemies and knocks them down
 img_url:Ballestris Volly.png
 target:None
 empire_belonging:
@@ -84,16 +84,16 @@ category:
 name_for_html:Cultural_Empire6
 --------------------------------
 card_id:7
-mana_cost:2
-original_mana_cost:2
-name:Net Throw
+mana_cost:3
+original_mana_cost:3
+name:Cultural Empire
 card_type:Spell
-description:Deal 3 damage to creature and knocks it down
-img_url:Net Throw.png
+description:Draw 2 cards
+img_url:Cultural Empire.png
 target:None
 empire_belonging:
 category:
-name_for_html:Net_Throw7
+name_for_html:Cultural_Empire7
 --------------------------------
 card_id:8
 mana_cost:2
@@ -110,216 +110,432 @@ name_for_html:Net_Throw8
 card_id:9
 mana_cost:2
 original_mana_cost:2
-name:Sparatan Auxiliars
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-knocked_down_time:0
-description:Add 2 1/2 Auxiliars to your hand
-original_description:Add 2 1/2 Auxiliars to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Sparatan Auxiliars.png
-items:[]
-number_of_attacks:1
+name:Net Throw
+card_type:Spell
+description:Deal 3 damage to creature and knocks it down
+img_url:Net Throw.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Sparatan_Auxiliars9
+category:
+name_for_html:Net_Throw9
 --------------------------------
 card_id:10
-mana_cost:2
-original_mana_cost:2
-name:Sparatan Auxiliars
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-knocked_down_time:0
-description:Add 2 1/2 Auxiliars to your hand
-original_description:Add 2 1/2 Auxiliars to your hand
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Sparatan Auxiliars.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Lagoras discovery
+card_type:Spell
+description:Tactic After your opponent plays a minion deal 6 damage to it and the rest to the kingdom
+img_url:Lagoras discovery.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Sparatan_Auxiliars10
+category:
+name_for_html:Lagoras_discovery10
 --------------------------------
 card_id:11
-mana_cost:7
-original_mana_cost:7
-name:Teutonic Knight
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Teutonic Knight.png
-items:[]
-number_of_attacks:1
+mana_cost:3
+original_mana_cost:3
+name:Lagoras discovery
+card_type:Spell
+description:Tactic After your opponent plays a minion deal 6 damage to it and the rest to the kingdom
+img_url:Lagoras discovery.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Teutonic_Knight11
+category:
+name_for_html:Lagoras_discovery11
 --------------------------------
 card_id:12
-mana_cost:7
-original_mana_cost:7
-name:Teutonic Knight
-hp:6
-max_hp:6
-original_hp:6
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Guard Armored
-original_description:Guard Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Teutonic Knight.png
-items:[]
-number_of_attacks:1
+mana_cost:10
+original_mana_cost:10
+name:Catapult Shot
+card_type:Spell
+description:Deal 10 damage
+img_url:Catapult Shot.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Teutonic_Knight12
+category:
+name_for_html:Catapult_Shot12
 --------------------------------
 card_id:13
-mana_cost:9
-original_mana_cost:9
-name:Two-handed Knight
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Kill an enemy minion
-original_description:Kill an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Two-handed Knight.png
-items:[]
-number_of_attacks:1
+mana_cost:10
+original_mana_cost:10
+name:Catapult Shot
+card_type:Spell
+description:Deal 10 damage
+img_url:Catapult Shot.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Two-handed_Knight13
+category:
+name_for_html:Catapult_Shot13
 --------------------------------
 card_id:14
-mana_cost:9
-original_mana_cost:9
-name:Two-handed Knight
-hp:5
-max_hp:5
-original_hp:5
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Kill an enemy minion
-original_description:Kill an enemy minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Two-handed Knight.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Scrolls of war
+card_type:Spell
+description:Deal 2 damage and discover a spell
+img_url:Scrolls of war.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Two-handed_Knight14
+category:
+name_for_html:Scrolls_of_war14
 --------------------------------
 card_id:15
-mana_cost:6
-original_mana_cost:6
-name:Templar Knight
-hp:7
-max_hp:7
-original_hp:7
-attack:5
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Guard
-original_description:Guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Templar Knight.png
-items:[]
-number_of_attacks:1
+mana_cost:2
+original_mana_cost:2
+name:Scrolls of war
+card_type:Spell
+description:Deal 2 damage and discover a spell
+img_url:Scrolls of war.png
+target:None
 empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Templar_Knight15
+category:
+name_for_html:Scrolls_of_war15
 --------------------------------
 card_id:16
 mana_cost:6
 original_mana_cost:6
-name:Templar Knight
-hp:7
-max_hp:7
-original_hp:7
-attack:5
-category:knight
+name:Opportunistic  Hoplite
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:5
+original_attack:6
 active_effects:[]
 knocked_down_time:0
-description:Guard
-original_description:Guard
+description:Cost 3 less for each tactic
+original_description:Cost 3 less for each tactic
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Templar Knight.png
+img_url:Opportunistic  Hoplite.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Templar_Knight16
+name_for_html:Opportunistic_Hoplite16
+--------------------------------
+card_id:17
+mana_cost:6
+original_mana_cost:6
+name:Opportunistic  Hoplite
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+knocked_down_time:0
+description:Cost 3 less for each tactic
+original_description:Cost 3 less for each tactic
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Opportunistic  Hoplite.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Opportunistic_Hoplite17
+--------------------------------
+card_id:18
+mana_cost:5
+original_mana_cost:5
+name:Veteran Tactician
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+knocked_down_time:0
+description:Deal 6 damage if you control a tactic
+original_description:Deal 6 damage if you control a tactic
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Veteran Tactician.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Veteran_Tactician18
+--------------------------------
+card_id:19
+mana_cost:5
+original_mana_cost:5
+name:Veteran Tactician
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+knocked_down_time:0
+description:Deal 6 damage if you control a tactic
+original_description:Deal 6 damage if you control a tactic
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Veteran Tactician.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Veteran_Tactician19
+--------------------------------
+card_id:20
+mana_cost:4
+original_mana_cost:4
+name:Sling Shooter
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Knock down any character damaged by this
+original_description:Knock down any character damaged by this
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Sling Shooter.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Sling_Shooter20
+--------------------------------
+card_id:21
+mana_cost:4
+original_mana_cost:4
+name:Sling Shooter
+hp:6
+max_hp:6
+original_hp:6
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Knock down any character damaged by this
+original_description:Knock down any character damaged by this
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Sling Shooter.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Sling_Shooter21
+--------------------------------
+card_id:22
+mana_cost:5
+original_mana_cost:5
+name:Kill
+card_type:Spell
+description:Kill an enemy minion
+img_url:Kill.png
+target:None
+empire_belonging:
+category:
+name_for_html:Kill22
+--------------------------------
+card_id:23
+mana_cost:5
+original_mana_cost:5
+name:Kill
+card_type:Spell
+description:Kill an enemy minion
+img_url:Kill.png
+target:None
+empire_belonging:
+category:
+name_for_html:Kill23
+--------------------------------
+card_id:24
+mana_cost:8
+original_mana_cost:8
+name:Richard the Lionheart
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+knocked_down_time:0
+description:Draw a Spell and a Creature Guard
+original_description:Draw a Spell and a Creature Guard
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Richard the Lionheart.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Richard_the_Lionheart24
+--------------------------------
+card_id:25
+mana_cost:2
+original_mana_cost:2
+name:Scribe of the Church
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+knocked_down_time:0
+description:Draw a spell
+original_description:Draw a spell
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Scribe of the Church.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Scribe_of_the_Church25
+--------------------------------
+card_id:26
+mana_cost:2
+original_mana_cost:2
+name:Scribe of the Church
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+knocked_down_time:0
+description:Draw a spell
+original_description:Draw a spell
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Scribe of the Church.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Scribe_of_the_Church26
+--------------------------------
+card_id:27
+mana_cost:12
+original_mana_cost:12
+name:Siege Tower
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+knocked_down_time:0
+description:Cost 1 less for each spell you casted this game
+original_description:Cost 1 less for each spell you casted this game
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Siege Tower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Siege_Tower27
+--------------------------------
+card_id:28
+mana_cost:12
+original_mana_cost:12
+name:Siege Tower
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:8
+active_effects:[]
+knocked_down_time:0
+description:Cost 1 less for each spell you casted this game
+original_description:Cost 1 less for each spell you casted this game
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Siege Tower.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Siege_Tower28
+--------------------------------
+card_id:29
+mana_cost:3
+original_mana_cost:3
+name:Wandering Bard
+hp:3
+max_hp:3
+original_hp:3
+attack:2
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+knocked_down_time:0
+description:Draw a card. If it's a spell, reduce its cost by 1
+original_description:Draw a card. If it's a spell, reduce its cost by 1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Wandering Bard.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Wandering_Bard29
 --------------------------------

@@ -85,6 +85,7 @@ class Bot(Player):
                         self.nr_of_assaults = self.active_defence.nr_of_assaults
                     self.logs += "Playing:" + card.name + "\n"
                     if card.card_type == "Creature":
+                        player.check_for_tactics("summ", card, None)
                         self.battle_field.append(card)
                     self.hand.remove(card)
                     self.mana_increase(-card.mana_cost)

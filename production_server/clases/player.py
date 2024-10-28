@@ -182,7 +182,12 @@ class Player:
                     if len(self.battle_field) < 7:
                         for i in range(list_of_creature_that_summon.get(card.name)[0]):
                             if len(self.battle_field) < 7:
-                                self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
+                                if card.name in list_of_creature_that_summ_random:
+                                    self.battle_field.append(
+                                        random.choice(list_of_creature_that_summon.get(card.name)[1]))
+                                    self.battle_field[-1].card_id = str(generate_random_int())
+                                else:
+                                    self.battle_field.append(list_of_creature_that_summon.get(card.name)[1][i])
                                 self.summoned_minions(list_of_creature_that_summon.get(card.name)[1][i])
                                 list_of_creature_that_summon.get(card.name)[1].remove(
                                     list_of_creature_that_summon.get(card.name)[1][i])
@@ -646,6 +651,14 @@ class Player:
                         self.dict_of_actions["Minions_that_died"]["my_minions_that_died_this_turn"]) > 0:
                         if "cost_set" == list_of_creature_that_are_affected_in_hand[creature.name][2]:
                             creature.mana_cost = list_of_creature_that_are_affected_in_hand[creature.name][3]
+        elif "tactics" in condition.split(":"):
+            if "number" in condition.split(":"):
+                if self.hand[self.hand.index(creature)].mana_cost >= list_of_creature_that_are_affected_in_hand.get(
+                        creature.name)[2] * len(self.tactics):
+                    self.hand[self.hand.index(creature)].mana_cost -= list_of_creature_that_are_affected_in_hand.get(
+                        creature.name)[2] * len(self.tactics)
+                else:
+                    self.hand[self.hand.index(creature)].mana_cost = 0
         else:
             if self.hand[self.hand.index(creature)].mana_cost >= len(self.hand) * \
                     list_of_creature_that_are_affected_in_hand.get(
@@ -732,6 +745,8 @@ class Player:
                                         random_enemy.hp -= int(effected_cards[0].split(":")[4])
                                     list_of_targets.clear()
                 elif action == effected_cards[1] and action == "cast spell":
+                    if creature.name == "Pyrrho of Elis" and len(self.hand) < 10:
+                        self.hand.append(Spell(4, "Flaming arrow", "Deal 6 damage", generate_random_int()))
                     for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                         self.draw_card()
                 elif action == effected_cards[1] and action == "damage_taken":
@@ -1018,8 +1033,12 @@ class Player:
                 self.has_to_pick = True
 
     def check_for_tactics(self, action, creature1, creature2):
+        trap_triggered = False
+        tactic_to_remove = None
         for tactic in self.tactics[:]:
             if action in list_of_tactics.get(tactic.name).split("=>")[0]:
+                trap_triggered = True
+                tactic_to_remove = tactic
                 if '>' in list_of_tactics.get(tactic.name).split("=>")[0]:
                     if creature1.attack >= [int(i) for i in list_of_tactics.get(tactic.name).split("=>")[0] if
                                             i.isdigit()][0]:
@@ -1055,8 +1074,17 @@ class Player:
                                 creature.armored = False
                             else:
                                 creature.hp -= int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])
-            self.logs += "Tactic triggered:" + tactic.name + "\n"
-            self.tactics.remove(tactic)
+                    elif "minion" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                        if creature1.armored is True:
+                            creature1.armored = False
+                        else:
+                            creature1.hp -= int(list_of_tactics.get(tactic.name).split("=>")[1].split(":")[1])
+                        if "rest_to_kingdom" in list_of_tactics.get(tactic.name).split("=>")[1]:
+                            if creature1.hp < 0:
+                                self.enemy_player.hp += creature1.hp
+        if trap_triggered:
+            self.logs += "Tactic triggered:" + tactic_to_remove.name + "\n"
+            self.tactics.remove(tactic_to_remove)
 
     def send_to_hand(self, creature, player, negative_effect):
         if len(player.hand) < 10:

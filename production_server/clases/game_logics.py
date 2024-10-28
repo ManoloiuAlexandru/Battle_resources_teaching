@@ -15,6 +15,8 @@ def battle(card1, card2, player1, player2):
                         card2.armored = False
                 elif card1.armored is True:
                     card2.hp -= card1.attack
+                    if card1.name in list_of_creature_that_freeze_on_attack:
+                        card2.knocked_down_time = 2
                     player2.check_for_creature_with_effect_on("damage_taken", card2)
                     if card2.hp <= 0:
                         player1.check_for_creature_with_effect_on("kill_minion", None)
@@ -22,14 +24,20 @@ def battle(card1, card2, player1, player2):
                         card1.armored = False
                 elif card2.armored is True:
                     card1.hp -= card2.attack
+                    if card2.name in list_of_creature_that_freeze_on_attack:
+                        card1.knocked_down_time = 2
                     if card1.attack > 0:
                         card2.armored = False
                     player1.check_for_creature_with_effect_on("damage_taken", card1)
                 else:
                     card1.hp -= card2.attack
                     if card2.attack > 0:
+                        if card2.name in list_of_creature_that_freeze_on_attack:
+                            card1.knocked_down_time = 2
                         player1.check_for_creature_with_effect_on("damage_taken", card1)
                     card2.hp -= card1.attack
+                    if card1.name in list_of_creature_that_freeze_on_attack and card1.attack > 0:
+                        card2.knocked_down_time = 2
                     if card2.hp <= 0:
                         player1.check_for_creature_with_effect_on("kill_minion", None)
                     player2.check_for_creature_with_effect_on("damage_taken", card2)
@@ -428,12 +436,15 @@ def general_spells(player, enemy_player, spell_name):
         player.number_of_troops += list_of_spells_that_add_traps.get(spell_name)
     if spell_name in list_of_spells_that_summon:
         spell_that_summon(player, enemy_player, spell_name)
-    if spell_name in list_of_spells_that_freeze:
+    if spell_name in list_of_spells_that_freeze and spell_name not in list_of_spells_that_freeze_all_enemies:
         for creature in player.battle_field:
             freeze_target(player, enemy_player, {creature.name_for_html: ""})
         for creature in enemy_player.battle_field:
             freeze_target(enemy_player, player, {creature.name_for_html: ""})
-    elif spell_name == "Peace Treaty":
+    elif spell_name in list_of_spells_that_freeze_all_enemies:
+        for creature in enemy_player.battle_field:
+            freeze_target(enemy_player, player, {creature.name_for_html: ""})
+    if spell_name == "Peace Treaty":
         for creature in player.battle_field[:]:
             return_to_hand(creature, player)
         for creature in enemy_player.battle_field[:]:

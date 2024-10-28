@@ -5,6 +5,7 @@ from production_server.clases.creatures import Creature
 from production_server.clases.Defence import Defence
 
 from production_server.clases.spells import Spell
+from production_server.decks.all_cards_in_the_game import *
 
 
 def generate_random_int():
@@ -86,7 +87,9 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
                                                 "Scavenger Hyena": ("self_buff", "friendly_minion_dies:animal"),
                                                 "Worker Recruiter": ("add_to_hand:workers", "summ worker"),
                                                 "Soldier Architect": ("add_defence:self", "damage_taken"),
-                                                "Claudius": ("add_defence", "kill_minion")}
+                                                "Claudius": ("add_defence", "kill_minion"),
+                                                "Pyrrho of Elis": ("add_to_hand:Fire Arrow", "cast spell")
+                                                }
 list_of_creature_that_are_effected_by_action_once = {"Soldier Architect": 0}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
 list_of_creature_that_add_armor_on_action = {"Roman Architect": 1, "Soldier Architect": 2, "Claudius": 10}
@@ -122,7 +125,10 @@ list_of_creature_that_summon = {
     "Hunter": (1, [Creature(1, "Dog", 1, 1, "", "animal", generate_random_int()) for i in range(0, 10)]),
     "Rich Peasant": (
         2, [Creature(2, "Armored Peasant", 2, 1, "Armored Guard", "soldier", generate_random_int()) for i in
-            range(0, 20)])}
+            range(0, 20)]),
+    "Greek Peasant Recruiter": (
+        1, [card for card in all_cards_in_game if card.card_type == "Creature" and card.mana_cost <= 3])}
+list_of_creature_that_summ_random = {"Greek Peasant Recruiter"}
 list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "buff"),
                                               "Drummer": ("affects hand", "buff", 1, 1, ""),
                                               "Negotiator": ("affects hand", "buff", 1, 1, ""),
@@ -144,6 +150,8 @@ list_of_creature_that_are_affected_by_hand = {"Last Defender": ("empty hand", "b
                                               "Mercenary Defences": ("hand_check:knight", "change:armor:gain", 5),
                                               "Knight Recruiter": ("hand_check:knight", "change:discover", "knights"),
                                               "Mercenary knight": ("hand_check:knight", "change:dmg", 99),
+                                              "Alexander I": (
+                                                  "hand_check:knight", "change:discover", "advance greek spells")
                                               }
 list_of_creature_that_reduce_mana_cost = {"Sir William Marshal": ("deck", "Creature", "knight", 2),
                                           "Mercenary Contractor": ("deck,hand", "Creature", "mercenary", 1),
@@ -194,7 +202,8 @@ list_of_creature_that_are_affected_in_hand = {"Trebuchet": ("reduce", "", 1), "M
                                               "Soldier Commander": ("reduce", "total_summoned:soldier", 1),
                                               "Torsion Catapult": ("reduce", "total_summoned:soldier", 1),
                                               "Mercenary Battering Ram": ("reduce", "amount_of_debt_in_game"),
-                                              "Quick Arrow": ("reduce", "any_dead_minion:this_turn", "cost_set", 1)}
+                                              "Quick Arrow": ("reduce", "any_dead_minion:this_turn", "cost_set", 1),
+                                              "Opportunistic  Hoplite": ("reduce", "tactics:number", 3)}
 list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe": "draw", "Lost Shield": "summ",
                                               "Lost Noble": "summ", "Selfless Knight": "buff",
                                               "Front Line Defender": "summ", "Armored Horse": "draw",
@@ -258,7 +267,8 @@ list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenar
                                              "Ball-headed Mace Soldier": (1, ""),
                                              "Sparatan Auxiliars": (2, "")
                                              }
-list_of_cards_that_add_cards_to_your_hand_by_action = {"Worker Recruiter": (1, "workers")}
+list_of_cards_that_add_cards_to_your_hand_by_action = {"Worker Recruiter": (1, "workers"),
+                                                       "Pyrrho of Elis": (1, "spells")}
 list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal"),
                                                          "Inspiring knight": (1, "knights")}
 list_of_creature_that_add_specific_card_to_your_hand = {
@@ -284,14 +294,16 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
                                          "Payed Scribe": ("deck", "check:Resources", 3),
                                          "Hammurabi": ("deck", "check:Resources", "summ"),
                                          "Heraclius": ("debt", "check:1", "draw:all"),
-                                         "Veteran Tactician": ("tactic", "check:1", "change:dmg:6")
+                                         "Veteran Tactician": ("tactic", "check:1", "change:dmg:6"),
                                          }
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
                                                                        "Ancient Full Armored soldier": 0}
 list_of_cards_that_discover = {"Vast Empire": "mercenary", "Crusade Calling": "knights", "Frightened Girl": "guards",
                                "Jaffa Merchant": "knights", "Knight Recruiter": "", "Chinese Tactician": "tactics",
-                               "Greek Scrolls": "spells"}
+                               "Greek Scrolls": "spells",
+                               "Scrolls of war": "spells",
+                               "Alexander I": "advance greek spells"}
 list_of_creature_that_plays_a_card_from_your_deck = {"Battle Tactician"}
 list_of_creature_that_add_cards_to_your_deck_when_die = {"Dog Pup": (
     1, [Creature(1, "Big Dog", 5, 4, "", "animal", generate_random_int()) for i in range(0, 20)]),
@@ -314,6 +326,7 @@ list_of_cards_that_add_cards_to_your_deck = {"Ancient Farmer":
                                                                         range(0, 40)])}
 list_of_creature_that_damage_a_random_creature = {"Mercenary knight": 1}
 list_of_creature_that_affect_all_enemy_minions = {"Lenxaadra, Queen of Drama": "debuff"}
+list_of_creature_that_freeze_on_attack = {"Sling Shooter"}
 """
 Spells
 """
@@ -339,7 +352,9 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Imperial Drama", "Boarder Skirmishes", "Knock down", "Mercenary Arrow Volley",
                   "Fast Mercenary Recruiting", "Sling shot", "Mercenary arrow shot", "Quick Arrow", "Well Trained Pet",
                   "Second Charge", "Swamped", "War Cry", "Flaming arrow", "Greek Scrolls", "Spartan Volley",
-                  "Cultural Empire", "Net Throw", "Ballestris Volly"]
+                  "Cultural Empire", "Net Throw", "Ballestris Volly", "Elephants stampede", "Catapult Shot",
+                  "Lagoras discovery", "Scrolls of war", "Arbalest Flame Shot", "Gladiator Net Throw",
+                  "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley", "Auxiliar Volley"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -356,14 +371,17 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Quick Shot": 3, "Hit and Run": 1, "Boarder Skirmishes": 5, "Knock down": 0,
                       "Mercenary Arrow Volley": 3, "Sling shot": list_of_spells_that_have_a_range.get("Sling shot"),
                       "Mercenary arrow shot": 2, "Quick Arrow": 4, "Well Trained Pet": 3, "Swamped": 99, "War Cry": 1,
-                      "Flaming arrow": 6, "Spartan Volley": 5, "Net Throw": 3, "Ballestris Volly": 2}
+                      "Flaming arrow": 6, "Spartan Volley": 5, "Net Throw": 3, "Ballestris Volly": 2,
+                      "Catapult Shot": 10, "Scrolls of war": 2, "Arbalest Flame Shot": 8, "Gladiator Net Throw": 3,
+                      "Catapult Volley": 8, "Kings Guard Volley": 2, "Auxiliar Volley": 1
+                      }
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot",
-                                        "Mercenary arrow shot", "Quick Arrow"}
+                                        "Mercenary arrow shot", "Quick Arrow", "Kill"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
                             "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor",
                             "Ancient Arrow Shot", "Mercenary arrow shot", "Quick Arrow", "Swamped", "War Cry",
-                            "Flaming arrow", "Net Throw"]
+                            "Flaming arrow", "Net Throw", "Catapult Shot", "Arbalest Flame Shot", "Gladiator Net Throw"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
@@ -378,7 +396,9 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Get back to work", "Ancient Arrow Volley", "Snare Trap", "Fire Trap", "Deadly Shot",
                                  "Hit and Run", "Imperial Drama", "Boarder Skirmishes", "Mercenary Arrow Volley",
                                  "Fast Mercenary Recruiting", "Second Charge", "Greek Scrolls", "Spartan Volley",
-                                 "Cultural Empire","Ballestris Volly"]
+                                 "Cultural Empire", "Ballestris Volly", "Elephants stampede", "Lagoras discovery",
+                                 "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley",
+                                 "Auxiliar Volley"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -388,7 +408,8 @@ list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, 
                                   "Call of the Khan": 1, "Call of the Emperor": 3, "Arbalest Shot": 1,
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
                                   "Ancient Tactics": 3, "Tactical Coordination": 3, "Build defences": 1,
-                                  "Emperor's Hope": 3, "Fast Auxiliars": 2, "Knock down": 1, "Cultural Empire": 2
+                                  "Emperor's Hope": 3, "Fast Auxiliars": 2, "Knock down": 1, "Cultural Empire": 2,
+                                  "King Recruiting": 4
                                   }
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
@@ -399,7 +420,7 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, ""), "Emperor's Will": (2, 1, ""),
                        "Whip hit": (0, 2, ""), "Shield of Honor": (0, 3, "Armored"), "Avenge": (2, 3, ""),
                        "Hidden Armor": (0, 0, "Armored"), "Church Chosen": (5, 5, "Armored"), "Knock down": (0, 0, ""),
-                       "War Cry": (3, 3, ""), "Net Throw": (0, 0, "")
+                       "War Cry": (3, 3, ""), "Net Throw": (0, 0, ""), "Gladiator Net Throw": (0, 0, "")
                        }
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3), "Greek Scrolls": ("", 2)}
@@ -456,7 +477,8 @@ list_of_tactics = {"Priority Target": "dmg_delt>3=>deal_dmg:99",
                    "Hidden Armor": "attacking=>buff:target",
                    "Wild Bear": "attacking:kingdom=>summon:1",
                    "Snare Trap": "attacking=>send_to_hand",
-                   "Fire Trap": "attacking:minion=>deal_dmg:2:enemies"}
+                   "Fire Trap": "attacking:minion=>deal_dmg:2:enemies",
+                   "Lagoras discovery": "summ=>deal_dmg:6:minion:rest_to_kingdom"}
 list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom:0:8:add_to_hand": {
     1: Creature(5, "Lndrau Aaurentis", 8, 8, "Armored Guard All your cards get guard", "legend",
                 generate_random_int()) for i in range(0, 10)}},
@@ -471,7 +493,8 @@ list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom
 list_of_spells_that_add_mana_cost = {"Snare Trap": 2}
 list_of_cards_that_send_back_to_hand = {"Snare Trap": 1}
 list_of_spells_that_auto_cast = {"Resources": "heal_player"}
-list_of_spells_that_freeze = {"Knock down", "Swamped", "Net Throw", "Ballestris Volly"}
+list_of_spells_that_freeze = {"Knock down", "Swamped", "Net Throw", "Gladiator Net Throw", "The Kings Charge"}
+list_of_spells_that_freeze_all_enemies = {"Ballestris Volly", "Elephants stampede", "The Kings Charge"}
 list_of_spells_that_resummon = {"Second Charge": ("died:this_turn", "animal", 7)}
 """
 Defence
