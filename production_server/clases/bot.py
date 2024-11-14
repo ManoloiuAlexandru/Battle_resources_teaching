@@ -273,6 +273,8 @@ class Bot(Player):
                         if list_of_spells_that_reduce_mana.get(card.name)[0] in self.hand[-1].description:
                             self.hand[-1].mana_cost_reduction(
                                 list_of_spells_that_reduce_mana.get(card.name)[1])
+                    if card.name in list_of_spells_that_buff_drawn_cards:
+                        self.buff_card_from_hand(self.hand[-1], card)
                 return 1
             if card.name in list_of_spells_that_debuff:
                 self.target_creature_with_spell(card, player)

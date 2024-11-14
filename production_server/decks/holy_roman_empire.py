@@ -61,7 +61,13 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                          "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237),
                    Creature(3, "Louis the Pious", 2, 3,
                             "Set The health of all other minions to 1 Desperate deal 1 damage to all",
-                            "knight", -250)
+                            "knight", -250),
+                   Creature(5, "Henry III", 5, 5,
+                            "For the rest of the game,after you summon a Kaiserliche give it armored",
+                            "ancient",
+                            -314),
+                   Creature(3, "Church Helper", 2, 3, "Whenever you summ a 1 health minion,give it +1/+2", "worker",
+                            -316),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -125,7 +131,13 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                              "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237)],
                       [Creature(3, "Louis the Pious", 2, 3,
                                 "Set The health of all other minions to 1 Desperate deal 1 damage to all",
-                                "knight", -250)]
+                                "knight", -250),
+                       [Creature(5, "Henry III", 5, 5,
+                                 "For the rest of the game,after you summon a Kaiserliche give it armored", "ancient",
+                                 -314)],
+                       [Creature(3, "Church Helper", 2, 3, "Whenever you summ a 1 health minion,give it +1/+2",
+                                 "worker",
+                                 -316)]]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -185,5 +197,10 @@ cards_for_holy_roman_empire = [
     Spell(10, "Church Chosen", "Give a minion +5/+5 and Armored costs 1 less for each mana spent on spells", -237),
     Creature(3, "Louis the Pious", 2, 3,
              "Set The health of all other minions to 1 Desperate deal 1 damage to all",
-             "knight", -250)
+             "knight", -250),
+    Creature(5, "Henry III", 5, 5,
+             "For the rest of the game,after you summon a Kaiserliche give it armored", "ancient",
+             -314),
+    Creature(3, "Church Helper", 2, 3, "Whenever you summ a 1 health minion,give it +1/+2", "worker",
+             -316),
 ]

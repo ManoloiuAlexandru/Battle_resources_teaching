@@ -149,6 +149,11 @@ class Creature:
             return True
         elif attr == self.card_type:
             return True
+        else:
+            if "summ" in attr.split():
+                if "hp" in attr.split():
+                    if self.hp <= int(attr.split()[1]):
+                        return True
         return False
 
     def debuff_creature(self, debuffing_effect, player, enemy_player):
