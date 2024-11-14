@@ -43,7 +43,10 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5",
                           -288),
                     Spell(2, "Second Charge", "Summon all your animals that died this turn", -289),
-                    Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290)
+                    Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290),
+                    Spell(2, "Wild Training", "Draw a beast. Give it +3/+3", -317),
+                    Creature(2, "Tolui", 3, 2, "After you cast a spell, deal equal to its Cost to the enemy Hero.",
+                             "soldier", -318),
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -94,7 +97,11 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Spell(3, "Well Trained Pet", "Deal 3 damage if you have an animal on the battlefield deal 5",
                                  -288),
                            Spell(2, "Second Charge", "Summon all your animals that died this turn", -289),
-                           Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290)
+                           Creature(3, "Trained Dog", 1, 4, "Rush Draw a Rush from your deck", "animal", -290),
+                           Spell(2, "Wild Training", "Draw a beast. Give it +3/+3", -317),
+                           Creature(2, "Tolui", 3, 2,
+                                    "After you cast a spell, deal equal to its Cost to the enemy Hero.",
+                                    "soldier", -318),
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
                            "While this is on the field your creatures have +1 attack", "animal", 1900),

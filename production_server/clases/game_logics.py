@@ -231,6 +231,8 @@ def check_target(player1, player2, card_picked):
     except Exception as e:
         print(e)
     try:
+        if card_picked.get(player1.name) is not None:
+            player1.incoming_spell.target = "self"
         if player1.incoming_spell.target == "self":
             if card_picked.get(player1.name) is not None:
                 player1.heal_player(list_of_spells_that_can_heal_player.get(player1.incoming_spell.name))
@@ -452,12 +454,16 @@ def general_spells(player, enemy_player, spell_name):
     elif player.incoming_spell.name in list_of_spells_that_affect_the_battlefield:
         affect_battle_field(player.incoming_spell, player, enemy_player)
     elif player.incoming_spell.name in list_of_spells_that_draw_cards:
-        for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
-            player.draw_card()
-            if player.incoming_spell.name in list_of_spells_that_reduce_mana:
-                if list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[0] in player.hand[-1].description:
-                    player.hand[-1].mana_cost_reduction(
-                        list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[1])
+        if player.incoming_spell.name in list_of_spells_that_draw_specific_cards:
+            player.spell_draw_specific_card()
+        else:
+            for nr_cards in range(list_of_spells_that_draw_cards.get(player.incoming_spell.name)):
+                player.draw_card()
+                if player.incoming_spell.name in list_of_spells_that_reduce_mana:
+                    if list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[0] in player.hand[
+                        -1].description:
+                        player.hand[-1].mana_cost_reduction(
+                            list_of_spells_that_reduce_mana.get(player.incoming_spell.name)[1])
     elif player.incoming_spell.name in list_of_spells_with_specific_targets:
         creature_to_avoid = list_of_spells_with_specific_targets.get(player.incoming_spell.name)[0].split()[1]
         if list_of_spells_with_specific_targets.get(player.incoming_spell.name)[1] == "ALL":
@@ -581,35 +587,36 @@ def destroy_creature_from_player(player1, player2, card_picked):
 
 
 def use_hero_power_on_target(player1, player2, card_picked):
+    power_dict = {"Greek": 1, "Macedonian Empire": 2}
     if player1.power is not None:
         for card in player1.battle_field:
             if card_picked.get(card.name_for_html) is not None:
-                if player1.power == "Greek":
+                if player1.power in power_dict:
                     if card.armored is not True:
-                        card.hp -= 1
+                        card.hp -= power_dict[player1.power]
                     else:
                         card.armored = False
                     player1.power = None
         for card in player2.battle_field:
             if card_picked.get(card.name_for_html) is not None:
-                if player1.power == "Greek":
+                if player1.power in power_dict:
                     if card.armored is not True:
-                        card.hp -= 1
+                        card.hp -= power_dict[player1.power]
                     else:
                         card.armored = False
                     player1.power = None
         if card_picked.get(player2.name) is not None:
             if player2.armor == 0:
-                player2.hp -= 1
+                player2.hp -= power_dict[player1.power]
             else:
-                player2.armor -= 1
+                player2.armor -= power_dict[player1.power]
             player1.power = None
 
         if card_picked.get(player1.name) is not None:
             if player1.armor == 0:
-                player1.hp -= 1
+                player1.hp -= power_dict[player1.power]
             else:
-                player1.armor -= 1
+                player1.armor -= power_dict[player1.power]
             player1.power = None
 
 
@@ -690,8 +697,8 @@ def check_hero_power(player, enemy_player):
     else:
         if player.empire == "Byzantine Empire":
             list_of_auxiliary_soldiers = [
-                Creature(1, "Shield soldier", 2, 0, "Guard", "soldier", len(player.deck) + 934),
-                Creature(1, "Man at arms", 1, 1, "", "soldier", len(player.deck) + 944)]
+                Creature(1, "Shield soldier", 2, 0, "Guard", "soldier", generate_random_int()),
+                Creature(1, "Man at arms", 1, 1, "", "soldier", generate_random_int())]
             if len(player.battle_field) < 7:
                 summoned_creature = random.choice(list_of_auxiliary_soldiers)
                 player.battle_field.append(summoned_creature)
@@ -700,9 +707,14 @@ def check_hero_power(player, enemy_player):
                 player.mana_increase(-2)
             else:
                 player.problem = "You don't have enough space"
+        elif player.empire == "Mercenary Empire":
+            player.power = "Mercenary Empire"
+            player.discover_a_card("Mercenary Empire")
+            player.used_power = 1
+            player.mana_increase(-2)
         elif player.empire == "Holy Roman Empire":
             if len(player.battle_field) < 7:
-                summoned_creature = Creature(1, "Kaiserliche", 1, 1, "", "soldier", len(player.deck) + 3112)
+                summoned_creature = Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int())
                 player.battle_field.append(summoned_creature)
                 player.summoned_minions(summoned_creature)
                 player.used_power = 1
@@ -718,6 +730,15 @@ def check_hero_power(player, enemy_player):
                     enemy_player.armor -= 2
                 player.used_power = 1
                 player.mana_increase(-2)
+        elif player.empire == "Mongol Hordes":
+            if enemy_player.immunity is False:
+                if enemy_player.armor < 3:
+                    enemy_player.hp = enemy_player.hp + enemy_player.armor - 3
+                    enemy_player.armor = 0
+                else:
+                    enemy_player.armor -= 3
+                player.used_power = 1
+                player.mana_increase(-2)
         elif player.empire == "Mesopotamia Empire":
             if player.immunity is False:
                 if player.armor < 2:
@@ -728,12 +749,31 @@ def check_hero_power(player, enemy_player):
             player.draw_card()
             player.used_power = 1
             player.mana_increase(-2)
+        elif player.empire == "Test of Time":
+            player.draw_card()
+            player.used_power = 1
+            player.mana_increase(-2)
         elif player.empire == "Roman empire":
             player.armor += 2
             player.used_power = 1
             player.mana_increase(-2)
+        elif player.empire == "Fortifications!":
+            player.armor += 4
+            player.used_power = 1
+            player.mana_increase(-2)
         elif player.empire == "Greek empire":
             player.power = "Greek"
+            player.used_power = 1
+            player.mana_increase(-2)
+        elif player.empire == "Macedonian Empire":
+            player.power = "Macedonian Empire"
+            player.used_power = 1
+            player.mana_increase(-2)
+        elif player.empire == "Order of the Church":
+            for i in range(0, 2):
+                summoned_creature = Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int())
+                player.battle_field.append(summoned_creature)
+                player.summoned_minions(summoned_creature)
             player.used_power = 1
             player.mana_increase(-2)
     player.check_player()

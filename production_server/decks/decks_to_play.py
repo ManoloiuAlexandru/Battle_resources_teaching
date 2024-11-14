@@ -10,13 +10,8 @@ from production_server.decks.mongols_empire import cards_for_mongol_empire, mong
 from production_server.decks.roman_empire import roman_empire
 
 bot_deck = [
-    Creature(0, "Sling Shooter", 6, 3, "Knock down any character damaged by this", "soldier", 12),
 ]
 demo_deck = [
-    Creature(6, "Greek Peasant Recruiter", 5, 5, "Summon a random 3 cost minion", "soldier", 1),
-    Creature(7, "Pyrrho of Elis", 7, 5, "When you cast a spell add a Flaming arrow to your hand", "worker", 2),
-    Creature(5, "Alexander I", 8, 2, "If you are holding a knight discover a powerful Greek attack", "knight", 3),
-    Spell(2, "Auxiliar Volley", "Deal 1 damage to all enemies", 8)
 ]
 
 list_of_tactics_to_pick = [

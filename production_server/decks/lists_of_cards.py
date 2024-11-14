@@ -72,7 +72,8 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Frenzied Mercenary": (0, 2, "Charge"), "Auxiliar Defender": (1, 1, ""),
                               "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, ""),
                               "Lndrau Aaurentis": (0, 0, "Guard"), "Ephix Maximus": (0, 2, "Charge"),
-                              "Payed Guard": (3, 3, ""), "Veteran Knight": (1, 1, "")}
+                              "Payed Guard": (3, 3, ""), "Veteran Knight": (1, 1, ""), "Henry III": (0, 0, "Armored"),
+                              "Church Helper": (2, 1, "")}
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
@@ -88,7 +89,9 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
                                                 "Worker Recruiter": ("add_to_hand:workers", "summ worker"),
                                                 "Soldier Architect": ("add_defence:self", "damage_taken"),
                                                 "Claudius": ("add_defence", "kill_minion"),
-                                                "Pyrrho of Elis": ("add_to_hand:Fire Arrow", "cast spell")
+                                                "Pyrrho of Elis": ("add_to_hand:Fire Arrow", "cast spell"),
+                                                "Church Helper": ("buff new summ", "summ 1 hp minion"),
+                                                "Tolui": ("damage:enemy_hero:spell_cost", "cast spell")
                                                 }
 list_of_creature_that_are_effected_by_action_once = {"Soldier Architect": 0}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
@@ -235,7 +238,7 @@ legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", 
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
                    "Julius Caesar", "Godfrey of Bouillon", "Charles IV", "Hammurabi", "Louis the Pious",
                    "Get back to work", "We don't take it personally", "Kublai", "Imperial Drama", "Sir William Marshal",
-                   "General Belisarius", "Heraclius", "Caligula"]
+                   "General Belisarius", "Heraclius", "Caligula", "Alexander I", "Pyrrho of Elis", "Tolui"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " "),
                                 "Louis the Pious": (1, -1, " "), "Kublai": (1, -1, " "),
@@ -354,7 +357,8 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Second Charge", "Swamped", "War Cry", "Flaming arrow", "Greek Scrolls", "Spartan Volley",
                   "Cultural Empire", "Net Throw", "Ballestris Volly", "Elephants stampede", "Catapult Shot",
                   "Lagoras discovery", "Scrolls of war", "Arbalest Flame Shot", "Gladiator Net Throw",
-                  "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley", "Auxiliar Volley"]
+                  "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley", "Auxiliar Volley",
+                  "Wild Training"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -398,7 +402,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Fast Mercenary Recruiting", "Second Charge", "Greek Scrolls", "Spartan Volley",
                                  "Cultural Empire", "Ballestris Volly", "Elephants stampede", "Lagoras discovery",
                                  "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley",
-                                 "Auxiliar Volley"]
+                                 "Auxiliar Volley", "Wild Training"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -409,8 +413,7 @@ list_of_spells_that_draw_cards = {"Feudal Obligations": 2, "Personal Guard": 1, 
                                   "Chivalry and Honor": 1, "Horse raiding shot": 1, "Old Tactics": 1,
                                   "Ancient Tactics": 3, "Tactical Coordination": 3, "Build defences": 1,
                                   "Emperor's Hope": 3, "Fast Auxiliars": 2, "Knock down": 1, "Cultural Empire": 2,
-                                  "King Recruiting": 4
-                                  }
+                                  "King Recruiting": 4, "Wild Training": 1}
 list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse riding lessons": (0, 2, "Charge"),
                        "Personal Guard": (0, 0, "Guard"),
                        "Roman Formation Circular": (0, 0, "Guard"),
@@ -420,7 +423,8 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Call of God": (0, 0, ""), "Emperor's Hope": (0, 0, ""), "Emperor's Will": (2, 1, ""),
                        "Whip hit": (0, 2, ""), "Shield of Honor": (0, 3, "Armored"), "Avenge": (2, 3, ""),
                        "Hidden Armor": (0, 0, "Armored"), "Church Chosen": (5, 5, "Armored"), "Knock down": (0, 0, ""),
-                       "War Cry": (3, 3, ""), "Net Throw": (0, 0, ""), "Gladiator Net Throw": (0, 0, "")
+                       "War Cry": (3, 3, ""), "Net Throw": (0, 0, ""), "Gladiator Net Throw": (0, 0, ""),
+                       "Wild Training": (3, 3, "")
                        }
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3), "Greek Scrolls": ("", 2)}
@@ -432,7 +436,7 @@ list_of_spells_with_specific_targets = {"Rain of Arrows": ("Non Armored", "ALL")
 list_of_spells_that_affect_the_battlefield = {"Roman Formation Circular": "self", "For the Khan": "self",
                                               "In the name of the king": "self", "Roman Formation Phalanx": "self"}
 list_of_spells_that_buff_specific_targets = {"Guard Duty": ("Guard", "draw"), "Strength in numbers": ("", "draw")}
-list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1}
+list_of_spells_that_draw_cards_conditional = {"Guard Duty": 1, "Strength in numbers": 1, "Wild Training": 1}
 list_of_spells_that_summon_specific_cards = {
     "Fast Mercenary Recruiting": (
         2, [Creature(4, "Man at Arms", 4, 5, "Rush", "soldier", generate_random_int()) for i in range(0, 50)]),
@@ -456,7 +460,8 @@ list_of_spells_that_summon_specific_cards = {
     "Crusade Calling": (
         1, [Creature(5, "Crusader", 5, 5, "Guard", "knight", generate_random_int()) for i in range(0, 10)])}
 list_of_spells_that_draw_specific_cards = {"Strength in numbers": (["Creature"], [""]),
-                                           "Fast Auxiliars": (["Defence", "Defence"], ["", ""])}
+                                           "Fast Auxiliars": (["Defence", "Defence"], ["", ""]),
+                                           "Wild Training": (["Creature"], ["animal"])}
 list_of_spells_that_can_heal_player = {"Call of God": 8, "Emperor's Hope": 8, "Resources": 2}
 list_of_spells_that_do_damage_to_your_kingdom = {"Ancient Tactics": 3}
 list_of_spells_that_have_effect_when_discarded = {"Tactical Coordination"}
@@ -496,6 +501,14 @@ list_of_spells_that_auto_cast = {"Resources": "heal_player"}
 list_of_spells_that_freeze = {"Knock down", "Swamped", "Net Throw", "Gladiator Net Throw", "The Kings Charge"}
 list_of_spells_that_freeze_all_enemies = {"Ballestris Volly", "Elephants stampede", "The Kings Charge"}
 list_of_spells_that_resummon = {"Second Charge": ("died:this_turn", "animal", 7)}
+list_of_cards_that_change_hero_power = {"Baldwin of Antioch": {"Holy Roman Empire": "Order of the Church",
+                                                               "Mongol Empire": "Mongol Hordes",
+                                                               "Mesopotamia Empire": "Test of Time",
+                                                               "Roman empire": "Fortifications!",
+                                                               "Greek empire": "Macedonian Empire",
+                                                               "Byzantine Empire": "Mercenary Empire"}}
+list_of_permanent_effect = {"Henry III": {"Kaiserliche": "Armored"}}
+list_of_spells_that_buff_drawn_cards = {"Wild Training"}
 """
 Defence
 """
