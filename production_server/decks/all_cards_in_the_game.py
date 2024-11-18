@@ -583,4 +583,6 @@ all_cards_in_game = [Creature(0, "Peasant", 1, 1, "", "worker", -1),
                      Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321),
                      Creature(1, "Tax collector", 1, 1, "Whenever you summon a creature heal the empire for 1",
                               "worker", -322),
+                     Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", -323),
+                     Spell(5, "Cataclysm", "Destroy ALL minions. Discard 2 cards", -324),
                      ]

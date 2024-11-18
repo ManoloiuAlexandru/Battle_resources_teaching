@@ -117,7 +117,7 @@ class Player:
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
                 if card.name in list_of_cards_that_give_armor:
                     self.armor += list_of_cards_that_give_armor.get(card.name)
-                if card.name in list_of_cards_that_discard:
+                if card.name in list_of_cards_that_discard and card.name not in list_of_cards_that_discard_after_effect:
                     self.card_discard(list_of_cards_that_discard.get(card.name), card)
                     if self.incoming_spell is not None:
                         self.incoming_action = 3
@@ -691,20 +691,25 @@ class Player:
 
     def card_discard(self, nr_of_cards, removing_card):
         for i in range(nr_of_cards):
-            card_to_remove = random.randrange(len(self.hand))
-            nr_try = 0
-            while self.hand.index(removing_card) == card_to_remove and nr_try < len(self.hand):
+            if len(self.hand) > 0:
                 card_to_remove = random.randrange(len(self.hand))
-                nr_try += 1
-            if self.hand[card_to_remove].name in list_of_spells_that_have_effect_when_discarded:
-                if self.hand[card_to_remove].card_type == "Spell":
-                    self.incoming_spell = self.hand[card_to_remove]
-            elif self.hand[card_to_remove].name in list_of_creature_that_have_effect_when_discarded:
-                self.battle_field.append(self.hand[card_to_remove])
-            if nr_try == len(self.hand) and self.hand.index(removing_card) == card_to_remove:
-                pass
-            else:
-                self.hand.pop(card_to_remove)
+                nr_try = 0
+                try:
+                    while self.hand.index(removing_card) == card_to_remove and nr_try < len(self.hand):
+                        card_to_remove = random.randrange(len(self.hand))
+                        nr_try += 1
+                except Exception as e:
+                    if removing_card.name == "Cataclysm":
+                        card_to_remove = random.randrange(len(self.hand))
+                if self.hand[card_to_remove].name in list_of_spells_that_have_effect_when_discarded:
+                    if self.hand[card_to_remove].card_type == "Spell":
+                        self.incoming_spell = self.hand[card_to_remove]
+                elif self.hand[card_to_remove].name in list_of_creature_that_have_effect_when_discarded:
+                    self.battle_field.append(self.hand[card_to_remove])
+                if nr_try == len(self.hand) and self.hand.index(removing_card) == card_to_remove:
+                    pass
+                else:
+                    self.hand.pop(card_to_remove)
 
     def buff_card_from_battle(self, card):
         condition = list_of_creature_that_are_affected_by_battle_field.get(card.name)

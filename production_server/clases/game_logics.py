@@ -650,6 +650,8 @@ def cast_spell_from_player(player1, player2, card_picked):
     if player1.incoming_spell.name in list_of_spells_with_no_target:
         general_spells(player1, player2, player1.incoming_spell.name)
         player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
+        if player1.incoming_spell.name in list_of_cards_that_discard_after_effect:
+            player1.card_discard(list_of_cards_that_discard.get(player1.incoming_spell.name), player1.incoming_spell)
         player1.incoming_action = 0
         player1.incoming_spell = None
     elif card_picked.get(

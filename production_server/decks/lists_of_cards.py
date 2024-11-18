@@ -234,7 +234,8 @@ list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"
 list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2, "Military Guard": 2, "Lu": 2,
                                                         "Heretic Knight": 2}
 list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
-list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2}
+list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2, "Assassin's payment": 1}
+list_of_cards_that_discard_after_effect = {"Cataclysm"}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient Army Guard"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
@@ -361,7 +362,7 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Cultural Empire", "Net Throw", "Ballestris Volly", "Elephants stampede", "Catapult Shot",
                   "Lagoras discovery", "Scrolls of war", "Arbalest Flame Shot", "Gladiator Net Throw",
                   "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley", "Auxiliar Volley",
-                  "Wild Training", "Savage Empire", "Light of Hope"]
+                  "Wild Training", "Savage Empire", "Light of Hope", "Assassin's payment"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
@@ -371,7 +372,7 @@ list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emper
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
                       "Mercenaries Reinforcements": list_of_spells_that_have_a_range.get("Mercenaries Reinforcements"),
-                      "Cataclysm": 99, "Palisade Wall": 3, "Pilum Volley": 1, "Unknown Territory": 0,
+                      "Cataclysm": 100, "Palisade Wall": 3, "Pilum Volley": 1, "Unknown Territory": 0,
                       "Senatus Populusque Romanus": 2, "Known Territory": 0, "Heat of the desert": 5,
                       "A day in the desert": 3, "Mercenary Defences": 5, "Commander Desperation": 1,
                       "Commander's last charge": 4, "Whip hit": 1, "Fall Trap": 2, "Tavern Fight": 99, "Execute": 99,
@@ -381,10 +382,10 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Mercenary arrow shot": 2, "Quick Arrow": 4, "Well Trained Pet": 3, "Swamped": 99, "War Cry": 1,
                       "Flaming arrow": 6, "Spartan Volley": 5, "Net Throw": 3, "Ballestris Volly": 2,
                       "Catapult Shot": 10, "Scrolls of war": 2, "Arbalest Flame Shot": 8, "Gladiator Net Throw": 3,
-                      "Catapult Volley": 8, "Kings Guard Volley": 2, "Auxiliar Volley": 1
+                      "Catapult Volley": 8, "Kings Guard Volley": 2, "Auxiliar Volley": 1, "Assassin's payment": 100
                       }
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot",
-                                        "Mercenary arrow shot", "Quick Arrow", "Kill"}
+                                        "Mercenary arrow shot", "Quick Arrow", "Kill", "Assassin's payment"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
                             "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor",
