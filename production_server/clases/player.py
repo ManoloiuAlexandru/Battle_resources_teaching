@@ -426,6 +426,7 @@ class Player:
                             player.battle_field.append(list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
                             list_of_creature_that_summ_after_they_die.get(card.name)[1].remove(
                                 list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
+                            player.check_for_creature_with_effect_on("summ", player.battle_field[-1])
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "draw":
                 for nr_cards in range(list_of_creature_that_draw_cards_when_die.get(card.name)):
                     if card.name in list_of_creature_that_draw_specific_cards_when_die:
@@ -756,6 +757,9 @@ class Player:
                                         else:
                                             random_enemy.hp -= int(effected_cards[0].split(":")[4])
                                         list_of_targets.clear()
+                        if "heal" in effected_cards[0].split(":"):
+                            if "empire" in effected_cards[0].split(":"):
+                                self.heal_player(int(effected_cards[0].split(":")[-1]))
                     elif action == effected_cards[1] and action == "cast spell":
                         if creature.name == "Pyrrho of Elis" and len(self.hand) < 10:
                             self.hand.append(Spell(4, "Flaming arrow", "Deal 6 damage", generate_random_int()))

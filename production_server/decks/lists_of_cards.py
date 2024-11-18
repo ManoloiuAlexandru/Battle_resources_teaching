@@ -92,7 +92,8 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
                                                 "Pyrrho of Elis": ("add_to_hand:Fire Arrow", "cast spell"),
                                                 "Church Helper": ("buff new summ", "summ 1 hp minion"),
                                                 "Tolui": ("damage:enemy_hero:spell_cost", "cast spell"),
-                                                "Armored Librarian": ("self_buff", "cast spell:self")
+                                                "Armored Librarian": ("self_buff", "cast spell:self"),
+                                                "Tax collector": ("heal:empire:1", "summ all")
                                                 }
 list_of_creature_that_are_effected_by_action_once = {"Soldier Architect": 0}
 list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}

@@ -14,7 +14,8 @@ bot_deck = [
 demo_deck = [
     Creature(1, "Armored Librarian", 1, 1, "When you cast a spell on this get +1/+1 and armored", "soldier", 1),
     Spell(2, "Savage Empire", "Give a creature +2/0. Heal the empire for 2. Summon 2 1/1 dogs", 2),
-    Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", 3)
+    Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", 3),
+    Creature(1, "Tax collector", 1, 1, "Whenever you summon a creature heal the empire for 1", "worker", 4),
 ]
 
 list_of_tactics_to_pick = [
