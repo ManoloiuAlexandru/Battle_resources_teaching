@@ -47,6 +47,7 @@ cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(2, "Wild Training", "Draw a beast. Give it +3/+3", -317),
                     Creature(2, "Tolui", 3, 2, "After you cast a spell, deal equal to its Cost to the enemy Hero.",
                              "soldier", -318),
+                    Spell(2, "Savage Empire", "Give a creature +2/0. Heal the empire for 2. Summon 2 1/1 dogs", -320),
                     ]
 cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                            Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),
@@ -102,6 +103,8 @@ cards_for_mongol_empire = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5
                            Creature(2, "Tolui", 3, 2,
                                     "After you cast a spell, deal equal to its Cost to the enemy Hero.",
                                     "soldier", -318),
+                           Spell(2, "Savage Empire", "Give a creature +2/0. Heal the empire for 2. Summon 2 1/1 dogs",
+                                 -320),
                            ]
 mongols_hordes = [Creature(6, "War elephant", 5, 4,
                            "While this is on the field your creatures have +1 attack", "animal", 1900),

@@ -12,6 +12,17 @@ from production_server.decks.roman_empire import roman_empire
 bot_deck = [
 ]
 demo_deck = [
+    # Creature(1, "Armored Librarian", 1, 1, "When you cast a spell on this get +1/+1 and armored", "soldier", 1),
+    # Spell(2, "Savage Empire", "Give a creature +2/0. Heal the empire for 2. Summon 2 1/1 dogs", 2),
+    # Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", 3),
+    # Creature(1, "Tax collector", 1, 1, "Whenever you summon a creature heal the empire for 1", "worker", 4),
+    # Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", 5),
+    Spell(0, "Cataclysm", "Destroy ALL minions. Discard 2 cards", 6),
+    Spell(0, "Cataclysm", "Destroy ALL minions. Discard 2 cards", 7),
+    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 7),
+    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 8),
+    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 9),
+    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 10),
 ]
 
 list_of_tactics_to_pick = [

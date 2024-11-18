@@ -117,7 +117,7 @@ class Player:
                     self.last_debt = list_of_card_that_add_debt.get(card.name)
                 if card.name in list_of_cards_that_give_armor:
                     self.armor += list_of_cards_that_give_armor.get(card.name)
-                if card.name in list_of_cards_that_discard:
+                if card.name in list_of_cards_that_discard and card.name not in list_of_cards_that_discard_after_effect:
                     self.card_discard(list_of_cards_that_discard.get(card.name), card)
                     if self.incoming_spell is not None:
                         self.incoming_action = 3
@@ -167,6 +167,8 @@ class Player:
                         self.battle_field) < 7:
                     self.do_damage_to_all_other_characters(card)
                 elif card.name in list_of_spells:
+                    if card.name in list_of_spells_that_only_heal_player:
+                        self.heal_player(list_of_spells_that_only_heal_player.get(card.name))
                     self.check_for_creature_with_effect_on("cast spell", card)
                     self.check_spell(card)
                     self.mana_pay(card)
@@ -424,6 +426,7 @@ class Player:
                             player.battle_field.append(list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
                             list_of_creature_that_summ_after_they_die.get(card.name)[1].remove(
                                 list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
+                            player.check_for_creature_with_effect_on("summ", player.battle_field[-1])
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "draw":
                 for nr_cards in range(list_of_creature_that_draw_cards_when_die.get(card.name)):
                     if card.name in list_of_creature_that_draw_specific_cards_when_die:
@@ -688,20 +691,25 @@ class Player:
 
     def card_discard(self, nr_of_cards, removing_card):
         for i in range(nr_of_cards):
-            card_to_remove = random.randrange(len(self.hand))
-            nr_try = 0
-            while self.hand.index(removing_card) == card_to_remove and nr_try < len(self.hand):
+            if len(self.hand) > 0:
                 card_to_remove = random.randrange(len(self.hand))
-                nr_try += 1
-            if self.hand[card_to_remove].name in list_of_spells_that_have_effect_when_discarded:
-                if self.hand[card_to_remove].card_type == "Spell":
-                    self.incoming_spell = self.hand[card_to_remove]
-            elif self.hand[card_to_remove].name in list_of_creature_that_have_effect_when_discarded:
-                self.battle_field.append(self.hand[card_to_remove])
-            if nr_try == len(self.hand) and self.hand.index(removing_card) == card_to_remove:
-                pass
-            else:
-                self.hand.pop(card_to_remove)
+                nr_try = 0
+                try:
+                    while self.hand.index(removing_card) == card_to_remove and nr_try < len(self.hand):
+                        card_to_remove = random.randrange(len(self.hand))
+                        nr_try += 1
+                except Exception as e:
+                    if removing_card.name == "Cataclysm":
+                        card_to_remove = random.randrange(len(self.hand))
+                if self.hand[card_to_remove].name in list_of_spells_that_have_effect_when_discarded:
+                    if self.hand[card_to_remove].card_type == "Spell":
+                        self.incoming_spell = self.hand[card_to_remove]
+                elif self.hand[card_to_remove].name in list_of_creature_that_have_effect_when_discarded:
+                    self.battle_field.append(self.hand[card_to_remove])
+                if nr_try == len(self.hand) and self.hand.index(removing_card) == card_to_remove:
+                    pass
+                else:
+                    self.hand.pop(card_to_remove)
 
     def buff_card_from_battle(self, card):
         condition = list_of_creature_that_are_affected_by_battle_field.get(card.name)
@@ -754,6 +762,9 @@ class Player:
                                         else:
                                             random_enemy.hp -= int(effected_cards[0].split(":")[4])
                                         list_of_targets.clear()
+                        if "heal" in effected_cards[0].split(":"):
+                            if "empire" in effected_cards[0].split(":"):
+                                self.heal_player(int(effected_cards[0].split(":")[-1]))
                     elif action == effected_cards[1] and action == "cast spell":
                         if creature.name == "Pyrrho of Elis" and len(self.hand) < 10:
                             self.hand.append(Spell(4, "Flaming arrow", "Deal 6 damage", generate_random_int()))
@@ -769,6 +780,9 @@ class Player:
 
                         for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                             self.draw_card()
+                    elif action in effected_cards[1] and "self" in effected_cards[1].split(":"):
+                        if creature == playing_creature and effected_cards[0] == "self_buff":
+                            self.buff_card_from_hand(creature, creature)
                     elif action == effected_cards[1] and action == "damage_taken":
                         if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
                             if playing_creature == creature:
