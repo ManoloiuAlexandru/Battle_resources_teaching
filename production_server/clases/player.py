@@ -167,6 +167,8 @@ class Player:
                         self.battle_field) < 7:
                     self.do_damage_to_all_other_characters(card)
                 elif card.name in list_of_spells:
+                    if card.name in list_of_spells_that_only_heal_player:
+                        self.heal_player(list_of_spells_that_only_heal_player.get(card.name))
                     self.check_for_creature_with_effect_on("cast spell", card)
                     self.check_spell(card)
                     self.mana_pay(card)
@@ -769,6 +771,9 @@ class Player:
 
                         for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
                             self.draw_card()
+                    elif action in effected_cards[1] and "self" in effected_cards[1].split(":"):
+                        if creature == playing_creature and effected_cards[0] == "self_buff":
+                            self.buff_card_from_hand(creature, creature)
                     elif action == effected_cards[1] and action == "damage_taken":
                         if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
                             if playing_creature == creature:

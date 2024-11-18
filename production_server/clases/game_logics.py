@@ -356,6 +356,7 @@ def buff_creature_with_spell(card, player1):
     if list_of_buff_spells.get(player1.incoming_spell.name)[2] not in card.description:
         card.description += "  " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
     card.check_creature(list_of_buff_spells.get(player1.incoming_spell.name)[2])
+    player1.check_for_creature_with_effect_on("cast spell:", card)
 
 
 def spell_that_summon(player, enemy_player, spell_name):
