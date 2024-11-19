@@ -7,6 +7,8 @@
 </head>
 <body class="library">
 <button onclick="window.location.href='/'">Back</button>
+<button onclick="window.location.href='/library?page={{page-1}}'">Previous</button>
+<button onclick="window.location.href='/library?page={{page+1}}'">Next</button>
 <div class="player_hand_library space-kids">
     {%for card in library%}
     <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
@@ -22,7 +24,7 @@
         <span class="attack_hp">A:{{card.attack}} {{card.category}} H:{{card.hp}}</span>
         {%endif%}
         {%if card.card_type=="Defence"%}
-         <span class="attack_hp">Troops:{{card.number_of_troops}} Assaults:{{card.nr_of_assaults}}</span>
+        <span class="attack_hp">Troops:{{card.number_of_troops}} Assaults:{{card.nr_of_assaults}}</span>
         {%endif%}
     </button>
     {%endfor%}

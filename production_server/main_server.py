@@ -156,14 +156,19 @@ def rules():
 
 @app.route("/make_your_own_deck", methods=["POST", "GET"])
 def make_your_own_deck():
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 28 + 1:
+        page = len(all_cards_in_game) // 28 + 1
     global show_deck
     try:
-        return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=empire_decks[empire])
+        return render_template("make_your_deck.html", page=page, your_deck=show_deck,
+                               library=empire_decks[empire][page * 28:(page + 1) * 28])
     except Exception as e:
         show_deck = {}
-        return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=cards_that_are_in_the_game_for_all)
+        return render_template("make_your_deck.html", page=page, your_deck=show_deck,
+                               library=cards_that_are_in_the_game_for_all[page * 28:(page + 1) * 28])
 
 
 @app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
@@ -353,9 +358,14 @@ def remove_card_from_deck():
         return redirect(url_for('chaotic_history', show_deck=show_deck))
 
 
-@app.route("/library")
+@app.route("/library", methods=["POST", "GET"])
 def show_library():
-    return render_template("library.html", library=all_cards_in_game)
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 28 + 1:
+        page = len(all_cards_in_game) // 28 + 1
+    return render_template("library.html", page=page, library=all_cards_in_game[page * 28:(page + 1) * 28])
 
 
 @app.route("/update_battle_field", methods=["POST", "GET"])
