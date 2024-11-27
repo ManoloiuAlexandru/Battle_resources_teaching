@@ -148,6 +148,7 @@ class Player:
                                     self.deck.remove(random_card)
                                     got_card = 1
                             except Exception as e:
+                                print("Error in put_card_on_field")
                                 print(e)
                         else:
                             self.draw_card()
@@ -247,6 +248,7 @@ class Player:
                 self.hand.append(pick_card)
             self.deck.remove(pick_card)
         except Exception as e:
+            print("Error in draw_card")
             print(e)
             if len(self.deck) == 0 and self.immunity is False:
                 if self.armor == 0:
@@ -271,6 +273,7 @@ class Player:
                 for i in range(0, 5):
                     self.draw_card()
         except Exception as e:
+            print("Error in start_game")
             print(e)
 
     def make_deck(self, deck):
@@ -323,6 +326,7 @@ class Player:
                     if type_of_card == random_card.card_type and type_of_description in random_card.description.split():
                         return random_card
         except Exception as e:
+            print("Error in get_random_card")
             print(e)
 
     @staticmethod
@@ -414,6 +418,7 @@ class Player:
                     enemy_player.check_for_creature_with_effect_on("friendly_minion_dies", card)
                     enemy_player.check_for_tactics("friendly_minion_dies", None, None)
         except Exception as e:
+            print("Error in clean_board")
             print(e)
 
     @staticmethod
@@ -436,6 +441,7 @@ class Player:
                                 player.hand.append(random_card)
                                 player.deck.remove(random_card)
                         except Exception as e:
+                            print("Error in action_when_die")
                             print(e)
                     else:
                         player.draw_card()
@@ -644,6 +650,7 @@ class Player:
                 else:
                     self.hand[self.hand.index(creature)].mana_cost = 0
             except Exception as e:
+                print("Error in reduce_mana_cost_of_card_condition")
                 print(e)
         elif condition == "amount_of_debt_in_game":
             if self.hand[self.hand.index(creature)].mana_cost >= self.dict_of_actions["Debt_in_game"]:
@@ -699,6 +706,7 @@ class Player:
                         card_to_remove = random.randrange(len(self.hand))
                         nr_try += 1
                 except Exception as e:
+                    print("Error in card_discard")
                     if removing_card.name == "Cataclysm":
                         card_to_remove = random.randrange(len(self.hand))
                 if self.hand[card_to_remove].name in list_of_spells_that_have_effect_when_discarded:
@@ -721,83 +729,88 @@ class Player:
 
     def check_for_creature_with_effect_on(self, action, playing_creature):
         try:
-            for creature in self.battle_field:
-                try:
-                    if creature.name in list_of_creature_that_have_other_stat_while_damaged:
-                        self.action_from_condition(creature, "damaged")
-                    effected_cards = list_of_creature_that_are_effected_by_action.get(creature.name)
-                    if action in effected_cards[1].split(":") and action == "friendly_minion_dies":
-                        if effected_cards[1].split(":")[1] == playing_creature.category:
+            if action == "summ" and playing_creature.card_type == "Creature":
+                for creature in self.battle_field:
+                    try:
+                        if creature.name in list_of_creature_that_have_other_stat_while_damaged:
+                            self.action_from_condition(creature, "damaged")
+                        effected_cards = list_of_creature_that_are_effected_by_action.get(creature.name)
+                        if action in effected_cards[1].split(":") and action == "friendly_minion_dies":
+                            if effected_cards[1].split(":")[1] == playing_creature.category:
+                                self.buff_card_from_hand(creature, creature)
+                            elif effected_cards[1].split(":")[1] == "all":
+                                self.buff_card_from_hand(creature, creature)
+                        elif effected_cards[1] == action and effected_cards[0] == "self_buff":
                             self.buff_card_from_hand(creature, creature)
-                        elif effected_cards[1].split(":")[1] == "all":
-                            self.buff_card_from_hand(creature, creature)
-                    elif effected_cards[1] == action and effected_cards[0] == "self_buff":
-                        self.buff_card_from_hand(creature, creature)
-                    elif action in effected_cards[1] and action == "summ":
-                        if playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
-                                                                self.enemy_player) is True and \
-                                effected_cards[0] == "self_buff":
-                            self.buff_card_from_hand(creature, creature)
-                        elif playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
-                                                                  self.enemy_player) is True and list_of_cards_that_add_cards_to_your_hand_by_action.get(
-                            creature.name):
-                            self.add_random_card_to_hand(creature)
-                        elif playing_creature.check_specific_attr(effected_cards[1], self,
-                                                                  self.enemy_player) is True and \
-                                effected_cards[0] == "buff new summ":
-                            self.buff_card_from_hand(playing_creature, creature)
-                        if "all" in effected_cards[0].split(":"):
-                            if "damage" in effected_cards[0].split(":"):
-                                if "all" in effected_cards[0].split(":"):
-                                    if "enemies" in effected_cards[0].split(":"):
-                                        list_of_targets = []
-                                        list_of_targets.extend(self.enemy_player.battle_field)
-                                        list_of_targets.append(self.enemy_player.name)
-                                        random_enemy = random.choice(list_of_targets)
-                                        if isinstance(random_enemy, str):
-                                            self.enemy_player.hp -= int(effected_cards[0].split(":")[4])
-                                            self.dict_of_actions["Damage_done"] += int(effected_cards[0].split(":")[3])
-                                        elif random_enemy.armored is True:
-                                            random_enemy.armored = False
-                                        else:
-                                            random_enemy.hp -= int(effected_cards[0].split(":")[4])
-                                        list_of_targets.clear()
-                        if "heal" in effected_cards[0].split(":"):
-                            if "empire" in effected_cards[0].split(":"):
-                                self.heal_player(int(effected_cards[0].split(":")[-1]))
-                    elif action == effected_cards[1] and action == "cast spell":
-                        if creature.name == "Pyrrho of Elis" and len(self.hand) < 10:
-                            self.hand.append(Spell(4, "Flaming arrow", "Deal 6 damage", generate_random_int()))
-                        if creature.name == "Tolui":
-                            if self.enemy_player.immunity is False:
-                                if self.enemy_player.armor >= playing_creature.mana_cost:
-                                    self.enemy_player.armor -= playing_creature.mana_cost
+                        elif action in effected_cards[
+                            1] and action == "summ" and playing_creature.card_type == "Creature":
+                            if playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
+                                                                    self.enemy_player) is True and \
+                                    effected_cards[0] == "self_buff":
+                                self.buff_card_from_hand(creature, creature)
+                            elif playing_creature.check_specific_attr(effected_cards[1].split()[1], self,
+                                                                      self.enemy_player) is True and list_of_cards_that_add_cards_to_your_hand_by_action.get(
+                                creature.name):
+                                self.add_random_card_to_hand(creature)
+                            elif playing_creature.check_specific_attr(effected_cards[1], self,
+                                                                      self.enemy_player) is True and \
+                                    effected_cards[0] == "buff new summ":
+                                self.buff_card_from_hand(playing_creature, creature)
+                            if "all" in effected_cards[0].split(":"):
+                                if "damage" in effected_cards[0].split(":"):
+                                    if "all" in effected_cards[0].split(":"):
+                                        if "enemies" in effected_cards[0].split(":"):
+                                            list_of_targets = []
+                                            list_of_targets.extend(self.enemy_player.battle_field)
+                                            list_of_targets.append(self.enemy_player.name)
+                                            random_enemy = random.choice(list_of_targets)
+                                            if isinstance(random_enemy, str):
+                                                self.enemy_player.hp -= int(effected_cards[0].split(":")[4])
+                                                self.dict_of_actions["Damage_done"] += int(
+                                                    effected_cards[0].split(":")[3])
+                                            elif random_enemy.armored is True:
+                                                random_enemy.armored = False
+                                            else:
+                                                random_enemy.hp -= int(effected_cards[0].split(":")[4])
+                                            list_of_targets.clear()
+                            if "heal" in effected_cards[0].split(":"):
+                                if "empire" in effected_cards[0].split(":"):
+                                    self.heal_player(int(effected_cards[0].split(":")[-1]))
+                        elif action == effected_cards[1] and action == "cast spell":
+                            if creature.name == "Pyrrho of Elis" and len(self.hand) < 10:
+                                self.hand.append(Spell(4, "Flaming arrow", "Deal 6 damage", generate_random_int()))
+                            if creature.name == "Tolui":
+                                if self.enemy_player.immunity is False:
+                                    if self.enemy_player.armor >= playing_creature.mana_cost:
+                                        self.enemy_player.armor -= playing_creature.mana_cost
+                                    else:
+                                        self.enemy_player.hp = self.enemy_player.hp + self.enemy_player.armor - playing_creature.mana_cost
+                                        self.armor = 0
                                 else:
-                                    self.enemy_player.hp = self.enemy_player.hp + self.enemy_player.armor - playing_creature.mana_cost
-                                    self.armor = 0
-                            else:
-                                self.enemy_player.hp -= playing_creature.mana_cost
+                                    self.enemy_player.hp -= playing_creature.mana_cost
 
-                        for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
-                            self.draw_card()
-                    elif action in effected_cards[1] and "self" in effected_cards[1].split(":"):
-                        if creature == playing_creature and effected_cards[0] == "self_buff":
-                            self.buff_card_from_hand(creature, creature)
-                    elif action == effected_cards[1] and action == "damage_taken":
-                        if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
-                            if playing_creature == creature:
-                                if creature.name in list_of_creature_that_are_effected_by_action_once:
-                                    self.do_action_once_per_trigger(creature, "add_armor")
-                                else:
+                            for i in range(list_of_creature_that_draw_card_on_action.get(creature.name)):
+                                self.draw_card()
+                        elif action in effected_cards[1] and "self" in effected_cards[1].split(":"):
+                            if creature == playing_creature and effected_cards[0] == "self_buff":
+                                self.buff_card_from_hand(creature, creature)
+                        elif action == effected_cards[1] and action == "damage_taken":
+                            if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
+                                if playing_creature == creature:
+                                    if creature.name in list_of_creature_that_are_effected_by_action_once:
+                                        self.do_action_once_per_trigger(creature, "add_armor")
+                                    else:
+                                        self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
+                                elif playing_creature is not None:
                                     self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
-                            elif playing_creature is not None:
+                        elif action == effected_cards[1] and action == "kill_minion":
+                            if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
                                 self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
-                    elif action == effected_cards[1] and action == "kill_minion":
-                        if list_of_creature_that_add_armor_on_action.get(creature.name) is not None:
-                            self.armor += list_of_creature_that_add_armor_on_action.get(creature.name)
-                except Exception as e:
-                    print(e)
+                    except Exception as e:
+                        print("Error in check_for_creature_with_effect_on")
+                        print(e)
         except Exception as e:
+            print("Error in check_for_creature_with_effect_on")
             print(e)
 
     def do_action_once_per_trigger(self, card, action_to_do):
@@ -847,6 +860,7 @@ class Player:
                     if "Guard" in card.description.split():
                         return 0
         except Exception as e:
+            print("Error in guard_checking")
             if current_card is None or current_card == self.enemy_player:
                 for card in player.battle_field:
                     if "Guard" in card.description.split():
@@ -940,7 +954,11 @@ class Player:
                 elif int(checking_card[1].split(":")[1]) <= self.armor:
                     self.buff_card_from_hand(card, card)
         if checking_card[0] == "health":
-            if int(checking_card[1].split(":")[1]) >= self.hp and card.card_type == "Creature":
+            if checking_card[1].split(":")[1] == "-X" and card.name == "Last Empire Believer":
+                card.hp -= self.hp
+                card.max_hp -= self.hp
+                card.attack -= self.hp
+            elif int(checking_card[1].split(":")[1]) >= self.hp and card.card_type == "Creature":
                 self.buff_card_from_hand(card, card)
             elif int(checking_card[1].split(":")[1]) >= self.hp and card.card_type == "Spell":
                 list_of_dmg_spells[card.name] = checking_card[2]

@@ -123,6 +123,7 @@ class Creature:
                             self.hp = 0
                         self.active_effects.remove(card.name)
         except Exception as e:
+            print("Error in reverse_effect_creature")
             print(e)
 
     def check_armored(self):

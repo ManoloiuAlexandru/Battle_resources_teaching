@@ -1,5 +1,0 @@
-Spell(0, "Flaming arrow", "Deal 6 damage", 1),
-Creature(0, "Veteran Tactician", 4, 4, "Deal 6 damage if you control a tactic", "soldier", 2),
-Spell(0, "Greek Scrolls", "Discover a spell", 3),
-Spell(0, "Spartan Volley", "Deal 5 damage to all enemies", 6)
-Spell(0, "Cultural Empire", "Draw 2 cards", 7)

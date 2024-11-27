@@ -45,6 +45,7 @@ mesopotamia_empire = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                             -265),
                       Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", -323),
                       Spell(5, "Cataclysm", "Destroy ALL minions. Discard 2 cards", -324),
+                      Creature(1, "Ancient Champion", 1, 1, "Whenever you play an ancient gain +1/+1", "ancient", -327),
                       ]
 mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
@@ -89,4 +90,5 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                           -265),
                     Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", -323),
                     Spell(5, "Cataclysm", "Destroy ALL minions. Discard 2 cards", -324),
+                    Creature(1, "Ancient Champion", 1, 1, "Whenever you play an ancient gain +1/+1", "ancient", -327),
                     ]

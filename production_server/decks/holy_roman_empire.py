@@ -68,7 +68,8 @@ cards_holy_show = [Creature(8, "Frederick Barbarossa", 6, 6,
                             -314),
                    Creature(3, "Church Helper", 2, 3, "Whenever you summ a 1 health minion,give it +1/+2", "worker",
                             -316),
-                   Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321)
+                   Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321),
+                   Spell(2, "Will of God", "Give a creature +1/+1 and it can't be blocked", -325),
                    ]
 list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", -72)],
@@ -139,7 +140,8 @@ list_of_holy_roman = [[Creature(8, "Frederick Barbarossa", 6, 6,
                        [Creature(3, "Church Helper", 2, 3, "Whenever you summ a 1 health minion,give it +1/+2",
                                  "worker",
                                  -316)],
-                       [Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321)]]
+                       [Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321)]],
+                      [Spell(2, "Will of God", "Give a creature +1/+1 and it can't be blocked", -325)]
                       ]
 cards_for_holy_roman_empire = [
     Creature(8, "Frederick Barbarossa", 6, 6,
@@ -205,5 +207,6 @@ cards_for_holy_roman_empire = [
              -314),
     Creature(3, "Church Helper", 2, 3, "Whenever you summ a 1 health minion,give it +1/+2", "worker",
              -316),
-    Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321)
+    Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", -321),
+    Spell(2, "Will of God", "Give a creature +1/+1 and it can't be blocked", -325),
 ]

@@ -117,6 +117,7 @@ class Bot(Player):
                                 break
                     self.check_for_creature_with_effect_on("heal", card)
                 except Exception as e:
+                    print("Error in check_summed_card")
                     print(e)
             elif card.name in list_of_creature_that_are_affected_by_hand:
                 self.hand_check(card)
@@ -132,6 +133,7 @@ class Bot(Player):
                                 creature.description += " " + list_of_creature_that_buff.get(card.name)[2]
                             break
                 except Exception as e:
+                    print("Error in check_summed_card")
                     print(e)
             elif card.name in list_of_creature_that_buff and card.name in list_of_creature_description:
                 try:
@@ -142,6 +144,7 @@ class Bot(Player):
                             creature.description += " " + list_of_creature_that_buff.get(card.name)[2]
                         break
                 except Exception as e:
+                    print("Error in check_summed_card")
                     print(e)
             elif card.name in list_of_creature_that_draw_cards:
                 for nr_cards in range(list_of_creature_that_draw_cards.get(card.name)):
@@ -154,6 +157,7 @@ class Bot(Player):
                                 self.deck.remove(random_card)
                                 got_card = 1
                         except Exception as e:
+                            print("Error in check_summed_card")
                             print(e)
                     else:
                         self.draw_card()
@@ -214,6 +218,7 @@ class Bot(Player):
                                 return 1
                         return 0
                 except Exception as e:
+                    print("Error in check_summed_card")
                     print(e)
             elif card.name in list_of_spells_that_summon:
                 if card.name in list_of_spells_that_can_heal_player:

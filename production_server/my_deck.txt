@@ -1,518 +1,452 @@
-empire:Mesopotamia_Empire
+empire:Holy_Roman_Empire
 card_id:0
-mana_cost:1
-original_mana_cost:1
-name:Assassin's payment
-card_type:Spell
-description:Discard a card and kill an enemy minion
-img_url:Assassin's payment.png
-target:enemy
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+knocked_down_time:0
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Assassin's_payment0
+damage_taken_this_turn_from_empire:0
+name_for_html:Faithful_Guard0
 --------------------------------
 card_id:1
-mana_cost:1
-original_mana_cost:1
-name:Assassin's payment
-card_type:Spell
-description:Discard a card and kill an enemy minion
-img_url:Assassin's payment.png
-target:enemy
+mana_cost:3
+original_mana_cost:3
+name:Faithful Guard
+hp:2
+max_hp:2
+original_hp:2
+attack:2
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:2
+active_effects:[]
+knocked_down_time:0
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Guard.png
+items:[]
+number_of_attacks:1
 empire_belonging:
-category:
-name_for_html:Assassin's_payment1
+damage_taken_this_turn_from_empire:0
+name_for_html:Faithful_Guard1
 --------------------------------
 card_id:2
-mana_cost:5
-original_mana_cost:5
-name:Cataclysm
+mana_cost:7
+original_mana_cost:7
+name:Rain of Arrows
 card_type:Spell
-description:Destroy ALL minions. Discard 2 cards
-img_url:Cataclysm.png
-target:enemy
+description:Destroy ALL minions that are not Armored
+img_url:Rain of Arrows.png
+target:None
 empire_belonging:
 category:
-name_for_html:Cataclysm2
+name_for_html:Rain_of_Arrows2
 --------------------------------
 card_id:3
-mana_cost:5
-original_mana_cost:5
-name:Cataclysm
+mana_cost:7
+original_mana_cost:7
+name:Rain of Arrows
 card_type:Spell
-description:Destroy ALL minions. Discard 2 cards
-img_url:Cataclysm.png
-target:enemy
+description:Destroy ALL minions that are not Armored
+img_url:Rain of Arrows.png
+target:None
 empire_belonging:
 category:
-name_for_html:Cataclysm3
+name_for_html:Rain_of_Arrows3
 --------------------------------
 card_id:4
-mana_cost:3
-original_mana_cost:3
-name:Ancient Army Guard
-hp:5
-max_hp:5
-original_hp:5
-attack:2
-category:ancient
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:2
+original_attack:1
 active_effects:[]
 knocked_down_time:0
-description:Guard when you discard this summon it
-original_description:Guard when you discard this summon it
+description:Guard Armored
+original_description:Guard Armored
 card_type:Creature
 exhausted:True
-armored:False
+armored:True
 can_be_target:True
-img_url:Ancient Army Guard.png
+img_url:Faithful Protector.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Ancient_Army_Guard4
+name_for_html:Faithful_Protector4
 --------------------------------
 card_id:5
+mana_cost:1
+original_mana_cost:1
+name:Faithful Protector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+knocked_down_time:0
+description:Guard Armored
+original_description:Guard Armored
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Faithful Protector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Faithful_Protector5
+--------------------------------
+card_id:10
 mana_cost:3
 original_mana_cost:3
-name:Ancient Army Guard
+name:Bailiff
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Set a minion attack to 1
+original_description:Set a minion attack to 1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Bailiff.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Bailiff10
+--------------------------------
+card_id:11
+mana_cost:3
+original_mana_cost:3
+name:Bailiff
+hp:3
+max_hp:3
+original_hp:3
+attack:3
+category:soldier
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Set a minion attack to 1
+original_description:Set a minion attack to 1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Bailiff.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Bailiff11
+--------------------------------
+card_id:12
+mana_cost:2
+original_mana_cost:2
+name:Chivalry and Honor
+card_type:Spell
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:None
+empire_belonging:
+category:
+name_for_html:Chivalry_and_Honor12
+--------------------------------
+card_id:13
+mana_cost:2
+original_mana_cost:2
+name:Chivalry and Honor
+card_type:Spell
+description:Give a minion +2/+1 and draw a card
+img_url:Chivalry and Honor.png
+target:None
+empire_belonging:
+category:
+name_for_html:Chivalry_and_Honor13
+--------------------------------
+card_id:14
+mana_cost:9
+original_mana_cost:9
+name:Call of God
+card_type:Spell
+description:Heal for 8 and summon a 8/8 armored guard Crusader
+img_url:Call of God.png
+target:None
+empire_belonging:
+category:
+name_for_html:Call_of_God14
+--------------------------------
+card_id:15
+mana_cost:9
+original_mana_cost:9
+name:Call of God
+card_type:Spell
+description:Heal for 8 and summon a 8/8 armored guard Crusader
+img_url:Call of God.png
+target:None
+empire_belonging:
+category:
+name_for_html:Call_of_God15
+--------------------------------
+card_id:16
+mana_cost:8
+original_mana_cost:8
+name:Frederick Barbarossa
+hp:6
+max_hp:6
+original_hp:6
+attack:6
+category:knight
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:6
+active_effects:[]
+knocked_down_time:0
+description:Friendly minions get armored and +1/+1 Armored Guard
+original_description:Friendly minions get armored and +1/+1 Armored Guard
+card_type:Creature
+exhausted:True
+armored:True
+can_be_target:True
+img_url:Frederick Barbarossa.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Frederick_Barbarossa16
+--------------------------------
+card_id:17
+mana_cost:2
+original_mana_cost:2
+name:Light of Hope
+card_type:Spell
+description:Give a creature +2/+2. Heal the empire for 3
+img_url:Light of Hope.png
+target:None
+empire_belonging:
+category:
+name_for_html:Light_of_Hope17
+--------------------------------
+card_id:18
+mana_cost:2
+original_mana_cost:2
+name:Light of Hope
+card_type:Spell
+description:Give a creature +2/+2. Heal the empire for 3
+img_url:Light of Hope.png
+target:None
+empire_belonging:
+category:
+name_for_html:Light_of_Hope18
+--------------------------------
+card_id:19
+mana_cost:3
+original_mana_cost:3
+name:Church Helper
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Whenever you summ a 1 health minion,give it +1/+2
+original_description:Whenever you summ a 1 health minion,give it +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Church Helper.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Church_Helper19
+--------------------------------
+card_id:20
+mana_cost:3
+original_mana_cost:3
+name:Church Helper
+hp:2
+max_hp:2
+original_hp:2
+attack:3
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:3
+active_effects:[]
+knocked_down_time:0
+description:Whenever you summ a 1 health minion,give it +1/+2
+original_description:Whenever you summ a 1 health minion,give it +1/+2
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Church Helper.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Church_Helper20
+--------------------------------
+card_id:21
+mana_cost:3
+original_mana_cost:3
+name:Inspired soldier
 hp:5
 max_hp:5
 original_hp:5
 attack:2
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-knocked_down_time:0
-description:Guard when you discard this summon it
-original_description:Guard when you discard this summon it
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Ancient Army Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Ancient_Army_Guard5
---------------------------------
-card_id:6
-mana_cost:3
-original_mana_cost:3
-name:Prisoner of War
-hp:4
-max_hp:4
-original_hp:4
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-knocked_down_time:0
-description:If you discard this summon it
-original_description:If you discard this summon it
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Prisoner of War.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Prisoner_of_War6
---------------------------------
-card_id:7
-mana_cost:3
-original_mana_cost:3
-name:Prisoner of War
-hp:4
-max_hp:4
-original_hp:4
-attack:3
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-knocked_down_time:0
-description:If you discard this summon it
-original_description:If you discard this summon it
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Prisoner of War.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Prisoner_of_War7
---------------------------------
-card_id:8
-mana_cost:5
-original_mana_cost:5
-name:Assyrian Horserider
-hp:7
-max_hp:7
-original_hp:7
-attack:5
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Charge discard 2 cards from your hand
-original_description:Charge discard 2 cards from your hand
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Assyrian Horserider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Assyrian_Horserider8
---------------------------------
-card_id:9
-mana_cost:5
-original_mana_cost:5
-name:Assyrian Horserider
-hp:7
-max_hp:7
-original_hp:7
-attack:5
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:5
-active_effects:[]
-knocked_down_time:0
-description:Charge discard 2 cards from your hand
-original_description:Charge discard 2 cards from your hand
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Assyrian Horserider.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Assyrian_Horserider9
---------------------------------
-card_id:10
-mana_cost:1
-original_mana_cost:1
-name:Tax collector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Whenever you summon a creature heal the empire for 1
-original_description:Whenever you summon a creature heal the empire for 1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Tax collector.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Tax_collector10
---------------------------------
-card_id:11
-mana_cost:1
-original_mana_cost:1
-name:Tax collector
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Whenever you summon a creature heal the empire for 1
-original_description:Whenever you summon a creature heal the empire for 1
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Tax collector.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Tax_collector11
---------------------------------
-card_id:12
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Peasant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Peasant12
---------------------------------
-card_id:13
-mana_cost:0
-original_mana_cost:0
-name:Peasant
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:
-original_description:
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Peasant.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Peasant13
---------------------------------
-card_id:14
-mana_cost:7
-original_mana_cost:7
-name:Ancient Law Enforcer
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-knocked_down_time:0
-description:Deal 3 damage to all other characters
-original_description:Deal 3 damage to all other characters
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Ancient Law Enforcer.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Ancient_Law_Enforcer14
---------------------------------
-card_id:15
-mana_cost:7
-original_mana_cost:7
-name:Ancient Law Enforcer
-hp:6
-max_hp:6
-original_hp:6
-attack:6
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-knocked_down_time:0
-description:Deal 3 damage to all other characters
-original_description:Deal 3 damage to all other characters
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Ancient Law Enforcer.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Ancient_Law_Enforcer15
---------------------------------
-card_id:18
-mana_cost:6
-original_mana_cost:6
-name:Limmu
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-knocked_down_time:0
-description:Deal damage equal to the number of card in your hand to all other minions
-original_description:Deal damage equal to the number of card in your hand to all other minions
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Limmu.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Limmu18
---------------------------------
-card_id:19
-mana_cost:6
-original_mana_cost:6
-name:Limmu
-hp:2
-max_hp:2
-original_hp:2
-attack:3
-category:worker
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:3
-active_effects:[]
-knocked_down_time:0
-description:Deal damage equal to the number of card in your hand to all other minions
-original_description:Deal damage equal to the number of card in your hand to all other minions
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Limmu.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Limmu19
---------------------------------
-card_id:20
-mana_cost:2
-original_mana_cost:2
-name:Enthusiastic Archer
-hp:3
-max_hp:3
-original_hp:3
-attack:2
 category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
 original_attack:2
 active_effects:[]
 knocked_down_time:0
-description:Deal 1 damage to a random enemy when you summon a minion
-original_description:Deal 1 damage to a random enemy when you summon a minion
+description:If you are holding a spell gain armored and guard
+original_description:If you are holding a spell gain armored and guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Enthusiastic Archer.png
+img_url:Inspired soldier.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Enthusiastic_Archer20
---------------------------------
-card_id:21
-mana_cost:2
-original_mana_cost:2
-name:Enthusiastic Archer
-hp:3
-max_hp:3
-original_hp:3
-attack:2
-category:soldier
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:2
-active_effects:[]
-knocked_down_time:0
-description:Deal 1 damage to a random enemy when you summon a minion
-original_description:Deal 1 damage to a random enemy when you summon a minion
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Enthusiastic Archer.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Enthusiastic_Archer21
+name_for_html:Inspired_soldier21
 --------------------------------
 card_id:22
-mana_cost:2
-original_mana_cost:2
-name:Shepherd
-hp:2
-max_hp:2
-original_hp:2
-attack:1
-category:worker
+mana_cost:3
+original_mana_cost:3
+name:Inspired soldier
+hp:5
+max_hp:5
+original_hp:5
+attack:2
+category:soldier
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:2
 active_effects:[]
 knocked_down_time:0
-description:Summon a 1/1 guard dog with guard
-original_description:Summon a 1/1 guard dog with guard
+description:If you are holding a spell gain armored and guard
+original_description:If you are holding a spell gain armored and guard
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Shepherd.png
+img_url:Inspired soldier.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Shepherd22
+name_for_html:Inspired_soldier22
 --------------------------------
 card_id:23
-mana_cost:2
-original_mana_cost:2
-name:Shepherd
-hp:2
-max_hp:2
-original_hp:2
+mana_cost:1
+original_mana_cost:1
+name:You don't scare me
+card_type:Spell
+description:Tactic When a minion attacks sets it's health and attack to 1
+img_url:You don't scare me.png
+target:None
+empire_belonging:
+category:
+name_for_html:You_don't_scare_me23
+--------------------------------
+card_id:24
+mana_cost:1
+original_mana_cost:1
+name:You don't scare me
+card_type:Spell
+description:Tactic When a minion attacks sets it's health and attack to 1
+img_url:You don't scare me.png
+target:None
+empire_belonging:
+category:
+name_for_html:You_don't_scare_me24
+--------------------------------
+card_id:25
+mana_cost:1
+original_mana_cost:1
+name:Avenge
+card_type:Spell
+description:Tactic When a friendly minion dies, give another one +3/+2
+img_url:Avenge.png
+target:None
+empire_belonging:
+category:
+name_for_html:Avenge25
+--------------------------------
+card_id:26
+mana_cost:1
+original_mana_cost:1
+name:Avenge
+card_type:Spell
+description:Tactic When a friendly minion dies, give another one +3/+2
+img_url:Avenge.png
+target:None
+empire_belonging:
+category:
+name_for_html:Avenge26
+--------------------------------
+card_id:27
+mana_cost:1
+original_mana_cost:1
+name:Tax collector
+hp:1
+max_hp:1
+original_hp:1
 attack:1
 category:worker
 attack_before_on_effects:0
@@ -520,74 +454,101 @@ hp_before_on_effects:0
 original_attack:1
 active_effects:[]
 knocked_down_time:0
-description:Summon a 1/1 guard dog with guard
-original_description:Summon a 1/1 guard dog with guard
+description:Whenever you summon a creature heal the empire for 1
+original_description:Whenever you summon a creature heal the empire for 1
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Shepherd.png
+img_url:Tax collector.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Shepherd23
---------------------------------
-card_id:24
-mana_cost:4
-original_mana_cost:4
-name:Ancient Imperial Guard
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-knocked_down_time:0
-description:If your kingdom has less then 15 HP gain +3/+3 and guard
-original_description:If your kingdom has less then 15 HP gain +3/+3 and guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Ancient Imperial Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Ancient_Imperial_Guard24
---------------------------------
-card_id:25
-mana_cost:4
-original_mana_cost:4
-name:Ancient Imperial Guard
-hp:4
-max_hp:4
-original_hp:4
-attack:4
-category:ancient
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:4
-active_effects:[]
-knocked_down_time:0
-description:If your kingdom has less then 15 HP gain +3/+3 and guard
-original_description:If your kingdom has less then 15 HP gain +3/+3 and guard
-card_type:Creature
-exhausted:True
-armored:False
-can_be_target:True
-img_url:Ancient Imperial Guard.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Ancient_Imperial_Guard25
+name_for_html:Tax_collector27
 --------------------------------
 card_id:28
+mana_cost:1
+original_mana_cost:1
+name:Tax collector
+hp:1
+max_hp:1
+original_hp:1
+attack:1
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:1
+active_effects:[]
+knocked_down_time:0
+description:Whenever you summon a creature heal the empire for 1
+original_description:Whenever you summon a creature heal the empire for 1
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Tax collector.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Tax_collector28
+--------------------------------
+card_id:29
+mana_cost:7
+original_mana_cost:7
+name:Wondering Scribe
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+knocked_down_time:0
+description:When you cast a spell draw a card
+original_description:When you cast a spell draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Wondering Scribe.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Wondering_Scribe29
+--------------------------------
+card_id:30
+mana_cost:7
+original_mana_cost:7
+name:Wondering Scribe
+hp:4
+max_hp:4
+original_hp:4
+attack:4
+category:worker
+attack_before_on_effects:0
+hp_before_on_effects:0
+original_attack:4
+active_effects:[]
+knocked_down_time:0
+description:When you cast a spell draw a card
+original_description:When you cast a spell draw a card
+card_type:Creature
+exhausted:True
+armored:False
+can_be_target:True
+img_url:Wondering Scribe.png
+items:[]
+number_of_attacks:1
+empire_belonging:
+damage_taken_this_turn_from_empire:0
+name_for_html:Wondering_Scribe30
+--------------------------------
+card_id:31
 mana_cost:6
 original_mana_cost:6
 name:Joan of Arc
@@ -612,140 +573,59 @@ items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Joan_of_Arc28
+name_for_html:Joan_of_Arc31
 --------------------------------
-card_id:29
-mana_cost:1
-original_mana_cost:1
-name:Armored Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:knight
+card_id:32
+mana_cost:12
+original_mana_cost:12
+name:Siege Tower
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:8
 active_effects:[]
 knocked_down_time:0
-description:Armored
-original_description:Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Page.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Armored_Page29
---------------------------------
-card_id:30
-mana_cost:1
-original_mana_cost:1
-name:Armored Page
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Armored
-original_description:Armored
-card_type:Creature
-exhausted:True
-armored:True
-can_be_target:True
-img_url:Armored Page.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Armored_Page30
---------------------------------
-card_id:31
-mana_cost:1
-original_mana_cost:1
-name:Wolf
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:1
-active_effects:[]
-knocked_down_time:0
-description:Charge
-original_description:Charge
-card_type:Creature
-exhausted:False
-armored:False
-can_be_target:True
-img_url:Wolf.png
-items:[]
-number_of_attacks:1
-empire_belonging:
-damage_taken_this_turn_from_empire:0
-name_for_html:Wolf31
---------------------------------
-card_id:0
-mana_cost:5
-original_mana_cost:5
-name:Baldwin of Antioch
-hp:4
-max_hp:4
-original_hp:4
-attack:6
-category:knight
-attack_before_on_effects:0
-hp_before_on_effects:0
-original_attack:6
-active_effects:[]
-knocked_down_time:0
-description:Change your kingdom power with a better one
-original_description:Change your kingdom power with a better one
+description:Cost 1 less for each spell you casted this game
+original_description:Cost 1 less for each spell you casted this game
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Baldwin of Antioch.png
+img_url:Siege Tower.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Baldwin_of_Antioch0
+name_for_html:Siege_Tower32
 --------------------------------
-card_id:1
-mana_cost:2
-original_mana_cost:2
-name:Lost Sheep
-hp:1
-max_hp:1
-original_hp:1
-attack:1
-category:animal
+card_id:33
+mana_cost:12
+original_mana_cost:12
+name:Siege Tower
+hp:8
+max_hp:8
+original_hp:8
+attack:8
+category:machine
 attack_before_on_effects:0
 hp_before_on_effects:0
-original_attack:1
+original_attack:8
 active_effects:[]
 knocked_down_time:0
-description:Desperate Summon 2 1/1 Wild Wolf
-original_description:Desperate Summon 2 1/1 Wild Wolf
+description:Cost 1 less for each spell you casted this game
+original_description:Cost 1 less for each spell you casted this game
 card_type:Creature
 exhausted:True
 armored:False
 can_be_target:True
-img_url:Lost Sheep.png
+img_url:Siege Tower.png
 items:[]
 number_of_attacks:1
 empire_belonging:
 damage_taken_this_turn_from_empire:0
-name_for_html:Lost_Sheep1
+name_for_html:Siege_Tower33
 --------------------------------
