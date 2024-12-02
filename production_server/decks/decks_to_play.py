@@ -10,13 +10,15 @@ from production_server.decks.mongols_empire import cards_for_mongol_empire, mong
 from production_server.decks.roman_empire import roman_empire
 
 bot_deck = [
+    Creature(0, "as", 99, 99, "Guard", "soldier", 999)
 ]
+
 demo_deck = [
-    Spell(2, "Will of God", "Give a creature +1/+1 and it can't be blocked", 1),
-    Creature(1, "Last Empire Believer", 23, 23, "Gains -X/-X, where X is your kingdoms health",
-             "soldier", 2),
-    Creature(1, "Ancient Champion", 1, 1, "Whenever you play an ancient gain +1/+1", "ancient", 3),
-    # Spell(0, "Collateral Victim", "Distroy one of your minions to distory one of your enemie minions", 4),
+    Creature(1, "Cow", 3, 0, "Desperate Heal your empire for 1 and draw a card. Guard", "animal", 1),
+    Creature(2, "Selfish Soldier", 2, 2, "Draw a card.Discard a card", "ancient", 7),
+    Spell(1, "I want actions not words",
+          "Destory 2 creatures, cast 2 spells and deal 2 damage to the enemy kingdom in one turn Reward:Lerima, Persistent One",
+          0),
 ]
 
 list_of_tactics_to_pick = [
@@ -220,6 +222,10 @@ list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                   [Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", -205)],
 
                   ]
+list_of_Lerima = [[Creature(5, "Lerima,Persistent One", 10, 10,
+                            "Charge Desperate return this to your hand",
+                            "legend",
+                            -999)]]
 list_of_spells_to_pick = [[Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)],
                           [Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", -46)],
                           [Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47)],
@@ -254,7 +260,8 @@ list_of_advance_greek_spells = [[Spell(4, "Arbalest Flame Shot", "Deal 8 damage"
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
                              "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers,
-                             "spells": list_of_spells_to_pick, "advance greek spells": list_of_advance_greek_spells
+                             "spells": list_of_spells_to_pick, "advance greek spells": list_of_advance_greek_spells,
+                             "Lerima_self": list_of_Lerima,
                              }
 cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
 cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)

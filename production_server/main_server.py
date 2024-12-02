@@ -386,6 +386,11 @@ def update_battle():
     if attacked_player == 2:
         card_picked = request.form
         if player1.put_card_on_field(card_picked) != 0:
+            if player1.put_card_on_field(card_picked) == 0:
+                if len(player1.battle_field) > 0:
+                    if player1.battle_field[-1].name in list_of_cards_that_discard_after_effect:
+                        player1.card_discard(list_of_cards_that_discard.get(player1.battle_field[-1].name),
+                                             player1.battle_field[-1])
             Player.battle_fields_effects(player1, player2)
             return redirect(url_for('battlefield_fight'))
         elif player1.put_card_on_field(card_picked) == 0:

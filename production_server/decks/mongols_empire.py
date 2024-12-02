@@ -1,5 +1,5 @@
-from clases.creatures import Creature
-from clases.spells import Spell
+from production_server.clases.creatures import Creature
+from production_server.clases.spells import Spell
 
 cards_for_mongol = [Spell(3, "Volley", "Deal 2 damage to all enemies", -5),
                     Spell(1, "Arrow shot", "Deal 2 damage to a enemy", -6),

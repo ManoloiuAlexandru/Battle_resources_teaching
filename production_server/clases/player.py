@@ -47,7 +47,8 @@ class Player:
                                 "Minions": {}, "Debt_in_game": 0,
                                 "Minions_that_died": {"my_minions": [], "enemy_minions": [],
                                                       "my_minions_that_died_this_turn": [],
-                                                      "enemy_minions_that_died_this_turn": []}}
+                                                      "enemy_minions_that_died_this_turn": []},
+                                "Spells_casted_this_turn": []}
         self.quest = None
         self.permanent_effect = []
 
@@ -432,7 +433,7 @@ class Player:
                             list_of_creature_that_summ_after_they_die.get(card.name)[1].remove(
                                 list_of_creature_that_summ_after_they_die.get(card.name)[1][i])
                             player.check_for_creature_with_effect_on("summ", player.battle_field[-1])
-            elif list_of_creature_that_do_somthing_when_die.get(card.name) == "draw":
+            elif "draw" in list_of_creature_that_do_somthing_when_die.get(card.name).split("&"):
                 for nr_cards in range(list_of_creature_that_draw_cards_when_die.get(card.name)):
                     if card.name in list_of_creature_that_draw_specific_cards_when_die:
                         try:
@@ -450,6 +451,9 @@ class Player:
                 player.buff_card_from_hand(random_minion, card)
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_to_hand":
                 player.add_random_card_to_hand(card)
+            if "heal" in list_of_creature_that_do_somthing_when_die.get(card.name).split("&")[1].split(":"):
+                if "kingdom" in list_of_creature_that_do_somthing_when_die.get(card.name).split(":"):
+                    player.heal_player(int(list_of_creature_that_do_somthing_when_die.get(card.name).split(":")[-1]))
             elif list_of_creature_that_do_somthing_when_die.get(card.name) == "add_armor":
                 player.armor += list_of_creature_that_add_to_armor_when_die.get(card.name)
             elif "deal_damage" in list_of_creature_that_do_somthing_when_die.get(card.name).split(":"):

@@ -65,6 +65,7 @@ def cancel_card(card, player):
 
 
 def reset_player(player, enemy_player):
+    player.dict_of_actions["Spells_casted_this_turn"].clear()
     player.turn = 0
     player.used_power = 0
     player.number_of_assaults = 1
@@ -224,24 +225,12 @@ def check_target(player1, player2, card_picked):
                     if player1.active_minion.name in list_of_creature_that_debuff:
                         debuff_creature(player1, player2, card_picked)
                     return 1
+        if player1.incoming_spell is not None:
+            if player1.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy:
+                return check_target_for_self_cast(player1, player2, card_picked)
         for card in player1.battle_field:
             try:
                 if card_picked.get(card.name_for_html) is not None:
-                    # if player2.incoming_spell:
-                    #     if player2.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy and \
-                    #             list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #                 player2.incoming_spell.name] is False:
-                    #         return 0
-                    # if player1.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy and \
-                    #         list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #             player1.incoming_spell.name] is False:
-                    #     list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #         player1.incoming_spell.name] = True
-                    #     list_of_spells_that_target_multiple_targets[player1.incoming_spell.name] -= 1
-                    # if player1.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy and \
-                    #         list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #             player1.incoming_spell.name] is True:
-                    #     return 0
                     return 1
             except Exception as e:
                 print("Error in check_target")
@@ -249,21 +238,6 @@ def check_target(player1, player2, card_picked):
         for card in player2.battle_field:
             try:
                 if card_picked.get(card.name_for_html) is not None:
-                    # if player1.incoming_spell:
-                    #     if player1.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy and \
-                    #             list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #                 player1.incoming_spell.name] is False:
-                    #         return 0
-                    # if player2.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy and \
-                    #         list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #             player2.incoming_spell.name] is False:
-                    #     list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #         player2.incoming_spell.name] = True
-                    #     list_of_spells_that_target_multiple_targets[player2.incoming_spell.name] -= 1
-                    # if player2.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy and \
-                    #         list_of_spells_that_do_damage_to_your_minion_then_the_enemy[
-                    #             player2.incoming_spell.name] is True:
-                    #     return 0
                     return 1
 
             except Exception as e:
@@ -322,7 +296,7 @@ def cast_spell(player1, player2, card_picked):
             player1.draw_card()
     if player1.incoming_spell.name in list_of_healing_spells:
         heal_creature(card_picked, player1, list_of_healing_spells.get(player1.incoming_spell.name))
-    if player1.incoming_spell.name == "Kill":
+    if player1.incoming_spell.name in list_of_spells_that_kill_the_target:
         destroy_minion = 1
     if player1.incoming_spell.name in list_of_self_target:
         for card in player1.battle_field:
@@ -707,16 +681,20 @@ def cast_spell_from_player(player1, player2, card_picked):
     if player1.incoming_spell.name in list_of_spells_with_no_target:
         general_spells(player1, player2, player1.incoming_spell.name)
         player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
+        player1.dict_of_actions["Spells_casted_this_turn"].append(player1.incoming_spell)
         if player1.incoming_spell.name in list_of_cards_that_discard_after_effect:
             player1.card_discard(list_of_cards_that_discard.get(player1.incoming_spell.name), player1.incoming_spell)
         player1.incoming_action = 0
+        check_for_spell_reset(player1)
         player1.incoming_spell = None
     elif card_picked.get(
             player2.name) is not None and player1.incoming_spell.name not in list_of_dmg_spells_but_not_to_player:
         player2.hp -= list_of_dmg_spells.get(player1.incoming_spell.name)
         cast_spell(player1, player2, card_picked)
         player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
+        player1.dict_of_actions["Spells_casted_this_turn"].append(player1.incoming_spell)
         player1.incoming_action = 0
+        check_for_spell_reset(player1)
         player1.incoming_spell = None
     elif check_target(player1, player2, card_picked) == 0:
         player1.problem = "You need to select a card"
@@ -724,12 +702,18 @@ def cast_spell_from_player(player1, player2, card_picked):
         cast_spell(player1, player2, card_picked)
         Player.battle_fields_effects(player1, player2)
         player1.dict_of_actions["Spells_casted"].append(player1.incoming_spell)
+        player1.dict_of_actions["Spells_casted_this_turn"].append(player1.incoming_spell)
         if player1.incoming_spell.name in list_of_spells_that_target_multiple_targets and \
                 list_of_spells_that_target_multiple_targets[player1.incoming_spell.name] > 0:
             player1.incoming_action = 3
             list_of_spells_that_target_multiple_targets[player1.incoming_spell.name] -= 1
+            if list_of_spells_that_target_multiple_targets[player1.incoming_spell.name] == 0:
+                player1.incoming_action = 0
+                check_for_spell_reset(player1)
+                player1.incoming_spell = None
         else:
             player1.incoming_action = 0
+            check_for_spell_reset(player1)
             player1.incoming_spell = None
     Player.clean_board(player1, player2)
 
@@ -936,3 +920,38 @@ def freeze_target(player, enemy_player, card):
         if card.get(creature.name_for_html) is not None:
             creature.knocked_down_time = 1
             creature.exhausted = creature.charge_check()
+
+
+def check_target_for_self_cast(player1, player2, card_picked):
+    if player1.incoming_spell is not None:
+        if player1.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy:
+            for creature in player1.battle_field:
+                if card_picked.get(creature.name_for_html) is not None:
+                    if list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                        'own_minion_picked'] is False:
+                        list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                            'own_minion_picked'] = True
+                        return 1
+            for creature in player2.battle_field:
+                if card_picked.get(creature.name_for_html) is not None:
+                    if list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                        'enemy_minion_picked'] is False and \
+                            list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                                'own_minion_picked'] is True:
+                        list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                            'enemy_minion_picked'] = True
+                        return 1
+    return 0
+
+
+def check_for_spell_reset(player1):
+    if player1.incoming_spell.name in list_of_spells_that_do_damage_to_your_minion_then_the_enemy:
+        if list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+            "own_minion_picked"] is True and \
+                list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                    "enemy_minion_picked"] is True:
+            list_of_spells_that_target_multiple_targets[player1.incoming_spell.name] = 2
+            list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                "own_minion_picked"] = False
+            list_of_spells_that_do_damage_to_your_minion_then_the_enemy[player1.incoming_spell.name][
+                "enemy_minion_picked"] = False

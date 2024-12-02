@@ -1,5 +1,5 @@
-from clases.creatures import Creature
-from clases.spells import Spell
+from production_server.clases.creatures import Creature
+from production_server.clases.spells import Spell
 
 mesopotamia_empire = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                       Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
@@ -46,6 +46,11 @@ mesopotamia_empire = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                       Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", -323),
                       Spell(5, "Cataclysm", "Destroy ALL minions. Discard 2 cards", -324),
                       Creature(1, "Ancient Champion", 1, 1, "Whenever you play an ancient gain +1/+1", "ancient", -327),
+                      Spell(1, "Collateral Victim", "Destroy a friendly minion to destroy an enemy minion", -328),
+                      Creature(2, "Selfish Soldier", 2, 2, "Draw a card.Discard a card", "ancient", -330),
+                      Spell(1, "I want actions not words",
+                            "Destory 2 creatures, cast 2 spells and deal 2 damage to the enemy kingdom in one turn Reward:Lerima, Persistent One",
+                            -331),
                       ]
 mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Creature(1, "City Gate Guard", 3, 1, "Guard", "ancient", -104),
@@ -91,4 +96,9 @@ mesopotamia_show = [Spell(8, "Epidemic", "Destroy ALL minions", -32),
                     Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", -323),
                     Spell(5, "Cataclysm", "Destroy ALL minions. Discard 2 cards", -324),
                     Creature(1, "Ancient Champion", 1, 1, "Whenever you play an ancient gain +1/+1", "ancient", -327),
+                    Spell(1, "Collateral Victim", "Destroy a friendly minion to destroy an enemy minion", -328),
+                    Creature(2, "Selfish Soldier", 2, 2, "Draw a card.Discard a card", "ancient", -330),
+                    Spell(1, "I want actions not words",
+                          "Destory 2 creatures, cast 2 spells and deal 2 damage to the enemy kingdom in one turn Reward:Lerima, Persistent One",
+                          -331),
                     ]
