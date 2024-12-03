@@ -41,7 +41,7 @@ class Spell:
             elif self.name in list_of_dmg_spells:
                 return "enemy"
         except Exception as e:
-            print(e)
+            print("Error in target_options")
 
     def mana_cost_reduction(self, amount):
         if self.mana_cost - amount < 0:

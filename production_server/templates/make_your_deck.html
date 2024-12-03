@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href='/static/styles.css'/>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename = 'JS_code.js') }}"></script>
     <meta charset="UTF-8">
     <title>Deck creation</title>
 </head>
 <body class="library">
+<button onclick="window.location.href='/make_your_own_deck?empire={{empire}}&page={{page-1}}'">Previous</button>
+<button onclick="window.location.href='/make_your_own_deck?empire={{empire}}&page={{page+1}}'">Next</button>
 <a href="{{url_for('game_options')}}">Back</a>
 <div class="deck_creation">
     <div class="my_own_deck">
-        <form action="/remove_card" method="post">
+        <form action="/remove_card?page={{page}}" method="post">
         {%for your_card in your_deck%}
         <button class="card_from_your_deck" id={{your_card}} name={{"_".join(your_card.split())}}>
             <span>{{your_deck[your_card][1]}} X </span>
@@ -22,9 +26,16 @@
         {%endfor%}
         </form>
     </div>
-
+<form action="/find_make_your_own_deck" method="post">
+    <p>Mana:</p>
+    <input id="mana_filter" name="mana_filter" type="number"/>
+    <button>Find</button>
+    <p>Keywords:</p>
+    <input id="attrib" name="attrib"/>
+    <button>Find</button>
+</form>
     <div class="player_hand_library space-kids">
-        <form action="/deck_cards" method="post">
+        <form action="/deck_cards?page={{page}}" method="post">
             {%for card in library%}
             <button class="card_in_library" id={{card.card_id}} name={{card.name_for_html}}>
             <span style="display:flex">

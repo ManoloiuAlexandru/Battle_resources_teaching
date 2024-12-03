@@ -39,6 +39,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
         if player1 is None:
             player1 = Player(player1_name)
     except Exception as e:
+        print("Error in game_difficulty")
         player1 = Player(player1_name)
     player1.empire = " ".join(player1_empire.split("_"))
     player1.hand = []
@@ -48,6 +49,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             if len(your_deck) == 0:
                 your_deck = get_old_deck()[0]
         except Exception as e:
+            print("Error in game_difficulty")
             player1.make_deck(get_old_deck()[0])
         player1.make_deck(your_deck)
     else:
@@ -67,6 +69,7 @@ def game_difficulty(player1_name, player2_name, play1_deck, player2_deck, diffic
             player2.make_deck(dict_of_decks.get(player2_deck))
             modes_alteration(mode, player1, player2, dict_of_decks)
     except Exception as e:
+        print("Error in game_difficulty")
         mode = ""
         print(e)
         player2.make_deck(dict_of_decks.get(player2_deck))
@@ -121,6 +124,7 @@ def game_start(player1_name, player2_name, play1_deck, player2_deck, difficulty,
             player1, player2 = game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty,
                                                player1_empire, player2_empire)
     except Exception as e:
+        print("Error in game_start")
         player1, player2 = game_difficulty(player1_name, player2_name, play1_deck, player2_deck, difficulty,
                                            player1_empire, player2_empire)
 
@@ -134,6 +138,7 @@ def game_options():
         if your_deck is None:
             your_deck = []
     except Exception as e:
+        print("Error in game_options")
         your_deck = []
     global show_deck
     show_deck = {}
@@ -156,14 +161,40 @@ def rules():
 
 @app.route("/make_your_own_deck", methods=["POST", "GET"])
 def make_your_own_deck():
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
     global show_deck
     try:
-        return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=empire_decks[empire])
+        return render_template("make_your_deck.html", page=page, your_deck=show_deck,
+                               library=empire_decks[empire][page * 21:(page + 1) * 21])
     except Exception as e:
+        print("Error in make_your_own_deck")
         show_deck = {}
-        return render_template("make_your_deck.html", your_deck=show_deck,
-                               library=cards_that_are_in_the_game_for_all)
+        return render_template("make_your_deck.html", page=page, your_deck=show_deck,
+                               library=cards_that_are_in_the_game_for_all[page * 21:(page + 1) * 21])
+
+
+@app.route("/find_make_your_own_deck", methods=["POST", "GET"])
+def find_make_your_own_deck():
+    filter_params = {}
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
+    mana = request.form.get("mana_filter")
+    attrib = request.form.get("attrib")
+    try:
+        filter_params["mana"] = int(mana)
+    except Exception as e:
+        filter_params["mana"] = 99
+    filter_params["attrib"] = attrib
+    filtered_cards = return_list_of_filtered_library(empire_decks[empire], filter_params)
+    return render_template("make_your_deck.html", page=page, your_deck=show_deck,
+                           library=filtered_cards[page * 21:(page + 1) * 21])
 
 
 @app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
@@ -175,15 +206,25 @@ def make_your_own_deck_pick_empire():
 
 @app.route("/update_deck", methods=["POST", "GET"])
 def update_deck():
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
     global your_deck
     global empire
     global show_deck
+    print(page)
     try:
         your_deck = get_old_deck()[0]
         empire = get_old_deck()[1]
         show_deck = make_html_deck(your_deck, show_deck)
-        return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+        print(page)
+        return render_template("update_deck.html", page=page, your_deck=show_deck,
+                               library=empire_decks[empire][page * 21:(page + 1) * 21])
     except Exception as e:
+        print(e)
+        print("Error in update_deck")
         return render_template("game_option.html")
 
 
@@ -232,11 +273,12 @@ def personal_troops():
 def send_empire():
     global empire
     empire = request.form.get("your_empire")
-    return redirect(url_for('make_your_own_deck', empire=empire))
+    return redirect(url_for('make_your_own_deck', empire=empire, page=0))
 
 
 @app.route("/deck_cards", methods=["POST", "GET"])
 def make_deck():
+    page = request.args.get("page", type=int, default=0)
     global your_deck
     global show_deck
     global index
@@ -260,12 +302,14 @@ def make_deck():
         else:
             deck_to_pick = cards_that_are_in_the_game_for_all
     except Exception as e:
+        print("Error in make_deck")
         empire = ""
         deck_to_pick = all_cards_in_game
     try:
         if mode:
             pass
     except Exception as e:
+        print("Error in make_deck")
         mode = ""
     cards_name = request.form
     for card in deck_to_pick:
@@ -285,9 +329,9 @@ def make_deck():
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
     if empire == "":
-        return redirect(url_for('chaotic_history', show_deck=show_deck))
+        return redirect(url_for('chaotic_history', page=page, show_deck=show_deck))
     else:
-        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+        return redirect(url_for('make_your_own_deck', page=page, show_deck=show_deck))
 
 
 @app.route("/play", methods=["POST", "GET"])
@@ -315,6 +359,7 @@ def personal_deck():
         if mode != "":
             return redirect(url_for('modes'))
     except Exception as e:
+        print("Error in personal_deck")
         print(e)
     return redirect(url_for('game_options'))
 
@@ -328,6 +373,7 @@ def modes():
         if your_deck is None:
             your_deck = []
     except Exception as e:
+        print("Error in modes")
         your_deck = []
     global show_deck
     show_deck = {}
@@ -336,6 +382,11 @@ def modes():
 
 @app.route("/remove_card", methods=["POST", "GET"])
 def remove_card_from_deck():
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
     global show_deck
     cards_name = request.form
     for card in your_deck[:]:
@@ -348,14 +399,38 @@ def remove_card_from_deck():
                 show_deck.pop(card.name)
     show_deck = make_html_deck(your_deck, show_deck)
     if empire != "":
-        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+        return redirect(url_for('make_your_own_deck', page=page, show_deck=show_deck))
     else:
-        return redirect(url_for('chaotic_history', show_deck=show_deck))
+        return redirect(url_for('chaotic_history', page=page, show_deck=show_deck))
 
 
-@app.route("/library")
+@app.route("/library", methods=["POST", "GET"])
 def show_library():
-    return render_template("library.html", library=all_cards_in_game)
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
+    return render_template("library.html", page=page, library=all_cards_in_game[page * 21:(page + 1) * 21])
+
+
+@app.route("/find", methods=["POST", "GET"])
+def show_library_filtered():
+    filter_params = {}
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
+    mana = request.form.get("mana_filter")
+    attrib = request.form.get("attrib")
+    try:
+        filter_params["mana"] = int(mana)
+    except Exception as e:
+        filter_params["mana"] = 99
+    filter_params["attrib"] = attrib
+    filtered_cards = return_list_of_filtered_library(all_cards_in_game, filter_params)
+    return render_template("library.html", page=page, library=filtered_cards[page * 21:(page + 1) * 21])
 
 
 @app.route("/update_battle_field", methods=["POST", "GET"])
@@ -365,6 +440,11 @@ def update_battle():
     if attacked_player == 2:
         card_picked = request.form
         if player1.put_card_on_field(card_picked) != 0:
+            if player1.put_card_on_field(card_picked) == 0:
+                if len(player1.battle_field) > 0:
+                    if player1.battle_field[-1].name in list_of_cards_that_discard_after_effect:
+                        player1.card_discard(list_of_cards_that_discard.get(player1.battle_field[-1].name),
+                                             player1.battle_field[-1])
             Player.battle_fields_effects(player1, player2)
             return redirect(url_for('battlefield_fight'))
         elif player1.put_card_on_field(card_picked) == 0:
@@ -414,12 +494,30 @@ def battlefield_fight():
                 battle(current_card, card, player1, player2)
             player1.turn = 1
             current_card = None
+        elif (card is not None and "Rush" in current_card.description.split()
+              and "Can't be blocked" in current_card.description):
+            if current_card.number_of_attacks >= 1:
+                battle(current_card, card, player1, player2)
+            player1.turn = 1
+            current_card = None
         elif (card is not None or card_picked.get(player2.name) is not None) and current_card.exhausted is True:
             player1.turn = 1
+        elif card is not None and "Can't be blocked" in current_card.description:
+            battle(current_card, card, player1, player2)
+            player1.turn = 1
+            current_card = None
         elif card is not None and guard_checking(player2, card) == 1:
             battle(current_card, card, player1, player2)
             player1.turn = 1
             current_card = None
+        elif card_picked.get(player2.name) is not None and "Can't be blocked" in current_card.description:
+            current_card.exhausted = True
+            player2, current_card = damage_to_player(player2, current_card)
+            player_selected = True
+            player1.turn = 1
+            current_card = None
+            if player2.check_player() == 0:
+                return render_template("END.html", player=player2)
         elif card_picked.get(player2.name) is not None and guard_checking(player2,
                                                                           card) == 1:
             current_card.exhausted = True
@@ -441,6 +539,15 @@ def battlefield_fight():
         elif card is not None and guard_checking(player1, card) == 1:
             battle(current_card, card, player2, player1)
             player2.turn = 1
+        elif card is not None and "Can't be blocked" in current_card.description():
+            battle(current_card, card, player2, player1)
+            player2.turn = 1
+        elif card_picked.get(player1.name) is not None and "Can't be blocked" in current_card.description():
+            player1, current_card = damage_to_player(player1, current_card)
+            player2.turn = 1
+            player_selected = True
+            if player1.check_player() == 0:
+                return render_template("END.html", player=player1)
         elif card_picked.get(player1.name) is not None and guard_checking(player1, card) == 1:
             player1, current_card = damage_to_player(player1, current_card)
             player2.turn = 1

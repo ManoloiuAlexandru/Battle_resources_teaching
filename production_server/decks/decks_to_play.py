@@ -10,20 +10,10 @@ from production_server.decks.mongols_empire import cards_for_mongol_empire, mong
 from production_server.decks.roman_empire import roman_empire
 
 bot_deck = [
+    Creature(0, "as", 99, 99, "Guard", "soldier", 999)
 ]
-demo_deck = [
-    # Creature(1, "Armored Librarian", 1, 1, "When you cast a spell on this get +1/+1 and armored", "soldier", 1),
-    # Spell(2, "Savage Empire", "Give a creature +2/0. Heal the empire for 2. Summon 2 1/1 dogs", 2),
-    # Spell(2, "Light of Hope", "Give a creature +2/+2. Heal the empire for 3", 3),
-    # Creature(1, "Tax collector", 1, 1, "Whenever you summon a creature heal the empire for 1", "worker", 4),
-    # Spell(1, "Assassin's payment", "Discard a card and kill an enemy minion", 5),
-    Spell(0, "Cataclysm", "Destroy ALL minions. Discard 2 cards", 6),
-    Spell(0, "Cataclysm", "Destroy ALL minions. Discard 2 cards", 7),
-    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 7),
-    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 8),
-    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 9),
-    # Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", 10),
-]
+
+demo_deck = []
 
 list_of_tactics_to_pick = [
     [Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258)],
@@ -226,6 +216,10 @@ list_of_guards = [[Creature(6, 'Templar Knight', 7, 5, "Guard", "knight", -2)],
                   [Creature(3, "Ancient Army Guard", 5, 2, "Guard when you discard this summon it", "ancient", -205)],
 
                   ]
+list_of_Lerima = [[Creature(5, "Lerima,Persistent One", 10, 10,
+                            "Charge Desperate return this to your hand",
+                            "legend",
+                            -999)]]
 list_of_spells_to_pick = [[Spell(4, "Arbalest Shot", "Deal 3 damage and draw a card", -48)],
                           [Spell(2, "Call of the Khan", "Draw a card if it has Charge reduce the cost to 0", -46)],
                           [Spell(5, "Call of the Emperor", "Draw 3 cards and reduce there mana cost by 1", -47)],
@@ -260,14 +254,15 @@ list_of_advance_greek_spells = [[Spell(4, "Arbalest Flame Shot", "Deal 8 damage"
 list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_debt_card, "soldier": list_of_soldier,
                              "animal": list_of_animals, "holy_roman": list_of_holy_roman, "knights": list_of_knights,
                              "guards": list_of_guards, "tactics": list_of_tactics_to_pick, "workers": list_of_workers,
-                             "spells": list_of_spells_to_pick, "advance greek spells": list_of_advance_greek_spells
+                             "spells": list_of_spells_to_pick, "advance greek spells": list_of_advance_greek_spells,
+                             "Lerima_self": list_of_Lerima,
                              }
-cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
-mesopotamia_empire.extend(cards_that_are_in_the_game_for_all)
-roman_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_greek_empire.extend(cards_that_are_in_the_game_for_all)
+cards_for_byzantine_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_byzantine_empire))
+cards_for_holy_roman_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_holy_roman_empire))
+cards_for_mongol_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_mongol_empire))
+mesopotamia_empire += list(set(cards_that_are_in_the_game_for_all) - set(mesopotamia_empire))
+roman_empire += list(set(cards_that_are_in_the_game_for_all) - set(roman_empire))
+cards_for_greek_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_greek_empire))
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", 911),

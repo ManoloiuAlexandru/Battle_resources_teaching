@@ -73,14 +73,16 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Charles V": (0, 0, "Rush Guard Armored Rebuilder"), "Scavenger Hyena": (1, 2, ""),
                               "Lndrau Aaurentis": (0, 0, "Guard"), "Ephix Maximus": (0, 2, "Charge"),
                               "Payed Guard": (3, 3, ""), "Veteran Knight": (1, 1, ""), "Henry III": (0, 0, "Armored"),
-                              "Church Helper": (2, 1, ""), "Armored Librarian": (1, 1, "Armored")}
+                              "Church Helper": (2, 1, ""), "Armored Librarian": (1, 1, "Armored"),
+                              "Ancient Champion": (1, 1, ""), "Empire Believer": (1, 1, "")
+                              }
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
 list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "War elephant": (0, 1, ""),
                                                   "War Eagle": (0, 1, ""),
                                                   "King Saragon of Akkad": (2, 2, "ancient")}
-list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
+list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal creature"),
                                                 "Enthusiastic Archer": ("damage:random:enemies:all:1", "summ all"),
                                                 "New Recruit": ("self_buff", "summ soldier"),
                                                 "Wondering Scribe": ("draw", "cast spell"),
@@ -93,17 +95,22 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
                                                 "Church Helper": ("buff new summ", "summ 1 hp minion"),
                                                 "Tolui": ("damage:enemy_hero:spell_cost", "cast spell"),
                                                 "Armored Librarian": ("self_buff", "cast spell:self"),
-                                                "Tax collector": ("heal:empire:1", "summ all")
+                                                "Tax collector": ("heal:empire:1", "summ all"),
+                                                "Ancient Champion": ("self_buff", "summ ancient"),
+                                                "Empire Believer": ("self_buff", "heal kingdom"),
+                                                "Church Story Teller": (
+                                                    "draw:heal:empire:1", "buff creature with spell"),
+                                                "Knight of the Coin": ("draw", "attacking")
                                                 }
 list_of_creature_that_are_effected_by_action_once = {"Soldier Architect": 0}
-list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
+list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1, "Knight of the Coin": 2, "Church Story Teller": 1}
 list_of_creature_that_add_armor_on_action = {"Roman Architect": 1, "Soldier Architect": 2, "Claudius": 10}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
                                     "Mesopotamia Scholar": 1, "Landlord": 3, "Mercenary Recruiter": 1,
                                     "Byzantium Engineer": 1, "Tiberius": 3, "War Crier": 1, "Godfrey of Bouillon": 3,
                                     "Battle Tactician": 1, "Heraclius": 0, "Trained Dog": 1,
-                                    "Wandering Bard": 1}
+                                    "Wandering Bard": 1, "Selfish Soldier": 1}
 list_of_creature_that_draw_specific_cards = {
     "Trained Dog": (["Creature"], ["Rush"], [""]),
     "Battle Tactician": (["Spell"], ["Tactic"], [""]),
@@ -224,25 +231,26 @@ list_of_creature_that_do_somthing_when_die = {"Lost Sheep": "summ", "Lost Scribe
                                               "Dog Pup": "add_to_deck",
                                               "Louis the Pious": "deal_damage:all",
                                               "General Belisarius": "add_to_deck",
-                                              "Caligula": "add_to_deck"}
+                                              "Caligula": "add_to_deck", "Cow": "draw&heal:kingdom:1",
+                                              "Lerima,Persistent One": "add_to_hand"}
 list_of_creature_that_do_damage_when_die = {}
-list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1}
+list_of_creature_that_add_to_hand_when_die = {"Lure animal": 1, "Inspiring knight": 1, "Lerima,Persistent One": 1}
 list_of_creature_that_add_to_armor_when_die = {"Lost Builder": 3, "Thief Camp Guard": 8}
-list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1}
+list_of_creature_that_draw_cards_when_die = {"Lost Scribe": 1, "Armored Horse": 1, "Big Game Beast": 1, "Cow": 1}
 list_of_creature_that_draw_specific_cards_when_die = {"Armored Horse": (["Spell"], [""], [""]),
                                                       "Big Game Beast": (["Creature"], ["animal"], [""])}
 list_of_creature_that_will_do_damage_to_your_kingdom = {"Mesopotamia Scholar": 2, "Military Guard": 2, "Lu": 2,
                                                         "Heretic Knight": 2}
 list_of_creature_that_can_make_kingdom_immun = {"King Saragon of Akkad"}
-list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2, "Assassin's payment": 1}
-list_of_cards_that_discard_after_effect = {"Cataclysm"}
+list_of_cards_that_discard = {"Assyrian Horserider": 2, "Cataclysm": 2, "Assassin's payment": 1, "Selfish Soldier": 1}
+list_of_cards_that_discard_after_effect = {"Cataclysm", "Selfish Soldier"}
 list_of_creature_that_have_effect_when_discarded = {"Prisoner of War", "Ancient Army Guard"}
 legendary_cards = ["Richard the Lionheart", "Frederick Barbarossa", "Basil II", "Jochi", "Joan of Arc",
                    "King Saragon of Akkad", "Carcassonne", "Apollodorus of Damascus", "Tiberius", "Nero", "Charles V",
                    "Julius Caesar", "Godfrey of Bouillon", "Charles IV", "Hammurabi", "Louis the Pious",
                    "Get back to work", "We don't take it personally", "Kublai", "Imperial Drama", "Sir William Marshal",
                    "General Belisarius", "Heraclius", "Caligula", "Alexander I", "Pyrrho of Elis", "Tolui",
-                   "Baldwin of Antioch"]
+                   "Baldwin of Antioch", "I want actions not words"]
 list_of_creature_that_are_affected_by_battle_field = {"Peasant Fighter": ("buff", "worker on field")}
 list_of_creature_that_debuff = {"Voice of the emperor": (3, 3, " "), "Bailiff": (-1, 1, " "),
                                 "Louis the Pious": (1, -1, " "), "Kublai": (1, -1, " "),
@@ -277,7 +285,8 @@ list_of_cards_that_add_cards_to_your_hand = {"Mercenary employer": (1, "mercenar
 list_of_cards_that_add_cards_to_your_hand_by_action = {"Worker Recruiter": (1, "workers"),
                                                        "Pyrrho of Elis": (1, "spells")}
 list_of_creature_that_add_cards_to_your_hand_when_die = {"Lure animal": (1, "animal"),
-                                                         "Inspiring knight": (1, "knights")}
+                                                         "Inspiring knight": (1, "knights"),
+                                                         "Lerima,Persistent One": (1, "Lerima_self")}
 list_of_creature_that_add_specific_card_to_your_hand = {
     "Army Cook": [Creature(1, "Kaiserliche", 1, 1, "", "soldier", generate_random_int()) for i in range(0, 40)],
     "Sparatan Auxiliars": [Creature(1, "Auxiliars", 2, 1, "", "soldier", generate_random_int()) for i in
@@ -302,6 +311,7 @@ list_of_cards_that_check_your_kingdom = {"Unknown Territory": ("armor", "spend:a
                                          "Hammurabi": ("deck", "check:Resources", "summ"),
                                          "Heraclius": ("debt", "check:1", "draw:all"),
                                          "Veteran Tactician": ("tactic", "check:1", "change:dmg:6"),
+                                         "Last Empire Believer": ("health", "check:-X", "buff")
                                          }
 list_of_creature_that_do_damage_to_all_other_creatures = {"Limmu": 0, "Mercenary Lieutenant": 1}
 list_of_creature_that_do_damage_to_all_other_creatures_and_kingdoms = {"Ancient Law Enforcer": 3,
@@ -362,12 +372,13 @@ list_of_spells = ["Volley", "Kill", "Arrow shot", "Personal Guard", "Bandage", "
                   "Cultural Empire", "Net Throw", "Ballestris Volly", "Elephants stampede", "Catapult Shot",
                   "Lagoras discovery", "Scrolls of war", "Arbalest Flame Shot", "Gladiator Net Throw",
                   "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley", "Auxiliar Volley",
-                  "Wild Training", "Savage Empire", "Light of Hope", "Assassin's payment"]
+                  "Wild Training", "Savage Empire", "Light of Hope", "Assassin's payment", "Will of God",
+                  "Collateral Victim", "I want actions not words"]
 list_of_self_target = {"Personal Guard": "Guard", "Bandage": "", "Bandages": "", "Horse riding lessons": "Charge",
                        "Knight's training": "", "Chivalry and Honor": "", "Guard Duty": "", "For the Khan": "Charge",
                        "Strength in numbers": "", "Call of God": "", "Emperor's Hope": "", "Emperor's Will": "",
                        "Whip hit": "", "Fall Trap": "", "Shield of Honor": "", "Church Chosen": "", "War Cry": "",
-                       "Savage Empire": "", "Light of Hope": ""}
+                       "Savage Empire": "", "Light of Hope": "", "Will of God": "", "Collateral Victim": ""}
 list_of_healing_spells = {"Bandage": 4, "Bandages": 99, "Call of God": 8, "Emperor's Hope": 8}
 list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100, "Arbalest Shot": 3,
                       "Horse raiding shot": 2, "Landslide": 7, "Rain of Arrows": 100, "Pilum Throw": 3, "Tag Team": 3,
@@ -382,16 +393,19 @@ list_of_dmg_spells = {"Arrow shot": 2, "Epidemic": 100, "Volley": 2, "Kill": 100
                       "Mercenary arrow shot": 2, "Quick Arrow": 4, "Well Trained Pet": 3, "Swamped": 99, "War Cry": 1,
                       "Flaming arrow": 6, "Spartan Volley": 5, "Net Throw": 3, "Ballestris Volly": 2,
                       "Catapult Shot": 10, "Scrolls of war": 2, "Arbalest Flame Shot": 8, "Gladiator Net Throw": 3,
-                      "Catapult Volley": 8, "Kings Guard Volley": 2, "Auxiliar Volley": 1, "Assassin's payment": 100
+                      "Catapult Volley": 8, "Kings Guard Volley": 2, "Auxiliar Volley": 1, "Assassin's payment": 100,
+                      "Collateral Victim": 100
                       }
 list_of_dmg_spells_but_not_to_player = {"Tag team", "Mercenary Defences", "Whip hit", "Ancient Arrow Shot",
-                                        "Mercenary arrow shot", "Quick Arrow", "Kill", "Assassin's payment"}
+                                        "Mercenary arrow shot", "Quick Arrow", "Kill", "Assassin's payment",
+                                        "Collateral Victim"}
+list_of_spells_that_kill_the_target = {"Kill", "Assassin's payment", "Collateral Victim"}
 list_of_resetting_spells = ["Kill", "Arrow shot", "Personal Guard", "Bandage", "Bandages", "Horse riding lessons",
                             "Knight's training", "Arbalest Shot", "Chivalry and Honor", "Pilum Throw",
                             "Strength in numbers", "Tag Team", "Emperor's Will", "Execute", "Shield of Honor",
                             "Ancient Arrow Shot", "Mercenary arrow shot", "Quick Arrow", "Swamped", "War Cry",
                             "Flaming arrow", "Net Throw", "Catapult Shot", "Arbalest Flame Shot", "Gladiator Net Throw",
-                            "Savage Empire", "Light of Hope"]
+                            "Savage Empire", "Light of Hope", "Assassin's payment", "Collateral Victim"]
 list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic", "Volley", "Peace Treaty",
                                  "Wealthy Empire", "Ancient Empire", "Call of the Khan", "Call of the Emperor",
                                  "Landslide", "Rain of Arrows", "Roman Formation Circular", "For the Khan",
@@ -408,7 +422,7 @@ list_of_spells_with_no_target = ["Bodyguards", "Feudal Obligations", "Epidemic",
                                  "Fast Mercenary Recruiting", "Second Charge", "Greek Scrolls", "Spartan Volley",
                                  "Cultural Empire", "Ballestris Volly", "Elephants stampede", "Lagoras discovery",
                                  "King Recruiting", "Catapult Volley", "The Kings Charge", "Kings Guard Volley",
-                                 "Auxiliar Volley", "Wild Training"]
+                                 "Auxiliar Volley", "Wild Training", "I want actions not words"]
 list_of_spells_that_summon = {"Wealthy Empire": ("", 2), "Bodyguards": ("Guard", 2), "Boarder Guards": ("", 0),
                               "Fast Conscription": ("", 0), "Animal Battle Companion": ("", 0), "War Pack": ("", 0),
                               "Tag Team": ("", 0), "Call of God": ("", 0), "Mercenaries Reinforcements": ("", 0),
@@ -430,7 +444,8 @@ list_of_buff_spells = {"Bandage": (0, 0, ""), "Bandages": (0, 0, ""), "Horse rid
                        "Whip hit": (0, 2, ""), "Shield of Honor": (0, 3, "Armored"), "Avenge": (2, 3, ""),
                        "Hidden Armor": (0, 0, "Armored"), "Church Chosen": (5, 5, "Armored"), "Knock down": (0, 0, ""),
                        "War Cry": (3, 3, ""), "Net Throw": (0, 0, ""), "Gladiator Net Throw": (0, 0, ""),
-                       "Wild Training": (3, 3, ""), "Savage Empire": (0, 2, ""), "Light of Hope": (2, 2, "")
+                       "Wild Training": (3, 3, ""), "Savage Empire": (0, 2, ""), "Light of Hope": (2, 2, ""),
+                       "Will of God": (1, 1, " Can't be blocked ")
                        }
 list_of_spells_that_reduce_mana = {"Call of the Khan": ("Charge", 100), "Call of the Emperor": ("", 1),
                                    "Old Tactics": ("", 3), "Greek Scrolls": ("", 2)}
@@ -501,7 +516,12 @@ list_of_quests = {"We don't take it personally": {"damage:taken_and_done:kingdom
     "Imperial Drama": {"damage:taken_and_done:kingdom:0:4:add_to_hand": {
         1: Creature(5, "Lenxaadra, Queen of Drama", 5, 5, "Silence all enemy minions from deck,hand and battlefield",
                     "legend",
-                    generate_random_int()) for i in range(0, 10)}}
+                    generate_random_int()) for i in range(0, 10)}},
+    "I want actions not words": {"damage:taken_and_done:kingdom:0:2:add_to_hand": {
+        1: Creature(5, "Lerima,Persistent One", 10, 10,
+                    "Charge Desperate return this to your hand",
+                    "legend",
+                    generate_random_int()) for i in range(0, 10)}},
 }
 list_of_spells_that_add_mana_cost = {"Snare Trap": 2}
 list_of_cards_that_send_back_to_hand = {"Snare Trap": 1}
@@ -518,6 +538,9 @@ list_of_cards_that_change_hero_power = {"Baldwin of Antioch": {"Holy Roman Empir
 list_of_permanent_effect = {"Henry III": {"Kaiserliche": "Armored"}}
 list_of_spells_that_buff_drawn_cards = {"Wild Training"}
 list_of_spells_that_only_heal_player = {"Savage Empire": 2, "Light of Hope": 3}
+list_of_spells_that_target_multiple_targets = {"Collateral Victim": 2}
+list_of_spells_that_do_damage_to_your_minion_then_the_enemy = {
+    "Collateral Victim": {"own_minion_picked": False, "enemy_minion_picked": False}}
 """
 Defence
 """
