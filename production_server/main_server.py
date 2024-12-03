@@ -164,17 +164,37 @@ def make_your_own_deck():
     page = request.args.get("page", type=int, default=0)
     if page < 0:
         page = 0
-    elif page > len(all_cards_in_game) // 28 + 1:
-        page = len(all_cards_in_game) // 28 + 1
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
     global show_deck
     try:
         return render_template("make_your_deck.html", page=page, your_deck=show_deck,
-                               library=empire_decks[empire][page * 28:(page + 1) * 28])
+                               library=empire_decks[empire][page * 21:(page + 1) * 21])
     except Exception as e:
         print("Error in make_your_own_deck")
         show_deck = {}
         return render_template("make_your_deck.html", page=page, your_deck=show_deck,
-                               library=cards_that_are_in_the_game_for_all[page * 28:(page + 1) * 28])
+                               library=cards_that_are_in_the_game_for_all[page * 21:(page + 1) * 21])
+
+
+@app.route("/find_make_your_own_deck", methods=["POST", "GET"])
+def find_make_your_own_deck():
+    filter_params = {}
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
+    mana = request.form.get("mana_filter")
+    attrib = request.form.get("attrib")
+    try:
+        filter_params["mana"] = int(mana)
+    except Exception as e:
+        filter_params["mana"] = 99
+    filter_params["attrib"] = attrib
+    filtered_cards = return_list_of_filtered_library(empire_decks[empire], filter_params)
+    return render_template("make_your_deck.html", page=page, your_deck=show_deck,
+                           library=filtered_cards[page * 21:(page + 1) * 21])
 
 
 @app.route("/make_your_own_deck_pick_empire", methods=["POST", "GET"])
@@ -186,15 +206,24 @@ def make_your_own_deck_pick_empire():
 
 @app.route("/update_deck", methods=["POST", "GET"])
 def update_deck():
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
     global your_deck
     global empire
     global show_deck
+    print(page)
     try:
         your_deck = get_old_deck()[0]
         empire = get_old_deck()[1]
         show_deck = make_html_deck(your_deck, show_deck)
-        return render_template("update_deck.html", your_deck=show_deck, library=empire_decks[empire])
+        print(page)
+        return render_template("update_deck.html", page=page, your_deck=show_deck,
+                               library=empire_decks[empire][page * 21:(page + 1) * 21])
     except Exception as e:
+        print(e)
         print("Error in update_deck")
         return render_template("game_option.html")
 
@@ -244,11 +273,12 @@ def personal_troops():
 def send_empire():
     global empire
     empire = request.form.get("your_empire")
-    return redirect(url_for('make_your_own_deck', empire=empire))
+    return redirect(url_for('make_your_own_deck', empire=empire, page=0))
 
 
 @app.route("/deck_cards", methods=["POST", "GET"])
 def make_deck():
+    page = request.args.get("page", type=int, default=0)
     global your_deck
     global show_deck
     global index
@@ -299,9 +329,9 @@ def make_deck():
                 index += 1
     show_deck = make_html_deck(your_deck, show_deck)
     if empire == "":
-        return redirect(url_for('chaotic_history', show_deck=show_deck))
+        return redirect(url_for('chaotic_history', page=page, show_deck=show_deck))
     else:
-        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+        return redirect(url_for('make_your_own_deck', page=page, show_deck=show_deck))
 
 
 @app.route("/play", methods=["POST", "GET"])
@@ -352,6 +382,11 @@ def modes():
 
 @app.route("/remove_card", methods=["POST", "GET"])
 def remove_card_from_deck():
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
     global show_deck
     cards_name = request.form
     for card in your_deck[:]:
@@ -364,9 +399,9 @@ def remove_card_from_deck():
                 show_deck.pop(card.name)
     show_deck = make_html_deck(your_deck, show_deck)
     if empire != "":
-        return redirect(url_for('make_your_own_deck', show_deck=show_deck))
+        return redirect(url_for('make_your_own_deck', page=page, show_deck=show_deck))
     else:
-        return redirect(url_for('chaotic_history', show_deck=show_deck))
+        return redirect(url_for('chaotic_history', page=page, show_deck=show_deck))
 
 
 @app.route("/library", methods=["POST", "GET"])
@@ -374,9 +409,28 @@ def show_library():
     page = request.args.get("page", type=int, default=0)
     if page < 0:
         page = 0
-    elif page > len(all_cards_in_game) // 28 + 1:
-        page = len(all_cards_in_game) // 28 + 1
-    return render_template("library.html", page=page, library=all_cards_in_game[page * 28:(page + 1) * 28])
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
+    return render_template("library.html", page=page, library=all_cards_in_game[page * 21:(page + 1) * 21])
+
+
+@app.route("/find", methods=["POST", "GET"])
+def show_library_filtered():
+    filter_params = {}
+    page = request.args.get("page", type=int, default=0)
+    if page < 0:
+        page = 0
+    elif page > len(all_cards_in_game) // 21 + 1:
+        page = len(all_cards_in_game) // 21 + 1
+    mana = request.form.get("mana_filter")
+    attrib = request.form.get("attrib")
+    try:
+        filter_params["mana"] = int(mana)
+    except Exception as e:
+        filter_params["mana"] = 99
+    filter_params["attrib"] = attrib
+    filtered_cards = return_list_of_filtered_library(all_cards_in_game, filter_params)
+    return render_template("library.html", page=page, library=filtered_cards[page * 21:(page + 1) * 21])
 
 
 @app.route("/update_battle_field", methods=["POST", "GET"])

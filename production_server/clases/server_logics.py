@@ -68,3 +68,14 @@ def get_old_deck():
             old_deck.append(Defence(mana_cost, name, number_of_def, duration, description, card_id))
         file_line = file.readline()
     return old_deck, empire
+
+
+def return_list_of_filtered_library(library, filters):
+    results = []
+    for card in library:
+        if card.mana_cost == filters["mana"] and filters["mana"] < 99:
+            results.append(card)
+        if filters["attrib"].lower() in card.description.lower() and card.card_type == "Creature" and filters[
+            "attrib"] != "":
+            results.append(card)
+    return results

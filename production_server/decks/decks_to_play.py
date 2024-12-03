@@ -13,12 +13,7 @@ bot_deck = [
     Creature(0, "as", 99, 99, "Guard", "soldier", 999)
 ]
 
-demo_deck = [Creature(2, "Empire Believer", 2, 2, "Whenever you get life this gets +1/+1", "soldier", 0),
-             Creature(2, "Church Story Teller", 2, 1,
-                      "Whenever a creature gets buffed by a spell draw a card and heal for 1",
-                      "worker", 1),
-             Creature(6, "Knight of the Coin", 6, 6, "Whenever this attacks draw 2 cards Rush", "knight", 2),
-             ]
+demo_deck = []
 
 list_of_tactics_to_pick = [
     [Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258)],
@@ -262,12 +257,12 @@ list_of_creatures_to_pick = {"mercenary": list_of_mercenary, "debt": list_of_deb
                              "spells": list_of_spells_to_pick, "advance greek spells": list_of_advance_greek_spells,
                              "Lerima_self": list_of_Lerima,
                              }
-cards_for_byzantine_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_holy_roman_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_mongol_empire.extend(cards_that_are_in_the_game_for_all)
-mesopotamia_empire.extend(cards_that_are_in_the_game_for_all)
-roman_empire.extend(cards_that_are_in_the_game_for_all)
-cards_for_greek_empire.extend(cards_that_are_in_the_game_for_all)
+cards_for_byzantine_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_byzantine_empire))
+cards_for_holy_roman_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_holy_roman_empire))
+cards_for_mongol_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_mongol_empire))
+mesopotamia_empire += list(set(cards_that_are_in_the_game_for_all) - set(mesopotamia_empire))
+roman_empire += list(set(cards_that_are_in_the_game_for_all) - set(roman_empire))
+cards_for_greek_empire += list(set(cards_that_are_in_the_game_for_all) - set(cards_for_greek_empire))
 best_cards_so_far_deck = []
 power_of_the_people = [Creature(8, "Frederick Barbarossa", 6, 6,
                                 "Friendly minions get armored and +1/+1 Armored Guard", "knight", 911),
