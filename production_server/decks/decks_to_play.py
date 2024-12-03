@@ -13,13 +13,12 @@ bot_deck = [
     Creature(0, "as", 99, 99, "Guard", "soldier", 999)
 ]
 
-demo_deck = [
-    Creature(1, "Cow", 3, 0, "Desperate Heal your empire for 1 and draw a card. Guard", "animal", 1),
-    Creature(2, "Selfish Soldier", 2, 2, "Draw a card.Discard a card", "ancient", 7),
-    Spell(1, "I want actions not words",
-          "Destory 2 creatures, cast 2 spells and deal 2 damage to the enemy kingdom in one turn Reward:Lerima, Persistent One",
-          0),
-]
+demo_deck = [Creature(2, "Empire Believer", 2, 2, "Whenever you get life this gets +1/+1", "soldier", 0),
+             Creature(2, "Church Story Teller", 2, 1,
+                      "Whenever a creature gets buffed by a spell draw a card and heal for 1",
+                      "worker", 1),
+             Creature(6, "Knight of the Coin", 6, 6, "Whenever this attacks draw 2 cards Rush", "knight", 2),
+             ]
 
 list_of_tactics_to_pick = [
     [Spell(2, "Snare Trap", "Tactic When an enemy minion attacks send it to there owner hands", -258)],

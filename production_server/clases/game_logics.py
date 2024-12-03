@@ -5,6 +5,7 @@ from production_server.decks.lists_of_cards import *
 def battle(card1, card2, player1, player2):
     try:
         if card1.attack > 0:
+            player1.check_for_creature_with_effect_on("attacking",card1)
             player2.check_for_tactics("attacking", card1, card2)
             if card1 in player1.battle_field:
                 player1.logs += card1.name + " is in battle with " + card2.name + "\n"
@@ -385,6 +386,7 @@ def buff_creature_with_spell(card, player1):
         card.description += "  " + list_of_buff_spells.get(player1.incoming_spell.name)[2]
     card.check_creature(list_of_buff_spells.get(player1.incoming_spell.name)[2])
     player1.check_for_creature_with_effect_on("cast spell:", card)
+    player1.check_for_creature_with_effect_on("buff creature with spell", card)
 
 
 def spell_that_summon(player, enemy_player, spell_name):
@@ -567,8 +569,10 @@ def put_item_on(player1, player2, card_picked):
 
 def heal_creature(card_picked, player, amount):
     try:
+        creature_found = False
         for card in player.battle_field:
             if card_picked.get(card.name_for_html) is not None:
+                creature_found = True
                 if card.hp + amount > card.max_hp:
                     card.hp = card.max_hp
                     player.logs += " on this card:" + card.name
@@ -577,7 +581,8 @@ def heal_creature(card_picked, player, amount):
                     card.hp += amount
                     player.logs += " on this card:" + card.name
                     break
-        player.check_for_creature_with_effect_on("heal", None)
+        if creature_found is True:
+            player.check_for_creature_with_effect_on("heal creature", None)
     except Exception as e:
         print("Error in heal_creature")
         print(e)

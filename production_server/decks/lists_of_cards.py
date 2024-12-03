@@ -74,7 +74,7 @@ list_of_creature_that_buff = {"Priest": (1, 1), "Lumberjack": (0, 1), "Armorer":
                               "Lndrau Aaurentis": (0, 0, "Guard"), "Ephix Maximus": (0, 2, "Charge"),
                               "Payed Guard": (3, 3, ""), "Veteran Knight": (1, 1, ""), "Henry III": (0, 0, "Armored"),
                               "Church Helper": (2, 1, ""), "Armored Librarian": (1, 1, "Armored"),
-                              "Ancient Champion": (1, 1, "")
+                              "Ancient Champion": (1, 1, ""), "Empire Believer": (1, 1, "")
                               }
 list_of_creature_that_buff_specific_cards = {"Animal Tamer": "animal", "Countryside Hunter": "worker"}
 list_of_creature_with_on_going_effect = ["War elephant", "Army Champion", "War Eagle", "King Saragon of Akkad"]
@@ -82,7 +82,7 @@ list_of_creature_with_negative_on_going_effect = {}
 list_of_creature_with_positive_on_going_effect = {"Army Champion": (1, 1, ""), "War elephant": (0, 1, ""),
                                                   "War Eagle": (0, 1, ""),
                                                   "King Saragon of Akkad": (2, 2, "ancient")}
-list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal"),
+list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", "heal creature"),
                                                 "Enthusiastic Archer": ("damage:random:enemies:all:1", "summ all"),
                                                 "New Recruit": ("self_buff", "summ soldier"),
                                                 "Wondering Scribe": ("draw", "cast spell"),
@@ -96,10 +96,14 @@ list_of_creature_that_are_effected_by_action = {"Church Scholar": ("self_buff", 
                                                 "Tolui": ("damage:enemy_hero:spell_cost", "cast spell"),
                                                 "Armored Librarian": ("self_buff", "cast spell:self"),
                                                 "Tax collector": ("heal:empire:1", "summ all"),
-                                                "Ancient Champion": ("self_buff", "summ ancient")
+                                                "Ancient Champion": ("self_buff", "summ ancient"),
+                                                "Empire Believer": ("self_buff", "heal kingdom"),
+                                                "Church Story Teller": (
+                                                    "draw:heal:empire:1", "buff creature with spell"),
+                                                "Knight of the Coin": ("draw", "attacking")
                                                 }
 list_of_creature_that_are_effected_by_action_once = {"Soldier Architect": 0}
-list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1}
+list_of_creature_that_draw_card_on_action = {"Wondering Scribe": 1, "Knight of the Coin": 2, "Church Story Teller": 1}
 list_of_creature_that_add_armor_on_action = {"Roman Architect": 1, "Soldier Architect": 2, "Claudius": 10}
 list_of_creature_that_draw_cards = {"Page": 1, "Wild Horse": 1, "Watchman": 1, "Negotiator": 1,
                                     "Richard the Lionheart": 2, "Scribe of the Church": 1,
